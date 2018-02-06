@@ -4,8 +4,6 @@ import requests
 from collections import OrderedDict
 import datetime
 import time
-import lxml
-
 # Create your models here.
 
 
@@ -16,9 +14,6 @@ class chapters(models.Model):
         #self.datetime = datetime.datetime.strptime(datetime1, '%Y-%m-%dT%H:%M:%S+00:00')
         self.datetime = datetime[:10]
         self.title = title
-
-    def log(log):
-        print(log)
 
     def multilist(items):
         #start = time.time()
@@ -41,7 +36,7 @@ class chapters(models.Model):
         # ранобэ.рф import
         if chapters.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
             resp = requests.get(chapters.books[book]['href'])  # 0.4 seconds
-            soup = BeautifulSoup(resp.text, "lxml")  # ~0.4 Sculptor / ~0.7 System seconds
+            soup = BeautifulSoup(resp.text, "html.parser")  # ~0.4 Sculptor / ~0.7 System seconds
 
             chapter_names = []
             for entry in soup.find_all('a'):
