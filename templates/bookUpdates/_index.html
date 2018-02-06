@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block title %} / {{ list.title }}{% endblock %}
+{% block name  %} / {{ list.title }}{% endblock %}
+
+{% block content %}
+<div id="chapters">
+<a id="content-header">{{ list.title_full }}</a>
+
+{% for chapter in list.chapters %}
+    <div onclick="window.open('{{ chapter.href }}');" style="cursor: pointer;">
+        <b>» </b>
+        <a href="{{ chapter.href }}">
+            {% if list.multibook %} {{ chapter.title }}: {% endif %}
+            {{ chapter.name }}</a> on {{chapter.datetime}}
+    </div>
+{% empty %}
+    <h1>No chapters yet</h1>
+{% endfor %}
+</div>
+
+{% endblock %}
