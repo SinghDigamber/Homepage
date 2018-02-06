@@ -9,9 +9,9 @@
 
 {% for chapter in list.chapters %}
     <div onclick="window.open('{{ chapter.href }}');" style="cursor: pointer;">
-        <b>» </b>
+        <b id="pointer">» </b>
         <a href="{{ chapter.href }}">
-            {% if list.multibook %} {{ chapter.title }}: {% endif %}
+            {% if list.multibook %} [{{ chapter.title }}] — {% endif %}
             {{ chapter.name }}</a> on {{chapter.datetime}}
     </div>
 {% empty %}
