@@ -7,6 +7,12 @@ sudo python3 -m pip install beautifulsoup4
 sudo python3 -m pip install requests
 sudo python3 -m pip install feedparser
 
-rm -rf ~/Homepage
+#!/bin/sh
+rm -rf /home/pi/Homepage
+cd /home/pi/
 git clone https://github.com/OlehKrupko/Homepage
-python3 ~/Homepage/manage.py runserver 192.168.1.201:8000
+python3 /home/pi/Homepage/manage.py runserver 192.168.1.201:8000
+cd ~
+
+sudo nano /etc/init.d/olehkrupko.com.django
+sudo chmod ugo+x /etc/init.d/olehkrupko.com.django
