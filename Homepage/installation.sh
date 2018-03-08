@@ -9,4 +9,4 @@ sudo python3 -m pip install feedparser
 
 rm -rf ~/Homepage
 git clone https://github.com/OlehKrupko/Homepage
-python3 ~/Homepage/manage.py runserver 192.168.1.201:80
+python3 ~/Homepage/manage.py runserver 192.168.1.201:8000
