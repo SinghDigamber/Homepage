@@ -1,22 +1,22 @@
 {% extends 'index.html' %}
 
-{% block title %} / bookUbdates{% endblock %}
+{% block title %} / bookUpdates{% endblock %}
 {% block name  %} / {{ list.title }}{% endblock %}
 
 {% block content %}
-<div id="chapters">
-<a id="content-header">{{ list.title_full }}</a>
+    <div id="chapters">
+        <h1>{{ list.title_full }}</h1>
 
-{% for chapter in list.chapters %}
-    <div onclick="window.open('{{ chapter.href }}');" style="cursor: pointer;">
-        <b id="pointer">» </b>
-        <a href="{{ chapter.href }}" onclick="return false;">
-            {% if list.multibook %} [{{ chapter.title }}] — {% endif %}
-            {{ chapter.name }}</a> on {{chapter.datetime}}
+        {% for chapter in list.chapters %}
+            <div onclick="window.open('{{ chapter.href }}');" id="chapters">
+                <b class="pointer">» </b>
+                <a href="{{ chapter.href }}" onclick="return false;">
+                    {% if list.multibook %} [{{ chapter.title }}] — {% endif %}
+                    {{ chapter.name }}</a>
+                <a class="datetime">on {{chapter.datetime}}</a>
+            </div>
+        {% empty %}
+            <h1>No chapters yet</h1>
+        {% endfor %}
     </div>
-{% empty %}
-    <h1>No chapters yet</h1>
-{% endfor %}
-</div>
-
 {% endblock %}

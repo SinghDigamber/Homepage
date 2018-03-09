@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+}
+#content-header {
+    color: white;
+    font-size: 30px;
+}
+nav.navbar {
+    background-color: white;
+}
+div#chapters div {
+    #height: 35px;
+    font-size: larger;
+}
+div#chapters a {
+    color:#212529;
+}
+div#chapters a:link {
+    color:white;
+}
+div#chapters a:visited {
+    color:grey;
+}
+.pointer {
+    color: red;
+}
+.datetime {
+    color: #212529;
+}
+a,h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+h1,div#menu,div#menu a {
+    color: white;
+}
+div#content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+div#chapters a {
+    cursor: pointer;
+    text-decoration: none;
+}
