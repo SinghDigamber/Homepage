@@ -34,8 +34,11 @@ h1,div#menu,div#menu a {
     color: white;
 }
 div#menu a {
-    font-family: "Lucida Console", Monaco, monospace;
-    font-weight: 900;
+    font-family: "Times New Roman";
+    /* monospace font
+    font-weight: 600;
+    transform: scaleY(1.5);*/
+    text-decoration: none;
 }
 div#content {
     max-width: 800px;
