@@ -33,6 +33,10 @@ a,h1 {
 h1,div#menu,div#menu a {
     color: white;
 }
+div#menu a {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-weight: 300;
+}
 div#content {
     max-width: 800px;
     margin: 0 auto;
