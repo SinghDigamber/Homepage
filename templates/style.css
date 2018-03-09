@@ -35,7 +35,7 @@ h1,div#menu,div#menu a {
 }
 div#menu a {
     font-family: "Lucida Console", Monaco, monospace;
-    font-weight: 300;
+    font-weight: 900;
 }
 div#content {
     max-width: 800px;
