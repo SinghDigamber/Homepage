@@ -1,5 +1,5 @@
 from django.db import models
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 import requests
 from collections import OrderedDict
 import feedparser
@@ -44,7 +44,8 @@ class chapters(models.Model):
         # ранобэ.рф import
         if chapters.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
             resp = requests.get(chapters.books[book]['href'])  # 0.4 seconds
-            soup = BeautifulSoup(resp.text, "html.parser")  # ~0.4 Sculptor / ~0.7 System seconds
+            strainer = SoupStrainer('div', attrs={'class': 'col-md-12'});
+            soup = BeautifulSoup(resp.text, "lxml", parse_only=strainer)  # ~0.4 Sculptor / ~0.7 System seconds
 
             chapter_names = []
             chapter_datetimes = []
@@ -62,7 +63,7 @@ class chapters(models.Model):
                 if type(entry) == str:
                     if entry.find(chapters.books[book]['href']) != -1:  # checking if link leads to the same website
                         chapter_links.append(entry)
-            chapter_links.pop(0)  # it is the button in the begging "Start reading"
+            #chapter_links.pop(0)  # it is the button in the begging "Start reading"
             chapter_links = list(OrderedDict((x, True) for x in chapter_links).keys())  # allow unique links only
 
             if len(chapter_links) == len(chapter_names) and len(chapter_names) == len(chapter_datetimes):
