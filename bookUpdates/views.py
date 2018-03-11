@@ -9,16 +9,25 @@ class BookIndexView(ListView):
     context_object_name = "list"
 
     def get_queryset(self):
+        header = "Обновления"
+        multibook = True
+
         try:
             if self.kwargs['books'] != "":
+                header = self.kwargs['books']
+
                 items = self.kwargs['books']
                 items = items.split("+")
-            else:
-                items = chapters.books.keys()
+                if len(items) == 1:
+                    multibook = False
         except KeyError:
             items = chapters.books.keys()
 
         items = chapters.multilist(items)
         items = sorted(items, key=lambda chapters: str(chapters.datetime), reverse=True)
 
-        return {'title': 'Обновления', 'title_full': 'Обновления', 'chapters': items, 'multibook': True}
+        return {
+            'title': header,
+            'chapters': items,
+            'multibook': multibook
+        }

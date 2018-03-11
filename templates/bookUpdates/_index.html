@@ -5,7 +5,7 @@
 
 {% block content %}
     <div id="chapters">
-        <h1>{{ list.title_full }}</h1>
+        <h1>{{ list.title }}</h1>
 
         {% for chapter in list.chapters %}
             <div onclick="window.open('{{ chapter.href }}');" id="chapters">
