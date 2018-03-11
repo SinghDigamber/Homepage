@@ -32,10 +32,6 @@ class chapters(models.Model):
             'title_full': 'The Gamer',
             'href': 'feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88'
         },
-        'РуРанобэ': {
-            'title_full': 'РуРанобэ',
-            'href': 'https://feeds.feedburner.com/ruranobe',
-        },
     }
 
     def list(book):
