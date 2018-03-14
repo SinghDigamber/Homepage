@@ -26,7 +26,7 @@ SECRET_KEY = '8xox&a#1+(@^_4@4q(!)1cxqspsp4o40fl@vnlr7nakielz2b5'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    #'127.0.0.1',
+    '127.0.0.1',
     '192.168.1.200',
     '192.168.1.201',
     'home.olehkrupko.com',

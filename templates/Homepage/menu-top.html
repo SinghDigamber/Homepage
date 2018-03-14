@@ -1,13 +1,13 @@
 <a href="http://192.168.1.200:8000/">
-    Главная</a>
+    Dashboard</a>
 |
-<a href="http://192.168.1.200:8000/bookUpdates/">
+<a href="{% url "bookUpdates:index" %}">
     Обновления</a>:
     <a>{</a>
-        <a href="http://192.168.1.200:8000/bookUpdates/Система">
+        <a href="{% url "bookUpdates:book" books="Система" %}">
             Система</a>,
-        <a href="http://192.168.1.200:8000/bookUpdates/Скульптор">
+        <a href="{% url "bookUpdates:book" books="Скульптор" %}">
             Скульптор</a>,
-        <a href="http://192.168.1.200:8000/bookUpdates/Gamer">
+        <a href="{% url "bookUpdates:book" books="Gamer" %}">
             Gamer</a>
     <a>}</a>
