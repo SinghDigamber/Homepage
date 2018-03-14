@@ -22,7 +22,7 @@ div#chapters a:visited {
     color:grey;
 }
 div#chapters div a:nth-child(2):link:hover {
-    color:darkred;
+    color:greenyellow;
 }
 .pointer {
     color: red;
