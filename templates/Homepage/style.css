@@ -13,16 +13,16 @@ div#chapters div {
     font-size: larger;
 }
 div#chapters a {
-    color:#212529;
+    color: #212529;
 }
 div#chapters a:link {
-    color:white;
+    color: white;
 }
 div#chapters a:visited {
-    color:grey;
+    color: grey;
 }
 div#chapters div a:nth-child(2):link:hover {
-    color:greenyellow;
+    color: greenyellow;
 }
 .pointer {
     color: red;
