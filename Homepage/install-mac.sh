@@ -9,3 +9,5 @@ collective.soupstrainer
 feedparser
 lxml
 requests
+
+sudo python3 -m pip install django~=2.0.2
