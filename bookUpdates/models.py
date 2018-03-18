@@ -20,7 +20,6 @@ class chapters(models.Model):
         self.title = titleField
 
     def multilist(items):
-        chapters.cache()
         result = []
         for item in items:
             result.extend(chapters.list(item))

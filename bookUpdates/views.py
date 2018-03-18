@@ -9,6 +9,8 @@ class BookIndexView(ListView):
     context_object_name = "list"
 
     def get_queryset(self):
+        chapters.cache()
+        
         header = "Обновления"
         multibook = True
 
