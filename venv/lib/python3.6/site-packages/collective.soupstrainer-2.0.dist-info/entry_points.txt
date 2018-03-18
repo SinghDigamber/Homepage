@@ -1,0 +1,3 @@
+[console_scripts]
+soupstrainer = collective.soupstrainer:main
+
