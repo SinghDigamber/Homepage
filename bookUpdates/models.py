@@ -8,6 +8,11 @@ from datetime import datetime, timedelta
 
 
 class chapters(models.Model):
+    name = models.CharField(max_length=140)
+    href = models.CharField(max_length=300)
+    datetime = models.DateTimeField()
+    title = models.CharField(max_length=30)
+
     def __init__(self, name, href, datetime, title):
         self.name = name
         self.href = href
