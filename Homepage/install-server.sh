@@ -14,11 +14,14 @@ sudo python3 -m pip install lxml # html parser
 sudo python3 -m pip install feedparser # rss parser
 
 #!/bin/sh
-rm -rf /home/pi/Homepage
-cd /home/pi/
+cd ~
+rm -rf ~/Homepage
 git clone https://github.com/OlehKrupko/Homepage
-python3 /home/pi/Homepage/manage.py runserver 192.168.1.201:8000
+python3 ~/Homepage/manage.py runserver 192.168.1.201:8000
 cd ~
 
 sudo nano /etc/init.d/olehkrupko.com.django
 sudo chmod ugo+x /etc/init.d/olehkrupko.com.django
+
+python3 ~/Homepage/manage.py migrate
+python3 ~/Homepage/manage.py createsuperuser
