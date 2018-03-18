@@ -35,7 +35,6 @@ class chapters(models.Model):
     }
 
     def list(book):
-        chapters.cache()
         result = []
         timeDiff = 2  # difference from UTC
 
