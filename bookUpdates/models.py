@@ -13,13 +13,14 @@ class chapters(models.Model):
     datetime = models.DateTimeField()
     title = models.CharField(max_length=30)
 
-    def __init__(self, name, href, datetime, title):
-        self.name = name
-        self.href = href
-        self.datetime = datetime
-        self.title = title
+    def __init__(self, nameField, hrefField, datetimeField, titleField):
+        self.name = nameField
+        self.href = hrefField
+        self.datetime = datetimeField
+        self.title = titleField
 
     def multilist(items):
+        chapters.cache()
         result = []
         for item in items:
             result.extend(chapters.list(item))
