@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup, SoupStrainer
 import requests
 from collections import OrderedDict
 import feedparser
-from datetime import datetime
+from datetime import datetime, timedelta
 # Create your models here.
 
 
@@ -35,7 +35,9 @@ class chapters(models.Model):
     }
 
     def list(book):
+        chapters.cache()
         result = []
+        timeDiff = 2  # difference from UTC
 
         # ранобэ.рф import
         if chapters.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
@@ -52,7 +54,7 @@ class chapters(models.Model):
                     chapter_names.append(entry.text)
 
             for entry in soup.find_all("time"):
-                chapter_datetimes.append(datetime.strptime(entry.get('datetime')[:-6], "%Y-%m-%dT%H:%M:%S"))
+                chapter_datetimes.append(datetime.strptime(entry.get('datetime')[:-6], "%Y-%m-%dT%H:%M:%S")+timedelta(hours=timeDiff))
 
             for entry in soup.find_all('a'):
                 entry = entry.get('href')
@@ -67,9 +69,8 @@ class chapters(models.Model):
                     result.append(chapters(str(chapter_names[i]), str(chapter_links[i]), str(chapter_datetimes[i]), book))
 
             else:
-                chapters.log("Number of links (%(links)s) do not match titles (%(names)s) and datetimes (%(datetimes)s)"
-                             % {'links': len(chapter_links), 'names': len(chapter_names),
-                                'datetimes': len(chapter_datetimes)})
+                print("Number of links (%(links)s) do not match titles (%(names)s) and datetimes (%(datetimes)s)"
+                    % {'links': len(chapter_links), 'names': len(chapter_names), 'datetimes': len(chapter_datetimes)})
 
         # RSS import (feed://www.webtoons.com/)
         elif chapters.books[book]['href'].find('feed://') != -1:
@@ -77,6 +78,17 @@ class chapters(models.Model):
 
             for item in feed["items"]:
                 result.append(chapters(item["title_detail"]["value"], item["links"][0]["href"],
-                              datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S GMT'), book))
+                    datetime.strptime(item["published"],
+                    '%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=timeDiff), book))
+
+
 
         return result
+
+    def cache():
+        #return False
+        keys = list(chapters.books.keys())
+        all = chapters.multilist(keys)
+
+        for item in all:
+            item.save()
