@@ -21,6 +21,9 @@ div#chapters a:link {
 div#chapters a:visited {
     color: grey;
 }
+div#chapters div a:nth-child(2) {
+    cursor: pointer;
+}
 div#chapters div a:nth-child(2):link:hover {
     color: greenyellow;
 }
@@ -48,8 +51,10 @@ div#content {
     margin: 0 auto;
 }
 div#chapters a {
-    cursor: pointer;
     text-decoration: none;
+}
+div#chapters b, div#chapters div a:nth-child(3) {
+     cursor: default;
 }
 h1 {
     font-size: 48px;

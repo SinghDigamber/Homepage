@@ -1,19 +1,18 @@
 {% extends 'index.html' %}
 
 {% block title %} / bookUpdates{% endblock %}
-{% block name  %} / {{ list.title }}{% endblock %}
 
 {% block content %}
     <div id="chapters">
         <h1>{{ list.title }}</h1>
 
         {% for chapter in list.chapters %}
-            <div onclick="window.open('{{ chapter.href }}');" id="chapters">
+            <div id="chapters">
                 <b class="pointer">» </b>
-                <a href="{{ chapter.href }}" onclick="return false;">
+                <a href="{{ chapter.href }}">
                     {% if list.multibook %} [{{ chapter.title }}] — {% endif %}
                     {{ chapter.name }}</a>
-                <a class="datetime">on {{chapter.datetime}}</a>
+                <a class="datetime">posted on {{chapter.datetime}}</a>
             </div>
         {% empty %}
             <h1>No chapters yet</h1>
