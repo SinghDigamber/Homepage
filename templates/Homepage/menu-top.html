@@ -1,13 +1,13 @@
-<a href="http://192.168.1.200:8000/">
+<a href="{% url "bookUpdate:force" %}">
     Dashboard</a>
 |
-<a href="{% url "bookUpdates:index" %}">
+<a href="{% url "bookUpdate:index" %}">
     Обновления</a>:
     <a>{</a>
-        <a href="{% url "bookUpdates:book" books="Система" %}">
+        <a href="{% url "bookUpdate:book" books="Система" %}">
             Система</a>,
-        <a href="{% url "bookUpdates:book" books="Скульптор" %}">
+        <a href="{% url "bookUpdate:book" books="Скульптор" %}">
             Скульптор</a>,
-        <a href="{% url "bookUpdates:book" books="Gamer" %}">
+        <a href="{% url "bookUpdate:book" books="Gamer" %}">
             Gamer</a>
     <a>}</a>

@@ -1,9 +1,12 @@
 from django.contrib import admin
-from .models import chapters
+from .models import bookUpdate
 
 # Register your models here.
-class ChapterAdmin(admin.ModelAdmin):
+class bookUpdateAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['name', 'href', 'datetime', 'title']}),
     ]
-admin.site.register(chapters, ChapterAdmin)
+
+
+admin.site.register(bookUpdate, bookUpdateAdmin)
+

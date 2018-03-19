@@ -7,22 +7,21 @@ from datetime import datetime, timedelta
 # Create your models here.
 
 
-class chapters(models.Model):
+class bookUpdate(models.Model):
+    class Meta:
+        ordering = ['-datetime']
     name = models.CharField(max_length=140)
     href = models.CharField(max_length=300)
     datetime = models.DateTimeField()
     title = models.CharField(max_length=30)
 
-    def __init__(self, nameField, hrefField, datetimeField, titleField):
-        self.name = nameField
-        self.href = hrefField
-        self.datetime = datetimeField
-        self.title = titleField
+    def __str__(self):
+        return "["+self.title+"] - "+self.name+" on "+str(self.datetime)+" link: "+self.href
 
     def multilist(items):
         result = []
         for item in items:
-            result.extend(chapters.list(item))
+            result.extend(bookUpdate.list(item))
 
         return result
 
@@ -44,8 +43,8 @@ class chapters(models.Model):
         timeDiff = 2  # difference from UTC
 
         # ранобэ.рф import
-        if chapters.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            resp = requests.get(chapters.books[book]['href'])  # 0.4 seconds
+        if bookUpdate.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
+            resp = requests.get(bookUpdate.books[book]['href'])  # 0.4 seconds
             strainer = SoupStrainer('div', attrs={'class': 'col-md-12'});
             soup = BeautifulSoup(resp.text, "lxml", parse_only=strainer)  # ~0.4 Sculptor / ~0.7 System seconds
 
@@ -63,36 +62,51 @@ class chapters(models.Model):
             for entry in soup.find_all('a'):
                 entry = entry.get('href')
                 if type(entry) == str:
-                    if entry.find(chapters.books[book]['href']) != -1:  # checking if link leads to the same website
+                    if entry.find(bookUpdate.books[book]['href']) != -1:  # checking if link leads to the same website
                         chapter_links.append(entry)
             #chapter_links.pop(0)  # it is the button in the begging "Start reading"
             chapter_links = list(OrderedDict((x, True) for x in chapter_links).keys())  # allow unique links only
 
             if len(chapter_links) == len(chapter_names) and len(chapter_names) == len(chapter_datetimes):
                 for i in range(0, len(chapter_links)):
-                    result.append(chapters(str(chapter_names[i]), str(chapter_links[i]), str(chapter_datetimes[i]), book))
+                    result.append(bookUpdate(
+                        name=str(chapter_names[i]),
+                        href=str(chapter_links[i]),
+                        datetime=str(chapter_datetimes[i]),
+                        title=book))
 
             else:
                 print("Number of links (%(links)s) do not match titles (%(names)s) and datetimes (%(datetimes)s)"
                     % {'links': len(chapter_links), 'names': len(chapter_names), 'datetimes': len(chapter_datetimes)})
 
         # RSS import (feed://www.webtoons.com/)
-        elif chapters.books[book]['href'].find('feed://') != -1:
-            feed = feedparser.parse(chapters.books[book]['href'])
+        elif bookUpdate.books[book]['href'].find('feed://') != -1:
+            feed = feedparser.parse(bookUpdate.books[book]['href'])
 
             for item in feed["items"]:
-                result.append(chapters(item["title_detail"]["value"], item["links"][0]["href"],
-                    datetime.strptime(item["published"],
-                    '%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=timeDiff), book))
-
-
+                result.append(bookUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=timeDiff),
+                    title=book))
 
         return result
 
     def cache():
         #return False
-        keys = list(chapters.books.keys())
-        all = chapters.multilist(keys)
+        result = 0;
+        items = list(bookUpdate.books.keys())
+        items = bookUpdate.multilist(items)
 
-        for item in all:
-            item.save()
+        for item in items:
+            if not bookUpdate.objects.filter(
+                name=item.name,
+                href=item.href,
+                datetime=item.datetime,
+                title=item.title
+            ).exists():
+                #print(item)
+                item.save()
+                result += 1
+
+        #print(result)

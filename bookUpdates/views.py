@@ -1,17 +1,17 @@
 from django.shortcuts import render
-from .models import chapters
+from .models import bookUpdate
 from django.views.generic import ListView
+import socket
+from django.shortcuts import redirect
 
-# Create your views here.
-class BookIndexView(ListView):
-    model = chapters
+
+class bookUpdateForceIndexView(ListView):
+    model = bookUpdate
     template_name = "bookUpdates/_index.html"
     context_object_name = "list"
 
     def get_queryset(self):
-        chapters.cache()
-        
-        header = "Обновления"
+        header = "Forced!"
         multibook = True
 
         try:
@@ -23,13 +23,51 @@ class BookIndexView(ListView):
                 if len(items) == 1:
                     multibook = False
         except KeyError:
-            items = chapters.books.keys()
+            items = bookUpdate.books.keys()
 
-        items = chapters.multilist(items)
-        items = sorted(items, key=lambda chapters: str(chapters.datetime), reverse=True)
+        items = bookUpdate.multilist(items)
+        items = sorted(items, key=lambda bookUpdate: str(bookUpdate.datetime), reverse=True)
 
         return {
             'title': header,
             'chapters': items,
             'multibook': multibook
         }
+
+
+class bookUpdateIndexView(ListView):
+    model = bookUpdate
+    template_name = "bookUpdates/_index.html"
+    context_object_name = "list"
+
+    def get_queryset(self):
+        header = "Обновления"
+        multibook = True
+
+        try:
+            if self.kwargs['books'] != "":
+                header = self.kwargs['books']
+
+                items = self.kwargs['books']
+                items = items.split("+")
+                if len(items) == 1:
+                    multibook = False
+                items = list(bookUpdate.objects.filter(title__in=items))[:20]
+        except KeyError:
+            items = list(bookUpdate.objects.all())[:20]
+
+        return {
+            'title': header,
+            'chapters': items,
+            'multibook': multibook
+        }
+
+class bookUpdateCacheView(ListView):
+    model = bookUpdate
+    template_name = "bookUpdates/_index.html"
+
+    def get_queryset(self):
+        if socket.gethostname() == "rpi3-tv": # server hostname got by import socket & socket.gethostname()
+            bookUpdate.cache()
+
+        return {}
