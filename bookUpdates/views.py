@@ -67,7 +67,10 @@ class bookUpdateCacheView(ListView):
     template_name = "bookUpdates/_index.html"
 
     def get_queryset(self):
-        if socket.gethostname() == "rpi3-tv": # server hostname got by import socket & socket.gethostname()
-            bookUpdate.cache()
+        bookUpdate.cache()
 
-        return {}
+        return {
+            'title': "Cache updated",
+            'chapters': list(bookUpdate.objects.all())[:20],
+            'multibook': True
+        }
