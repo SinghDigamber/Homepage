@@ -9,4 +9,8 @@
 # Short-Description: launches Django-cacher demon
 ### END INIT INFO
 
-while sleep 10m; do curl "http://home.olehkrupko.com/bookUpdates/cache"; done
+while true
+do
+        curl "http://home.olehkrupko.com/bookUpdates/cache";
+        sleep 10m
+done

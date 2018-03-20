@@ -54,7 +54,7 @@ class bookUpdateIndexView(ListView):
                     multibook = False
                 items = list(bookUpdate.objects.filter(title__in=items))[:20]
         except KeyError:
-            items = list(bookUpdate.objects.all())[:20]
+            items = list(bookUpdate.objects.all())[:15]
 
         return {
             'title': header,
