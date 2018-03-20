@@ -15,21 +15,13 @@ sudo apt-get install libxml2-dev libxslt1-dev # requied for lxml
 sudo python3 -m pip install lxml # html parser
 sudo python3 -m pip install feedparser # rss parser
 
-cp server-django.sh /etc/init.d/server-django.sh
-cp server-django.sh /etc/init.d/server-django-cacher.sh
-sudo chmod ugo+x /etc/init.d/server-django.sh
-sudo chmod ugo+x /etc/init.d/server-django-cacher.sh
+cp ~/Projects/Homepage/scripts/homepage.* /etc/init.d/
+# sudo chmod ugo+x /etc/init.d/server-django.sh
+# sudo chmod ugo+x /etc/init.d/server-django-cacher.sh
 
-update-rc.d server-django.sh defaults
-update-rc.d server-django-cache.sh defaults
+update-rc.d com.olehkrupko.homepage defaults
+update-rc.d com.olehkrupko.homepage.watcher.* defaults
 # update-rc.d -f server-django.sh remove
 # update-rc.d -f server-django-cache.sh remove
-
-# sudo nano /etc/init.d/olehkrupko.com.django
-# sudo nano /etc/init.d/olehkrupko.com.django-cacher
-# sudo chmod ugo+x /etc/init.d/olehkrupko.com.django
-# sudo chmod ugo+x /etc/init.d/olehkrupko.com.django-cacher
-# update-rc.d -f olehkrupko.com.django remove
-# update-rc.d -f olehkrupko.com.django-cacher remove
 
 # ps auxw | grep runserver
