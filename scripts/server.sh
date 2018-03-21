@@ -28,3 +28,35 @@ sudo update-rc.d homepage.watcher defaults
 # update-rc.d -f homepage.watcher remove
 
 ps auxw | grep runserver
+
+sudo nano /lib/systemd/system/homepage.watcher.service
+
+[Unit]
+Description=Homepage cache updater
+
+[Service]
+ExecStart=/home/pi/Projects/Homepage/scripts/homepage.watcher
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl status homepage.watcher.service
+sudo systemctl enable homepage.watcher.service
+sudo systemctl start homepage.watcher.service
+
+
+
+sudo nano /lib/systemd/system/homepage.server.service
+
+[Unit]
+Description=Homepage server
+
+[Service]
+ExecStart=/home/pi/Projects/Homepage/scripts/homepage.server
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl status homepage.server.service
+sudo systemctl enable homepage.server.service
+sudo systemctl start homepage.server.service
