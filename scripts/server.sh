@@ -24,7 +24,7 @@ sudo cp ~/Projects/Homepage/scripts/homepage.* /etc/init.d/
 
 sudo update-rc.d homepage.server defaults
 sudo update-rc.d homepage.watcher defaults
-# update-rc.d -f server-django.sh remove
-# update-rc.d -f server-django-cache.sh remove
+# update-rc.d -f homepage.server remove
+# update-rc.d -f homepage.watcher remove
 
-# ps auxw | grep runserver
+ps auxw | grep runserver
