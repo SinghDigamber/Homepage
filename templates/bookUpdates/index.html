@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
 {% block title %} / bookUpdates{% endblock %}
 
@@ -9,8 +9,8 @@
         {% for chapter in list.chapters %}
             <div id="chapters">
                 <b class="pointer">» </b>
-                <a href="{{ chapter.href }}">
-                    {% if list.multibook %} [{{ chapter.title }}] — {% endif %}
+                <a target="_blank" href="{{ chapter.href }}">
+                    {% if list.multibook %} {{ chapter.title }}: {% endif %}
                     {{ chapter.name }}</a>
                 <a class="datetime">posted on {{chapter.datetime}}</a>
             </div>
