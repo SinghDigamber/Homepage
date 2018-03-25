@@ -36,6 +36,11 @@ class bookUpdate(models.Model):
             'title_full': 'The Gamer',
             'href': 'feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88'
         },
+        'Ляпота': {
+            'title_full': "It's a good trip",
+            'href': 'https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w'
+        },
+
     }
 
     def list(book):
@@ -88,6 +93,20 @@ class bookUpdate(models.Model):
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
                     datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=timeDiff),
+                    title=book))
+
+        # YouTube import (https://www.youtube.com/feeds/videos.xml?channel_id=)
+        elif bookUpdate.books[book]['href'].find('https://www.youtube.com/channel/') != -1:
+
+            feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
+                                    +bookUpdate.books[book]['href'][32:])
+
+            for item in feed["items"]:
+
+                result.append(bookUpdate(
+                    name=item["title"],
+                    href=item["link"],
+                    datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
                     title=book))
 
         return result
