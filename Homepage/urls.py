@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^bookUpdates/', include('bookUpdates.urls', namespace="bookUpdates")),
+    url(r'^university_TItaP/', include('university_TItaP.urls', namespace="university_TItaP")),
 ]

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookUpdates.apps.BookupdatesConfig',
+    'university_TItaP',
 ]
 
 MIDDLEWARE = [

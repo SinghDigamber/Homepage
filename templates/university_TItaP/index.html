@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} / university_TItaP{% endblock %}
+
+{% block content %}
+
+    <table bordercolor="white" style="color: white; td: ">
+        <tr>{% for item in list.header %}<td style="border: 1px solid white;">{{ item }}</td>{% endfor %}</tr>
+            {% for item in list.items %}
+                <tr>
+                {% for each in item %}
+                    <td>{{ each }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+    </table>
+{% endblock %}
