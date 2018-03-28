@@ -40,7 +40,42 @@ class bookUpdate(models.Model):
             'title_full': "It's a good trip",
             'href': 'https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w'
         },
-
+        'GCNTech': {
+            'title_full': "GCN Tech",
+            'href': 'https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg'
+        },
+        'GCN': {
+            'title_full': "Global Cycling Network",
+            'href': 'https://www.youtube.com/feeds/videos.xml?channel_id=UCuTaETsuCOkJ0H_GAztWt0Q'
+        },
+        'Keddr': {
+            'title_full': 'Keddr.com',
+            'href': 'https://www.youtube.com/feeds/videos.xml?channel_id=UCSpU8Y1aoqBSAwh8DBpiM9A',
+        },
+        'Kurzgesagt': {
+            'title_full': 'Kurzgesagt – In a Nutshell',
+            'href': 'https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q',
+        },
+        'LastWeekTonight': {
+            'title_full': 'Last Week Tonight',
+            'href': 'https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ',
+        },
+        'LinusTechTips': {
+            'title_full': 'Linus Tech Tips',
+            'href': 'https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw',
+        },
+        'PRIME': {
+            'title_full': 'PRIME ORCHESTRA',
+            'href': 'https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw',
+        },
+        'UnboxTherapy': {
+            'title_full': 'Unbox Therapy',
+            'href': 'https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw',
+        },
+        'Wylsa': {
+            'title_full': 'Wylsacom',
+            'href': 'https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA',
+        }
     }
 
     def list(book):
@@ -103,6 +138,17 @@ class bookUpdate(models.Model):
 
             for item in feed["items"]:
 
+                result.append(bookUpdate(
+                    name=item["title"],
+                    href=item["link"],
+                    datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
+                    title=book))
+
+        # YouTube import ALTERNATIVE (https://www.youtube.com/feeds/videos.xml?channel_id=)
+        elif bookUpdate.books[book]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
+            feed = feedparser.parse(bookUpdate.books[book]['href'])
+
+            for item in feed["items"]:
                 result.append(bookUpdate(
                     name=item["title"],
                     href=item["link"],
