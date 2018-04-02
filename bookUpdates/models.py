@@ -75,7 +75,19 @@ class bookUpdate(models.Model):
         'Wylsa': {
             'title_full': 'Wylsacom',
             'href': 'https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA',
-        }
+        },
+        'Jannet': {
+            'title_full': 'Jannet Incosplay',
+            'href': 'https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ'
+        },
+        'Nigri': {
+            'title_full': 'Jessica Nigri',
+            'href': 'https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg'
+        },
+        'КременюкИ': {
+            'title_full': 'Jessica Nigri',
+            'href': 'https://www.youtube.com/channel/UCgLQh3fGZmfgbJ8D_sry-kA'
+        },
     }
 
     def list(book):
