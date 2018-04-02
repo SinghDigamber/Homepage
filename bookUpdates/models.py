@@ -60,7 +60,7 @@ class bookUpdate(models.Model):
             'title_full': 'Last Week Tonight',
             'href': 'https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ',
         },
-        'LinusTechTips': {
+        'Linus': {
             'title_full': 'Linus Tech Tips',
             'href': 'https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw',
         },
