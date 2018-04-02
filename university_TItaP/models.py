@@ -38,6 +38,8 @@ class Mark(models.Model):
 
 
 class Vector(models.Model):
+    class Meta:
+        ordering = ['IdMark']
     IdAlt = models.ForeignKey(
         'Alternative',
         on_delete=models.CASCADE,
