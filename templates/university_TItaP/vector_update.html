@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} / university_TItaP{% endblock %}
+
+{% block content %}
+    <form action="" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+    </form>
+    <iframe src="alternative/index{{ request.path }}" name="topFrame" scrolling="no" noresize width="600"></iframe>
+{% endblock %}
