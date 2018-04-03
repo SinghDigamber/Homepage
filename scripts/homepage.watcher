@@ -1,6 +1,6 @@
 #!/bin/sh
 
 while true; do
-        curl "http://home.olehkrupko.com/bookUpdates/cache";
+        curl "http://olehkrupko.com/feedUpdate/cache";
         sleep 10m;
 done;
