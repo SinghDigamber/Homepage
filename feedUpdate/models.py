@@ -92,7 +92,7 @@ class feedUpdate(models.Model):
 
     def list(book):
         result = []
-        timeDiff=2
+        timeDiff=3
 
         # ранобэ.рф import
         if feedUpdate.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
