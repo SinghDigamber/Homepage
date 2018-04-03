@@ -29,7 +29,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '192.168.1.200',
     '192.168.1.201',
-    'home.olehkrupko.com',
+    'olehkrupko.com',
 ]
 
 
