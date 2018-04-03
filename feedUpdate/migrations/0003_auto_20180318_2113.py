@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('bookUpdates', '0002_auto_20180318_2112'),
+        ('feedUpdate', '0002_auto_20180318_2112'),
     ]
 
     operations = [

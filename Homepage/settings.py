@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bookUpdates.apps.BookupdatesConfig',
+    'feedUpdate',
     'university_TItaP',
 ]
 

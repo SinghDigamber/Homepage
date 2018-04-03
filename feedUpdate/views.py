@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from .models import bookUpdate
+from .models import feedUpdate
 from django.views.generic import ListView
 import socket
 from django.shortcuts import redirect
 
 
-class bookUpdateForceIndexView(ListView):
-    model = bookUpdate
-    template_name = "bookUpdates/index.html"
+class feedUpdateForceIndexView(ListView):
+    model = feedUpdate
+    template_name = "feedUpdate/index.html"
     context_object_name = "list"
 
     def get_queryset(self):
@@ -23,10 +23,10 @@ class bookUpdateForceIndexView(ListView):
                 if len(items) == 1:
                     multibook = False
         except KeyError:
-            items = bookUpdate.books.keys()
+            items = feedUpdate.books.keys()
 
-        items = bookUpdate.multilist(items)
-        items = sorted(items, key=lambda bookUpdate: str(bookUpdate.datetime), reverse=True)
+        items = feedUpdate.multilist(items)
+        items = sorted(items, key=lambda feedUpdate: str(feedUpdate.datetime), reverse=True)
 
         return {
             'title': header,
@@ -35,9 +35,9 @@ class bookUpdateForceIndexView(ListView):
         }
 
 
-class bookUpdateIndexView(ListView):
-    model = bookUpdate
-    template_name = "bookUpdates/index.html"
+class feedUpdateIndexView(ListView):
+    model = feedUpdate
+    template_name = "feedUpdate/index.html"
     context_object_name = "list"
 
     def get_queryset(self):
@@ -52,10 +52,10 @@ class bookUpdateIndexView(ListView):
                 items = items.split("+")
                 if len(items) == 1:
                     multibook = False
-                    header = bookUpdate.books[header]['title_full']
-                items = list(bookUpdate.objects.filter(title__in=items))
+                    header = feedUpdate.books[header]['title_full']
+                items = list(feedUpdate.objects.filter(title__in=items))
         except KeyError:
-            items = list(bookUpdate.objects.all())
+            items = list(feedUpdate.objects.all())
 
         return {
             'title': header,
@@ -63,11 +63,11 @@ class bookUpdateIndexView(ListView):
             'multibook': multibook,
         }
 
-class bookUpdateCacheView(ListView):
-    model = bookUpdate
-    template_name = "bookUpdates/cached.html"
+class feedUpdateCacheView(ListView):
+    model = feedUpdate
+    template_name = "feedUpdate/cached.html"
 
     def get_queryset(self):
-        bookUpdate.cache()
+        feedUpdate.cache()
 
         return { }

@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 # Create your models here.
 
 
-class bookUpdate(models.Model):
+class feedUpdate(models.Model):
     class Meta:
         ordering = ['-datetime']
     name = models.CharField(max_length=140)
@@ -21,7 +21,7 @@ class bookUpdate(models.Model):
     def multilist(items):
         result = []
         for item in items:
-            result.extend(bookUpdate.list(item))
+            result.extend(feedUpdate.list(item))
 
         return result
 
@@ -92,11 +92,11 @@ class bookUpdate(models.Model):
 
     def list(book):
         result = []
-        timeDiff = 2  # difference from UTC
+        timeDiff=2
 
         # ранобэ.рф import
-        if bookUpdate.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            resp = requests.get(bookUpdate.books[book]['href'])  # 0.4 seconds
+        if feedUpdate.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
+            resp = requests.get(feedUpdate.books[book]['href'])  # 0.4 seconds
             strainer = SoupStrainer('div', attrs={'class': 'col-md-12'});
             soup = BeautifulSoup(resp.text, "lxml", parse_only=strainer)  # ~0.4 Sculptor / ~0.7 System seconds
 
@@ -109,19 +109,19 @@ class bookUpdate(models.Model):
                     chapter_names.append(entry.text)
 
             for entry in soup.find_all("time"):
-                chapter_datetimes.append(datetime.strptime(entry.get('datetime')[:-6], "%Y-%m-%dT%H:%M:%S")+timedelta(hours=timeDiff))
+                chapter_datetimes.append(datetime.strptime(entry.get('datetime')[:-6], "%Y-%m-%dT%H:%M:%S"))
 
             for entry in soup.find_all('a'):
                 entry = entry.get('href')
                 if type(entry) == str:
-                    if entry.find(bookUpdate.books[book]['href']) != -1:  # checking if link leads to the same website
+                    if entry.find(feedUpdate.books[book]['href']) != -1:  # checking if link leads to the same website
                         chapter_links.append(entry)
             #chapter_links.pop(0)  # it is the button in the begging "Start reading"
             chapter_links = list(OrderedDict((x, True) for x in chapter_links).keys())  # allow unique links only
 
             if len(chapter_links) == len(chapter_names) and len(chapter_names) == len(chapter_datetimes):
                 for i in range(0, len(chapter_links)):
-                    result.append(bookUpdate(
+                    result.append(feedUpdate(
                         name=str(chapter_names[i]),
                         href=str(chapter_links[i]),
                         datetime=str(chapter_datetimes[i]),
@@ -132,36 +132,36 @@ class bookUpdate(models.Model):
                     % {'links': len(chapter_links), 'names': len(chapter_names), 'datetimes': len(chapter_datetimes)})
 
         # RSS import (feed://www.webtoons.com/)
-        elif bookUpdate.books[book]['href'].find('feed://') != -1:
-            feed = feedparser.parse(bookUpdate.books[book]['href'])
+        elif feedUpdate.books[book]['href'].find('feed://') != -1:
+            feed = feedparser.parse(feedUpdate.books[book]['href'])
 
             for item in feed["items"]:
-                result.append(bookUpdate(
+                result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
                     datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=timeDiff),
                     title=book))
 
         # YouTube import (https://www.youtube.com/feeds/videos.xml?channel_id=)
-        elif bookUpdate.books[book]['href'].find('https://www.youtube.com/channel/') != -1:
+        elif feedUpdate.books[book]['href'].find('https://www.youtube.com/channel/') != -1:
 
             feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
-                                    +bookUpdate.books[book]['href'][32:])
+                                    +feedUpdate.books[book]['href'][32:])
 
             for item in feed["items"]:
 
-                result.append(bookUpdate(
+                result.append(feedUpdate(
                     name=item["title"],
                     href=item["link"],
                     datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
                     title=book))
 
         # YouTube import ALTERNATIVE (https://www.youtube.com/feeds/videos.xml?channel_id=)
-        elif bookUpdate.books[book]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
-            feed = feedparser.parse(bookUpdate.books[book]['href'])
+        elif feedUpdate.books[book]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
+            feed = feedparser.parse(feedUpdate.books[book]['href'])
 
             for item in feed["items"]:
-                result.append(bookUpdate(
+                result.append(feedUpdate(
                     name=item["title"],
                     href=item["link"],
                     datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
@@ -172,11 +172,11 @@ class bookUpdate(models.Model):
     def cache():
         #return False
         result = 0;
-        items = list(bookUpdate.books.keys())
-        items = bookUpdate.multilist(items)
+        items = list(feedUpdate.books.keys())
+        items = feedUpdate.multilist(items)
 
         for item in items:
-            if not bookUpdate.objects.filter(
+            if not feedUpdate.objects.filter(
                 name=item.name,
                 href=item.href,
                 datetime=item.datetime,

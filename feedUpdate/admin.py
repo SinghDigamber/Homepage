@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import bookUpdate
+from .models import feedUpdate
 
 # Register your models here.
-class bookUpdateAdmin(admin.ModelAdmin):
+class feedUpdateAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['name', 'href', 'datetime', 'title']}),
     ]
-admin.site.register(bookUpdate, bookUpdateAdmin)
+admin.site.register(feedUpdate, feedUpdateAdmin)
 
