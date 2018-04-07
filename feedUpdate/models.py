@@ -31,7 +31,7 @@ class feedUpdate(models.Model):
         #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'},
         'EvilGod': {
             'title_full': 'Heaven Defying Evil God',
-            'href': 'http://xn--80ac9aeh6f.xn--p1ai/'
+            'href': 'http://xn--80ac9aeh6f.xn--p1ai/against-the-gods/'
         },
         'Скульптор': {
             'title_full': 'Легендарный Лунный Скульптор',
