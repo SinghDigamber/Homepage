@@ -254,7 +254,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -273,23 +273,23 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#496#580#0" expanded="false" />
+            <element signature="e#740#3442#0" expanded="false" />
             <element signature="e#750#763#0" expanded="false" />
-            <element signature="e#913#1031#0" expanded="false" />
-            <element signature="e#1054#1197#0" expanded="false" />
-            <element signature="e#1216#1349#0" expanded="false" />
-            <element signature="e#1369#1505#0" expanded="false" />
-            <element signature="e#1526#1654#0" expanded="false" />
-            <element signature="e#1671#1833#0" expanded="false" />
-            <element signature="e#1852#2002#0" expanded="false" />
-            <element signature="e#2026#2173#0" expanded="false" />
-            <element signature="e#2202#2340#0" expanded="false" />
-            <element signature="e#2359#2495#0" expanded="false" />
-            <element signature="e#2514#2650#0" expanded="false" />
-            <element signature="e#2676#2810#0" expanded="false" />
-            <element signature="e#2829#2958#0" expanded="false" />
-            <element signature="e#2978#3114#0" expanded="false" />
-            <element signature="e#3133#3266#0" expanded="false" />
-            <element signature="e#3289#3418#0" expanded="false" />
+            <element signature="e#1071#1214#0" expanded="false" />
+            <element signature="e#1233#1366#0" expanded="false" />
+            <element signature="e#1386#1522#0" expanded="false" />
+            <element signature="e#1543#1671#0" expanded="false" />
+            <element signature="e#1688#1850#0" expanded="false" />
+            <element signature="e#1869#2019#0" expanded="false" />
+            <element signature="e#2043#2190#0" expanded="false" />
+            <element signature="e#2219#2357#0" expanded="false" />
+            <element signature="e#2376#2512#0" expanded="false" />
+            <element signature="e#2531#2667#0" expanded="false" />
+            <element signature="e#2693#2827#0" expanded="false" />
+            <element signature="e#2846#2975#0" expanded="false" />
+            <element signature="e#2995#3131#0" expanded="false" />
+            <element signature="e#3150#3283#0" expanded="false" />
+            <element signature="e#3306#3435#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -592,34 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feedUpdate/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#496#580#0" expanded="false" />
-            <element signature="e#750#763#0" expanded="false" />
-            <element signature="e#913#1031#0" expanded="false" />
-            <element signature="e#1054#1197#0" expanded="false" />
-            <element signature="e#1216#1349#0" expanded="false" />
-            <element signature="e#1369#1505#0" expanded="false" />
-            <element signature="e#1526#1654#0" expanded="false" />
-            <element signature="e#1671#1833#0" expanded="false" />
-            <element signature="e#1852#2002#0" expanded="false" />
-            <element signature="e#2026#2173#0" expanded="false" />
-            <element signature="e#2202#2340#0" expanded="false" />
-            <element signature="e#2359#2495#0" expanded="false" />
-            <element signature="e#2514#2650#0" expanded="false" />
-            <element signature="e#2676#2810#0" expanded="false" />
-            <element signature="e#2829#2958#0" expanded="false" />
-            <element signature="e#2978#3114#0" expanded="false" />
-            <element signature="e#3133#3266#0" expanded="false" />
-            <element signature="e#3289#3418#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/university_TItaP/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -636,13 +608,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Homepage/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/Homepage/menu-top.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding>
-            <element signature="e#642#683#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -654,10 +624,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Homepage/menu-top.html">
+    <entry file="file://$PROJECT_DIR$/feedUpdate/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state relative-caret-position="118">
+          <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#496#580#0" expanded="false" />
+            <element signature="e#740#3442#0" expanded="false" />
+            <element signature="e#750#763#0" expanded="false" />
+            <element signature="e#1071#1214#0" expanded="false" />
+            <element signature="e#1233#1366#0" expanded="false" />
+            <element signature="e#1386#1522#0" expanded="false" />
+            <element signature="e#1543#1671#0" expanded="false" />
+            <element signature="e#1688#1850#0" expanded="false" />
+            <element signature="e#1869#2019#0" expanded="false" />
+            <element signature="e#2043#2190#0" expanded="false" />
+            <element signature="e#2219#2357#0" expanded="false" />
+            <element signature="e#2376#2512#0" expanded="false" />
+            <element signature="e#2531#2667#0" expanded="false" />
+            <element signature="e#2693#2827#0" expanded="false" />
+            <element signature="e#2846#2975#0" expanded="false" />
+            <element signature="e#2995#3131#0" expanded="false" />
+            <element signature="e#3150#3283#0" expanded="false" />
+            <element signature="e#3306#3435#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Homepage/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding />
         </state>
       </provider>

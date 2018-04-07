@@ -109,7 +109,7 @@ class feedUpdate(models.Model):
             chapter_links = []
 
             for entry in soup.find_all('a'):
-                if str(entry).find('Глава') != -1:
+                if str(entry).find('strong') != -1:
                     chapter_names.append(entry.text)
 
             for entry in soup.find_all("time"):
