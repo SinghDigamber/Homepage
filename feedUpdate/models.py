@@ -26,9 +26,13 @@ class feedUpdate(models.Model):
         return result
 
     books = {
-        'Система': {
-            'title_full': 'Система Богов и Демонов',
-            'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'},
+        #'Система': {
+        #    'title_full': 'Система Богов и Демонов',
+        #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'},
+        'EvilGod': {
+            'title_full': 'Heaven Defying Evil God',
+            'href': 'http://xn--80ac9aeh6f.xn--p1ai/'
+        },
         'Скульптор': {
             'title_full': 'Легендарный Лунный Скульптор',
             'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'},
@@ -85,7 +89,7 @@ class feedUpdate(models.Model):
             'href': 'https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg'
         },
         'КременюкИ': {
-            'title_full': 'Jessica Nigri',
+            'title_full': 'КременюкИ',
             'href': 'https://www.youtube.com/channel/UCgLQh3fGZmfgbJ8D_sry-kA'
         },
     }
