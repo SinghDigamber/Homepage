@@ -18,10 +18,21 @@ from django.contrib import admin
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
+    # default
     url(r'^admin/', admin.site.urls),
 
-    url(r'^feedUpdate/', include('feedUpdate.urls', namespace="feedUpdate")),
-    url(r'^university_TItaP/', include('university_TItaP.urls', namespace="university_TItaP")),
+    # main
+    url(r'^', include('feedUpdate.urls', namespace="dashboard")),
+    url(r'^feedUpdate/', include('feedUpdate.urls',
+        namespace="feedUpdate")),
+
+    # custom
+    url(r'^university_TItaP/', include('university_TItaP.urls',
+        namespace="university_TItaP")),
+
+    # permanent
     url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
-        permanent=True), name="trakt")
+        permanent=True), name="Trakt"),
+    url(r'^trakt/$', RedirectView.as_view(url='https://github.com/OlehKrupko/Homepage',
+        permanent=True), name="GitHub"),
 ]
