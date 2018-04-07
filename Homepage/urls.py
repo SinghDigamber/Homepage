@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^feedUpdate/', include('feedUpdate.urls', namespace="feedUpdate")),
     url(r'^university_TItaP/', include('university_TItaP.urls', namespace="university_TItaP")),
+    url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
+        permanent=True), name="trakt")
 ]
