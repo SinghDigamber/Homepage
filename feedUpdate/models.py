@@ -4,6 +4,8 @@ import requests
 from collections import OrderedDict
 import feedparser
 from datetime import datetime, timedelta
+import json
+import urllib.request
 # Create your models here.
 
 
@@ -117,7 +119,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=timeDiff),
+                    datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT'),
                     title=feedName))
 
         # YouTube import (https://www.youtube.com/feeds/videos.xml?channel_id=)
@@ -148,8 +150,6 @@ class feedUpdate(models.Model):
         return result
 
     def cache():
-        #return False
-        result = 0;
         items = list(feedUpdate.feeds.keys())
         items = feedUpdate.multilist(items)
 
@@ -162,7 +162,6 @@ class feedUpdate(models.Model):
             ).exists():
                 #print(item)
                 item.save()
-                result += 1
 
     # Legacy code (no longer works as AJAX is used at ранобэ.рф)
     def import_ranoberf(self):
