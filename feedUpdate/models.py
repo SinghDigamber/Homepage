@@ -28,6 +28,7 @@ class feedUpdate(models.Model):
         return result
 
     feeds = {
+        # reading
         #'Система': {
         #    'title_full': 'Система Богов и Демонов',
         #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'},
@@ -42,6 +43,8 @@ class feedUpdate(models.Model):
             'title_full': 'The Gamer',
             'href': 'feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88'
         },
+
+        # YouTube
         'Ляпота': {
             'title_full': "It's a good trip",
             'href': 'https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w'
@@ -74,10 +77,10 @@ class feedUpdate(models.Model):
             'title_full': 'PRIME ORCHESTRA',
             'href': 'https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw',
         },
-        'UnboxTherapy': {
-            'title_full': 'Unbox Therapy',
-            'href': 'https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw',
-        },
+        #'UnboxTherapy': {
+        #    'title_full': 'Unbox Therapy',
+        #    'href': 'https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw',
+        #},
         'Wylsa': {
             'title_full': 'Wylsacom',
             'href': 'https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA',
@@ -137,15 +140,15 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # YouTube import ALTERNATIVE (https://www.youtube.com/feeds/videos.xml?channel_id=)
-        elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title"],
-                    href=item["link"],
-                    datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
-                    title=feedName))
+        #elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
+        #    feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+        #
+        #    for item in feed["items"]:
+        #        result.append(feedUpdate(
+        #            name=item["title"],
+        #            href=item["link"],
+        #            datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
+        #            title=feedName))
 
         return result
 
