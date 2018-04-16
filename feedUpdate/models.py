@@ -31,14 +31,16 @@ class feedUpdate(models.Model):
         # reading
         #'Система': {
         #    'title_full': 'Система Богов и Демонов',
-        #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'},
+        #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'
+        # },
         'EvilGod': {
             'title_full': 'Heaven Defying Evil God',
             'href': 'http://xn--80ac9aeh6f.xn--p1ai/against-the-gods/'
         },
         'Скульптор': {
             'title_full': 'Легендарный Лунный Скульптор',
-            'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'},
+            'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
+        },
         'Gamer': {
             'title_full': 'The Gamer',
             'href': 'feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88'
@@ -55,35 +57,35 @@ class feedUpdate(models.Model):
         },
         'GCN': {
             'title_full': "Global Cycling Network",
-            'href': 'https://www.youtube.com/feeds/videos.xml?channel_id=UCuTaETsuCOkJ0H_GAztWt0Q'
+            'href': 'https://www.youtube.com/channel/UCuTaETsuCOkJ0H_GAztWt0Q'
         },
         'Keddr': {
             'title_full': 'Keddr.com',
-            'href': 'https://www.youtube.com/feeds/videos.xml?channel_id=UCSpU8Y1aoqBSAwh8DBpiM9A',
+            'href': 'https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A'
         },
         'Kurzgesagt': {
             'title_full': 'Kurzgesagt – In a Nutshell',
-            'href': 'https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q',
+            'href': 'https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q'
         },
         'LastWeekTonight': {
             'title_full': 'Last Week Tonight',
-            'href': 'https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ',
+            'href': 'https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ'
         },
         'Linus': {
             'title_full': 'Linus Tech Tips',
-            'href': 'https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw',
+            'href': 'https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw'
         },
         'PRIME': {
             'title_full': 'PRIME ORCHESTRA',
-            'href': 'https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw',
+            'href': 'https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw'
         },
         #'UnboxTherapy': {
         #    'title_full': 'Unbox Therapy',
-        #    'href': 'https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw',
+        #    'href': 'https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw'
         #},
         'Wylsa': {
             'title_full': 'Wylsacom',
-            'href': 'https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA',
+            'href': 'https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA'
         },
         'Jannet': {
             'title_full': 'Jannet Incosplay',
@@ -141,6 +143,10 @@ class feedUpdate(models.Model):
             'title_full': 'Francis Cade',
             'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA'
         },
+        'Keddr': {
+            'title_full': 'Keddr.com',
+            'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA'
+        }
     }
 
     def list(feedName):
