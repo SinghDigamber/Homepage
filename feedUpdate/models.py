@@ -96,44 +96,18 @@ class feedUpdate(models.Model):
 
     def list(feedName):
         result = []
-        timeDiff=3
 
-        # ранобэ.рф import
-        if feedUpdate.books[book]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            resp = requests.get(feedUpdate.books[book]['href'])  # 0.4 seconds
-            strainer = SoupStrainer('div', attrs={'class': 'col-md-12'});
-            soup = BeautifulSoup(resp.text, "lxml", parse_only=strainer)  # ~0.4 Sculptor / ~0.7 System seconds
+        # ранобэ.рф API import
+        if feedUpdate.feeds[feedName]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
+            request = "http://xn--80ac9aeh6f.xn--p1ai/v1/book/load/?book_alias="+feedUpdate.feeds[feedName]['href'][31:-1]
+            request = requests.get(request).json()  # 0.4 seconds
 
-            chapter_names = []
-            chapter_datetimes = []
-            chapter_links = []
-
-            for entry in soup.find_all('a'):
-                if str(entry).find('strong') != -1:
-                    chapter_names.append(entry.text)
-
-            for entry in soup.find_all("time"):
-                chapter_datetimes.append(datetime.strptime(entry.get('datetime')[:-6], "%Y-%m-%dT%H:%M:%S"))
-
-            for entry in soup.find_all('a'):
-                entry = entry.get('href')
-                if type(entry) == str:
-                    if entry.find(feedUpdate.books[book]['href']) != -1:  # checking if link leads to the same website
-                        chapter_links.append(entry)
-            #chapter_links.pop(0)  # it is the button in the begging "Start reading"
-            chapter_links = list(OrderedDict((x, True) for x in chapter_links).keys())  # allow unique links only
-
-            if len(chapter_links) == len(chapter_names) and len(chapter_names) == len(chapter_datetimes):
-                for i in range(0, len(chapter_links)):
-                    result.append(feedUpdate(
-                        name=str(chapter_names[i]),
-                        href=str(chapter_links[i]),
-                        datetime=str(chapter_datetimes[i]),
-                        title=book))
-
-            else:
-                print("Number of links (%(links)s) do not match titles (%(names)s) and datetimes (%(datetimes)s)"
-                    % {'links': len(chapter_links), 'names': len(chapter_names), 'datetimes': len(chapter_datetimes)})
+            for part in request['result']['parts']:
+                result.append(feedUpdate(
+                    name=part["title"],
+                    href="http://xn--80ac9aeh6f.xn--p1ai"+part["url"],
+                    datetime=datetime.fromtimestamp(part["publishedAt"]),
+                    title=feedName))
 
         # RSS import (feed://www.webtoons.com/)
         elif feedUpdate.feeds[feedName]['href'].find('feed://') != -1:
@@ -190,4 +164,44 @@ class feedUpdate(models.Model):
                 item.save()
                 result += 1
 
-        #print(result)
+    # Legacy code (no longer works as AJAX is used at ранобэ.рф)
+    def import_ranoberf(self):
+        resp = requests.get(feedUpdate.books[book]['href'])  # 0.4 seconds
+        strainer = SoupStrainer('div', attrs={'class': 'col-md-12'});
+        soup = BeautifulSoup(resp.text, "html.parser")  # ~0.4 Sculptor / ~0.7 System seconds
+
+        print(str(resp), str(soup), requests.get(feedUpdate.books[book]['href']))
+
+        chapter_names = []
+        chapter_datetimes = []
+        chapter_links = []
+
+        for entry in soup.find_all('a'):
+
+            if str(entry).find('strong') != -1:
+                chapter_names.append(entry.text)
+
+        for entry in soup.find_all("time"):
+            chapter_datetimes.append(datetime.strptime(entry.get('datetime')[:-6], "%Y-%m-%dT%H:%M:%S"))
+
+        for entry in soup.find_all('a'):
+            entry = entry.get('href')
+            if type(entry) == str:
+                if entry.find(feedUpdate.books[book]['href']) != -1:  # checking if link leads to the same website
+                    chapter_links.append(entry)
+        # chapter_links.pop(0)  # it is the button in the begging "Start reading"
+        chapter_links = list(OrderedDict((x, True) for x in chapter_links).keys())  # allow unique links only
+        if len(chapter_links) == len(chapter_names) and len(chapter_names) == len(chapter_datetimes):
+            for i in range(0, len(chapter_links)):
+                result.append(feedUpdate(
+                    name=str(chapter_names[i]),
+                    href=str(chapter_links[i]),
+                    datetime=str(chapter_datetimes[i]),
+                    title=book))
+
+        else:
+            print("Number of links (%(links)s) do not match titles (%(names)s) and datetimes (%(datetimes)s)"
+                  % {'links': len(chapter_links), 'names': len(chapter_names), 'datetimes': len(chapter_datetimes)})
+
+        def import_ranoberf_api(self):
+            return True
