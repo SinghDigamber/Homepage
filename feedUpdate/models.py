@@ -97,6 +97,50 @@ class feedUpdate(models.Model):
             'title_full': 'КременюкИ',
             'href': 'https://www.youtube.com/channel/UCgLQh3fGZmfgbJ8D_sry-kA'
         },
+        'Тинькофф': {
+            'title_full': 'Тинькофф-Журнал',
+            'href': 'https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA'
+        },
+        'Cosplay01': {
+            'title_full': 'bky guy',
+            'href': 'https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg'
+        },
+        'Cosplay02': {
+            'title_full': 'Herzlocast',
+            'href': 'https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ'
+        },
+        'Астамуринг': {
+            'title_full': 'Астамуринг',
+            'href': 'https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A'
+        },
+        'Интервьюер': {
+            'title_full': 'Зе Интервьюер',
+            'href': 'https://www.youtube.com/channel/UCuWDlf53jjxti-aUA4tBdsA'
+        },
+        'Банкир': {
+            'title_full': 'Бегущий Банкир',
+            'href': 'https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw'
+        },
+        'Навальный': {
+            'title_full': 'Алексей Навальный',
+            'href': 'https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A'
+        },
+        'Rapha': {
+            'title_full': 'Rapha Films',
+            'href': 'https://www.youtube.com/channel/UCXYXxfVjxMppZY64-5baOsw'
+        },
+        'MarkFood': {
+            'title_full': 'Mark Wiens - Hungry tourist',
+            'href': 'https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA'
+        },
+        'Kaufman': {
+            'title_full': 'Ron Kaufman',
+            'href': 'https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q'
+        },
+        'FCade': {
+            'title_full': 'Francis Cade',
+            'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA'
+        },
     }
 
     def list(feedName):
