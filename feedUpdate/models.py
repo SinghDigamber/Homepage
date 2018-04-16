@@ -25,7 +25,7 @@ class feedUpdate(models.Model):
 
         return result
 
-    books = {
+    feeds = {
         #'Система': {
         #    'title_full': 'Система Богов и Демонов',
         #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'},
@@ -94,7 +94,7 @@ class feedUpdate(models.Model):
         },
     }
 
-    def list(book):
+    def list(feedName):
         result = []
         timeDiff=3
 
@@ -136,21 +136,21 @@ class feedUpdate(models.Model):
                     % {'links': len(chapter_links), 'names': len(chapter_names), 'datetimes': len(chapter_datetimes)})
 
         # RSS import (feed://www.webtoons.com/)
-        elif feedUpdate.books[book]['href'].find('feed://') != -1:
-            feed = feedparser.parse(feedUpdate.books[book]['href'])
+        elif feedUpdate.feeds[feedName]['href'].find('feed://') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
             for item in feed["items"]:
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
                     datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=timeDiff),
-                    title=book))
+                    title=feedName))
 
         # YouTube import (https://www.youtube.com/feeds/videos.xml?channel_id=)
-        elif feedUpdate.books[book]['href'].find('https://www.youtube.com/channel/') != -1:
+        elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
 
             feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
-                                    +feedUpdate.books[book]['href'][32:])
+                                    +feedUpdate.feeds[feedName]['href'][32:])
 
             for item in feed["items"]:
 
@@ -158,25 +158,25 @@ class feedUpdate(models.Model):
                     name=item["title"],
                     href=item["link"],
                     datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
-                    title=book))
+                    title=feedName))
 
         # YouTube import ALTERNATIVE (https://www.youtube.com/feeds/videos.xml?channel_id=)
-        elif feedUpdate.books[book]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
-            feed = feedparser.parse(feedUpdate.books[book]['href'])
+        elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
             for item in feed["items"]:
                 result.append(feedUpdate(
                     name=item["title"],
                     href=item["link"],
                     datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
-                    title=book))
+                    title=feedName))
 
         return result
 
     def cache():
         #return False
         result = 0;
-        items = list(feedUpdate.books.keys())
+        items = list(feedUpdate.feeds.keys())
         items = feedUpdate.multilist(items)
 
         for item in items:

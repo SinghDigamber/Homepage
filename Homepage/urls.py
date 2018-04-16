@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # main
-    url(r'^', include('feedUpdate.urls', namespace="dashboard")),
+    #url(r'^', include('feedUpdate.urls', namespace="dashboard")),
     url(r'^feedUpdate/', include('feedUpdate.urls',
         namespace="feedUpdate")),
 
@@ -33,6 +33,6 @@ urlpatterns = [
     # permanent
     url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
         permanent=True), name="Trakt"),
-    url(r'^trakt/$', RedirectView.as_view(url='https://github.com/OlehKrupko/Homepage',
+    url(r'^Github/$', RedirectView.as_view(url='https://github.com/OlehKrupko/Homepage',
         permanent=True), name="GitHub"),
 ]
