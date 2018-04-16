@@ -42,20 +42,17 @@ class feedUpdateIndexView(ListView):
 
     def get_queryset(self):
         header = "Обновления"
-
         multibook = True
 
         try:
             if self.kwargs['feeds'] != "":
                 header = self.kwargs['feeds']
-                items = header
-                items = items.split("+")
-                if len(items) == 1:
+                if len(header.split("+")) == 1:
                     multibook = False
                     header = feedUpdate.feeds[header]['title_full']
-                items = list(feedUpdate.objects.filter(title__in=items))
+                feeds = list(feedUpdate.objects.filter(title__in=header.split("+")))
         except KeyError:
-            items = list(feedUpdate.objects.all())
+            feeds = list(feedUpdate.objects.all())
 
         return {
             'title': header,
