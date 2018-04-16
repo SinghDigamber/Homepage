@@ -52,7 +52,7 @@ class feedUpdateIndexView(ListView):
                     header = feedUpdate.feeds[header]['title_full']
                 feeds = list(feedUpdate.objects.filter(title__in=header.split("+")))
         except KeyError:
-            feeds = list(feedUpdate.objects.all())
+            feeds = list(feedUpdate.objects.all()[:42])
 
         return {
             'title': header,
