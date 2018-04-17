@@ -143,10 +143,6 @@ class feedUpdate(models.Model):
             'title_full': 'Francis Cade',
             'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA'
         },
-        'Keddr': {
-            'title_full': 'Keddr.com',
-            'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA'
-        }
     }
 
     def list(feedName):
