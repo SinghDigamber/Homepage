@@ -185,16 +185,6 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
                     title=feedName))
 
-        # YouTube import ALTERNATIVE (https://www.youtube.com/feeds/videos.xml?channel_id=)
-        #elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
-        #    feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-        #
-        #    for item in feed["items"]:
-        #        result.append(feedUpdate(
-        #            name=item["title"],
-        #            href=item["link"],
-        #            datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
-        #            title=feedName))
 
         return result
 
@@ -212,7 +202,8 @@ class feedUpdate(models.Model):
                 #print(item)
                 item.save()
 
-    # Legacy code (no longer works as AJAX is used at ранобэ.рф)
+    # Legacy code
+    # (no longer works as AJAX is used at ранобэ.рф)
     def import_ranoberf(self):
         resp = requests.get(feedUpdate.books[book]['href'])  # 0.4 seconds
         strainer = SoupStrainer('div', attrs={'class': 'col-md-12'});
@@ -253,3 +244,16 @@ class feedUpdate(models.Model):
 
         def import_ranoberf_api(self):
             return True
+
+    # not needed
+    #def import_youtube_alt(self):
+    #    # YouTube import ALTERNATIVE (https://www.youtube.com/feeds/videos.xml?channel_id=)
+    #    elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
+    #    feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+    #
+    #    for item in feed["items"]:
+    #        result.append(feedUpdate(
+    #            name=item["title"],
+    #            href=item["link"],
+    #            datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
+    #            title=feedName))
