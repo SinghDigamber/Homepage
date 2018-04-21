@@ -37,6 +37,10 @@ class feedUpdate(models.Model):
             'title_full': 'Heaven Defying Evil God',
             'href': 'http://xn--80ac9aeh6f.xn--p1ai/against-the-gods/'
         },
+        'EvilGodENG': {
+            'title_full': 'Heaven Defying Evil God (ENG)',
+            'href': 'https://www.novelupdates.com/series/against-the-gods/'
+        },
         'Скульптор': {
             'title_full': 'Легендарный Лунный Скульптор',
             'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
@@ -184,6 +188,32 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
                     title=feedName))
 
+        # novelupdates.com import
+        elif feedUpdate.feeds[feedName]['href'].find('https://www.novelupdates.com/series/') != -1:
+            result = []
+            result_name = []
+            result_href = []
+            result_datetime = []
+
+            resp = requests.get(feedUpdate.feeds[feedName]['href'])  # 0.4 seconds
+            strainer = SoupStrainer('table', attrs={'id': 'myTable'});
+            soup = BeautifulSoup(resp.text, "lxml", parse_only=strainer)  # ~0.4 Sculptor / ~0.7 System seconds
+
+            for entry in soup.find_all(attrs={"class": "chp-release"}):
+                result_name.append("Chapter "+entry['title'][1:])
+                result_href.append("http:"+entry['href'])
+
+            for entry in soup.find_all(attrs={"style": "padding-left:5px;"}):
+                if entry.text != "Date":
+                    result_datetime.append(datetime.strptime(entry.text, "%m/%d/%y"))
+
+            if len(result_name) == len(result_href) and len(result_href) == len(result_datetime):
+                for num in range(0, len(result_name)):
+                    result.append(feedUpdate(
+                        name=result_name[num],
+                        href=result_href[num],
+                        datetime=result_datetime[num],
+                        title=feedName))
 
         return result
 
