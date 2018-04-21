@@ -175,9 +175,8 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT'),
                     title=feedName))
 
-        # YouTube import (https://www.youtube.com/feeds/videos.xml?channel_id=)
+        # YouTube import
         elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
-
             feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
                                     +feedUpdate.feeds[feedName]['href'][32:])
 
