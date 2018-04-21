@@ -178,7 +178,6 @@ class feedUpdate(models.Model):
                                     +feedUpdate.feeds[feedName]['href'][32:])
 
             for item in feed["items"]:
-
                 result.append(feedUpdate(
                     name=item["title"],
                     href=item["link"],
