@@ -147,6 +147,12 @@ class feedUpdate(models.Model):
             'title_full': 'Francis Cade',
             'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA'
         },
+
+        # news websites
+        'Verge': {
+            'title_full': 'The Verge',
+            'href': 'https://www.theverge.com/rss/index.xml'
+        }
     }
 
     def list(feedName):
@@ -174,6 +180,18 @@ class feedUpdate(models.Model):
                     href=item["links"][0]["href"],
                     datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT'),
                     title=feedName))
+
+        # RSS TheVerge import ( https://www.theverge.com/rss/index.xml )
+        elif feedUpdate.feeds[feedName]['href'].find('https://www.theverge.com/rss/index.xml') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+            
+            for item in feed["entries"]:
+                result.append(feedUpdate(
+                    name=item["title"],
+                    href=item["id"],
+                    datetime=datetime.strptime(item["updated"],'%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=7),
+                    title=feedName))
+
 
         # YouTube import
         elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
