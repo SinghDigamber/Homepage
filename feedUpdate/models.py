@@ -164,8 +164,8 @@ class feedUpdate(models.Model):
                     datetime=datetime.fromtimestamp(part["publishedAt"]),
                     title=feedName))
 
-        # RSS import (feed://www.webtoons.com/)
-        elif feedUpdate.feeds[feedName]['href'].find('feed://') != -1:
+        # RSS webtoons import ( feed://www.webtoons.com/ )
+        elif feedUpdate.feeds[feedName]['href'].find('feed://www.webtoons.com/') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
             for item in feed["items"]:
