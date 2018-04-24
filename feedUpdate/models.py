@@ -33,10 +33,10 @@ class feedUpdate(models.Model):
         #    'title_full': 'Система Богов и Демонов',
         #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'
         # },
-        'EvilGod': {
-            'title_full': 'Heaven Defying Evil God',
-            'href': 'http://xn--80ac9aeh6f.xn--p1ai/against-the-gods/'
-        },
+        #'EvilGod': {
+        #    'title_full': 'Heaven Defying Evil God',
+        #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/against-the-gods/'
+        #},
         'EvilGodENG': {
             'title_full': 'Heaven Defying Evil God (ENG)',
             'href': 'https://www.novelupdates.com/series/against-the-gods/'
@@ -149,10 +149,10 @@ class feedUpdate(models.Model):
         },
 
         # news websites
-        'Verge': {
-            'title_full': 'The Verge',
-            'href': 'https://www.theverge.com/rss/index.xml'
-        }
+        #'Verge': {
+        #    'title_full': 'The Verge',
+        #    'href': 'https://www.theverge.com/rss/index.xml'
+        #}
     }
 
     def list(feedName):
@@ -184,7 +184,7 @@ class feedUpdate(models.Model):
         # RSS TheVerge import ( https://www.theverge.com/rss/index.xml )
         elif feedUpdate.feeds[feedName]['href'].find('https://www.theverge.com/rss/index.xml') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-            
+
             for item in feed["entries"]:
                 result.append(feedUpdate(
                     name=item["title"],
