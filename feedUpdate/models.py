@@ -153,6 +153,12 @@ class feedUpdate(models.Model):
         #    'title_full': 'The Verge',
         #    'href': 'https://www.theverge.com/rss/index.xml'
         #}
+
+        # shows
+        'Anidub': {
+            'title_full': 'Anidub online',
+            'href': 'feed:https://online.anidub.com/rss.xml'
+        }
     }
 
     def list(feedName):
@@ -179,6 +185,17 @@ class feedUpdate(models.Model):
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
                     datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT'),
+                    title=feedName))
+
+        # RSS anidub import ( feed:https://online.anidub.com/rss.xml )
+        elif feedUpdate.feeds[feedName]['href'].find('feed:https://online.anidub.com/rss.xml') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+            for item in feed["items"]:
+                result.append(feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"],'%a, %d %b %Y %H:%M:%S +0300'),
                     title=feedName))
 
         # RSS TheVerge import ( https://www.theverge.com/rss/index.xml )
