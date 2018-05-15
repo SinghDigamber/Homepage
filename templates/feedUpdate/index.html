@@ -12,7 +12,7 @@
                 <a target="_blank" href="{{ chapter.href }}">
                     {% if list.multibook %} <b>{{ chapter.title }}</b>: {% endif %}
                     {{ chapter.name }}</a>
-                <a class="datetime">posted on {{chapter.datetime}}</a>
+                <a class="datetime">on {{chapter.datetime|date:'Y-m-d H:i' }}</a>
             </div>
         {% empty %}
             <h1>No chapters</h1>
