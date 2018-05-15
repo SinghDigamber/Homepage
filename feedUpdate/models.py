@@ -177,7 +177,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=part["title"],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+part["url"],
-                    datetime=datetime.fromtimestamp(part["publishedAt"]),
+                    datetime=datetime.fromtimestamp(part["publishedAt"])-timedelta(hours=1),
                     title=feedName))
 
         # RSS webtoons import ( feed://www.webtoons.com/ )
@@ -199,7 +199,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"],'%a, %d %b %Y %H:%M:%S +0300'),
+                    datetime=datetime.strptime(item["published"],'%a, %d %b %Y %H:%M:%S +0300')-timedelta(hours=1),
                     title=feedName))
 
         # RSS TheVerge import ( https://www.theverge.com/rss/index.xml )
@@ -210,7 +210,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title"],
                     href=item["id"],
-                    datetime=datetime.strptime(item["updated"],'%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=7),
+                    datetime=datetime.strptime(item["updated"],'%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=6),
                     title=feedName))
 
 
@@ -223,7 +223,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title"],
                     href=item["link"],
-                    datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
+                    datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00')+timedelta(hours=2),
                     title=feedName))
 
         # novelupdates.com import
@@ -243,7 +243,11 @@ class feedUpdate(models.Model):
 
             for entry in soup.find_all(attrs={"style": "padding-left:5px;"}):
                 if entry.text != "Date":
-                    result_datetime.append(datetime.strptime(entry.text, "%m/%d/%y"))
+                    result_datetime_time=timedelta(
+                        hours=datetime.now().hour,
+                        minutes=datetime.now().minute,
+                        seconds=datetime.now().second)
+                    result_datetime.append(datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time)
 
             if len(result_name) == len(result_href) and len(result_href) == len(result_datetime):
                 for num in range(0, len(result_name)):
@@ -263,8 +267,8 @@ class feedUpdate(models.Model):
             if not feedUpdate.objects.filter(
                 name=item.name,
                 href=item.href,
-                datetime=item.datetime,
-                title=item.title
+                # datetime=item.datetime,
+                # title=item.title
             ).exists():
                 #print(item)
                 item.save()
