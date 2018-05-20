@@ -27,17 +27,16 @@ class feedUpdate(models.Model):
 
         return result
 
-    feeds = {
-
         '''
-        
+    
         '': {
             'title_full': '',
             'href': ''
         },
-        
+    
         '''
-        
+
+    feeds = {
         # reading
         #'Система': {
         #    'title_full': 'Система Богов и Демонов',
