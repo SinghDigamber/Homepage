@@ -151,6 +151,30 @@ class feedUpdate(models.Model):
             'title_full': 'Francis Cade',
             'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA'
         },
+        'Raquel': {
+            'title_full': 'Raquel Reed',
+            'href': 'https://www.youtube.com/channel/UCcSow8gRPkLK0u-1pLMkZsw'
+        },
+        'NurkFPV': {
+            'title_full': 'Nurk FPV',
+            'href': 'https://www.youtube.com/channel/UCPCc4i_lIw-fW9oBXh6yTnw'
+        },
+        'PostMortem': {
+            'title_full': 'Post-Mortem Photography',
+            'href': 'https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA'
+        },
+        'VergeYT': {
+            'title_full': 'The Verge - YouTube',
+            'href': 'https://www.youtube.com/channel/UCddiUEpeqJcYeBxX1IVBKvQ'
+        },
+        'mono': {
+            'title_full': 'monobank',
+            'href': 'https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg'
+        },
+        'Yakushev': {
+            'title_full': 'Andrei Yakushev',
+            'href': 'https://www.youtube.com/channel/UCfA7eqgBGvJuBcMS8PDFjcg'
+        },
 
         # news websites
         #'Verge': {
