@@ -8,6 +8,18 @@ import json
 import urllib.request
 # Create your models here.
 
+class feed(models.Model):
+    class Meta:
+        ordering = ['href']
+    title = models.CharField(max_length=40)
+    title_full = models.CharField(max_length=140)
+    href = models.CharField(max_length=300)
+
+    tags = models.CharField(max_length=140)
+    type = models.CharField(max_length=140)  # options
+    status = models.CharField(max_length=140)  # options
+
+
 
 class feedUpdate(models.Model):
     class Meta:
@@ -120,14 +132,14 @@ class feedUpdate(models.Model):
             'title_full': 'Тинькофф-Журнал',
             'href': 'https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA'
         },
-        'Cosplay01': {
-            'title_full': 'bky guy',
-            'href': 'https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg'
-        },
-        'Cosplay02': {
-            'title_full': 'Herzlocast',
-            'href': 'https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ'
-        },
+        #'Cosplay01': {
+        #    'title_full': 'bky guy',
+        #    'href': 'https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg'
+        #},
+        #'Cosplay02': {
+        #    'title_full': 'Herzlocast',
+        #    'href': 'https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ'
+        #},
         'Астамуринг': {
             'title_full': 'Астамуринг',
             'href': 'https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A'
@@ -136,10 +148,10 @@ class feedUpdate(models.Model):
             'title_full': 'Зе Интервьюер',
             'href': 'https://www.youtube.com/channel/UCuWDlf53jjxti-aUA4tBdsA'
         },
-        'Банкир': {
-            'title_full': 'Бегущий Банкир',
-            'href': 'https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw'
-        },
+        #'Банкир': {
+        #    'title_full': 'Бегущий Банкир',
+        #    'href': 'https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw'
+        #},
         'Навальный': {
             'title_full': 'Алексей Навальный',
             'href': 'https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A'
@@ -184,6 +196,18 @@ class feedUpdate(models.Model):
             'title_full': 'Andrei Yakushev',
             'href': 'https://www.youtube.com/channel/UCfA7eqgBGvJuBcMS8PDFjcg'
         },
+        "ПланетаКино": {
+            'title_full': "Планета Кино",
+            'href': 'https://www.youtube.com/channel/UCrR7GJSvz481CxHQn-yXHJw'
+        },
+        "MLewin": {
+            'title_full': "Michelle Lewin",
+            'href': "https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w"
+        },
+        "AdventureTeam": {
+            'title_full': "Adventure Team",
+            'href': "https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q"
+        },
 
         # news websites
         #'Verge': {
@@ -195,7 +219,7 @@ class feedUpdate(models.Model):
         'Anidub': {
             'title_full': 'Anidub online',
             'href': 'feed:https://online.anidub.com/rss.xml'
-        }
+        },
     }
 
     def list(feedName):
@@ -298,7 +322,7 @@ class feedUpdate(models.Model):
 
         for item in items:
             if not feedUpdate.objects.filter(
-                name=item.name,
+                # name=item.name,
                 href=item.href,
                 # datetime=item.datetime,
                 # title=item.title
