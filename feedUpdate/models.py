@@ -208,6 +208,14 @@ class feedUpdate(models.Model):
             'title_full': "Adventure Team",
             'href': "https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q"
         },
+        'Хач': {
+            'title_full': 'ДНЕВНИК ХАЧА',
+            'href': 'https://www.youtube.com/channel/UCnbxcA3kZ_uUYIBHNvxpDQw'
+        },
+        'ЧумацкийВелопробег': {
+            'title_full': 'Чумацкий путь в Америку - велопробег',
+            'href': 'https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA'
+        },
 
         # news websites
         #'Verge': {
