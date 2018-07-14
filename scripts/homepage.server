@@ -1,4 +1,13 @@
 #!/bin/sh
+### BEGIN INIT INFO
+# Provides:          homepage.server
+# Required-Start:
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      1 0 6
+# Short-Description: ...
+# Description: ...
+### END INIT INFO
 
 git clone https://github.com/olehkrupko/Homepage /home/pi/Projects/Homepage
 cd /home/pi/Projects/Homepage
