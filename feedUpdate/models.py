@@ -233,7 +233,7 @@ class feedUpdate(models.Model):
 
         # shows
         'Anidub': {
-            'title_full': 'Anidub online',
+            'title_full': 'Anidub Online',
             'href': 'feed:https://online.anidub.com/rss.xml'
         },
     }
