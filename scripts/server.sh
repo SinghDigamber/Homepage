@@ -18,7 +18,8 @@ sudo python3 -m pip install feedparser # rss parser
 rm -rf /home/pi/Projects/Homepage
 git clone https://github.com/OlehKrupko/Homepage /home/pi/Projects/Homepage
 
-sudo cp ~/Projects/Homepage/scripts/homepage.* /etc/init.d/
+sudo cp ~/Projects/Homepage/scripts/homepage.server /etc/init.d/
+sudo cp ~/Projects/Homepage/scripts/homepage.watcher /etc/init.d/
 # sudo chmod ugo+x /etc/init.d/server-django.sh
 # sudo chmod ugo+x /etc/init.d/server-django-cacher.sh
 
