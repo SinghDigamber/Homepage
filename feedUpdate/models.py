@@ -208,6 +208,22 @@ class feedUpdate(models.Model):
             'title_full': "Adventure Team",
             'href': "https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q"
         },
+        "OverwatchRU": {
+            'title_full': "Overwatch RU",
+            'href': "https://www.youtube.com/channel/UCpW84gDcZu8wNQ-tUO5qE6A"
+        },
+        "cherrycrush": {
+            'title_full': "My Cherry Crush",
+            'href': "https://www.youtube.com/channel/UC4lkVwG5XViZuoRrjdUqEeA"
+        },
+        "Cosplay03": {
+            'title_full': "Milligan Vick",
+            'href': "https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg"
+        },
+        "Snazzy": {
+            'title_full': "Snazzy Labs",
+            'href': "https://www.youtube.com/channel/UCO2x-p9gg9TLKneXlibGR7w"
+        },
 
         # news websites
         #'Verge': {
