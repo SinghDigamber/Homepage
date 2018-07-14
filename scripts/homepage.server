@@ -9,7 +9,6 @@
 # Description: ...
 ### END INIT INFO
 
-git clone https://github.com/olehkrupko/Homepage /home/pi/Projects/Homepage
 cd /home/pi/Projects/Homepage
 git pull
 python3 /home/pi/Projects/Homepage/manage.py runserver 192.168.1.201:8000
