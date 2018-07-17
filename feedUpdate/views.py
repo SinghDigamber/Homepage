@@ -60,7 +60,7 @@ class feedUpdateIndexView(ListView):
             'multibook': multibook,
         }
 
-class feedUpdateIndexAllView(ListView):
+class feedUpdateIndexMoreView(ListView):
     model = feedUpdate
     template_name = "feedUpdate/index.html"
     context_object_name = "list"
@@ -77,7 +77,7 @@ class feedUpdateIndexAllView(ListView):
                     header = feedUpdate.feeds[header]['title_full']
                 feeds = list(feedUpdate.objects.filter(title__in=header.split("+")))
         except KeyError:
-            feeds = list(feedUpdate.objects.all())
+            feeds = list(feedUpdate.objects.all()[:420])
 
         return {
             'title': header,
