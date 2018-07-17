@@ -60,6 +60,31 @@ class feedUpdateIndexView(ListView):
             'multibook': multibook,
         }
 
+class feedUpdateIndexAllView(ListView):
+    model = feedUpdate
+    template_name = "feedUpdate/index.html"
+    context_object_name = "list"
+
+    def get_queryset(self):
+        header = "Обновления"
+        multibook = True
+
+        try:
+            if self.kwargs['feeds'] != "":
+                header = self.kwargs['feeds']
+                if len(header.split("+")) == 1:
+                    multibook = False
+                    header = feedUpdate.feeds[header]['title_full']
+                feeds = list(feedUpdate.objects.filter(title__in=header.split("+")))
+        except KeyError:
+            feeds = list(feedUpdate.objects.all())
+
+        return {
+            'title': header,
+            'chapters': feeds,
+            'multibook': multibook,
+        }
+
 class feedUpdateCacheView(ListView):
     model = feedUpdate
     template_name = "feedUpdate/cached.html"
