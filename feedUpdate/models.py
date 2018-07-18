@@ -62,10 +62,12 @@ class feedUpdate(models.Model):
             'title_full': 'Heaven Defying Evil God (ENG)',
             'href': 'https://www.novelupdates.com/series/against-the-gods/'
         },
-        'Скульптор': {
-            'title_full': 'Легендарный Лунный Скульптор',
-            'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
-        },
+        # TEMP
+        # TODO: enable it back
+        #'Скульптор': {
+        #    'title_full': 'Легендарный Лунный Скульптор',
+        #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
+        #},
         'Gamer': {
             'title_full': 'The Gamer',
             'href': 'feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88'
