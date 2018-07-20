@@ -102,8 +102,8 @@ class feedUpdate(models.Model):
             'title_full': 'Linus Tech Tips',
             'href': 'https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw'
         },
-        'LinusLinked': {
-            'title_full': 'Linus Tech Linked',
+        'TechLinked': {
+            'title_full': 'Tech Linked',
             'href': 'https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA'
         },
         'PRIME': {
