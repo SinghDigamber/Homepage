@@ -234,6 +234,54 @@ class feedUpdate(models.Model):
             'title_full': 'Чумацкий путь в Америку - велопробег',
             'href': 'https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA'
         },
+        'Шелягина': {
+            'title_full': 'Наташа Шелягина',
+            'href': 'https://www.youtube.com/channel/UC97y3hRp4lfOhAZpuSbYruQ'
+        },
+        'GMBNTech': {
+            'title_full': 'GMBN Tech',
+            'href': 'https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ'
+        },
+        'GMBN': {
+            'title_full': 'GMBN',
+            'href': 'https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg'
+        },
+        'ArhyBES': {
+            'title_full': 'ArhyBES',
+            'href': 'https://www.youtube.com/channel/UCby5ZKyxiSW3dz_Kg5VDU9w'
+        },
+        'Blackpack': {
+            'title_full': 'Blackpack',
+            'href': 'https://www.youtube.com/channel/UChXHexCL-d0538NwLClRDJQ'
+        },
+        'Сыендук': {
+            'title_full': 'Сыендук',
+            'href': 'https://www.youtube.com/channel/UC-b89a0Fw6pNoP-g-_qLeiw'
+        },
+        'Veddro': {
+            'title_full': 'Veddro.com',
+            'href': 'https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ'
+        },
+        'Ленинград': {
+            'title_full': 'Ленинград',
+            'href': 'https://www.youtube.com/channel/UCY0C6A3t3RTUN3BB65rWAgQ'
+        },
+        'BadComedian': {
+            'title_full': '[BadComedian]',
+            'href': 'https://www.youtube.com/channel/UC6cqazSR6CnVMClY0bJI0Lg'
+        },
+        'MKBHD': {
+            'title_full': 'Marques Brownlee',
+            'href': 'https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ'
+        },
+        'Corridor': {
+            'title_full': 'Corridor Digital',
+            'href': 'https://www.youtube.com/channel/UCsn6cjffsvyOZCZxvGoJxGg'
+        },
+        'KymNonStop': {
+            'title_full': 'KymNonStop',
+            'href': 'https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w'
+        },
 
         # news websites
         #'Verge': {
