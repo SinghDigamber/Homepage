@@ -64,10 +64,10 @@ class feedUpdate(models.Model):
         },
         # TEMP
         # TODO: enable it back
-        #'Скульптор': {
-        #    'title_full': 'Легендарный Лунный Скульптор',
-        #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
-        #},
+        'Скульптор': {
+            'title_full': 'Легендарный Лунный Скульптор',
+            'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
+        },
         'Gamer': {
             'title_full': 'The Gamer',
             'href': 'feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88'
@@ -252,8 +252,9 @@ class feedUpdate(models.Model):
         result = []
 
         # ранобэ.рф API import
+        # TODO: stupid workaround as API will be closed
         if feedUpdate.feeds[feedName]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            request = "http://xn--80ac9aeh6f.xn--p1ai/v1/book/load/?book_alias="+feedUpdate.feeds[feedName]['href'][31:-1]
+            request = "https://xn--80ac9aeh6f.xn--p1ai/v1/book/get/?bookAlias="+feedUpdate.feeds[feedName]['href'][31:-1]
             request = requests.get(request).json()  # 0.4 seconds
 
             for part in request['result']['parts']:
