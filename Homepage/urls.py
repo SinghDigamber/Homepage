@@ -23,10 +23,10 @@ urlpatterns = [
 
     # main
     #url(r'^', include('feedUpdate.urls', namespace="dashboard")),
+
+    # modules
     url(r'^feedUpdate/', include('feedUpdate.urls',
         namespace="feedUpdate")),
-
-    # custom
 
     # permanent
     url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
