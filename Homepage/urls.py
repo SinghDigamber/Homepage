@@ -27,12 +27,14 @@ urlpatterns = [
         namespace="feedUpdate")),
 
     # custom
-    url(r'^university_TItaP/', include('university_TItaP.urls',
-        namespace="university_TItaP")),
 
     # permanent
     url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
         permanent=True), name="Trakt"),
     url(r'^Github/$', RedirectView.as_view(url='https://github.com/OlehKrupko/Homepage',
         permanent=True), name="GitHub"),
+
+    # extra
+    url(r'^university_TItaP/', include('university_TItaP.urls',
+        namespace="university_TItaP")),
 ]
