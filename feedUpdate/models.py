@@ -62,8 +62,6 @@ class feedUpdate(models.Model):
             'title_full': 'Heaven Defying Evil God (ENG)',
             'href': 'https://www.novelupdates.com/series/against-the-gods/'
         },
-        # TEMP
-        # TODO: enable it back
         'Скульптор': {
             'title_full': 'Легендарный Лунный Скульптор',
             'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
@@ -294,6 +292,30 @@ class feedUpdate(models.Model):
             'title_full': 'Anidub Online',
             'href': 'feed:https://online.anidub.com/rss.xml'
         },
+        'Gam3': {
+            'title_full': 'The Gam3',
+            'href': 'feed:https://thegam3.com/feed/'
+        },
+        'Jago': {
+            'title_full': 'Jagodibuja',
+            'href': 'feed://www.jagodibuja.com/feed/'
+        },
+        'vas3k': {
+            'title_full': 'vas3k.ru',
+            'href': 'feed:https://vas3k.ru/rss/'
+        },
+        'DisgustingMen': {
+            'title_full': 'Disgusting Men',
+            'href': 'feed:https://disgustingmen.com/feed/'
+        },
+        'XKCD': {
+            'title_full': 'XKCD',
+            'href': 'https://xkcd.com/rss.xml'
+        },
+        'КабМин': {
+            'title_full': 'Кабинет Министров Украины',
+            'href': 'https://www.kmu.gov.ua/api/rss'
+        },
     }
 
     def list(feedName):
@@ -388,6 +410,72 @@ class feedUpdate(models.Model):
                         href=result_href[num],
                         datetime=result_datetime[num],
                         title=feedName))
+
+        # TheGam3.com import
+        elif feedUpdate.feeds[feedName]['href'].find('feed:https://thegam3.com/feed/') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+            for item in feed["items"]:
+                result.append(feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
+                    title=feedName))
+
+        # jagodibuja import
+        elif feedUpdate.feeds[feedName]['href'].find('feed://www.jagodibuja.com/feed/') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+            for item in feed["items"]:
+                result.append(feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
+                    title=feedName))
+
+        # vas3k.ru import
+        elif feedUpdate.feeds[feedName]['href'].find('feed:https://vas3k.ru/rss/') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+            for item in feed["items"]:
+                result.append(feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
+                    title=feedName))
+
+        # disgustingmen.com import
+        elif feedUpdate.feeds[feedName]['href'].find('feed:https://disgustingmen.com/feed/') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+            for item in feed["items"]:
+                result.append(feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
+                    title=feedName))
+
+        # xkcd.com import
+        elif feedUpdate.feeds[feedName]['href'].find('https://xkcd.com/rss.xml') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+            for item in feed["items"]:
+                result.append(feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S -0000'),
+                    title=feedName))
+
+        # kmu.gov.ua import
+        elif feedUpdate.feeds[feedName]['href'].find('https://www.kmu.gov.ua/api/rss') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+            for item in feed["items"]:
+                result.append(feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0300'),
+                    title=feedName))
 
         return result
 
