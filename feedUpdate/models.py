@@ -379,8 +379,7 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["updated"],'%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=6),
                     title=feedName))
 
-
-        # YouTube import
+        # RSS YouTube import
         elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
             feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
                                     +feedUpdate.feeds[feedName]['href'][32:])
@@ -423,7 +422,7 @@ class feedUpdate(models.Model):
                         datetime=result_datetime[num],
                         title=feedName))
 
-        # TheGam3.com import
+        # RSS TheGam3.com import
         elif feedUpdate.feeds[feedName]['href'].find('feed:https://thegam3.com/feed/') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
@@ -434,7 +433,7 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
                     title=feedName))
 
-        # jagodibuja import
+        # RSS jagodibuja import
         elif feedUpdate.feeds[feedName]['href'].find('feed://www.jagodibuja.com/feed/') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
@@ -445,7 +444,7 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
                     title=feedName))
 
-        # vas3k.ru import
+        # RSS vas3k.ru import
         elif feedUpdate.feeds[feedName]['href'].find('feed:https://vas3k.ru/rss/') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
@@ -456,7 +455,7 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
                     title=feedName))
 
-        # disgustingmen.com import
+        # RSS disgustingmen.com import
         elif feedUpdate.feeds[feedName]['href'].find('feed:https://disgustingmen.com/feed/') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
@@ -467,7 +466,7 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
                     title=feedName))
 
-        # xkcd.com import
+        # RSS xkcd.com import
         elif feedUpdate.feeds[feedName]['href'].find('https://xkcd.com/rss.xml') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
@@ -478,7 +477,7 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S -0000'),
                     title=feedName))
 
-        # kmu.gov.ua import
+        # RSS kmu.gov.ua import
         elif feedUpdate.feeds[feedName]['href'].find('https://www.kmu.gov.ua/api/rss') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
