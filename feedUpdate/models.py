@@ -280,6 +280,18 @@ class feedUpdate(models.Model):
             'title_full': 'KymNonStop',
             'href': 'https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w'
         },
+        'devinsupertramp': {
+            'title_full': 'devinsupertramp',
+            'href': 'https://www.youtube.com/channel/UCwgURKfUA7e0Z7_qE3TvBFQ'
+        },
+        'IFHT': {
+            'title_full': 'IFHT Films',
+            'href': 'https://www.youtube.com/channel/UCTs59UCfP4YLUt6pDR_uLtg'
+        },
+        'Relaxation4K': {
+            'title_full': '4K Relaxation Channel',
+            'href': 'https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ'
+        },
 
         # news websites
         #'Verge': {
