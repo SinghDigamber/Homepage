@@ -502,7 +502,14 @@ class feedUpdate(models.Model):
                 resp = requests.get(feedUpdate.feeds[feedName]['href'])
                 soup = BeautifulSoup(resp.text, "html.parser")
 
-                print(resp, resp.text, soup)
+                log = feedUpdate(
+                    name="SUCCESS",
+                    href="#",
+                    datetime=str(datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
+                    title=feedName)
+                log.save()
+                #result.append(log)
+                #print(log)
 
                 for each in soup.find_all("item"):
                     result.append(feedUpdate(
