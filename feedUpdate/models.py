@@ -496,7 +496,9 @@ class feedUpdate(models.Model):
         elif feedUpdate.feeds[feedName]['href'].find('http://reflectivedesire.com/rss/') != -1:
             resp = requests.get(feedUpdate.feeds[feedName]['href'])
             soup = BeautifulSoup(resp.text, "html.parser")
-            
+
+            print(resp, resp.text, soup)
+
             for each in soup.find_all("item"):
                 result.append(feedUpdate(
                     name=each.find("title").string,
