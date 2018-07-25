@@ -330,7 +330,7 @@ class feedUpdate(models.Model):
         },
         'Reflective': {
             'title_full': 'Reflective Desire',
-            'href': 'https://reflectivedesire.com/rss/'
+            'href': 'http://reflectivedesire.com/rss/'
         },
     }
 
@@ -493,11 +493,10 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # RSS reflectivedesire.com import
-        elif feedUpdate.feeds[feedName]['href'].find('https://reflectivedesire.com/rss/') != -1:
-            #feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+        elif feedUpdate.feeds[feedName]['href'].find('http://reflectivedesire.com/rss/') != -1:
             resp = requests.get(feedUpdate.feeds[feedName]['href'])
             soup = BeautifulSoup(resp.text, "html.parser")
-
+            
             for each in soup.find_all("item"):
                 result.append(feedUpdate(
                     name=each.find("title").string,
