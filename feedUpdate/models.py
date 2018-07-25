@@ -292,6 +292,10 @@ class feedUpdate(models.Model):
             'title_full': '4K Relaxation Channel',
             'href': 'https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ'
         },
+        'LazySquare': {
+            'title_full': 'Lazy Square',
+            'href': 'https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw'
+        },
 
         # news websites
         #'Verge': {
