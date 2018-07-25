@@ -328,10 +328,10 @@ class feedUpdate(models.Model):
             'title_full': 'XKCD',
             'href': 'https://xkcd.com/rss.xml'
         },
-        'КабМин': {
-            'title_full': 'Кабинет Министров Украины',
-            'href': 'https://www.kmu.gov.ua/api/rss'
-        },
+        #'КабМин': {
+        #    'title_full': 'Кабинет Министров Украины',
+        #    'href': 'https://www.kmu.gov.ua/api/rss'
+        #},
         'Reflective': {
             'title_full': 'Reflective Desire',
             'href': 'https://reflectivedesire.com/rss/'
