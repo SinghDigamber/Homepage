@@ -328,6 +328,10 @@ class feedUpdate(models.Model):
             'title_full': 'Кабинет Министров Украины',
             'href': 'https://www.kmu.gov.ua/api/rss'
         },
+        'Reflective': {
+            'title_full': 'Reflective Desire',
+            'href': 'https://reflectivedesire.com/rss/'
+        },
     }
 
     def list(feedName):
@@ -488,6 +492,19 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0300'),
                     title=feedName))
 
+        # RSS reflectivedesire.com import
+        elif feedUpdate.feeds[feedName]['href'].find('https://reflectivedesire.com/rss/') != -1:
+            #feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+            resp = requests.get(feedUpdate.feeds[feedName]['href'])
+            soup = BeautifulSoup(resp.text, "html.parser")
+
+            for each in soup.find_all("item"):
+                result.append(feedUpdate(
+                    name=each.find("title").string,
+                    href=each.find("guid").string,
+                    datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700'),
+                    title=feedName))
+
         return result
 
     def cache():
@@ -518,7 +535,6 @@ class feedUpdate(models.Model):
         chapter_links = []
 
         for entry in soup.find_all('a'):
-
             if str(entry).find('strong') != -1:
                 chapter_names.append(entry.text)
 
