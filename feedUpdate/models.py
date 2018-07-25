@@ -494,17 +494,20 @@ class feedUpdate(models.Model):
 
         # RSS reflectivedesire.com import
         elif feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
-            resp = requests.get(feedUpdate.feeds[feedName]['href'])
-            soup = BeautifulSoup(resp.text, "html.parser")
+            try:
+                resp = requests.get(feedUpdate.feeds[feedName]['href'])
+                soup = BeautifulSoup(resp.text, "html.parser")
 
-            print(resp, resp.text, soup)
+                print(resp, resp.text, soup)
 
-            for each in soup.find_all("item"):
-                result.append(feedUpdate(
-                    name=each.find("title").string,
-                    href=each.find("guid").string,
-                    datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700'),
-                    title=feedName))
+                for each in soup.find_all("item"):
+                    result.append(feedUpdate(
+                        name=each.find("title").string,
+                        href=each.find("guid").string,
+                        datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700'),
+                        title=feedName))
+            except requests.exceptions.ConnectionError:
+                print("feedUpdate/feeds/Reflective: Connection refused")
 
         return result
 
