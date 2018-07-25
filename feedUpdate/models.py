@@ -296,6 +296,10 @@ class feedUpdate(models.Model):
             'title_full': 'Lazy Square',
             'href': 'https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw'
         },
+        'Zaddrot': {
+            'title_full': 'Zaddrot',
+            'href': 'https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg'
+        },
 
         # news websites
         #'Verge': {
