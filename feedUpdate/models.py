@@ -298,10 +298,10 @@ class feedUpdate(models.Model):
         },
 
         # news websites
-        'Verge': {
-            'title_full': 'The Verge',
-            'href': 'https://www.theverge.com/rss/index.xml'
-        },
+        #'Verge': {
+        #    'title_full': 'The Verge',
+        #    'href': 'https://www.theverge.com/rss/index.xml'
+        #},
 
         # shows
         'Anidub': {
