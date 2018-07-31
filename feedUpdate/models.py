@@ -34,7 +34,15 @@ class feedUpdate(models.Model):
     def multilist(items):
         result = []
         for item in items:
-            result.extend(feedUpdate.list(item))
+            try:
+                result.extend(feedUpdate.list(item))
+            except KeyError:
+                result.append(feedUpdate(
+                    name="not found in feeds",
+                    href="#",
+                    datetime=datetime.now()+timedelta(hours=-3),
+                    title=item))
+                print("item: not found in feeds")
 
         return result
 
