@@ -9,14 +9,13 @@ import urllib.request
 # Create your models here.
 
 class feed(models.Model):
-    class Meta:
-        ordering = ['href']
-    title = models.CharField(max_length=40)
+    #class Meta:
+    #    ordering = ['href']
+    title = models.CharField(max_length=42)
     title_full = models.CharField(max_length=140)
     href = models.CharField(max_length=300)
 
-    tags = models.CharField(max_length=140)
-    type = models.CharField(max_length=140)  # options
+    emojis = models.CharField(max_length=140)
     status = models.CharField(max_length=140)  # options
 
 
@@ -70,235 +69,233 @@ class feedUpdate(models.Model):
             'title_full': 'The Gamer',
             'href': 'feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88'
         },
-
-        # YouTube
         'Ляпота': {
             'title_full': "It's a good trip",
-            'href': 'https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w'
+            'href': 'https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w/videos'
         },
         'GCNTech': {
             'title_full': "GCN Tech",
-            'href': 'https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg'
+            'href': 'https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg/videos'
         },
         'GCN': {
             'title_full': "Global Cycling Network",
-            'href': 'https://www.youtube.com/channel/UCuTaETsuCOkJ0H_GAztWt0Q'
+            'href': 'https://www.youtube.com/channel/UCuTaETsuCOkJ0H_GAztWt0Q/videos'
         },
         'Keddr': {
             'title_full': 'Keddr.com',
-            'href': 'https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A'
+            'href': 'https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A/videos'
         },
         'Kurzgesagt': {
             'title_full': 'Kurzgesagt – In a Nutshell',
-            'href': 'https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q'
+            'href': 'https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q/videos'
         },
         'LastWeekTonight': {
             'title_full': 'Last Week Tonight',
-            'href': 'https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ'
+            'href': 'https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ/videos'
         },
         'Linus': {
             'title_full': 'Linus Tech Tips',
-            'href': 'https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw'
+            'href': 'https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw/videos'
         },
         'TechLinked': {
             'title_full': 'Tech Linked',
-            'href': 'https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA'
+            'href': 'https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA/videos'
         },
         'PRIME': {
             'title_full': 'PRIME ORCHESTRA',
-            'href': 'https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw'
+            'href': 'https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw/videos'
         },
         #'UnboxTherapy': {
         #    'title_full': 'Unbox Therapy',
-        #    'href': 'https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw'
+        #    'href': 'https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw/videos'
         #},
         'Wylsa': {
             'title_full': 'Wylsacom',
-            'href': 'https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA'
+            'href': 'https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA/videos'
         },
         'Jannet': {
             'title_full': 'Jannet Incosplay',
-            'href': 'https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ'
+            'href': 'https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos'
         },
         'Nigri': {
             'title_full': 'Jessica Nigri',
-            'href': 'https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg'
+            'href': 'https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg/videos'
         },
         'КременюкИ': {
             'title_full': 'КременюкИ',
-            'href': 'https://www.youtube.com/channel/UCgLQh3fGZmfgbJ8D_sry-kA'
+            'href': 'https://www.youtube.com/channel/UCgLQh3fGZmfgbJ8D_sry-kA/videos'
         },
         'Тинькофф': {
             'title_full': 'Тинькофф-Журнал',
-            'href': 'https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA'
+            'href': 'https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA/videos'
         },
         #'Cosplay01': {
         #    'title_full': 'bky guy',
-        #    'href': 'https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg'
+        #    'href': 'https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos'
         #},
         #'Cosplay02': {
         #    'title_full': 'Herzlocast',
-        #    'href': 'https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ'
+        #    'href': 'https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos'
         #},
         'Астамуринг': {
             'title_full': 'Астамуринг',
-            'href': 'https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A'
+            'href': 'https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A/videos'
         },
         'Интервьюер': {
             'title_full': 'Зе Интервьюер',
-            'href': 'https://www.youtube.com/channel/UCuWDlf53jjxti-aUA4tBdsA'
+            'href': 'https://www.youtube.com/channel/UCuWDlf53jjxti-aUA4tBdsA/videos'
         },
         #'Банкир': {
         #    'title_full': 'Бегущий Банкир',
-        #    'href': 'https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw'
+        #    'href': 'https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw/videos'
         #},
         'Навальный': {
             'title_full': 'Алексей Навальный',
-            'href': 'https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A'
+            'href': 'https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A/videos'
         },
         'Rapha': {
             'title_full': 'Rapha Films',
-            'href': 'https://www.youtube.com/channel/UCXYXxfVjxMppZY64-5baOsw'
+            'href': 'https://www.youtube.com/channel/UCXYXxfVjxMppZY64-5baOsw/videos'
         },
         'MarkFood': {
             'title_full': 'Mark Wiens - Hungry tourist',
-            'href': 'https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA'
+            'href': 'https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos'
         },
         'Kaufman': {
             'title_full': 'Ron Kaufman',
-            'href': 'https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q'
+            'href': 'https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos'
         },
         'FCade': {
             'title_full': 'Francis Cade',
-            'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA'
+            'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA/videos'
         },
         'Raquel': {
             'title_full': 'Raquel Reed',
-            'href': 'https://www.youtube.com/channel/UCcSow8gRPkLK0u-1pLMkZsw'
+            'href': 'https://www.youtube.com/channel/UCcSow8gRPkLK0u-1pLMkZsw/videos'
         },
         'NurkFPV': {
             'title_full': 'Nurk FPV',
-            'href': 'https://www.youtube.com/channel/UCPCc4i_lIw-fW9oBXh6yTnw'
+            'href': 'https://www.youtube.com/channel/UCPCc4i_lIw-fW9oBXh6yTnw/videos'
         },
         'PostMortem': {
             'title_full': 'Post-Mortem Photography',
-            'href': 'https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA'
+            'href': 'https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA/videos'
         },
         'VergeYT': {
             'title_full': 'The Verge - YouTube',
-            'href': 'https://www.youtube.com/channel/UCddiUEpeqJcYeBxX1IVBKvQ'
+            'href': 'https://www.youtube.com/channel/UCddiUEpeqJcYeBxX1IVBKvQ/videos'
         },
         'mono': {
             'title_full': 'monobank',
-            'href': 'https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg'
+            'href': 'https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg/videos'
         },
         'Yakushev': {
             'title_full': 'Andrei Yakushev',
-            'href': 'https://www.youtube.com/channel/UCfA7eqgBGvJuBcMS8PDFjcg'
+            'href': 'https://www.youtube.com/channel/UCfA7eqgBGvJuBcMS8PDFjcg/videos'
         },
         "ПланетаКино": {
             'title_full': "Планета Кино",
-            'href': 'https://www.youtube.com/channel/UCrR7GJSvz481CxHQn-yXHJw'
+            'href': 'https://www.youtube.com/channel/UCrR7GJSvz481CxHQn-yXHJw/videos'
         },
         "MLewin": {
             'title_full': "Michelle Lewin",
-            'href': "https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w"
+            'href': "https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos"
         },
         "AdventureTeam": {
             'title_full': "Adventure Team",
-            'href': "https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q"
+            'href': "https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q/videos"
         },
         "OverwatchRU": {
             'title_full': "Overwatch RU",
-            'href': "https://www.youtube.com/channel/UCpW84gDcZu8wNQ-tUO5qE6A"
+            'href': "https://www.youtube.com/channel/UCpW84gDcZu8wNQ-tUO5qE6A/videos"
         },
         "cherrycrush": {
             'title_full': "My Cherry Crush",
-            'href': "https://www.youtube.com/channel/UC4lkVwG5XViZuoRrjdUqEeA"
+            'href': "https://www.youtube.com/channel/UC4lkVwG5XViZuoRrjdUqEeA/videos"
         },
         "Cosplay03": {
             'title_full': "Milligan Vick",
-            'href': "https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg"
+            'href': "https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos"
         },
         "Snazzy": {
             'title_full': "Snazzy Labs",
-            'href': "https://www.youtube.com/channel/UCO2x-p9gg9TLKneXlibGR7w"
+            'href': "https://www.youtube.com/channel/UCO2x-p9gg9TLKneXlibGR7w/videos"
         },
         'Хач': {
             'title_full': 'ДНЕВНИК ХАЧА',
-            'href': 'https://www.youtube.com/channel/UCnbxcA3kZ_uUYIBHNvxpDQw'
+            'href': 'https://www.youtube.com/channel/UCnbxcA3kZ_uUYIBHNvxpDQw/videos'
         },
         'ЧумацкийВелопробег': {
             'title_full': 'Чумацкий путь в Америку - велопробег',
-            'href': 'https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA'
+            'href': 'https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA/videos'
         },
         'Шелягина': {
             'title_full': 'Наташа Шелягина',
-            'href': 'https://www.youtube.com/channel/UC97y3hRp4lfOhAZpuSbYruQ'
+            'href': 'https://www.youtube.com/channel/UC97y3hRp4lfOhAZpuSbYruQ/videos'
         },
         'GMBNTech': {
             'title_full': 'GMBN Tech',
-            'href': 'https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ'
+            'href': 'https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ/videos'
         },
         'GMBN': {
             'title_full': 'GMBN',
-            'href': 'https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg'
+            'href': 'https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos'
         },
         'ArhyBES': {
             'title_full': 'ArhyBES',
-            'href': 'https://www.youtube.com/channel/UCby5ZKyxiSW3dz_Kg5VDU9w'
+            'href': 'https://www.youtube.com/channel/UCby5ZKyxiSW3dz_Kg5VDU9w/videos'
         },
         'Blackpack': {
             'title_full': 'Blackpack',
-            'href': 'https://www.youtube.com/channel/UChXHexCL-d0538NwLClRDJQ'
+            'href': 'https://www.youtube.com/channel/UChXHexCL-d0538NwLClRDJQ/videos'
         },
         'Сыендук': {
             'title_full': 'Сыендук',
-            'href': 'https://www.youtube.com/channel/UC-b89a0Fw6pNoP-g-_qLeiw'
+            'href': 'https://www.youtube.com/channel/UC-b89a0Fw6pNoP-g-_qLeiw/videos'
         },
         'Veddro': {
             'title_full': 'Veddro.com',
-            'href': 'https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ'
+            'href': 'https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos'
         },
         'Ленинград': {
             'title_full': 'Ленинград',
-            'href': 'https://www.youtube.com/channel/UCY0C6A3t3RTUN3BB65rWAgQ'
+            'href': 'https://www.youtube.com/channel/UCY0C6A3t3RTUN3BB65rWAgQ/videos'
         },
         'BadComedian': {
             'title_full': '[BadComedian]',
-            'href': 'https://www.youtube.com/channel/UC6cqazSR6CnVMClY0bJI0Lg'
+            'href': 'https://www.youtube.com/channel/UC6cqazSR6CnVMClY0bJI0Lg/videos'
         },
         'MKBHD': {
             'title_full': 'Marques Brownlee',
-            'href': 'https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ'
+            'href': 'https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ/videos'
         },
         'Corridor': {
             'title_full': 'Corridor Digital',
-            'href': 'https://www.youtube.com/channel/UCsn6cjffsvyOZCZxvGoJxGg'
+            'href': 'https://www.youtube.com/channel/UCsn6cjffsvyOZCZxvGoJxGg/videos'
         },
         'KymNonStop': {
             'title_full': 'KymNonStop',
-            'href': 'https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w'
+            'href': 'https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w/videos'
         },
         'devinsupertramp': {
             'title_full': 'devinsupertramp',
-            'href': 'https://www.youtube.com/channel/UCwgURKfUA7e0Z7_qE3TvBFQ'
+            'href': 'https://www.youtube.com/channel/UCwgURKfUA7e0Z7_qE3TvBFQ/videos'
         },
         'IFHT': {
             'title_full': 'IFHT Films',
-            'href': 'https://www.youtube.com/channel/UCTs59UCfP4YLUt6pDR_uLtg'
+            'href': 'https://www.youtube.com/channel/UCTs59UCfP4YLUt6pDR_uLtg/videos'
         },
         'Relaxation4K': {
             'title_full': '4K Relaxation Channel',
-            'href': 'https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ'
+            'href': 'https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ/videos'
         },
         'LazySquare': {
             'title_full': 'Lazy Square',
-            'href': 'https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw'
+            'href': 'https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw/videos'
         },
         'Zaddrot': {
             'title_full': 'Zaddrot',
-            'href': 'https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg'
+            'href': 'https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos'
         },
 
         # news websites
@@ -394,7 +391,7 @@ class feedUpdate(models.Model):
         # RSS YouTube import
         elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
             feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
-                                    +feedUpdate.feeds[feedName]['href'][32:])
+                +feedUpdate.feeds[feedName]['href'][32:-7])
 
             for item in feed["items"]:
                 result.append(feedUpdate(
