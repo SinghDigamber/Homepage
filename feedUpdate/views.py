@@ -88,6 +88,7 @@ class feedUpdateIndexMoreView(ListView):
             'multibook': multibook,
         }
 
+# TODO: fully remove accessing it by switching caching to shell script
 class feedUpdateCacheView(ListView):
     model = feedUpdate
     template_name = "feedUpdate/cached.html"
