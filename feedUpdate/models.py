@@ -487,7 +487,19 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # RSS reflectivedesire.com import
-        elif feedUpdate.feeds[feedName]['href'].find('eflectivedesire.com/rss/') != -1:
+        elif feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
+            resp = requests.get(feedUpdate.feeds[feedName]['href'])
+            soup = BeautifulSoup(resp.text, "html.parser")
+
+            #print(soup)
+            for each in soup.find_all("item"):
+                result.append(feedUpdate(
+                    name=each.find("title").string,
+                    href=each.find("guid").string,
+                    datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700'),
+                    title=feedName))
+
+        ''' elif feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
             for item in feed["items"]:
