@@ -61,6 +61,10 @@ class feedUpdate(models.Model):
             'title_full': 'Heaven Defying Evil God (ENG)',
             'href': 'https://www.novelupdates.com/series/against-the-gods/'
         },
+        'Renegade': {
+            'title_full': 'Renegade Immortal',
+            'href': 'https://www.novelupdates.com/series/renegade-immortal/'
+        },
         'Скульптор': {
             'title_full': 'Легендарный Лунный Скульптор',
             'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
@@ -296,6 +300,10 @@ class feedUpdate(models.Model):
         'Zaddrot': {
             'title_full': 'Zaddrot',
             'href': 'https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos'
+        },
+        'Notordinarytravel': {
+            'title_full': 'Get out from the ordinary travel ',
+            'href': 'https://www.youtube.com/channel/UCY5X52SAYFz3nejVwvjf9gg/videos'
         },
 
         # news websites
