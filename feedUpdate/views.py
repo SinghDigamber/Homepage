@@ -11,7 +11,7 @@ class feedUpdateForceIndexView(ListView):
     context_object_name = "list"
 
     def get_queryset(self):
-        header = "Forced!"
+        header = "Обновления: Forced"
         multibook = True
 
         try:
@@ -22,6 +22,7 @@ class feedUpdateForceIndexView(ListView):
                 items = items.split("+")
                 if len(items) == 1:
                     multibook = False
+                    header = feedUpdate.feeds[header]['title_full']
         except KeyError:
             items = feedUpdate.feeds.keys()
 
@@ -30,10 +31,9 @@ class feedUpdateForceIndexView(ListView):
 
         return {
             'title': header,
-            'chapters': items,
+            'items': items,
             'multibook': multibook
         }
-
 
 class feedUpdateIndexView(ListView):
     model = feedUpdate
@@ -41,6 +41,7 @@ class feedUpdateIndexView(ListView):
     context_object_name = "list"
 
     def get_queryset(self):
+        items_limit = 42
         header = "Обновления"
         multibook = True
 
@@ -50,22 +51,24 @@ class feedUpdateIndexView(ListView):
                 if len(header.split("+")) == 1:
                     multibook = False
                     header = feedUpdate.feeds[header]['title_full']
-                feeds = list(feedUpdate.objects.filter(title__in=header.split("+")))
+                items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
         except KeyError:
-            feeds = list(feedUpdate.objects.all()[:42])
+            items = list(feedUpdate.objects.all()[:items_limit])
 
         return {
             'title': header,
-            'chapters': feeds,
+            'items': items,
             'multibook': multibook,
         }
 
+# full feedUpdateIndexView copy except for number of items returned (420, not 42)
 class feedUpdateIndexMoreView(ListView):
     model = feedUpdate
     template_name = "feedUpdate/index.html"
     context_object_name = "list"
 
     def get_queryset(self):
+        items_limit = 420
         header = "Обновления"
         multibook = True
 
@@ -75,13 +78,13 @@ class feedUpdateIndexMoreView(ListView):
                 if len(header.split("+")) == 1:
                     multibook = False
                     header = feedUpdate.feeds[header]['title_full']
-                feeds = list(feedUpdate.objects.filter(title__in=header.split("+")))
+                items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
         except KeyError:
-            feeds = list(feedUpdate.objects.all()[:420])
+            items = list(feedUpdate.objects.all()[:items_limit])
 
         return {
             'title': header,
-            'chapters': feeds,
+            'items': items,
             'multibook': multibook,
         }
 

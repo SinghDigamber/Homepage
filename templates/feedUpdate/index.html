@@ -6,7 +6,7 @@
     <div id="chapters">
         <h1>{{ list.title }}</h1>
 
-        {% for chapter in list.chapters %}
+        {% for chapter in list.items %}
             <div id="chapters">
                 <b class="pointer">» </b>
                 <a target="_blank" href="{{ chapter.href }}">
