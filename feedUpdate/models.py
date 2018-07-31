@@ -46,14 +46,6 @@ class feedUpdate(models.Model):
 
         return result
 
-        '''
-    
-        '': {
-            'title_full': '',
-            'href': ''
-        },
-    
-        '''
 
     feeds = {
         # reading
