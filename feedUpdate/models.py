@@ -338,7 +338,7 @@ class feedUpdate(models.Model):
         #},
         'Reflective': {
             'title_full': 'Reflective Desire',
-            'href': 'https://reflectivedesire.com/rss/'
+            'href': 'feed:https://reflectivedesire.com/rss/'
         },
     }
 
@@ -501,7 +501,18 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # RSS reflectivedesire.com import
-        elif feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
+        elif feedUpdate.feeds[feedName]['href'].find('eflectivedesire.com/rss/') != -1:
+            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+            for item in feed["items"]:
+                result.append(feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S -0700'),
+                    title=feedName))
+
+        # RSS reflectivedesire.com import manual workaround
+        ''' elif feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
             try:
                 resp = requests.get(feedUpdate.feeds[feedName]['href'])
                 soup = BeautifulSoup(resp.text, "html.parser")
@@ -522,7 +533,7 @@ class feedUpdate(models.Model):
                         datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700'),
                         title=feedName))
             except requests.exceptions.ConnectionError:
-                print("feedUpdate/feeds/Reflective: Connection refused")
+                print("feedUpdate/feeds/Reflective: Connection refused") '''
 
         return result
 
