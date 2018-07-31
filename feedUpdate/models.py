@@ -46,17 +46,7 @@ class feedUpdate(models.Model):
 
         return result
 
-
     feeds = {
-        # reading
-        #'Система': {
-        #    'title_full': 'Система Богов и Демонов',
-        #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/mir-boga-i-dyavola/'
-        # },
-        #'EvilGod': {
-        #    'title_full': 'Heaven Defying Evil God',
-        #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/against-the-gods/'
-        #},
         'EvilGod': {
             'title_full': 'Heaven Defying Evil God',
             'href': 'https://www.novelupdates.com/series/against-the-gods/'
