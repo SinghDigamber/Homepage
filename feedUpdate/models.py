@@ -57,8 +57,8 @@ class feedUpdate(models.Model):
         #    'title_full': 'Heaven Defying Evil God',
         #    'href': 'http://xn--80ac9aeh6f.xn--p1ai/against-the-gods/'
         #},
-        'EvilGodENG': {
-            'title_full': 'Heaven Defying Evil God (ENG)',
+        'EvilGod': {
+            'title_full': 'Heaven Defying Evil God',
             'href': 'https://www.novelupdates.com/series/against-the-gods/'
         },
         'Renegade': {
@@ -306,11 +306,7 @@ class feedUpdate(models.Model):
             'href': 'https://www.youtube.com/channel/UCY5X52SAYFz3nejVwvjf9gg/videos'
         },
 
-        # news websites
-        #'Verge': {
-        #    'title_full': 'The Verge',
-        #    'href': 'https://www.theverge.com/rss/index.xml'
-        #},
+        
 
         # shows
         'Anidub': {
@@ -345,6 +341,7 @@ class feedUpdate(models.Model):
             'title_full': 'Reflective Desire',
             'href': 'feed:https://reflectivedesire.com/rss/'
         },
+        # 'Verge':{'title_full':'The Verge','href':'https://www.theverge.com/rss/index.xml'},
     }
 
     def list(feedName):
@@ -356,11 +353,11 @@ class feedUpdate(models.Model):
             request = "https://xn--80ac9aeh6f.xn--p1ai/v1/book/get/?bookAlias="+feedUpdate.feeds[feedName]['href'][31:-1]
             request = requests.get(request).json()  # 0.4 seconds
 
-            for part in request['result']['parts']:
+            for each in request['result']['parts']:
                 result.append(feedUpdate(
-                    name=part["title"],
-                    href="http://xn--80ac9aeh6f.xn--p1ai"+part["url"],
-                    datetime=datetime.fromtimestamp(part["publishedAt"])-timedelta(hours=1),
+                    name=each["title"],
+                    href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
+                    datetime=datetime.fromtimestamp(each["publishedAt"])+timedelta(hours=1),
                     title=feedName))
 
         # RSS webtoons import ( feed://www.webtoons.com/ )
