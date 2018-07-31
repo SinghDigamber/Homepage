@@ -321,7 +321,7 @@ class feedUpdate(models.Model):
         },
         'Reflective': {
             'title_full': 'Reflective Desire',
-            'href': 'feed:https://reflectivedesire.com/rss/'
+            'href': 'http://reflectivedesire.com/rss/'
         },
         # disabled
         # 'Verge':{'title_full':'The Verge','href':'https://www.theverge.com/rss/index.xml'},
@@ -510,7 +510,7 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # RSS reflectivedesire.com import manual workaround
-        ''' elif feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
+         elif feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
             try:
                 resp = requests.get(feedUpdate.feeds[feedName]['href'])
                 soup = BeautifulSoup(resp.text, "html.parser")
