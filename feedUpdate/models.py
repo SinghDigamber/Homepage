@@ -295,10 +295,6 @@ class feedUpdate(models.Model):
             'title_full': 'Get out from the ordinary travel ',
             'href': 'https://www.youtube.com/channel/UCY5X52SAYFz3nejVwvjf9gg/videos'
         },
-
-        
-
-        # shows
         'Anidub': {
             'title_full': 'Anidub Online',
             'href': 'feed:https://online.anidub.com/rss.xml'
@@ -323,15 +319,13 @@ class feedUpdate(models.Model):
             'title_full': 'XKCD',
             'href': 'https://xkcd.com/rss.xml'
         },
-        #'КабМин': {
-        #    'title_full': 'Кабинет Министров Украины',
-        #    'href': 'https://www.kmu.gov.ua/api/rss'
-        #},
         'Reflective': {
             'title_full': 'Reflective Desire',
             'href': 'feed:https://reflectivedesire.com/rss/'
         },
+        # disabled
         # 'Verge':{'title_full':'The Verge','href':'https://www.theverge.com/rss/index.xml'},
+        # 'КабМин':{'title_full': 'Кабинет Министров Украины','href': 'https://www.kmu.gov.ua/api/rss'#},
     }
 
     def list(feedName):
