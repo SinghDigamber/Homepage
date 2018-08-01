@@ -8,15 +8,16 @@ import json
 import urllib.request
 # Create your models here.
 
-class feed(models.Model):
-    #class Meta:
-    #    ordering = ['href']
-    title = models.CharField(max_length=42)
-    title_full = models.CharField(max_length=140)
-    href = models.CharField(max_length=300)
-
-    emojis = models.CharField(max_length=140)
-    status = models.CharField(max_length=140)  # options
+# TODO: move feeds to database
+#class feed(models.Model):
+#    #class Meta:
+#    #    ordering = ['href']
+#    title = models.CharField(max_length=42)
+#    title_full = models.CharField(max_length=140)
+#    href = models.CharField(max_length=300)
+#
+#    emojis = models.CharField(max_length=140)
+#    status = models.CharField(max_length=140)  # options
 
 
 
