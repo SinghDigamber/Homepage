@@ -1,0 +1,95 @@
+# Legacy code
+# (no longer works as AJAX is used at ранобэ.рф)
+def import_ranoberf(self):
+    resp = requests.get(feedUpdate.books[book]['href'])  # 0.4 seconds
+    strainer = SoupStrainer('div', attrs={'class': 'col-md-12'});
+    soup = BeautifulSoup(resp.text, "html.parser")  # ~0.4 Sculptor / ~0.7 System seconds
+
+    print(str(resp), str(soup), requests.get(feedUpdate.books[book]['href']))
+
+    chapter_names = []
+    chapter_datetimes = []
+    chapter_links = []
+
+    for entry in soup.find_all('a'):
+        if str(entry).find('strong') != -1:
+            chapter_names.append(entry.text)
+
+    for entry in soup.find_all("time"):
+        chapter_datetimes.append(datetime.strptime(entry.get('datetime')[:-6], "%Y-%m-%dT%H:%M:%S"))
+
+    for entry in soup.find_all('a'):
+        entry = entry.get('href')
+        if type(entry) == str:
+            if entry.find(feedUpdate.books[book]['href']) != -1:  # checking if link leads to the same website
+                chapter_links.append(entry)
+    # chapter_links.pop(0)  # it is the button in the begging "Start reading"
+    chapter_links = list(OrderedDict((x, True) for x in chapter_links).keys())  # allow unique links only
+    if len(chapter_links) == len(chapter_names) and len(chapter_names) == len(chapter_datetimes):
+        for i in range(0, len(chapter_links)):
+            result.append(feedUpdate(
+                name=str(chapter_names[i]),
+                href=str(chapter_links[i]),
+                datetime=str(chapter_datetimes[i]),
+                title=book))
+
+    else:
+        print("Number of links (%(links)s) do not match titles (%(names)s) and datetimes (%(datetimes)s)"
+              % {'links': len(chapter_links), 'names': len(chapter_names), 'datetimes': len(chapter_datetimes)})
+
+        def import_ReflectiveDesire_01(self):
+            feedName = "Reflective"
+            result = []
+
+            if feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
+                feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+                for item in feed["items"]:
+                    result.append(feedUpdate(
+                        name=item["title_detail"]["value"],
+                        href=item["links"][0]["href"],
+                        datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S -0700'),
+                        title=feedName))
+
+def import_ReflectiveDesire_02(self):
+    feedName = "Reflective"
+    result = []
+
+    # RSS reflectivedesire.com import manual workaround
+    if feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
+        try:
+            resp = requests.get(feedUpdate.feeds[feedName]['href'])
+            soup = BeautifulSoup(resp.text, "html.parser")
+
+            log = feedUpdate(
+                name="SUCCESS",
+                href="#",
+                datetime=str(datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
+                title=feedName)
+            log.save()
+            # result.append(log)
+            # print(log)
+
+            for each in soup.find_all("item"):
+                result.append(feedUpdate(
+                    name=each.find("title").string,
+                    href=each.find("guid").string,
+                    datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700'),
+                    title=feedName))
+        except requests.exceptions.ConnectionError:
+            print("feedUpdate/feeds/Reflective: Connection refused")
+
+def import_youtube_alt(self):
+    # YouTube import ALTERNATIVE (https://www.youtube.com/feeds/videos.xml?channel_id=)
+    result = []
+    feedName = ""
+
+    if feedUpdate.feeds[feedName]['href'].find(
+            'https://www.youtube.com/feeds/videos.xml?channel_id=') != -1:
+        feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+
+        for item in feed["items"]:
+            result.append(feedUpdate(
+                name=item["title"],
+                href=item["link"],
+                datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
+                title=feedName))
