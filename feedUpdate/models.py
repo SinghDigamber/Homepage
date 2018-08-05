@@ -503,17 +503,3 @@ class feedUpdate(models.Model):
 
 
         return result
-
-    def cache():
-        items = list(feedUpdate.feeds.keys())
-        items = feedUpdate.multilist(items)
-
-        for item in items:
-            if not feedUpdate.objects.filter(
-                # name=item.name,
-                href=item.href,
-                # datetime=item.datetime,
-                # title=item.title
-            ).exists():
-                #print(item)
-                item.save()
