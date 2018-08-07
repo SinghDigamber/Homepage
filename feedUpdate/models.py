@@ -31,7 +31,7 @@ class feedUpdate(models.Model):
     title = models.CharField(max_length=30)
 
     def __str__(self):
-        return "["+self.title+"] - "+self.name+" on "+str(self.datetime)+" link: "+self.href
+        return "["+self.title+"] "+self.name+" published on "+str(self.datetime)+" with link "+self.href
 
     def multilist(items):
         # TODO: merge forced and not algorithms and do everything via this function
