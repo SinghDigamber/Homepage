@@ -353,7 +353,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT'),
+                    datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=3),
                     title=feedName))
 
         # RSS anidub import ( feed:https://online.anidub.com/rss.xml )
@@ -364,7 +364,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"],'%a, %d %b %Y %H:%M:%S +0300')-timedelta(hours=1),
+                    datetime=datetime.strptime(item["published"],'%a, %d %b %Y %H:%M:%S +0300'),
                     title=feedName))
 
         # RSS TheVerge import ( https://www.theverge.com/rss/index.xml )
@@ -375,7 +375,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title"],
                     href=item["id"],
-                    datetime=datetime.strptime(item["updated"],'%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=6),
+                    datetime=datetime.strptime(item["updated"],'%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=7),
                     title=feedName))
 
         # RSS YouTube import
@@ -387,7 +387,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title"],
                     href=item["link"],
-                    datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00')+timedelta(hours=2),
+                    datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00')+timedelta(hours=3),
                     title=feedName))
 
         # novelupdates.com import
@@ -429,7 +429,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000')+timedelta(hours=3),
                     title=feedName))
 
         # RSS jagodibuja import
@@ -440,7 +440,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000')+timedelta(hours=3),
                     title=feedName))
 
         # RSS vas3k.ru import
@@ -451,7 +451,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000')+timedelta(hours=3),
                     title=feedName))
 
         # RSS disgustingmen.com import
@@ -462,7 +462,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000'),
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000')+timedelta(hours=3),
                     title=feedName))
 
         # RSS xkcd.com import
@@ -473,7 +473,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S -0000'),
+                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S -0000')+timedelta(hours=3),
                     title=feedName))
 
         # RSS kmu.gov.ua import
@@ -497,7 +497,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=each.find("title").string,
                     href=each.find("guid").string,
-                    datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700'),
+                    datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700')+timedelta(hours=10),
                     title=feedName))
 
 
