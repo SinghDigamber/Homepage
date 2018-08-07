@@ -55,7 +55,7 @@ class feedUpdate(models.Model):
             'title_full': 'Heaven Defying Evil God',
             'href': 'https://www.novelupdates.com/series/against-the-gods/'
         },
-        'Renegade': {
+        'RenegadeImmortal': {
             'title_full': 'Renegade Immortal',
             'href': 'https://www.novelupdates.com/series/renegade-immortal/'
         },
@@ -323,7 +323,7 @@ class feedUpdate(models.Model):
             'title_full': 'XKCD',
             'href': 'https://xkcd.com/rss.xml'
         },
-        'Reflective': {
+        'ReflectiveDesire': {
             'title_full': 'Reflective Desire',
             'href': 'http://reflectivedesire.com/rss/'
         },
@@ -338,6 +338,7 @@ class feedUpdate(models.Model):
         result = []
 
         # ранобэ.рф API import
+        # custom ранобэ.рф API import
         # TODO: stupid workaround as API will be closed (can be ignored ATM)
         if feedUpdate.feeds[feedName]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
             request = "https://xn--80ac9aeh6f.xn--p1ai/v1/book/get/?bookAlias="+feedUpdate.feeds[feedName]['href'][31:-1]
@@ -385,6 +386,7 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # RSS YouTube import
+        # custom RSS YouTube import (link to feed has to be converted manually)
         elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
             feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
                 +feedUpdate.feeds[feedName]['href'][32:-7])
@@ -397,6 +399,7 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # novelupdates.com import
+        # custom novelupdates.com import
         elif feedUpdate.feeds[feedName]['href'].find('https://www.novelupdates.com/series/') != -1:
             result = []
             result_name = []
