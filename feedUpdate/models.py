@@ -384,7 +384,6 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["updated"],'%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=7),
                     title=feedName))
 
-        # RSS YouTube import
         # custom RSS YouTube import (link to feed has to be converted manually)
         elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
             feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
@@ -397,7 +396,6 @@ class feedUpdate(models.Model):
                     datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00')+timedelta(hours=3),
                     title=feedName))
 
-        # novelupdates.com import
         # custom novelupdates.com import
         elif feedUpdate.feeds[feedName]['href'].find('https://www.novelupdates.com/series/') != -1:
             result = []
