@@ -329,7 +329,7 @@ class feedUpdate(models.Model):
         },
         # disabled
         # 'Verge':{'title_full':'The Verge','href':'https://www.theverge.com/rss/index.xml'},
-        # 'КабМин':{'title_full': 'Кабинет Министров Украины','href': 'https://www.kmu.gov.ua/api/rss'#},
+        # 'КабМин':{'title_full': 'Кабинет Министров Украины','href': 'https://www.kmu.gov.ua/api/rss'},
     }
 
     def list(feedName):
