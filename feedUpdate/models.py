@@ -348,8 +348,8 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=each["title"],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
-                    # TODO: check timezone as it is unknown (current theory is +2):
-                    datetime=datetime.fromtimestamp(each["publishedAt"])+timedelta(hours=1),
+                    # TODO: check timezone as it is unknown (current theory is Moscow time):
+                    datetime=datetime.fromtimestamp(each["publishedAt"]),
                     title=feedName))
 
         # RSS webtoons import ( feed://www.webtoons.com/ )
