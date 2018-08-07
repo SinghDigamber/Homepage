@@ -337,7 +337,6 @@ class feedUpdate(models.Model):
         # TODO: "universal" link parser
         result = []
 
-        # ранобэ.рф API import
         # custom ранобэ.рф API import
         # TODO: stupid workaround as API will be closed (can be ignored ATM)
         if feedUpdate.feeds[feedName]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
