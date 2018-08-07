@@ -498,14 +498,11 @@ class feedUpdate(models.Model):
             resp = requests.get(feedUpdate.feeds[feedName]['href'])
             soup = BeautifulSoup(resp.text, "html.parser")
 
-            #print(soup)
             for each in soup.find_all("item"):
                 result.append(feedUpdate(
                     name=each.find("title").string,
                     href=each.find("guid").string,
                     datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700')+timedelta(hours=10),
                     title=feedName))
-
-
 
         return result
