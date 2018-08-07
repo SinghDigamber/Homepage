@@ -20,8 +20,6 @@ import urllib.request
 #    emojis = models.CharField(max_length=140)
 #    status = models.CharField(max_length=140)  # options
 
-
-
 class feedUpdate(models.Model):
     class Meta:
         ordering = ['-datetime']
@@ -333,8 +331,6 @@ class feedUpdate(models.Model):
     }
 
     def list(feedName):
-        # TODO: date automatic parsing
-        # TODO: "universal" link parser
         result = []
 
         # custom ранобэ.рф API import
@@ -416,7 +412,6 @@ class feedUpdate(models.Model):
                     try:
                         dateresult = datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=7)
                     except ValueError: # it is for webtooms import feeds['Gamer']
-                        # TODO: why it does not add 3 hours when timezone is indicated with %Z
                         dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')+timedelta(hours=3)
 
                 result.append(feedUpdate(
