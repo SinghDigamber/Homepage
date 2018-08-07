@@ -351,39 +351,6 @@ class feedUpdate(models.Model):
                     datetime=datetime.fromtimestamp(each["publishedAt"]),
                     title=feedName))
 
-        # RSS webtoons import ( feed://www.webtoons.com/ )
-        elif feedUpdate.feeds[feedName]['href'].find('feed://www.webtoons.com/') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"],'%A, %d %b %Y %H:%M:%S GMT')+timedelta(hours=3),
-                    title=feedName))
-
-        # RSS anidub import ( feed:https://online.anidub.com/rss.xml )
-        elif feedUpdate.feeds[feedName]['href'].find('feed:https://online.anidub.com/rss.xml') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"],'%a, %d %b %Y %H:%M:%S +0300'),
-                    title=feedName))
-
-        # RSS TheVerge import ( https://www.theverge.com/rss/index.xml )
-        elif feedUpdate.feeds[feedName]['href'].find('https://www.theverge.com/rss/index.xml') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["entries"]:
-                result.append(feedUpdate(
-                    name=item["title"],
-                    href=item["id"],
-                    datetime=datetime.strptime(item["updated"],'%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=7),
-                    title=feedName))
-
         # custom RSS YouTube import (link to feed has to be converted manually)
         elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
             feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
@@ -427,82 +394,35 @@ class feedUpdate(models.Model):
                         datetime=result_datetime[num],
                         title=feedName))
 
-        # RSS TheGam3.com import
-        elif feedUpdate.feeds[feedName]['href'].find('feed:https://thegam3.com/feed/') != -1:
+        # default RSS import
+        elif any(word in feedUpdate.feeds[feedName]['href'] for word in [
+            'feed:https://thegam3.com/feed/',
+            'feed://www.jagodibuja.com/feed/',
+            'feed:https://vas3k.ru/rss/',
+            'feed:https://disgustingmen.com/feed/',
+            'https://xkcd.com/rss.xml',
+            'https://www.kmu.gov.ua/api/rss',
+            'https://www.theverge.com/rss/index.xml',
+            'feed:https://online.anidub.com/rss.xml',
+            'feed://www.webtoons.com/',
+            'reflectivedesire.com/rss/',
+        ]):
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
             for item in feed["items"]:
+                try:
+                    dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %z')
+                except ValueError: # it is for currently disabled feeds['Verge']
+                    try:
+                        dateresult = datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=7)
+                    except ValueError: # it is for webtooms import feeds['Gamer']
+                        # TODO: why it does not add 3 hours when timezone is indicated with %Z
+                        dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')+timedelta(hours=3)
+
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000')+timedelta(hours=3),
-                    title=feedName))
-
-        # RSS jagodibuja import
-        elif feedUpdate.feeds[feedName]['href'].find('feed://www.jagodibuja.com/feed/') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000')+timedelta(hours=3),
-                    title=feedName))
-
-        # RSS vas3k.ru import
-        elif feedUpdate.feeds[feedName]['href'].find('feed:https://vas3k.ru/rss/') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000')+timedelta(hours=3),
-                    title=feedName))
-
-        # RSS disgustingmen.com import
-        elif feedUpdate.feeds[feedName]['href'].find('feed:https://disgustingmen.com/feed/') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0000')+timedelta(hours=3),
-                    title=feedName))
-
-        # RSS xkcd.com import
-        elif feedUpdate.feeds[feedName]['href'].find('https://xkcd.com/rss.xml') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S -0000')+timedelta(hours=3),
-                    title=feedName))
-
-        # RSS kmu.gov.ua import
-        elif feedUpdate.feeds[feedName]['href'].find('https://www.kmu.gov.ua/api/rss') != -1:
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
-
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
-                    datetime=datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S +0300'),
-                    title=feedName))
-
-        # RSS reflectivedesire.com import
-        elif feedUpdate.feeds[feedName]['href'].find('reflectivedesire.com/rss/') != -1:
-            resp = requests.get(feedUpdate.feeds[feedName]['href'])
-            soup = BeautifulSoup(resp.text, "html.parser")
-
-            for each in soup.find_all("item"):
-                result.append(feedUpdate(
-                    name=each.find("title").string,
-                    href=each.find("guid").string,
-                    datetime=datetime.strptime(each.find("pubdate").string, '%a, %d %b %Y %H:%M:%S -0700')+timedelta(hours=10),
+                    datetime=dateresult,
                     title=feedName))
 
         return result
