@@ -294,7 +294,7 @@ class feedUpdate(models.Model):
             'href': 'https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos'
         },
         'Notordinarytravel': {
-            'title_full': 'Get out from the ordinary travel ',
+            'title_full': 'Get out from the ordinary travel',
             'href': 'https://www.youtube.com/channel/UCY5X52SAYFz3nejVwvjf9gg/videos'
         },
         'Gonzossm': {
