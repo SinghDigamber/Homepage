@@ -328,6 +328,10 @@ class feedUpdate(models.Model):
         # disabled
         # 'Verge':{'title_full':'The Verge','href':'https://www.theverge.com/rss/index.xml'},
         # 'КабМин':{'title_full': 'Кабинет Министров Украины','href': 'https://www.kmu.gov.ua/api/rss'},
+        'Shadman': {
+            'title_full': 'Shadbase by Shadman',
+            'href': 'feed://www.shadbase.com/feed/'
+        },
     }
 
     def list(feedName):
@@ -402,6 +406,7 @@ class feedUpdate(models.Model):
             'feed:https://online.anidub.com/rss.xml',
             'feed://www.webtoons.com/',
             'reflectivedesire.com/rss/',
+            'feed://www.shadbase.com/feed/',
         ]):
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
