@@ -297,6 +297,10 @@ class feedUpdate(models.Model):
             'title_full': 'Get out from the ordinary travel ',
             'href': 'https://www.youtube.com/channel/UCY5X52SAYFz3nejVwvjf9gg/videos'
         },
+        'Gonzossm': {
+            'title_full': 'Gonzossm',
+            'href': 'https://www.youtube.com/channel/UCoFEvb-8o_ONb8pFlZkz64g/videos'
+        },
         'Anidub': {
             'title_full': 'Anidub Online',
             'href': 'feed:https://online.anidub.com/rss.xml'
@@ -331,6 +335,29 @@ class feedUpdate(models.Model):
         'Shadman': {
             'title_full': 'Shadbase by Shadman',
             'href': 'feed://www.shadbase.com/feed/'
+        },
+        'FisheyePlacebo': {
+            'title_full': 'Fisheye Placebo',
+            'href': 'feed://readmanga.me/rss/manga?name=fisheye_placebo'
+        },
+        'OnePunchMan': {
+            'title_full': 'One Punch Man',
+            'href': 'feed://readmanga.me/rss/manga?name=one_punch_man'
+        },
+        'ТронБога': {
+            'title_full': 'Трон, отмеченный Богом',
+            'href': 'feed://readmanga.me/rss/manga?name=shen_yin_wang_zuo'
+        },
+        'Brahmanden': {
+            'title_full': 'Brahmanden: из Одессы с морковью',
+            'href': 'feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50'
+            # https://pikabu.ru/profile/Brahmanden
+            # RSS is generated at https://feedfry.com/
+            # test a bit as dates are not correct
+        },
+        'Yummyanime': {
+            'title_full': 'Yummyanime',
+            'href': 'feed:https://twitrss.me/twitter_user_to_rss/?user=Yummyanime'
         },
     }
 
@@ -407,6 +434,9 @@ class feedUpdate(models.Model):
             'feed://www.webtoons.com/',
             'reflectivedesire.com/rss/',
             'feed://www.shadbase.com/feed/',
+            'feed://readmanga.me/rss/manga?name=',
+            'feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
+            'feed:https://twitrss.me/twitter_user_to_rss/?user=',
         ]):
             feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
 
@@ -417,7 +447,10 @@ class feedUpdate(models.Model):
                     try:
                         dateresult = datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S-04:00')+timedelta(hours=7)
                     except ValueError: # it is for webtooms import feeds['Gamer']
-                        dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')+timedelta(hours=3)
+                        try:
+                            dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')+timedelta(hours=3)
+                        except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
+                            dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %Z')+timedelta(hours=3)
 
                 result.append(feedUpdate(
                     name=item["title_detail"]["value"],
