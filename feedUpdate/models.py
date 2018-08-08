@@ -411,7 +411,9 @@ class feedUpdate(models.Model):
                         hours=datetime.now().hour,
                         minutes=datetime.now().minute,
                         seconds=datetime.now().second)
-                    result_datetime.append(datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time)
+                    #if datetime.now().hour <= 12:
+                    #    result_datetime_time = result_datetime_time+timedelta(days=1)
+                    result_datetime.append(datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time+timedelta(hours=3))
 
             if len(result_name) == len(result_href) and len(result_href) == len(result_datetime):
                 for num in range(0, len(result_name)):
