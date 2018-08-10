@@ -5,8 +5,7 @@ from . import views
 app_name = "feedUpdate"
 urlpatterns = [
     url(r'^$', views.feedUpdateIndexView.as_view(), name="index"),
-    url(r'^more', views.feedUpdateIndexMoreView.as_view(), name="index/all"),
-    url(r'^force$', views.feedUpdateForceIndexView.as_view(), name="index/force"),
-    url(r'^(?P<feeds>([0-9|а-я|А-Я|a-z|A-Z|_|+])+)$', views.feedUpdateIndexView.as_view(), name="feed"),
-    url(r'^(?P<feeds>([0-9|а-я|А-Я|a-z|A-Z|_|+])+)/force$', views.feedUpdateForceIndexView.as_view(), name="feed/force"),
+    url(r'^feeds/$', views.feedIndexView.as_view(), name="index"),  # return list of ffeds with links to them
+    url(r'^(?P<feeds>([0-9|а-я|А-Я|a-z|A-Z|_|+])*)(\/)?(?P<force>(\/force))?$',  # add limit option as well
+        views.feedUpdateIndexView.as_view(), name="feed"),
 ]

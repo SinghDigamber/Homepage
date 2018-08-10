@@ -1,11 +1,11 @@
 from django.core.management.base import BaseCommand, CommandError
-from feedUpdate.models import feedUpdate
+from feedUpdate.models import feedUpdate, feed
 
 class Command(BaseCommand):
     help = 'Caches new information'
 
     def handle(self, *args, **options):
-        items = list(feedUpdate.feeds.keys())
+        items = list(feed.keysAll())
         items = feedUpdate.multilist(items)
 
         for item in items:

@@ -4,29 +4,681 @@ import requests
 from collections import OrderedDict
 import feedparser
 from datetime import datetime, timedelta
-import json
-import urllib.request
 # Create your models here.
 
-# TODO: move feeds to objects
 # TODO: move project to actual database with connection via domain name
-#class feed(models.Model):
-#    #class Meta:
-#    #    ordering = ['href']
-#    title = models.CharField(max_length=42)
-#    title_full = models.CharField(max_length=140)
-#    href = models.CharField(max_length=300)
-#
-#    emojis = models.CharField(max_length=140)
-#    status = models.CharField(max_length=140)  # options
+
+
+class feed(models.Model):
+    class Meta:
+        ordering = ['title_full']
+    title = models.CharField(max_length=42)
+    title_full = models.CharField(max_length=140)
+    href = models.CharField(max_length=420)
+    href_title = models.CharField(max_length=420)
+    emojis = models.CharField(max_length=7)  # usage as tags
+    inIndex = models.BooleanField(default=True)  # showing feed in feedUpdate
+
+    def find(title):
+        for item in feeds:
+            if item.title == title:
+                return item
+
+    def keys():
+        result = []
+        for item in feeds:
+            if (item.inIndex==True):
+                result.append(item.title)
+        return result
+
+    def keysAll():
+        result = []
+        for item in feeds:
+            result.append(item.title)
+        return result
+
+    def all():
+        return feeds
+
+
+feeds = [
+        feed(
+            title='Скульптор',
+            title_full='Легендарный Лунный Скульптор',
+            href='http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/',
+            href_title='http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='RenegadeImmortal',
+            title_full='Renegade Immortal',
+            href='https://www.novelupdates.com/series/renegade-immortal/',
+            href_title='https://www.wuxiaworld.com/novel/renegade-immortal',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='EvilGod',
+            title_full='Heaven Defying Evil God',
+            href='https://www.novelupdates.com/series/against-the-gods/',
+            href_title='https://www.wuxiaworld.com/novel/against-the-gods',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Gamer',
+            title_full='The Gamer',
+            href='feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88',
+            href_title='https://www.webtoons.com/en/fantasy/the-gamer/list?title_no=88&page=1',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Ляпота',
+            title_full="It's a good trip",
+            href='https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w/videos',
+            href_title='https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='GCNTech',
+            title_full="GCN Tech",
+            href='https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg/videos',
+            href_title='https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='GCN',
+            title_full="Global Cycling Network",
+            href='https://www.youtube.com/channel/UCuTaETsuCOkJ0H_GAztWt0Q/videos',
+            href_title='https://www.youtube.com/channel/UCuTaETsuCOkJ0H_GAztWt0Q/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Keddr',
+            title_full='Keddr.com',
+            href='https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A/videos',
+            href_title='https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Kurzgesagt',
+            title_full='Kurzgesagt – In a Nutshell',
+            href='https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q/videos',
+            href_title='https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='LastWeekTonight',
+            title_full='Last Week Tonight with John Oliver',
+            href='https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ/videos',
+            href_title='https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Linus',
+            title_full='Linus Tech Tips',
+            href='https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw/videos',
+            href_title='https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='TechLinked',
+            title_full='Tech Linked by Linus',
+            href='https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA/videos',
+            href_title='https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='PRIME',
+            title_full='PRIME ORCHESTRA',
+            href='https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw/videos',
+            href_title='https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='UnboxTherapy',
+            title_full='Unbox Therapy',
+            href='https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw/videos',
+            href_title='https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='Wylsa',
+            title_full='Wylsacom',
+            href='https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA/videos',
+            href_title='https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Jannet',
+            title_full='Jannet Incosplay',
+            href='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
+            href_title='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Nigri',
+            title_full='Jessica Nigri',
+            href='https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg/videos',
+            href_title='https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='КременюкИ',
+            title_full='КременюкИ',
+            href='https://www.youtube.com/channel/UCgLQh3fGZmfgbJ8D_sry-kA/videos',
+            href_title='https://www.youtube.com/channel/UCgLQh3fGZmfgbJ8D_sry-kA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Т—Ж',
+            title_full='Тинькофф-Журнал (YouTube)',
+            href='https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA/videos',
+            href_title='https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Cosplay01',
+            title_full='bky guy',
+            href='https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos',
+            href_title='https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='Cosplay02',
+            title_full='Herzlocast',
+            href='https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos',
+            href_title='https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='Астамуринг',
+            title_full='Астамуринг',
+            href='https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A/videos',
+            href_title='https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Интервьюер',
+            title_full='Зе Интервьюер',
+            href='https://www.youtube.com/channel/UCuWDlf53jjxti-aUA4tBdsA/videos',
+            href_title='https://www.youtube.com/channel/UCuWDlf53jjxti-aUA4tBdsA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        # : {'title_full': ,'href': },
+        feed(
+            title='Банкир',
+            title_full='Бегущий Банкир',
+            href='https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw/videos',
+            href_title='https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='Навальный',
+            title_full='Алексей Навальный',
+            href='https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A/videos',
+            href_title='https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Rapha',
+            title_full='Rapha Films',
+            href='https://www.youtube.com/channel/UCXYXxfVjxMppZY64-5baOsw/videos',
+            href_title='https://www.youtube.com/channel/UCXYXxfVjxMppZY64-5baOsw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='MarkFood',
+            title_full='Mark Wiens - Hungry tourist',
+            href='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
+            href_title='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Kaufman',
+            title_full='Ron Kaufman',
+            href='https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos',
+            href_title='https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='FCade',
+            title_full='Francis Cade',
+            href='https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA/videos',
+            href_title='https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Raquel',
+            title_full='Raquel Reed',
+            href='https://www.youtube.com/channel/UCcSow8gRPkLK0u-1pLMkZsw/videos',
+            href_title='https://www.youtube.com/channel/UCcSow8gRPkLK0u-1pLMkZsw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='NurkFPV',
+            title_full='Nurk FPV',
+            href='https://www.youtube.com/channel/UCPCc4i_lIw-fW9oBXh6yTnw/videos',
+            href_title='https://www.youtube.com/channel/UCPCc4i_lIw-fW9oBXh6yTnw/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='PostMortem',
+            title_full='Post-Mortem Photography',
+            href='https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA/videos',
+            href_title='https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='VergeYT',
+            title_full='The Verge (YouTube)',
+            href='https://www.youtube.com/channel/UCddiUEpeqJcYeBxX1IVBKvQ/videos',
+            href_title='https://www.youtube.com/channel/UCddiUEpeqJcYeBxX1IVBKvQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='mono',
+            title_full='monobank',
+            href='https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg/videos',
+            href_title='https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Yakushev',
+            title_full='Andrei Yakushev',
+            href='https://www.youtube.com/channel/UCfA7eqgBGvJuBcMS8PDFjcg/videos',
+            href_title='https://www.youtube.com/channel/UCfA7eqgBGvJuBcMS8PDFjcg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title="ПланетаКино",
+            title_full="Планета Кино",
+            href='https://www.youtube.com/channel/UCrR7GJSvz481CxHQn-yXHJw/videos',
+            href_title='https://www.youtube.com/channel/UCrR7GJSvz481CxHQn-yXHJw/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title="MLewin",
+            title_full="Michelle Lewin",
+            href="https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos",
+            href_title="https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos",
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title="AdventureTeam",
+            title_full="Adventure Team",
+            href="https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q/videos",
+            href_title="https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q/videos",
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title="OverwatchRU",
+            title_full="Overwatch RU",
+            href="https://www.youtube.com/channel/UCpW84gDcZu8wNQ-tUO5qE6A/videos",
+            href_title="https://www.youtube.com/channel/UCpW84gDcZu8wNQ-tUO5qE6A/videos",
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title="cherrycrush",
+            title_full="My Cherry Crush",
+            href="https://www.youtube.com/channel/UC4lkVwG5XViZuoRrjdUqEeA/videos",
+            href_title="https://www.youtube.com/channel/UC4lkVwG5XViZuoRrjdUqEeA/videos",
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title="Cosplay03",
+            title_full="Milligan Vick",
+            href="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
+            href_title="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title="Snazzy",
+            title_full="Snazzy Labs",
+            href="https://www.youtube.com/channel/UCO2x-p9gg9TLKneXlibGR7w/videos",
+            href_title="https://www.youtube.com/channel/UCO2x-p9gg9TLKneXlibGR7w/videos",
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Хач',
+            title_full='ДНЕВНИК ХАЧА',
+            href='https://www.youtube.com/channel/UCnbxcA3kZ_uUYIBHNvxpDQw/videos',
+            href_title='https://www.youtube.com/channel/UCnbxcA3kZ_uUYIBHNvxpDQw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ЧумацкийВелопробег',
+            title_full='Чумацкий путь в Америку - велопробег',
+            href='https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA/videos',
+            href_title='https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Шелягина',
+            title_full='Наташа Шелягина',
+            href='https://www.youtube.com/channel/UC97y3hRp4lfOhAZpuSbYruQ/videos',
+            href_title='https://www.youtube.com/channel/UC97y3hRp4lfOhAZpuSbYruQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='GMBNTech',
+            title_full='GMBN Tech',
+            href='https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ/videos',
+            href_title='https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='GMBN',
+            title_full='GMBN',
+            href='https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos',
+            href_title='https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ArhyBES',
+            title_full='ArhyBES',
+            href='https://www.youtube.com/channel/UCby5ZKyxiSW3dz_Kg5VDU9w/videos',
+            href_title='https://www.youtube.com/channel/UCby5ZKyxiSW3dz_Kg5VDU9w/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Blackpack',
+            title_full='Blackpack',
+            href='https://www.youtube.com/channel/UChXHexCL-d0538NwLClRDJQ/videos',
+            href_title='https://www.youtube.com/channel/UChXHexCL-d0538NwLClRDJQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Сыендук',
+            title_full='Сыендук',
+            href='https://www.youtube.com/channel/UC-b89a0Fw6pNoP-g-_qLeiw/videos',
+            href_title='https://www.youtube.com/channel/UC-b89a0Fw6pNoP-g-_qLeiw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Veddro',
+            title_full='Veddro.com',
+            href='https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos',
+            href_title='https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Ленинград',
+            title_full='Ленинград',
+            href='https://www.youtube.com/channel/UCY0C6A3t3RTUN3BB65rWAgQ/videos',
+            href_title='https://www.youtube.com/channel/UCY0C6A3t3RTUN3BB65rWAgQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='BadComedian',
+            title_full='[BadComedian]',
+            href='https://www.youtube.com/channel/UC6cqazSR6CnVMClY0bJI0Lg/videos',
+            href_title='https://www.youtube.com/channel/UC6cqazSR6CnVMClY0bJI0Lg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='MKBHD',
+            title_full='Marques Brownlee',
+            href='https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ/videos',
+            href_title='https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Corridor',
+            title_full='Corridor Digital',
+            href='https://www.youtube.com/channel/UCsn6cjffsvyOZCZxvGoJxGg/videos',
+            href_title='https://www.youtube.com/channel/UCsn6cjffsvyOZCZxvGoJxGg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='KymNonStop',
+            title_full='KymNonStop',
+            href='https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w/videos',
+            href_title='https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='devinsupertramp',
+            title_full='devinsupertramp',
+            href='https://www.youtube.com/channel/UCwgURKfUA7e0Z7_qE3TvBFQ/videos',
+            href_title='https://www.youtube.com/channel/UCwgURKfUA7e0Z7_qE3TvBFQ/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='IFHT',
+            title_full='IFHT Films',
+            href='https://www.youtube.com/channel/UCTs59UCfP4YLUt6pDR_uLtg/videos',
+            href_title='https://www.youtube.com/channel/UCTs59UCfP4YLUt6pDR_uLtg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Relaxation4K',
+            title_full='4K Relaxation Channel',
+            href='https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ/videos',
+            href_title='https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='LazySquare',
+            title_full='Lazy Square',
+            href='https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw/videos',
+            href_title='https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Zaddrot',
+            title_full='Zaddrot',
+            href='https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos',
+            href_title='https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Notordinarytravel',
+            title_full='Get out from the ordinary travel',
+            href='https://www.youtube.com/channel/UCY5X52SAYFz3nejVwvjf9gg/videos',
+            href_title='https://www.youtube.com/channel/UCY5X52SAYFz3nejVwvjf9gg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Gonzossm',
+            title_full='Gonzossm',
+            href='https://www.youtube.com/channel/UCoFEvb-8o_ONb8pFlZkz64g/videos',
+            href_title='https://www.youtube.com/channel/UCoFEvb-8o_ONb8pFlZkz64g/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Anidub',
+            title_full='Anidub Online',
+            href='feed:https://online.anidub.com/rss.xml',
+            href_title='feed:https://online.anidub.com/rss.xml',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='Gam3',
+            title_full='The Gam3',
+            href='feed:https://thegam3.com/feed/',
+            href_title='feed:https://thegam3.com/feed/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Jago',
+            title_full='Jagodibuja',
+            href='feed://www.jagodibuja.com/feed/',
+            href_title='feed://www.jagodibuja.com/feed/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='vas3k',
+            title_full='vas3k.ru',
+            href='feed:https://vas3k.ru/rss/',
+            href_title='https://vas3k.ru/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='DisgustingMen',
+            title_full='Disgusting Men',
+            href='feed:https://disgustingmen.com/feed/',
+            href_title='https://disgustingmen.com/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='XKCD',
+            title_full='XKCD',
+            href='https://xkcd.com/rss.xml',
+            href_title='https://xkcd.com/rss.xml',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ReflectiveDesire',
+            title_full='Reflective Desire',
+            href='http://reflectivedesire.com/rss/',
+            href_title='http://reflectivedesire.com/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Verge',
+            title_full='The Verge',
+            href='https://www.theverge.com/rss/index.xml',
+            href_title='https://www.theverge.com/',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='КабМин',
+            title_full='Кабинет Министров Украины',
+            href='https://www.kmu.gov.ua/api/rss',
+            href_title='https://www.kmu.gov.ua/',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='Shadman',
+            title_full='Shadbase by Shadman',
+            href='feed://www.shadbase.com/feed/',
+            href_title='http://www.shadbase.com/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='FisheyePlacebo',
+            title_full='Fisheye Placebo',
+            href='feed://readmanga.me/rss/manga?name=fisheye_placebo',
+            href_title='http://readmanga.me/fisheye_placebo',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='OnePunchMan',
+            title_full='One Punch Man',
+            href='feed://readmanga.me/rss/manga?name=one_punch_man',
+            href_title='http://readmanga.me/one_punch_man__A1be6f8',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ТронБога',
+            title_full='Трон, отмеченный Богом',
+            href='feed://readmanga.me/rss/manga?name=shen_yin_wang_zuo',
+            href_title='http://readmanga.me/shen_yin_wang_zuo',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Brahmanden',
+            title_full='Brahmanden: из Одессы с морковью',
+            href='feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
+            # RSS is generated at https://feedfry.com/
+            # test a bit as dates are not correct
+            href_title='https://pikabu.ru/profile/Brahmanden',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Yummyanime',
+            title_full='Yummyanime',
+            href='feed:https://twitrss.me/twitter_user_to_rss/?user=Yummyanime',
+            href_title='https://yummyanime.com/anime-updates',
+            emojis='',
+            inIndex=False
+        ),
+    ]
+
 
 class feedUpdate(models.Model):
     class Meta:
         ordering = ['-datetime']
     name = models.CharField(max_length=140)
-    href = models.CharField(max_length=300)
+    href = models.CharField(max_length=420)
     datetime = models.DateTimeField()
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=42)
 
     def __str__(self):
         return "["+self.title+"] "+self.name+" published on "+str(self.datetime)+" with link "+self.href
@@ -37,7 +689,7 @@ class feedUpdate(models.Model):
         result = []
         for item in items:
             try:
-                result.extend(feedUpdate.list(item))
+                result.extend(feedUpdate.list(item, feed.find(item).href))
             except KeyError:
                 result.append(feedUpdate(
                     name="not found in feeds",
@@ -48,326 +700,13 @@ class feedUpdate(models.Model):
 
         return result
 
-    feeds = {
-        'EvilGod': {
-            'title_full': 'Heaven Defying Evil God',
-            'href': 'https://www.novelupdates.com/series/against-the-gods/'
-        },
-        'RenegadeImmortal': {
-            'title_full': 'Renegade Immortal',
-            'href': 'https://www.novelupdates.com/series/renegade-immortal/'
-        },
-        'Скульптор': {
-            'title_full': 'Легендарный Лунный Скульптор',
-            'href': 'http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/'
-        },
-        'Gamer': {
-            'title_full': 'The Gamer',
-            'href': 'feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88'
-        },
-        'Ляпота': {
-            'title_full': "It's a good trip",
-            'href': 'https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w/videos'
-        },
-        'GCNTech': {
-            'title_full': "GCN Tech",
-            'href': 'https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg/videos'
-        },
-        'GCN': {
-            'title_full': "Global Cycling Network",
-            'href': 'https://www.youtube.com/channel/UCuTaETsuCOkJ0H_GAztWt0Q/videos'
-        },
-        'Keddr': {
-            'title_full': 'Keddr.com',
-            'href': 'https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A/videos'
-        },
-        'Kurzgesagt': {
-            'title_full': 'Kurzgesagt – In a Nutshell',
-            'href': 'https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q/videos'
-        },
-        'LastWeekTonight': {
-            'title_full': 'Last Week Tonight',
-            'href': 'https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ/videos'
-        },
-        'Linus': {
-            'title_full': 'Linus Tech Tips',
-            'href': 'https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw/videos'
-        },
-        'TechLinked': {
-            'title_full': 'Tech Linked',
-            'href': 'https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA/videos'
-        },
-        'PRIME': {
-            'title_full': 'PRIME ORCHESTRA',
-            'href': 'https://www.youtube.com/channel/UCKenLkyJUXe50dVrQmLrGpw/videos'
-        },
-        #'UnboxTherapy': {
-        #    'title_full': 'Unbox Therapy',
-        #    'href': 'https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw/videos'
-        #},
-        'Wylsa': {
-            'title_full': 'Wylsacom',
-            'href': 'https://www.youtube.com/channel/UCt7sv-NKh44rHAEb-qCCxvA/videos'
-        },
-        'Jannet': {
-            'title_full': 'Jannet Incosplay',
-            'href': 'https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos'
-        },
-        'Nigri': {
-            'title_full': 'Jessica Nigri',
-            'href': 'https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg/videos'
-        },
-        'КременюкИ': {
-            'title_full': 'КременюкИ',
-            'href': 'https://www.youtube.com/channel/UCgLQh3fGZmfgbJ8D_sry-kA/videos'
-        },
-        'Тинькофф': {
-            'title_full': 'Тинькофф-Журнал',
-            'href': 'https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA/videos'
-        },
-        #'Cosplay01': {
-        #    'title_full': 'bky guy',
-        #    'href': 'https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos'
-        #},
-        #'Cosplay02': {
-        #    'title_full': 'Herzlocast',
-        #    'href': 'https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos'
-        #},
-        'Астамуринг': {
-            'title_full': 'Астамуринг',
-            'href': 'https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A/videos'
-        },
-        'Интервьюер': {
-            'title_full': 'Зе Интервьюер',
-            'href': 'https://www.youtube.com/channel/UCuWDlf53jjxti-aUA4tBdsA/videos'
-        },
-        #'Банкир': {
-        #    'title_full': 'Бегущий Банкир',
-        #    'href': 'https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw/videos'
-        #},
-        'Навальный': {
-            'title_full': 'Алексей Навальный',
-            'href': 'https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A/videos'
-        },
-        'Rapha': {
-            'title_full': 'Rapha Films',
-            'href': 'https://www.youtube.com/channel/UCXYXxfVjxMppZY64-5baOsw/videos'
-        },
-        'MarkFood': {
-            'title_full': 'Mark Wiens - Hungry tourist',
-            'href': 'https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos'
-        },
-        'Kaufman': {
-            'title_full': 'Ron Kaufman',
-            'href': 'https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos'
-        },
-        'FCade': {
-            'title_full': 'Francis Cade',
-            'href': 'https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA/videos'
-        },
-        'Raquel': {
-            'title_full': 'Raquel Reed',
-            'href': 'https://www.youtube.com/channel/UCcSow8gRPkLK0u-1pLMkZsw/videos'
-        },
-        'NurkFPV': {
-            'title_full': 'Nurk FPV',
-            'href': 'https://www.youtube.com/channel/UCPCc4i_lIw-fW9oBXh6yTnw/videos'
-        },
-        'PostMortem': {
-            'title_full': 'Post-Mortem Photography',
-            'href': 'https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA/videos'
-        },
-        'VergeYT': {
-            'title_full': 'The Verge - YouTube',
-            'href': 'https://www.youtube.com/channel/UCddiUEpeqJcYeBxX1IVBKvQ/videos'
-        },
-        'mono': {
-            'title_full': 'monobank',
-            'href': 'https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg/videos'
-        },
-        'Yakushev': {
-            'title_full': 'Andrei Yakushev',
-            'href': 'https://www.youtube.com/channel/UCfA7eqgBGvJuBcMS8PDFjcg/videos'
-        },
-        "ПланетаКино": {
-            'title_full': "Планета Кино",
-            'href': 'https://www.youtube.com/channel/UCrR7GJSvz481CxHQn-yXHJw/videos'
-        },
-        "MLewin": {
-            'title_full': "Michelle Lewin",
-            'href': "https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos"
-        },
-        "AdventureTeam": {
-            'title_full': "Adventure Team",
-            'href': "https://www.youtube.com/channel/UCnusq0cEepVKVAlftFn8u5Q/videos"
-        },
-        "OverwatchRU": {
-            'title_full': "Overwatch RU",
-            'href': "https://www.youtube.com/channel/UCpW84gDcZu8wNQ-tUO5qE6A/videos"
-        },
-        "cherrycrush": {
-            'title_full': "My Cherry Crush",
-            'href': "https://www.youtube.com/channel/UC4lkVwG5XViZuoRrjdUqEeA/videos"
-        },
-        "Cosplay03": {
-            'title_full': "Milligan Vick",
-            'href': "https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos"
-        },
-        "Snazzy": {
-            'title_full': "Snazzy Labs",
-            'href': "https://www.youtube.com/channel/UCO2x-p9gg9TLKneXlibGR7w/videos"
-        },
-        'Хач': {
-            'title_full': 'ДНЕВНИК ХАЧА',
-            'href': 'https://www.youtube.com/channel/UCnbxcA3kZ_uUYIBHNvxpDQw/videos'
-        },
-        'ЧумацкийВелопробег': {
-            'title_full': 'Чумацкий путь в Америку - велопробег',
-            'href': 'https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA/videos'
-        },
-        'Шелягина': {
-            'title_full': 'Наташа Шелягина',
-            'href': 'https://www.youtube.com/channel/UC97y3hRp4lfOhAZpuSbYruQ/videos'
-        },
-        'GMBNTech': {
-            'title_full': 'GMBN Tech',
-            'href': 'https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ/videos'
-        },
-        'GMBN': {
-            'title_full': 'GMBN',
-            'href': 'https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos'
-        },
-        'ArhyBES': {
-            'title_full': 'ArhyBES',
-            'href': 'https://www.youtube.com/channel/UCby5ZKyxiSW3dz_Kg5VDU9w/videos'
-        },
-        'Blackpack': {
-            'title_full': 'Blackpack',
-            'href': 'https://www.youtube.com/channel/UChXHexCL-d0538NwLClRDJQ/videos'
-        },
-        'Сыендук': {
-            'title_full': 'Сыендук',
-            'href': 'https://www.youtube.com/channel/UC-b89a0Fw6pNoP-g-_qLeiw/videos'
-        },
-        'Veddro': {
-            'title_full': 'Veddro.com',
-            'href': 'https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos'
-        },
-        'Ленинград': {
-            'title_full': 'Ленинград',
-            'href': 'https://www.youtube.com/channel/UCY0C6A3t3RTUN3BB65rWAgQ/videos'
-        },
-        'BadComedian': {
-            'title_full': '[BadComedian]',
-            'href': 'https://www.youtube.com/channel/UC6cqazSR6CnVMClY0bJI0Lg/videos'
-        },
-        'MKBHD': {
-            'title_full': 'Marques Brownlee',
-            'href': 'https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ/videos'
-        },
-        'Corridor': {
-            'title_full': 'Corridor Digital',
-            'href': 'https://www.youtube.com/channel/UCsn6cjffsvyOZCZxvGoJxGg/videos'
-        },
-        'KymNonStop': {
-            'title_full': 'KymNonStop',
-            'href': 'https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w/videos'
-        },
-        'devinsupertramp': {
-            'title_full': 'devinsupertramp',
-            'href': 'https://www.youtube.com/channel/UCwgURKfUA7e0Z7_qE3TvBFQ/videos'
-        },
-        'IFHT': {
-            'title_full': 'IFHT Films',
-            'href': 'https://www.youtube.com/channel/UCTs59UCfP4YLUt6pDR_uLtg/videos'
-        },
-        'Relaxation4K': {
-            'title_full': '4K Relaxation Channel',
-            'href': 'https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ/videos'
-        },
-        'LazySquare': {
-            'title_full': 'Lazy Square',
-            'href': 'https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw/videos'
-        },
-        'Zaddrot': {
-            'title_full': 'Zaddrot',
-            'href': 'https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos'
-        },
-        'Notordinarytravel': {
-            'title_full': 'Get out from the ordinary travel',
-            'href': 'https://www.youtube.com/channel/UCY5X52SAYFz3nejVwvjf9gg/videos'
-        },
-        'Gonzossm': {
-            'title_full': 'Gonzossm',
-            'href': 'https://www.youtube.com/channel/UCoFEvb-8o_ONb8pFlZkz64g/videos'
-        },
-        'Anidub': {
-            'title_full': 'Anidub Online',
-            'href': 'feed:https://online.anidub.com/rss.xml'
-        },
-        'Gam3': {
-            'title_full': 'The Gam3',
-            'href': 'feed:https://thegam3.com/feed/'
-        },
-        'Jago': {
-            'title_full': 'Jagodibuja',
-            'href': 'feed://www.jagodibuja.com/feed/'
-        },
-        'vas3k': {
-            'title_full': 'vas3k.ru',
-            'href': 'feed:https://vas3k.ru/rss/'
-        },
-        'DisgustingMen': {
-            'title_full': 'Disgusting Men',
-            'href': 'feed:https://disgustingmen.com/feed/'
-        },
-        'XKCD': {
-            'title_full': 'XKCD',
-            'href': 'https://xkcd.com/rss.xml'
-        },
-        'ReflectiveDesire': {
-            'title_full': 'Reflective Desire',
-            'href': 'http://reflectivedesire.com/rss/'
-        },
-        # disabled
-        # 'Verge':{'title_full':'The Verge','href':'https://www.theverge.com/rss/index.xml'},
-        # 'КабМин':{'title_full': 'Кабинет Министров Украины','href': 'https://www.kmu.gov.ua/api/rss'},
-        'Shadman': {
-            'title_full': 'Shadbase by Shadman',
-            'href': 'feed://www.shadbase.com/feed/'
-        },
-        'FisheyePlacebo': {
-            'title_full': 'Fisheye Placebo',
-            'href': 'feed://readmanga.me/rss/manga?name=fisheye_placebo'
-        },
-        'OnePunchMan': {
-            'title_full': 'One Punch Man',
-            'href': 'feed://readmanga.me/rss/manga?name=one_punch_man'
-        },
-        'ТронБога': {
-            'title_full': 'Трон, отмеченный Богом',
-            'href': 'feed://readmanga.me/rss/manga?name=shen_yin_wang_zuo'
-        },
-        'Brahmanden': {
-            'title_full': 'Brahmanden: из Одессы с морковью',
-            'href': 'feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50'
-            # https://pikabu.ru/profile/Brahmanden
-            # RSS is generated at https://feedfry.com/
-            # test a bit as dates are not correct
-        },
-        'Yummyanime': {
-            'title_full': 'Yummyanime',
-            'href': 'feed:https://twitrss.me/twitter_user_to_rss/?user=Yummyanime'
-        },
-    }
-
-    def list(feedName):
+    def list(feedName, href):
         result = []
 
         # custom ранобэ.рф API import
         # TODO: stupid workaround as API will be closed (can be ignored ATM)
-        if feedUpdate.feeds[feedName]['href'].find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            request = "https://xn--80ac9aeh6f.xn--p1ai/v1/book/get/?bookAlias="+feedUpdate.feeds[feedName]['href'][31:-1]
+        if href.find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
+            request = "https://xn--80ac9aeh6f.xn--p1ai/v1/book/get/?bookAlias="+href[31:-1]
             request = requests.get(request).json()  # 0.4 seconds
 
             for each in request['result']['parts']:
@@ -379,9 +718,8 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # custom RSS YouTube import (link to feed has to be converted manually)
-        elif feedUpdate.feeds[feedName]['href'].find('https://www.youtube.com/channel/') != -1:
-            feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="
-                +feedUpdate.feeds[feedName]['href'][32:-7])
+        elif href.find('https://www.youtube.com/channel/') != -1:
+            feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="+href[32:-7])
 
             for item in feed["items"]:
                 result.append(feedUpdate(
@@ -391,13 +729,13 @@ class feedUpdate(models.Model):
                     title=feedName))
 
         # custom novelupdates.com import
-        elif feedUpdate.feeds[feedName]['href'].find('https://www.novelupdates.com/series/') != -1:
+        elif href.find('https://www.novelupdates.com/series/') != -1:
             result = []
             result_name = []
             result_href = []
             result_datetime = []
 
-            resp = requests.get(feedUpdate.feeds[feedName]['href'])  # 0.4 seconds
+            resp = requests.get(href)  # 0.4 seconds
             strainer = SoupStrainer('table', attrs={'id': 'myTable'});
             soup = BeautifulSoup(resp.text, "lxml", parse_only=strainer)  # ~0.4 Sculptor / ~0.7 System seconds
 
@@ -413,7 +751,8 @@ class feedUpdate(models.Model):
                         seconds=datetime.now().second)
                     #if datetime.now().hour <= 12:
                     #    result_datetime_time = result_datetime_time+timedelta(days=1)
-                    result_datetime.append(datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time+timedelta(hours=3))
+                    # +timedelta(hours=3)
+                    result_datetime.append(datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time)
 
             if len(result_name) == len(result_href) and len(result_href) == len(result_datetime):
                 for num in range(0, len(result_name)):
@@ -424,7 +763,7 @@ class feedUpdate(models.Model):
                         title=feedName))
 
         # default RSS import
-        elif any(word in feedUpdate.feeds[feedName]['href'] for word in [
+        elif any(word in href for word in [
             'feed:https://thegam3.com/feed/',
             'feed://www.jagodibuja.com/feed/',
             'feed:https://vas3k.ru/rss/',
@@ -440,7 +779,7 @@ class feedUpdate(models.Model):
             'feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
             'feed:https://twitrss.me/twitter_user_to_rss/?user=',
         ]):
-            feed = feedparser.parse(feedUpdate.feeds[feedName]['href'])
+            feed = feedparser.parse(href)
 
             for item in feed["items"]:
                 try:

@@ -1,39 +1,31 @@
 from django.shortcuts import render
-from .models import feedUpdate
+from .models import feedUpdate, feed
 from django.views.generic import ListView
 import socket
 from django.shortcuts import redirect
 
 
-class feedUpdateForceIndexView(ListView):
+class feedIndexView(ListView):
     model = feedUpdate
     template_name = "feedUpdate/index.html"
     context_object_name = "list"
 
     def get_queryset(self):
-        header = "Обновления: Forced"
+        header = "Ленты обновлений"
         multibook = True
 
-        try:
-            if self.kwargs['feeds'] != "":
-                header = self.kwargs['feeds']
+        items = feed.all()
 
-                items = self.kwargs['feeds']
-                items = items.split("+")
-                if len(items) == 1:
-                    multibook = False
-                    header = feedUpdate.feeds[header]['title_full']
-        except KeyError:
-            items = feedUpdate.feeds.keys()
-
-        items = feedUpdate.multilist(items)
-        items = sorted(items, key=lambda feedUpdate: str(feedUpdate.datetime), reverse=True)
+        for item in items:
+            item.href = item.href_title
+            item.name = item.title_full
 
         return {
             'title': header,
             'items': items,
-            'multibook': multibook
+            'multibook': multibook,
         }
+
 
 class feedUpdateIndexView(ListView):
     model = feedUpdate
@@ -42,49 +34,42 @@ class feedUpdateIndexView(ListView):
 
     def get_queryset(self):
         items_limit = 42
-        header = "Обновления"
-        multibook = True
+        try:  # title generating
+            if self.kwargs['force'] != "":
+                header = "Обновления: Forced"
+        except KeyError:
+            header = "Обновления"
+
+        multibook = True  # check for multibook and creates items object with required feeds
+        try:
+            if self.kwargs['feeds'] != "force":
+                header = self.kwargs['feeds']
+                items = header.split("+")
+                if len(items) == 1:
+                    multibook = False
+                    # TODO: check if feeds exists and return error if not. Maybe KeyError is returned here?
+                    try:
+                        header = feed.find(header).title_full
+                    except KeyError:
+                        header = "Header "+header+" does not exist"
+                        items = []
+            else:
+                items = feed.keys()
+        except KeyError:
+            items = feed.keys()
 
         try:
-            if self.kwargs['feeds'] != "":
-                header = self.kwargs['feeds']
-                if len(header.split("+")) == 1:
-                    multibook = False
-                    header = feedUpdate.feeds[header]['title_full']
-                items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
+            if self.kwargs['force'] != "":
+                items = feedUpdate.multilist(items)
+                items = sorted(items, key=lambda feedUpdate: str(feedUpdate.datetime), reverse=True)
         except KeyError:
-            items = list(feedUpdate.objects.all()[:items_limit])
+            if header == "Обновления":
+                items = list(feedUpdate.objects.filter(title__in=feed.keys())[:items_limit])
+            else:
+                items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
 
         return {
             'title': header,
             'items': items,
             'multibook': multibook,
         }
-
-# full feedUpdateIndexView copy except for number of items returned (420, not 42)
-class feedUpdateIndexMoreView(ListView):
-    model = feedUpdate
-    template_name = "feedUpdate/index.html"
-    context_object_name = "list"
-
-    def get_queryset(self):
-        items_limit = 420
-        header = "Обновления"
-        multibook = True
-
-        try:
-            if self.kwargs['feeds'] != "":
-                header = self.kwargs['feeds']
-                if len(header.split("+")) == 1:
-                    multibook = False
-                    header = feedUpdate.feeds[header]['title_full']
-                items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
-        except KeyError:
-            items = list(feedUpdate.objects.all()[:items_limit])
-
-        return {
-            'title': header,
-            'items': items,
-            'multibook': multibook,
-        }
-
