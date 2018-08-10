@@ -17,3 +17,5 @@ sudo python3 -m pip install django~=2.0.2 beautifulsoup4 collective.soupstrainer
 
 python3 ~/Homepage/manage.py migrate
 python3 ~/Homepage/manage.py createsuperuser
+
+sudo systemctl stop homepage.server.service; cd /home/pi/Projects/Homepage; git pull; sudo systemctl start homepage.server.service
