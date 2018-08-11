@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} / feedUpdate{% endblock %}
+
+{% block content %}
+    <div id="chapters">
+        <h1>{{ list.title }}</h1>
+
+        {% for chapter in list.items %}
+            <div class="chapter">
+                {% if chapter.inIndex %}
+                    <b class="pointer">[&nbsp;&nbsp;&nbsp;] </b>
+                {% else %}
+                    <b class="pointer">[X] </b>
+                {% endif %}
+                <a target="_blank" href="{{ chapter.href }}">
+                    {% if list.multibook %}
+                        <b>{{ chapter.title }}</b>{% if chapter.title != chapter.name %}: {% endif %}
+                    {% endif %}
+                    {% if chapter.title != chapter.name %}
+                        {{ chapter.name }}
+                    {% endif %}
+                </a>
+                <a target="_blank" href="{{ chapter.href }}/force">☠️️</a>
+                <a target="_blank" href="{{ chapter.href_title }}">⚓️️</a>
+            </div>
+        {% empty %}
+            <h2>There are no entries yet</h2>
+        {% endfor %}
+    </div>
+{% endblock %}

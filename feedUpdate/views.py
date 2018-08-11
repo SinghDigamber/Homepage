@@ -3,11 +3,12 @@ from .models import feedUpdate, feed
 from django.views.generic import ListView
 import socket
 from django.shortcuts import redirect
+from django.urls import reverse
 
 
 class feedIndexView(ListView):
     model = feedUpdate
-    template_name = "feedUpdate/index.html"
+    template_name = "feedUpdate/feeds.html"
     context_object_name = "list"
 
     def get_queryset(self):
@@ -17,7 +18,7 @@ class feedIndexView(ListView):
         items = feed.all()
 
         for item in items:
-            item.href = item.href_title
+            item.href = reverse('feedUpdate:feed', kwargs={'feeds': item.title})
             item.name = item.title_full
 
         return {

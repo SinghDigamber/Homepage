@@ -8,26 +8,12 @@
 
         {% for chapter in list.items %}
             <div id="chapters">
-                {% if chapter.datetime %}
-                    <b class="pointer">» </b>
-                {% else %}
-                    {% if chapter.title != chapter.name %}
-                        <b class="pointer">[&nbsp;&nbsp;&nbsp;] </b>
-                    {% else %}
-                        <b class="pointer">[X] </b>
-                    {% endif %}
-                {% endif %}
+                <b class="pointer">» </b>
                 <a target="_blank" href="{{ chapter.href }}">
-                    {% if list.multibook %}
-                        <b>{{ chapter.title }}</b>{% if chapter.title != chapter.name %}: {% endif %}
-                    {% endif %}
-                    {% if chapter.title != chapter.name %}
-                        {{ chapter.name }}
-                    {% endif %}
+                    {% if list.multibook %}<b>{{ chapter.title }}</b>: {% endif %}
+                    {{ chapter.name }}
                 </a>
-                {% if chapter.datetime %}
-                    <a class="datetime">on {{chapter.datetime|date:'Y-m-d H:i' }}</a>
-                {% endif %}
+                <a class="datetime">on {{chapter.datetime|date:'Y-m-d H:i' }}</a>
             </div>
         {% empty %}
             <h2>There are no entries yet</h2>
