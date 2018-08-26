@@ -93,3 +93,14 @@ def import_youtube_alt(self):
                 href=item["link"],
                 datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00'),
                 title=feedName))
+
+# custom RSS YouTube import (link to feed has to be converted manually)
+    elif href.find('https://www.youtube.com/channel/') != -1:
+        feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="+href[32:-7])
+
+        for item in feed["items"]:
+            result.append(feedUpdate(
+                name=item["title"],
+                href=item["link"],
+                datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00')+timedelta(hours=3),
+                title=feedName))

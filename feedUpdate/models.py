@@ -719,14 +719,9 @@ class feedUpdate(models.Model):
 
         # custom RSS YouTube import (link to feed has to be converted manually)
         elif href.find('https://www.youtube.com/channel/') != -1:
-            feed = feedparser.parse("https://www.youtube.com/feeds/videos.xml?channel_id="+href[32:-7])
+            href = "https://www.youtube.com/feeds/videos.xml?channel_id="+href[32:-7]
 
-            for item in feed["items"]:
-                result.append(feedUpdate(
-                    name=item["title"],
-                    href=item["link"],
-                    datetime=datetime.strptime(item["published"], '%Y-%m-%dT%H:%M:%S+00:00')+timedelta(hours=3),
-                    title=feedName))
+            result = feedUpdate.list(feedName, href)
 
         # custom novelupdates.com import
         elif href.find('https://www.novelupdates.com/series/') != -1:
@@ -764,6 +759,7 @@ class feedUpdate(models.Model):
 
         # default RSS import
         elif any(word in href for word in [
+            'https://www.youtube.com/feeds/videos.xml?channel_id=',
             'feed:https://thegam3.com/feed/',
             'feed://www.jagodibuja.com/feed/',
             'feed:https://vas3k.ru/rss/',
