@@ -1,4 +1,5 @@
 {% load static %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -6,6 +7,8 @@
         <title>Oleh Krupko {% block title %} {% endblock %}</title>
         <meta charset="utf-8">
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <link  rel="shortcut icon mask-icon apple-touch-icon" type="image/x-icon" href="{% static 'favicon/sattelite.ico' %}"/>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>{% include "Homepage/style.css" %}</style>
         <meta http-equiv="refresh" content="600" >
