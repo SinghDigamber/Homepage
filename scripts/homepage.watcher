@@ -1,6 +1,6 @@
 #!/bin/sh
 
 while true; do
-        python3 /home/pi/Projects/Homepage/manage.py cache;
+        python3 /home/pi/Projects/Homepage/manage.py cacheUpdate;
         sleep 10m;
 done;
