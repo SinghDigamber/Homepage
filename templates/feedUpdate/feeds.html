@@ -13,15 +13,15 @@
                 {% else %}
                     <b class="pointer">[X] </b>
                 {% endif %}
-                <a target="_blank" href="{{ chapter.href }}">
+                <a target="_blank" href="{% url "feedUpdate:feed" feeds=chapter.title %}">
                     {% if list.multibook %}
-                        <b>{{ chapter.title }}</b>{% if chapter.title != chapter.name %}: {% endif %}
+                        <b>{{ chapter.title }}</b>{% if chapter.title != chapter.title_full %}: {% endif %}
                     {% endif %}
-                    {% if chapter.title != chapter.name %}
-                        {{ chapter.name }}
+                    {% if chapter.title != chapter.title_full %}
+                        {{ chapter.title_full }}
                     {% endif %}
                 </a>
-                <a target="_blank" href="{{ chapter.href }}/force">☠️️</a>
+                <a target="_blank" href="{% url "feedUpdate:feed" feeds=chapter.title force='/force' %}">☠️️</a>
                 <a target="_blank" href="{{ chapter.href_title }}">⚓️️</a>
             </div>
         {% empty %}

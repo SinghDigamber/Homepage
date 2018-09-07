@@ -17,10 +17,6 @@ class feedIndexView(ListView):
 
         items = feed.all()
 
-        for item in items:
-            item.href = reverse('feedUpdate:feed', kwargs={'feeds': item.title})
-            item.name = item.title_full
-
         return {
             'title': header,
             'items': items,
