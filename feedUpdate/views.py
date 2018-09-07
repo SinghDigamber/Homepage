@@ -54,7 +54,6 @@ class feedUpdateIndexView(ListView):
                 items = feed.keys()
         except KeyError:
             items = feed.keys()
-
         try:
             if self.kwargs['force'] != "":
                 items = feedUpdate.multilist(items)

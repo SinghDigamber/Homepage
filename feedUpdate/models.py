@@ -780,21 +780,20 @@ class feedUpdate(models.Model):
             for item in feed["items"]:
                 try:
                     dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %z')
-                except ValueError: # it is for currently disabled feeds['Verge']
-                    try:
-                        # YouTube +00:00 fix as : symbol is not supported by default
-                        # if item["published"][-3]==':':
+                except ValueError:
+                    if item["published"][-3] == ':':  # YouTube / TheVerge
                         dateresult = datetime.strptime(item["published"][:-3] + item["published"][-2:], '%Y-%m-%dT%H:%M:%S%z')
-                    except ValueError: # it is for webtooms import feeds['Gamer']
-                        try:
+                    else:
+                        try:  # except ValueError: # it is for webtooms import feeds['Gamer']
                             dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
                         except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
                             dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
 
-                result.append(feedUpdate(
+                toAdd = feedUpdate(
                     name=item["title_detail"]["value"],
                     href=item["links"][0]["href"],
                     datetime=dateresult,
-                    title=feedName))
+                    title=feedName)
+                result.append(toAdd)
 
         return result
