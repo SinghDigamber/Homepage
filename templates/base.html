@@ -13,6 +13,18 @@
         <style>{% include "Homepage/style.css" %}</style>
         <meta http-equiv="refresh" content="600" >
         <!-- https://stackoverflow.com/questions/4644027/how-to-automatically-reload-a-page-after-a-given-period-of-inactivity -->
+    
+        <!-- favicon block -->
+            <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+            <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+            <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+            <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+            <link rel="mask-icon" href="{% static 'favicon/safari-pinned-tab.svg' %}" color="#ff69b4">
+            <meta name="{% static 'favicon/apple-mobile-web-app-title' %}" content="Homepage">
+            <meta name="application-name" content="Homepage">
+            <meta name="msapplication-TileColor" content="#00aba9">
+            <meta name="theme-color" content="#ffffff">
+        <!-- favicon block ended -->
     </head>
     <body>
         <div id="menu">{% include "Homepage/menu-top.html" %}</div>
