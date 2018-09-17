@@ -548,6 +548,118 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='Apple',
+            title_full='Apple',
+            href='https://www.youtube.com/channel/UCE_M8A5yxnLfW0KghEeajjw/videos',
+            href_title='https://www.youtube.com/channel/UCE_M8A5yxnLfW0KghEeajjw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Dobryak',
+            title_full='Dobryak animations',
+            href='https://www.youtube.com/channel/UCIQ1PyEVzV2sc4CXHKH2cSg/videos',
+            href_title='https://www.youtube.com/channel/UCIQ1PyEVzV2sc4CXHKH2cSg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='CP',
+            title_full='Cycling Pulse',
+            href='https://www.youtube.com/channel/UCFtOJh5aZ2hqGA4wJnUEnZw/videos',
+            href_title='https://www.youtube.com/channel/UCFtOJh5aZ2hqGA4wJnUEnZw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Поперечный',
+            title_full='Данила Поперечный',
+            href='https://www.youtube.com/channel/UCR-Hcwi27-Ee6VnGzmxE1pA/videos',
+            href_title='https://www.youtube.com/channel/UCR-Hcwi27-Ee6VnGzmxE1pA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='RVerin',
+            title_full='Ruslan Verin — Велопутешествия',
+            href='https://www.youtube.com/channel/UCNttYYf1q2RVWkc0Rhulmdw/videos',
+            href_title='https://www.youtube.com/channel/UCNttYYf1q2RVWkc0Rhulmdw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Storytelling',
+            title_full='Hello Future Me (Storytelling)',
+            href='https://www.youtube.com/channel/UCFQMO-YL87u-6Rt8hIVsRjA/videos',
+            href_title='https://www.youtube.com/channel/UCFQMO-YL87u-6Rt8hIVsRjA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='SethHacks',
+            title_full="Seth's Bike Hacks",
+            href='https://www.youtube.com/channel/UCu8YylsPiu9XfaQC74Hr_Gw/videos',
+            href_title='https://www.youtube.com/channel/UCu8YylsPiu9XfaQC74Hr_Gw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='SuperFun',
+            title_full='Channel Super Fun',
+            href='https://www.youtube.com/channel/UCBZiUUYeLfS5rIj4TQvgSvA/videos',
+            href_title='https://www.youtube.com/channel/UCBZiUUYeLfS5rIj4TQvgSvA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='BlackDesertYT',
+            title_full='Black Desert (YouTube)',
+            href='https://www.youtube.com/channel/UCPzNpbcvaTtt-RtbESad1Jw/videos',
+            href_title='https://www.youtube.com/channel/UCPzNpbcvaTtt-RtbESad1Jw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='JYoung',
+            title_full='Jonathan Young',
+            href='https://www.youtube.com/channel/UC40gs0opj389ohjLnJIAJzA/videos',
+            href_title='https://www.youtube.com/channel/UC40gs0opj389ohjLnJIAJzA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='VergeScience',
+            title_full='Verge Science',
+            href='https://www.youtube.com/channel/UCtxJFU9DgUhfr2J2bveCHkQ/videos',
+            href_title='https://www.youtube.com/channel/UCtxJFU9DgUhfr2J2bveCHkQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Vox',
+            title_full='Vox',
+            href='https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA/videos',
+            href_title='https://www.youtube.com/channel/UCLXo7UDZvByw2ixzpQCufnA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Racked',
+            title_full='Racked',
+            href='https://www.youtube.com/channel/UC9HaoyVhTWca7s5QdjY91_A/videos',
+            href_title='https://www.youtube.com/channel/UC9HaoyVhTWca7s5QdjY91_A/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='JYoung',
+            title_full='Jonathan Young',
+            href='https://www.youtube.com/channel/UCT4WspI1gXguL9kCOirYBBg/videos',
+            href_title='https://www.youtube.com/channel/UCT4WspI1gXguL9kCOirYBBg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
             title='Anidub',
             title_full='Anidub Online',
             href='feed:https://online.anidub.com/rss.xml',
@@ -644,10 +756,26 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='Пик',
+            title_full='Пик боевых искусств',
+            href='feed://readmanga.me/rss/manga?name=martial_peak',
+            href_title='http://readmanga.me/martial_peak',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
             title='ТронБога',
             title_full='Трон, отмеченный Богом',
             href='feed://readmanga.me/rss/manga?name=shen_yin_wang_zuo',
             href_title='http://readmanga.me/shen_yin_wang_zuo',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='FairyTail100',
+            title_full='Fairy Tail: 100 Years Quest',
+            href='feed://readmanga.me/rss/manga?name=fairy_tail__100_years_quest',
+            href_title='http://readmanga.me/fairy_tail__100_years_quest',
             emojis='',
             inIndex=True
         ),
@@ -668,6 +796,54 @@ feeds = [
             href_title='https://yummyanime.com/anime-updates',
             emojis='',
             inIndex=False
+        ),
+        feed(
+            title='BlackDesertTwi',
+            title_full='BlackDesert (Twitter)',
+            href='feed:https://twitrss.me/twitter_user_to_rss/?user=BlackDesertRU',
+            href_title='https://gamenet.ru/games/blackdesert/news/',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='JoshuaWright',
+            title_full='Joshua Wright (SlackWyrm)',
+            href='feed://www.joshuawright.net/rss_joshuawright.xml',
+            href_title='http://www.joshuawright.net/index.html',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='DTF',
+            title_full='DTF (Everything new)',
+            href='https://dtf.ru/rss/new',
+            href_title='https://dtf.ru/top/month',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='Т——Ж',
+            title_full='Тинькофф-Журнал',
+            href='feed:https://journal.tinkoff.ru/feed/',
+            href_title='https://journal.tinkoff.ru',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='shencomix',
+            title_full='shencomix',
+            href='http://shencomix.com/rss',
+            href_title='http://shencomix.com/search/COMIC',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='octokuro',
+            title_full='OCTOKURO',
+            href='feed:https://www.octokuro.com/gallery?format=feed&type=rss',
+            href_title='feed:https://www.octokuro.com/gallery',
+            emojis='',
+            inIndex=True
         ),
     ]
 
@@ -774,6 +950,11 @@ class feedUpdate(models.Model):
             'feed://readmanga.me/rss/manga?name=',
             'feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
             'feed:https://twitrss.me/twitter_user_to_rss/?user=',
+            'feed://www.joshuawright.net/rss_joshuawright.xml',
+            'https://dtf.ru/rss',
+            'journal.tinkoff.ru/feed/',
+            'octokuro.com/gallery?',
+            'shencomix.com/rss',
         ]):
             feed = feedparser.parse(href)
 
