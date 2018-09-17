@@ -4,10 +4,10 @@ import requests
 from collections import OrderedDict
 import feedparser
 from datetime import datetime, timedelta
+from pytz import timezone
 # Create your models here.
 
-# TODO: move project to actual database with connection via domain name
-
+# TODO: move project to actual database
 
 class feed(models.Model):
     class Meta:
@@ -890,7 +890,7 @@ class feedUpdate(models.Model):
                     name=each["title"],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
                     # TODO: check timezone as it is unknown (current theory is Moscow time):
-                    datetime=datetime.fromtimestamp(each["publishedAt"]),
+                    datetime=datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Kiev')),
                     title=feedName))
 
         # custom RSS YouTube import (link to feed has to be converted manually)
@@ -923,7 +923,10 @@ class feedUpdate(models.Model):
                     #if datetime.now().hour <= 12:
                     #    result_datetime_time = result_datetime_time+timedelta(days=1)
                     # +timedelta(hours=3)
-                    result_datetime.append(datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time)
+
+                    result_datetime_time = datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time
+                    result_datetime_time.astimezone(timezone('Europe/Kiev'))
+                    result_datetime.append(result_datetime_time)
 
             if len(result_name) == len(result_href) and len(result_href) == len(result_datetime):
                 for num in range(0, len(result_name)):
@@ -968,7 +971,7 @@ class feedUpdate(models.Model):
                         try:  # except ValueError: # it is for webtooms import feeds['Gamer']
                             dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
                         except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
-                            dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
+                            dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %Z')  # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
 
                 toAdd = feedUpdate(
                     name=item["title_detail"]["value"],
