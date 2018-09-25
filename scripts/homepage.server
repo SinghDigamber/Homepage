@@ -1,6 +1,2 @@
-#!/bin/sh
-
-cd /home/pi/Projects/Homepage
-sleep 1m
 git pull
 python3 /home/pi/Projects/Homepage/manage.py runserver 192.168.1.201:8000
