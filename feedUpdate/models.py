@@ -937,28 +937,7 @@ class feedUpdate(models.Model):
                         title=feedName))
 
         # default RSS import
-        elif any(word in href for word in [
-            'https://www.youtube.com/feeds/videos.xml?channel_id=',
-            'feed:https://thegam3.com/feed/',
-            'feed://www.jagodibuja.com/feed/',
-            'feed:https://vas3k.ru/rss/',
-            'feed:https://disgustingmen.com/feed/',
-            'https://xkcd.com/rss.xml',
-            'https://www.kmu.gov.ua/api/rss',
-            'https://www.theverge.com/rss/index.xml',
-            'feed:https://online.anidub.com/rss.xml',
-            'feed://www.webtoons.com/',
-            'reflectivedesire.com/rss/',
-            'feed://www.shadbase.com/feed/',
-            'feed://readmanga.me/rss/manga?name=',
-            'feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
-            'feed:https://twitrss.me/twitter_user_to_rss/?user=',
-            'feed://www.joshuawright.net/rss_joshuawright.xml',
-            'https://dtf.ru/rss',
-            'journal.tinkoff.ru/feed/',
-            'octokuro.com/gallery?',
-            'shencomix.com/rss',
-        ]):
+        else:
             feed = feedparser.parse(href)
 
             for item in feed["items"]:
