@@ -24,6 +24,7 @@ div#chapters a:visited {
 }
 div#chapters div a:nth-child(2) {
     cursor: pointer;
+    -webkit-user-select: none;
 }
 div#chapters div a:nth-child(2):link:hover {
     color: greenyellow;
