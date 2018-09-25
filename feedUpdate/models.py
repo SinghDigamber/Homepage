@@ -257,7 +257,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
             href_title='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Kaufman',
@@ -265,7 +265,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos',
             href_title='https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='FCade',
