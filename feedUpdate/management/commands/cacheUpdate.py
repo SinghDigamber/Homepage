@@ -6,7 +6,7 @@ class Command(BaseCommand):
     help = 'Caches new information'
 
     def handle(self, *args, **options):
-        print("starting on " + str(datetime.now()))
+        print("┣ starting")
         newItems = 0
 
         items = list(feed.keysAll())
@@ -23,4 +23,4 @@ class Command(BaseCommand):
                 item.save()
                 newItems += 1
 
-        print("└───added " + str(newItems) + " on " + str(datetime.now()))
+        print("└──── added " + str(newItems))
