@@ -226,7 +226,6 @@ feeds = [
             emojis='',
             inIndex=True
         ),
-        # : {'title_full': ,'href': },
         feed(
             title='Банкир',
             title_full='Бегущий Банкир',
