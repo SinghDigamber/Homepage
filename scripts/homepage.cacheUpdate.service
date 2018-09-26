@@ -7,9 +7,9 @@ After=network-online.target
 After=homepage.server.service
 
 [Service]
+Type=oneshot
 
 OOMScoreAdjust=-100
-Restart=always
 
 WorkingDirectory=/home/pi/Projects/Homepage
 
