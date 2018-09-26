@@ -925,6 +925,7 @@ class feedUpdate(models.Model):
                     # +timedelta(hours=3)
 
                     result_datetime_time = datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time
+                    result_datetime_time = result_datetime_time + timedelta(hours=12)
                     result_datetime_time.astimezone(timezone('Europe/Kiev'))
                     result_datetime.append(result_datetime_time)
 
@@ -951,6 +952,12 @@ class feedUpdate(models.Model):
                             dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
                         except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
                             dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %Z')  # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
+
+                if any(word in feedName for word in [
+                    'XKCD',
+                    'Shadman',
+                ]):
+                    dateresult = dateresult + timedelta(hours=12)
 
                 toAdd = feedUpdate(
                     name=item["title_detail"]["value"],
