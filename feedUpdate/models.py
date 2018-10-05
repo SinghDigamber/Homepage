@@ -216,7 +216,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A/videos',
             href_title='https://www.youtube.com/channel/UCwqpU4SDWcRpL9YIuwYtF1A/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Интервьюер',
@@ -496,7 +496,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCwgURKfUA7e0Z7_qE3TvBFQ/videos',
             href_title='https://www.youtube.com/channel/UCwgURKfUA7e0Z7_qE3TvBFQ/videos',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='IFHT',
@@ -512,7 +512,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ/videos',
             href_title='https://www.youtube.com/channel/UCg72Hd6UZAgPBAUZplnmPMQ/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='LazySquare',
@@ -568,7 +568,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCFtOJh5aZ2hqGA4wJnUEnZw/videos',
             href_title='https://www.youtube.com/channel/UCFtOJh5aZ2hqGA4wJnUEnZw/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Поперечный',
@@ -651,8 +651,8 @@ feeds = [
             inIndex=True
         ),
         feed(
-            title='JYoung',
-            title_full='Jonathan Young',
+            title='MTrawor',
+            title_full='Max Trawor',
             href='https://www.youtube.com/channel/UCT4WspI1gXguL9kCOirYBBg/videos',
             href_title='https://www.youtube.com/channel/UCT4WspI1gXguL9kCOirYBBg/videos',
             emojis='',
@@ -802,7 +802,7 @@ feeds = [
             href='feed:https://twitrss.me/twitter_user_to_rss/?user=BlackDesertRU',
             href_title='https://gamenet.ru/games/blackdesert/news/',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='JoshuaWright',
@@ -821,7 +821,7 @@ feeds = [
             inIndex=False
         ),
         feed(
-            title='Т——Ж',
+            title='Т—Журнал',
             title_full='Тинькофф-Журнал',
             href='feed:https://journal.tinkoff.ru/feed/',
             href_title='https://journal.tinkoff.ru',
