@@ -1,0 +1,121 @@
+Bash cheet sheet
+https://ryanstutorials.net/linuxtutorial/cheatsheet.php
+
+pwd — print working directory
+ls -l
+ls -a
+cd 'Holiday photos'
+cd Holiday\ photos
+
+man -k <search term> — Do a keyword search for all manual pages containing the given search term.
+/<term> — Within a manual page, perform a search for 'term'
+n — After performing a search within a manual page, select the next found item.
+
+mkdir
+mkdir -p — creade multiple directories if needed
+mkdir -v — tell us what it does
+
+rmdir
+touch
+cp [options] <source> <destination>
+cp -r
+mv
+rm
+rm -r — remove not empty folder
+
+vi
+ZZ (Note: capitals) - Save and exit
+:q! - discard all changes, since the last save, and exit
+:w - save file but don't exit
+:wq - again, save and exit
+
+Ctrl+C
+
+cat file
+tac file — print per line from end
+less file
+nano file
+
+* - represents zero or more characters
+? - represents a single character
+[] - represents a range of characters
+
+Premissions:
+d — directory
+r — read
+w — write
+x — execute
+Example: [-][rwx][r--][--x]
+-/d — file type
+---/rwx — owner rights
+---/rwx — group rights
+---/rwx — everyone rights
+
+head [-number of lines to print] [path-to-file] — top lines
+tail [-number of lines to print] [path-to-file] — bottom lines
+sort [-options] [path]
+nl [-options] [path] — count lines in file
+wc [-options] [path] — word count (lines, words and characters)
+wc -lw
+
+cut [-options] [path]
+cut -f 1 -d ' ' mysampledata.txt
+-f 1 — field
+-d ' ' — delimter (разделитель)
+
+sed 's/[from]/[from]/g' file — search and exchange
+
+uniq mysampledata.txt — remove duplicate lines
+
+egrep [options] 'mellon' mysampledata.txt — search regexp
+options:
+-n — add line numbers
+-с — line numbers only
+REGEXP:
+. (dot) - a single character.
+? - the preceding character matches 0 or 1 times only.
+* - the preceding character matches 0 or more times.
++ - the preceding character matches 1 or more times.
+{n} - the preceding character matches exactly n times.
+{n,m} - the preceding character matches at least n times and not more than m times.
+[agd] - the character is one of those included within the square brackets.
+[^agd] - the character is not one of those included within the square brackets.
+[c-f] - the dash within the square brackets operates as a range. In this case it means either the letters c, d, e or f.
+() - allows us to group several characters to behave as one.
+| (pipe symbol) - the logical OR operation.
+^ - matches the beginning of the line.
+$ - matches the end of the line.
+
+ls > myoutput — save to file
+ls >> myoutput — append to file
+ls 2> errors.txt — save errors to file
+ls | head -3
+
+top
+ps aux
+ps auxw | grep 'firefox'
+kill 6978 — kill process
+kill -9 6978 — kill process for sure
+sleep 5
+sleep 5s/m/h/d
+
+Ctrl+Z — put current process to background
+
+which <program> — program location
+
+#!/bin/bash
+# comment
+name='Ryan'
+echo Hello $name
+
+$0 - The name of the script.
+$1 - $9 - Any command line arguments given to the script. $1 is the first argument, $2 the second and so on.
+$# - How many command line arguments were given to the script.
+$* - All of the command line arguments.
+
+date=`date +%F`
+
+if [ $answer != 'y' ]
+then
+    exit
+fi
