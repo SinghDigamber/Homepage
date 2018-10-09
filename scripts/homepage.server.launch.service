@@ -1,5 +1,5 @@
 [Unit]
-Description=Homepage.server.service
+Description=Homepage.server.launch.service
 
 After=network.target
 Wants=network-online.target
@@ -12,7 +12,7 @@ Restart=always
 
 WorkingDirectory=/home/pi/Projects/Homepage
 
-ExecStart=/home/pi/Projects/Homepage/scripts/homepage.server
+ExecStart=scripts/homepage.server.launch
 
 [Install]
 WantedBy=multi-user.target
