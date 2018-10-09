@@ -4,5 +4,6 @@ from .models import feedUpdate
 # Register your models here.
 class feedUpdateAdmin(admin.ModelAdmin):
     list_display = ('name', 'datetime', 'title', 'href')
+    # list_filter = ('inIndex', 'datetime')
 
 admin.site.register(feedUpdate, feedUpdateAdmin)

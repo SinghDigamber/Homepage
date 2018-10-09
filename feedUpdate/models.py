@@ -925,6 +925,7 @@ class feedUpdate(models.Model):
 
                     result_datetime_time = datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time
                     result_datetime_time = result_datetime_time + timedelta(hours=12)
+                    # result_datetime_time = datetime.now()
                     result_datetime_time.astimezone(timezone('Europe/Kiev'))
                     result_datetime.append(result_datetime_time)
 
