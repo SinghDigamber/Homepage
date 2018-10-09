@@ -1,5 +1,5 @@
 [Unit]
-Description=Homepage.cacheUpdate.service
+Description=Homepage.cacheUpdate.index.service
 
 After=network.target
 Wants=network-online.target
@@ -13,7 +13,7 @@ OOMScoreAdjust=-100
 
 WorkingDirectory=/home/pi/Projects/Homepage
 
-ExecStart=/home/pi/Projects/Homepage/scripts/homepage.cacheUpdate
+ExecStart=scripts/homepage.cacheUpdate.index
 
 [Install]
 WantedBy=multi-user.target

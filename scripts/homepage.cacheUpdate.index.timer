@@ -1,0 +1,8 @@
+[Unit]
+Description=homepage.cacheUpdate.index.timer: run homepage.cacheUpdate.index each 15 minutes
+
+[Timer]
+OnUnitActiveSec=15min
+
+[Install]
+WantedBy=timers.target
