@@ -13,7 +13,7 @@ OOMScoreAdjust=-100
 
 WorkingDirectory=/home/pi/Projects/Homepage
 
-ExecStart=scripts/homepage.server.reload
+ExecStart=/home/pi/Projects/Homepage/scripts/homepage.server.reload
 
 [Install]
 WantedBy=multi-user.target

@@ -12,7 +12,7 @@ Restart=always
 
 WorkingDirectory=/home/pi/Projects/Homepage
 
-ExecStart=scripts/homepage.server.launch
+ExecStart=/home/pi/Projects/Homepage/scripts/homepage.server.launch
 
 [Install]
 WantedBy=multi-user.target
