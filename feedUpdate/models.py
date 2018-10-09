@@ -924,7 +924,7 @@ class feedUpdate(models.Model):
                     # +timedelta(hours=3)
 
                     result_datetime_time = datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time
-                    result_datetime_time = result_datetime_time + timedelta(hours=12)
+                    result_datetime_time = result_datetime_time + timedelta(hours=24)
                     # result_datetime_time = datetime.now()
                     result_datetime_time.astimezone(timezone('Europe/Kiev'))
                     result_datetime.append(result_datetime_time)
@@ -957,7 +957,7 @@ class feedUpdate(models.Model):
                     'XKCD',
                     'Shadman',
                 ]):
-                    dateresult = dateresult + timedelta(hours=12)
+                    dateresult = dateresult + timedelta(hours=24)
 
                 toAdd = feedUpdate(
                     name=item["title_detail"]["value"],
