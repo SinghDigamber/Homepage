@@ -1,0 +1,8 @@
+[Unit]
+Description=homepage.server.reload.timer: run homepage.server.reload each 42 hours
+
+[Timer]
+OnUnitActiveSec=42h
+
+[Install]
+WantedBy=timers.target
