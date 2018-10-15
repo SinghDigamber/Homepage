@@ -951,19 +951,15 @@ class feedUpdate(models.Model):
         # TODO: warn if wrong filters were used
         result = []
         for item in items:
-            print(feed.find(item).href)
-            print(item)
-            #try:
-            result.extend(feedUpdate.list(item, feed.find(item).href))
-            print(feedUpdate.list(item, feed.find(item).href))
-
-            #except KeyError:
-            #    result.append(feedUpdate(
-            #        name="not found in feeds",
-            #        href="#",
-            #        datetime=datetime.now()+timedelta(hours=-3),
-            #        title=item))
-            #    print("item: not found in feeds")
+            try:
+                result.extend(feedUpdate.list(item, feed.find(item).href))
+            except KeyError:
+                result.append(feedUpdate(
+                    name="not found in feeds",
+                    href="#",
+                    datetime=datetime.now()+timedelta(hours=-3),
+                    title=item))
+                print("item: not found in feeds")
 
         return result
 
