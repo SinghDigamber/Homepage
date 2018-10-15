@@ -659,6 +659,62 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='MilliganVick',
+            title_full='Milligan Vick',
+            href='https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos',
+            href_title='https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='CGPGrey',
+            title_full='CGP Grey',
+            href='https://www.youtube.com/channel/UC2C_jShtL725hvbm1arSV9w/videos',
+            href_title='https://www.youtube.com/channel/UC2C_jShtL725hvbm1arSV9w/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='GreatBigStory',
+            title_full='Great Big Story',
+            href='https://www.youtube.com/channel/UCajXeitgFL-rb5-gXI-aG8Q/videos',
+            href_title='https://www.youtube.com/channel/UCajXeitgFL-rb5-gXI-aG8Q/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='RainfallFilms',
+            title_full='RainfallFilms',
+            href='https://www.youtube.com/channel/UCeVw3-4JmOnfx1IsLPywNWg/videos',
+            href_title='https://www.youtube.com/channel/UCeVw3-4JmOnfx1IsLPywNWg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='AppleSupport',
+            title_full='Apple Support',
+            href='https://www.youtube.com/channel/UCYFQ33UIPERYx8-ZHucZbDA/videos',
+            href_title='https://www.youtube.com/channel/UCYFQ33UIPERYx8-ZHucZbDA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='AnimatedSpells',
+            title_full='Zee Bashew (animated D&D spells)',
+            href='https://www.youtube.com/channel/UCCXR2kCo7Lcw_BKwWxo09kw/videos',
+            href_title='https://www.youtube.com/channel/UCCXR2kCo7Lcw_BKwWxo09kw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='PuffinForrest',
+            title_full='Puffin Forrest',
+            href='https://www.youtube.com/channel/UCUpkp-6fXuG9dqfoJ99XTmw/videos',
+            href_title='https://www.youtube.com/channel/UCUpkp-6fXuG9dqfoJ99XTmw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
             title='Anidub',
             title_full='Anidub Online',
             href='feed:https://online.anidub.com/rss.xml',
@@ -779,6 +835,22 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='ГеройКопья',
+            title_full='Перерождение героя копья',
+            href='feed://readmanga.me/rss/manga?name=redo_of_the_spear_hero',
+            href_title='http://readmanga.me/redo_of_the_spear_hero',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ZoneTan',
+            title_full='Приключения Zone-Tan',
+            href='feed://readmanga.me/rss/manga?name=zone_tan_adventures',
+            href_title='http://readmanga.me/zone_tan_adventures',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
             title='Brahmanden',
             title_full='Brahmanden: из Одессы с морковью',
             href='feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
@@ -844,6 +916,14 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='oglaf',
+            title_full='oglaf.com',
+            href='feed:https://www.oglaf.com/feeds/rss/',
+            href_title='https://www.oglaf.com',
+            emojis='',
+            inIndex=True
+        ),
     ]
 
 
@@ -863,15 +943,19 @@ class feedUpdate(models.Model):
         # TODO: warn if wrong filters were used
         result = []
         for item in items:
-            try:
-                result.extend(feedUpdate.list(item, feed.find(item).href))
-            except KeyError:
-                result.append(feedUpdate(
-                    name="not found in feeds",
-                    href="#",
-                    datetime=datetime.now()+timedelta(hours=-3),
-                    title=item))
-                print("item: not found in feeds")
+            print(feed.find(item).href)
+            print(item)
+            #try:
+            result.extend(feedUpdate.list(item, feed.find(item).href))
+            print(feedUpdate.list(item, feed.find(item).href))
+
+            #except KeyError:
+            #    result.append(feedUpdate(
+            #        name="not found in feeds",
+            #        href="#",
+            #        datetime=datetime.now()+timedelta(hours=-3),
+            #        title=item))
+            #    print("item: not found in feeds")
 
         return result
 
@@ -952,6 +1036,8 @@ class feedUpdate(models.Model):
                             dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
                         except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
                             dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %Z')  # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
+
+
 
                 if any(word in feedName for word in [
                     'XKCD',
