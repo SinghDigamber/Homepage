@@ -46,3 +46,8 @@ sudo systemctl start homepage.cacheUpdate.service
 
 
 
+systemctl -all list-timers
+
+sudo systemctl status
+
+/opt/vc/bin/vcgencmd measure_temp

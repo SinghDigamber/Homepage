@@ -5,6 +5,7 @@ git pull
 # clear old services
 sudo rm /lib/systemd/system/homepage.*
 sudo rm /run/systemd/generator.late/homepage.*
+sudo rm /etc/init.d/homepage.*
 
 # feedUpdate/cacheUpdate scripts
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.all.service /lib/systemd/system/homepage.cacheUpdate.all.service
