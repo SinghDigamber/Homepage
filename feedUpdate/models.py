@@ -924,6 +924,14 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='mortalezz',
+            title_full='Gorsky (@mortalezz)',
+            href='feed:https://gorsky.us/rss/',
+            href_title='https://gorsky.us/',
+            emojis='',
+            inIndex=True
+        ),
     ]
 
 
