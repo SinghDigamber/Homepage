@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo systemctl restart homepage.server.launch
+systemctl restart homepage.server.launch
