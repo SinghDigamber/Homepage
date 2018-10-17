@@ -851,12 +851,30 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='ЧеловеческиеКарты',
+            title_full='Человеческие карты',
+            href='feed://readmanga.me/rss/manga?name=human_card',
+            href_title='http://readmanga.me/human_card',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
             title='Brahmanden',
             title_full='Brahmanden: из Одессы с морковью',
             href='feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
             # RSS is generated at https://feedfry.com/
             # test a bit as dates are not correct
             href_title='https://pikabu.ru/profile/Brahmanden',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Мифы',
+            title_full='Мифы как мемы',
+            href='feed:https://feedfry.com/rss/11e8d179bab948dcb145082b550404a7',
+            # RSS is generated at https://feedfry.com/
+            # test a bit as dates are not correct
+            href_title='https://pikabu.ru/@castiar',
             emojis='',
             inIndex=True
         ),
