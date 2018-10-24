@@ -4,7 +4,6 @@ Description=Homepage.cacheUpdate.index.service
 After=network.target
 Wants=network-online.target
 After=network-online.target
-After=homepage.server.launch.service
 
 [Service]
 Type=oneshot
