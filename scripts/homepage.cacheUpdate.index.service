@@ -8,6 +8,8 @@ After=network-online.target
 [Service]
 Type=oneshot
 
+TimeoutStartSec=10min
+
 OOMScoreAdjust=-100
 
 WorkingDirectory=/home/pi/Projects/Homepage
