@@ -42,6 +42,7 @@ class feed(models.Model):
 
 
 feeds = [
+    # TOP
         feed(
             title='Скульптор',
             title_full='Легендарный Лунный Скульптор',
@@ -74,6 +75,8 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+
+    # YouTube
         feed(
             title='Ляпота',
             title_full="It's a good trip",
@@ -135,6 +138,14 @@ feeds = [
             title_full='Tech Linked by Linus',
             href='https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA/videos',
             href_title='https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Techquickie',
+            title_full='Techquickie',
+            href='https://www.youtube.com/channel/UC0vBXGSyV14uvJ4hECDOl0Q/videos',
+            href_title='https://www.youtube.com/channel/UC0vBXGSyV14uvJ4hECDOl0Q/videos',
             emojis='',
             inIndex=True
         ),
@@ -715,6 +726,121 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='StarfuckedYT',
+            title_full='Starfuckedfetish (YouTube)',
+            href='https://www.youtube.com/channel/UC7AwpmWErjsVeoZmVWLKxaQ/videos',
+            href_title='https://www.youtube.com/channel/UC7AwpmWErjsVeoZmVWLKxaQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='LPassion',
+            title_full='Latex Passion',
+            href='https://www.youtube.com/channel/UC4wJ3VOE_COy2makRex45Sw/videos',
+            href_title='https://www.youtube.com/channel/UC4wJ3VOE_COy2makRex45Sw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='LFashionTV',
+            title_full='Latex Fashion TV',
+            href='https://www.youtube.com/channel/UCC3iGfxG5wG17GBe1PffP0Q/videos',
+            href_title='https://www.youtube.com/channel/UCC3iGfxG5wG17GBe1PffP0Q/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Wrapa',
+            title_full='Igor Wrapa',
+            href='https://www.youtube.com/channel/UC1bsNUFMjbHxiO99GJ8r6mQ/videos',
+            href_title='https://www.youtube.com/channel/UC1bsNUFMjbHxiO99GJ8r6mQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='LRossmann',
+            title_full='Louis Rossmann',
+            href='https://www.youtube.com/channel/UCl2mFZoRqjw_ELax4Yisf6w/videos',
+            href_title='https://www.youtube.com/channel/UCl2mFZoRqjw_ELax4Yisf6w/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Jannet',
+            title_full='Jannet Incosplay',
+            href='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
+            href_title='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='StanStepanenko',
+            title_full='StanStepanenko',
+            href='https://www.youtube.com/channel/UCTMcDOQJgX2ErslaQnKRwKw/videos',
+            href_title='https://www.youtube.com/channel/UCTMcDOQJgX2ErslaQnKRwKw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='АСтерликов',
+            title_full='Александр Стерликов',
+            href='https://www.youtube.com/channel/UC89sENALQzDknJNCl-z70Ew/videos',
+            href_title='https://www.youtube.com/channel/UC89sENALQzDknJNCl-z70Ew/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ROANYERCD',
+            title_full='ROANYER CD',
+            href='https://www.youtube.com/channel/UCdVmtR_NzLIDoHOBKxahE3A/videos',
+            href_title='https://www.youtube.com/channel/UCdVmtR_NzLIDoHOBKxahE3A/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ComradeLtx',
+            title_full='comrade latex',
+            href='https://www.youtube.com/channel/UCC5-TbHPhx73cqMUMHWMFmw/videos',
+            href_title='https://www.youtube.com/channel/UCC5-TbHPhx73cqMUMHWMFmw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='JMorrison',
+            title_full='Jonathan Morrison',
+            href='https://www.youtube.com/channel/UCDlQwv99CovKafGvxyaiNDA/videos',
+            href_title='https://www.youtube.com/channel/UCDlQwv99CovKafGvxyaiNDA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Specialized',
+            title_full='Specialized Bicycles',
+            href='https://www.youtube.com/channel/UCcrBtxD8xy2cxeXM7f-xihA/videos',
+            href_title='https://www.youtube.com/channel/UCcrBtxD8xy2cxeXM7f-xihA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Scott',
+            title_full='SCOTT Sports',
+            href='https://www.youtube.com/channel/UCDfnam79n2tXXumz9i7jnIA/videos',
+            href_title='https://www.youtube.com/channel/UCDfnam79n2tXXumz9i7jnIA/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='РОрловХа',
+            title_full='Роман Орлов (Харьков!)',
+            href='https://www.youtube.com/channel/UCqoWNnPA_EJaPxe6BLG8QHA/videos',
+            href_title='https://www.youtube.com/channel/UCqoWNnPA_EJaPxe6BLG8QHA/videos',
+            emojis='',
+            inIndex=True
+        ),
+
+
+
+        feed(
             title='Anidub',
             title_full='Anidub Online',
             href='feed:https://online.anidub.com/rss.xml',
@@ -859,6 +985,24 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='БольшеНеГерой',
+            title_full='Герой? Я давно перестал им быть',
+            href='feed://readmanga.me/rss/manga?name=hero__i_quit_a_long_time_ago',
+            href_title='http://readmanga.me/hero__i_quit_a_long_time_ago',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Эликсир',
+            title_full='Исцеляющий эликсир',
+            href='feed://readmanga.me/rss/manga?name=healing_elixir',
+            href_title='http://readmanga.me/healing_elixir',
+            emojis='',
+            inIndex=True
+        ),
+
+    # pikabu
+        feed(
             title='Brahmanden',
             title_full='Brahmanden: из Одессы с морковью',
             href='feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
@@ -878,6 +1022,18 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='LittleBit',
+            title_full='Little.Bit',
+            href='feed:https://feedfry.com/rss/11e8f4cd277d969e8ecf28ab984ad37b',
+            # RSS is generated at https://feedfry.com/
+            # test a bit as dates are not correct
+            href_title='https://pikabu.ru/profile/Little.Bit',
+            emojis='',
+            inIndex=True
+        ),
+
+    # other
         feed(
             title='Yummyanime',
             title_full='Yummyanime',
@@ -947,6 +1103,30 @@ feeds = [
             title_full='Gorsky (@mortalezz)',
             href='feed:https://gorsky.us/rss/',
             href_title='https://gorsky.us/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='CommitStrip',
+            title_full='Commit Strip',
+            href='feed://www.commitstrip.com/en/feed/',
+            href_title='http://www.commitstrip.com/en/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Tonsky',
+            title_full='Tonsky',
+            href='http://tonsky.me/blog/atom.xml',
+            href_title='http://tonsky.me',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='bespoyasov',
+            title_full='bespoyasov',
+            href='https://bespoyasov.ru/rss.xml',
+            href_title='https://bespoyasov.ru',
             emojis='',
             inIndex=True
         ),
