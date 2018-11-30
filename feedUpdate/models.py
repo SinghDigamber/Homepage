@@ -1000,6 +1000,14 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='Начало',
+            title_full='Начало после конца',
+            href='feed://readmanga.me/rss/manga?name=nachalo_posle_konca',
+            href_title='http://readmanga.me/nachalo_posle_konca',
+            emojis='',
+            inIndex=True
+        ),
 
     # pikabu
         feed(
