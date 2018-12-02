@@ -301,14 +301,15 @@ feeds = [
             emojis='',
             inIndex=False
         ),
-        feed(
-            title='PostMortem',
-            title_full='Post-Mortem Photography',
-            href='https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA/videos',
-            href_title='https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA/videos',
-            emojis='',
-            inIndex=True
-        ),
+        # blocked by YouTube
+        #feed(
+        #    title='PostMortem',
+        #    title_full='Post-Mortem Photography',
+        #    href='https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA/videos',
+        #    href_title='https://www.youtube.com/channel/UCDFiX8wnIQwbAcnRlwSOowA/videos',
+        #    emojis='',
+        #    inIndex=True
+        #),
         feed(
             title='VergeYT',
             title_full='The Verge (YouTube)',
