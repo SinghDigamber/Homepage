@@ -621,14 +621,15 @@ feeds = [
             emojis='',
             inIndex=True
         ),
-        feed(
-            title='BlackDesertYT',
-            title_full='Black Desert (YouTube)',
-            href='https://www.youtube.com/channel/UCPzNpbcvaTtt-RtbESad1Jw/videos',
-            href_title='https://www.youtube.com/channel/UCPzNpbcvaTtt-RtbESad1Jw/videos',
-            emojis='',
-            inIndex=True
-        ),
+        # не понятно: удалён или не активен
+        #feed(
+        #    title='BlackDesertYT',
+        #    title_full='Black Desert (YouTube)',
+        #    href='https://www.youtube.com/channel/UCPzNpbcvaTtt-RtbESad1Jw/videos',
+        #    href_title='https://www.youtube.com/channel/UCPzNpbcvaTtt-RtbESad1Jw/videos',
+        #    emojis='',
+        #    inIndex=True
+        #),
         feed(
             title='JYoung',
             title_full='Jonathan Young',
@@ -1042,22 +1043,23 @@ feeds = [
         ),
 
     # other
-        feed(
-            title='Yummyanime',
-            title_full='Yummyanime',
-            href='feed:https://twitrss.me/twitter_user_to_rss/?user=Yummyanime',
-            href_title='https://yummyanime.com/anime-updates',
-            emojis='',
-            inIndex=False
-        ),
-        feed(
-            title='BlackDesertTwi',
-            title_full='BlackDesert (Twitter)',
-            href='feed:https://twitrss.me/twitter_user_to_rss/?user=BlackDesertRU',
-            href_title='https://gamenet.ru/games/blackdesert/news/',
-            emojis='',
-            inIndex=True
-        ),
+        # Twitter account suspended
+        #feed(
+        #    title='Yummyanime',
+        #    title_full='Yummyanime',
+        #    href='feed:https://twitrss.me/twitter_user_to_rss/?user=Yummyanime',
+        #    href_title='https://yummyanime.com/anime-updates',
+        #    emojis='',
+        #    inIndex=False
+        #),
+        #feed(
+        #    title='BlackDesertTwi',
+        #    title_full='BlackDesert (Twitter)',
+        #    href='feed:https://twitrss.me/twitter_user_to_rss/?user=BlackDesertRU',
+        #    href_title='https://gamenet.ru/games/blackdesert/news/',
+        #    emojis='',
+        #    inIndex=True
+        #),
         feed(
             title='JoshuaWright',
             title_full='Joshua Wright (SlackWyrm)',
