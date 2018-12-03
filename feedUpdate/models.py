@@ -1010,6 +1010,22 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='DuskHowler',
+            title_full='Dusk Howler',
+            href='feed://readmanga.me/rss/manga?name=dusk_howler',
+            href_title='http://readmanga.me/dusk_howler',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='FirePlay',
+            title_full='C огнём играешь, Юйвэнь Цзюнь!',
+            href='feed://readmanga.me/rss/manga?name=c_ognem_igraesh__iuiven_cziun_',
+            href_title='http://readmanga.me/c_ognem_igraesh__iuiven_cziun_',
+            emojis='',
+            inIndex=True
+        ),
 
     # pikabu
         feed(
