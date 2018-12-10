@@ -1098,6 +1098,14 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='ОсобеннаяМагия',
+            title_full='Магия вернувшегося должна быть особенной',
+            href='feed://readmanga.me/rss/manga?name=magiia_vernuvshegosia_doljna_byt_osobennoi',
+            href_title='http://readmanga.me/magiia_vernuvshegosia_doljna_byt_osobennoi',
+            emojis='',
+            inIndex=True
+        ),
 
     # pikabu
         feed(
@@ -1229,6 +1237,22 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='Wren',
+            title_full='DarkWren',
+            href='https://darkwren.ru/feed/',
+            href_title='https://darkwren.ru/',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='IDEA',
+            title_full='IDEA Instructions',
+            href='https://idea-instructions.com/feed.xml',
+            href_title='https://idea-instructions.com',
+            emojis='',
+            inIndex=True
+        ),
     ]
 
 
@@ -1327,17 +1351,25 @@ class feedUpdate(models.Model):
             feed = feedparser.parse(href)
 
             for item in feed["items"]:
+                if "updated" in item:
+                    datestring = item["updated"]
+                else:
+                    if "published" in item:
+                        datestring = item["published"]
+
                 try:
-                    dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %z')
+                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
                 except ValueError:
-                    if item["published"][-3] == ':':  # YouTube / TheVerge
-                        dateresult = datetime.strptime(item["published"][:-3] + item["published"][-2:], '%Y-%m-%dT%H:%M:%S%z')
+                    if datestring[-3] == ':':  # YouTube / TheVeпrge
+                        dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
                     else:
                         try:  # except ValueError: # it is for webtooms import feeds['Gamer']
-                            dateresult = datetime.strptime(item["published"], '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
+                            dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
                         except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
-                            dateresult = datetime.strptime(item["published"], '%a, %d %b %Y %H:%M:%S %Z')  # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
-
+                            try:
+                                dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')  # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
+                            except ValueError: # idea-instructions.com
+                                dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
 
 
                 if any(word in feedName for word in [
