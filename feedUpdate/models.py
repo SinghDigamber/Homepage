@@ -839,6 +839,78 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='Игронавты',
+            title_full='РИгронавты',
+            href='https://www.youtube.com/channel/UCTK88HZEOljUoIZyOrLSM2g/videos',
+            href_title='https://www.youtube.com/channel/UCTK88HZEOljUoIZyOrLSM2g/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='СтасДавыдов',
+            title_full='Стас Давыдов',
+            href='https://www.youtube.com/channel/UCPEOh8hH_dNSIhUr4N3y6ng/videos',
+            href_title='https://www.youtube.com/channel/UCPEOh8hH_dNSIhUr4N3y6ng/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ShoShoser',
+            title_full='ShoShoser',
+            href='https://www.youtube.com/channel/UCFeRx6XCRVLaVVQgr0ZQhlQ/videos',
+            href_title='https://www.youtube.com/channel/UCFeRx6XCRVLaVVQgr0ZQhlQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='PrimeBike',
+            title_full='Prime Bike',
+            href='https://www.youtube.com/channel/UCOczCghYGW019XHlJ-0stxw/videos',
+            href_title='https://www.youtube.com/channel/UCOczCghYGW019XHlJ-0stxw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Гуфовский',
+            title_full='Гуфовский',
+            href='https://www.youtube.com/channel/UCRT9pHOR2iY4qw0qxt7dQpw/videos',
+            href_title='https://www.youtube.com/channel/UCRT9pHOR2iY4qw0qxt7dQpw/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Mbike',
+            title_full='Mbike',
+            href='https://www.youtube.com/channel/UCrJB33zyMCYYOQeYfN8bs5w/videos',
+            href_title='https://www.youtube.com/channel/UCrJB33zyMCYYOQeYfN8bs5w/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ГАРАЖ',
+            title_full='ГАРАЖ',
+            href='https://www.youtube.com/channel/UCa2l2SX7VnV3XSfS2Qe951Q/videos',
+            href_title='https://www.youtube.com/channel/UCa2l2SX7VnV3XSfS2Qe951Q/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='LoL',
+            title_full='League of Legends',
+            href='https://www.youtube.com/channel/UC2t5bjwHdUX4vM2g8TRDq5g/videos',
+            href_title='https://www.youtube.com/channel/UC2t5bjwHdUX4vM2g8TRDq5g/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ПроПутешествия',
+            title_full='ПРО ПУТЕШЕСТВИЯ Богдан Булычёв',
+            href='https://www.youtube.com/channel/UCgovv1nO7nnCwulSBa2Kjsw/videos',
+            href_title='https://www.youtube.com/channel/UCgovv1nO7nnCwulSBa2Kjsw/videos',
+            emojis='',
+            inIndex=True
+        ),
 
 
 
