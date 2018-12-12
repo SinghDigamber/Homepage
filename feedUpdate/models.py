@@ -1351,11 +1351,11 @@ class feedUpdate(models.Model):
             feed = feedparser.parse(href)
 
             for item in feed["items"]:
-                if "updated" in item:
-                    datestring = item["updated"]
+                if "published" in item:
+                    datestring = item["published"]
                 else:
-                    if "published" in item:
-                        datestring = item["published"]
+                    if "updated" in item:
+                        datestring = item["updated"]
 
                 try:
                     dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
