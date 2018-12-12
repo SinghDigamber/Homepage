@@ -41,6 +41,7 @@ class Command(BaseCommand):
                     # datetime=item.datetime,
                     # title=item.title
             ).exists():
+                item.datetime = datetime.now()
                 # print(item)
                 item.save()
                 newItems += 1
