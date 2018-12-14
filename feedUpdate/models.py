@@ -18,6 +18,7 @@ class feed(models.Model):
     href_title = models.CharField(max_length=420)
     emojis = models.CharField(max_length=7)  # usage as tags
     inIndex = models.BooleanField(default=True)  # showing feed in feedUpdate
+    filter = models.CharField(max_length=140)
 
     def find(title):
         for item in feeds:
@@ -27,7 +28,7 @@ class feed(models.Model):
     def keys():
         result = []
         for item in feeds:
-            if (item.inIndex==True):
+            if (item.inIndex==True and item.title != 'RenegadeImmortal' and item.title != 'EvilGod'):
                 result.append(item.title)
         return result
 
@@ -54,18 +55,20 @@ feeds = [
         feed(
             title='RenegadeImmortal',
             title_full='Renegade Immortal',
-            href='https://www.novelupdates.com/series/renegade-immortal/',
+            href='https://www.wuxiaworld.com/feed/chapters',
             href_title='https://www.wuxiaworld.com/novel/renegade-immortal',
             emojis='',
-            inIndex=True
+            inIndex=True,
+            filter='novel/renegade-immortal'
         ),
         feed(
             title='EvilGod',
             title_full='Heaven Defying Evil God',
-            href='https://www.novelupdates.com/series/against-the-gods/',
+            href='https://www.wuxiaworld.com/feed/chapters',
             href_title='https://www.wuxiaworld.com/novel/against-the-gods',
             emojis='',
-            inIndex=True
+            inIndex=True,
+            filter='novel/against-the-gods'
         ),
         feed(
             title='Gamer',
@@ -1257,12 +1260,13 @@ feeds = [
             # {'feed': {}, 'entries': [], 'bozo': 1,
             # 'bozo_exception': CertificateError("hostname 'куражбамбей.рф' doesn't match either of 'kuraj-serials.ru',
             # 'mx.kuraj-serials.ru', 'xn--80aacbuczbw9a6a.xn--p1ai'",)}
-            title='Кураж',
-            title_full='Кураж-Бамбей',
+            title='Шелдон',
+            title_full='Детство Шелдона',
             href='https://kuraj-serials.ru/rss.xml',
             href_title='https://куражбамбей.рф/serial-detstvo-sheldona-2-sezon-9-seriya.html',
             emojis='',
-            inIndex=True
+            inIndex=True,
+            filter='serial-detstvo-sheldona'
         ),
     ]
 
@@ -1284,7 +1288,7 @@ class feedUpdate(models.Model):
         result = []
         for item in items:
             try:
-                result.extend(feedUpdate.list(item, feed.find(item).href))
+                result.extend(feedUpdate.list(item, feed.find(item).href, feed.find(item).filter))
             except KeyError:
                 result.append(feedUpdate(
                     name="not found in feeds",
@@ -1295,7 +1299,7 @@ class feedUpdate(models.Model):
 
         return result
 
-    def list(feedName, href):
+    def list(feedName, href, filter):
         result = []
 
         # custom ранобэ.рф API import
@@ -1316,7 +1320,7 @@ class feedUpdate(models.Model):
         elif href.find('https://www.youtube.com/channel/') != -1:
             href = "https://www.youtube.com/feeds/videos.xml?channel_id="+href[32:-7]
 
-            result = feedUpdate.list(feedName, href)
+            result = feedUpdate.list(feedName, href, filter)
 
         # custom novelupdates.com import
         elif href.find('https://www.novelupdates.com/series/') != -1:
@@ -1362,38 +1366,39 @@ class feedUpdate(models.Model):
             feed = feedparser.parse(href)
 
             for item in feed["items"]:
-                if "published" in item:
-                    datestring = item["published"]
-                else:
-                    if "updated" in item:
-                        datestring = item["updated"]
-
-                try:
-                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
-                except ValueError:
-                    if datestring[-3] == ':':  # YouTube / TheVeпrge
-                        dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
+                if item["links"][0]["href"].find(filter) != -1:
+                    if "published" in item:
+                        datestring = item["published"]
                     else:
-                        try:  # except ValueError: # it is for webtooms import feeds['Gamer']
-                            dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
-                        except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
-                            try:
-                                dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')  # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
-                            except ValueError: # idea-instructions.com
-                                dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
+                        if "updated" in item:
+                            datestring = item["updated"]
+
+                    try:
+                        dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
+                    except ValueError:
+                        if datestring[-3] == ':':  # YouTube / TheVeпrge
+                            dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
+                        else:
+                            try:  # except ValueError: # it is for webtooms import feeds['Gamer']
+                                dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
+                            except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
+                                try:
+                                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')  # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
+                                except ValueError: # idea-instructions.com
+                                    dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
 
 
-                if any(word in feedName for word in [
-                    'XKCD',
-                    'Shadman',
-                ]):
-                    dateresult = dateresult + timedelta(hours=24)
+                    if any(word in feedName for word in [
+                        'XKCD',
+                        'Shadman',
+                    ]):
+                        dateresult = dateresult + timedelta(hours=24)
 
-                toAdd = feedUpdate(
-                    name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
-                    datetime=dateresult,
-                    title=feedName)
-                result.append(toAdd)
+                    toAdd = feedUpdate(
+                        name=item["title_detail"]["value"],
+                        href=item["links"][0]["href"],
+                        datetime=dateresult,
+                        title=feedName)
+                    result.append(toAdd)
 
         return result
