@@ -39,7 +39,7 @@ class feedUpdateIndexView(ListView):
 
         multibook = True  # check for multibook and creates items object with required feeds
         try:
-            if self.kwargs['feeds'] != "force":
+            if self.kwargs['feeds'] != "/force" and self.kwargs['feeds'] != "/index":
                 header = self.kwargs['feeds']
                 items = header.split("+")
                 if len(items) == 1:
@@ -55,9 +55,16 @@ class feedUpdateIndexView(ListView):
         except KeyError:
             items = feed.keys()
         try:
-            if self.kwargs['force'] != "":
+            if self.kwargs['mode'] == "/index":
+                if header == "Обновления":
+                    items = list(feedUpdate.objects.filter(title__in=feed.keys())[:items_limit])
+                else:
+                    items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
+            elif self.kwargs['mode'] == "/force":
                 items = feedUpdate.multilist(items)
                 items = sorted(items, key=lambda feedUpdate: str(feedUpdate.datetime), reverse=True)
+            else:
+                items = []
         except KeyError:
             if header == "Обновления":
                 items = list(feedUpdate.objects.filter(title__in=feed.keys())[:items_limit])
