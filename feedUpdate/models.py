@@ -1253,6 +1253,17 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            # {'feed': {}, 'entries': [], 'bozo': 1,
+            # 'bozo_exception': CertificateError("hostname 'куражбамбей.рф' doesn't match either of 'kuraj-serials.ru',
+            # 'mx.kuraj-serials.ru', 'xn--80aacbuczbw9a6a.xn--p1ai'",)}
+            title='Кураж',
+            title_full='Кураж-Бамбей',
+            href='https://kuraj-serials.ru/rss.xml',
+            href_title='https://куражбамбей.рф/serial-detstvo-sheldona-2-sezon-9-seriya.html',
+            emojis='',
+            inIndex=True
+        ),
     ]
 
 
