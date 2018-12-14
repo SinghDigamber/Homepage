@@ -1,5 +1,8 @@
 #!/bin/sh
 
+ssh-keygen
+ssh-copy-id pi@192.168.1.201
+
 # install Xcode with command line tools OR only tools with command:
 xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
