@@ -28,8 +28,7 @@ class feed(models.Model):
     def keys():
         result = []
         for item in feeds:
-            if (item.inIndex==True and item.title != 'RenegadeImmortal' and item.title != 'EvilGod'):
-                result.append(item.title)
+            result.append(item.title)
         return result
 
     def keysAll():
