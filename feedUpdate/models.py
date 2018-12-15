@@ -28,7 +28,8 @@ class feed(models.Model):
     def keys():
         result = []
         for item in feeds:
-            result.append(item.title)
+            if (item.inIndex==True):
+                result.append(item.title)
         return result
 
     def keysAll():
