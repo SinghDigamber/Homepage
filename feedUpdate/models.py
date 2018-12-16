@@ -1363,9 +1363,9 @@ class feedUpdate(models.Model):
 
         # default RSS import
         else:
-            feed = feedparser.parse(href)
+            rss = feedparser.parse(href)
 
-            for item in feed["items"]:
+            for item in rss["items"]:
                 if item["links"][0]["href"].find(filter) != -1:
                     if "published" in item:
                         datestring = item["published"]
@@ -1380,10 +1380,12 @@ class feedUpdate(models.Model):
                             dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
                         else:
                             try:  # except ValueError: # it is for webtooms import feeds['Gamer']
-                                dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')  # +timedelta(hours=3)
+                                dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')
+                                # +timedelta(hours=3)
                             except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
                                 try:
-                                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')  # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
+                                    # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
+                                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')
                                 except ValueError: # idea-instructions.com
                                     dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
 
