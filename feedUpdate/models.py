@@ -19,6 +19,7 @@ class feed(models.Model):
     emojis = models.CharField(max_length=7)  # usage as tags
     inIndex = models.BooleanField(default=True)  # showing feed in feedUpdate
     filter = models.CharField(max_length=140)
+    delay = models.IntegerField()
 
     def find(title):
         for item in feeds:
@@ -956,6 +957,7 @@ feeds = [
             href_title='https://xkcd.com/rss.xml',
             emojis='',
             inIndex=True,
+            delay=24
         ),
         feed(
             title='ReflectiveDesire',
@@ -988,6 +990,7 @@ feeds = [
             href_title='http://www.shadbase.com/',
             emojis='',
             inIndex=True,
+            delay=48
         ),
         feed(
             title='FisheyePlacebo',
@@ -1389,12 +1392,9 @@ class feedUpdate(models.Model):
                                 except ValueError: # idea-instructions.com
                                     dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
 
-
-                    if any(word in feedName for word in [
-                        'XKCD',
-                        'Shadman',
-                    ]):
-                        dateresult = dateresult + timedelta(hours=24)
+                    delay=feed.find(feedName).delay
+                    if(type(delay) is not type(None)):
+                        dateresult = dateresult + timedelta(hours=delay)
 
                     toAdd = feedUpdate(
                         name=item["title_detail"]["value"],
