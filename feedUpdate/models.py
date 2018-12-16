@@ -105,10 +105,26 @@ feeds = [
             inIndex=True
         ),
         feed(
-            title='Keddr',
-            title_full='Keddr.com',
+            title='KeddrYT',
+            title_full='Keddr.com (YouTube)',
             href='https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A/videos',
             href_title='https://www.youtube.com/channel/UCSpU8Y1aoqBSAwh8DBpiM9A/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='VeddroYT',
+            title_full='Veddro.com (YouTube)',
+            href='https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos',
+            href_title='https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ZaddrotYT',
+            title_full='Zaddrot.com (YouTube)',
+            href='https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos',
+            href_title='https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos',
             emojis='',
             inIndex=True
         ),
@@ -151,6 +167,14 @@ feeds = [
             href_title='https://www.youtube.com/channel/UC0vBXGSyV14uvJ4hECDOl0Q/videos',
             emojis='',
             inIndex=True
+        ),
+        feed(
+            title='SuperFun',
+            title_full='Channel Super Fun',
+            href='https://www.youtube.com/channel/UCBZiUUYeLfS5rIj4TQvgSvA/videos',
+            href_title='https://www.youtube.com/channel/UCBZiUUYeLfS5rIj4TQvgSvA/videos',
+            emojis='',
+            inIndex=False
         ),
         feed(
             title='PRIME',
@@ -214,7 +238,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos',
             href_title='https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='Cosplay02',
@@ -222,7 +246,15 @@ feeds = [
             href='https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos',
             href_title='https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos',
             emojis='',
-            inIndex=False
+            inIndex=True
+        ),
+        feed(
+            title="Cosplay03",
+            title_full="Milligan Vick",
+            href="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
+            href_title="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
+            emojis='',
+            inIndex=True
         ),
         feed(
             title='Астамуринг',
@@ -270,7 +302,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
             href_title='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='Kaufman',
@@ -278,7 +310,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos',
             href_title='https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='FCade',
@@ -322,6 +354,14 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='VergeScienceYT',
+            title_full='The Verge Science (YouTube)',
+            href='https://www.youtube.com/channel/UCtxJFU9DgUhfr2J2bveCHkQ/videos',
+            href_title='https://www.youtube.com/channel/UCtxJFU9DgUhfr2J2bveCHkQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
             title='mono',
             title_full='monobank',
             href='https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg/videos',
@@ -343,7 +383,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCrR7GJSvz481CxHQn-yXHJw/videos',
             href_title='https://www.youtube.com/channel/UCrR7GJSvz481CxHQn-yXHJw/videos',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title="MLewin",
@@ -351,7 +391,7 @@ feeds = [
             href="https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos",
             href_title="https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos",
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title="AdventureTeam",
@@ -378,14 +418,6 @@ feeds = [
             inIndex=False
         ),
         feed(
-            title="Cosplay03",
-            title_full="Milligan Vick",
-            href="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
-            href_title="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
-            emojis='',
-            inIndex=True
-        ),
-        feed(
             title="Snazzy",
             title_full="Snazzy Labs",
             href="https://www.youtube.com/channel/UCO2x-p9gg9TLKneXlibGR7w/videos",
@@ -407,13 +439,21 @@ feeds = [
             href='https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA/videos',
             href_title='https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Шелягина',
             title_full='Наташа Шелягина',
             href='https://www.youtube.com/channel/UC97y3hRp4lfOhAZpuSbYruQ/videos',
             href_title='https://www.youtube.com/channel/UC97y3hRp4lfOhAZpuSbYruQ/videos',
+            emojis='',
+            inIndex=False
+        ),
+        feed(
+            title='GMBN',
+            title_full='GMBN',
+            href='https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos',
+            href_title='https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos',
             emojis='',
             inIndex=True
         ),
@@ -422,14 +462,6 @@ feeds = [
             title_full='GMBN Tech',
             href='https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ/videos',
             href_title='https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ/videos',
-            emojis='',
-            inIndex=True
-        ),
-        feed(
-            title='GMBN',
-            title_full='GMBN',
-            href='https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos',
-            href_title='https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos',
             emojis='',
             inIndex=True
         ),
@@ -458,14 +490,6 @@ feeds = [
             inIndex=True
         ),
         feed(
-            title='Veddro',
-            title_full='Veddro.com',
-            href='https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos',
-            href_title='https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos',
-            emojis='',
-            inIndex=True
-        ),
-        feed(
             title='Ленинград',
             title_full='Ленинград',
             href='https://www.youtube.com/channel/UCY0C6A3t3RTUN3BB65rWAgQ/videos',
@@ -487,7 +511,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ/videos',
             href_title='https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Corridor',
@@ -503,7 +527,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w/videos',
             href_title='https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w/videos',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='devinsupertramp',
@@ -534,14 +558,6 @@ feeds = [
             title_full='Lazy Square',
             href='https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw/videos',
             href_title='https://www.youtube.com/channel/UCZTc2bbF64cj_r0btHgaakw/videos',
-            emojis='',
-            inIndex=True
-        ),
-        feed(
-            title='Zaddrot',
-            title_full='Zaddrot',
-            href='https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos',
-            href_title='https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos',
             emojis='',
             inIndex=True
         ),
@@ -583,7 +599,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCFtOJh5aZ2hqGA4wJnUEnZw/videos',
             href_title='https://www.youtube.com/channel/UCFtOJh5aZ2hqGA4wJnUEnZw/videos',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='Поперечный',
@@ -602,7 +618,7 @@ feeds = [
             inIndex=True
         ),
         feed(
-            title='Storytelling',
+            title='HelloFutureMe',
             title_full='Hello Future Me (Storytelling)',
             href='https://www.youtube.com/channel/UCFQMO-YL87u-6Rt8hIVsRjA/videos',
             href_title='https://www.youtube.com/channel/UCFQMO-YL87u-6Rt8hIVsRjA/videos',
@@ -614,14 +630,6 @@ feeds = [
             title_full="Seth's Bike Hacks",
             href='https://www.youtube.com/channel/UCu8YylsPiu9XfaQC74Hr_Gw/videos',
             href_title='https://www.youtube.com/channel/UCu8YylsPiu9XfaQC74Hr_Gw/videos',
-            emojis='',
-            inIndex=True
-        ),
-        feed(
-            title='SuperFun',
-            title_full='Channel Super Fun',
-            href='https://www.youtube.com/channel/UCBZiUUYeLfS5rIj4TQvgSvA/videos',
-            href_title='https://www.youtube.com/channel/UCBZiUUYeLfS5rIj4TQvgSvA/videos',
             emojis='',
             inIndex=True
         ),
@@ -639,14 +647,6 @@ feeds = [
             title_full='Jonathan Young',
             href='https://www.youtube.com/channel/UC40gs0opj389ohjLnJIAJzA/videos',
             href_title='https://www.youtube.com/channel/UC40gs0opj389ohjLnJIAJzA/videos',
-            emojis='',
-            inIndex=True
-        ),
-        feed(
-            title='VergeScience',
-            title_full='Verge Science',
-            href='https://www.youtube.com/channel/UCtxJFU9DgUhfr2J2bveCHkQ/videos',
-            href_title='https://www.youtube.com/channel/UCtxJFU9DgUhfr2J2bveCHkQ/videos',
             emojis='',
             inIndex=True
         ),
@@ -671,14 +671,6 @@ feeds = [
             title_full='Max Trawor',
             href='https://www.youtube.com/channel/UCT4WspI1gXguL9kCOirYBBg/videos',
             href_title='https://www.youtube.com/channel/UCT4WspI1gXguL9kCOirYBBg/videos',
-            emojis='',
-            inIndex=True
-        ),
-        feed(
-            title='MilliganVick',
-            title_full='Milligan Vick',
-            href='https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos',
-            href_title='https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos',
             emojis='',
             inIndex=True
         ),
@@ -816,7 +808,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCDlQwv99CovKafGvxyaiNDA/videos',
             href_title='https://www.youtube.com/channel/UCDlQwv99CovKafGvxyaiNDA/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Specialized',
@@ -923,7 +915,7 @@ feeds = [
             href='feed:https://online.anidub.com/rss.xml',
             href_title='feed:https://online.anidub.com/rss.xml',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='Gam3',
@@ -963,7 +955,7 @@ feeds = [
             href='https://xkcd.com/rss.xml',
             href_title='https://xkcd.com/rss.xml',
             emojis='',
-            inIndex=True
+            inIndex=True,
         ),
         feed(
             title='ReflectiveDesire',
@@ -979,7 +971,7 @@ feeds = [
             href='https://www.theverge.com/rss/index.xml',
             href_title='https://www.theverge.com/',
             emojis='',
-            inIndex=False
+            inIndex=True
         ),
         feed(
             title='КабМин',
@@ -995,7 +987,7 @@ feeds = [
             href='feed://www.shadbase.com/feed/',
             href_title='http://www.shadbase.com/',
             emojis='',
-            inIndex=True
+            inIndex=True,
         ),
         feed(
             title='FisheyePlacebo',
@@ -1267,6 +1259,14 @@ feeds = [
             emojis='',
             inIndex=True,
             filter='serial-detstvo-sheldona'
+        ),
+        feed(
+            title='Keddr',
+            title_full='Keddr.com',
+            href='feed:https://keddr.com/feed/',
+            href_title='https://keddr.com/',
+            emojis='',
+            inIndex=True
         ),
     ]
 
