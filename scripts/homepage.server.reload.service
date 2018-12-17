@@ -13,7 +13,7 @@ OOMScoreAdjust=-100
 
 WorkingDirectory=/home/pi/Projects/Homepage
 
-ExecStart=/usr/bin/systemctl try-restart homepage.server.launch
+ExecStart=/bin/bash /home/pi/Projects/Homepage/scripts/homepage.server.reload
 
 [Install]
 WantedBy=multi-user.target
