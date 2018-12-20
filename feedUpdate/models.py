@@ -56,20 +56,24 @@ feeds = [
         feed(
             title='RenegadeImmortal',
             title_full='Renegade Immortal',
-            href='https://www.wuxiaworld.com/feed/chapters',
+            # href='https://www.novelupdates.com/series/renegade-immortal/',
+            # href='https://www.wuxiaworld.com/feed/chapters',
+            href='https://www.wuxiaworld.com/feed/chapters/renegade-immortal',
             href_title='https://www.wuxiaworld.com/novel/renegade-immortal',
             emojis='',
             inIndex=True,
-            filter='novel/renegade-immortal'
+            # filter='novel/renegade-immortal'
         ),
         feed(
             title='EvilGod',
             title_full='Heaven Defying Evil God',
-            href='https://www.wuxiaworld.com/feed/chapters',
+            # href='https://www.novelupdates.com/series/against-the-gods//',
+            # href='https://www.wuxiaworld.com/feed/chapters',
+            href='https://www.wuxiaworld.com/feed/chapters/against-the-gods',
             href_title='https://www.wuxiaworld.com/novel/against-the-gods',
             emojis='',
             inIndex=True,
-            filter='novel/against-the-gods'
+            # filter='novel/against-the-gods'
         ),
         feed(
             title='Gamer',
@@ -973,7 +977,7 @@ feeds = [
             href='https://www.theverge.com/rss/index.xml',
             href_title='https://www.theverge.com/',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='КабМин',
@@ -1269,7 +1273,7 @@ feeds = [
             href='feed:https://keddr.com/feed/',
             href_title='https://keddr.com/',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
     ]
 
