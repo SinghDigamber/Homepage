@@ -911,6 +911,30 @@ feeds = [
             emojis='',
             inIndex=True
         ),
+        feed(
+            title='Ancord',
+            title_full='ANCORD - Русский Голос Аниме',
+            href='https://www.youtube.com/channel/UC40zik1zj7yE8oqOYBxAS3A/videos',
+            href_title='https://www.youtube.com/channel/UC40zik1zj7yE8oqOYBxAS3A/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='AniZor',
+            title_full='AniZor',
+            href='https://www.youtube.com/channel/UCeW38CoW54j1GgTrer5JQLg/videos',
+            href_title='https://www.youtube.com/channel/UCeW38CoW54j1GgTrer5JQLg/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='DimitryB',
+            title_full='Dimitry B',
+            href='https://www.youtube.com/channel/UCOQXxrZprZMHsg6zC-uQcGw/videos',
+            href_title='https://www.youtube.com/channel/UCOQXxrZprZMHsg6zC-uQcGw/videos',
+            emojis='',
+            inIndex=True
+        ),
 
 
 
@@ -1105,6 +1129,62 @@ feeds = [
             title_full='Магия вернувшегося должна быть особенной',
             href='feed://readmanga.me/rss/manga?name=magiia_vernuvshegosia_doljna_byt_osobennoi',
             href_title='http://readmanga.me/magiia_vernuvshegosia_doljna_byt_osobennoi',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='КоролеваОперы',
+            title_full='Королева оперы',
+            href='feed://readmanga.me/rss/manga?name=the_queen_of_the_opera',
+            href_title='http://readmanga.me/the_queen_of_the_opera',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ЗимаЛето',
+            title_full='Зима подходит к Лету',
+            href='feed://readmanga.me/rss/manga?name=zima_podhodit_k_letu',
+            href_title='http://readmanga.me/zima_podhodit_k_letu',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='ЖаждаМагии',
+            title_full='Бывший сильнейший мечник жаждет магии в другом мире',
+            href='feed://readmanga.me/rss/manga?name=ex_strongest_swordsman_long_for_magic_in_different_world',
+            href_title='http://readmanga.me/ex_strongest_swordsman_long_for_magic_in_different_world',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Заступник',
+            title_full='Самый сильный в мире Заступник',
+            href='feed://readmanga.me/rss/manga?name=world_strongest_rearguard___labyrinth_country_and_dungeon_seekers',
+            href_title='http://readmanga.me/world_strongest_rearguard___labyrinth_country_and_dungeon_seekers',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='Ветролом',
+            title_full='Ветролом',
+            href='feed://readmanga.me/rss/manga?name=wind_breaker',
+            href_title='http://readmanga.me/wind_breaker',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='БурныйВек',
+            title_full='Бурный век',
+            href='feed://readmanga.me/rss/manga?name=volcanic_age',
+            href_title='http://readmanga.me/volcanic_age',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
+            title='БессмертныйТорговец',
+            title_full='Бессмертный торговец',
+            href='feed://readmanga.me/rss/manga?name=volcanic_age',
+            href_title='http://readmanga.me/volcanic_age',
             emojis='',
             inIndex=True
         ),
