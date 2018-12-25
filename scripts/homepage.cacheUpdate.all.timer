@@ -3,7 +3,7 @@ Description=homepage.cacheUpdate.all.timer: run homepage.cacheUpdate.all each 84
 Requires=homepage.cacheUpdate.index.service
 
 [Timer]
-OnUnitActiveSec=84min
+OnUnitActiveSec=420min
 
 [Install]
 WantedBy=timers.target
