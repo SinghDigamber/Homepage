@@ -1,5 +1,6 @@
 [Unit]
 Description=homepage.cacheUpdate.index.timer: run homepage.cacheUpdate.index each 15 minutes
+Requires=homepage.cacheUpdate.index.service
 
 [Timer]
 OnUnitActiveSec=15min
