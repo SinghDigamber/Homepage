@@ -7,6 +7,7 @@
         <h1>{{ list.title }}</h1>
 
         {% for chapter in list.items %}
+            {% if not '🏮' in feed.emojis %}
             <div class="chapter">
                 {% if chapter.inIndex %}
                     <b class="pointer">[&nbsp;&nbsp;&nbsp;] </b>
@@ -24,6 +25,7 @@
                 <a target="_blank" href="{% url "feedUpdate:feed" feeds=chapter.title mode='/force' %}">☠️️</a>
                 <a target="_blank" href="{{ chapter.href_title }}">⚓️️</a>
             </div>
+            {% endif %}
         {% empty %}
             <h2>There are no entries yet</h2>
         {% endfor %}

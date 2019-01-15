@@ -796,7 +796,7 @@ feeds = [
             title_full='ROANYER CD',
             href='https://www.youtube.com/channel/UCdVmtR_NzLIDoHOBKxahE3A/videos',
             href_title='https://www.youtube.com/channel/UCdVmtR_NzLIDoHOBKxahE3A/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
