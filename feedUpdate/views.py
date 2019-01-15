@@ -9,7 +9,7 @@ from django.urls import reverse
 class feedIndexView(ListView):
     model = feedUpdate
     template_name = "feedUpdate/feeds.html"
-    context_object_name = "list"
+    context_object_name = "fromView"
 
     def get_queryset(self):
         header = "Ленты обновлений"
@@ -19,7 +19,7 @@ class feedIndexView(ListView):
 
         return {
             'title': header,
-            'items': items,
+            'feeds': items,
             'multibook': multibook,
         }
 
@@ -27,7 +27,7 @@ class feedIndexView(ListView):
 class feedUpdateIndexView(ListView):
     model = feedUpdate
     template_name = "feedUpdate/index.html"
-    context_object_name = "list"
+    context_object_name = "fromView"
 
     def get_queryset(self):
         items_limit = 42

@@ -4,13 +4,13 @@
 
 {% block content %}
     <div id="chapters">
-        <h1>{{ list.title }}</h1>
+        <h1>{{ fromView.title }}</h1>
 
-        {% for chapter in list.items %}
+        {% for chapter in fromView.items %}
             <div id="chapters">
                 <b class="pointer">» </b>
                 <a target="_blank" href="{{ chapter.href }}">
-                    {% if list.multibook %}<b>{{ chapter.title }}</b>: {% endif %}
+                    {% if fromView.multibook %}<b>{{ chapter.title }}</b>: {% endif %}
                     {{ chapter.name }}
                 </a>
                 <a class="datetime">on {{chapter.datetime|date:'Y-m-d H:i' }}</a>

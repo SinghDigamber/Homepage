@@ -4,26 +4,26 @@
 
 {% block content %}
     <div id="chapters">
-        <h1>{{ list.title }}</h1>
+        <h1>{{ fromView.title }}</h1>
 
-        {% for chapter in list.items %}
+        {% for feed in fromView.feeds %}
             {% if not '🏮' in feed.emojis %}
             <div class="chapter">
-                {% if chapter.inIndex %}
+                {% if feed.inIndex %}
                     <b class="pointer">[&nbsp;&nbsp;&nbsp;] </b>
                 {% else %}
                     <b class="pointer">[X] </b>
                 {% endif %}
-                <a target="_blank" href="{% url "feedUpdate:feed" feeds=chapter.title mode='/index' %}">
-                    {% if list.multibook %}
-                        <b>{{ chapter.title }}</b>{% if chapter.title != chapter.title_full %}: {% endif %}
+                <a target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='/index' %}">
+                    {% if fromView.multibook %}
+                        <b>{{ feed.title }}</b>{% if feed.title != feed.title_full %}: {% endif %}
                     {% endif %}
-                    {% if chapter.title != chapter.title_full %}
-                        {{ chapter.title_full }}
+                    {% if feed.title != feed.title_full %}
+                        {{ feed.title_full }}
                     {% endif %}
                 </a>
-                <a target="_blank" href="{% url "feedUpdate:feed" feeds=chapter.title mode='/force' %}">☠️️</a>
-                <a target="_blank" href="{{ chapter.href_title }}">⚓️️</a>
+                <a target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='/force' %}">☠️️</a>
+                <a target="_blank" href="{{ feed.href_title }}">⚓️️</a>
             </div>
             {% endif %}
         {% empty %}
