@@ -299,7 +299,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCXYXxfVjxMppZY64-5baOsw/videos',
             href_title='https://www.youtube.com/channel/UCXYXxfVjxMppZY64-5baOsw/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='MarkFood',
