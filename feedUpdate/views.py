@@ -31,11 +31,7 @@ class feedUpdateIndexView(ListView):
 
     def get_queryset(self):
         items_limit = 42
-        try:  # title generating
-            if self.kwargs['force'] != "":
-                header = "Обновления: Forced"
-        except KeyError:
-            header = "Обновления"
+        header = "Обновления"
 
         multibook = True  # check for multibook and creates items object with required feeds
         try:
@@ -72,6 +68,9 @@ class feedUpdateIndexView(ListView):
                 items = list(feedUpdate.objects.filter(title__in=feed.keys())[:items_limit])
             else:
                 items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
+
+        if self.kwargs['mode'] == "/force":
+            header += ": Forced"
 
         return {
             'title': header,
