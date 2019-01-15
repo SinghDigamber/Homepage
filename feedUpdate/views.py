@@ -69,8 +69,11 @@ class feedUpdateIndexView(ListView):
             else:
                 items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
 
-        if self.kwargs['mode'] == "/force":
-            header += ": Forced"
+        try:
+            if self.kwargs['mode'] == "/force":
+                header += ": Forced"
+        except KeyError:
+            pass
 
         return {
             'title': header,
