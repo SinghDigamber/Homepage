@@ -307,7 +307,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
             href_title='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Kaufman',
@@ -740,7 +740,7 @@ feeds = [
             title_full='Latex Passion',
             href='https://www.youtube.com/channel/UC4wJ3VOE_COy2makRex45Sw/videos',
             href_title='https://www.youtube.com/channel/UC4wJ3VOE_COy2makRex45Sw/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -748,7 +748,7 @@ feeds = [
             title_full='Latex Fashion TV',
             href='https://www.youtube.com/channel/UCC3iGfxG5wG17GBe1PffP0Q/videos',
             href_title='https://www.youtube.com/channel/UCC3iGfxG5wG17GBe1PffP0Q/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -756,7 +756,7 @@ feeds = [
             title_full='Igor Wrapa',
             href='https://www.youtube.com/channel/UC1bsNUFMjbHxiO99GJ8r6mQ/videos',
             href_title='https://www.youtube.com/channel/UC1bsNUFMjbHxiO99GJ8r6mQ/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -804,7 +804,7 @@ feeds = [
             title_full='comrade latex',
             href='https://www.youtube.com/channel/UCC5-TbHPhx73cqMUMHWMFmw/videos',
             href_title='https://www.youtube.com/channel/UCC5-TbHPhx73cqMUMHWMFmw/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -829,7 +829,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCDfnam79n2tXXumz9i7jnIA/videos',
             href_title='https://www.youtube.com/channel/UCDfnam79n2tXXumz9i7jnIA/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='РОрловХа',
@@ -909,7 +909,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCgovv1nO7nnCwulSBa2Kjsw/videos',
             href_title='https://www.youtube.com/channel/UCgovv1nO7nnCwulSBa2Kjsw/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Ancord',
@@ -917,7 +917,7 @@ feeds = [
             href='https://www.youtube.com/channel/UC40zik1zj7yE8oqOYBxAS3A/videos',
             href_title='https://www.youtube.com/channel/UC40zik1zj7yE8oqOYBxAS3A/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='AniZor',
@@ -992,7 +992,7 @@ feeds = [
             title_full='Reflective Desire',
             href='http://reflectivedesire.com/rss/',
             href_title='http://reflectivedesire.com/',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
