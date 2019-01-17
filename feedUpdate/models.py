@@ -210,7 +210,7 @@ feeds = [
             title_full='Jannet Incosplay',
             href='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
             href_title='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -218,7 +218,7 @@ feeds = [
             title_full='Jessica Nigri',
             href='https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg/videos',
             href_title='https://www.youtube.com/channel/UCTg4jls4URruaHauposrhMg/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -242,24 +242,24 @@ feeds = [
             title_full='bky guy',
             href='https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos',
             href_title='https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos',
-            emojis='',
-            inIndex=True
+            emojis='🏮',
+            inIndex=False
         ),
         feed(
             title='Cosplay02',
             title_full='Herzlocast',
             href='https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos',
             href_title='https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos',
-            emojis='',
-            inIndex=True
+            emojis='🏮',
+            inIndex=False
         ),
         feed(
             title="Cosplay03",
             title_full="Milligan Vick",
             href="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
             href_title="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
-            emojis='',
-            inIndex=True
+            emojis='🏮',
+            inIndex=False
         ),
         feed(
             title='Астамуринг',
@@ -330,7 +330,7 @@ feeds = [
             title_full='Raquel Reed',
             href='https://www.youtube.com/channel/UCcSow8gRPkLK0u-1pLMkZsw/videos',
             href_title='https://www.youtube.com/channel/UCcSow8gRPkLK0u-1pLMkZsw/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -395,7 +395,7 @@ feeds = [
             title_full="Michelle Lewin",
             href="https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos",
             href_title="https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos",
-            emojis='',
+            emojis='🏮',
             inIndex=False
         ),
         feed(
@@ -419,7 +419,7 @@ feeds = [
             title_full="My Cherry Crush",
             href="https://www.youtube.com/channel/UC4lkVwG5XViZuoRrjdUqEeA/videos",
             href_title="https://www.youtube.com/channel/UC4lkVwG5XViZuoRrjdUqEeA/videos",
-            emojis='',
+            emojis='🏮',
             inIndex=False
         ),
         feed(
@@ -732,7 +732,7 @@ feeds = [
             title_full='Starfuckedfetish (YouTube)',
             href='https://www.youtube.com/channel/UC7AwpmWErjsVeoZmVWLKxaQ/videos',
             href_title='https://www.youtube.com/channel/UC7AwpmWErjsVeoZmVWLKxaQ/videos',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -764,14 +764,6 @@ feeds = [
             title_full='Louis Rossmann',
             href='https://www.youtube.com/channel/UCl2mFZoRqjw_ELax4Yisf6w/videos',
             href_title='https://www.youtube.com/channel/UCl2mFZoRqjw_ELax4Yisf6w/videos',
-            emojis='',
-            inIndex=True
-        ),
-        feed(
-            title='Jannet',
-            title_full='Jannet Incosplay',
-            href='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
-            href_title='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
             emojis='',
             inIndex=True
         ),
@@ -1016,7 +1008,7 @@ feeds = [
             title_full='Shadbase by Shadman',
             href='feed://www.shadbase.com/feed/',
             href_title='http://www.shadbase.com/',
-            emojis='',
+            emojis='🏮',
             inIndex=True,
             delay=48
         ),
@@ -1276,7 +1268,7 @@ feeds = [
             title_full='OCTOKURO',
             href='feed:https://www.octokuro.com/gallery?format=feed&type=rss',
             href_title='feed:https://www.octokuro.com/gallery',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
@@ -1284,7 +1276,7 @@ feeds = [
             title_full='oglaf.com',
             href='feed:https://www.oglaf.com/feeds/rss/',
             href_title='https://www.oglaf.com',
-            emojis='',
+            emojis='🏮',
             inIndex=True
         ),
         feed(
