@@ -171,7 +171,7 @@ feeds = [
             href='https://www.youtube.com/channel/UC0vBXGSyV14uvJ4hECDOl0Q/videos',
             href_title='https://www.youtube.com/channel/UC0vBXGSyV14uvJ4hECDOl0Q/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='SuperFun',
@@ -291,7 +291,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A/videos',
             href_title='https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Rapha',
@@ -315,7 +315,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos',
             href_title='https://www.youtube.com/channel/UCGczcywiY2efmZ4lYb6jB9Q/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='FCade',
@@ -532,7 +532,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w/videos',
             href_title='https://www.youtube.com/channel/UCM6cd0hPii_FJOzZaxqGj7w/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='devinsupertramp',
