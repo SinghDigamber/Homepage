@@ -17,9 +17,9 @@ sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.all.service /lib
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.all.timer /lib/systemd/system/homepage.cacheUpdate.all.timer
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.index.service /lib/systemd/system/homepage.cacheUpdate.index.service
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.index.timer /lib/systemd/system/homepage.cacheUpdate.index.timer
-sudo systemctl enable homepage.cacheUpdate.all.service
-sudo systemctl enable homepage.cacheUpdate.all.timer
-sudo systemctl enable homepage.cacheUpdate.index.service
+sudo systemctl disable homepage.cacheUpdate.all.service
+sudo systemctl disable homepage.cacheUpdate.index.service
+sudo systemctl disable homepage.cacheUpdate.all.timer
 sudo systemctl enable homepage.cacheUpdate.index.timer
 
 # project installation + web server launcher
