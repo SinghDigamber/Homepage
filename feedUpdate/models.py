@@ -1255,14 +1255,15 @@ feeds = [
             emojis='',
             inIndex=True
         ),
-        feed(
-            title='shencomix',
-            title_full='shencomix',
-            href='http://shencomix.com/rss',
-            href_title='http://shencomix.com/search/COMIC',
-            emojis='',
-            inIndex=True
-        ),
+        # website now leads to Instagram
+        #feed(
+        #    title='shencomix',
+        #    title_full='shencomix',
+        #    href='http://shencomix.com/rss',
+        #    href_title='http://shencomix.com/search/COMIC',
+        #    emojis='',
+        #    inIndex=True
+        #),
         feed(
             title='octokuro',
             title_full='OCTOKURO',
