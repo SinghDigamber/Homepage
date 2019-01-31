@@ -1348,6 +1348,15 @@ feeds = [
             emojis='',
             inIndex=False
         ),
+        feed(
+            title='Щит',
+            title_full='Становление Героя Щита',
+            href='feed:http://feeds.feedburner.com/ruranobe',
+            href_title='https://ruranobe.ru',
+            emojis='',
+            inIndex=False,
+            filter='Становление Героя Щита'
+        ),
     ]
 
 
