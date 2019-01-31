@@ -1446,7 +1446,7 @@ class feedUpdate(models.Model):
             rss = feedparser.parse(href)
 
             for item in rss["items"]:
-                if item["links"][0]["href"].find(filter) != -1:
+                if item["links"][0]["href"].find(filter) != -1 or item["title_detail"]["value"].find(filter) != -1:
                     if "published" in item:
                         datestring = item["published"]
                     else:
