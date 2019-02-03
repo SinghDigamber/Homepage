@@ -8,7 +8,7 @@ After=homepage.server.launch.service
 
 [Service]
 Type=oneshot
-RuntimeMaxSec=10m
+# RuntimeMaxSec=10m
 
 OOMScoreAdjust=-100
 
