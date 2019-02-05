@@ -235,7 +235,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA/videos',
             href_title='https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Cosplay01',
@@ -861,7 +861,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCOczCghYGW019XHlJ-0stxw/videos',
             href_title='https://www.youtube.com/channel/UCOczCghYGW019XHlJ-0stxw/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Гуфовский',
@@ -1253,7 +1253,7 @@ feeds = [
             href='feed:https://journal.tinkoff.ru/feed/',
             href_title='https://journal.tinkoff.ru',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         # website now leads to Instagram
         #feed(
