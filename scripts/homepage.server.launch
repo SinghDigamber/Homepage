@@ -29,7 +29,7 @@ sudo systemctl enable homepage.server.launch.service
 # project update installer scripts
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.server.reload.service /lib/systemd/system/homepage.server.reload.service
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.server.reload.timer /lib/systemd/system/homepage.server.reload.timer
-sudo systemctl enable homepage.server.reload.service
+sudo systemctl disable homepage.server.reload.service
 sudo systemctl enable homepage.server.reload.timer
 
 # pre-launch preparations
