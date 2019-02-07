@@ -936,7 +936,7 @@ feeds = [
             href='feed:https://online.anidub.com/rss.xml',
             href_title='feed:https://online.anidub.com/rss.xml',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Gam3',
