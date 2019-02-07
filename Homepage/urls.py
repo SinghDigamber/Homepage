@@ -25,6 +25,7 @@ urlpatterns = [
     #url(r'^', include('feedUpdate.urls', namespace="dashboard")),
 
     # modules
+    url(r'^fU/', include('feedUpdate.urls')),
     url(r'^feedUpdate/', include('feedUpdate.urls',
         namespace="feedUpdate")),
 
