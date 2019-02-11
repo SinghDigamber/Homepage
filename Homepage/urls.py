@@ -25,9 +25,9 @@ urlpatterns = [
     #url(r'^', include('feedUpdate.urls', namespace="dashboard")),
 
     # modules
-    url(r'^fU/', include('feedUpdate.urls')),
     url(r'^feedUpdate/', include('feedUpdate.urls',
         namespace="feedUpdate")),
+    url(r'^fU/', include('feedUpdate.urls')),
 
     # permanent
     url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
