@@ -323,7 +323,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA/videos',
             href_title='https://www.youtube.com/channel/UCHyBWpfAggsFPDc5A7l_eWA/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='Raquel',
