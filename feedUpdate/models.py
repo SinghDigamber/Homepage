@@ -99,7 +99,7 @@ feeds = [
             href='https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg/videos',
             href_title='https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='GCN',
@@ -460,7 +460,7 @@ feeds = [
             href='https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos',
             href_title='https://www.youtube.com/channel/UC_A--fhX5gea0i4UtpD99Gg/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='GMBNTech',
@@ -468,7 +468,7 @@ feeds = [
             href='https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ/videos',
             href_title='https://www.youtube.com/channel/UC6juisijUAHcJLt23nk-qOQ/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='ArhyBES',
@@ -1356,6 +1356,14 @@ feeds = [
             emojis='',
             inIndex=False,
             filter='Становление Героя Щита'
+        ),
+        feed(
+            title='SkazOff',
+            title_full='SkazOff Blog',
+            href='feed:https://skazoff.ru/feed/',
+            href_title='https://skazoff.ru',
+            emojis='',
+            inIndex=True
         ),
     ]
 
