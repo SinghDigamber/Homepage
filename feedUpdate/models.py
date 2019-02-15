@@ -118,6 +118,14 @@ feeds = [
             inIndex=True
         ),
         feed(
+            title='KeddrPlus',
+            title_full='KeddrPlus',
+            href='https://www.youtube.com/channel/UCB3_rmcc7oZ6Tdfe104rPNQ/videos',
+            href_title='https://www.youtube.com/channel/UCB3_rmcc7oZ6Tdfe104rPNQ/videos',
+            emojis='',
+            inIndex=True
+        ),
+        feed(
             title='VeddroYT',
             title_full='Veddro.com (YouTube)',
             href='https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos',
@@ -789,7 +797,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCdVmtR_NzLIDoHOBKxahE3A/videos',
             href_title='https://www.youtube.com/channel/UCdVmtR_NzLIDoHOBKxahE3A/videos',
             emojis='🏮',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='ComradeLtx',
