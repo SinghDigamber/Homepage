@@ -773,7 +773,7 @@ feeds = [
             href='https://www.youtube.com/channel/UCl2mFZoRqjw_ELax4Yisf6w/videos',
             href_title='https://www.youtube.com/channel/UCl2mFZoRqjw_ELax4Yisf6w/videos',
             emojis='',
-            inIndex=True
+            inIndex=False
         ),
         feed(
             title='StanStepanenko',
