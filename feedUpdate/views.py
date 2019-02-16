@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import feedUpdate, feed
+from .models import feedUpdate
+from feedUpdate.models_feeds import feed
 from django.views.generic import ListView
 import socket
 from django.shortcuts import redirect
