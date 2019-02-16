@@ -51,3 +51,8 @@ systemctl -all list-timers
 sudo systemctl status
 
 /opt/vc/bin/vcgencmd measure_temp
+
+
+
+python3 manage.py makemigrations
+python3 manage.py migrate

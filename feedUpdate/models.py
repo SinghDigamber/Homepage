@@ -17,7 +17,6 @@ class feed(models.Model):
     href = models.CharField(max_length=420)
     href_title = models.CharField(max_length=420)
     emojis = models.CharField(max_length=7)  # usage as tags
-    inIndex = models.BooleanField(default=True)  # showing feed in feedUpdate
     filter = models.CharField(max_length=140)
     delay = models.IntegerField()
 
@@ -1380,7 +1379,7 @@ class feedUpdate(models.Model):
     class Meta:
         ordering = ['-datetime']
     name = models.CharField(max_length=140)
-    href = models.CharField(max_length=420)
+    href = models.CharField(max_length=210)
     datetime = models.DateTimeField()
     title = models.CharField(max_length=42)
 
