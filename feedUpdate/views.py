@@ -13,14 +13,12 @@ class feedIndexView(ListView):
 
     def get_queryset(self):
         header = "Ленты обновлений"
-        multibook = True
 
         items = feed.all()
 
         return {
             'title': header,
             'feeds': items,
-            'multibook': multibook,
         }
 
 
@@ -42,7 +40,10 @@ class feedUpdateIndexView(ListView):
                     multibook = False
                     # TODO: check if feeds exists and return error if not. Maybe KeyError is returned here?
                     try:
-                        header = feed.find(header).title_full
+                        if feed.find(header).title_full:
+                            header = feed.find(header).title_full
+                        else:
+                            header = feed.find(header).title
                     except KeyError:
                         header = "Header "+header+" does not exist"
                         items = []

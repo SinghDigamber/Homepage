@@ -9,21 +9,16 @@
         {% for feed in fromView.feeds %}
             {% if not '🏮' in feed.emojis %}
             <div class="chapter">
-                {% if feed.inIndex %}
+                {% if '💎' in feed.emojis %}
                     <b class="pointer">[&nbsp;&nbsp;&nbsp;] </b>
                 {% else %}
                     <b class="pointer">[X] </b>
                 {% endif %}
                 <a target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='/index' %}">
-                    {% if fromView.multibook %}
-                        <b>{{ feed.title }}</b>{% if feed.title != feed.title_full %}: {% endif %}
-                    {% endif %}
-                    {% if feed.title != feed.title_full %}
-                        {{ feed.title_full }}
-                    {% endif %}
+                        <b>{{ feed.title }}</b>{% if feed.title_full %}: {{ feed.title_full }}{% endif %}
                 </a>
                 <a target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='/force' %}">☠️️</a>
-                <a target="_blank" href="{{ feed.href_title }}">⚓️️</a>
+                <a target="_blank" href="{% if feed.href_title %}{{ feed.href_title }}{% else %}{{ feed.href }}{% endif %}">⚓️️</a>
             </div>
             {% endif %}
         {% empty %}
