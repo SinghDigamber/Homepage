@@ -430,7 +430,6 @@ feeds = [
         title='CP',
         title_full='Cycling Pulse',
         href='https://www.youtube.com/channel/UCFtOJh5aZ2hqGA4wJnUEnZw/videos',
-        emojis='💎'
     ),
     feed(
         title='Поперечный',
