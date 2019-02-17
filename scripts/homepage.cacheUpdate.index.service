@@ -7,7 +7,7 @@ After=network-online.target
 After=homepage.server.launch.service
 
 [Service]
-Type=oneshot
+Type=forking
 # RuntimeMaxSec=10m
 
 OOMScoreAdjust=-100
