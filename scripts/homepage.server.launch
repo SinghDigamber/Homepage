@@ -18,7 +18,7 @@ sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.all.timer /lib/s
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.index.service /lib/systemd/system/homepage.cacheUpdate.index.service
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.index.timer /lib/systemd/system/homepage.cacheUpdate.index.timer
 sudo systemctl disable homepage.cacheUpdate.index.service
-sudo systemctl enable homepage.cacheUpdate.index.timer
+sudo systemctl disable homepage.cacheUpdate.index.timer
 sudo systemctl disable homepage.cacheUpdate.all.service
 sudo systemctl disable homepage.cacheUpdate.all.timer
 
