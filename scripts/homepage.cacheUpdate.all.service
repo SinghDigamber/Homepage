@@ -6,6 +6,8 @@ Wants=network-online.target
 After=network-online.target
 After=homepage.server.launch.service
 
+Conflicts=homepage.cacheUpdate.index.service
+
 [Service]
 Type=oneshot
 

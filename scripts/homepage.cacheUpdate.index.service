@@ -6,6 +6,8 @@ Wants=network-online.target
 After=network-online.target
 After=homepage.server.launch.service
 
+Conflicts=homepage.cacheUpdate.all.service
+
 [Service]
 Type=oneshot
 # RuntimeMaxSec=10m
