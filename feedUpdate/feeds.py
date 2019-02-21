@@ -1,42 +1,4 @@
-from django.db import models
-
-# emojis
-# 🏮 - hide from fU/feeds
-# 💎 - inIndex=True
-
-
-class feed(models.Model):
-    class Meta:
-        ordering = ['title_full']
-    title = models.CharField(max_length=42)
-    title_full = models.CharField(max_length=140)
-    href = models.CharField(max_length=420)
-    href_title = models.CharField(max_length=420)
-    emojis = models.CharField(max_length=7)  # usage as tags
-    filter = models.CharField(max_length=140)
-    delay = models.IntegerField()
-
-    def find(title):
-        for item in feeds:
-            if item.title == title:
-                return item
-
-    def keys():
-        result = []
-        for item in feeds:
-            if item.emojis.find('💎') != -1:
-                result.append(item.title)
-        return result
-
-    def keysAll():
-        result = []
-        for item in feeds:
-            result.append(item.title)
-        return result
-
-    def all():
-        return feeds
-
+from .models import feed
 
 '''
     feed(
