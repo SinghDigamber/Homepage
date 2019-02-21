@@ -1,6 +1,6 @@
 [Unit]
 Description=homepage.cacheUpdate.all.timer: run homepage.cacheUpdate.all each 140 minutes
-Requires=homepage.cacheUpdate.index.service
+Requires=homepage.cacheUpdate.all.service
 
 [Timer]
 OnUnitActiveSec=140min
