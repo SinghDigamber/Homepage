@@ -1,5 +1,11 @@
 [Unit]
 Description=homepage.server.reload.timer: run homepage.server.reload each 42 hours
+
+After=network.target
+Wants=network-online.target
+After=network-online.target
+After=homepage.server.launch.service
+After=homepage.cacheUpdate.timer
 Requires=homepage.server.reload.service
 
 [Timer]
