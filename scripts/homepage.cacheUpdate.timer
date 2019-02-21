@@ -1,6 +1,11 @@
 [Unit]
 Description=run homepage.cacheUpdate each 15 minutes
 
+After=network.target
+Wants=network-online.target
+After=network-online.target
+After=homepage.server.launch.service
+
 [Timer]
 OnUnitActiveSec=15min
 
