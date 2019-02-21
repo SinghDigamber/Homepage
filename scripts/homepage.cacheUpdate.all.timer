@@ -1,9 +1,0 @@
-[Unit]
-Description=homepage.cacheUpdate.all.timer: run homepage.cacheUpdate.all each 140 minutes
-
-[Timer]
-OnBootSec=5min
-OnUnitActiveSec=140min
-
-[Install]
-WantedBy=timers.target

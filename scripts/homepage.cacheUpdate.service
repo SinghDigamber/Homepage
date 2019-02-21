@@ -1,22 +1,19 @@
 [Unit]
-Description=Homepage.cacheUpdate.index.service
+Description=homepage.cacheUpdate.service
 
 After=network.target
 Wants=network-online.target
 After=network-online.target
 After=homepage.server.launch.service
 
-Conflicts=homepage.cacheUpdate.all.service
-
 [Service]
 Type=oneshot
-# RuntimeMaxSec=10m
 
 OOMScoreAdjust=-100
 
 WorkingDirectory=/home/pi/Projects/Homepage
 
-ExecStart=/home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.index
+ExecStart=/home/pi/Projects/Homepage/scripts/homepage.cacheUpdate
 
 [Install]
 WantedBy=multi-user.target
