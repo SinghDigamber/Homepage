@@ -5,6 +5,7 @@ After=network.target
 Wants=network-online.target
 After=network-online.target
 After=homepage.server.launch.service
+Requires=homepage.cacheUpdate.service
 
 [Timer]
 OnUnitActiveSec=15min
