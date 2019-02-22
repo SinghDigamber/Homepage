@@ -157,7 +157,7 @@ class feedUpdate(models.Model):
                     try:
                         dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
                     except ValueError:
-                        if datestring[-3] == ':':  # YouTube / TheVeпrge
+                        if datestring[-3] == ':':  # YouTube / TheVerge
                             dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
                         else:
                             try:  # except ValueError: # it is for webtooms import feeds['Gamer']
