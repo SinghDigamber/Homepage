@@ -11,7 +11,7 @@ from .models import feed
     ),
 '''
 
-feeds = [
+feeds = (
     feed(
         title='Скульптор',
         title_full='Легендарный Лунный Скульптор',
@@ -951,4 +951,4 @@ feeds = [
         href_title='https://skazoff.ru',
         emojis='💎',
     ),
-]
+)
