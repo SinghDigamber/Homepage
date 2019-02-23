@@ -95,8 +95,7 @@ class feedUpdate(models.Model):
                     name=each["title"],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
                     # TODO: check timezone as it is unknown (current theory is Moscow time):
-                    datetime=feedUpdate.datetimeModifier(
-                        datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Moscow')), feedName),
+                    datetime=datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Moscow')),
                     title=feedName))
 
         # custom RSS YouTube import (link to feed has to be converted manually)
@@ -133,8 +132,6 @@ class feedUpdate(models.Model):
                                 except ValueError: # idea-instructions.com
                                     dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
 
-                    dateresult = feedUpdate.datetimeModifier(dateresult, feedName)
-
                     toAdd = feedUpdate(
                         name=item["title_detail"]["value"],
                         href=item["links"][0]["href"],
@@ -142,20 +139,28 @@ class feedUpdate(models.Model):
                         title=feedName)
                     result.append(toAdd)
 
+        for each in result:
+            # datetime fixes
+            if each.datetime.tzinfo is not None and each.datetime.tzinfo.utcoffset(each.datetime) is not None:
+                dateresult2 = localtime(each.datetime)
+            else:
+                dateresult2 = each.datetime
+
+            del each.datetime
+            each.datetime = datetime(dateresult2.year, dateresult2.month, dateresult2.day,
+                dateresult2.hour, dateresult2.minute, dateresult2.second)
+
+            # print(feed.find(feedName).delay)
+            if type(feed.find(feedName).delay) is not type(None):
+                dateresult = dateresult + timedelta(hours=feed.find(feedName).delay)
+
+            # name fixes
+            if each.title == 'Shadman':
+                each.name = each.name[:each.name.find('(')-1]
+            elif each.title == 'Apple':
+                if each.name.find('— Apple') != -1:
+                    each.name = each.name[:each.name.find('— Apple')]
+                else:
+                    each.name = each.name[:each.name.find('– Apple')]
+
         return result
-
-    def datetimeModifier(dateresult, feedName):
-        if dateresult.tzinfo is not None and dateresult.tzinfo.utcoffset(dateresult) is not None:
-            dateresult2 = localtime(dateresult)
-        else:
-            dateresult2 = dateresult
-
-        del (dateresult)
-        dateresult = datetime(dateresult2.year, dateresult2.month, dateresult2.day, \
-                              dateresult2.hour, dateresult2.minute, dateresult2.second)
-
-        delay=feed.find(feedName).delay
-        if(type(delay) is not type(None)):
-            dateresult = dateresult + timedelta(hours=delay)
-
-        return dateresult
