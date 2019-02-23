@@ -5,6 +5,7 @@ from collections import OrderedDict
 import feedparser
 from datetime import datetime, timedelta
 from pytz import timezone
+from django.utils.timezone import localtime
 # Create your models here.
 
 # TODO: move project to actual database
@@ -94,7 +95,8 @@ class feedUpdate(models.Model):
                     name=each["title"],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
                     # TODO: check timezone as it is unknown (current theory is Moscow time):
-                    datetime=datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Kiev')),
+                    datetime=feedUpdate.datetimeModifier(
+                        datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Kiev'))),
                     title=feedName))
 
         # custom RSS YouTube import (link to feed has to be converted manually)
@@ -170,9 +172,7 @@ class feedUpdate(models.Model):
                                 except ValueError: # idea-instructions.com
                                     dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
 
-                    delay=feed.find(feedName).delay
-                    if(type(delay) is not type(None)):
-                        dateresult = dateresult + timedelta(hours=delay)
+                    dateresult = feedUpdate.datetimeModifier(dateresult)
 
                     toAdd = feedUpdate(
                         name=item["title_detail"]["value"],
@@ -182,3 +182,19 @@ class feedUpdate(models.Model):
                     result.append(toAdd)
 
         return result
+
+    def datetimeModifier(dateresult):
+        if dateresult.tzinfo is not None and dateresult.tzinfo.utcoffset(dateresult) is not None:
+            dateresult2 = localtime(dateresult)
+        else:
+            dateresult2 = dateresult
+
+        del (dateresult)
+        dateresult = datetime(dateresult2.year, dateresult2.month, dateresult2.day, \
+                              dateresult2.hour, dateresult2.minute, dateresult2.second)
+
+        #delay=feed.find(feedName).delay
+        #if(type(delay) is not type(None)):
+        #    dateresult = dateresult + timedelta(hours=delay)
+
+        return dateresult
