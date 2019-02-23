@@ -96,7 +96,7 @@ class feedUpdate(models.Model):
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
                     # TODO: check timezone as it is unknown (current theory is Moscow time):
                     datetime=feedUpdate.datetimeModifier(
-                        datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Kiev'))),
+                        datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Moscow')), feedName),
                     title=feedName))
 
         # custom RSS YouTube import (link to feed has to be converted manually)
@@ -133,7 +133,7 @@ class feedUpdate(models.Model):
                                 except ValueError: # idea-instructions.com
                                     dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
 
-                    dateresult = feedUpdate.datetimeModifier(dateresult)
+                    dateresult = feedUpdate.datetimeModifier(dateresult, feedName)
 
                     toAdd = feedUpdate(
                         name=item["title_detail"]["value"],
@@ -144,7 +144,7 @@ class feedUpdate(models.Model):
 
         return result
 
-    def datetimeModifier(dateresult):
+    def datetimeModifier(dateresult, feedName):
         if dateresult.tzinfo is not None and dateresult.tzinfo.utcoffset(dateresult) is not None:
             dateresult2 = localtime(dateresult)
         else:
@@ -154,8 +154,8 @@ class feedUpdate(models.Model):
         dateresult = datetime(dateresult2.year, dateresult2.month, dateresult2.day, \
                               dateresult2.hour, dateresult2.minute, dateresult2.second)
 
-        #delay=feed.find(feedName).delay
-        #if(type(delay) is not type(None)):
-        #    dateresult = dateresult + timedelta(hours=delay)
+        delay=feed.find(feedName).delay
+        if(type(delay) is not type(None)):
+            dateresult = dateresult + timedelta(hours=delay)
 
         return dateresult
