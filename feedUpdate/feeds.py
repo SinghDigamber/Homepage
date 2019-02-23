@@ -676,7 +676,7 @@ feeds = (
         href='feed://www.shadbase.com/feed/',
         href_title='http://www.shadbase.com/',
         emojis='🏮💎',
-        delay=48
+        delay=42
     ),
     feed(
         title='FisheyePlacebo',
