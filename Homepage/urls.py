@@ -34,8 +34,4 @@ urlpatterns = [
         permanent=True), name="Trakt"),
     url(r'^Github/$', RedirectView.as_view(url='https://github.com/OlehKrupko/Homepage',
         permanent=True), name="GitHub"),
-
-    # extra
-    url(r'^university_TItaP/', include('university_TItaP.urls',
-        namespace="university_TItaP")),
 ]
