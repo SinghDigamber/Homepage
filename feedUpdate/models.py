@@ -105,45 +105,6 @@ class feedUpdate(models.Model):
 
             result = feedUpdate.list(feedName, href, filter)
 
-        # custom novelupdates.com import
-        elif href.find('https://www.novelupdates.com/series/') != -1:
-            result = []
-            result_name = []
-            result_href = []
-            result_datetime = []
-
-            resp = requests.get(href)  # 0.4 seconds
-            strainer = SoupStrainer('table', attrs={'id': 'myTable'});
-            soup = BeautifulSoup(resp.text, "lxml", parse_only=strainer)  # ~0.4 Sculptor / ~0.7 System seconds
-
-            for entry in soup.find_all(attrs={"class": "chp-release"}):
-                result_name.append("Chapter "+entry['title'][1:])
-                result_href.append("http:"+entry['href'])
-
-            for entry in soup.find_all(attrs={"style": "padding-left:5px;"}):
-                if entry.text != "Date":
-                    result_datetime_time=timedelta(
-                        hours=datetime.now().hour,
-                        minutes=datetime.now().minute,
-                        seconds=datetime.now().second)
-                    #if datetime.now().hour <= 12:
-                    #    result_datetime_time = result_datetime_time+timedelta(days=1)
-                    # +timedelta(hours=3)
-
-                    result_datetime_time = datetime.strptime(entry.text, "%m/%d/%y")+result_datetime_time
-                    result_datetime_time = result_datetime_time + timedelta(hours=24)
-                    # result_datetime_time = datetime.now()
-                    result_datetime_time.astimezone(timezone('Europe/Kiev'))
-                    result_datetime.append(result_datetime_time)
-
-            if len(result_name) == len(result_href) and len(result_href) == len(result_datetime):
-                for num in range(0, len(result_name)):
-                    result.append(feedUpdate(
-                        name=result_name[num],
-                        href=result_href[num],
-                        datetime=result_datetime[num],
-                        title=feedName))
-
         # default RSS import
         else:
             rss = feedparser.parse(href)
