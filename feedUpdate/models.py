@@ -65,7 +65,6 @@ class feedUpdate(models.Model):
         return "["+self.title+"] "+self.name+" published on "+str(self.datetime)+" with link "+self.href
 
     def multilist(items):
-        # TODO: merge forced and not algorithms and do everything via this function
         # TODO: warn if wrong filters were used
         result = []
         for item in items:
@@ -85,7 +84,7 @@ class feedUpdate(models.Model):
         result = []
 
         # custom ранобэ.рф API import
-        # TODO: stupid workaround as API will be closed (can be ignored ATM)
+        # TODO: Warning! API can be closed
         if href.find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
             request = "https://xn--80ac9aeh6f.xn--p1ai/v1/book/get/?bookAlias="+href[31:-1]
             request = requests.get(request).json()  # 0.4 seconds
@@ -94,7 +93,6 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=each["title"],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
-                    # TODO: check timezone as it is unknown (current theory is Moscow time):
                     datetime=datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Moscow')),
                     title=feedName))
 
