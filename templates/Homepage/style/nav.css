@@ -20,6 +20,9 @@ nav a {
     color: white;
     border-right: 1px dashed black;
 }
+nav :last-child {
+    border-right-style: hidden;
+}
 nav a:hover {
     color: greenyellow;
 }
