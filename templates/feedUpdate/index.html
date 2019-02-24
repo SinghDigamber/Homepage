@@ -1,22 +1,23 @@
 {% extends 'Homepage/base.html' %}
 
-{% block title %} » feedUpdate{% endblock %}
+{% block title %} » feedUpdate » {{ fromView.title }}{% endblock %}
 
-{% block content %}
-    <div id="chapters">
-        <h1>{{ fromView.title }}</h1>
+{% block meta %}<meta http-equiv="refresh" content="600" >{% endblock %}
 
-        {% for chapter in fromView.items %}
-            <div id="chapters">
-                <b class="pointer">» </b>
-                <a target="_blank" href="{{ chapter.href }}">
-                    {% if fromView.multibook %}<b>{{ chapter.title }}</b>: {% endif %}
-                    {{ chapter.name }}
-                </a>
-                <a class="datetime">on {{chapter.datetime|date:'Y-m-d H:i' }}</a>
-            </div>
-        {% empty %}
-            <h2>There are no entries yet</h2>
-        {% endfor %}
-    </div>
+{% block main %}
+    <h1>{{ fromView.title }}</h1>
+
+    <ul id="feedUpdate">
+    {% for chapter in fromView.items %}
+        <li><span>
+            <a class="name" target="_blank" href="{{ chapter.href }}">
+                {% if fromView.multibook %}<span class="title">{{ chapter.title }}</span>: {% endif %}
+                {{ chapter.name }}
+            </a>
+            <span class="datetime">on {{chapter.datetime|date:'Y-m-d H:i' }}</span>
+        </span></li>
+    {% empty %}
+        <li>Oops, something went wrong. Empty!</li>
+    {% endfor %}
+    </ul>
 {% endblock %}

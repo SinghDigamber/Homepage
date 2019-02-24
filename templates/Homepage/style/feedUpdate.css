@@ -1,0 +1,53 @@
+/* ul#feedUpdate */
+#feedUpdate {
+    padding-left: 0;
+}
+#feedUpdate li {
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 22px;
+}
+h1 {
+    font-size: 44px;
+    line-height: 0.37;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+/* ul#feedUpdate li:before */
+#feedUpdate li:before {
+    content: "»";
+    color: red;
+    font-weight: bold;
+    /* padding-right: 5px; */
+}
+#feedUpdate li.index-true:before {
+    content: "💎";
+}
+#feedUpdate li.index-false:before {
+    content: "🗃️";
+}
+
+/* ul#feedUpdate li a */
+#feedUpdate a {
+    color: white;
+}
+#feedUpdate .emojis a,
+#feedUpdate .name {
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-user-select: none;
+}
+#feedUpdate .name:link:hover {
+    color: greenyellow;
+}
+#feedUpdate :visited,
+#feedUpdate .datetime {
+    color: #333;
+}
+#feedUpdate .datetime {
+    cursor: default;
+}
+#feedUpdate .title {
+    font-weight: bold;
+}

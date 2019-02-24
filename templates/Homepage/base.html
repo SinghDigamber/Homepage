@@ -1,20 +1,19 @@
-{% load static %}
-{% load staticfiles %}
-
-<!DOCTYPE html>
+{% load static %}{% load staticfiles %}<!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Homepage{% block title %} {% endblock %}</title>
-        <meta charset="utf-8">
-        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-        <link  rel="shortcut icon mask-icon apple-touch-icon" type="image/x-icon" href="{% static 'favicon/sattelite.ico' %}"/>
+        <title>Home{% block title %}{% endblock %}</title>
 
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>{% include "Homepage/style.css" %}</style>
-        <meta http-equiv="refresh" content="600" >
-        <!-- https://stackoverflow.com/questions/4644027/how-to-automatically-reload-a-page-after-a-given-period-of-inactivity -->
+
+        {% block meta %}{%  endblock %}
+
+        <style>{% include "Homepage/style/style.css" %}</style>
+        <style>{% include "Homepage/style/feedUpdate.css" %}</style>
+        <style>{% include "Homepage/style/nav.css" %}</style>
 
         <!-- favicon block -->
+            <link  rel="shortcut icon mask-icon apple-touch-icon" type="image/x-icon" href="{% static 'favicon/sattelite.ico' %}"/>
             <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
             <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
             <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
@@ -27,11 +26,12 @@
         <!-- favicon block ended -->
     </head>
     <body>
-        <div id="menu">{% include "Homepage/menu-top.html" %}</div>
+        <header>
+            {% include "Homepage/nav.html" %}
+        </header>
 
-        <div id="content">
-            {% block content %}
-            {% endblock %}
-        </div>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
     </body>
 </html>
