@@ -160,5 +160,8 @@ class feedUpdate(models.Model):
                     each.name = each.name[:each.name.find('— Apple')]
                 else:
                     each.name = each.name[:each.name.find('– Apple')]
+            elif each.title == 'LastWeekTonight':
+                if each.name.find(': Last Week Tonight with John Oliver (HBO)') != -1:
+                    each.name = each.name[:each.name.find(': Last Week Tonight with John Oliver (HBO)')]
 
         return result
