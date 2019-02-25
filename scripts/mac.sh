@@ -18,6 +18,7 @@ brew install python3
 # not sure if works:
 sudo python3 -m pip install django~=2.0.2 beautifulsoup4 collective.soupstrainer feedparser lxml requests
 
+python3 ~/Homepage/manage.py makemigrations
 python3 ~/Homepage/manage.py migrate
 python3 ~/Homepage/manage.py createsuperuser
 
