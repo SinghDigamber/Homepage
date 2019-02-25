@@ -33,5 +33,6 @@ urlpatterns = [
         permanent=True), name="Trakt"),
     url(r'^Github/$', RedirectView.as_view(url='https://github.com/OlehKrupko/Homepage',
         permanent=True), name="GitHub"),
+    url(r'^Telegram/$', RedirectView.as_view(url='https://t.me/olehkrupko',
         permanent=True), name="Telegram"),
 ]
