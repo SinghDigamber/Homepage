@@ -37,7 +37,7 @@ class feed(models.Model):
     def keys():
         result = []
         for item in feeds:
-            if item.emojis.find('💎') != -1:
+            if item.emojis != None and item.emojis.find('💎') != -1:
                 result.append(item.title)
         return result
 
@@ -108,35 +108,38 @@ class feedUpdate(models.Model):
             rss = feedparser.parse(href)
 
             for item in rss["items"]:
-                if item["links"][0]["href"].find(filter) != -1 or item["title_detail"]["value"].find(filter) != -1:
-                    if "published" in item:
-                        datestring = item["published"]
+                if filter != None:
+                    if item["links"][0]["href"].find(filter) == -1 and item["title_detail"]["value"].find(filter) == -1:
+                        continue
+
+                if "published" in item:
+                    datestring = item["published"]
+                else:
+                    if "updated" in item:
+                        datestring = item["updated"]
+
+                try:
+                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
+                except ValueError:
+                    if datestring[-3] == ':':  # YouTube / TheVerge
+                        dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
                     else:
-                        if "updated" in item:
-                            datestring = item["updated"]
+                        try:  # except ValueError: # it is for webtooms import feeds['Gamer']
+                            dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')
+                            # +timedelta(hours=3)
+                        except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
+                            try:
+                                # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
+                                dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')
+                            except ValueError: # idea-instructions.com
+                                dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
 
-                    try:
-                        dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
-                    except ValueError:
-                        if datestring[-3] == ':':  # YouTube / TheVerge
-                            dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
-                        else:
-                            try:  # except ValueError: # it is for webtooms import feeds['Gamer']
-                                dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')
-                                # +timedelta(hours=3)
-                            except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
-                                try:
-                                    # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
-                                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')
-                                except ValueError: # idea-instructions.com
-                                    dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
-
-                    toAdd = feedUpdate(
-                        name=item["title_detail"]["value"],
-                        href=item["links"][0]["href"],
-                        datetime=dateresult,
-                        title=feedName)
-                    result.append(toAdd)
+                toAdd = feedUpdate(
+                    name=item["title_detail"]["value"],
+                    href=item["links"][0]["href"],
+                    datetime=dateresult,
+                    title=feedName)
+                result.append(toAdd)
 
         for each in result:
             # datetime fixes
