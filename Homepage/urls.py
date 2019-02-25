@@ -25,13 +25,13 @@ urlpatterns = [
     #url(r'^', include('feedUpdate.urls', namespace="dashboard")),
 
     # modules
-    url(r'^feedUpdate/', include('feedUpdate.urls',
-        namespace="feedUpdate")),
-    url(r'^fU/', include('feedUpdate.urls')),
+    url(r'^feedUpdate/', include('feedUpdate.urls', namespace="feedUpdate")),
+    url(r'^fU/', include('feedUpdate.urls', namespace="fU")),
 
     # permanent
     url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
         permanent=True), name="Trakt"),
     url(r'^Github/$', RedirectView.as_view(url='https://github.com/OlehKrupko/Homepage',
         permanent=True), name="GitHub"),
+        permanent=True), name="Telegram"),
 ]
