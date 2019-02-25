@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from feedUpdate.models import feedUpdate, feed
+from feedUpdate.models import feedUpdate, feed, feeds
 from datetime import datetime
 
 class Command(BaseCommand):
@@ -22,6 +22,9 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
+        for each in feeds:
+            each.save()
+
         print("┣ starting")
         newItems = 0
 

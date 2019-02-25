@@ -20,14 +20,14 @@ from django.utils.timezone import localtime
 
 class feed(models.Model):
     class Meta:
-        ordering = ['title_full']
+        ordering = ['title']
     title = models.CharField(max_length=42)
-    title_full = models.CharField(max_length=140)
+    title_full = models.CharField(max_length=140, null=True)
     href = models.CharField(max_length=420)
-    href_title = models.CharField(max_length=420)
-    emojis = models.CharField(max_length=7)  # usage as tags
-    filter = models.CharField(max_length=140)
-    delay = models.IntegerField()
+    href_title = models.CharField(max_length=420, null=True)
+    emojis = models.CharField(max_length=7, null=True)  # usage as tags
+    filter = models.CharField(max_length=140, null=True)
+    delay = models.IntegerField(null=True)
 
     def find(title):
         for item in feeds:
