@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # main
-    #url(r'^', include('feedUpdate.urls', namespace="dashboard")),
+    url(r'^/$', RedirectView.as_view(url='/feedUpdate/', permanent=False), name="Dashboard"),
 
     # modules
     url(r'^feedUpdate/', include('feedUpdate.urls', namespace="feedUpdate")),
