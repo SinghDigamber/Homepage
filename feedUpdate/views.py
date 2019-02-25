@@ -54,12 +54,12 @@ class feedUpdateIndexView(ListView):
             items = feed.keys()
 
         try:
-            if self.kwargs['mode'] == "/index":
+            if self.kwargs['mode'] == "index" or self.kwargs['mode'] == "":
                 if header == "Обновления":
                     items = list(feedUpdate.objects.filter(title__in=feed.keys())[:items_limit])
                 else:
                     items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
-            elif self.kwargs['mode'] == "/force":
+            elif self.kwargs['mode'] == "force":
                 items = feedUpdate.multilist(items)
                 items = sorted(items, key=lambda feedUpdate: str(feedUpdate.datetime), reverse=True)
             else:
@@ -71,7 +71,7 @@ class feedUpdateIndexView(ListView):
                 items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
 
         try:
-            if self.kwargs['mode'] == "/force":
+            if self.kwargs['mode'] == "force":
                 header += ": Forced"
         except KeyError:
             pass

@@ -1,7 +1,7 @@
 <nav>
     {#<li><a href="">Dashboard</a></li>#}
-    <a href="{% url "feedUpdate:index" %}force">☠️️</a>
-    <a href="{% url "feedUpdate:index" %}">Обновления</a>
+    <a href="{% url "feedUpdate:index" mode="" %}">Обновления</a>
+    <a href="{% url "feedUpdate:index" mode="force" %}">☠️️</a>
     <a href="{% url "feedUpdate:feeds" %}">📂</a>
     <a href="{% url "Trakt" %}">Trakt</a>
     {#<a href="">Pages</a></li>#}

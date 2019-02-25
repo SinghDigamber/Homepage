@@ -3,8 +3,8 @@ from . import views
 
 app_name = "feedUpdate"
 urlpatterns = [
-    url(r'^$', views.feedUpdateIndexView.as_view(), name="index"),
-    url(r'^feeds/$', views.feedIndexView.as_view(), name="feeds"),  # return list of feeds with links to them
-    url(r'^(?P<feeds>([0-9|а-я|А-Я|a-z|A-Z|_|+|—])*)?(?P<mode>([/|a-z]){6})?$',
-        views.feedUpdateIndexView.as_view(), name="feed"),
+    url(r'^(?P<mode>(|index|force))$', views.feedUpdateIndexView.as_view(), name="index"),  # main fU feed with modes
+    url(r'^(?P<feeds>([0-9|а-я|А-Я|a-z|A-Z|_|+|—])*)/(?P<mode>(|index|force))?$',
+        views.feedUpdateIndexView.as_view(), name="feed"),  # view separate feeds
+    url(r'^feeds$', views.feedIndexView.as_view(), name="feeds"),  # list feeds
 ]
