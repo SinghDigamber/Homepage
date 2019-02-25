@@ -1,7 +1,7 @@
 from django.db import models
-from bs4 import BeautifulSoup, SoupStrainer
+# from bs4 import BeautifulSoup, SoupStrainer
 import requests
-from collections import OrderedDict
+# from collections import OrderedDict
 import feedparser
 from datetime import datetime, timedelta
 from pytz import timezone
@@ -15,6 +15,7 @@ from django.utils.timezone import localtime
 # emojis
 # 🏮 - hide from fU/feeds
 # 💎 - inIndex=True
+# 🗃️ - inIndex=False
 
 
 class feed(models.Model):
