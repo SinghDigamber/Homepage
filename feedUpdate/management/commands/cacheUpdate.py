@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from feedUpdate.models import feedUpdate, feed, feeds
+from feedUpdate.models import feedUpdate, feed
 from datetime import datetime
 
 class Command(BaseCommand):
@@ -29,7 +29,7 @@ class Command(BaseCommand):
         if options['all']:
             # adding feeds to database for admin usage
             feed.objects.all().delete()
-            for each in feeds:
+            for each in feed.all():
                 each.save()
 
             items = list(feed.keysAll())
