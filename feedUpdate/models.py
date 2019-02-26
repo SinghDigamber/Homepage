@@ -29,6 +29,22 @@ class feed(models.Model):
     filter = models.CharField(max_length=140, null=True)
     delay = models.IntegerField(null=True)
 
+    def __str__(self):
+        result = "["+self.title+"]"
+        if self.title_full is not None:
+            result += ": "+self.title_full
+        if self.emojis is not None:
+            result += " e: "+self.emojis
+        if self.filter is not None:
+            result += " f: "+self.filter
+        if self.delay is not None:
+            result += " d: "+self.delay
+        if self.href is not None:
+            result += " href: "+self.href
+        if self.href_title is not None:
+            result += " href: "+self.href_title
+        return result
+
     def find(title):
         for item in feeds:
             if item.title == title:
