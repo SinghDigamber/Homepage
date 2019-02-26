@@ -46,28 +46,26 @@ class feed(models.Model):
         return result
 
     def find(title):
-        for item in feeds:
-            if item.title == title:
-                return item
+        for each in feed.all():
+            if each.title == title:
+                return each
 
     def keys():
         result = []
-        for item in feeds:
-            if item.emojis != None and item.emojis.find('💎') != -1:
-                result.append(item.title)
+        for each in feed.all():
+            if each.emojis != None and each.emojis.find('💎') != -1:
+                result.append(each.title)
         return result
 
     def keysAll():
         result = []
-        for item in feeds:
-            result.append(item.title)
+        for each in feed.all():
+            result.append(each.title)
         return result
 
     def all():
+        from .feeds import feeds
         return feeds
-
-
-from .feeds import feeds
 
 
 class feedUpdate(models.Model):
@@ -79,7 +77,7 @@ class feedUpdate(models.Model):
     title = models.CharField(max_length=42)
 
     def __str__(self):
-        return "["+self.title+"] "+self.name+" published on "+str(self.datetime)+" with link "+self.href
+        return "["+self.title+"]: "+self.name+" d: "+str(self.datetime)+" with link "+self.href
 
     def multilist(items):
         # TODO: warn if wrong filters were used
