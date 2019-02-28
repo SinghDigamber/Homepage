@@ -611,6 +611,41 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ЧудоТехники',
+        title_full='Чудо техники',
+        href='https://www.youtube.com/channel/UCRP4EhX1Op-jL7D87PB3qhQ/videos',
+    ),
+    feed(
+        title='Halocene',
+        title_full='Halocene',
+        href='https://www.youtube.com/channel/UCoimajyGy33X_Pqt-SHCWeA/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='BABYMETAL',
+        title_full='BABYMETAL',
+        href='https://www.youtube.com/channel/UC33_tIj4m1_XaqfFcomShvw/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='WylsaLive',
+        title_full='WylsaLive',
+        href='https://www.youtube.com/channel/UCAfkLSa-ujPKhniiKZ2bCHg/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='DUST',
+        title_full='DUST',
+        href='https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='ThisIs',  # by Linus
+        title_full='This Is',
+        href='https://www.youtube.com/channel/UC1IQIspOkCeV3WnYm32SBFQ/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -817,9 +852,57 @@ feeds = (
         href_title='http://readmanga.me/volcanic_age',
         emojis='💎'
     ),
-    feed(
+    feed(  # окончено автором, продолжения не планируется (кроме книги?)
         title='БессмертныйТорговец',
         title_full='Бессмертный торговец',
+        href='feed://readmanga.me/rss/manga?name=immortal_merchant',
+        href_title='http://readmanga.me/immortal_merchant',
+    ),
+    feed(
+        title='ВеликийМеч',
+        title_full='Мой великий меч',
+        href='feed://readmanga.me/rss/manga?name=moi_velikii_mech',
+        href_title='http://readmanga.me/moi_velikii_mech',
+        emojis='💎'
+    ),
+    feed(
+        title='SoloLeveling',
+        title_full='Поднятие уровня в одиночку',
+        href='feed://readmanga.me/rss/manga?name=podniatie_urovnia_v_odinochku',
+        href_title='http://readmanga.me/podniatie_urovnia_v_odinochku',
+        emojis='💎'
+    ),
+    feed(
+        title='МолчаливаяЛуна',
+        title_full='Молчаливая луна',
+        href='feed://readmanga.me/rss/manga?name=yue_chen_yin',
+        href_title='http://readmanga.me/yue_chen_yin',
+        emojis='💎'
+    ),
+    feed(
+        title='Вовсеоружии',
+        title_full='Во всеоружии',
+        href='feed://readmanga.me/rss/manga?name=vo_vseorujii',
+        href_title='http://readmanga.me/vo_vseorujii',
+        emojis='💎'
+    ),
+    feed(
+        title='ЧерныйПризыватель',
+        title_full='Чёрный Призыватель',
+        href='feed://readmanga.me/rss/manga?name=black_summoner',
+        href_title='http://readmanga.me/black_summoner',
+        emojis='💎'
+    ),
+    feed(
+        title='ЧерныйДьявол',
+        title_full='Черный Дьявол',
+        href='feed://readmanga.me/rss/manga?name=chernyi_diavol',
+        href_title='http://readmanga.me/chernyi_diavol',
+        emojis='💎'
+    ),
+    feed(
+        title='НикудышныеПринцессы',
+        title_full='Никудышные принцессы',
         href='feed://readmanga.me/rss/manga?name=volcanic_age',
         href_title='http://readmanga.me/volcanic_age',
         emojis='💎'
