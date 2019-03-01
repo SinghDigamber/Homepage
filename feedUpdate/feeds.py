@@ -646,6 +646,16 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='VolFMaple',
+        href='https://www.youtube.com/channel/UC7O7af501mv4Ab4oCSdPTxw/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='ШамовДмитрий',
+        title_full='Шамов Дмитрий: жизнь в Японии',
+        href='https://www.youtube.com/channel/UCDNXL3G7Mz594L1CVFp3CMQ/videos',
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
