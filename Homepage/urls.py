@@ -35,4 +35,6 @@ urlpatterns = [
         permanent=True), name="GitHub"),
     url(r'^Telegram/$', RedirectView.as_view(url='https://t.me/olehkrupko',
         permanent=True), name="Telegram"),
+    url(r'^Pi-hole/$', RedirectView.as_view(url='http://192.168.1.201/admin/',
+        permanent=True), name="Pi-hole"),
 ]
