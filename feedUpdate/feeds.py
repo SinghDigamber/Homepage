@@ -1100,7 +1100,7 @@ feeds = (
         href_title='http://xt.ht',
         emojis='💎',
     ),
-    feed(
+    feed(  # https://telegram2rss.akin.su/site/ru/
         title='Expresso',
         href='feed:https://telegram2rss.akin.su/api/channel/feed/expressotoday/9FE04EFAC787',
         href_title='https://t.me/expressotoday',

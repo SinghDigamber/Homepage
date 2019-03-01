@@ -151,9 +151,19 @@ class feedUpdate(models.Model):
                                 except ValueError:
                                     dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%SZ')
 
+                hrefresult = item["links"][0]["href"]
+                if feedName == "Expresso":
+                    counter = item["summary"].find("https://expres.co/")
+                    if counter > 0:
+                        hrefresult = item["summary"][counter:]
+                        counter2 = hrefresult.find('"')
+                        hrefresult = hrefresult[:counter2]
+                    else:
+                        continue
+
                 toAdd = feedUpdate(
                     name=item["title_detail"]["value"],
-                    href=item["links"][0]["href"],
+                    href=hrefresult,
                     datetime=dateresult,
                     title=feedName)
                 result.append(toAdd)
@@ -184,5 +194,7 @@ class feedUpdate(models.Model):
             elif each.title == 'LastWeekTonight':
                 if each.name.find(': Last Week Tonight with John Oliver (HBO)') != -1:
                     each.name = each.name[:each.name.find(': Last Week Tonight with John Oliver (HBO)')]
+            elif each.title == 'Expresso':
+                each.name = each.name[11:]
 
         return result
