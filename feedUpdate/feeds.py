@@ -652,6 +652,11 @@ feeds = (
         href='https://www.youtube.com/channel/UCDNXL3G7Mz594L1CVFp3CMQ/videos',
     ),
     feed(
+        title='varlamov',
+        href='https://www.youtube.com/channel/UC101o-vQ2iOj9vr00JUlyKw/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -909,8 +914,29 @@ feeds = (
     feed(
         title='НикудышныеПринцессы',
         title_full='Никудышные принцессы',
-        href='feed://readmanga.me/rss/manga?name=volcanic_age',
-        href_title='http://readmanga.me/volcanic_age',
+        href='feed://readmanga.me/rss/manga?name=useless_princesses',
+        href_title='http://readmanga.me/useless_princesses',
+        emojis='💎'
+    ),
+    feed(
+        title='ЖенщинаРыцарь',
+        title_full='История о том, как обращаться с женщиной-рыцарем, к которой никогда не относились как к женщине',
+        href='feed://readmanga.me/rss/manga?name=a_story_about_treating_a_female_knight_who_has_never_been_treated_as_a_woman',
+        href_title='http://readmanga.me/a_story_about_treating_a_female_knight_who_has_never_been_treated_as_a_woman',
+        emojis='💎'
+    ),
+    feed(
+        title='ГородскиеФеи',
+        title_full='Хвост феи: Городской герой',
+        href='feed://readmanga.me/rss/manga?name=hvost_fei__gorodskoi_geroi',
+        href_title='http://readmanga.me/hvost_fei__gorodskoi_geroi',
+        emojis='💎'
+    ),
+    feed(
+        title='ЧитРоста',
+        title_full='Я могу делать всё со своим Читом Роста, но я всё равно останусь безработным',
+        href='feed://readmanga.me/rss/manga?name=i_ve_became_able_to_do_anything_with_my_growth_cheat__but_i_can_t_seem_to_get_out_of_being_jobless__novel_',
+        href_title='http://readmanga.me/i_ve_became_able_to_do_anything_with_my_growth_cheat__but_i_can_t_seem_to_get_out_of_being_jobless__novel_',
         emojis='💎'
     ),
     feed(
@@ -1038,6 +1064,46 @@ feeds = (
         title_full='SkazOff Blog',
         href='feed:https://skazoff.ru/feed/',
         href_title='https://skazoff.ru',
+        emojis='💎',
+    ),
+    # feed(
+    #     title='WaitButWhy',
+    #     title_full='Wait But Why',
+    #     href='https://waitbutwhy.com',
+    #     href_title='http://waitbutwhy.com/feed',
+    #     emojis='💎',
+    # ),
+    feed(
+        title='Озорнин',
+        title_full='Блог Михаила Озорнина',
+        href='feed://mikeozornin.ru/blog/rss/',
+        href_title='http://mikeozornin.ru/blog/',
+        emojis='💎',
+    ),
+    feed(
+        title='Tonsky',
+        href='http://tonsky.me/blog/atom.xml',
+        href_title='http://tonsky.me',
+        emojis='💎',
+    ),
+    feed(
+        title='CSStricks',
+        title_full='CSS-Tricks',
+        href='feed:https://css-tricks.com/feed/',
+        href_title='https://css-tricks.com',
+        emojis='💎',
+    ),
+    feed(
+        title='ХТ',
+        title_full='Харьков-Турист',
+        href='feed://xt.ht/rss.php',
+        href_title='http://xt.ht',
+        emojis='💎',
+    ),
+    feed(
+        title='Expresso',
+        href='feed:https://telegram2rss.akin.su/api/channel/feed/expressotoday/9FE04EFAC787',
+        href_title='https://t.me/expressotoday',
         emojis='💎',
     ),
 )

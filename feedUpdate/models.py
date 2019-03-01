@@ -146,7 +146,10 @@ class feedUpdate(models.Model):
                                 # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
                                 dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')
                             except ValueError: # idea-instructions.com
-                                dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
+                                try:
+                                    dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
+                                except ValueError:
+                                    dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%SZ')
 
                 toAdd = feedUpdate(
                     name=item["title_detail"]["value"],
