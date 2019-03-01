@@ -617,25 +617,21 @@ feeds = (
     ),
     feed(
         title='Halocene',
-        title_full='Halocene',
         href='https://www.youtube.com/channel/UCoimajyGy33X_Pqt-SHCWeA/videos',
         emojis='💎'
     ),
     feed(
         title='BABYMETAL',
-        title_full='BABYMETAL',
         href='https://www.youtube.com/channel/UC33_tIj4m1_XaqfFcomShvw/videos',
         emojis='💎'
     ),
     feed(
         title='WylsaLive',
-        title_full='WylsaLive',
         href='https://www.youtube.com/channel/UCAfkLSa-ujPKhniiKZ2bCHg/videos',
         emojis='💎'
     ),
     feed(
         title='DUST',
-        title_full='DUST',
         href='https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA/videos',
         emojis='💎'
     ),
