@@ -11,7 +11,8 @@
         {% if movie.inTheater %}
             <div class="poster">
                 <a href="{{ movie.href }}">
-                    <img class="lazy-load" src="https://placeholder.pics/svg/160x236" data-src="{{ movie.posterIMG }}" alt="{{ movie.title }}">
+                    <img class="lazy" src="https://placeholder.pics/svg/160x236"
+                         data-src="{{ movie.posterIMG }}" alt="{{ movie.title }}">
                 </a>
             </div>
         {% endif %}
