@@ -5,12 +5,12 @@
 {% block main %}
     <h1>Dashboard</h1>
 
-    <h2>В прокате</h2>
+    <h2>В прокате: Планета Кино</h2>
     <div id="PlanetaKino">
     {% for movie in fromView.movies %}
         {% if movie.inTheater %}
             <div class="poster">
-                <a href="{{ movie.href }}">
+                <a href="{{ movie.href }}" target="_blank">
                     <img class="lazy" src="https://placeholder.pics/svg/160x236"
                          data-src="{{ movie.posterIMG }}" alt="{{ movie.title }}">
                 </a>
