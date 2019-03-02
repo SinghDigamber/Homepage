@@ -22,6 +22,27 @@ class feedIndexView(ListView):
         }
 
 
+class myActivityView(ListView):
+    model = feedUpdate
+    template_name = "feedUpdate/index.html"
+    context_object_name = "fromView"
+
+    def get_queryset(self):
+        header = "Моя активность"
+        multibook = True
+        items_limit = 42
+
+        items = feed.keys('👤')
+        items = list(feedUpdate.objects.filter(title__in=items)[:items_limit])
+        print(items)
+
+        return {
+            'title': header,
+            'items': items,
+            'multibook': multibook,
+        }
+
+
 class feedUpdateIndexView(ListView):
     model = feedUpdate
     template_name = "feedUpdate/index.html"

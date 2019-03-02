@@ -1,8 +1,10 @@
 <nav>
     <a href="{% url "Dashboard:Dashboard" %}">Dashboard</a>
+
     <a href="{% url "feedUpdate:index" mode="" %}">Обновления</a>
     <a href="{% url "feedUpdate:index" mode="force" %}">☠️️</a>
     <a href="{% url "feedUpdate:feeds" %}">📂</a>
+    <a href="{% url "feedUpdate:myActivity" %}">Моя активность</a>
 
     {# redirects #}
     <a href="{% url "Trakt" %}">Trakt</a>

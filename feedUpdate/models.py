@@ -16,6 +16,7 @@ from django.utils.timezone import localtime
 # 🏮 - hide from fU/feeds
 # 💎 - inIndex=True
 # 🗃️ - inIndex=False
+# 👤 — my activities
 
 
 class feed(models.Model):
@@ -50,10 +51,10 @@ class feed(models.Model):
             if each.title == title:
                 return each
 
-    def keys():
+    def keys(emoji='💎'):
         result = []
         for each in feed.all():
-            if each.emojis != None and each.emojis.find('💎') != -1:
+            if each.emojis != None and each.emojis.find(emoji) != -1:
                 result.append(each.title)
         return result
 
@@ -126,6 +127,12 @@ class feedUpdate(models.Model):
                     if item["links"][0]["href"].find(filter) == -1 and item["title_detail"]["value"].find(filter) == -1:
                         continue
 
+                if href.find("https://websta.me/rss/n/") != -1:
+                    nameresult = item['summary']
+                    nameresult = nameresult[:nameresult.find("<a href=")]
+                else:
+                    nameresult = item["title_detail"]["value"]
+
                 if "published" in item:
                     datestring = item["published"]
                 else:
@@ -162,7 +169,7 @@ class feedUpdate(models.Model):
                         continue
 
                 toAdd = feedUpdate(
-                    name=item["title_detail"]["value"],
+                    name=nameresult,
                     href=hrefresult,
                     datetime=dateresult,
                     title=feedName)

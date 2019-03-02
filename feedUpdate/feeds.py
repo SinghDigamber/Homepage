@@ -11,6 +11,7 @@ from .models import feed
     ),
 '''
 
+
 feeds = (
     feed(
         title='Скульптор',
@@ -1111,5 +1112,23 @@ feeds = (
         href='feed:https://telegram2rss.akin.su/api/channel/feed/expressotoday/9FE04EFAC787',
         href_title='https://t.me/expressotoday',
         emojis='💎',
+    ),
+    feed(
+        title='MyInstagram',
+        href='https://websta.me/rss/n/olehkrupko/',
+        href_title='https://www.instagram.com/olehkrupko/',
+        emojis='👤'
+    ),
+    feed(
+        title='MyStrava',
+        href='http://feedmyride.net/activities/21952815',
+        href_title='https://www.strava.com/athlete/training',
+        emojis='👤'
+    ),
+    feed(
+        title='HomepageGithub',
+        href='https://github.com/olehkrupko/Homepage/commits/master.atom',
+        href_title='https://github.com/olehkrupko/Homepage',
+        emojis='👤'
     ),
 )
