@@ -3,9 +3,10 @@
 {% block title %} » feedUpdate » feeds{% endblock %}
 
 {% block main %}
+    <ul id="feedUpdate" class="li-before-none">
+
     <h1>{{ fromView.title }}</h1>
 
-    <ul id="feedUpdate" class="li-before-none">
     {% for feed in fromView.feeds %}
         {% if not '🏮' in feed.emojis %}
         <li class="index-{% if '💎' in feed.emojis %}true{% else %}false{% endif %}">

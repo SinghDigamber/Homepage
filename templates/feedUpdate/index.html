@@ -5,9 +5,10 @@
 {% block meta %}<meta http-equiv="refresh" content="600" >{% endblock %}
 
 {% block main %}
+    <ul id="feedUpdate">
+
     <h1>{{ fromView.title }}</h1>
 
-    <ul id="feedUpdate">
     {% for chapter in fromView.items %}
         <li><span>
             <a class="name" target="_blank" href="{{ chapter.href }}">
