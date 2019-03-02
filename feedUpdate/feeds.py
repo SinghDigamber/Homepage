@@ -657,6 +657,12 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='DheroesC',
+        title_full='DheroesC: рассказы из комиксов',
+        href='https://www.youtube.com/channel/UCp8tldEJKFDS1dM5eOk0Clg/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
