@@ -17,7 +17,7 @@ class PlanetaKino(models.Model):
         res = res.format(self.title, self.date, self.href, self.posterIMG, self.inTheater)
         return res
 
-    def list(pkHREF):
+    def list(pkHREF="https://planetakino.ua/kharkov/movies/"):
         resp = requests.get(pkHREF)
         strainer = SoupStrainer('div', attrs={'class': 'movies-list'});
         soup = BeautifulSoup(resp.text, "html.parser", parse_only=strainer)
@@ -56,5 +56,4 @@ class Dashboard(models.Model):
     movies = []
 
     def __init__(self):
-        self.movies = PlanetaKino.list(Dashboard.PlanetaKinoHREF)
-        # print(self.movies)
+        self.movies = PlanetaKino.objects.filter(inTheater=True)

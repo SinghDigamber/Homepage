@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from feedUpdate.models import feedUpdate, feed
-from datetime import datetime
+from Dashboard.models import PlanetaKino
+# from datetime import datetime
 
 class Command(BaseCommand):
     help = 'Caches new information'
@@ -21,35 +22,52 @@ class Command(BaseCommand):
             help='run caching ONLY for items in INDEX',
         )
 
+        parser.add_argument(
+            '--PlanetaKino',
+            action='store_true',
+            dest='PlanetaKino',
+            help='run caching ONLY for items from Dashboard.PlanetaKino',
+        )
+
     def handle(self, *args, **options):
 
         print("┣ starting")
         newItems = 0
 
-        if options['all']:
-            # adding feeds to database for admin usage
-            feed.objects.all().delete()
-            for each in feed.all():
-                each.save()
+        # adding feeds to database for admin usage
+        feed.objects.all().delete()
+        for each in feed.all():
+            each.save()
 
+        if options['all']:
             items = list(feed.keysAll())
-        if options['index']:
+        elif options['index']:
             items = list(feed.keys())
         else:
-            items = list(feed.keysAll())
+            items = []
 
         items = feedUpdate.multilist(items)
 
         for item in items:
             if not feedUpdate.objects.filter(
-                    # name=item.name,
-                    href=item.href,
-                    # datetime=item.datetime,
-                    # title=item.title
+                # name=item.name,
+                href=item.href,
+                # datetime=item.datetime,
+                # title=item.title
             ).exists():
                 # item.datetime = datetime.now()
                 # print(item)
                 item.save()
                 newItems += 1
+
+        if options['PlanetaKino']:
+            movies = PlanetaKino.list()
+            for each in movies:
+                if not PlanetaKino.objects.filter(
+                    href=each.href,
+                ).exists():
+                    each.save()
+                    newItems += 1
+
 
         print("└──── added " + str(newItems))
