@@ -1,6 +1,8 @@
 /* ul#feedUpdate */
 #feedUpdate {
     padding-left: 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 #feedUpdate li {
     list-style-type: none;

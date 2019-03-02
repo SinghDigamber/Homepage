@@ -22,7 +22,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # main
-    url(r'^$', RedirectView.as_view(url='/feedUpdate/', permanent=False), name="Dashboard"),
+    # url(r'^$', RedirectView.as_view(url='/feedUpdate/', permanent=False), name="Dashboard"),
+    url(r'^$', RedirectView.as_view(url='/Dashboard/', permanent=True), name="Home"),
+    url(r'^Dashboard/', include('Dashboard.urls', namespace="Dashboard")),
 
     # modules
     url(r'^feedUpdate/', include('feedUpdate.urls', namespace="feedUpdate")),

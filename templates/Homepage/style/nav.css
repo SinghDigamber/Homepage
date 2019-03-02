@@ -15,7 +15,7 @@ nav {
     padding: 13px 0px;
 }
 nav a {
-    padding: 13px ;
+    padding: 13px;
     text-decoration: none;
     color: white;
     border-right: 1px dashed black;
@@ -26,6 +26,6 @@ nav :last-child {
 nav a:hover {
     color: greenyellow;
 }
-header::-webkit-scrollbar /* [5] */ {
+nav::-webkit-scrollbar /* [5] */ {
   display: none;
 }

@@ -1,0 +1,23 @@
+{% extends 'Homepage/base.html' %}
+
+{% block title %} » Dashboard {% endblock %}
+
+{% block main %}
+    <h1>Dashboard</h1>
+
+    <h2>В прокате</h2>
+    <div id="PlanetaKino">
+    {% for movie in fromView.movies %}
+        {% if movie.inTheater %}
+            <div class="poster">
+                <a href="{{ movie.href }}">
+                    <img src="{{ movie.posterIMG }}" alt="{{ movie.title }}">
+                </a>
+            </div>
+        {% endif %}
+    {% empty %}
+        <h3>Oops, something went wrong. Empty!</h3>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
