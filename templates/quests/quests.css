@@ -125,3 +125,15 @@
   -webkit-animation-name: explode;
           animation-name: explode;
 }
+html {
+  background: #ddd;
+}
+html {
+  height: 100%;
+  display: flex;
+}
+body {
+  width: 100%;
+  margin: auto;
+}
+
