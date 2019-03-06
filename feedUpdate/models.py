@@ -6,6 +6,7 @@ import feedparser
 from datetime import datetime, timedelta
 from pytz import timezone
 from django.utils.timezone import localtime
+from datetime import timezone
 # Create your models here.
 
 # TODO: move project to actual database
@@ -13,7 +14,7 @@ from django.utils.timezone import localtime
 
 
 # emojis
-# 🏮 - hide from fU/feeds
+# 🏮 - hide from feeds
 # 💎 - inIndex=True
 # 🗃️ - inIndex=False
 # 👤 — my activities
@@ -109,7 +110,7 @@ class feedUpdate(models.Model):
                 result.append(feedUpdate(
                     name=each["title"],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
-                    datetime=datetime.fromtimestamp(each["publishedAt"]).astimezone(timezone('Europe/Moscow')),
+                    datetime=datetime.fromtimestamp(each["publishedAt"])+timedelta(hours=-1),
                     title=feedName))
 
         # custom RSS YouTube import (link to feed has to be converted manually)
@@ -142,21 +143,25 @@ class feedUpdate(models.Model):
                 try:
                     dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
                 except ValueError:
-                    if datestring[-3] == ':':  # YouTube / TheVerge
-                        dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
-                    else:
-                        try:  # except ValueError: # it is for webtooms import feeds['Gamer']
-                            dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')
-                            # +timedelta(hours=3)
-                        except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
-                            try:
-                                # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
-                                dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')
-                            except ValueError: # idea-instructions.com
+                    try:
+                        dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%SZ')
+                    except ValueError:
+                        if datestring[-3] == ':':  # YouTube / TheVerge
+                            dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
+                        else:
+                            try:  # except ValueError: # it is for webtooms import feeds['Gamer']
+                                dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')
+                                # +timedelta(hours=3)
+                            except ValueError: # it is for pikabu Brahmanden import feeds['Brahmanden']
                                 try:
-                                    dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
-                                except ValueError:
-                                    dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%SZ')
+                                    # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
+                                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')
+                                except ValueError: # idea-instructions.com
+                                    try:
+                                        dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
+                                    except ValueError:
+                                        dateresult = datetime.strptime(datestring[:-3], '%a, %d %b %Y %H:%M:%S ')
+                                        dateresult = dateresult + timedelta(-9)
 
                 hrefresult = item["links"][0]["href"]
                 if feedName == "Expresso":
