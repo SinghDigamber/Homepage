@@ -1792,12 +1792,6 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='rexHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/r_ex',
-        href_title='http://www.hentai-foundry.com/pictures/user/r_ex',
-        emojis='💎🏮'
-    ),
-    feed(
         title='markydaysaidHF',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/markydaysaid',
         href_title='http://www.hentai-foundry.com/pictures/user/markydaysaid',
