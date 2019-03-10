@@ -1678,33 +1678,9 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='fainxelHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/fainxel',
-        href_title='http://www.hentai-foundry.com/pictures/user/fainxel',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='TaissTaissHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/TaissTaiss',
-        href_title='http://www.hentai-foundry.com/pictures/user/TaissTaiss',
-        emojis='💎🏮'
-    ),
-    feed(
         title='aromasenseiHF',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/aromasensei',
         href_title='http://www.hentai-foundry.com/pictures/user/aromasensei',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='ElinnielHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Elinniel',
-        href_title='http://www.hentai-foundry.com/pictures/user/Elinniel',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='JaquenDrawsHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/JaquenDraws',
-        href_title='http://www.hentai-foundry.com/pictures/user/JaquenDraws',
         emojis='💎🏮'
     ),
     feed(
@@ -1714,81 +1690,9 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='omnomnomHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/omnomnom',
-        href_title='http://www.hentai-foundry.com/pictures/user/omnomnom',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='AlbatrossHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Albatross',
-        href_title='http://www.hentai-foundry.com/pictures/user/Albatross',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='gaiidrawsHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/gaiidraws',
-        href_title='http://www.hentai-foundry.com/pictures/user/gaiidraws',
-        emojis='💎🏮'
-    ),
-    feed(
         title='tesomuHF',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/tesomu',
         href_title='http://www.hentai-foundry.com/pictures/user/tesomu',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='VitaminhHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/VitaminH',
-        href_title='http://www.hentai-foundry.com/pictures/user/VitaminH',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='crackerjackzHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/crackerjackz',
-        href_title='http://www.hentai-foundry.com/pictures/user/crackerjackz',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='ratedehcsHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/ratedehcs',
-        href_title='http://www.hentai-foundry.com/pictures/user/ratedehcs',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='KittyfelyneHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Kittyfelyne',
-        href_title='http://www.hentai-foundry.com/pictures/user/Kittyfelyne',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='JackalTanHornHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Jackal-TanHorn',
-        href_title='http://www.hentai-foundry.com/pictures/user/Jackal-TanHorn',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='ashtenderHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/ashtender',
-        href_title='http://www.hentai-foundry.com/pictures/user/ashtender',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='artboymoyHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/artboymoy',
-        href_title='http://www.hentai-foundry.com/pictures/user/artboymoy',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='skottichanHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/skottichan',
-        href_title='http://www.hentai-foundry.com/pictures/user/skottichan',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='EraantheHF',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Eraanthe',
-        href_title='http://www.hentai-foundry.com/pictures/user/Eraanthe',
         emojis='💎🏮'
     ),
     feed(
