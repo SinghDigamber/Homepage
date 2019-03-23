@@ -431,7 +431,6 @@ feeds = (
         title='MTrawor',
         title_full='Max Trawor',
         href='https://www.youtube.com/channel/UCT4WspI1gXguL9kCOirYBBg/videos',
-        emojis='💎'
     ),
     feed(
         title='CGPGrey',
@@ -602,7 +601,6 @@ feeds = (
         title='DimitryB',
         title_full='Dimitry B',
         href='https://www.youtube.com/channel/UCOQXxrZprZMHsg6zC-uQcGw/videos',
-        emojis='💎'
     ),
     feed(
         title='ЧудоТехники',
