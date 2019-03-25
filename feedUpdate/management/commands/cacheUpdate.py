@@ -61,6 +61,7 @@ class Command(BaseCommand):
                 newItems += 1
 
         if options['PlanetaKino']:
+            PlanetaKino.objects.all().delete()
             movies = PlanetaKino.list()
             for each in movies:
                 if not PlanetaKino.objects.filter(
