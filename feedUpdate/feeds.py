@@ -938,6 +938,13 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ЯМоб',
+        title_full='Я моб',
+        href='feed://readmanga.me/rss/manga?name=i_am_mob',
+        href_title='http://readmanga.me/i_am_mob',
+        emojis='💎'
+    ),
+    feed(
         title='Brahmanden',
         title_full='Brahmanden: из Одессы с морковью',
         href='feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
