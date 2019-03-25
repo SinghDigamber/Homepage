@@ -199,10 +199,8 @@ class feedUpdate(models.Model):
             if each.title == 'Shadman':
                 each.name = each.name[:each.name.find('(')-1]
             elif each.title == 'Apple':
-                if each.name.find('— Apple') != -1:
-                    each.name = each.name[:each.name.find('— Apple')]
-                else:
-                    each.name = each.name[:each.name.find('– Apple')]
+                if each.name.find('Apple') == len(each.name)-5 or each.name[len(each.name)-5:] == 'Apple':
+                    each.name = each.name[:len(each.name)-8]
             elif each.title == 'LastWeekTonight':
                 if each.name.find(': Last Week Tonight with John Oliver (HBO)') != -1:
                     each.name = each.name[:each.name.find(': Last Week Tonight with John Oliver (HBO)')]
