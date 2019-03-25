@@ -19,7 +19,7 @@ class PlanetaKino(models.Model):
 
     def list(pkHREF="https://planetakino.ua/kharkov/movies/"):
         resp = requests.get(pkHREF)
-        strainer = SoupStrainer('div', attrs={'class': 'movies-list'});
+        strainer = SoupStrainer('div', attrs={'class': 'content__section movies__section'});
         soup = BeautifulSoup(resp.text, "html.parser", parse_only=strainer)
 
         results = []
@@ -37,15 +37,12 @@ class PlanetaKino(models.Model):
 
             movie = PlanetaKino(
                 title=each.find('img')['alt'],
-                posterIMG="https://planetakino.ua"+each.find('img')['data-original'],
+                posterIMG=each.find('a').find('img')['data-desktop'],
                 href="https://planetakino.ua"+str(each.find(attrs={'class': 'movie-block__text_title'})['href']),
                 date=dateresult,
-                inTheater=inTheaterresult
+                inTheater=True
             )
             results.append(movie)
-
-        #for each in results:
-        #    print(each)
 
         return results
 
