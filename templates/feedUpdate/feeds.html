@@ -7,7 +7,7 @@
 
     <h1>{{ fromView.title }}</h1>
 
-    {% for feed in fromView.feeds %}
+    {% for feed in fromView.feed_list %}
         {% if not '🏮' in feed.emojis %}
         <li class="index-{% if '💎' in feed.emojis %}true{% else %}false{% endif %}">
             <a class="name" target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='index' %}">

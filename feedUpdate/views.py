@@ -12,13 +12,16 @@ class feedIndexView(ListView):
     context_object_name = "fromView"
 
     def get_queryset(self):
+        # constants
         header = "Ленты обновлений"
 
-        items = feed.all()
+        # calculations
+        feed_list = feed.objects.all()
 
+        # results
         return {
             'title': header,
-            'feeds': items,
+            'feed_list': feed_list,
         }
 
 
@@ -28,17 +31,23 @@ class myActivityView(ListView):
     context_object_name = "fromView"
 
     def get_queryset(self):
+        # constants
         header = "Моя активность"
         multibook = True
         items_limit = 42
 
-        items = feed.keys('👤')
-        items = list(feedUpdate.objects.filter(title__in=items)[:items_limit])
-        print(items)
+        # calculations
+        title_list = []
+        for each in feed.feeds_by_emoji('👤'):
+            title_list.append(each.title)
+        print(feedUpdate.objects.filter(title__in=title_list))
 
+        feedUpdate_list = list(feedUpdate.objects.filter(title__in=title_list)[:items_limit])
+
+        # results
         return {
             'title': header,
-            'items': items,
+            'feedUpdate_list': feedUpdate_list,
             'multibook': multibook,
         }
 
@@ -49,56 +58,71 @@ class feedUpdateIndexView(ListView):
     context_object_name = "fromView"
 
     def get_queryset(self):
+        # constants
         items_limit = 42
-        header = "Обновления"
 
-        multibook = True  # check for multibook and creates items object with required feeds
-        try:
-            if self.kwargs['feeds'] != "force" and self.kwargs['feeds'] != "index":
-                header = self.kwargs['feeds']
-                items = header.split("+")
-                if len(items) == 1:
-                    multibook = False
-                    # TODO: check if feeds exists and return error if not. Maybe KeyError is returned here?
-                    try:
-                        if feed.find(header).title_full:
-                            header = feed.find(header).title_full
-                        else:
-                            header = feed.find(header).title
-                    except KeyError:
-                        header = "Header "+header+" does not exist"
-                        items = []
-            else:
-                items = feed.keys()
-                self.kwargs['mode'] = "/"+self.kwargs['feeds']
-        except KeyError:
-            items = feed.keys()
+        # calculations
+        # multibook checker
+        if not self.kwargs.get('feeds', False):
+            multibook = True
+        elif len(self.kwargs['feeds'].split("+")) > 1:
+            multibook = True
+        else:
+            multibook = False
+        print("multibook: " + str(multibook))
 
-        try:
-            if self.kwargs['mode'] == "index" or self.kwargs['mode'] == "":
-                if header == "Обновления":
-                    items = list(feedUpdate.objects.filter(title__in=feed.keys())[:items_limit])
-                else:
-                    items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
-            elif self.kwargs['mode'] == "force":
-                items = feedUpdate.multilist(items)
-                items = sorted(items, key=lambda feedUpdate: str(feedUpdate.datetime), reverse=True)
+        # page_title generation
+        page_title = "Обновления"
+        if not multibook:
+            feed_one = feed.find(self.kwargs['feeds'])
+            if feed_one.title_full:
+                page_title = feed_one.title_full
             else:
-                items = []
-        except KeyError:
-            if header == "Обновления":
-                items = list(feedUpdate.objects.filter(title__in=feed.keys())[:items_limit])
-            else:
-                items = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
+                page_title = feed_one.title
+        elif self.kwargs.get('feeds', False):
+            page_title = self.kwargs['feeds']
+        print("page_title: " + str(page_title))
 
+        # feedName generation for buttons
         try:
-            if self.kwargs['mode'] == "force":
-                header += ": Forced"
+            feedName = self.kwargs['feeds']
         except KeyError:
-            pass
+            feedName = "Обновления"
+        print("feedName: " + str(feedName))
+
+        # feed_list generation
+        feed_list = []
+        if not multibook:
+            feed_list.append(feed.find(feedName))
+        elif not self.kwargs.get('feeds', False):
+            feed_list = feed.feeds_by_emoji()
+        else:
+            feed_list = feedUpdate.objects.filter(title__in=page_title.split("+"))
+        print("feed_list: " + str(feed_list))
+
+
+        # get feedUpdate_list
+        feedUpdate_list = []
+        if self.kwargs.get('mode', False) == "index" or self.kwargs.get('mode', False) == "":
+            if page_title == "Обновления":
+                feed_titles = []
+                for each in feed.feeds_by_emoji():
+                    feed_titles.append(each.title)
+                feedUpdate_list = list(feedUpdate.objects.filter(title__in=feed_titles)[:items_limit])
+            else:
+                feedUpdate_list = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
+        elif self.kwargs['mode'] == "force":
+            page_title += ": Forced"
+            print(1, feedUpdate_list)
+            for each in feed_list:
+                for feedUpdate_item in feed.parse(each):
+                    feedUpdate_list.append(feedUpdate_item)
+            print(2, feedUpdate_list[0])
+            feedUpdate_list.sort(key=lambda feedUpdate_list_item: str(feedUpdate_list_item.datetime), reverse=True)
 
         return {
-            'title': header,
-            'items': items,
+            'page_title': page_title,
+            'feedName': feedName,
+            'feedUpdate_list': feedUpdate_list,
             'multibook': multibook,
         }

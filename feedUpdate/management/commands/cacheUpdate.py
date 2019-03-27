@@ -9,17 +9,31 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         # Named (optional) arguments
         parser.add_argument(
+            '--log',
+            action='store_true',
+            dest='log',
+            help='print logs',
+        )
+
+        parser.add_argument(
             '--all',
             action='store_true',
             dest='all',
-            help='run full caching: no sense is usage as it is used by default',
+            help='run full feedUpdate caching',
         )
 
         parser.add_argument(
             '--inIndex',
             action='store_true',
-            dest='index',
+            dest='inIndex',
             help='run caching ONLY for items in INDEX',
+        )
+
+        parser.add_argument(
+            '--feeds',
+            action='store_true',
+            dest='feeds',
+            help='run caching ONLY for items from feeds',
         )
 
         parser.add_argument(
@@ -30,35 +44,46 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
+        # preparing logs
+        if options['log']:
+            print("┣ starting")
+            newItems = 0
 
-        print("┣ starting")
-        newItems = 0
+        # parsing feeds from feeds.py
+        if options['feeds']:
+            # removing old ones if present
+            feed.objects.all().delete()
+            # saving to database
+            for each in feed.feeds_from_file():
+                each.save()
+                if options['log']:
+                    newItems += 1
 
-        # adding feeds to database for admin usage
-        feed.objects.all().delete()
-        for each in feed.all():
-            each.save()
+        # feedUpdate caching mode choosing
+        if options['all'] or options['inIndex']:
+            feeds_to_parse = []
+            if options['all']:
+                feeds_to_parse = list(feed.objects.all())
+            elif options['inIndex']:
+                feeds_to_parse = list(feed.feeds_by_emoji())
 
-        if options['all']:
-            items = list(feed.keysAll())
-        elif options['index']:
-            items = list(feed.keys())
-        else:
-            items = []
+            feedUpdate_results = []
+            for each in feeds_to_parse:
+                for feedUpdate_item in each.parse():
+                    feedUpdate_results.append(feedUpdate_item)
 
-        items = feedUpdate.multilist(items)
-
-        for item in items:
-            if not feedUpdate.objects.filter(
-                # name=item.name,
-                href=item.href,
-                # datetime=item.datetime,
-                # title=item.title
-            ).exists():
-                # item.datetime = datetime.now()
-                # print(item)
-                item.save()
-                newItems += 1
+            for each in feedUpdate_results:
+                if not feedUpdate.objects.filter(
+                    # name=item.name,
+                    href=each.href,
+                    # datetime=item.datetime,
+                    # title=item.title
+                ).exists():
+                    # item.datetime = datetime.now()
+                    # print(item)
+                    each.save()
+                    if options['log']:
+                        newItems += 1
 
         if options['PlanetaKino']:
             PlanetaKino.objects.all().delete()
@@ -68,7 +93,8 @@ class Command(BaseCommand):
                     href=each.href,
                 ).exists():
                     each.save()
-                    newItems += 1
+                    if options['log']:
+                        newItems += 1
 
-
-        print("└──── added " + str(newItems))
+        if options['log']:
+            print("└──── added " + str(newItems))

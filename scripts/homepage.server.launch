@@ -34,6 +34,7 @@ sudo systemctl daemon-reload
 
 # cache everything before launch
 python3 manage.py cacheClear
+python3 manage.py cacheUpdate --feeds;
 python3 manage.py cacheUpdate --all;
 python3 manage.py cacheUpdate --PlanetaKino;
 

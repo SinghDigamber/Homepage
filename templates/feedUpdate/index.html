@@ -1,15 +1,14 @@
 {% extends 'Homepage/base.html' %}
 
-{% block title %} » feedUpdate » {{ fromView.title }}{% endblock %}
+{% block title %} » feedUpdate » {{ fromView.page_title }}{% endblock %}
 
 {% block meta %}<meta http-equiv="refresh" content="600" >{% endblock %}
 
 {% block main %}
     <ul id="feedUpdate">
 
-    <h1>{{ fromView.title }}</h1>
+    <h1>{{ fromView.page_title }}</h1>
 
-    {% for chapter in fromView.items %}
     <h2><span class="emojis"><nobr>
         {% if fromView.feedName == "Обновления" %}
             <a href="{% url "feedUpdate:index" mode="index" %}">🗒️️️</a>
@@ -20,6 +19,8 @@
         {% endif %}
         <a href="{% url "feedUpdate:feeds" %}">📂</a>
     </nobr></span></h2>
+
+    {% for chapter in fromView.feedUpdate_list %}
         <li><span>
             <a class="name" target="_blank" href="{{ chapter.href }}">
                 {% if fromView.multibook %}<span class="title">{{ chapter.title }}</span>: {% endif %}
