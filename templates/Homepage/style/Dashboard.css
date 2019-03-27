@@ -19,3 +19,9 @@
     text-align: center;
     padding: 10px 10px;
 }
+#PlanetaKino img {
+    height: 200px;
+}
+#PlanetaKino a {
+    text-decoration: none;
+}
