@@ -11,6 +11,11 @@ from .models import feed
     ),
 '''
 
+# emojis
+# 🏮 - hide from feeds
+# 💎 - inIndex=True
+# 🗃️ - inIndex=False
+# 👤 — my activities
 
 feeds = (
     feed(

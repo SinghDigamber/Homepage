@@ -12,14 +12,6 @@ from datetime import timezone
 # TODO: move project to actual database
 
 
-
-# emojis
-# 🏮 - hide from feeds
-# 💎 - inIndex=True
-# 🗃️ - inIndex=False
-# 👤 — my activities
-
-
 class feed(models.Model):
     class Meta:
         ordering = ['title']
