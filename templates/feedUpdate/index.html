@@ -10,6 +10,16 @@
     <h1>{{ fromView.title }}</h1>
 
     {% for chapter in fromView.items %}
+    <h2><span class="emojis"><nobr>
+        {% if fromView.feedName == "Обновления" %}
+            <a href="{% url "feedUpdate:index" mode="index" %}">🗒️️️</a>
+            <a href="{% url "feedUpdate:index" mode="force" %}">☠️️</a>
+        {% else %}
+            <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="index" %}">🗒️️️</a>
+            <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="force" %}">☠️️</a>
+        {% endif %}
+        <a href="{% url "feedUpdate:feeds" %}">📂</a>
+    </nobr></span></h2>
         <li><span>
             <a class="name" target="_blank" href="{{ chapter.href }}">
                 {% if fromView.multibook %}<span class="title">{{ chapter.title }}</span>: {% endif %}
