@@ -69,7 +69,7 @@ class feedUpdateIndexView(ListView):
             multibook = True
         else:
             multibook = False
-        print("multibook: " + str(multibook))
+        # print("multibook: " + str(multibook))
 
         # page_title generation
         page_title = "Обновления"
@@ -81,14 +81,14 @@ class feedUpdateIndexView(ListView):
                 page_title = feed_one.title
         elif self.kwargs.get('feeds', False):
             page_title = self.kwargs['feeds']
-        print("page_title: " + str(page_title))
+        # print("page_title: " + str(page_title))
 
         # feedName generation for buttons
         try:
             feedName = self.kwargs['feeds']
         except KeyError:
             feedName = "Обновления"
-        print("feedName: " + str(feedName))
+        # print("feedName: " + str(feedName))
 
         # feed_list generation
         feed_list = []
@@ -97,8 +97,8 @@ class feedUpdateIndexView(ListView):
         elif not self.kwargs.get('feeds', False):
             feed_list = feed.feeds_by_emoji()
         else:
-            feed_list = feedUpdate.objects.filter(title__in=page_title.split("+"))
-        print("feed_list: " + str(feed_list))
+            feed_list = feed.objects.filter(title__in=page_title.split("+"))
+        # print("feed_list: " + str(list(feed_list)))
 
 
         # get feedUpdate_list
@@ -113,11 +113,9 @@ class feedUpdateIndexView(ListView):
                 feedUpdate_list = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
         elif self.kwargs['mode'] == "force":
             page_title += ": Forced"
-            print(1, feedUpdate_list)
             for each in feed_list:
                 for feedUpdate_item in feed.parse(each):
                     feedUpdate_list.append(feedUpdate_item)
-            print(2, feedUpdate_list[0])
             feedUpdate_list.sort(key=lambda feedUpdate_list_item: str(feedUpdate_list_item.datetime), reverse=True)
 
         return {
