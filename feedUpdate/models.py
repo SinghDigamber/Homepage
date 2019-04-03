@@ -1,5 +1,5 @@
 from django.db import models
-# from bs4 import BeautifulSoup, SoupStrainer
+from bs4 import BeautifulSoup, SoupStrainer
 import requests
 # from collections import OrderedDict
 import feedparser
@@ -65,7 +65,6 @@ class feed(models.Model):
         return feeds
 
     def parse(self):
-        print(type(self))
         result = []
 
         # custom ранобэ.рф API import
@@ -86,6 +85,24 @@ class feed(models.Model):
             # -7 is /channel in the end of self.href
             self.href = "https://www.youtube.com/feeds/videos.xml?channel_id="+self.href[32:-7]
             result = feed.parse(self)
+
+        # custom pikabu import
+        elif self.href.find('pikabu.ru/@') != -1:
+            resp = requests.get(self.href)  # 0.4 seconds
+            strainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
+            soup = BeautifulSoup(resp.text, "html.parser", parse_only=strainer)
+
+            for article in soup.find_all('article'):
+                try:
+                    print(article.find('time')['datetime'], '\n\n')
+                    result.append(feedUpdate(
+                        name=article.find('h2', {'class': "story__title"}).find('a').getText(),
+                        href=article.find('h2', {'class': "story__title"}).find('a')['href'],
+                        datetime=datetime.strptime(article.find('time')['datetime'][:-3]+"00", '%Y-%m-%dT%H:%M:%S%z'),
+                        title=self.title))
+                except TypeError:
+                    # it's an AdBlock as ads do not have dates when published!
+                    pass
 
         # default RSS import
         else:

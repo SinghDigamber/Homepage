@@ -950,28 +950,10 @@ feeds = (
         emojis='💎'
     ),
     feed(
-        title='Brahmanden',
-        title_full='Brahmanden: из Одессы с морковью',
-        href='feed:https://feedfry.com/rss/11e89abaf37078f4a2c4a1e044ba7a50',
-        href_title='https://pikabu.ru/profile/Brahmanden',
-        emojis='💎',
-        delay=6
     ),
     feed(
-        title='Мифы',
-        title_full='Мифы как мемы',
-        href='feed:https://feedfry.com/rss/11e8d179bab948dcb145082b550404a7',
-        href_title='https://pikabu.ru/@castiar',
-        emojis='💎',
-        delay=6
     ),
     feed(
-        title='LittleBit',
-        title_full='Little.Bit',
-        href='feed:https://feedfry.com/rss/11e8f4cd277d969e8ecf28ab984ad37b',
-        href_title='https://pikabu.ru/profile/Little.Bit',
-        emojis='💎',
-        delay=6
     ),
     feed(
         title='JoshuaWright',
@@ -1391,5 +1373,23 @@ feeds = (
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Angel-Witch',
         href_title='http://www.hentai-foundry.com/pictures/user/Angel-Witch',
         emojis='💎🏮'
+    ),
+    feed(
+        title='Brahmanden',
+        title_full='Brahmanden: из Одессы с морковью',
+        href='https://pikabu.ru/@Brahmanden',
+        emojis='💎',
+    ),
+    feed(
+        title='Мифы',
+        title_full='Мифы как мемы',
+        href='https://pikabu.ru/@castiar',
+        emojis='💎',
+    ),
+    feed(
+        title='LittleBit',
+        title_full='Little.Bit',
+        href='https://pikabu.ru/@Little.Bit',
+        emojis='💎',
     ),
 )
