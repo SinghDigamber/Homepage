@@ -11,6 +11,8 @@ from .models import feed
     ),
 '''
 
+# rss generator available at https://feedfry.com
+
 # emojis
 # 🏮 - hide from feeds
 # 💎 - inIndex=True
