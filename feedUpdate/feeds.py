@@ -660,6 +660,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='MyLatexBaby',
+        href='https://www.youtube.com/channel/UCvxaNRCpQPI-3OVLDt7ywOQ/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -950,10 +955,24 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ГорожанинКультиватор',
+        title_full='Перерождение бессмертного горожанина-культиватора',
+        href='feed://readmanga.me/rss/manga?name=pererojdenie_bessmertnogo_gorojanina_kultivatora',
+        href_title='http://readmanga.me/pererojdenie_bessmertnogo_gorojanina_kultivatora',
+        emojis='💎'
     ),
     feed(
+        title='Варбл',
+        href='feed://readmanga.me/rss/manga?name=varbl',
+        href_title='http://readmanga.me/varbl',
+        emojis='💎'
     ),
     feed(
+        title='яNPC',
+        title_full='Я притворяюсь NPC',
+        href='feed://readmanga.me/rss/manga?name=ia_pritvoriaius_npc',
+        href_title='http://readmanga.me/ia_pritvoriaius_npc',
+        emojis='💎'
     ),
     feed(
         title='JoshuaWright',
@@ -1047,9 +1066,41 @@ feeds = (
     feed(
         title='Щит',
         title_full='Становление Героя Щита',
-        href='feed:http://feeds.feedburner.com/ruranobe',
-        href_title='https://ruranobe.ru',
-        filter='Становление Героя Щита'
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/tnynn',
+        filter='ruranobe.ru/r/tnynn/'
+    ),
+    feed(
+        title='AW',
+        title_full='Accel World',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/aw',
+        filter='ruranobe.ru/r/aw/',
+        emojis='💎',
+    ),
+    feed(
+        title='ЭльфийскаяКровь',
+        title_full='Эльфийская кровь',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/sne',
+        filter='ruranobe.ru/r/sne/',
+        emojis='💎',
+    ),
+    feed(
+        title='ЗвездныйГерб',
+        title_full='Звездный герб',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/snm',
+        filter='ruranobe.ru/r/snm/',
+        emojis='💎',
+    ),
+    feed(
+        title='SAOrura',
+        title_full='Sword Art Online (ruranobe.ru)',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/sao',
+        filter='ruranobe.ru/r/sao/',
+        emojis='💎',
     ),
     feed(
         title='SkazOff',
@@ -1373,6 +1424,17 @@ feeds = (
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Angel-Witch',
         href_title='http://www.hentai-foundry.com/pictures/user/Angel-Witch',
         emojis='💎🏮'
+    ),
+    feed(
+        title='tesomuHF',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/tesomu',
+        href_title='http://www.hentai-foundry.com/pictures/user/tesomu',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='KogotsuchiDark',
+        href='https://pikabu.ru/@KogotsuchiDark',
+        emojis='💎',
     ),
     feed(
         title='Brahmanden',
