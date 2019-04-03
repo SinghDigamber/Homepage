@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-python3 manage.py cacheUpdate --all --PlanetaKino;
+python3 manage.py cacheUpdate --all;
+python3 manage.py cacheUpdate --PlanetaKino;
