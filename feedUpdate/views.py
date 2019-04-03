@@ -20,7 +20,9 @@ class feedIndexView(ListView):
 
         # results
         return {
-            'title': header,
+            'page': {
+                'title': header,
+            },
             'feed_list': feed_list,
         }
 
@@ -34,15 +36,15 @@ class myActivityView(ListView):
         # constants
         header = "Моя активность"
         multibook = True
-        items_limit = 42
+        result_size_limit = 42
+        feed_emoji_filter = '👤'
 
         # calculations
-        title_list = []
-        for each in feed.feeds_by_emoji('👤'):
-            title_list.append(each.title)
-        print(feedUpdate.objects.filter(title__in=title_list))
+        feed_title_list = []
+        for each in feed.feeds_by_emoji(feed_emoji_filter):
+            feed_title_list.append(each.title)
 
-        feedUpdate_list = list(feedUpdate.objects.filter(title__in=title_list)[:items_limit])
+        feedUpdate_list = list(feedUpdate.objects.filter(title__in=feed_title_list)[:result_size_limit])
 
         # results
         return {
