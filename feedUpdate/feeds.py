@@ -977,6 +977,19 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ДраконийОхотник',
+        title_full='Охотник на драконов',
+        href='feed://readmanga.me/rss/manga?name=dragon_hunter',
+        href_title='http://readmanga.me/dragon_hunter',
+        emojis='💎'
+    ),
+    feed(
+        title='ДвеДуши',
+        href='feed://readmanga.me/rss/manga?name=two_souls',
+        href_title='http://readmanga.me/two_souls',
+        emojis='💎'
+    ),
+    feed(
         title='JoshuaWright',
         title_full='Joshua Wright (SlackWyrm)',
         href='feed://www.joshuawright.net/rss_joshuawright.xml',
@@ -1102,6 +1115,14 @@ feeds = (
         href='https://ruranobe.ru/updates.rss',
         href_title='https://ruranobe.ru/r/sao',
         filter='ruranobe.ru/r/sao/',
+        emojis='💎',
+    ),
+    feed(
+        title='NieR',
+        title_full='NieR:Automata',
+        href='https://works.novel.tl/updates.rss',
+        href_title='https://works.novel.tl/r/nier',
+        filter='works.novel.tl/r/nier/',
         emojis='💎',
     ),
     feed(
