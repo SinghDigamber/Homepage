@@ -653,7 +653,6 @@ feeds = (
     feed(
         title='varlamov',
         href='https://www.youtube.com/channel/UC101o-vQ2iOj9vr00JUlyKw/videos',
-        emojis='💎'
     ),
     feed(
         title='DheroesC',
@@ -987,6 +986,20 @@ feeds = (
         title='ДвеДуши',
         href='feed://readmanga.me/rss/manga?name=two_souls',
         href_title='http://readmanga.me/two_souls',
+        emojis='💎'
+    ),
+    feed(
+        title='Персона5',
+        title_full='Персона 5: Антология мини-историй',
+        href='feed://readmanga.me/rss/manga?name=persona_5__antologiia_mini_istorii',
+        href_title='http://readmanga.me/persona_5__antologiia_mini_istorii',
+        emojis='💎'
+    ),
+    feed(
+        title='Франкс',
+        title_full='Милый во Франксе! Ёнкома',
+        href='feed://readmanga.me/rss/manga?name=darling_in_the_franxx___4_koma_',
+        href_title='http://readmanga.me/darling_in_the_franxx___4_koma_',
         emojis='💎'
     ),
     feed(
