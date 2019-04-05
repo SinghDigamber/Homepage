@@ -37,7 +37,7 @@ class feed(models.Model):
         if self.href is not None:
             result += " href: "+self.href
         if self.href_title is not None:
-            result += " href: "+self.href_title
+            result += " href_title: "+self.href_title
         return result
 
     # find a feed by feed.title
@@ -80,10 +80,23 @@ class feed(models.Model):
                     datetime=datetime.fromtimestamp(each["publishedAt"])+timedelta(hours=-1),
                     title=self.title))
 
-        # custom RSS YouTube import (link to feed has to be converted manually)
+        # custom RSS YouTube converter (link to feed has to be converted manually)
         elif self.href.find('https://www.youtube.com/channel/') != -1:
             # -7 is /channel in the end of self.href
+            self.href_title = self.href[:]
             self.href = "https://www.youtube.com/feeds/videos.xml?channel_id="+self.href[32:-7]
+            result = feed.parse(self)
+
+        # custom RSS readmanga converter (link to feed has to be converted manually to simplify feed object creation)
+        elif self.href.find('http://readmanga.me/') != -1:
+            self.href_title = self.href[:]
+            self.href = "feed://readmanga.me/rss/manga?name="+self.href[20:]
+            result = feed.parse(self)
+
+        # custom RSS deviantart converter (link to feed has to be converted manually to simplify feed object creation)
+        elif self.href.find('https://www.deviantart.com/') != -1:
+            self.href_title = self.href[:]
+            self.href = "http://backend.deviantart.com/rss.xml?q=gallery%3A"+self.href[27:-9]
             result = feed.parse(self)
 
         # custom pikabu import
