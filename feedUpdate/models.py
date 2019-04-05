@@ -94,7 +94,6 @@ class feed(models.Model):
 
             for article in soup.find_all('article'):
                 try:
-                    print(article.find('time')['datetime'], '\n\n')
                     result.append(feedUpdate(
                         name=article.find('h2', {'class': "story__title"}).find('a').getText(),
                         href=article.find('h2', {'class': "story__title"}).find('a')['href'],
