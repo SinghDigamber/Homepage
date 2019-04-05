@@ -30,6 +30,8 @@ urlpatterns = [
     url(r'^feedUpdate/', include('feedUpdate.urls', namespace="feedUpdate")),
     url(r'^fU/', include('feedUpdate.urls', namespace="fU")),
 
+    url(r'^weatherCast/', include('weatherCast.urls', namespace="weatherCast")),
+
     # permanent
     url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
         permanent=True), name="Trakt"),

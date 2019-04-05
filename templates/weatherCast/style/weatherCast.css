@@ -1,0 +1,25 @@
+/* #weatherCast table [temp_type="F"]{
+    background-color: #333;
+}*/
+#weatherCast {
+    max-width: 800px;
+    margin: 0 auto;
+}
+#weatherCast-table {
+    border-spacing: 0;
+}
+#weatherCast-table td {
+    background-color: #333;
+    border: 1px solid black;
+}
+#weatherCast-table tr:first-child {
+    text-align: center;
+}
+#weatherCast-table .merge-left {
+    text-align: right;
+    border-right: 0;
+}
+#weatherCast-table .merge-right {
+    text-align: left;
+    border-left: 0;
+}

@@ -1,0 +1,47 @@
+{% extends 'Homepage/base.html' %}
+
+{% block title %} » feedUpdate » {{ fromView.page.title }}{% endblock %}
+
+{% block main %}
+    <div id="weatherCast">
+        <h1>{{ fromView.page.title }}</h1>
+
+        <h2>{{ fromView.summary.sum_now }}</h2>
+        <h2>{{ fromView.summary.sum_day }}</h2>
+        <h2>{{ fromView.summary.sum_week }}</h2>
+    </div>
+
+    <table id="weatherCast-table" align="center">
+        {# <caption>Прогноз погоды</caption> #}
+        <tr>
+            <th colspan="2">°C</th>
+            <th>Температура</th>
+            <th colspan="2"></th>
+            <th>Облачность</th>
+            {% comment %}
+                <th>datetime</th>
+                <th>summary</th>
+            {% endcomment %}
+        </tr>
+    {% for row in fromView.forecast %}
+        {% if row.temp_type == 'F' and row.point_type == 'H'%}
+        <tr point_type="{{ row.point_type }}" temp_type="{{ row.temp_type }}">
+            <td class="merge-left">{{ row.temp|floatformat:2|slice:":-3" }}</td>
+                <td class="merge-right">.{{ row.temp|floatformat:2|slice:"-2:" }}</td>
+            <td><input type="range" value="{{ row.temp }}"
+                min="{{ fromView.page.temp_min }}" max="{{ fromView.page.temp_max }}" step="0.01"
+                disabled="true"></td>
+            <td class="merge-left">{{ row.cloudCover|floatformat:2|slice:":-3" }}</td>
+                <td class="merge-right">.{{ row.cloudCover|floatformat:2|slice:"-2:" }}</td>
+            <td><input type="range" value="{{ row.cloudCover }}"
+                min="0" max="1" step="0.01"
+                disabled="true"></td>
+            {% comment %}
+                <td>{{ row.datetime|date:'Y-m-d H:i' }}</td>
+                <td>{{ row.summary }}</td>
+            {% endcomment %}
+        </tr>
+        {% endif %}
+    {% endfor %}
+    </table>
+{% endblock %}
