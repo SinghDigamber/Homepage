@@ -102,6 +102,8 @@ class feed(models.Model):
                 except TypeError:
                     # it's an AdBlock as ads do not have dates when published!
                     pass
+                except AttributeError:
+                    pass
 
         # default RSS import
         else:
