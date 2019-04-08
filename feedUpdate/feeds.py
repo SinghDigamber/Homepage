@@ -2051,7 +2051,7 @@ feeds = (
     feed(
         title='mk_ays',
         href='https://www.instagram.com/mk_ays/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='yarishna',
@@ -2071,7 +2071,7 @@ feeds = (
     feed(
         title='vivid_vision',
         href='https://www.instagram.com/vivid_vision/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='enahernandezh',
@@ -2351,7 +2351,7 @@ feeds = (
     feed(
         title='fit_with_iulia',
         href='https://www.instagram.com/fit.with.iulia/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='leanmachine21',
@@ -2376,7 +2376,7 @@ feeds = (
     feed(
         title='suzie_kb',
         href='https://www.instagram.com/suzie_kb/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='mashawakka',
@@ -2401,7 +2401,7 @@ feeds = (
     feed(
         title='tianajoelle',
         href='https://www.instagram.com/tianajoelle/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='kayleeullom',
@@ -2451,17 +2451,17 @@ feeds = (
     feed(
         title='avantgeek',
         href='https://www.instagram.com/avantgeek/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='brittanyperilleee',
         href='https://www.instagram.com/brittanyperilleee/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='espana927',
         href='https://www.instagram.com/espana927/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='michelle_lewin',
