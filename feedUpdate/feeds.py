@@ -666,6 +666,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='Зеленский',
+        href='https://www.youtube.com/channel/UCp2zBKrqP0ZQF6RN4RJtF2Q/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -1076,6 +1081,12 @@ feeds = (
         emojis='💎',
     ),
     feed(
+        title='erotibotica',
+        href='https://erotibotica.com/feed/',
+        href_title='https://erotibotica.com',
+        emojis='💎',
+    ),
+    feed(
         title='Шелдон',
         title_full='Детство Шелдона',
         href='https://kuraj-serials.ru/rss.xml',
@@ -1143,24 +1154,18 @@ feeds = (
         href_title='https://skazoff.ru',
         emojis='💎',
     ),
-    # feed(
-    #     title='WaitButWhy',
-    #     title_full='Wait But Why',
-    #     href='https://waitbutwhy.com',
-    #     href_title='http://waitbutwhy.com/feed',
-    #     emojis='💎',
-    # ),
+    feed(
+        title='WaitButWhy',
+        title_full='Wait But Why',
+        href='https://waitbutwhy.com/feed',
+        href_title='https://waitbutwhy.com',
+        emojis='💎',
+    ),
     feed(
         title='Озорнин',
         title_full='Блог Михаила Озорнина',
         href='feed://mikeozornin.ru/blog/rss/',
         href_title='http://mikeozornin.ru/blog/',
-        emojis='💎',
-    ),
-    feed(
-        title='Tonsky',
-        href='http://tonsky.me/blog/atom.xml',
-        href_title='http://tonsky.me',
         emojis='💎',
     ),
     feed(
@@ -1208,9 +1213,39 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='kalinkafox',
+        href='https://twitrss.me/twitter_user_to_rss/?user=kalinkafox',
+        href_title='https://twitter.com/kalinkafox',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='OJessicaNigri',
+        href='https://twitrss.me/twitter_user_to_rss/?user=OJessicaNigri',
+        href_title='https://twitter.com/OJessicaNigri',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='InCaseArt',
+        href='https://twitrss.me/twitter_user_to_rss/?user=InCaseArt',
+        href_title='https://twitter.com/InCaseArt',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='StvartakMato',
+        href='https://twitrss.me/twitter_user_to_rss/?user=StvartakMato',
+        href_title='https://twitter.com/StvartakMato',
+        emojis='💎🏮'
+    ),
+    feed(
         title='bangbez',
         href='feed:https://bangbez.artstation.com/rss',
         href_title='https://bangbez.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='tudvaseva',
+        href='feed:https://tudvaseva.artstation.com/rss',
+        href_title='https://tudvaseva.artstation.com/projects',
         emojis='💎🏮'
     ),
     feed(
@@ -1230,6 +1265,24 @@ feeds = (
         title='DominikDraw',
         href='feed:https://www.artstation.com/dominikdraw.rss',
         href_title='https://www.artstation.com/dominikdraw',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='TonySkeor',
+        href='feed:https://www.artstation.com/skeor.rss',
+        href_title='https://www.artstation.com/skeor',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='WojciechWilk',
+        href='feed:https://www.artstation.com/wojciechwilk.rss',
+        href_title='https://www.artstation.com/wojciechwilk',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='SashaTudvaseva',
+        href='feed:https://www.artstation.com/tudvaseva.rss',
+        href_title='https://www.artstation.com/tudvaseva',
         emojis='💎🏮'
     ),
     feed(
@@ -1266,9 +1319,21 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='cherrymousestreet',
+        href='https://cherrymousestreet.tumblr.com/rss',
+        href_title='https://cherrymousestreet.tumblr.com',
+        emojis='💎🏮'
+    ),
+    feed(
         title='saiwsaiwsaiw',
         href='feed:https://twitrss.me/twitter_user_to_rss/?user=saiwsaiwsaiw',
         href_title='https://twitter.com/saiwsaiwsaiw',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='buttsmithy',
+        href='https://buttsmithy.com/feed',
+        href_title='https://buttsmithy.com',
         emojis='💎🏮'
     ),
     feed(
@@ -1298,7 +1363,7 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='Owler',
+        title='OwlerHF',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Owler',
         href_title='http://www.hentai-foundry.com/pictures/user/Owler',
         emojis='💎🏮'
@@ -1340,7 +1405,7 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='DominikDraw',
+        title='DominikDrawHF',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/DominikDraw',
         href_title='http://www.hentai-foundry.com/pictures/user/DominikDraw',
         emojis='💎🏮'
@@ -1370,7 +1435,7 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='Flowerxl',
+        title='FlowerxlHF',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Flowerxl',
         href_title='http://www.hentai-foundry.com/pictures/user/Flowerxl',
         emojis='💎🏮'
@@ -1457,12 +1522,6 @@ feeds = (
         title='AngelWitch',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Angel-Witch',
         href_title='http://www.hentai-foundry.com/pictures/user/Angel-Witch',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='tesomu',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/tesomu',
-        href_title='http://www.hentai-foundry.com/pictures/user/tesomu',
         emojis='💎🏮'
     ),
     feed(
