@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from pytz import timezone
 from django.utils.timezone import localtime
 from datetime import timezone
+import json
 # Create your models here.
 
 # TODO: move project to actual database
@@ -79,6 +80,39 @@ class feed(models.Model):
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
                     datetime=datetime.fromtimestamp(each["publishedAt"])+timedelta(hours=-1),
                     title=self.title))
+
+        # custom instagram import
+        if self.href.find('https://www.instagram.com/') != -1:
+            resp = requests.get(self.href)
+
+            soup = BeautifulSoup(resp.text, "html.parser")
+
+            for each in soup.find_all('script'):
+                find_string = 'window._sharedData = {'
+                if each.text.find(find_string) != -1:
+                    data = str(each.text)[each.text.find(find_string)+len(find_string)-1:-1]
+                    obj = json.loads(data)
+                    obj = obj['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']
+
+                    for post in obj:
+                        post = post['node']
+
+                        try:
+                            result_name = post['edge_media_to_caption']['edges'][0]['node']['text']
+                        except IndexError:
+                            result_name = 'no title'
+
+                        result_href = "http://instragram.com/p/"+post['shortcode']
+
+                        result_datetime = post['taken_at_timestamp']
+                        result_datetime = datetime.fromtimestamp(result_datetime)
+
+                        result.append(feedUpdate(
+                            name=result_name,
+                            href=result_href,
+                            datetime=result_datetime,
+                            title=self.title
+                        ))
 
         # custom RSS YouTube converter (link to feed has to be converted manually)
         elif self.href.find('https://www.youtube.com/channel/') != -1:
