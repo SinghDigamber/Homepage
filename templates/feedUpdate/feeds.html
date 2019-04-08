@@ -7,6 +7,16 @@
 
     <h1>{{ fromView.page.title }}</h1>
 
+    {% if fromView.page.errors_regexp != '' %}
+        <h3>errors_regexp</h3>
+        <p>{{ fromView.page.errors_regexp }}</p>
+    {% endif %}
+
+    {% if fromView.page.errors_duplicates != '[]' %}
+        <h3>errors_duplicates</h3>
+        <p>{{ fromView.page.errors_duplicates }}</p>
+    {% endif %}
+
     {% for feed in fromView.feed_list %}
         {% if not '🏮' in feed.emojis %}
         <li class="index-{% if '💎' in feed.emojis %}true{% else %}false{% endif %}">

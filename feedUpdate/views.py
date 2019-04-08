@@ -4,6 +4,8 @@ from django.views.generic import ListView
 import socket
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.db.models import Count
+import re
 
 
 class feedIndexView(ListView):
@@ -18,10 +20,21 @@ class feedIndexView(ListView):
         # calculations
         feed_list = feed.objects.all()
 
+        # feed testing
+        errors_regexp = ''
+        for each in feed_list:
+            pattern = re.compile("^([0-9|а-я|А-Я|a-z|A-Z|_|—])+$")
+            if not pattern.match(each.title):
+                errors_regexp += each.title + "; "
+
+        errors_duplicates = feed.objects.values('title').annotate(name_count=Count('title')).filter(name_count__gt=1)
+
         # results
         return {
             'page': {
                 'title': header,
+                'errors_regexp': errors_regexp,
+                'errors_duplicates': str(list(errors_duplicates)),
             },
             'feed_list': feed_list,
         }
