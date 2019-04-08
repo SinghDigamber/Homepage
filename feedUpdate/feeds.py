@@ -675,6 +675,13 @@ feeds = (
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
         href_title='feed:https://online.anidub.com/rss.xml',
+        emojis='💎'
+    ),
+    feed(
+        title='AnimeVost',
+        href='http://animevost.org/rss.xml',
+        href_title='http://animevost.org',
+        emojis='💎'
     ),
     feed(
         title='Gam3',
@@ -1932,16 +1939,6 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='saori_jpg',
-        href='https://www.instagram.com/saori.jpg/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='dutchdameofficial',
-        href='https://www.instagram.com/dutchdameofficial/',
-        emojis='💎🏮',
-    ),
-    feed(
         title='mspervology',
         href='https://www.instagram.com/mspervology/',
         emojis='💎🏮',
@@ -1964,11 +1961,6 @@ feeds = (
     feed(
         title='itsopalsnow',
         href='https://www.instagram.com/itsopalsnow/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='itsalinalopezofficial',
-        href='https://www.instagram.com/itsalinalopezofficial/',
         emojis='💎🏮',
     ),
     feed(
@@ -2112,11 +2104,6 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='biancabeauchampmodel',
-        href='https://www.instagram.com/biancabeauchampmodel/',
-        emojis='💎🏮',
-    ),
-    feed(
         title='poisonne',
         href='https://www.instagram.com/poisonne/',
         emojis='💎🏮',
@@ -2139,11 +2126,6 @@ feeds = (
     feed(
         title='zaytseva_tasha',
         href='https://www.instagram.com/zaytseva_tasha/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='blackpinkofficial',
-        href='https://www.instagram.com/blackpinkofficial/',
         emojis='💎🏮',
     ),
     feed(
@@ -2264,7 +2246,7 @@ feeds = (
     feed(
         title='michie_peachie',
         href='https://www.instagram.com/michie_peachie/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='endzaadair',
@@ -2342,16 +2324,6 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='dri_cosplay',
-        href='https://www.instagram.com/dri.cosplay/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='dri_alencarr',
-        href='https://www.instagram.com/dri.alencarr/',
-        emojis='💎🏮',
-    ),
-    feed(
         title='reya__sunshine',
         href='https://www.instagram.com/reya__sunshine/',
         emojis='💎🏮',
@@ -2389,7 +2361,7 @@ feeds = (
     feed(
         title='cristinacapron',
         href='https://www.instagram.com/cristinacapron/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='antonwolf1988',
@@ -2454,7 +2426,7 @@ feeds = (
     feed(
         title='whitneyysimmons',
         href='https://www.instagram.com/whitneyysimmons/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='jillchristinefit',
@@ -2484,11 +2456,6 @@ feeds = (
     feed(
         title='brittanyperilleee',
         href='https://www.instagram.com/brittanyperilleee/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='sarah_bowmar',
-        href='https://www.instagram.com/sarah_bowmar/',
         emojis='💎🏮',
     ),
     feed(
@@ -2534,11 +2501,6 @@ feeds = (
     feed(
         title='lisa__official',
         href='https://www.instagram.com/lisa__official/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='alexia_clark',
-        href='https://www.instagram.com/alexia_clark/',
         emojis='💎🏮',
     ),
     feed(
