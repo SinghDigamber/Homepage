@@ -236,6 +236,8 @@ class feed(models.Model):
                 each.datetime = each.datetime + timedelta(hours=self.delay)
 
             # name fixes
+            each.name = each.name[:139]
+
             if each.title == 'Shadman':
                 each.name = each.name[:each.name.find('(')-1]
             elif each.title == 'Apple':
