@@ -236,6 +236,7 @@ class feed(models.Model):
                 each.datetime = each.datetime + timedelta(hours=self.delay)
 
             # name fixes
+            # I have no idea why it has to be done as there is max_length=140
             each.name = each.name[:139]
 
             if each.title == 'Shadman':
