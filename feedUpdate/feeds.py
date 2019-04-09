@@ -18,6 +18,7 @@ from .models import feed
 # 💎 - inIndex=True
 # 🗃️ - inIndex=False
 # 👤 — my activities
+# 🏋️ — fitness
 
 feeds = (
     feed(
@@ -1363,12 +1364,6 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='razter',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/razter',
-        href_title='http://www.hentai-foundry.com/pictures/user/razter',
-        emojis='💎🏮'
-    ),
-    feed(
         title='OwlerHF',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Owler',
         href_title='http://www.hentai-foundry.com/pictures/user/Owler',
@@ -2416,7 +2411,7 @@ feeds = (
     feed(
         title='gainswithkathy',
         href='https://www.instagram.com/gainswithkathy/',
-        emojis='💎🏮',
+        emojis='🏋️🏮',
     ),
     feed(
         title='stef_fit',
@@ -2431,7 +2426,7 @@ feeds = (
     feed(
         title='jillchristinefit',
         href='https://www.instagram.com/jillchristinefit/',
-        emojis='💎🏮',
+        emojis='🏋️🏮',
     ),
     feed(
         title='theartofmathew',
@@ -2516,7 +2511,7 @@ feeds = (
     feed(
         title='chelsvaccariello',
         href='https://www.instagram.com/chelsvaccariello/',
-        emojis='💎🏮',
+        emojis='🏋️🏮',
     ),
     feed(
         title='hasunoai',
