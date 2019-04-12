@@ -535,7 +535,6 @@ feeds = (
         title='Specialized',
         title_full='Specialized Bicycles',
         href='https://www.youtube.com/channel/UCcrBtxD8xy2cxeXM7f-xihA/videos',
-        emojis='💎🏮'
     ),
     feed(
         title='Scott',
@@ -1226,6 +1225,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='maou_0618',
+        href='https://twitrss.me/twitter_user_to_rss/?user=maou_0618',
+        href_title='https://twitter.com/maou_0618',
+        emojis='💎🏮'
+    ),
+    feed(
         title='OJessicaNigri',
         href='https://twitrss.me/twitter_user_to_rss/?user=OJessicaNigri',
         href_title='https://twitter.com/OJessicaNigri',
@@ -1906,7 +1911,7 @@ feeds = (
     feed(
         title='thefuelgirls',
         href='https://www.instagram.com/thefuelgirls/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='sister_sinister',
@@ -1926,12 +1931,12 @@ feeds = (
     feed(
         title='shproton',
         href='https://www.instagram.com/shproton/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='minu_lansak',
         href='https://www.instagram.com/minu_lansak/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='mspervology',
@@ -1951,7 +1956,7 @@ feeds = (
     feed(
         title='adamae_dono',
         href='https://www.instagram.com/adamae_dono/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='itsopalsnow',
@@ -1971,7 +1976,7 @@ feeds = (
     feed(
         title='valtesseproductions',
         href='https://www.instagram.com/valtesseproductions/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='misskyliemarilyn',
@@ -2051,12 +2056,12 @@ feeds = (
     feed(
         title='yarishna',
         href='https://www.instagram.com/yarishna/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='eeelyeee',
         href='https://www.instagram.com/eeelyeee/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='threnodyinvelvet',
@@ -2091,7 +2096,7 @@ feeds = (
     feed(
         title='amiko_chan',
         href='https://www.instagram.com/amiko_chan/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='jennalynnmeowri',
@@ -2111,7 +2116,7 @@ feeds = (
     feed(
         title='maryd_model',
         href='https://www.instagram.com/maryd.model/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='jennierubyjane',
@@ -2136,22 +2141,22 @@ feeds = (
     feed(
         title='korean_girlgroups',
         href='https://www.instagram.com/korean_girlgroups/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='katelyn_runck',
         href='https://www.instagram.com/katelyn_runck/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='christian_gschweng',
         href='https://www.instagram.com/christian.gschweng/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='eosandy',
         href='https://www.instagram.com/eosandy_/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='katyuskamoonfox',
@@ -2246,12 +2251,12 @@ feeds = (
     feed(
         title='endzaadair',
         href='https://www.instagram.com/endzaadair/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='garotabike',
         href='https://www.instagram.com/garotabike/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='martinwongphoto',
@@ -2271,7 +2276,7 @@ feeds = (
     feed(
         title='armoredheartcosplay',
         href='https://www.instagram.com/armoredheartcosplay/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='eri_kitami',
@@ -2286,7 +2291,7 @@ feeds = (
     feed(
         title='pedalingheroine',
         href='https://www.instagram.com/pedalingheroine/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='honkfu',
@@ -2311,7 +2316,7 @@ feeds = (
     feed(
         title='anna_cattish',
         href='https://www.instagram.com/anna_cattish/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='mjhiblenart',
@@ -2331,7 +2336,7 @@ feeds = (
     feed(
         title='brittanya187',
         href='https://www.instagram.com/brittanya187/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='cutiepiesensei',
@@ -2351,7 +2356,7 @@ feeds = (
     feed(
         title='leanmachine21',
         href='https://www.instagram.com/leanmachine21/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='cristinacapron',
@@ -2391,7 +2396,7 @@ feeds = (
     feed(
         title='sawalee_r',
         href='https://www.instagram.com/sawalee.r/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='tianajoelle',
@@ -2401,7 +2406,7 @@ feeds = (
     feed(
         title='kayleeullom',
         href='https://www.instagram.com/kayleeullom/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='hannushka',
@@ -2416,7 +2421,7 @@ feeds = (
     feed(
         title='stef_fit',
         href='https://www.instagram.com/stef_fit/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='whitneyysimmons',
@@ -2476,22 +2481,22 @@ feeds = (
     feed(
         title='vikikacosta',
         href='https://www.instagram.com/vikikacosta/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='laurensimpson',
         href='https://www.instagram.com/laurensimpson/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='tmiller_fit',
         href='https://www.instagram.com/tmiller_fit/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='anita_herbert',
         href='https://www.instagram.com/anita_herbert/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='lisa__official',
@@ -2516,7 +2521,7 @@ feeds = (
     feed(
         title='hasunoai',
         href='https://www.instagram.com/hasunoai/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='spcats_doremi',
@@ -2551,6 +2556,386 @@ feeds = (
     feed(
         title='missmary_d',
         href='https://www.instagram.com/missmary.d/',
+        emojis='🏮',
+    ),
+    feed(
+        title='milica_polskaya_fpage',
+        href='https://www.instagram.com/milica_polskaya_fpage/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='mila_polskaya',
+        href='https://www.instagram.com/mila_polskaya/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='mmm_still_limited_edition',
+        href='https://www.instagram.com/mmm_still_limited_edition/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='womeneatingbananas',
+        href='https://www.instagram.com/womeneatingbananas/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='soft_lips_tease',
+        href='https://www.instagram.com/soft.lips.tease/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='mylittlevronie',
+        href='https://www.instagram.com/mylittlevronie/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='miss_fetilicious',
+        href='https://www.instagram.com/miss_fetilicious/',
+        emojis='🏮',
+    ),
+    feed(
+        title='xenon_cosplay',
+        href='https://www.instagram.com/xenon_cosplay/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='shinyelensil',
+        href='https://www.instagram.com/shinyelensil/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='artificeclothing',
+        href='https://www.instagram.com/artificeclothing/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='asianalison',
+        href='https://www.instagram.com/asianalison/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='frejadottir_backup',
+        href='https://www.instagram.com/frejadottir_backup/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='420madisonivy',
+        href='https://www.instagram.com/420madisonivy/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='frejadottir',
+        href='https://www.instagram.com/frejadottir/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='araneablackcorsets',
+        href='https://www.instagram.com/araneablackcorsets/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='amouranth',
+        href='https://www.instagram.com/amouranth/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='svetabily',
+        href='https://www.instagram.com/svetabily/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='stellachuuirl',
+        href='https://www.instagram.com/stellachuuirl/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='latexfashiontv',
+        href='https://www.instagram.com/latexfashiontv/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='adelalinka_life',
+        href='https://www.instagram.com/adelalinka_life/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='galina_dub',
+        href='https://www.instagram.com/galina.dub/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='smirko_o',
+        href='https://www.instagram.com/smirko_o/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='psylocke_model',
+        href='https://www.instagram.com/psylocke_model/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='alienorihara',
+        href='https://www.instagram.com/alienorihara/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='toxicvision',
+        href='https://www.instagram.com/toxicvision/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='jenselter',
+        href='https://www.instagram.com/jenselter/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='dollskill',
+        href='https://www.instagram.com/dollskill/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='romirain',
+        href='https://www.instagram.com/romirain/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='yayahan',
+        href='https://www.instagram.com/yayahan/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='eliselaurenne',
+        href='https://www.instagram.com/eliselaurenne/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='badapoledancer',
+        href='https://www.instagram.com/badapoledancer/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='corsette_pl',
+        href='https://www.instagram.com/corsette.pl/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='yle4ka_001',
+        href='https://www.instagram.com/yle4ka_001/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='merylsama',
+        href='https://www.instagram.com/merylsama/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='belle_delphine',
+        href='https://www.instagram.com/belle.delphine/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='misscjmiles',
+        href='https://www.instagram.com/misscjmiles/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='misscjmilesfans',
+        href='https://www.instagram.com/misscjmilesfans/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='b880156',
+        href='https://www.instagram.com/b880156/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='spiral_cats',
+        href='https://www.instagram.com/spiral_cats/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='princesstess_',
+        href='https://www.instagram.com/princesstess_/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='necrinity',
+        href='https://www.instagram.com/necrinity/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='ausriefel',
+        href='https://www.instagram.com/ausriefel/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='missmandyofficial',
+        href='https://www.instagram.com/missmandyofficial/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='yuiiwadee',
+        href='https://www.instagram.com/yuiiwadee/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='noskova_lyubov_',
+        href='https://www.instagram.com/noskova_lyubov_/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='kimberleyannphoto',
+        href='https://www.instagram.com/kimberleyannphoto/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='lillybetrose',
+        href='https://www.instagram.com/lillybetrose/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='notaprodigy',
+        href='https://www.instagram.com/notaprodigy/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='vampybitme',
+        href='https://www.instagram.com/vampybitme/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='octokuro_photoart',
+        href='https://www.instagram.com/octokuro_photoart/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='mistresstt_s',
+        href='https://www.instagram.com/mistresstt.s/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='rubberterra',
+        href='https://www.instagram.com/rubberterra/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='_missmiranda',
+        href='https://www.instagram.com/_missmiranda/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='candycharmsofficialx',
+        href='https://www.instagram.com/candycharmsofficialx/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='latexxlara',
+        href='https://www.instagram.com/latexxlara/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='yuzu_pyon',
+        href='https://www.instagram.com/yuzu.pyon/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='kaitbeardiaz',
+        href='https://www.instagram.com/kaitbeardiaz/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='ladylucielatex',
+        href='https://www.instagram.com/ladylucielatex/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='aitenshimisha',
+        href='https://www.instagram.com/aitenshimisha/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='fetish_erotica',
+        href='https://www.instagram.com/fetish_erotica/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='i_chios',
+        href='https://www.instagram.com/i_chios/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='mylittlevronie20',
+        href='https://www.instagram.com/mylittlevronie2.0/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='peaches_cosplay',
+        href='https://www.instagram.com/peaches.cosplay/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='hollytwolf',
+        href='https://www.instagram.com/hollytwolf/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='fetties_r',
+        href='https://www.instagram.com/fetties_r/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='nivalislava',
+        href='https://www.instagram.com/nivalislava/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='sakimi_chan',
+        href='https://www.instagram.com/sakimi.chan/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='octokuro_model',
+        href='https://www.instagram.com/octokuro.model/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='nastyakyzmina63',
+        href='https://www.instagram.com/nastyakyzmina63/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='nikiskinoir',
+        href='https://www.instagram.com/nikiskinoir/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='anna_batman666',
+        href='https://www.instagram.com/anna_batman666/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='kamuicosplay',
+        href='https://www.instagram.com/kamuicosplay/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='imfurfur',
+        href='https://www.instagram.com/imfurfur/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='notbaconbooty',
+        href='https://www.instagram.com/notbaconbooty/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='celene_nox',
+        href='https://www.instagram.com/celene.nox/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='sacred_hell',
+        href='https://www.instagram.com/sacred.hell/',
         emojis='💎🏮',
     ),
 )
