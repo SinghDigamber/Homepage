@@ -671,6 +671,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='AsianBoss',
+        href='https://www.youtube.com/channel/UC2-_WWPT_124iN6jiym4fOw/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -1013,6 +1018,30 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='Gate',
+        title_full='Врата: там бьются наши воины',
+        href='http://readmanga.me/gate___thus_the_jsdf_fought_there',
+        emojis='💎'
+    ),
+    feed(
+        title='GateПинаКоЛада',
+        title_full='Врата: 14-летняя Пина Ко Лада и рыцарский орден Розы',
+        href='http://readmanga.me/gate___teikoku_no_bara_kishidan___pinya_co_lada_14_sai',
+        emojis='💎'
+    ),
+    feed(
+        title='Кандидат',
+        title_full='Непринужденная жизнь в другом мире экс-кандидата в герои, оказавшегося читером со 2 уровня',
+        href='http://readmanga.me/neprinujdennaia_jizn_v_drugom_mire_eks_kandidata_v_geroi__okazavshegosia_chiterom_so_2_urovnia',
+        emojis='💎'
+    ),
+    feed(
+        title='МиллионыТрупов',
+        title_full='Я стою на миллионах трупов',
+        href='http://readmanga.me/i_m_standing_on_1_000_000_lives',
+        emojis='💎'
+    ),
+    feed(
         title='JoshuaWright',
         title_full='Joshua Wright (SlackWyrm)',
         href='feed://www.joshuawright.net/rss_joshuawright.xml',
@@ -1228,7 +1257,7 @@ feeds = (
         title='maou_0618',
         href='https://twitrss.me/twitter_user_to_rss/?user=maou_0618',
         href_title='https://twitter.com/maou_0618',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='OJessicaNigri',
@@ -1295,6 +1324,12 @@ feeds = (
         title='SashaTudvaseva',
         href='feed:https://www.artstation.com/tudvaseva.rss',
         href_title='https://www.artstation.com/tudvaseva',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='yeyuan',
+        href='feed:https://www.artstation.com/yeyuan.rss',
+        href_title='https://www.artstation.com/yeyuan',
         emojis='💎🏮'
     ),
     feed(
@@ -1408,7 +1443,7 @@ feeds = (
         title='LeraPi',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/LeraPI',
         href_title='http://www.hentai-foundry.com/pictures/user/LeraPI',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='DominikDrawHF',
@@ -1468,7 +1503,7 @@ feeds = (
         title='markydaysaid',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/markydaysaid',
         href_title='http://www.hentai-foundry.com/pictures/user/markydaysaid',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Jummy',
@@ -1498,7 +1533,7 @@ feeds = (
         title='ebluberry',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/ebluberry',
         href_title='http://www.hentai-foundry.com/pictures/user/ebluberry',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Zillionaire',
@@ -1522,7 +1557,7 @@ feeds = (
         title='sexgazer',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/sexgazer',
         href_title='http://www.hentai-foundry.com/pictures/user/sexgazer',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='AngelWitch',
@@ -2021,12 +2056,12 @@ feeds = (
     feed(
         title='auauau',
         href='https://www.instagram.com/auauau/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='alex_cosplays',
         href='https://www.instagram.com/alex_cosplays/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='faerie_blossom',
@@ -2111,12 +2146,12 @@ feeds = (
     feed(
         title='zaytseva_tasha',
         href='https://www.instagram.com/zaytseva_tasha/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='notcamdamage',
         href='https://www.instagram.com/notcamdamage/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='softbompark',
@@ -2236,12 +2271,12 @@ feeds = (
     feed(
         title='martinwongphoto',
         href='https://www.instagram.com/martinwongphoto/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='martinwongcosplay',
         href='https://www.instagram.com/martinwongcosplay/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='purplemuffinz',
@@ -2561,7 +2596,7 @@ feeds = (
     feed(
         title='420madisonivy',
         href='https://www.instagram.com/420madisonivy/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='amouranth',
@@ -2591,7 +2626,7 @@ feeds = (
     feed(
         title='galina_dub',
         href='https://www.instagram.com/galina.dub/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='smirko_o',
@@ -2641,7 +2676,7 @@ feeds = (
     feed(
         title='badapoledancer',
         href='https://www.instagram.com/badapoledancer/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='yle4ka_001',
@@ -2781,7 +2816,7 @@ feeds = (
     feed(
         title='kamuicosplay',
         href='https://www.instagram.com/kamuicosplay/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='imfurfur',
@@ -2801,6 +2836,36 @@ feeds = (
     feed(
         title='haleybroox',
         href='https://www.instagram.com/haleybroox/',
+        emojis='🏮',
+    ),
+    feed(
+        title='obsidiankerttu',
+        href='https://www.instagram.com/obsidiankerttu/',
+        emojis='🏮',
+    ),
+    feed(
+        title='_fuxteufelswild_',
+        href='https://www.instagram.com/_fuxteufelswild_/',
+        emojis='🏮',
+    ),
+    feed(
+        title='fuonnamia',
+        href='https://www.instagram.com/fuonnamia/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='eugenechulitskyphotography',
+        href='https://www.instagram.com/eugenechulitskyphotography/',
+        emojis='🏮',
+    ),
+    feed(
+        title='shellydinferno',
+        href='https://www.instagram.com/shellydinferno/',
+        emojis='🏮',
+    ),
+    feed(
+        title='model_amygrey',
+        href='https://www.instagram.com/model_amygrey/',
         emojis='🏮',
     ),
 )
