@@ -676,6 +676,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='JenSelterYT',
+        href='https://www.youtube.com/channel/UCdfkczRQA4pRsGo30x4uIcA/videos',
+        emojis='💎🏮'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -1275,7 +1280,7 @@ feeds = (
         title='StvartakMato',
         href='https://twitrss.me/twitter_user_to_rss/?user=StvartakMato',
         href_title='https://twitter.com/StvartakMato',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='bangbez',
@@ -1295,6 +1300,12 @@ feeds = (
         href='https://twitrss.me/twitter_user_to_rss/?user=StarfuckedModel',
         href_title='https://twitter.com/StarfuckedModel',
         emojis='💎🏮'
+    ),
+    feed(
+        title='KatyuskamoonfoxTwi',
+        href='https://twitrss.me/twitter_user_to_rss/?user=Katyuskamoonfox',
+        href_title='https://twitter.com/Katyuskamoonfox',
+        emojis='🏮'
     ),
     feed(
         title='Zeronis',
@@ -2081,7 +2092,7 @@ feeds = (
     feed(
         title='miakhalifa',
         href='https://www.instagram.com/miakhalifa/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='mk_ays',
@@ -2421,7 +2432,7 @@ feeds = (
     feed(
         title='theartofmathew',
         href='https://www.instagram.com/theartofmathew/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='fitbeast',
@@ -2684,6 +2695,16 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='mylatexbabyInst',
+        href='https://www.instagram.com/yle4ka_001/',
+        emojis='🏮',
+    ),
+    feed(
+        title='reiqinstagram',
+        href='https://www.instagram.com/reiqinstagram/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='belle_delphine',
         href='https://www.instagram.com/belle.delphine/',
         emojis='🏮',
@@ -2866,6 +2887,11 @@ feeds = (
     feed(
         title='model_amygrey',
         href='https://www.instagram.com/model_amygrey/',
+        emojis='🏮',
+    ),
+    feed(
+        title='fraeulein_aurora',
+        href='https://www.instagram.com/fraeulein_aurora/',
         emojis='🏮',
     ),
 )
