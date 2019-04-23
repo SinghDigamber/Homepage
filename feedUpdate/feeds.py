@@ -1268,7 +1268,7 @@ feeds = (
         title='OJessicaNigri',
         href='https://twitrss.me/twitter_user_to_rss/?user=OJessicaNigri',
         href_title='https://twitter.com/OJessicaNigri',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='InCaseArt',
@@ -1399,7 +1399,7 @@ feeds = (
         title_full='octokuro_model Twitter',
         href='feed:https://twitrss.me/twitter_user_to_rss/?user=octokuro_model',
         href_title='https://twitter.com/octokuro_model',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='SambucaTwi',
@@ -2207,7 +2207,7 @@ feeds = (
     feed(
         title='navinigri',
         href='https://www.instagram.com/navinigri/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='enjinight',
@@ -2777,12 +2777,12 @@ feeds = (
     feed(
         title='octokuro_model',
         href='https://www.instagram.com/octokuro.model/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='octokuro_photoart',
         href='https://www.instagram.com/octokuro_photoart/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='latexxlara',
