@@ -673,12 +673,16 @@ feeds = (
     feed(
         title='AsianBoss',
         href='https://www.youtube.com/channel/UC2-_WWPT_124iN6jiym4fOw/videos',
-        emojis='💎'
     ),
     feed(
         title='JenSelterYT',
         href='https://www.youtube.com/channel/UCdfkczRQA4pRsGo30x4uIcA/videos',
         emojis='💎🏮'
+    ),
+    feed(
+        title='Bloomberg',
+        href='https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ/videos',
+        emojis='💎'
     ),
     feed(
         title='Anidub',
@@ -1081,6 +1085,17 @@ feeds = (
         delay=24
     ),
     feed(
+        title='doxy',
+        href='feed:https://prismblush.com/feed/',
+        href_title='https://prismblush.com/',
+        emojis='🏮💎',
+    ),
+    feed(
+        title='Meduza',
+        href='feed:https://meduza.io/rss/all',
+        href_title='https://meduza.io/',
+    ),
+    feed(
         title='mortalezz',
         title_full='Gorsky (@mortalezz)',
         href='feed:https://gorsky.us/rss/',
@@ -1274,7 +1289,7 @@ feeds = (
         title='InCaseArt',
         href='https://twitrss.me/twitter_user_to_rss/?user=InCaseArt',
         href_title='https://twitter.com/InCaseArt',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='StvartakMato',
@@ -2117,7 +2132,7 @@ feeds = (
     feed(
         title='roga_na_noge',
         href='https://www.instagram.com/roga_na_noge/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='miyukicosplay',
@@ -2252,12 +2267,12 @@ feeds = (
     feed(
         title='kalinkafoxInsta',
         href='https://www.instagram.com/kalinkafox/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='kalinkafoxInsta2',
         href='https://www.instagram.com/kalinka.fox/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='allisonstokke',
@@ -2292,7 +2307,7 @@ feeds = (
     feed(
         title='purplemuffinz',
         href='https://www.instagram.com/purplemuffinz/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='armoredheartcosplay',
@@ -2307,7 +2322,7 @@ feeds = (
     feed(
         title='bangbezInsta',
         href='https://www.instagram.com/bangbez/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='pedalingheroine',
@@ -2342,7 +2357,7 @@ feeds = (
     feed(
         title='mjhiblenart',
         href='https://www.instagram.com/mjhiblenart/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='reya__sunshine',
@@ -2397,7 +2412,7 @@ feeds = (
     feed(
         title='shirogane_sama',
         href='https://www.instagram.com/shirogane_sama/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='xandrastax',
@@ -2892,6 +2907,16 @@ feeds = (
     feed(
         title='fraeulein_aurora',
         href='https://www.instagram.com/fraeulein_aurora/',
+        emojis='🏮',
+    ),
+    feed(
+        title='jannik_vari',
+        href='https://www.instagram.com/jannik_vari/',
+        emojis='🏮',
+    ),
+    feed(
+        title='dana_labo_model',
+        href='https://www.instagram.com/dana_labo_model/',
         emojis='🏮',
     ),
 )
