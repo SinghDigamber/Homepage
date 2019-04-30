@@ -127,6 +127,12 @@ class feed(models.Model):
             self.href = "feed://readmanga.me/rss/manga?name="+self.href[20:]
             result = feed.parse(self)
 
+        # custom RSS mintmanga converter (link to feed has to be converted manually to simplify feed object creation)
+        elif self.href.find('http://mintmanga.com/') != -1:
+            self.href_title = self.href[:]
+            self.href = "feed://mintmanga.com/rss/manga?name="+self.href[21:]
+            result = feed.parse(self)
+
         # custom RSS deviantart converter (link to feed has to be converted manually to simplify feed object creation)
         elif self.href.find('https://www.deviantart.com/') != -1:
             self.href_title = self.href[:]
