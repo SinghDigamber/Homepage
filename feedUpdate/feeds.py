@@ -632,7 +632,6 @@ feeds = (
     feed(
         title='DUST',
         href='https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA/videos',
-        emojis='💎'
     ),
     feed(
         title='ThisIs',  # by Linus
@@ -682,6 +681,11 @@ feeds = (
     feed(
         title='Bloomberg',
         href='https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='Show2Show',
+        href='https://www.youtube.com/channel/UCEedXkffiRQy9BlS_OqewwQ/videos',
         emojis='💎'
     ),
     feed(
@@ -2070,9 +2074,9 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='reflectivedesire',
+        title='ReflectiveDesireInst',
         href='https://www.instagram.com/reflectivedesire/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='kymnonstop',
@@ -2100,9 +2104,9 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='apple',
+        title='AppleInst',
         href='https://www.instagram.com/apple/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='miakhalifa',
@@ -2147,12 +2151,12 @@ feeds = (
     feed(
         title='jennalynnmeowri',
         href='https://www.instagram.com/jennalynnmeowri/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='poisonne',
         href='https://www.instagram.com/poisonne/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='latex_lucy_official',
@@ -2472,7 +2476,7 @@ feeds = (
     feed(
         title='michelle_lewin',
         href='https://www.instagram.com/michelle_lewin/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='minafatale',
