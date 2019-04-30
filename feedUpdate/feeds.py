@@ -1033,7 +1033,7 @@ feeds = (
     feed(
         title='Gate',
         title_full='Врата: там бьются наши воины',
-        href='http://readmanga.me/gate___thus_the_jsdf_fought_there',
+        href='http://mintmanga.com/gate___thus_the_jsdf_fought_there',
         emojis='💎'
     ),
     feed(
@@ -1098,13 +1098,6 @@ feeds = (
         title='Meduza',
         href='feed:https://meduza.io/rss/all',
         href_title='https://meduza.io/',
-    ),
-    feed(
-        title='mortalezz',
-        title_full='Gorsky (@mortalezz)',
-        href='feed:https://gorsky.us/rss/',
-        href_title='https://gorsky.us/',
-        emojis='💎',
     ),
     feed(
         title='CommitStrip',
@@ -1275,7 +1268,7 @@ feeds = (
         title='kalinkafox',
         href='https://twitrss.me/twitter_user_to_rss/?user=kalinkafox',
         href_title='https://twitter.com/kalinkafox',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='maou_0618',
@@ -1327,6 +1320,12 @@ feeds = (
         emojis='🏮'
     ),
     feed(
+        title='mortalezzTwi',
+        href='https://twitrss.me/twitter_user_to_rss/?user=mortalezz',
+        href_title='https://twitter.com/mortalezz',
+        emojis='💎🏮'
+    ),
+    feed(
         title='Zeronis',
         href='feed:https://www.artstation.com/zeronis-pk.rss',
         href_title='https://www.artstation.com/zeronis-pk',
@@ -1374,13 +1373,6 @@ feeds = (
         title_full='Jannet Incosplay Twitter',
         href='feed:https://twitrss.me/twitter_user_to_rss/?user=in_cosplay',
         href_title='https://twitter.com/in_cosplay',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='JannetDevArt',
-        title_full='Jannet Incosplay Deviantart',
-        href='http://backend.deviantart.com/rss.xml?q=gallery%3Ajannet-sorekage',
-        href_title='https://www.deviantart.com/jannet-sorekage/gallery/',
         emojis='💎🏮'
     ),
     feed(
@@ -1689,16 +1681,6 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='tomaytoTOMAHTO',
-        href='https://www.deviantart.com/tomaytotomahto/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='DigitalVox',
-        href='https://www.deviantart.com/digital-vox/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
         title='kevinTUT',
         href='https://www.deviantart.com/kevintut/gallery/',
         emojis='💎🏮',
@@ -1721,11 +1703,6 @@ feeds = (
     feed(
         title='parapatter',
         href='https://www.deviantart.com/parapatter/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='Sieyarelow',
-        href='https://www.deviantart.com/sieyarelow/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -1774,11 +1751,6 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='hmongt',
-        href='https://www.deviantart.com/hmongt/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
         title='upshdragoon',
         href='https://www.deviantart.com/upshdragoon/gallery/',
         emojis='💎🏮',
@@ -1791,16 +1763,6 @@ feeds = (
     feed(
         title='MonoriRogue',
         href='https://www.deviantart.com/monorirogue/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='sinceillust',
-        href='https://www.deviantart.com/sinceillust/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='ozma02',
-        href='https://www.deviantart.com/ozma02/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -1826,11 +1788,6 @@ feeds = (
     feed(
         title='SplashBrush',
         href='https://www.deviantart.com/splashbrush/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='ROIDESRATS',
-        href='https://www.deviantart.com/roidesrats/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -1886,11 +1843,6 @@ feeds = (
     feed(
         title='Disharmonica',
         href='https://www.deviantart.com/disharmonica/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='fredgdperry',
-        href='https://www.deviantart.com/fredgdperry/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -2887,11 +2839,6 @@ feeds = (
         title='_fuxteufelswild_',
         href='https://www.instagram.com/_fuxteufelswild_/',
         emojis='🏮',
-    ),
-    feed(
-        title='fuonnamia',
-        href='https://www.instagram.com/fuonnamia/',
-        emojis='💎🏮',
     ),
     feed(
         title='eugenechulitskyphotography',
