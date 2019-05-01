@@ -2101,6 +2101,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='lvenok_0311',
+        href='https://www.instagram.com/lvenok_0311/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='jennalynnmeowri',
         href='https://www.instagram.com/jennalynnmeowri/',
         emojis='🏮',
