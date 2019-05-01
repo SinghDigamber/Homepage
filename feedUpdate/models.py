@@ -169,11 +169,7 @@ class feed(models.Model):
                         continue
 
                 # NAME RESULT: custom name fields
-                if self.href.find("https://websta.me/rss/n/") != -1:
-                    nameresult = item['summary']
-                    nameresult = nameresult[:nameresult.find("<a href=")]
-                else:
-                    nameresult = item["title_detail"]["value"]
+                nameresult = item["title_detail"]["value"]
 
                 # DATE RESULT: parsing dates
                 # preparsing: choosing date string source
