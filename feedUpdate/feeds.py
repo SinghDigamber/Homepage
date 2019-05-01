@@ -1323,7 +1323,11 @@ feeds = (
         title='mortalezzTwi',
         href='https://twitrss.me/twitter_user_to_rss/?user=mortalezz',
         href_title='https://twitter.com/mortalezz',
-        emojis='💎🏮'
+    ),
+    feed(
+        title='vas3kTwi',
+        href='https://twitrss.me/twitter_user_to_rss/?user=vas3k',
+        href_title='https://twitter.com/vas3k',
     ),
     feed(
         title='Zeronis',
@@ -1400,10 +1404,23 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='buttsmithy',
+        title='alfie',
         href='https://buttsmithy.com/feed',
         href_title='https://buttsmithy.com',
         emojis='💎🏮'
+    ),
+    feed(
+        title='incase',
+        href='https://incase.buttsmithy.com/feed/',
+        href_title='https://incase.buttsmithy.com/',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='mortalezz',
+        title_full='Gorsky (@mortalezz)',
+        href='feed:https://gorsky.us/rss/',
+        href_title='https://gorsky.us/',
+        emojis='💎',
     ),
     feed(
         title='octokuroTwi',
@@ -1585,6 +1602,12 @@ feeds = (
         title='AngelWitch',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Angel-Witch',
         href_title='http://www.hentai-foundry.com/pictures/user/Angel-Witch',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='incaseHF',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/InCase',
+        href_title='http://www.hentai-foundry.com/pictures/user/InCase',
         emojis='💎🏮'
     ),
     feed(
