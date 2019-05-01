@@ -699,7 +699,6 @@ feeds = (
         title='AnimeVost',
         href='http://animevost.org/rss.xml',
         href_title='http://animevost.org',
-        emojis='💎'
     ),
     feed(
         title='Gam3',
