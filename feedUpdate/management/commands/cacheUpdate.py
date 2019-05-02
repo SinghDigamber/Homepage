@@ -7,82 +7,66 @@ class Command(BaseCommand):
     help = 'Caches new information'
 
     def add_arguments(self, parser):
-        # Named (optional) arguments
-        parser.add_argument(
-            '--log',
-            action='store_true',
-            dest='log',
-            help='print logs',
-        )
+        parser.add_argument('--log', action='store_true')
+        parser.add_argument('--logEach', action='store_true')
 
-        parser.add_argument(
-            '--all',
-            action='store_true',
-            dest='all',
-            help='run full feedUpdate caching',
-        )
+        parser.add_argument('--parseFeeds', action='store_true')
+        parser.add_argument('--parseAll', action='store_true')
+        parser.add_argument('--parseIndex', action='store_true')
 
-        parser.add_argument(
-            '--inIndex',
-            action='store_true',
-            dest='inIndex',
-            help='run caching ONLY for items in INDEX',
-        )
-
-        parser.add_argument(
-            '--feeds',
-            action='store_true',
-            dest='feeds',
-            help='run caching ONLY for items from feeds',
-        )
-
-        parser.add_argument(
-            '--PlanetaKino',
-            action='store_true',
-            dest='PlanetaKino',
-            help='run caching ONLY for items from Dashboard.PlanetaKino',
-        )
+        parser.add_argument('--parsePlanetaKino', action='store_true')
 
     def handle(self, *args, **options):
-        # preparing logs
+        # execution preparation
         if options['log']:
+            total_start = time.time()
+            total_items = 0
             print("┣ starting")
-            newItemsTotal = 0
-            execution_start = time.time()
+        lens = [0]
 
-        # parsing feeds from feeds.py
-        if options['feeds']:
-            if options['log']:
-                newItems = 0
-                item_start = time.time()
-            # removing old ones if present
+        # parsing feedUpdate/feeds from feeds.py
+        if options['parseFeeds']:
+            # cycle preparation
+            if options['logEach']:
+                cycle_start = time.time()
+                cycle_items = 0
+
+            # removing all old feeds to avoid conflicts
             feed.objects.all().delete()
-            # saving to database
+
+            # parsing from file to database
             for each in feed.feeds_from_file():
                 each.save()
                 if options['log']:
-                    newItems += 1
-                    newItemsTotal += 1
-            if options['log']:
-                item_end = time.time()
-                print("┣ added " + str(newItems) + " feeds in " + str(round(item_end - item_start, 2)) + "s")
+                    total_items += 1
+                if options['logEach']:
+                    cycle_items += 1
 
-        # feedUpdate caching mode choosing
-        if options['all'] or options['inIndex']:
-            if options['log']:
-                newItems = 0
-                item_start = time.time()
-            feeds_to_parse = []
-            if options['all']:
-                feeds_to_parse = list(feed.objects.all())
-            elif options['inIndex']:
-                feeds_to_parse = list(feed.feeds_by_emoji())
+            # cycle result printing
+            if options['logEach']:
+                cycle_end = time.time()
+                cycle_time = round(cycle_end - cycle_start, 2)
+                print("┣ added " + str(cycle_items) + " feeds in " + str(cycle_time) + "s")
 
-            for feed_item_to_parse in feeds_to_parse:
-                if options['log']:
-                    newItems = 0
-                    item_start = time.time()
-                for feedUpdate_parsed_item in feed_item_to_parse.parse():
+        # caching feedUpdates for feeds stored in DB
+        if options['parseAll'] or options['parseIndex']:
+            # prepare list of feeds to parse
+            parse_feeds = []
+            if options['parseAll']:
+                parse_feeds = list(feed.objects.all())
+            elif options['parseIndex']:
+                parse_feeds = list(feed.feeds_by_emoji())
+
+            # parsing
+            for current_feed in parse_feeds:
+                # cycle preparation
+                if options['logEach']:
+                    cycle_start = time.time()
+                    cycle_items = 0
+
+                for feedUpdate_parsed_item in current_feed.parse():
+                    lens.append(len(feedUpdate_parsed_item.name))
+
                     if not feedUpdate.objects.filter(
                         # name=feedUpdate_parsed_item.name,
                         href=feedUpdate_parsed_item.href,
@@ -92,16 +76,24 @@ class Command(BaseCommand):
                         # feedUpdate_parsed_item.datetime = datetime.now()
                         # print(feedUpdate_parsed_item)
                         feedUpdate_parsed_item.save()
-                        if options['log']:
-                            newItems += 1
-                            newItemsTotal += 1
-                if options['log']:
-                    item_end = time.time()
-                    print("┣ added " + feed_item_to_parse.title + " x" + str(newItems) + " in " + str(round(item_end - item_start, 2)) + "s")
 
-        if options['PlanetaKino']:
-            if options['log']:
-                newItems = 0
+                        if options['log']:
+                            total_items += 1
+                        if options['logEach']:
+                            cycle_items += 1
+
+                if options['logEach']:
+                    cycle_end = time.time()
+                    cycle_time = round(cycle_end - cycle_start, 2)
+                    print("┣ added " + current_feed.title + " x" + str(cycle_items) + " in " + str(cycle_time) + "s")
+
+        if options['parsePlanetaKino']:
+            # cycle preparation
+            if options['logEach']:
+                cycle_start = time.time()
+                cycle_items = 0
+
+            # parsing
             PlanetaKino.objects.all().delete()
             movies = PlanetaKino.list()
             for each in movies:
@@ -110,13 +102,16 @@ class Command(BaseCommand):
                 ).exists():
                     each.save()
                     if options['log']:
-                        newItems += 1
-                        newItemsTotal += 1
-            if options['log']:
-                item_end = time.time()
-                print("┣ added " + str(newItems) + " PlanetaKino items" + " in " + str(round(item_end - item_start, 2)) + "s")
+                        total_items += 1
+                    if options['logEach']:
+                        cycle_items += 1
+            if options['logEach']:
+                cycle_end = time.time()
+                cycle_time = round(cycle_end - cycle_start, 2)
+                print("┣ added " + str(cycle_items) + " PlanetaKino items" + " in " + str(cycle_time) + "s")
 
         if options['log']:
-            execution_end = time.time()
-            print("└──── added " + str(newItemsTotal) + " in " + str(round(execution_end - execution_start, 2)) + "s")
-
+            total_end = time.time()
+            total_time = round(total_end - total_start, 2)
+            print("└──── added " + str(total_items) + " in " + str(total_time) + "s")
+            print(max(lens))
