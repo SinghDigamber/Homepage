@@ -1,9 +1,9 @@
 from .models import feed
 
 # parsing not implemented, third-party tools are used
-# Telegram channel to RSS - https://telegram2rss.akin.su/site/ru/
-# personal Strava to RSS -  http://feedmyride.net
-# Twitter to RSS -          https://twitrss.me/twitter_user_to_rss/?user=
+# TODO: remove parser Telegram channel to RSS - https://telegram2rss.akin.su/site/ru/
+# TODO: remove parser personal Strava to RSS -  http://feedmyride.net
+# TODO: remove parser Twitter to RSS -          https://twitrss.me/twitter_user_to_rss/?user=
 
 # emojis
 # 🏮 - hide from feeds

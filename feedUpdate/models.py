@@ -4,13 +4,14 @@ import requests
 # from collections import OrderedDict
 import feedparser
 from datetime import datetime, timedelta
-from pytz import timezone
+# from pytz import timezone
 from django.utils.timezone import localtime
-from datetime import timezone
+# from datetime import timezone
 import json
 # Create your models here.
 
 # TODO: move project to actual database
+# models.CharField(max_length= does not work in SQLite, manually aadded limit in parser
 
 
 class feed(models.Model):
@@ -41,7 +42,7 @@ class feed(models.Model):
             result += " href_title: "+self.href_title
         return result
 
-    # find a feed by feed.title
+    # return <feed> by feed.title
     @staticmethod
     def find(the_title_we_search):
         # feed.objects.all().values(title=the_title_we_search)
@@ -49,7 +50,7 @@ class feed(models.Model):
             if each.title == the_title_we_search:
                 return each
 
-    # return feeds which contain emoji X
+    # return List<feed> by emoji
     @staticmethod
     def feeds_by_emoji(emoji_filter='💎'):
         if len(emoji_filter) == 1:
@@ -61,10 +62,12 @@ class feed(models.Model):
         else:
             return ["Wrong emoji_filter length"]
 
+    # return List<feed> from feedUpdate/feeds.py
     def feeds_from_file():
         from .feeds import feeds
         return feeds
 
+    # return List<feedUpdate> parsed from source by <feed> (self)
     def parse(self):
         result = []
 
@@ -97,6 +100,7 @@ class feed(models.Model):
                     for post in obj:
                         post = post['node']
 
+                        # avoiding errors caused by empty titles
                         try:
                             result_name = post['edge_media_to_caption']['edges'][0]['node']['text']
                         except IndexError:
@@ -153,9 +157,10 @@ class feed(models.Model):
                         datetime=datetime.strptime(article.find('time')['datetime'][:-3]+"00", '%Y-%m-%dT%H:%M:%S%z'),
                         title=self.title))
                 except TypeError:
-                    # it's an AdBlock as ads do not have dates when published!
+                    # advertisement, passing as no need to save it
                     pass
                 except AttributeError:
+                    # advertisement, passing as no need to save it
                     pass
 
         # default RSS import
@@ -227,20 +232,20 @@ class feed(models.Model):
 
         # universal postfixes
         for each in result:
-            # datetime fixes
+            # DATETIME fixes
+            # fix timezone unaware
             if each.datetime.tzinfo is not None and each.datetime.tzinfo.utcoffset(each.datetime) is not None:
                 dateresult2 = localtime(each.datetime)
                 each.datetime = datetime(dateresult2.year, dateresult2.month, dateresult2.day,
                      dateresult2.hour, dateresult2.minute, dateresult2.second)
-
-            # DELAY updates datetime
+            # add DELAY
             if type(self.delay) is not type(None):
                 each.datetime = each.datetime + timedelta(hours=self.delay)
 
-            # name fixes
-            # I have no idea why it has to be done as there is max_length=140
+            # NAME fixes
+            # SQLite does not support max-length
             each.name = each.name[:140]
-
+            # extra symbols
             if each.title == 'Shadman':
                 each.name = each.name[:each.name.find('(')-1]
             elif each.title == 'Apple':
