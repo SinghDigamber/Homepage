@@ -65,8 +65,6 @@ class Command(BaseCommand):
                     cycle_items = 0
 
                 for feedUpdate_parsed_item in current_feed.parse():
-                    lens.append(len(feedUpdate_parsed_item.name))
-
                     if not feedUpdate.objects.filter(
                         # name=feedUpdate_parsed_item.name,
                         href=feedUpdate_parsed_item.href,
@@ -114,4 +112,3 @@ class Command(BaseCommand):
             total_end = time.time()
             total_time = round(total_end - total_start, 2)
             print("└──── added " + str(total_items) + " in " + str(total_time) + "s")
-            print(max(lens))
