@@ -689,6 +689,12 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='JannetYT',
+        title_full='Jannet Incosplay YouTube',
+        href='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
+        emojis='💎🏮'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -1241,9 +1247,42 @@ feeds = (
         emojis='💎',
     ),
     feed(
-        title='MyInstagram',
-        href='https://www.instagram.com/olehkrupko/',
-        emojis='👤'
+        title='JannetWeb',
+        title_full='Jannet Incosplay Website',
+        href='feed:https://jannetincosplay.com/recent.rss',
+        href_title='https://jannetincosplay.com',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='KalinkaFoxTumblr',
+        href='https://kalinkafox.tumblr.com/rss',
+        href_title='https://kalinkafox.tumblr.com',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='cherrymousestreet',
+        href='https://cherrymousestreet.tumblr.com/rss',
+        href_title='https://cherrymousestreet.tumblr.com',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='alfie',
+        href='https://buttsmithy.com/feed',
+        href_title='https://buttsmithy.com',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='incase',
+        href='https://incase.buttsmithy.com/feed/',
+        href_title='https://incase.buttsmithy.com/',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='mortalezz',
+        title_full='Gorsky (@mortalezz)',
+        href='feed:https://gorsky.us/rss/',
+        href_title='https://gorsky.us/',
+        emojis='💎',
     ),
     feed(
         title='MyStrava',
@@ -1294,18 +1333,6 @@ feeds = (
         emojis='🏮'
     ),
     feed(
-        title='bangbez',
-        href='feed:https://bangbez.artstation.com/rss',
-        href_title='https://bangbez.artstation.com/projects',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='tudvaseva',
-        href='feed:https://tudvaseva.artstation.com/rss',
-        href_title='https://tudvaseva.artstation.com/projects',
-        emojis='💎🏮'
-    ),
-    feed(
         title='Starf',
         title_full='Starfucked model',
         href='https://twitrss.me/twitter_user_to_rss/?user=StarfuckedModel',
@@ -1327,6 +1354,45 @@ feeds = (
         title='vas3kTwi',
         href='https://twitrss.me/twitter_user_to_rss/?user=vas3k',
         href_title='https://twitter.com/vas3k',
+    ),
+    feed(
+        title='JannetTwi',
+        title_full='Jannet Incosplay Twitter',
+        href='feed:https://twitrss.me/twitter_user_to_rss/?user=in_cosplay',
+        href_title='https://twitter.com/in_cosplay',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='saiwsaiwsaiw',
+        href='feed:https://twitrss.me/twitter_user_to_rss/?user=saiwsaiwsaiw',
+        href_title='https://twitter.com/saiwsaiwsaiw',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='octokuroTwi',
+        title_full='octokuro_model Twitter',
+        href='feed:https://twitrss.me/twitter_user_to_rss/?user=octokuro_model',
+        href_title='https://twitter.com/octokuro_model',
+        emojis='🏮'
+    ),
+    feed(
+        title='SambucaTwi',
+        title_full='Sambuca Twitter',
+        href='feed:https://twitrss.me/twitter_user_to_rss/?user=officialsambuca',
+        href_title='https://twitter.com/officialsambuca',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='bangbez',
+        href='feed:https://bangbez.artstation.com/rss',
+        href_title='https://bangbez.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='tudvaseva',
+        href='feed:https://tudvaseva.artstation.com/rss',
+        href_title='https://tudvaseva.artstation.com/projects',
+        emojis='💎🏮'
     ),
     feed(
         title='Zeronis',
@@ -1362,77 +1428,6 @@ feeds = (
         title='yeyuan',
         href='feed:https://www.artstation.com/yeyuan.rss',
         href_title='https://www.artstation.com/yeyuan',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='JannetWeb',
-        title_full='Jannet Incosplay Website',
-        href='feed:https://jannetincosplay.com/recent.rss',
-        href_title='https://jannetincosplay.com',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='JannetTwi',
-        title_full='Jannet Incosplay Twitter',
-        href='feed:https://twitrss.me/twitter_user_to_rss/?user=in_cosplay',
-        href_title='https://twitter.com/in_cosplay',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='JannetYT',
-        title_full='Jannet Incosplay YouTube',
-        href='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='KalinkaFoxTumblr',
-        href='https://kalinkafox.tumblr.com/rss',
-        href_title='https://kalinkafox.tumblr.com',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='cherrymousestreet',
-        href='https://cherrymousestreet.tumblr.com/rss',
-        href_title='https://cherrymousestreet.tumblr.com',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='saiwsaiwsaiw',
-        href='feed:https://twitrss.me/twitter_user_to_rss/?user=saiwsaiwsaiw',
-        href_title='https://twitter.com/saiwsaiwsaiw',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='alfie',
-        href='https://buttsmithy.com/feed',
-        href_title='https://buttsmithy.com',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='incase',
-        href='https://incase.buttsmithy.com/feed/',
-        href_title='https://incase.buttsmithy.com/',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='mortalezz',
-        title_full='Gorsky (@mortalezz)',
-        href='feed:https://gorsky.us/rss/',
-        href_title='https://gorsky.us/',
-        emojis='💎',
-    ),
-    feed(
-        title='octokuroTwi',
-        title_full='octokuro_model Twitter',
-        href='feed:https://twitrss.me/twitter_user_to_rss/?user=octokuro_model',
-        href_title='https://twitter.com/octokuro_model',
-        emojis='🏮'
-    ),
-    feed(
-        title='SambucaTwi',
-        title_full='Sambuca Twitter',
-        href='feed:https://twitrss.me/twitter_user_to_rss/?user=officialsambuca',
-        href_title='https://twitter.com/officialsambuca',
         emojis='💎🏮'
     ),
     feed(
@@ -1901,6 +1896,11 @@ feeds = (
         title='SGTMADNESS',
         href='https://www.deviantart.com/sgtmadness/gallery/',
         emojis='💎🏮',
+    ),
+    feed(
+        title='MyInstagram',
+        href='https://www.instagram.com/olehkrupko/',
+        emojis='👤'
     ),
     feed(
         title='irine_meier',
