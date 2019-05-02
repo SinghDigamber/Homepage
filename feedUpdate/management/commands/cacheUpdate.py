@@ -4,7 +4,7 @@ from Dashboard.models import PlanetaKino
 import time
 
 class Command(BaseCommand):
-    help = 'Caches new information'
+    help = 'updates caches in DB'
 
     def add_arguments(self, parser):
         parser.add_argument('--log', action='store_true')
