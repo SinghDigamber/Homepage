@@ -64,16 +64,13 @@ class Command(BaseCommand):
                     cycle_start = time.time()
                     cycle_items = 0
 
-                for feedUpdate_parsed_item in current_feed.parse():
-                    if not feedUpdate.objects.filter(
-                        # name=feedUpdate_parsed_item.name,
-                        href=feedUpdate_parsed_item.href,
-                        # datetime=feedUpdate_parsed_item.datetime,
-                        # title=feedUpdate_parsed_item.title
-                    ).exists():
-                        # feedUpdate_parsed_item.datetime = datetime.now()
-                        # print(feedUpdate_parsed_item)
-                        feedUpdate_parsed_item.save()
+                for each in current_feed.parse():
+                    # checking if href is cached
+                    cached = feedUpdate.objects.filter(href=each.href).exists()
+
+                    if not cached:
+                        # each.datetime = datetime.now()
+                        each.save()
 
                         if options['log']:
                             total_items += 1
@@ -91,18 +88,18 @@ class Command(BaseCommand):
                 cycle_start = time.time()
                 cycle_items = 0
 
-            # parsing
             PlanetaKino.objects.all().delete()
+
+            # parsing
             movies = PlanetaKino.list()
             for each in movies:
-                if not PlanetaKino.objects.filter(
-                    href=each.href,
-                ).exists():
-                    each.save()
-                    if options['log']:
-                        total_items += 1
-                    if options['logEach']:
-                        cycle_items += 1
+                each.save()
+
+                if options['log']:
+                    total_items += 1
+                if options['logEach']:
+                    cycle_items += 1
+
             if options['logEach']:
                 cycle_end = time.time()
                 cycle_time = round(cycle_end - cycle_start, 2)
