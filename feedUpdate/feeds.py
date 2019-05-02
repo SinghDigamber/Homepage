@@ -1,24 +1,15 @@
 from .models import feed
 
-'''
-    feed(
-        title='',
-        title_full='',
-        href='',
-        href_title='',
-        emojis='',
-        delay=1
-    ),
-'''
-
-# rss generator available at https://feedfry.com
+# parsing not implemented, third-party tools are used
+# Telegram channel to RSS - https://telegram2rss.akin.su/site/ru/
+# personal Strava to RSS -  http://feedmyride.net
+# Twitter to RSS -          https://twitrss.me/twitter_user_to_rss/?user=
 
 # emojis
 # 🏮 - hide from feeds
 # 💎 - inIndex=True
-# 🗃️ - inIndex=False
+# 🗃️ - inIndex=False (used at front-end only)
 # 👤 — my activities
-# 🏋️ — fitness
 
 feeds = (
     feed(
@@ -1240,7 +1231,7 @@ feeds = (
         href_title='http://xt.ht',
         emojis='💎',
     ),
-    feed(  # https://telegram2rss.akin.su/site/ru/
+    feed(
         title='Expresso',
         href='feed:https://telegram2rss.akin.su/api/channel/feed/expressotoday/9FE04EFAC787',
         href_title='https://t.me/expressotoday',
