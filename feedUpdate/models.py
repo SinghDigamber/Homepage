@@ -239,7 +239,7 @@ class feed(models.Model):
 
             # name fixes
             # I have no idea why it has to be done as there is max_length=140
-            each.name = each.name[:139]
+            each.name = each.name[:140]
 
             if each.title == 'Shadman':
                 each.name = each.name[:each.name.find('(')-1]
