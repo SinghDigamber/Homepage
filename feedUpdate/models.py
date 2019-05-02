@@ -44,10 +44,9 @@ class feed(models.Model):
 
     # return <feed> by feed.title
     @staticmethod
-    def find(the_title_we_search):
-        # feed.objects.all().values(title=the_title_we_search)
+    def find(searched_title):
         for each in feed.objects.all():
-            if each.title == the_title_we_search:
+            if each.title == searched_title:
                 return each
 
     # return List<feed> by emoji
@@ -60,7 +59,9 @@ class feed(models.Model):
                     result.append(each)
             return result
         else:
-            return ["Wrong emoji_filter length"]
+            error = "len(emoji_filter) is not 1"
+            print(error)
+            return [error]
 
     # return List<feed> from feedUpdate/feeds.py
     def feeds_from_file():
@@ -81,23 +82,25 @@ class feed(models.Model):
                 result.append(feedUpdate(
                     name=each["title"],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
-                    datetime=datetime.fromtimestamp(each["publishedAt"])+timedelta(hours=-1),
+                    datetime=datetime.fromtimestamp(each["publishedAt"]),
                     title=self.title))
 
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
-            resp = requests.get(self.href)
-
-            soup = BeautifulSoup(resp.text, "html.parser")
+            soup = requests.get(self.href)
+            soup = BeautifulSoup(soup.text, "html.parser")
 
             for each in soup.find_all('script'):
-                find_string = 'window._sharedData = {'
-                if each.text.find(find_string) != -1:
-                    data = str(each.text)[each.text.find(find_string)+len(find_string)-1:-1]
-                    obj = json.loads(data)
-                    obj = obj['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']
+                data_start = 'window._sharedData = '
+                if each.text.find(data_start) != -1:
+                    # preparing JSON
+                    data_start = each.text.find(data_start)+len(data_start)
+                    data = str(each.text)[data_start:-1]  # -1 is for removing ; in the end
+                    data = json.loads(data)
+                    data = data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']
 
-                    for post in obj:
+                    # parsing data from JSON
+                    for post in data:
                         post = post['node']
 
                         # avoiding errors caused by empty titles
@@ -120,42 +123,50 @@ class feed(models.Model):
 
         # custom RSS YouTube converter (link to feed has to be converted manually)
         elif self.href.find('https://www.youtube.com/channel/') != -1:
-            # -7 is /channel in the end of self.href
             self.href_title = self.href[:]
-            self.href = "https://www.youtube.com/feeds/videos.xml?channel_id="+self.href[32:-7]
+            self.href = "https://www.youtube.com/feeds/videos.xml?channel_id="+self.href[32:-len('/videos')]
             result = feed.parse(self)
 
         # custom RSS readmanga converter (link to feed has to be converted manually to simplify feed object creation)
         elif self.href.find('http://readmanga.me/') != -1:
             self.href_title = self.href[:]
-            self.href = "feed://readmanga.me/rss/manga?name="+self.href[20:]
+            self.href = "feed://readmanga.me/rss/manga?name="+self.href[len('http://readmanga.me/'):]
             result = feed.parse(self)
 
         # custom RSS mintmanga converter (link to feed has to be converted manually to simplify feed object creation)
         elif self.href.find('http://mintmanga.com/') != -1:
             self.href_title = self.href[:]
-            self.href = "feed://mintmanga.com/rss/manga?name="+self.href[21:]
+            self.href = "feed://mintmanga.com/rss/manga?name="+self.href[len('http://mintmanga.com/'):]
             result = feed.parse(self)
 
         # custom RSS deviantart converter (link to feed has to be converted manually to simplify feed object creation)
         elif self.href.find('https://www.deviantart.com/') != -1:
             self.href_title = self.href[:]
-            self.href = "http://backend.deviantart.com/rss.xml?q=gallery%3A"+self.href[27:-9]
+            self.href = self.href[len('https://www.deviantart.com/'):-len('/gallery/')]
+            self.href = "http://backend.deviantart.com/rss.xml?q=gallery%3A"+self.href
             result = feed.parse(self)
 
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
-            resp = requests.get(self.href)  # 0.4 seconds
-            strainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
-            soup = BeautifulSoup(resp.text, "html.parser", parse_only=strainer)
+            soup = requests.get(self.href)
+            soupStrainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
+            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
             for article in soup.find_all('article'):
                 try:
+                    result_name = article.find('h2', {'class': "story__title"}).find('a').getText()
+
+                    result_href = article.find('h2', {'class': "story__title"}).find('a')['href']
+
+                    result_datetime = article.find('time')['datetime'][:-3]+"00", '%Y-%m-%dT%H:%M:%S%z'
+                    result_datetime = datetime.strptime(result_datetime)
+
                     result.append(feedUpdate(
-                        name=article.find('h2', {'class': "story__title"}).find('a').getText(),
-                        href=article.find('h2', {'class': "story__title"}).find('a')['href'],
-                        datetime=datetime.strptime(article.find('time')['datetime'][:-3]+"00", '%Y-%m-%dT%H:%M:%S%z'),
+                        name=result_name,
+                        href=result_href,
+                        datetime=result_datetime,
                         title=self.title))
+
                 except TypeError:
                     # advertisement, passing as no need to save it
                     pass
@@ -168,66 +179,72 @@ class feed(models.Model):
             rss = feedparser.parse(self.href)
 
             for item in rss["items"]:
+                # NAME RESULT
+                result_name = item["title_detail"]["value"]
+
+
+                # HREF RESULT
+                if self.title == "Expresso":
+                    result_href = item["summary"]
+                    result_href = result_href[result_href.find("https://expres.co/"):]
+                    result_href = result_href[:result_href.find('"')]
+                else:
+                    result_href = item["links"][0]["href"]
+
+
                 # FILTERING: passing item cycle if filter does not match
                 if self.filter is not None:
-                    if item["links"][0]["href"].find(self.filter) == -1 and item["title_detail"]["value"].find(self.filter) == -1:
+                    if result_name.find(self.filter) == -1 and result_href.find(self.filter) == -1:
                         continue
 
-                # NAME RESULT: custom name fields
-                nameresult = item["title_detail"]["value"]
 
                 # DATE RESULT: parsing dates
                 # preparsing: choosing date string source
                 if "published" in item:
-                    datestring = item["published"]
+                    result_datetime = item["published"]
                 elif "updated" in item:
-                    datestring = item["updated"]
+                    result_datetime = item["updated"]
                 else:
-                    datestring = "did not match date preparser"
-                # print(item)
+                    # there was nothing to get as result_datetime
+                    result_datetime = "Sun, 22 Oct 1995 00:00:00 +0200"
+
+                # string preparation
+                if result_datetime[-3] == ':':  # YouTube / TheVerge
+                    result_datetime = result_datetime[:-3] + result_datetime[-2:]
 
                 # try-except-datetime-parsing
                 try:
-                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %z')
+                    result_datetime = datetime.strptime(result_datetime, '%a, %d %b %Y %H:%M:%S %z')
                 except ValueError:
                     try:
-                        dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%SZ')
+                        result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%SZ')
                     except ValueError:
-                        if datestring[-3] == ':':  # YouTube / TheVerge
-                            dateresult = datetime.strptime(datestring[:-3] + datestring[-2:], '%Y-%m-%dT%H:%M:%S%z')
-                            # dateresult = datetime.strptime(datestring[-2:-3], '%Y-%m-%dT%H:%M:%S%z')
-                        else:
-                            try:  # except ValueError: # it is for webtooms import feeds['Gamer']
-                                dateresult = datetime.strptime(datestring, '%A, %d %b %Y %H:%M:%S %Z')
-                                # +timedelta(hours=3)
-                            except ValueError:  # it is for pikabu Brahmanden import feeds['Brahmanden']
+                        try:
+                            result_datetime = datetime.strptime(result_datetime, '%A, %d %b %Y %H:%M:%S %Z')
+                        except ValueError:
+                            try:
+                                result_datetime = datetime.strptime(result_datetime, '%a, %d %b %Y %H:%M:%S %Z')
+                            except ValueError:
                                 try:
-                                    # .astimezone(timezone('UTC'))  # +timedelta(hours=3)
-                                    dateresult = datetime.strptime(datestring, '%a, %d %b %Y %H:%M:%S %Z')
-                                except ValueError: # idea-instructions.com
-                                    try:
-                                        dateresult = datetime.strptime(datestring, '%Y-%m-%dT%H:%M:%S%z')
-                                    except ValueError:
-                                        dateresult = datetime.strptime(datestring[:-3], '%a, %d %b %Y %H:%M:%S ')
-                                        dateresult = dateresult + timedelta(-9)
+                                    result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
+                                except ValueError:
+                                    tz = result_datetime[-3:]
 
-                # HREF RESULT: custom href fields
-                if self.title == "Expresso":
-                    counter = item["summary"].find("https://expres.co/")
-                    if counter > 0:
-                        hrefresult = item["summary"][counter:]
-                        counter2 = hrefresult.find('"')
-                        hrefresult = hrefresult[:counter2]
-                    else:
-                        continue
-                else:
-                    hrefresult = item["links"][0]["href"]
+                                    result_datetime = datetime.strptime(result_datetime[:-3], '%a, %d %b %Y %H:%M:%S ')
+
+                                    if tz == 'PST':
+                                        result_datetime = result_datetime + timedelta(-9)
+                                    elif tz == 'PDT':
+                                        result_datetime = result_datetime + timedelta(-8)
+                                    else:
+                                        print(tz)
+
 
                 # APPEND RESULT
                 result.append(feedUpdate(
-                    name=nameresult,
-                    href=hrefresult,
-                    datetime=dateresult,
+                    name=result_name,
+                    href=result_href,
+                    datetime=result_datetime,
                     title=self.title))
 
         # universal postfixes
@@ -240,7 +257,7 @@ class feed(models.Model):
                      dateresult2.hour, dateresult2.minute, dateresult2.second)
             # add DELAY
             if type(self.delay) is not type(None):
-                each.datetime = each.datetime + timedelta(hours=self.delay)
+                each.datetime += timedelta(hours=self.delay)
 
             # NAME fixes
             # SQLite does not support max-length
@@ -248,16 +265,14 @@ class feed(models.Model):
             # extra symbols
             if each.title == 'Shadman':
                 each.name = each.name[:each.name.find('(')-1]
-            elif each.title == 'Apple':
-                # 5 is len('Apple') while 8 — len(' - Apple') as - symbol can be a variety of separate symbols
-                if each.name[len(each.name)-5:] == 'Apple':
-                    each.name = each.name[:len(each.name)-8]
-            elif each.title == 'LastWeekTonight':
-                if each.name.find(': Last Week Tonight with John Oliver (HBO)') != -1:
-                    each.name = each.name[:each.name.find(': Last Week Tonight with John Oliver (HBO)')]
+            elif each.title == 'Apple' and each.name[-len('Apple'):] == 'Apple':
+                # - symbol can be a variety of different symbols
+                each.name = each.name[:-len(' - Apple')]
+            elif each.title == 'LastWeekTonight' and each.name.find(': Last Week Tonight with John Oliver (HBO)') != -1:
+                each.name = each.name[:each.name.find(': Last Week Tonight with John Oliver (HBO)')]
             elif each.title == 'Expresso':
                 # TODO: check what 11 is
-                each.name = each.name[11:]
+                each.name = each.name[len("YYYY-MM-DD "):]
 
         return result
 
