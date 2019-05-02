@@ -3,7 +3,7 @@ from feedUpdate.models import feedUpdate, feed
 from Dashboard.models import PlanetaKino
 
 class Command(BaseCommand):
-    help = 'removes all cache from DB'
+    help = 'cleares cache in DB'
 
     def handle(self, *args, **options):
         feedUpdate.objects.all().delete()
