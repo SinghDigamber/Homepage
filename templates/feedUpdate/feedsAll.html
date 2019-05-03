@@ -8,7 +8,6 @@
     <h1>{{ fromView.page.title }}</h1>
 
     {% for feed in fromView.feed_list %}
-        {% if not '🏮' in feed.emojis %}
         <li class="index-{% if '💎' in feed.emojis %}true{% else %}false{% endif %}">
             <a class="name" target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='index' %}">
                 <span class="title">{{ feed.title }}</span>{% if feed.title_full %}: {{ feed.title_full }}{% endif %}
@@ -18,7 +17,6 @@
                 <a target="_blank" href="{% if feed.href_title %}{{ feed.href_title }}{% else %}{{ feed.href }}{% endif %}">⚓️️</a>
             </nobr></span>
         </li>
-        {% endif %}
     </div>
     {% empty %}
         <li>Oops, something went wrong. Empty!</li>

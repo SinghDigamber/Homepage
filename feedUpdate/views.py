@@ -1,11 +1,43 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from .models import feedUpdate, feed
 from django.views.generic import ListView
-import socket
-from django.shortcuts import redirect
-from django.urls import reverse
+# import socket
+# from django.shortcuts import redirect
+# from django.urls import reverse
 from django.db.models import Count
 import re
+
+
+class feedTestsView(ListView):
+    model = feedUpdate
+    template_name = "feedUpdate/tests.html"
+    context_object_name = "fromView"
+
+    def get_queryset(self):
+        # constants
+        header = "Результаты тестирования"
+        # TODO: good testing page
+
+        # calculations
+        feed_list = feed.objects.all()
+
+        # feed testing
+        errors_regexp = ''
+        pattern = re.compile("^([0-9|а-я|А-Я|a-z|A-Z|_|—])+$")
+        for each in feed_list:
+            if not pattern.match(each.title):
+                errors_regexp += each.title + "; "
+
+        errors_duplicates = feed.objects.values('title').annotate(name_count=Count('title')).filter(name_count__gt=1)
+
+        # results
+        return {
+            'page': {
+                'title': header,
+                'errors_regexp': errors_regexp,
+                'errors_duplicates': str(list(errors_duplicates)),
+            },
+        }
 
 
 class feedIndexView(ListView):
@@ -20,21 +52,31 @@ class feedIndexView(ListView):
         # calculations
         feed_list = feed.objects.all()
 
-        # feed testing
-        errors_regexp = ''
-        for each in feed_list:
-            pattern = re.compile("^([0-9|а-я|А-Я|a-z|A-Z|_|—])+$")
-            if not pattern.match(each.title):
-                errors_regexp += each.title + "; "
+        # results
+        return {
+            'page': {
+                'title': header,
+            },
+            'feed_list': feed_list,
+        }
 
-        errors_duplicates = feed.objects.values('title').annotate(name_count=Count('title')).filter(name_count__gt=1)
+
+class feedIndexFullView(ListView):
+    model = feedUpdate
+    template_name = "feedUpdate/feedsAll.html"
+    context_object_name = "fromView"
+
+    def get_queryset(self):
+        # constants
+        header = "Ленты обновлений"
+
+        # calculations
+        feed_list = feed.objects.all()
 
         # results
         return {
             'page': {
                 'title': header,
-                'errors_regexp': errors_regexp,
-                'errors_duplicates': str(list(errors_duplicates)),
             },
             'feed_list': feed_list,
         }
