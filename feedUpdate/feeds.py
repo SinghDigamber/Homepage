@@ -2576,12 +2576,12 @@ feeds = (
     feed(
         title='artificeclothing',
         href='https://www.instagram.com/artificeclothing/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='asianalison',
         href='https://www.instagram.com/asianalison/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='frejadottir',
@@ -2816,7 +2816,7 @@ feeds = (
     feed(
         title='nikiskinoir',
         href='https://www.instagram.com/nikiskinoir/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='anna_batman666',
