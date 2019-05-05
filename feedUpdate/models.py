@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 from django.utils.timezone import localtime
 # from datetime import timezone
 import json
+import dateutil.parser as datetimeparser
 # Create your models here.
 
 # TODO: move project to actual database
@@ -208,36 +209,39 @@ class feed(models.Model):
                     # there was nothing to get as result_datetime
                     result_datetime = "Sun, 22 Oct 1995 00:00:00 +0200"
 
+                result_datetime = datetimeparser.parse(result_datetime)
+
                 # string preparation
-                if result_datetime[-3] == ':':  # YouTube / TheVerge
-                    result_datetime = result_datetime[:-3] + result_datetime[-2:]
-
+                #if result_datetime[-3] == ':':  # YouTube / TheVerge
+                #    result_datetime = result_datetime[:-3] + result_datetime[-2:]
+                #
                 # try-except-datetime-parsing
-                try:
-                    result_datetime = datetime.strptime(result_datetime, '%a, %d %b %Y %H:%M:%S %z')
-                except ValueError:
-                    try:
-                        result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%SZ')
-                    except ValueError:
-                        try:
-                            result_datetime = datetime.strptime(result_datetime, '%A, %d %b %Y %H:%M:%S %Z')
-                        except ValueError:
-                            try:
-                                result_datetime = datetime.strptime(result_datetime, '%a, %d %b %Y %H:%M:%S %Z')
-                            except ValueError:
-                                try:
-                                    result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
-                                except ValueError:
-                                    tz = result_datetime[-3:]
-
-                                    result_datetime = datetime.strptime(result_datetime[:-3], '%a, %d %b %Y %H:%M:%S ')
-
-                                    if tz == 'PST':
-                                        result_datetime = result_datetime + timedelta(-9)
-                                    elif tz == 'PDT':
-                                        result_datetime = result_datetime + timedelta(-8)
-                                    else:
-                                        print(tz)
+                # for format in (['YYYY-MM-DD']):
+                #try:
+                #    result_datetime = datetime.strptime(result_datetime, '%a, %d %b %Y %H:%M:%S %z')
+                #except ValueError:
+                #    try:
+                #        result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%SZ')
+                #    except ValueError:
+                #        try:
+                #            result_datetime = datetime.strptime(result_datetime, '%A, %d %b %Y %H:%M:%S %Z')
+                #        except ValueError:
+                #            try:
+                #                result_datetime = datetime.strptime(result_datetime, '%a, %d %b %Y %H:%M:%S %Z')
+                #            except ValueError:
+                #                try:
+                #                    result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
+                #                except ValueError:
+                #                    tz = result_datetime[-3:]
+                #
+                #                    result_datetime = datetime.strptime(result_datetime[:-3], '%a, %d %b %Y %H:%M:%S ')
+                #
+                #                    if tz == 'PST':
+                #                        result_datetime = result_datetime + timedelta(-9)
+                #                    elif tz == 'PDT':
+                #                        result_datetime = result_datetime + timedelta(-8)
+                #                    else:
+                #                        print(tz)
 
 
                 # APPEND RESULT
