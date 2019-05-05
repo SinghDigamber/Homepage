@@ -982,10 +982,9 @@ feeds = (
     ),
     feed(
         title='ГорожанинКультиватор',
-        title_full='Перерождение бессмертного горожанина-культиватора',
+        title_full='Перерождение бессмертного горожанина-культиватора (остановился на 1-50)',
         href='feed://readmanga.me/rss/manga?name=pererojdenie_bessmertnogo_gorojanina_kultivatora',
         href_title='http://readmanga.me/pererojdenie_bessmertnogo_gorojanina_kultivatora',
-        emojis='💎'
     ),
     feed(
         title='Варбл',
@@ -1791,7 +1790,7 @@ feeds = (
     feed(
         title='Nefrubi',
         href='https://www.deviantart.com/nefrubi/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='SplashBrush',
@@ -2111,12 +2110,12 @@ feeds = (
     feed(
         title='lvenok0311',
         href='https://www.instagram.com/lvenok0311/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='lvenok_0311',
         href='https://www.instagram.com/lvenok_0311/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='jennalynnmeowri',
@@ -2311,7 +2310,7 @@ feeds = (
     feed(
         title='tudvaseva_sasha',
         href='https://www.instagram.com/tudvaseva_sasha/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='nana_the_shrimp',
@@ -2631,7 +2630,7 @@ feeds = (
     feed(
         title='smirko_o',
         href='https://www.instagram.com/smirko_o/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='psylocke_model',
@@ -2796,7 +2795,7 @@ feeds = (
     feed(
         title='i_chios',
         href='https://www.instagram.com/i_chios/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='fetties_r',
