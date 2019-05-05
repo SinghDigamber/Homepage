@@ -95,11 +95,24 @@ class myActivityView(ListView):
         feed_emoji_filter = '👤'
 
         # calculations
-        feed_title_list = []
-        for each in feed.feeds_by_emoji(feed_emoji_filter):
-            feed_title_list.append(each.title)
 
-        feedUpdate_list = list(feedUpdate.objects.filter(title__in=feed_title_list)[:result_size_limit])
+        # mode configuration
+        feedUpdate_list = []
+        feed_list = feed.feeds_by_emoji(feed_emoji_filter)
+
+        if self.kwargs.get('mode', False) == "index" or self.kwargs.get('mode', False) == "":
+            feed_title_list = []
+            for each in feed_list:
+                feed_title_list.append(each.title)
+
+            feedUpdate_list = list(feedUpdate.objects.filter(title__in=feed_title_list)[:result_size_limit])
+        elif self.kwargs['mode'] == "force":
+            header += ": Forced"
+            for each in feed_list:
+                for feedUpdate_item in feed.parse(each):
+                    feedUpdate_list.append(feedUpdate_item)
+            feedUpdate_list.sort(key=lambda feedUpdate_list_item: str(feedUpdate_list_item.datetime), reverse=True)
+
 
         # results
         return {
