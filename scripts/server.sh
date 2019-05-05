@@ -14,6 +14,7 @@ sudo python3 -m pip install lxml # html parser
 sudo apt-get install libxml2-dev libxslt1-dev # requied for lxml
 sudo python3 -m pip install lxml # html parser
 sudo python3 -m pip install feedparser # rss parser
+sudo python3 -m pip install python-dateutil  # universally parsing dates
 
 rm -rf /home/pi/Projects/Homepage
 git clone https://github.com/OlehKrupko/Homepage /home/pi/Projects/Homepage
