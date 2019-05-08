@@ -25,3 +25,5 @@ python3 ~/Projects/Homepage/manage.py migrate
 python3 ~/Projects/Homepage/manage.py createsuperuser
 
 sudo systemctl stop homepage.server.service; cd /home/pi/Projects/Homepage; git pull; sudo systemctl start homepage.server.service
+
+ssh -p 8022 pi@krupko.space
