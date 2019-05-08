@@ -57,3 +57,11 @@ sudo systemctl status
 
 python3 manage.py makemigrations
 python3 manage.py migrate
+
+
+ports used:
+80 >> pi 80 (web server)
+8080 >> mac 8080 (test web server)
+8022 >> pi 22 (ssh)
+8033 >> pi 3306
+
