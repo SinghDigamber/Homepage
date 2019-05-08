@@ -211,39 +211,6 @@ class feed(models.Model):
 
                 result_datetime = datetimeparser.parse(result_datetime)
 
-                # string preparation
-                #if result_datetime[-3] == ':':  # YouTube / TheVerge
-                #    result_datetime = result_datetime[:-3] + result_datetime[-2:]
-                #
-                # try-except-datetime-parsing
-                # for format in (['YYYY-MM-DD']):
-                #try:
-                #    result_datetime = datetime.strptime(result_datetime, '%a, %d %b %Y %H:%M:%S %z')
-                #except ValueError:
-                #    try:
-                #        result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%SZ')
-                #    except ValueError:
-                #        try:
-                #            result_datetime = datetime.strptime(result_datetime, '%A, %d %b %Y %H:%M:%S %Z')
-                #        except ValueError:
-                #            try:
-                #                result_datetime = datetime.strptime(result_datetime, '%a, %d %b %Y %H:%M:%S %Z')
-                #            except ValueError:
-                #                try:
-                #                    result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
-                #                except ValueError:
-                #                    tz = result_datetime[-3:]
-                #
-                #                    result_datetime = datetime.strptime(result_datetime[:-3], '%a, %d %b %Y %H:%M:%S ')
-                #
-                #                    if tz == 'PST':
-                #                        result_datetime = result_datetime + timedelta(-9)
-                #                    elif tz == 'PDT':
-                #                        result_datetime = result_datetime + timedelta(-8)
-                #                    else:
-                #                        print(tz)
-
-
                 # APPEND RESULT
                 result.append(feedUpdate(
                     name=result_name,

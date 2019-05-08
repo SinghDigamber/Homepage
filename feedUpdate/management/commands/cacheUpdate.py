@@ -2,6 +2,7 @@ from django.core.management.base import BaseCommand, CommandError
 from feedUpdate.models import feedUpdate, feed
 from Dashboard.models import PlanetaKino
 import time
+from datetime import datetime
 
 class Command(BaseCommand):
     help = 'updates caches in DB'
@@ -13,6 +14,7 @@ class Command(BaseCommand):
         parser.add_argument('--parseFeeds', action='store_true')
         parser.add_argument('--parseAll', action='store_true')
         parser.add_argument('--parseIndex', action='store_true')
+        parser.add_argument('--parseNow', action='store_true')
 
         parser.add_argument('--parsePlanetaKino', action='store_true')
 
@@ -70,7 +72,8 @@ class Command(BaseCommand):
                     cached = feedUpdate.objects.filter(href=each.href).exists()
 
                     if not cached:
-                        # each.datetime = datetime.now()
+                        if options['parseNow']:
+                            each.datetime = datetime.now()
                         each.save()
 
                         if options['log']:
