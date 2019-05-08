@@ -677,7 +677,6 @@ feeds = (
     feed(
         title='Show2Show',
         href='https://www.youtube.com/channel/UCEedXkffiRQy9BlS_OqewwQ/videos',
-        emojis='💎'
     ),
     feed(
         title='JannetYT',
@@ -690,7 +689,6 @@ feeds = (
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
         href_title='feed:https://online.anidub.com/rss.xml',
-        emojis='💎'
     ),
     feed(
         title='AnimeVost',
@@ -1356,7 +1354,7 @@ feeds = (
         title='saiwsaiwsaiw',
         href='feed:https://twitrss.me/twitter_user_to_rss/?user=saiwsaiwsaiw',
         href_title='https://twitter.com/saiwsaiwsaiw',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='octokuroTwi',
@@ -2225,7 +2223,7 @@ feeds = (
     feed(
         title='saiwsaiwsaiwInsta',
         href='https://www.instagram.com/saiwsaiwsaiw/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='starfuckedmodel',
@@ -2280,7 +2278,7 @@ feeds = (
     feed(
         title='purplemuffinz',
         href='https://www.instagram.com/purplemuffinz/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='armoredheartcosplay',
@@ -2835,6 +2833,11 @@ feeds = (
     feed(
         title='notbaconbooty',
         href='https://www.instagram.com/notbaconbooty/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='baconbootyy',
+        href='https://www.instagram.com/baconbootyy/',
         emojis='💎🏮',
     ),
     feed(
