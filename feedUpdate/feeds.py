@@ -105,6 +105,7 @@ feeds = (
     feed(
         title='Techquickie',
         href='https://www.youtube.com/channel/UC0vBXGSyV14uvJ4hECDOl0Q/videos',
+        emojis='💎'
     ),
     feed(
         title='SuperFun',
@@ -685,6 +686,16 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='BikeInCity',
+        href='https://www.youtube.com/channel/UCPats7cCr4KFgmwCB2ZGzFg/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='VadimVega',
+        href='https://www.youtube.com/channel/UCYvRNVHyIrmUw4n7qVS9XyA/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -729,6 +740,13 @@ feeds = (
         href_title='https://xkcd.com',
         emojis='💎',
         delay=18
+    ),
+    feed(
+        title='Феликс',
+        title_full='Блог Феликса',
+        href='feed:https://felixit.blog/feed.xml',
+        href_title='https://felixit.blog',
+        emojis='💎',
     ),
     feed(
         title='ReflectiveDesire',
@@ -1673,7 +1691,7 @@ feeds = (
     feed(
         title='Prywinko',
         href='https://www.deviantart.com/prywinko/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='SatsuiNoHado',
@@ -2228,7 +2246,7 @@ feeds = (
     feed(
         title='starfuckedmodel',
         href='https://www.instagram.com/starfuckedmodel/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='fenixfatalistInsta',
@@ -2888,6 +2906,11 @@ feeds = (
     feed(
         title='dana_labo_model',
         href='https://www.instagram.com/dana_labo_model/',
+        emojis='🏮',
+    ),
+    feed(
+        title='a_d_atelier',
+        href='https://www.instagram.com/a_d_atelier/',
         emojis='🏮',
     ),
 )
