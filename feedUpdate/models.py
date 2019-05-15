@@ -159,8 +159,8 @@ class feed(models.Model):
 
                     result_href = article.find('h2', {'class': "story__title"}).find('a')['href']
 
-                    result_datetime = article.find('time')['datetime'][:-3]+"00", '%Y-%m-%dT%H:%M:%S%z'
-                    result_datetime = datetime.strptime(result_datetime)
+                    result_datetime = article.find('time')['datetime'][:-3]+"00"
+                    result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
 
                     result.append(feedUpdate(
                         name=result_name,
