@@ -3,9 +3,9 @@
 {% block title %} » Dashboard {% endblock %}
 
 {% block main %}
-    <h1>Dashboard</h1>
+    <h1>{{ fromView.title }}</h1>
 
-    <h2>В прокате: Планета Кино</h2>
+    <h2>Сейчас в прокате</h2>
     <div id="PlanetaKino">
     {% for movie in fromView.movies %}
         {% if movie.inTheater %}

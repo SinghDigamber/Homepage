@@ -8,5 +8,4 @@ class DashboardView(ListView):
     context_object_name = "fromView"
 
     def get_queryset(self):
-        Dashboard()
-        return Dashboard
+        return Dashboard()
