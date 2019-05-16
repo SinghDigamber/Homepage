@@ -1,0 +1,51 @@
+# add to __init__.py
+
+import pymysql
+
+pymysql.install_as_MySQLdb()
+
+# settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Homepage',
+        'USER': 'pi',
+        'PASSWORD': 'barracuda',
+        'HOST': '192.168.1.201',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    },
+}
+
+# server.sh
+
+udo systemctl restart mysql
+
+sudo apt-get remove --purge mysql-server mysql-client mysql-common -y
+sudo apt-get autoremove -y
+sudo apt-get autoclean
+Remove the MySQL folder:
+sudo rm -rf /etc/mysql
+Delete all MySQL files on your server:
+sudo find / -iname 'mysql*' -exec rm -rf {} \;
+
+# install
+sudo apt update
+sudo apt install mysql-server -y
+sudo mysql_secure_installation
+
+CREATE USER 'pi'@'localhost' IDENTIFIED BY 'olegtacit007';
+GRANT ALL PRIVILEGES ON . TO 'pi'@'localhost';
+FLUSH PRIVILEGES;
+
+CREATE USER 'pi'@'localhost' IDENTIFIED BY 'olegtacit007';
+GRANT ALL PRIVILEGES ON . TO 'pi'@'localhost' WITH GRANT OPTION;
+
+CREATE USER 'pi'@'%' IDENTIFIED BY 'olegtacit007';
+GRANT ALL PRIVILEGES ON . TO 'pi'@'%' WITH GRANT OPTION;
+
+use mysql;
+UPDATE mysql.user SET Password=PASSWORD('barracuda') WHERE USER='pi' AND Host='localhost';
+UPDATE mysql.user SET Password=PASSWORD('barracuda') WHERE USER='pi' AND Host='%';
+
+sudo python3 -m pip install pymysql
