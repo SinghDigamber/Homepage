@@ -33,10 +33,7 @@ sudo systemctl enable homepage.server.reload.timer
 sudo systemctl daemon-reload
 
 # cache everything before launch
-python3 manage.py cacheClear
 python3 manage.py cacheUpdate --parseFeeds;
-python3 manage.py cacheUpdate --parseAll;
-python3 manage.py cacheUpdate --parsePlanetaKino;
 
 # launch web server
 python3 /home/pi/Projects/Homepage/manage.py runserver 192.168.1.201:8000
