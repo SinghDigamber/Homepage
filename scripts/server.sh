@@ -65,3 +65,8 @@ ports used:
 8022 >> pi 22 (ssh)
 8033 >> pi 3306
 
+sudo nano ~/.config/lxsession/LXDE-pi/autostart
+# add:
+@unclutter -idle 0.1
+@chromium-browser --kiosk --noerrdialogs --profile=Default --app=https://youtube.com/tv
+
