@@ -101,3 +101,5 @@ create database homepage_django owner pi;
 \q
 
 ## PyCharm: install psycopg2-binary
+sudo pip install django psycopg2-binary
+python3 manage.py createsuperuser
