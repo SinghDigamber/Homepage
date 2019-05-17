@@ -36,7 +36,7 @@ class PlanetaKino(models.Model):
             #print(dateresult)
 
             movie = PlanetaKino(
-                title=each.find('img')['alt'],
+                title=each.find('img')['alt'][:20],
                 posterIMG=each.find('a').find('img')['data-desktop'],
                 href="https://planetakino.ua"+str(each.find(attrs={'class': 'movie-block__text_title'})['href']),
                 date=dateresult,
