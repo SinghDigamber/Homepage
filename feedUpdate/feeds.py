@@ -649,7 +649,6 @@ feeds = (
         title='DheroesC',
         title_full='DheroesC: рассказы из комиксов',
         href='https://www.youtube.com/channel/UCp8tldEJKFDS1dM5eOk0Clg/videos',
-        emojis='💎'
     ),
     feed(
         title='MyLatexBaby',
@@ -921,10 +920,9 @@ feeds = (
     ),
     feed(
         title='ВеликийМеч',
-        title_full='Мой великий меч',
+        title_full='Мой великий меч (остановился на 1-17)',
         href='feed://readmanga.me/rss/manga?name=moi_velikii_mech',
         href_title='http://readmanga.me/moi_velikii_mech',
-        emojis='💎'
     ),
     feed(
         title='SoloLeveling',
@@ -1518,7 +1516,7 @@ feeds = (
         title='FlowerxlHF',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Flowerxl',
         href_title='http://www.hentai-foundry.com/pictures/user/Flowerxl',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='aromasensei',
@@ -1796,7 +1794,7 @@ feeds = (
     feed(
         title='Valkymie',
         href='https://www.deviantart.com/valkymie/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='AyyaSAP',
@@ -1846,7 +1844,7 @@ feeds = (
     feed(
         title='FlowerXL',
         href='https://www.deviantart.com/flowerxl/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='dandonfuga',
@@ -1896,7 +1894,7 @@ feeds = (
     feed(
         title='NOPEYS',
         href='https://www.deviantart.com/nopeys/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='SGTMADNESS',
@@ -2911,6 +2909,16 @@ feeds = (
     feed(
         title='a_d_atelier',
         href='https://www.instagram.com/a_d_atelier/',
+        emojis='🏮',
+    ),
+    feed(
+        title='kristina_poznyakova',
+        href='https://www.instagram.com/kristina_poznyakova/',
+        emojis='🏮',
+    ),
+    feed(
+        title='hessakai',
+        href='https://www.instagram.com/hessakai/',
         emojis='🏮',
     ),
 )
