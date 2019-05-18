@@ -727,6 +727,12 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='HighScalability',
+        href='http://feeds.feedburner.com/HighScalability',
+        href_title='http://highscalability.com',
+        emojis='💎'
+    ),
+    feed(
         title='DisgustingMen',
         title_full='Disgusting Men',
         href='feed:https://disgustingmen.com/feed/',
@@ -759,6 +765,12 @@ feeds = (
         title_full='The Verge',
         href='https://www.theverge.com/rss/index.xml',
         href_title='https://www.theverge.com/',
+    ),
+    feed(
+        title='WylsaWeb',
+        href='feed:https://wylsa.com/feed/',
+        href_title='https://wylsa.com/',
+        emojis='💎'
     ),
     feed(
         title='КабМин',
@@ -1393,6 +1405,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='lwbv2001',
+        href='feed:https://lwbv2001.artstation.com/rss',
+        href_title='https://lwbv2001.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
         title='tudvaseva',
         href='feed:https://tudvaseva.artstation.com/rss',
         href_title='https://tudvaseva.artstation.com/projects',
@@ -1639,6 +1657,11 @@ feeds = (
     feed(
         title='RalDu',
         href='https://www.deviantart.com/raldu/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='wlop',
+        href='https://www.deviantart.com/wlop/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -2919,6 +2942,21 @@ feeds = (
     feed(
         title='hessakai',
         href='https://www.instagram.com/hessakai/',
+        emojis='🏮',
+    ),
+    feed(
+        title='royalblack_couture',
+        href='https://www.instagram.com/royalblack_couture/',
+        emojis='🏮',
+    ),
+    feed(
+        title='obsidiankerttu',
+        href='https://www.instagram.com/obsidiankerttu/',
+        emojis='🏮',
+    ),
+    feed(
+        title='hasunoai',
+        href='https://www.instagram.com/hasunoai/',
         emojis='🏮',
     ),
 )
