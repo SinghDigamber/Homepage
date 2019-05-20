@@ -1276,6 +1276,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='ReiqTumblr',
+        href='https://reiquintero.tumblr.com/rss',
+        href_title='https://reiquintero.tumblr.com',
+        emojis='💎🏮'
+    ),
+    feed(
         title='cherrymousestreet',
         href='https://cherrymousestreet.tumblr.com/rss',
         href_title='https://cherrymousestreet.tumblr.com',
