@@ -46,6 +46,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='DannyMacAskill',
+        href='https://www.youtube.com/channel/UC9kOkY1nYc0uADWRiRH64Rw/videos',
+        emojis='💎'
+    ),
+    feed(
         title='GCN',
         title_full="Global Cycling Network",
         href='https://www.youtube.com/channel/UCuTaETsuCOkJ0H_GAztWt0Q/videos',
@@ -622,6 +627,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='CutTheCrap',
+        href='https://www.youtube.com/channel/UCIupfj3rki6dfjQqFKbXzMA/videos',
+        emojis='💎'
+    ),
+    feed(
         title='DUST',
         href='https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA/videos',
     ),
@@ -695,6 +705,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='вДудь',
+        href='https://www.youtube.com/channel/UCMCgOm8GZkHp8zJ6l7_hIuA/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://online.anidub.com/rss.xml',
@@ -724,6 +739,12 @@ feeds = (
         title_full='vas3k.ru',
         href='feed:https://vas3k.ru/rss/',
         href_title='https://vas3k.ru/',
+        emojis='💎'
+    ),
+    feed(
+        title='vas3kБоль',
+        title_full='pain.vas3k.ru',
+        href='https://pain.vas3k.ru',
         emojis='💎'
     ),
     feed(
@@ -1276,6 +1297,18 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='LiangXingTumblr',
+        href='https://liang-xing.tumblr.com/rss',
+        href_title='https://liang-xing.tumblr.com',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='EliasChatzoudisTumblr',
+        href='https://eliaschatzoudis.tumblr.com/rss',
+        href_title='https://eliaschatzoudis.tumblr.com',
+        emojis='💎🏮'
+    ),
+    feed(
         title='ReiqTumblr',
         href='https://reiquintero.tumblr.com/rss',
         href_title='https://reiquintero.tumblr.com',
@@ -1411,9 +1444,21 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='sciamano240',
+        href='feed:https://sciamano240.artstation.com/rss',
+        href_title='https://sciamano240.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
         title='lwbv2001',
         href='feed:https://lwbv2001.artstation.com/rss',
         href_title='https://lwbv2001.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='EliasChatzoudisArtst',
+        href='feed:https://chatgr.artstation.com/rss',
+        href_title='https://chatgr.artstation.com/projects',
         emojis='💎🏮'
     ),
     feed(
@@ -1666,8 +1711,113 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='zumidraws',
+        href='https://www.deviantart.com/zumidraws/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='michellehoefener',
+        href='https://www.deviantart.com/michellehoefener/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='lolliedrop',
+        href='https://www.deviantart.com/lolliedrop/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='liang-xing',
+        href='https://www.deviantart.com/liang-xing/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='elisanth',
+        href='https://www.deviantart.com/elisanth/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='violet-spider',
+        href='https://www.deviantart.com/violet-spider/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='NeoArtCorE',
+        href='https://www.deviantart.com/neoartcore/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='ariverkao',
+        href='https://www.deviantart.com/ariverkao/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='reivash',
+        href='https://www.deviantart.com/reivash/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='axsens',
+        href='https://www.deviantart.com/axsens/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='lindaroze',
+        href='https://www.deviantart.com/lindaroze/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='scal2let',
+        href='https://www.deviantart.com/scal2let/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='fbsrabbit',
+        href='https://www.deviantart.com/fbsrabbit/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='grooooovy',
+        href='https://www.deviantart.com/grooooovy/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='megatama30',
+        href='https://www.deviantart.com/megatama30/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='wlop',
         href='https://www.deviantart.com/wlop/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='makaroll410',
+        href='https://www.deviantart.com/makaroll410/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='atutcha',
+        href='https://www.deviantart.com/atutcha/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='Elias-Chatzoudis',
+        href='https://www.deviantart.com/elias-chatzoudis /gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='DashMartin',
+        href='https://www.deviantart.com/dashmartin/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='ToolKitten',
+        href='https://www.deviantart.com/toolkitten/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='ulamosart',
+        href='https://www.deviantart.com/ulamosart/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -1763,6 +1913,16 @@ feeds = (
     feed(
         title='KofJP',
         href='https://www.deviantart.com/kofjp/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='rwero',
+        href='https://www.deviantart.com/rwero/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='jamietyndall',
+        href='https://www.deviantart.com/jamietyndall/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -2963,6 +3123,36 @@ feeds = (
     feed(
         title='hasunoai',
         href='https://www.instagram.com/hasunoai/',
+        emojis='🏮',
+    ),
+    feed(
+        title='laurendrainfit',
+        href='https://www.instagram.com/laurendrainfit/',
+        emojis='🏮',
+    ),
+    feed(
+        title='plant_lily',
+        href='https://www.instagram.com/plant.lily/',
+        emojis='🏮',
+    ),
+    feed(
+        title='ruby_alexia',
+        href='https://www.instagram.com/ruby.alexia/',
+        emojis='🏮',
+    ),
+    feed(
+        title='gina_9011',
+        href='https://www.instagram.com/gina_9011/',
+        emojis='🏮',
+    ),
+    feed(
+        title='ekonfeta',
+        href='https://www.instagram.com/ekonfeta/',
+        emojis='🏮',
+    ),
+    feed(
+        title='vyatkinaekaterina',
+        href='https://www.instagram.com/vyatkinaekaterina/',
         emojis='🏮',
     ),
 )
