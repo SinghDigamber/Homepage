@@ -182,9 +182,6 @@ class feed(models.Model):
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
             for pain in soup.find('div').find_all('div', attrs={'class': 'pain-item'}):
-                print(str(pain.find_all('div')[1:-3])+"\n\n\n")
-                print("parsed:")
-
                 #result_name = pain.find_all('div')[1].find('a').text
                 #result_name += " > "
                 result_name = pain.find_all('div')[2].find('p').text
