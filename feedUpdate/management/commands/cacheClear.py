@@ -7,5 +7,4 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         feedUpdate.objects.all().delete()
-        feed.objects.all().delete()
         PlanetaKino.objects.all().delete()
