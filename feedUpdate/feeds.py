@@ -178,6 +178,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ОркПодкастер',
+        href='https://www.youtube.com/channel/UCedqnsVXjFlao53mKg7mnkQ/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Банкир',
         title_full='Бегущий Банкир',
         href='https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw/videos',
@@ -614,7 +619,6 @@ feeds = (
     feed(
         title='Halocene',
         href='https://www.youtube.com/channel/UCoimajyGy33X_Pqt-SHCWeA/videos',
-        emojis='💎'
     ),
     feed(
         title='BABYMETAL',
@@ -677,11 +681,21 @@ feeds = (
     feed(
         title='JenSelterYT',
         href='https://www.youtube.com/channel/UCdfkczRQA4pRsGo30x4uIcA/videos',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Bloomberg',
         href='https://www.youtube.com/channel/UCUMZ7gohGI9HcU9VNsr2FJQ/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='Avantazh',
+        href='https://www.youtube.com/channel/UCvBZg6UrQQL8Pu8r35nu1BQ/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='Druzhko',
+        href='https://www.youtube.com/channel/UCpbOjOjnLBXpi0AzruoJYIA/videos',
         emojis='💎'
     ),
     feed(
@@ -710,10 +724,14 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='CasuallyExplained',
+        href='https://www.youtube.com/channel/UCr3cBLTYmIK9kY0F_OdFWFQ/videos',
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
-        href='feed:https://online.anidub.com/rss.xml',
-        href_title='feed:https://online.anidub.com/rss.xml',
+        href='feed:https://anidub.tv/rss.xml',
+        href_title='feed:https://anidub.tv/rss.xml',
     ),
     feed(
         title='AnimeVost',
@@ -813,6 +831,12 @@ feeds = (
         href='feed://readmanga.me/rss/manga?name=fisheye_placebo',
         href_title='http://readmanga.me/fisheye_placebo',
         emojis='💎'
+    ),
+    feed(
+        title='Кости',
+        title_full='DICE: The cube that changes everything (остановился на ???)',
+        href='feed://readmanga.me/rss/manga?name=dice__the_cube_that_changes_everything',
+        href_title='http://readmanga.me/dice__the_cube_that_changes_everything',
     ),
     feed(
         title='OnePunchMan',
@@ -1211,6 +1235,14 @@ feeds = (
         emojis='💎',
     ),
     feed(
+        title='ZL',
+        title_full='Убийцы Драконов',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/zl',
+        filter='ruranobe.ru/r/zl/',
+        emojis='💎',
+    ),
+    feed(
         title='ЭльфийскаяКровь',
         title_full='Эльфийская кровь',
         href='https://ruranobe.ru/updates.rss',
@@ -1275,6 +1307,12 @@ feeds = (
         title_full='Харьков-Турист',
         href='feed://xt.ht/rss.php',
         href_title='http://xt.ht',
+        emojis='💎',
+    ),
+    feed(
+        title='АнтонЖиянов',
+        href='feed:https://antonz.ru/rss/',
+        href_title='https://antonz.ru',
         emojis='💎',
     ),
     feed(
@@ -1678,6 +1716,180 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='Greivs',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Greivs',
+        href_title='http://www.hentai-foundry.com/pictures/user/Greivs',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Riendonut',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Riendonut',
+        href_title='http://www.hentai-foundry.com/pictures/user/Riendonut',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Kibazoku',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Kibazoku',
+        href_title='http://www.hentai-foundry.com/pictures/user/Kibazoku',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Lazam',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Lazam',
+        href_title='http://www.hentai-foundry.com/pictures/user/Lazam',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Mister69M',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Mister69M',
+        href_title='http://www.hentai-foundry.com/pictures/user/Mister69M',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Ganassa',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Ganassa',
+        href_title='http://www.hentai-foundry.com/pictures/user/Ganassa',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='PWCSponson',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/PWCSponson',
+        href_title='http://www.hentai-foundry.com/pictures/user/PWCSponson',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='MrHidePatten',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/MrHide-Patten',
+        href_title='http://www.hentai-foundry.com/pictures/user/MrHide-Patten',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='carmessi',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/carmessi',
+        href_title='http://www.hentai-foundry.com/pictures/user/carmessi',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='customwaifus',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/customwaifus',
+        href_title='http://www.hentai-foundry.com/pictures/user/customwaifus',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='wander',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/wander',
+        href_title='http://www.hentai-foundry.com/pictures/user/wander',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='pumpkinsinclair',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/pumpkinsinclair',
+        href_title='http://www.hentai-foundry.com/pictures/user/pumpkinsinclair',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='BleedingPervert',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/BleedingPervert',
+        href_title='http://www.hentai-foundry.com/pictures/user/BleedingPervert',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='kinkymation',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/kinkymation',
+        href_title='http://www.hentai-foundry.com/pictures/user/kinkymation',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='kruth666',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/kruth666',
+        href_title='http://www.hentai-foundry.com/pictures/user/kruth666',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Pupuliini',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Pupuliini',
+        href_title='http://www.hentai-foundry.com/pictures/user/Pupuliini',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Lurkergg',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Lurkergg',
+        href_title='http://www.hentai-foundry.com/pictures/user/Lurkergg',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Nefrette',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Nefrette',
+        href_title='http://www.hentai-foundry.com/pictures/user/Nefrette',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Albatross',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Albatross',
+        href_title='http://www.hentai-foundry.com/pictures/user/Albatross',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='BDOne',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/BDOne',
+        href_title='http://www.hentai-foundry.com/pictures/user/BDOne',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='TheRealShadman',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/TheRealShadman',
+        href_title='http://www.hentai-foundry.com/pictures/user/TheRealShadman',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='lerra22',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/lerra22',
+        href_title='http://www.hentai-foundry.com/pictures/user/lerra22',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='HotVR',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/HotVR',
+        href_title='http://www.hentai-foundry.com/pictures/user/HotVR',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='NobuONE',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/NobuONE',
+        href_title='http://www.hentai-foundry.com/pictures/user/NobuONE',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='R3dstar',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/R3dstar',
+        href_title='http://www.hentai-foundry.com/pictures/user/R3dstar',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='aka6',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/aka6',
+        href_title='http://www.hentai-foundry.com/pictures/user/aka6',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='tortuga',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/tortuga',
+        href_title='http://www.hentai-foundry.com/pictures/user/tortuga',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='NamiWaifu',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/NamiWaifu',
+        href_title='http://www.hentai-foundry.com/pictures/user/NamiWaifu',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='zxc338093',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/zxc338093',
+        href_title='http://www.hentai-foundry.com/pictures/user/zxc338093',
+        emojis='💎🏮'
+    ),
+    feed(
         title='KogotsuchiDark',
         href='https://pikabu.ru/@KogotsuchiDark',
         emojis='💎',
@@ -1726,7 +1938,7 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='liang-xing',
+        title='LiangXing',
         href='https://www.deviantart.com/liang-xing/gallery/',
         emojis='💎🏮',
     ),
@@ -1736,7 +1948,7 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='violet-spider',
+        title='VioletSpider',
         href='https://www.deviantart.com/violet-spider/gallery/',
         emojis='💎🏮',
     ),
@@ -1786,6 +1998,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='notzackforwork',
+        href='https://www.deviantart.com/notzackforwork/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='wlop',
         href='https://www.deviantart.com/wlop/gallery/',
         emojis='💎🏮',
@@ -1801,8 +2018,8 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='Elias-Chatzoudis',
-        href='https://www.deviantart.com/elias-chatzoudis /gallery/',
+        title='EliasChatzoudis',
+        href='https://www.deviantart.com/elias-chatzoudis/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -3116,16 +3333,6 @@ feeds = (
         emojis='🏮',
     ),
     feed(
-        title='obsidiankerttu',
-        href='https://www.instagram.com/obsidiankerttu/',
-        emojis='🏮',
-    ),
-    feed(
-        title='hasunoai',
-        href='https://www.instagram.com/hasunoai/',
-        emojis='🏮',
-    ),
-    feed(
         title='laurendrainfit',
         href='https://www.instagram.com/laurendrainfit/',
         emojis='🏮',
@@ -3155,4 +3362,9 @@ feeds = (
         href='https://www.instagram.com/vyatkinaekaterina/',
         emojis='🏮',
     ),
+    feed(
+        title='igradua',
+        href='https://www.instagram.com/igradua/',
+        emojis='💎🏮',
+    )
 )
