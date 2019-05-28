@@ -726,6 +726,17 @@ feeds = (
     feed(
         title='CasuallyExplained',
         href='https://www.youtube.com/channel/UCr3cBLTYmIK9kY0F_OdFWFQ/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='Vivziepop',
+        href='https://www.youtube.com/channel/UCzfyYtgvkx5mLy8nlLlayYg/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='СлугаНарода',
+        href='https://www.youtube.com/channel/UCWxnrOznpSgCIK6SyzDgirQ/videos',
+        emojis='💎'
     ),
     feed(
         title='Anidub',
@@ -1115,6 +1126,12 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='Мастер',
+        title_full='Мастер Подземелий',
+        href='http://readmanga.me/master_podzemelii',
+        emojis='💎'
+    ),
+    feed(
         title='МиллионыТрупов',
         title_full='Я стою на миллионах трупов',
         href='http://readmanga.me/i_m_standing_on_1_000_000_lives',
@@ -1396,6 +1413,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='ousawa_QuQ',
+        href='https://twitrss.me/twitter_user_to_rss/?user=ousawa_QuQ',
+        href_title='https://twitter.com/ousawa_QuQ',
+        emojis='💎🏮'
+    ),
+    feed(
         title='kalinkafox',
         href='https://twitrss.me/twitter_user_to_rss/?user=kalinkafox',
         href_title='https://twitter.com/kalinkafox',
@@ -1482,6 +1505,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='ericgeusz',
+        href='feed:https://ericgeusz.artstation.com/rss',
+        href_title='https://ericgeusz.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
         title='sciamano240',
         href='feed:https://sciamano240.artstation.com/rss',
         href_title='https://sciamano240.artstation.com/projects',
@@ -1546,6 +1575,12 @@ feeds = (
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/cherry-gig',
         href_title='http://www.hentai-foundry.com/pictures/user/cherry-gig',
         emojis='💎🏮'
+    ),
+    feed(
+        title='YICHIMOO',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/YICHIMOO',
+        href_title='http://www.hentai-foundry.com/pictures/user/YICHIMOO',
+        emojis='🏮'
     ),
     feed(
         title='OwlerHF',
@@ -1918,6 +1953,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='yichimo',
+        href='https://www.deviantart.com/yichimo/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='RalDu',
         href='https://www.deviantart.com/raldu/gallery/',
         emojis='💎🏮',
@@ -2140,6 +2180,36 @@ feeds = (
     feed(
         title='jamietyndall',
         href='https://www.deviantart.com/jamietyndall/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='justb1aze',
+        href='https://www.deviantart.com/justb1aze/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='morpheus306',
+        href='https://www.deviantart.com/morpheus306/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='hayes_irina',
+        href='https://www.deviantart.com/hayes-irina/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='quirkilicious',
+        href='https://www.deviantart.com/quirkilicious/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='rosuke97',
+        href='https://www.deviantart.com/rosuke97/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='ururuty',
+        href='https://www.deviantart.com/ururuty/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -2700,7 +2770,7 @@ feeds = (
     feed(
         title='purplemuffinz',
         href='https://www.instagram.com/purplemuffinz/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='armoredheartcosplay',
@@ -3366,5 +3436,85 @@ feeds = (
         title='igradua',
         href='https://www.instagram.com/igradua/',
         emojis='💎🏮',
-    )
+    ),
+    feed(
+        title='karina_nocturna',
+        href='https://www.instagram.com/karina_nocturna/',
+        emojis='🏮',
+    ),
+    feed(
+        title='mimichan259',
+        href='https://www.instagram.com/mimichan.259/',
+        emojis='🏮',
+    ),
+    feed(
+        title='nikkidelano',
+        href='https://www.instagram.com/nikkidelano/',
+        emojis='🏮',
+    ),
+    feed(
+        title='theluciferfallen',
+        href='https://www.instagram.com/theluciferfallen/',
+        emojis='🏮',
+    ),
+    feed(
+        title='milkammi',
+        href='https://www.instagram.com/milkammi/',
+        emojis='🏮',
+    ),
+    feed(
+        title='sixtwo2',
+        href='https://www.instagram.com/sixtwo2/',
+        emojis='🏮',
+    ),
+    feed(
+        title='mistressmanouk',
+        href='https://www.instagram.com/mistressmanouk/',
+        emojis='🏮',
+    ),
+    feed(
+        title='kittycat_nana',
+        href='https://www.instagram.com/kittycat.nana/',
+        emojis='🏮',
+    ),
+    feed(
+        title='valentinafradegrada',
+        href='https://www.instagram.com/valentinafradegrada/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='k_kiuchi_q',
+        href='https://www.instagram.com/k.kiuchi_q/',
+        emojis='🏮',
+    ),
+    feed(
+        title='moist_funhole',
+        href='https://www.instagram.com/moist_funhole/',
+        emojis='🏮',
+    ),
+    feed(
+        title='karmaRX',
+        href='https://www.instagram.com/karma.rx/',
+        emojis='🏮',
+    ),
+    feed(
+        title='diankova_official',
+        href='https://www.instagram.com/diankova_official/',
+        emojis='🏮',
+    ),
+    feed(
+        title='vforven',
+        href='https://www.instagram.com/v.for.ven/',
+        emojis='🏮',
+    ),
+    feed(
+        title='minulansak',
+        href='https://www.instagram.com/minulansak/',
+        emojis='🏮',
+    ),
+    feed(
+        title='rubberonion92',
+        href='https://www.instagram.com/rubberonion92/',
+        emojis='🏮',
+    ),
 )
