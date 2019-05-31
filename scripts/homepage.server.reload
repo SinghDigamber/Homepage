@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+python3 manage.py cacheUpdate --parseAll
 sudo systemctl restart homepage.server.launch
