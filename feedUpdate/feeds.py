@@ -3813,7 +3813,7 @@ feeds = (
         emojis='💎',
     ),
     feed(
-        title='ernie.logvi',
+        title='ernie_logvi',
         href='https://www.instagram.com/ernie.logvi/',
         emojis='💎',
     ),
@@ -3838,12 +3838,12 @@ feeds = (
         emojis='💎',
     ),
     feed(
-        title='m.kvyatkovskaya',
+        title='m_kvyatkovskaya',
         href='https://www.instagram.com/m.kvyatkovskaya/',
         emojis='💎',
     ),
     feed(
-        title='olgaa_.b',
+        title='olgaa__b',
         href='https://www.instagram.com/olgaa_.b/',
         emojis='💎',
     ),
