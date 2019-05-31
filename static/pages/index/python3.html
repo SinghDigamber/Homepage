@@ -1,0 +1,130 @@
+return x if x>10 else y
+
+if isinstance(myfloat, float) and myfloat == 10.0:
+    print("Float: %f" % myfloat)
+
+print("%s is %d years old." % (name, age))
+# %s - String (or any object with a string representation, like numbers)
+# %d - Integers
+# %f - Floating point numbers
+# %.<number of digits>f - Floating point numbers with a fixed amount of digits to the right of the dot.
+# %x/%X - Integers in hex representation (lowercase/uppercase)
+
+astring = "Hello world!"
+print(astring.index("o"))
+print(astring.count("l"))
+print(astring[3:7:2])
+
+name = "John"
+age = 23
+if name == "John" and age == 23:
+    print("Your name is John, and you are also 23 years old.")
+
+if name == "John" or name == "Rick":
+    print("Your name is either John or Rick.")
+
+# Prints out 0,1,2,3,4 and then it prints "count value reached 5"
+
+count=0
+while(count<5):
+    print(count)
+    count +=1
+else:
+    print("count value reached %d" %(count))
+
+# Prints out 1,2,3,4
+for i in range(1, 10):
+    if(i%5==0):
+        break
+    print(i)
+else:
+    print("this is not printed because for loop is terminated because of break but not due to fail in condition")
+
+phonebook = {"John" : 938477566,"Jack" : 938377264,"Jill" : 947662781}
+for name, number in phonebook.items():
+    print("Phone number of %s is %d" % (name, number))
+
+phonebook = {
+   "John" : 938477566,
+   "Jack" : 938377264,
+   "Jill" : 947662781
+}
+del phonebook["John"]
+print(phonebook)
+
+phonebook = {
+   "John" : 938477566,
+   "Jack" : 938377264,
+   "Jill" : 947662781
+}
+phonebook.pop("John")
+print(phonebook)
+
+
+import random
+
+def lottery():
+    # returns 6 numbers between 1 and 40
+    for i in range(6):
+        yield random.randint(1, 40)
+
+    # returns a 7th number between 1 and 15
+    yield random.randint(1,15)
+
+for random_number in lottery():
+       print("And the next number is... %d!" %(random_number))
+
+sentence = "the quick brown fox jumps over the lazy dog"
+words = sentence.split()
+word_lengths = [len(word) for word in words if word != "the"]
+print(words)
+print(word_lengths)
+
+# Example:
+import re
+pattern = re.compile(r"\[(on|off)\]") # Slight optimization
+print(re.search(pattern, "Mono: Playback 65 [75%] [-16.50dB] [on]"))
+# Returns a Match object!
+print(re.search(pattern, "Nada...:-("))
+# Doesn't return anything.
+# End Example
+
+# Exercise: make a regular expression that will match an email
+def test_email(your_pattern):
+    pattern = re.compile(your_pattern)
+    emails = ["john@example.com", "python-list@python.org", "wha.t.`1an?ug{}ly@email.com"]
+    for email in emails:
+        if not re.match(pattern, email):
+            print("You failed to match %s" % (email))
+        elif not your_pattern:
+            print("Forgot to enter a pattern!")
+        else:
+            print("Pass")
+pattern = r"" # Your pattern here!
+test_email(pattern)
+
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+
+print(a.intersection(b))
+print(b.intersection(a))
+
+print(a.symmetric_difference(b))
+print(b.symmetric_difference(a))
+
+print(a.difference(b))
+print(b.difference(a))
+
+print(a.union(b))
+
+
+http://www.learnpython.org/en/Serialization
+
+http://www.learnpython.org/en/Decorators
+
+https://www.learn-html.org
+
+https://www.learn-js.org/
+
+https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/
+

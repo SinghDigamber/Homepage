@@ -1,0 +1,46 @@
+@media screen and (min-width: 900px) {
+    body {
+        background-color: darkmagenta;
+    }
+}
+* {}
+.class {}
+#id {}
+a:link {}
+a:visited {}
+a:hover {}
+a:active {}
+a:visited:hover {}
+a:visited:active {}
+div {
+  display: block;
+  text-decoration: none;
+}
+
+The :first-of-type and :last-of-type selectors only operate inside their parent element. That is to say, p:first-of-type selects the first <p> in every container element.
+
+<hr>
+
+list-style-image: url("../../media/examples/rocket.svg");
+
+
+If you wanted to avoid the sidebar paragraphs and select only the first <p> in our <div class='page'>, you would need to limit its scope using a child selector, like so:
+
+.page > p:first-of-type {
+  color: #7E8184;
+  font-style: italic;
+}
+
+steal pages design from:
+    https://internetingishard.com/html-and-css/web-typography/
+    https://internetingishard.com
+
+complicated page structure:
+    https://internetingishard.com/html-and-css/floats/
+    https://internetingishard.com/html-and-css/flexbox/
+    https://internetingishard.com/html-and-css/advanced-positioning/
+    https://internetingishard.com/html-and-css/responsive-design/
+    https://internetingishard.com/html-and-css/responsive-images/
+    https://internetingishard.com/html-and-css/semantic-html/
+    https://internetingishard.com/html-and-css/forms/
+    https://internetingishard.com/html-and-css/web-typography/
