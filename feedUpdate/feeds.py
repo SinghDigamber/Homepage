@@ -1589,7 +1589,7 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='Feather-Coat',
+        title='FeatherCoat',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Feather-Coat',
         href_title='http://www.hentai-foundry.com/pictures/user/Feather-Coat',
         emojis='💎🏮'
@@ -1631,7 +1631,7 @@ feeds = (
         emojis='🏮'
     ),
     feed(
-        title='Ddevil-art',
+        title='Ddevil_art',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Ddevil-art',
         href_title='http://www.hentai-foundry.com/pictures/user/Ddevil-art',
         emojis='🏮'
@@ -2058,11 +2058,6 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='justb1aze',
-        href='https://www.deviantart.com/justb1aze/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
         title='dereklaufman',
         href='https://www.deviantart.com/dereklaufman/gallery/',
         emojis='💎🏮',
@@ -2475,11 +2470,6 @@ feeds = (
     feed(
         title='CianYo',
         href='https://www.deviantart.com/cianyo/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='rosuke97',
-        href='https://www.deviantart.com/rosuke97/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -3475,11 +3465,6 @@ feeds = (
     feed(
         title='obsidiankerttu',
         href='https://www.instagram.com/obsidiankerttu/',
-        emojis='🏮',
-    ),
-    feed(
-        title='_fuxteufelswild_',
-        href='https://www.instagram.com/_fuxteufelswild_/',
         emojis='🏮',
     ),
     feed(
