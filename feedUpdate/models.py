@@ -11,9 +11,6 @@ import json
 import dateutil.parser as datetimeparser
 # Create your models here.
 
-# TODO: move project to actual database
-# models.CharField(max_length= does not work in SQLite, manually aadded limit in parser
-
 
 class feed(models.Model):
     class Meta:
@@ -264,7 +261,6 @@ class feed(models.Model):
             elif each.title == 'LastWeekTonight' and each.name.find(': Last Week Tonight with John Oliver (HBO)') != -1:
                 each.name = each.name[:each.name.find(': Last Week Tonight with John Oliver (HBO)')]
             elif each.title == 'Expresso':
-                # TODO: check what 11 is
                 each.name = each.name[len("YYYY-MM-DD "):]
 
         return result
