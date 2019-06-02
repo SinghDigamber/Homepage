@@ -27,12 +27,11 @@ sudo cp /home/pi/Projects/Homepage/scripts/homepage.server.reload.service /lib/s
 sudo cp /home/pi/Projects/Homepage/scripts/homepage.server.reload.timer /lib/systemd/system/homepage.server.reload.timer
 sudo systemctl disable homepage.server.reload.service
 sudo systemctl enable homepage.server.reload.timer
-# sudo systemctl start homepage.server.reload.timer
 
 # pre-launch preparations
 sudo systemctl daemon-reload
 
-# cache everything before launch
+# caching before launch
 python3 manage.py cacheUpdate --parseFeeds;
 
 # launch web server
