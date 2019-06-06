@@ -41,4 +41,6 @@ urlpatterns = [
         permanent=True), name="Telegram"),
     url(r'^Pi-hole/$', RedirectView.as_view(url='http://192.168.1.201/admin/',
         permanent=True), name="Pi-hole"),
+    url(r'^router-admin/$', RedirectView.as_view(url='http://192.168.1.1:8081',
+        permanent=True), name="router-admin"),
 ]
