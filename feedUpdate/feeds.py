@@ -517,6 +517,16 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='НеСпатьПриехал',
+        href='https://www.youtube.com/channel/UCbz4lhLbbT0GfRxCA4mBH2w/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='ДмитрийЛасенко',
+        href='https://www.youtube.com/channel/UCtgluuRM0OThbgsGFd9eH5Q/videos',
+        emojis='💎'
+    ),
+    feed(
         title='ROANYERCD',
         title_full='ROANYER CD',
         href='https://www.youtube.com/channel/UCdVmtR_NzLIDoHOBKxahE3A/videos',
@@ -651,6 +661,28 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ВладимирЧайкин',
+        href='https://www.youtube.com/channel/UC_mPBfl442yiubiPyswqulA/videos',
+    ),
+    feed(
+        title='КраiнаУ',
+        href='https://www.youtube.com/channel/UC6Z5pS_Csoon7pOvbJpxeHA/videos',
+    ),
+    feed(
+        title='ЛигаСмеха',
+        href='https://www.youtube.com/channel/UC2iLEQOjbk4CJszj34NtqHg/videos',
+    ),
+    feed(
+        title='СержРасклад',
+        title_full='Серж Расклад: перевод',
+        href='https://www.youtube.com/channel/UCKg6wNXlU-iZnYhcM1B31NA/videos',
+    ),
+    feed(
+        title='95квартал',
+        href='https://www.youtube.com/channel/UCfCVlxInB4VuaDFLGqEQqaA/videos',
+        emojis='💎'
+    ),
+    feed(
         title='ШамовДмитрий',
         title_full='Шамов Дмитрий: жизнь в Японии',
         href='https://www.youtube.com/channel/UCDNXL3G7Mz594L1CVFp3CMQ/videos',
@@ -719,6 +751,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='RaspberryPi',
+        href='https://www.youtube.com/channel/UCFIjVWFZ__KhtTXHDJ7vgng/videos',
+        emojis='💎'
+    ),
+    feed(
         title='вДудь',
         href='https://www.youtube.com/channel/UCMCgOm8GZkHp8zJ6l7_hIuA/videos',
         emojis='💎'
@@ -780,6 +817,33 @@ feeds = (
         title='HighScalability',
         href='http://feeds.feedburner.com/HighScalability',
         href_title='http://highscalability.com',
+        emojis='💎'
+    ),
+    feed(
+        title='RaspberryPiWeb',
+        href='feed:https://www.raspberrypi.org/feed/',
+        href_title='https://www.raspberrypi.org/blog/',
+        emojis='💎'
+    ),
+    feed(
+        title='RaspberryComm',
+        title_full='Raspberry Pi: Community',
+        href='feed:https://www.raspberrypi.org/blog/category/community/feed/',
+        href_title='https://www.raspberrypi.org/blog/category/community/',
+        emojis='💎'
+    ),
+    feed(
+        title='RaspberryWeekly',
+        title_full='Raspberry Pi: Weekly',
+        href='feed:https://www.raspberrypi.org/weekly/feed/',
+        href_title='https://www.raspberrypi.org/weekly/',
+        emojis='💎'
+    ),
+    feed(
+        title='RaspberryEducation',
+        title_full='Raspberry Pi: Education',
+        href='feed:https://www.raspberrypi.org/education/feed/',
+        href_title='https://www.raspberrypi.org/education/',
         emojis='💎'
     ),
     feed(
@@ -1164,6 +1228,29 @@ feeds = (
         emojis='🏮💎',
     ),
     feed(
+        title='DjangoBlog',
+        href='feed:https://www.djangoproject.com/rss/weblog/',
+        href_title='https://www.djangoproject.com/weblog/',
+        emojis='💎',
+    ),
+    feed(
+        title='DjangoCommunityBlog',
+        href='feed:https://www.djangoproject.com/rss/community/blogs/',
+        href_title='https://www.djangoproject.com/community/blogs/',
+        emojis='💎',
+    ),
+    feed(
+        title='DjangoQA',
+        href='feed:https://www.djangoproject.com/rss/community/q-and-a/',
+        href_title='https://www.djangoproject.com/community/q-and-a/',
+    ),
+    feed(
+        title='DjangoLinks',
+        href='feed:https://www.djangoproject.com/rss/community/links/',
+        href_title='https://www.djangoproject.com/community/links/',
+        emojis='💎',
+    ),
+    feed(
         title='oglaf',
         title_full='oglaf.com',
         href='feed:https://www.oglaf.com/feeds/rss/',
@@ -1281,6 +1368,14 @@ feeds = (
         href='https://ruranobe.ru/updates.rss',
         href_title='https://ruranobe.ru/r/sao',
         filter='ruranobe.ru/r/sao/',
+        emojis='💎',
+    ),
+    feed(
+        title='ПастухБогов',
+        title_full='Сказания о Пастухе Богов (остановился на т1г66)',
+        href='https://novel.tl/updates.rss',
+        href_title='https://novel.tl/r/herd',
+        filter='novel.tl/r/herd',
         emojis='💎',
     ),
     feed(
@@ -1862,7 +1957,7 @@ feeds = (
         title='aaaninja',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/aaaninja',
         href_title='http://www.hentai-foundry.com/pictures/user/aaaninja',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Skadiii',
@@ -1886,7 +1981,7 @@ feeds = (
         title='MWooD',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/MWooD',
         href_title='http://www.hentai-foundry.com/pictures/user/MWooD',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='DandyRabbit',
@@ -1940,7 +2035,7 @@ feeds = (
         title='JZerosk',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/JZerosk',
         href_title='http://www.hentai-foundry.com/pictures/user/JZerosk',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Koyakyuun',
@@ -2168,7 +2263,7 @@ feeds = (
     feed(
         title='meowwithme',
         href='https://www.deviantart.com/meowwithme/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='blackshirtboy',
@@ -3428,7 +3523,7 @@ feeds = (
     feed(
         title='yle4ka_001',
         href='https://www.instagram.com/yle4ka_001/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='mylatexbabyInst',
@@ -3448,12 +3543,12 @@ feeds = (
     feed(
         title='misscjmiles',
         href='https://www.instagram.com/misscjmiles/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='misscjmilesfans',
         href='https://www.instagram.com/misscjmilesfans/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='b880156',
@@ -3689,11 +3784,6 @@ feeds = (
         title='igradua',
         href='https://www.instagram.com/igradua/',
         emojis='💎🏮',
-    ),
-    feed(
-        title='karina_nocturna',
-        href='https://www.instagram.com/karina_nocturna/',
-        emojis='🏮',
     ),
     feed(
         title='mimichan259',
@@ -3968,6 +4058,66 @@ feeds = (
     feed(
         title='olgaa__b',
         href='https://www.instagram.com/olgaa_.b/',
+        emojis='💎',
+    ),
+    feed(
+        title='karina_nocturna',
+        href='https://www.instagram.com/karina_nocturna/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='missfinelines',
+        href='https://www.instagram.com/missfinelines/',
+        emojis='🏮',
+    ),
+    feed(
+        title='elisanthInsta',
+        href='https://www.instagram.com/elisanth/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='bura_alex',
+        href='https://www.instagram.com/bura_alex/',
+        emojis='💎',
+    ),
+    feed(
+        title='vikun4ik_viktorovna',
+        href='https://www.instagram.com/vikun4ik_viktorovna/',
+        emojis='💎',
+    ),
+    feed(
+        title='nastia__romanovna',
+        href='https://www.instagram.com/nastia__romanovna/',
+        emojis='💎',
+    ),
+    feed(
+        title='mihanchik94',
+        href='https://www.instagram.com/mihanchik94/',
+        emojis='💎',
+    ),
+    feed(
+        title='elementore',
+        href='https://www.instagram.com/elementore/',
+        emojis='💎',
+    ),
+    feed(
+        title='razin_anna',
+        href='https://www.instagram.com/razin_anna/',
+        emojis='💎',
+    ),
+    feed(
+        title='tanyshkaloskan',
+        href='https://www.instagram.com/tanyshkaloskan/',
+        emojis='💎',
+    ),
+    feed(
+        title='demidenko44',
+        href='https://www.instagram.com/demidenko44/',
+        emojis='💎',
+    ),
+    feed(
+        title='kruchkov_aleksey',
+        href='https://www.instagram.com/kruchkov.aleksey/',
         emojis='💎',
     ),
 )
