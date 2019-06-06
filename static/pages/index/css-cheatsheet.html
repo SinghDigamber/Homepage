@@ -1,0 +1,579 @@
+:empty
+
+<!-- WILL match -->
+<div></div>
+
+<!-- WILL match -->
+<aside data-blah><!-- nothin' --></aside>
+
+<!-- Will NOT match -->
+<div> </div>
+
+<!-- Will NOT match -->
+<div>
+</div>
+
+
+
+
+
+.module.news {
+  /* Selects elements with BOTH of those classes */
+}
+#site-footer::after {
+  /* Adds content after an element with that ID */
+}
+section[data-open] {
+  /* Selects only section elements if they have this attribute */
+}
+
+
+
+
+
+
+
+.module > h2 {
+  /* Select h2 elements that are direct children of an element with that class */
+}
+h2 + p {
+  /* Select p elements that are directly following an h2 element */
+}
+li ~ li {
+  /* Select li elements that are siblings (and following) another li element. */
+}
+
+
+
+
+:focus - Defining hover styles for links is great, but it doesn't help out those who used keyboard navigation to get to the link. :focus will select links that are the current focus of the keyboard. This is not limited to links, but can be used (and really should be used) on inputs and textareas as well. Some would tell you to define a :focus style for anything that has a :hover style.
+
+:target - The target pseudo class is used in conjunction with IDs, and match when the hash tag in the current URL matches that ID. So if you are at URL www.yoursite.com/#home then the selector #home:target will match. That can be extremely powerful. For example, you can create a tabbed area where the tabs link to hash tags and then the panels "activate" by matching :target selectors and (for example) using z-index to move to the top.
+
+:enabled - Selects inputs that are in the default state of enabled and ready to be used.
+
+:disabled - Selects inputs that have the disabled attribute. A lot of browsers will make the input a faded out gray, you can control that with this selector.
+
+:checked - Selects checkboxes that are, wait for it, checked.
+
+:indeterminate - Selects radio buttons that are in the purgatory state of neither chosen or unchosen (like when a page loads with radio button choices but no default is set).
+
+
+Set of radio buttons in purgatory. Or more accurately, in their :indeterminate status.
+:required - Selects inputs with the required attribute.
+:optional - Selects inputs that do not have the required attribute.
+
+:read-only / :read-write - Selects elements based on a combination of readonly and disabled attriutes.
+
+
+
+
+
+
+
+
+
+
+:root - Selects the element that is at the root of the document. Almost certainly will select the <html> element, unless you are specifically working in some weird environment that somehow also allows CSS. Perhaps XML.
+
+:first-child - Selects the first element within a parent.
+
+:last-child - Selects the last element within a parent.
+
+:nth-child() - Selects elements based on a simple provided algebraic expression (e.g. "2n" or "4n-1"). Has the ability to do things like select even/odd elements, "every third", "the first five", and things like that. Covered in more detail here with a tester tool.
+
+:nth-of-type() - Works like :nth-child, but used in places where the elements at the same level are of different types. Like if inside a div you had a number of paragraphs and a number of images. You wanted to select all the odd images. :nth-child won't work there, you'd use div img:nth-of-type(odd). Particularly useful when working with definition lists and their alternating <dt> and <dd> elements.
+
+:first-of-type - Selects the first element of this type within any parent. So if you have two divs, each had within it a paragraph, image, paragraph, image. Then div img:first-of-type would select the first image inside the first div and the first image inside the second div.
+
+:last-of-type - Same as above, only would select the last image inside the first div and the last image inside the second div.
+
+:nth-last-of-type() - Works like :nth-of-type, but it counts up from the bottom instead of the top.
+
+:nth-last-child() - Works like :nth-child, but it counts up from the bottom instead of the top.
+
+:only-of-type - Selects only if the element is the only one of its kind within the current parent.
+
+
+Position/Number-based pseudo class selectors
+#Relational pseudo class selectors
+
+:not() - Removes elements from an existing matched set that match the selector inside the parameter of :not(). So for example, all divs except those with a class of "music" = div:not(.music). The spec says that :not selectors cannot be nested, but they can be chained. Some browsers (Firefox) also support comma-separated selectors as the selector parameter, although chaining them would be a far safter bet. Also useful in conjunction with attribute selectors, e.g. input:not([disabled]).
+
+:empty - Selects elements which contain no text and no child elements. Like: <p></p>
+
+#Text-related pseudo class selectors / elements
+
+::first-letter - Selects the first letter of the text in the element. Typical use: dropcaps.
+
+::first-line - Selects the first line of text in the element. Typical use: setting the first sentence in small-caps as a typographical eye-catcher / lead-in.
+
+:lang - This pseudo selector is in the CSS3 spec but only implemented in IE 8+. Will match anything that either has or is a descendant of an element with a matching lang attribute. For example, :lang(fr) will match any paragraph, even without a lang attribute, if the parent body had lang="fr" as an attribute.
+
+#Quick note
+
+You can chain pseudo selectors just like you can chain class and ID selectors. This is particularly useful here while we are looking at :first-letter and :first-line. You probably wouldn't want to drop cap every single paragraph on the page, but just the first one, so, p:first-child:first-letter { }
+
+
+Dropcap using :first-letter, which enlarges the font size and floats to the left.
+#Content-related pseudo "elements"
+
+::before - Is able to add content before a certain element. For example, adding an opening quote before a blockquote or perhaps an preceding image to set apart a particular paragraph.
+
+::after - Is able to add content after a certain element. For example, a closing quote to a blockquote. Also used commonly for the clearfix, where an empty space is added after the element which clears the float without any need for extra HTML markup.
+
+#Pseudo Elements vs Pseudo Selectors
+
+These are appropriately called pseudo "elements" (not selectors) because they don't select any "real" element that exists on the page. This goes for these two, as well as the previous sections :first-letter and :first-line. Make sense? Like the first letter that ::first-letter selects isn't an element all to itself, it's just a part of an existing element, hence, pseudo element.
+
+Selector Style	Name	Does	Specificity
+::	pseudo element	selects some actual content	0 0 0 1
+:	pseudo selector	selects elements in certain conditions	0 0 1 0
+#Tag Qualification
+
+These selectors can be tag-qualified, meaning they will only apply if both the element (tag) and selector match. For instance:
+
+p:first-child {
+  color: red;
+}
+That will only match if the first child of another element is a <p>. If it's not, it won't match.
+
+#Deprecated
+
+:contains() - As far as I know, this is gone. The current CSS3 spec has removed it. I don't know the story, let me know if you do. At a glance, it looks ridiculously useful (being able to select objects based on the textual content they contain). It may be because of problems, or having content in selectors being undesirable. My preference would be to have it select by elements rather than text, like p:contains(img), but alas, no such luck.
+
+::selection - Allows the changing of style of selected text. It was drafted for CSS Selectors Level 3 but removed before it reached the Recommendation status. Despite this, it's implemented in some browsers, which will probably retain experimental support for it. For Firefox, you can use ::-moz-selection. More information here.
+
+#jQuery Usage
+
+jQuery can use all of these in its selectors, which is awesome. Even awesomer, jQuery has additional pseudo class selectors available.
+
+:first - Matches the first instance of the already matched set. This is different than :nth-child(1) which will only select if the selector matches and it's the first child. With :first, the selector matches, then it takes the first one it finds regardless of child position.
+
+:eq() - jQuery doesn't support :nth-of-type as a part of it's selector engine, but this is very similar.It does now. This selects the Xth element from the already-matched set. It's also zero-indexed (0 is the first element) unlike :nth-child in which the first element is 1.
+
+:contains('text') - This is removed from CSS, but it works in jQuery.
+
+:lt() - The same as :nth-child(-n+X), as in it selects the "first X elements"
+
+:gt() - The same as :nth-child(n+X), as in it selects everything except the "first (X-1) elements"
+
+:even - The same as :nth-child(even) or :nth-child(2n)
+
+:odd - The same as :nth-child(odd) or :nth-child(2n+1)
+
+:has() - Tests if the element has a descendant of a certain selector before matching, like :has("div.intro").
+
+There are actually a whole bunch more, and all of them are clever and useful (or at least an improvement on readability) See the selector documentation for more.
+
+NOTE: jQuery can't really help you with pseudo elements like ::before and ::after, but you can access their values in some browsers. E.g if a div had some ::before generated content, you could get the value like:
+
+var div = document.querySelector("div");
+
+var content = window
+  .getComputedStyle(div, '::before')
+  .getPropertyValue('content');
+#Specificity
+
+Class selectors and pseudo class selectors have the same specificity weight. Pseudo elements have the specificity of an element selector.
+
+li             {} /* specificity = 0,0,0,1 */
+li:first-child {} /* specificity = 0,0,1,1 */
+li:first-line  {} /* specificity = 0,0,0,2 */
+li.red         {} /* specificity = 0,0,1,1 */
+Typically they are used in conjunction or listed afterwards in CSS anyway, so hopefully it won't cause too many problems...
+
+ul li.friend { margin: 0 0 5px 0; }
+ul li:last-child { margin: 0; }
+In that case the zeroing out of the margin would work (assuming it matched the same element), but only because the zeroing out is listed second (they have the same specificity). So... watch for that.
+
+
+
+
+
+
+
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+        body {
+  line-height: 1.5;
+  padding: 4em 1em;
+}
+
+h2 {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+
+
+        body {
+  color: #555;
+}
+And in order to keep a decent level of contrast, let's pick a darker shade for important words
+
+h1,
+h2,
+strong {
+  color: #333;
+}
+        code,
+pre {
+  background: #eee;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+pre {
+  padding: 1em;
+}
+
+        body {
+  color: #566b78;
+}
+
+code,
+pre {
+  background: #f5f7f9;
+  border-bottom: 1px solid #d8dee9;
+  color: #a7adba;
+}
+
+pre {
+  border-left: 2px solid #69c;
+}
+        @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+
+
+        header {
+  background-color: #263d36;
+  background-image: url("header.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 1.2;
+  padding: 10vw 2em;
+  text-align: center;
+}
+Let's also add a logo
+
+header img {
+  display: inline-block;
+  height: 120px;
+  vertical-align: top;
+  width: 120px;
+}
+Let's take that opportunity to enhance the text styles.
+
+header h1 {
+  color: white;
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+header a {
+  border: 1px solid #e81c4f;
+  border-radius: 290486px;
+  color: white;
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: none 200ms ease-out;
+  transition-property: color, background;
+}
+
+header a:hover {
+  background:  #e81c4f;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+        @import url('https://fonts.googleapis.com/css?family=Rubik');
+
+body {
+  background: linear-gradient(135deg, #0f124a 0%, #1b2360 16%, #515b80 42%, #758391 58%, #e5e3b0 100%);
+}
+
+header {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rubik', sans-serif;
+  font-size: 2em;
+  height: 50vh;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  background-color: #fff;
+  max-width: 45em;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  padding: 3em;
+}
+
+section a {
+  color: #515b80;
+}
+
+section a:hover {
+  text-decoration: none;
+}
+
+section img {
+  border-bottom: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+  padding: 1.5em 0;
+  width: 100%;
+}
+
+@media all and (max-width: 600px) {
+  header {
+    font-size: 1.25em;
+  }
+  section {
+    padding: 1em;
+    background-color: transparent;
+    color: #fff;
+  }
+}
+
+
+
+
+
+
+
+        body {
+  background-color: red;
+  background-image: url('data:image/svg+xml,%3Csvg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z" fill="white" fill-opacity="1" fill-rule="evenodd"/%3E%3C/svg%3E');
+}
+
+
+
+
+
+        * {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+
+  background-position:
+    top 10px left 10px,
+    top 10px right 10px,
+    bottom 10px right 10px,
+    bottom 10px left 10px;
+
+  background-size: 86px;
+  background-repeat: no-repeat;
+
+  background-image:
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/angles-top-left.svg),
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/angles-top-right.svg),
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/angles-bottom-right.svg),
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/angles-bottom-left.svg);
+
+}
+
+
+
+
+        h1 {
+  font-size: 50px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+h1 span {
+  font-family: cursive;
+  position: relative;
+}
+
+h1 span::before,
+h1 span::after {
+  vertical-align: middle;
+  display: inline-block;
+  content: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/squiggle.svg);
+}
+
+h1 span::after {
+  transform: scaleX(-1);
+}
+
+
+
+        .tinted-image {
+
+  width: 300px;
+  height: 200px;
+
+  background:
+    /* top, transparent red */
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(255, 0, 0, 0.45)
+    ),
+    /* bottom, image */
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/owl1.jpg);
+}
+
+
+https://codepen.io/team/css-tricks/pen/vOpjXZ
+        .triangle {
+  height: 0;
+  width: 0;
+  border-left: 100px solid red;
+  border-right: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-top: 100px solid transparent;
+}
+
+
+
+
+        .diamond {
+  transform: rotate(45deg);
+  transform-origin: 0 100%;
+}
+
+
+        .pentagon {
+  position: relative;
+  width: 54px;
+  border-width: 50px 18px 0;
+  border-style: solid;
+  border-color: #01ff70 transparent;
+}
+
+.pentagon:before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -85px;
+  left: -18px;
+  border-width: 0 45px 35px;
+  border-style: solid;
+  border-color: transparent transparent #01ff70;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+        Kerning - Adjusting the spacing between two specific letters, to improve how a word looks aesthetically. Tracking is similar but refers to overall letter spacing.
+
+
+
+
+
+
+
+        <div class="cards">
+  <div class="card">
+    <h2><a href="#">Title</a></h2>
+    <p>Some article description stuff.</p>
+  </div>
+  <div class="card">
+    <h2><a href="#">Title</a></h2>
+    <p>Some article description stuff.</p>
+  </div>
+  <div class="card">
+    <h2><a href="#">Title</a></h2>
+    <p>Some article description stuff.</p>
+  </div>
+  <div class="card">
+    <h2><a href="#">Title</a></h2>
+    <p>Some article description stuff.</p>
+  </div>
+  <div class="card">
+    <h2><a href="#">Title</a></h2>
+    <p>Some article description stuff.</p>
+  </div>
+</div>
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #666;
+  overflow: hidden;
+}
+
+.cards {
+  display: flex;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 3px 3px 12px 2px rgba(0, 0, 0, 0.6);
+  transition: 0.2s;
+}
+
+.card:not(:first-child) {
+  margin-left: -2rem;
+}
+
+.card:not(:last-child):hover,
+.card:not(:last-child):focus-within {
+  transform: translateY(-1rem);
+}
+.card:not(:last-child):hover ~ .card,
+.card:not(:last-child):focus-within ~ .card {
+  transform: translateX(2rem);
+}
+
+
+
+
+
+
+
+
+
+    <div contenteditable>
+  Hey, I'm like a textarea kinda now!
+</div>
