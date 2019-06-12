@@ -16,15 +16,12 @@ class Command(BaseCommand):
         parser.add_argument('--parseIndex', action='store_true')
         parser.add_argument('--parseNow', action='store_true')
 
-        parser.add_argument('--parsePlanetaKino', action='store_true')
-
     def handle(self, *args, **options):
         # execution preparation
         if options['log']:
             total_start = time.time()
             total_items = 0
             print("┣ starting")
-        lens = [0]
 
         # parsing feedUpdate/feeds from feeds.py
         if options['parseFeeds']:
@@ -85,29 +82,6 @@ class Command(BaseCommand):
                     cycle_end = time.time()
                     cycle_time = round(cycle_end - cycle_start, 2)
                     print("┣ added " + current_feed.title + " x" + str(cycle_items) + " in " + str(cycle_time) + "s")
-
-        if options['parsePlanetaKino']:
-            # cycle preparation
-            if options['logEach']:
-                cycle_start = time.time()
-                cycle_items = 0
-
-            PlanetaKino.objects.all().delete()
-
-            # parsing
-            movies = PlanetaKino.list()
-            for each in movies:
-                each.save()
-
-                if options['log']:
-                    total_items += 1
-                if options['logEach']:
-                    cycle_items += 1
-
-            if options['logEach']:
-                cycle_end = time.time()
-                cycle_time = round(cycle_end - cycle_start, 2)
-                print("┣ added " + str(cycle_items) + " PlanetaKino items" + " in " + str(cycle_time) + "s")
 
         if options['log']:
             total_end = time.time()
