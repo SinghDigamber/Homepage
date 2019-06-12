@@ -1,5 +1,7 @@
 /* ul#feedUpdate */
-#feedUpdate {}
+#feedUpdate {
+    padding: 0;
+}
 #feedUpdate li {
     list-style-type: none;
     text-decoration: none;
