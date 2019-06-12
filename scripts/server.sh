@@ -18,7 +18,8 @@ sudo python3 -m pip install lxml # html parser
 sudo python3 -m pip install feedparser # rss parser
 sudo python3 -m pip install python-dateutil  # universally parsing dates
 
-rm -rf /home/pi/Projects/Homepage
+sudo rm -rf /home/pi/Projects/Homepage
+cd ~
 git clone https://github.com/OlehKrupko/Homepage /home/pi/Projects/Homepage
 
 # sudo cp ~/Projects/Homepage/scripts/homepage.server /etc/init.d/
