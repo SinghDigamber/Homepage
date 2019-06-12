@@ -1,6 +1,5 @@
 from django.views.generic import ListView
-from .models import weatherCast, weather_point
-import json
+from .models import weatherCast
 
 class weatherCastView(ListView):
     model = weatherCast
