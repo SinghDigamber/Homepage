@@ -1,0 +1,21 @@
+{% extends 'Homepage/base.html' %}
+
+{% block title %} » calenda » {{ fromView.page_title }}{% endblock %}
+
+{% block meta %}{% endblock %}
+
+{% block main %}
+    <div class="calenda_listView">
+        <h1>Calenda: {{ fromView.page_title }}</h1>
+
+        <ul>
+        {% for event in fromView.event_list %}
+            <li start="{{event.start|date:'Y/m/d-H:i' }}" end="{{event.end|date:'Y/m/d-H:i' }}" description="{{event.description}}">
+                <a href="{{ event.href }}"> [{{event.start|date:'Y/m/d-H:i' }}-{{event.end|date:'Y/m/d-H:i' }}] {{ event.title }}</a>
+            </li>
+        {% empty %}
+            <li>Oops, something went wrong. Empty!</li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

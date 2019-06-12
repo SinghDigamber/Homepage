@@ -32,6 +32,8 @@ urlpatterns = [
 
     url(r'^weatherCast/', include('weatherCast.urls', namespace="weatherCast")),
 
+    url(r'^calenda/', include('calenda.urls', namespace="calenda")),
+
     # permanent
     url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
         permanent=True), name="Trakt"),

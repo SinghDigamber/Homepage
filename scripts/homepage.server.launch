@@ -33,6 +33,7 @@ sudo systemctl daemon-reload
 
 # caching before launch
 python3 manage.py cacheUpdate --parseFeeds;
+python3 manage.py cacheCalendars --parseCalendars;
 
 # launch web server
 python3 /home/pi/Projects/Homepage/manage.py runserver 192.168.1.201:8000

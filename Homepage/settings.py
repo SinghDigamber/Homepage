@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'feedUpdate',
     'weatherCast',
-    'Dashboard'
+    'Dashboard',
+    'calenda',
 ]
 
 MIDDLEWARE = [
