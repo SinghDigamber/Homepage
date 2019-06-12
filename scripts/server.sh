@@ -1,6 +1,8 @@
 #!/bin/sh
 
 ssh pi@192.168.1.201
+sudo raspi-config
+
 python3 -m pip install -U --force-reinstall pip
 python3 -m pip install --upgrade pip
 sudo python3 -m pip install django~=2.0.2
