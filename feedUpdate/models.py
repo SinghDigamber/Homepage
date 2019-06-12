@@ -212,6 +212,16 @@ class feed(models.Model):
                     result_href = item["links"][0]["href"]
 
 
+                media_thumbnail = ""
+                try:
+                    media_thumbnail = item['media_thumbnail'][0]['url']
+                    media_thumbnail = len(media_thumbnail)
+                    if media_thumbnail >= 270:
+                        print("too long: " + self.title)
+                except KeyError:
+                    media_thumbnail = self.title
+                    # print("empty: " + media_thumbnail)
+
                 # FILTERING: passing item cycle if filter does not match
                 if self.filter is not None:
                     if result_name.find(self.filter) == -1 and result_href.find(self.filter) == -1:
@@ -271,6 +281,7 @@ class feedUpdate(models.Model):
         ordering = ['-datetime']
     name = models.CharField(max_length=140)
     href = models.CharField(max_length=210)
+    # href_thumbnail = models.CharField(max_length=140, null=True) # some links are waaay too long :(
     datetime = models.DateTimeField()
     title = models.CharField(max_length=42)
 
