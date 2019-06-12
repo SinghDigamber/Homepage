@@ -508,7 +508,6 @@ feeds = (
     feed(
         title='StanStepanenko',
         href='https://www.youtube.com/channel/UCTMcDOQJgX2ErslaQnKRwKw/videos',
-        emojis='💎'
     ),
     feed(
         title='АСтерликов',
@@ -688,6 +687,12 @@ feeds = (
         href='https://www.youtube.com/channel/UCDNXL3G7Mz594L1CVFp3CMQ/videos',
     ),
     feed(
+        title='Вася',
+        title_full='Vasile Capusceac',
+        href='https://www.youtube.com/channel/UCZ9anOdCq5rum2qvgVvQ-NQ/videos',
+        emojis='💎'
+    ),
+    feed(
         title='varlamov',
         href='https://www.youtube.com/channel/UC101o-vQ2iOj9vr00JUlyKw/videos',
     ),
@@ -776,6 +781,17 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='СвоимХодом',
+        title_full='Своим Ходом - Виталик и Лиза',
+        href='https://www.youtube.com/channel/UCBOCc9WU8ILvk8brsH7ey5w/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='ВасилийУРИЕВСКИЙ',
+        href='https://www.youtube.com/channel/UCQw9F3gP0R-m61O6PuFE2sQ/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Anidub',
         title_full='Anidub Online',
         href='feed:https://anidub.tv/rss.xml',
@@ -823,6 +839,12 @@ feeds = (
         title='RaspberryPiWeb',
         href='feed:https://www.raspberrypi.org/feed/',
         href_title='https://www.raspberrypi.org/blog/',
+        emojis='💎'
+    ),
+    feed(
+        title='УспГорСобытия',
+        href='feed:https://www.successful-city.com/category/events/feed/',
+        href_title='https://www.successful-city.com/category/events/',
         emojis='💎'
     ),
     feed(
@@ -899,6 +921,16 @@ feeds = (
         href_title='http://www.shadbase.com/',
         emojis='🏮💎',
         delay=42
+    ),
+    feed(
+        title='Readmanga',
+        href='http://readmanga.me/rss/index',
+        href_title='http://readmanga.me/',
+    ),
+    feed(
+        title='Mintmanga',
+        href='http://mintmanga.com/rss/index',
+        href_title='http://mintmanga.com/',
     ),
     feed(
         title='FisheyePlacebo',
@@ -1324,6 +1356,16 @@ feeds = (
         href_title='https://keddr.com/',
     ),
     feed(
+        title='RuRanobe',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/',
+    ),
+    feed(
+        title='RuRaWorks',
+        href='https://novel.tl/updates.rss',
+        href_title='https://novel.tl/',
+    ),
+    feed(
         title='Щит',
         title_full='Становление Героя Щита',
         href='https://ruranobe.ru/updates.rss',
@@ -1376,7 +1418,6 @@ feeds = (
         href='https://novel.tl/updates.rss',
         href_title='https://novel.tl/r/herd',
         filter='novel.tl/r/herd',
-        emojis='💎',
     ),
     feed(
         title='NieR',
@@ -1450,7 +1491,7 @@ feeds = (
         title='LiangXingTumblr',
         href='https://liang-xing.tumblr.com/rss',
         href_title='https://liang-xing.tumblr.com',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='EliasChatzoudisTumblr',
@@ -1511,7 +1552,7 @@ feeds = (
         title='ousawa_QuQ',
         href='https://twitrss.me/twitter_user_to_rss/?user=ousawa_QuQ',
         href_title='https://twitter.com/ousawa_QuQ',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='kalinkafox',
@@ -1597,7 +1638,7 @@ feeds = (
         title='bulumblebee',
         href='feed:https://twitrss.me/twitter_user_to_rss/?user=bulumblebee',
         href_title='https://twitter.com/bulumblebee',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='bangbez',
@@ -1699,7 +1740,7 @@ feeds = (
         title='OtakuApologist',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/OtakuApologist',
         href_title='http://www.hentai-foundry.com/pictures/user/OtakuApologist',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Toxxy',
@@ -1795,7 +1836,7 @@ feeds = (
         title='DeviantHunter',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/DeviantHunter',
         href_title='http://www.hentai-foundry.com/pictures/user/DeviantHunter',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='kajinman',
@@ -1945,13 +1986,13 @@ feeds = (
         title='Ganassa',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Ganassa',
         href_title='http://www.hentai-foundry.com/pictures/user/Ganassa',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='DrAltruist',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/DrAltruist',
         href_title='http://www.hentai-foundry.com/pictures/user/DrAltruist',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='aaaninja',
@@ -1969,13 +2010,13 @@ feeds = (
         title='hotpinkevilbunny',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/hotpinkevilbunny',
         href_title='http://www.hentai-foundry.com/pictures/user/hotpinkevilbunny',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Fetishhand',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Fetishhand',
         href_title='http://www.hentai-foundry.com/pictures/user/Fetishhand',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='MWooD',
@@ -2182,12 +2223,6 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='NobuONE',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/NobuONE',
-        href_title='http://www.hentai-foundry.com/pictures/user/NobuONE',
-        emojis='💎🏮'
-    ),
-    feed(
         title='R3dstar',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/R3dstar',
         href_title='http://www.hentai-foundry.com/pictures/user/R3dstar',
@@ -2353,7 +2388,7 @@ feeds = (
     feed(
         title='lindaroze',
         href='https://www.deviantart.com/lindaroze/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='scal2let',
@@ -2423,7 +2458,7 @@ feeds = (
     feed(
         title='Cobatsart',
         href='https://www.deviantart.com/cobatsart/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='grimphantom',
@@ -2503,7 +2538,7 @@ feeds = (
     feed(
         title='OlchaS',
         href='https://www.deviantart.com/olchas/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='KofJP',
@@ -2548,7 +2583,7 @@ feeds = (
     feed(
         title='ururuty',
         href='https://www.deviantart.com/ururuty/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='Kyoffie12',
@@ -2588,7 +2623,7 @@ feeds = (
     feed(
         title='upshdragoon',
         href='https://www.deviantart.com/upshdragoon/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='mleth',
@@ -2598,7 +2633,7 @@ feeds = (
     feed(
         title='MonoriRogue',
         href='https://www.deviantart.com/monorirogue/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='velladonna',
@@ -2948,12 +2983,12 @@ feeds = (
     feed(
         title='germanfetishball',
         href='https://www.instagram.com/germanfetishball/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='patriciablackpeony',
         href='https://www.instagram.com/patriciablackpeony/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='_fuxteufelswild_',
@@ -3068,6 +3103,11 @@ feeds = (
     feed(
         title='saiwsaiwsaiwInsta',
         href='https://www.instagram.com/saiwsaiwsaiw/',
+        emojis='🏮',
+    ),
+    feed(
+        title='annabonafide',
+        href='https://www.instagram.com/annabonafide/',
         emojis='🏮',
     ),
     feed(
@@ -3527,8 +3567,8 @@ feeds = (
     ),
     feed(
         title='mylatexbabyInst',
-        href='https://www.instagram.com/yle4ka_001/',
-        emojis='🏮',
+        href='https://www.instagram.com/mylatexbaby/',
+        emojis='💎🏮',
     ),
     feed(
         title='reiqinstagram',
@@ -3568,6 +3608,11 @@ feeds = (
     feed(
         title='ausriefel',
         href='https://www.instagram.com/ausriefel/',
+        emojis='🏮',
+    ),
+    feed(
+        title='astarithy',
+        href='https://www.instagram.com/astarithy/',
         emojis='🏮',
     ),
     feed(
@@ -3646,13 +3691,43 @@ feeds = (
         emojis='🏮',
     ),
     feed(
+        title='danielkopp_photo',
+        href='https://www.instagram.com/danielkopp_photo/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='nivalislava',
         href='https://www.instagram.com/nivalislava/',
         emojis='💎🏮',
     ),
     feed(
+        title='killstarco',
+        href='https://www.instagram.com/killstarco/',
+        emojis='🏮',
+    ),
+    feed(
+        title='fetyszek',
+        href='https://www.instagram.com/fetyszek/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='lady_kikki',
+        href='https://www.instagram.com/lady.kikki/',
+        emojis='🏮',
+    ),
+    feed(
+        title='kietkatharsis',
+        href='https://www.instagram.com/kietkatharsis/',
+        emojis='🏮',
+    ),
+    feed(
         title='nastyakyzmina63',
         href='https://www.instagram.com/nastyakyzmina63/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='kto_tebya_polybit_',
+        href='https://www.instagram.com/kto_tebya_polybit_/',
         emojis='💎🏮',
     ),
     feed(
@@ -3781,9 +3856,14 @@ feeds = (
         emojis='🏮',
     ),
     feed(
+        title='olgamadych',
+        href='https://www.instagram.com/olgamadych/',
+        emojis='🏮',
+    ),
+    feed(
         title='igradua',
         href='https://www.instagram.com/igradua/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='mimichan259',
@@ -3858,6 +3938,11 @@ feeds = (
     feed(
         title='rubberonion92',
         href='https://www.instagram.com/rubberonion92/',
+        emojis='🏮',
+    ),
+    feed(
+        title='koka_arty',
+        href='https://www.instagram.com/koka.arty/',
         emojis='🏮',
     ),
     feed(
@@ -4066,6 +4151,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='hellcats_playground',
+        href='https://www.instagram.com/hellcats_playground/',
+        emojis='🏮',
+    ),
+    feed(
         title='missfinelines',
         href='https://www.instagram.com/missfinelines/',
         emojis='🏮',
@@ -4118,6 +4208,26 @@ feeds = (
     feed(
         title='kruchkov_aleksey',
         href='https://www.instagram.com/kruchkov.aleksey/',
+        emojis='💎',
+    ),
+    feed(
+        title='ukraine_sport_events',
+        href='https://www.instagram.com/ukraine_sport_events/',
+        emojis='💎',
+    ),
+    feed(
+        title='artzavod_mechanica',
+        href='https://www.instagram.com/artzavod.mechanica/',
+        emojis='💎',
+    ),
+    feed(
+        title='game_zone_kharkov',
+        href='https://www.instagram.com/game_zone_kharkov/',
+        emojis='💎',
+    ),
+    feed(
+        title='khn_666',
+        href='https://www.instagram.com/khn_666/',
         emojis='💎',
     ),
 )
