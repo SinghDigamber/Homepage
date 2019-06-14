@@ -1,5 +1,6 @@
 from django.db import models
-from bs4 import BeautifulSoup, SoupStrainer; import requests
+from bs4 import BeautifulSoup, SoupStrainer;
+import requests
 from datetime import datetime, time
 
 
@@ -45,29 +46,3 @@ class PlanetaKino(models.Model):
             results.append(movie)
 
         return results
-
-
-class Dashboard(models.Model):
-    title = "Dashboard"
-    PlanetaKinoHREF = "https://planetakino.ua/kharkov/movies/"
-    movies = []
-
-    def __init__(self):
-        header_night = "Доброй ночи"
-        header_morning = "Доброе утро"
-        header_day = "Привет"
-        header_evening = "Доброго вечера"
-
-        now = datetime.now().time()
-        if now < time(6):
-            self.title = header_night
-        elif now < time(12):
-            self.title = header_morning
-        elif now < time(18):
-            self.title = header_day
-        else:
-            self.title = header_evening
-
-        self.title += ", сейчас [[ПОГОДА]]"
-
-        self.movies = PlanetaKino.objects.filter(inTheater=True)

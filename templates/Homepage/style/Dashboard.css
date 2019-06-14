@@ -5,7 +5,6 @@
     -webkit-overflow-scrolling: touch; /* [3] */
     -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
 }
-
 #PlanetaKino .poster {
     color: white;
     text-decoration: none;
