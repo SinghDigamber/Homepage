@@ -155,6 +155,21 @@ class weatherCast(models.Model):
 
         return result
 
+    def parse_json_weather_now_summary_compiled(json):
+        result_summary = json['currently']['summary']
+        result_summary = result_summary.lower()
+
+        result_temp = json['currently']['apparentTemperature']
+        result_temp = round(result_temp, 0)
+        result_temp = int(result_temp)
+        result_temp = str(result_temp)
+
+        return {
+            'summary': result_summary,
+            'temp': result_temp,
+        }
+
+
 class weather_point(models.Model):
     class Meta:
         ordering = ['-datetime']

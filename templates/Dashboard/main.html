@@ -5,6 +5,9 @@
 {% block main %}
     <h1>
         {{ fromView.title_daypart }}, сейчас
+        <span style="color: lightskyblue"><a href="{% url "weatherCast:index" %}">{{ fromView.title_weather.summary }}
+            <sup>{{ fromView.title_weather.temp }}°</sup>
+        </a></span>
     </h1>
 
     <h2>Сейчас в прокате</h2>
@@ -22,4 +25,26 @@
         <h3>Oops, something went wrong. Empty!</h3>
     {% endfor %}
     </div>
+
+
+    <ul id="feedUpdate">
+
+    <h1>Обновления
+    <span class="emojis lowercase"><nobr>
+        <a href="{% url "feedUpdate:tests" %}">⚙️</a>
+        <a href="{% url "feedUpdate:feeds" %}">📂</a>
+    </nobr></span>
+    </h1>
+
+    {% for chapter in fromView.feedUpdate_list %}
+        <li><span>
+            <a class="name" target="_blank" href="{{ chapter.href }}">
+                {% if fromView.multibook %}<span><strong>{{ chapter.title }}</strong></span>: {% endif %}
+                {{ chapter.name }}
+            </a>
+        </span></li>
+    {% empty %}
+        <li>Oops, something went wrong. Empty!</li>
+    {% endfor %}
+    </ul>
 {% endblock %}
