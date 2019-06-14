@@ -1,6 +1,7 @@
 from django.db import models
 from bs4 import BeautifulSoup, SoupStrainer;
 import requests
+from datetime import datetime
 
 
 class PlanetaKino(models.Model):
