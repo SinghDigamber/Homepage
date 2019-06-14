@@ -3981,12 +3981,14 @@ feeds = (
         emojis='💎',
     ),
     feed(
-        title='doppelgan_ger_',
+        title='ОляПерелётова1',
+        title_full='doppelgan_ger_ (Оля Перелётова)',
         href='https://www.instagram.com/doppelgan_ger_/',
         emojis='💎',
     ),
     feed(
-        title='germina_shto_eto',
+        title='ОляПерелётова2',
+        title_full='germina_shto_eto (Оля Перелётова)',
         href='https://www.instagram.com/germina_shto_eto/',
         emojis='💎',
     ),
