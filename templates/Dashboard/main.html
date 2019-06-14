@@ -39,7 +39,7 @@
     {% for chapter in fromView.feedUpdate_list %}
         <li><span>
             <a class="name" target="_blank" href="{{ chapter.href }}">
-                {% if fromView.multibook %}<span><strong>{{ chapter.title }}</strong></span>: {% endif %}
+                <span><strong>{{ chapter.title }}</strong></span>:
                 {{ chapter.name }}
             </a>
         </span></li>
