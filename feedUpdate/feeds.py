@@ -150,21 +150,23 @@ feeds = (
         href='https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA/videos',
     ),
     feed(
-        title='Cosplay01',
-        title_full='bky guy',
+        title='BKYguy',
         href='https://www.youtube.com/channel/UCF2mFIUwbn6bANVq8xbmjdg/videos',
         emojis='🏮',
     ),
     feed(
-        title='Cosplay02',
-        title_full='Herzlocast',
+        title='Herzlocast',
         href='https://www.youtube.com/channel/UCOCTIJiEVbSQaXeaScId_cQ/videos',
         emojis='🏮',
     ),
     feed(
-        title="Cosplay03",
-        title_full="Milligan Vick",
+        title="MilliganVick",
         href="https://www.youtube.com/channel/UCPi1NLlECKm4VGpNjDUiBmg/videos",
+        emojis='🏮',
+    ),
+    feed(
+        title='EveninkCosplay',
+        href='https://www.youtube.com/channel/UCAP-A1cd2MEzt16eyjCbtVQ/videos',
         emojis='🏮',
     ),
     feed(
@@ -909,6 +911,12 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='AppleNewsroom',
+        href='feed:https://www.apple.com/ru/newsroom/rss-feed.rss',
+        href_title='https://www.apple.com/ru/newsroom/',
+        emojis='💎'
+    ),
+    feed(
         title='КабМин',
         title_full='Кабинет Министров Украины',
         href='https://www.kmu.gov.ua/api/rss',
@@ -1361,11 +1369,6 @@ feeds = (
         href_title='https://ruranobe.ru/',
     ),
     feed(
-        title='RuRaWorks',
-        href='https://novel.tl/updates.rss',
-        href_title='https://novel.tl/',
-    ),
-    feed(
         title='Щит',
         title_full='Становление Героя Щита',
         href='https://ruranobe.ru/updates.rss',
@@ -1413,11 +1416,23 @@ feeds = (
         emojis='💎',
     ),
     feed(
+        title='RuRaWorks',
+        href='https://novel.tl/updates.rss',
+        href_title='https://novel.tl/',
+    ),
+    feed(
         title='ПастухБогов',
         title_full='Сказания о Пастухе Богов (остановился на т1г66)',
         href='https://novel.tl/updates.rss',
         href_title='https://novel.tl/r/herd',
         filter='novel.tl/r/herd',
+    ),
+    feed(
+        title='Нежить',
+        title_full='Нежеланный бессмертный авантюрист',
+        href='https://novel.tl/updates.rss',
+        href_title='https://novel.tl/r/nfnb',
+        filter='novel.tl/r/nfnb',
     ),
     feed(
         title='NieR',
@@ -2052,7 +2067,7 @@ feeds = (
         title='GloomFlower',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/GloomFlower',
         href_title='http://www.hentai-foundry.com/pictures/user/GloomFlower',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='BumbleBorb',
@@ -2136,7 +2151,7 @@ feeds = (
         title='customwaifus',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/customwaifus',
         href_title='http://www.hentai-foundry.com/pictures/user/customwaifus',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='wander',
@@ -2608,7 +2623,7 @@ feeds = (
     feed(
         title='ganassa',
         href='https://www.deviantart.com/ganassa/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='gtunver',
@@ -2783,6 +2798,11 @@ feeds = (
     feed(
         title='adrianova_ph',
         href='https://www.instagram.com/adrianova.ph/',
+        emojis='🏮',
+    ),
+    feed(
+        title='evenink_cosplay',
+        href='https://www.instagram.com/evenink_cosplay/',
         emojis='🏮',
     ),
     feed(
