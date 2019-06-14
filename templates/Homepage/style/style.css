@@ -9,3 +9,18 @@ main {
     max-width: 800px;
     margin: 0 auto;
 }
+h1 {
+    font-size: 44px;
+    line-height: 0.66;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+h1 span.lowercase {
+    font-size: 75%;
+}
+h1 sup {
+    font-size: 75%;
+}
+h1 span a:any-link {
+    text-decoration: none;
+    color: inherit;
+}
