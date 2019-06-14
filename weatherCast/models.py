@@ -11,7 +11,6 @@ from datetime import datetime
 class weatherCast(models.Model):
     location = "50.042836,36.352614"
     flags = "?lang=ru&units=si"
-    # baseURLexample="https://api.darksky.net/forecast/d372cd235cbdf209f6a075fbf35f262d/37.8267,-122.4233"
     baseURL = "https://api.darksky.net/forecast/d372cd235cbdf209f6a075fbf35f262d/"+location+flags
 
     # download weather forecast
@@ -38,11 +37,6 @@ class weatherCast(models.Model):
     def parse_json_weather(json):
         # parse weather
         result = []
-        result.append(weather_summary(
-            sum_now=json['currently']['summary'],
-            sum_day=json['hourly']['summary'],
-            sum_week=json['daily']['summary']
-        ))
         #result.append("---- Current Weather: ----")
         #result.append(json['currently']['summary'])
         result.append(weather_point(
@@ -152,14 +146,13 @@ class weatherCast(models.Model):
 
         return result
 
+    def parse_json_weather_summary(json):
+        result = {
+            'now': json['currently']['summary'],
+            'day': json['hourly']['summary'],
+            'week': json['daily']['summary']
+        }
 
-class weather_summary(models.Model):
-    sum_now = models.CharField(max_length=140)
-    sum_day = models.CharField(max_length=140)
-    sum_week = models.CharField(max_length=140)
-
-    def __str__(self):
-        result = "sum_now: " + self.sum_now + " | " + "sum_day: " + self.sum_day + " | " + "sum_week: " + self.sum_week
         return result
 
 class weather_point(models.Model):

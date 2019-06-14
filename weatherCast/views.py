@@ -11,10 +11,10 @@ class weatherCastView(ListView):
         page_title = "Погода"
 
         # calculations
-        result_forecast = weatherCast.download_weather_forecast()
-        result_forecast = weatherCast.parse_json_weather(result_forecast)
+        json = weatherCast.download_weather_forecast()
 
-        result_summary = result_forecast.pop(0)
+        result_forecast = weatherCast.parse_json_weather(json)
+        result_summary = weatherCast.parse_json_weather_summary(json)
 
         temp_min = min(forecast.temp for forecast in result_forecast)
         temp_max = max(forecast.temp for forecast in result_forecast)
