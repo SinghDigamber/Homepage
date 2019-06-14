@@ -23,7 +23,7 @@ class feedTestsView(ListView):
 
         # feed testing
         errors_regexp = ''
-        pattern = re.compile("^([0-9|а-я|А-Я|a-z|A-Z|_|—])+$")
+        pattern = re.compile("^([0-9|а-я|ё|А-Я|Ё|a-z|A-Z|_|+|—])+$")
         for each in feed_list:
             if not pattern.match(each.title):
                 errors_regexp += each.title + "; "
