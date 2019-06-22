@@ -129,7 +129,7 @@ class feedUpdateIndexView(ListView):
 
     def get_queryset(self):
         # constants
-        items_limit = 42
+        items_limit = 420
 
         # calculations
         # multibook checker
