@@ -3,6 +3,7 @@ from feedUpdate.models import feedUpdate, feed
 from Dashboard.models import PlanetaKino
 import time
 from datetime import datetime
+from tqdm import tqdm
 
 class Command(BaseCommand):
     help = 'updates caches in DB'
@@ -10,6 +11,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('--log', action='store_true')
         parser.add_argument('--logEach', action='store_true')
+        parser.add_argument('--logBar', action='store_true')
 
         parser.add_argument('--parseFeeds', action='store_true')
         parser.add_argument('--parseAll', action='store_true')
@@ -58,6 +60,8 @@ class Command(BaseCommand):
                 parse_feeds = list(feed.feeds_by_emoji())
 
             # parsing
+            if options['logBar']:
+                parse_feeds = tqdm(parse_feeds)
             for current_feed in parse_feeds:
                 # cycle preparation
                 if options['logEach']:
