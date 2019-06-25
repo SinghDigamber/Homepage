@@ -53,7 +53,6 @@ class Command(BaseCommand):
                 print("┣ added " + str(cycle_items) + " feeds in " + str(cycle_time) + "s")
 
         # caching feedUpdates for feeds stored in DB
-        # TODO: add progressbar option
         if options['parseAll'] or options['parseIndex']:
             # prepare list of feeds to parse
             parse_feeds = []
