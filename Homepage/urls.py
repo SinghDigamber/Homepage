@@ -33,16 +33,4 @@ urlpatterns = [
     url(r'^weatherCast/', include('weatherCast.urls', namespace="weatherCast")),
 
     url(r'^calenda/', include('calenda.urls', namespace="calenda")),
-
-    # permanent
-    url(r'^trakt/$', RedirectView.as_view(url='https://trakt.tv/users/olehkrupko/progress/watched/activity',
-        permanent=True), name="Trakt"),
-    url(r'^Github/$', RedirectView.as_view(url='https://github.com/OlehKrupko/Homepage',
-        permanent=True), name="GitHub"),
-    url(r'^Telegram/$', RedirectView.as_view(url='https://t.me/olehkrupko',
-        permanent=True), name="Telegram"),
-    url(r'^Pi-hole/$', RedirectView.as_view(url='http://192.168.1.201/admin/',
-        permanent=True), name="Pi-hole"),
-    url(r'^router-admin/$', RedirectView.as_view(url='http://192.168.1.1:8081',
-        permanent=True), name="router-admin"),
 ]
