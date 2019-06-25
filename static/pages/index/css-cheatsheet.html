@@ -577,3 +577,119 @@ body {
     <div contenteditable>
   Hey, I'm like a textarea kinda now!
 </div>
+
+
+
+
+
+
+NoJS: https://habr.com/ru/post/320668/
+
+
+
+
+
+
+https://blog.prototypr.io/stunning-hover-effects-with-css-variables-f855e7b95330
+    <button class="button">
+    <span>Hover me I'm awesome</span>
+</button>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: white;
+}
+
+.button {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #f72359;
+  padding: 1em 2em;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.button span {
+  position: relative;
+  pointer-events: none;
+}
+.button::before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #4405f7, transparent);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: width .2s ease, height .2s ease;
+}
+.button:hover::before {
+  --size: 400px;
+}
+
+
+
+
+
+    material design
+
+
+
+
+
+
+    https://htmlhead.dev
+
+
+
+
+
+
+
+
+
+    https://github.com/ihorzenich/html5checklist/
+
+
+
+
+
+
+
+
+https://30-seconds.github.io/30-seconds-of-css/
+
+
+
+
+
+    https://codyhouse.co/gem/schedule-template
+
+
+
+
+
+    https://clipboardjs.com
+
+
+
+
+
+
+    http://iamceege.github.io/tooltipster/
+
+
+
+
+https://www.zachleat.com/web/snarky/
