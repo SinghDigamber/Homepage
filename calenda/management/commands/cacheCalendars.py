@@ -58,16 +58,12 @@ class Command(BaseCommand):
                     cycle_items = 0
 
                 for each in current_calendar.parse():
-                    # checking if href is cached
-                    cached = event.objects.filter(href=each.href).exists()
-
-                    if not cached:
-                        #print(len(each.title))
-                        each.save()
-                        if options['log']:
-                            total_items += 1
-                        if options['logEach']:
-                            cycle_items += 1
+                    # TODO: check for duplicates
+                    each.save()
+                    if options['log']:
+                        total_items += 1
+                    if options['logEach']:
+                        cycle_items += 1
 
                 if options['logEach']:
                     cycle_end = time.time()
