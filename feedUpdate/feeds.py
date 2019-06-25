@@ -4036,7 +4036,7 @@ feeds = (
     feed(
         title='sakuraflorr',
         href='https://www.instagram.com/sakuraflorr/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='zeteam2019',
