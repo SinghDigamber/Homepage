@@ -10,10 +10,10 @@ class event(models.Model):
     class Meta:
         ordering = ['start']
     title = models.CharField(max_length=42)
-    description = models.CharField(max_length=420)
+    description = models.CharField(max_length=420, null=True)
     calendar = models.CharField(max_length=42)
 
-    href = models.CharField(max_length=420)
+    href = models.CharField(max_length=420, null=True)
     start = models.DateTimeField()
     end = models.DateTimeField(null=True)
 
@@ -158,38 +158,65 @@ class calendar(models.Model):
                         calendar=self.title
                     ))
 
-        if self.href.find('https://kharkov.internet-bilet.ua') != -1:
+        if self.href.find('webcal://') != -1:
+            self.href = 'http://'+self.href[9:]
             soup = requests.get(self.href)
-            soupStrainer = SoupStrainer('ul', attrs={'class': 'events-list-style'})
-            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+            soup = BeautifulSoup(soup.text, "html.parser")
+            soup = str(soup)
 
-            for li in soup.find_all('li'):
-                #print(li)
+            # cutting calendars' metadata leaving events only
+            soup = soup[soup.find('BEGIN:VEVENT'):]
+            soup = soup.split('END:VEVENT')
+            soup = soup[:-1]
+
+            result_title = ""
+            result_description = ""
+            result_href = ""
+            result_start = ""
+            result_end = ""
+
+            for each_event in soup:
+                for each in each_event.splitlines():
+                    if each.find("DTSTART;TZID=") != -1:
+                        # EXAMPLE: DTSTART;TZID=Europe/Kiev:20190626T120000
+                        result_start = each.find(":")+len(":")
+                        result_start = each[result_start:]
+                        result_start = datetimeparser.parse(result_start)
+                        #print("start:", result_start)
+                    elif each.find("DTEND;TZID=") != -1:
+                        # EXAMPLE: DTEND;TZID=Europe/Kiev:20190626T130000
+                        result_end = each.find(":")+len(":")
+                        result_end = each[result_end:]
+                        result_end = datetimeparser.parse(result_end)
+                        #print("end:", result_end)
+                    elif each.find("SUMMARY:") != -1:
+                        # EXAMPLE: SUMMARY:Новое событие
+                        result_title = each_event.find("SUMMARY:")+len("SUMMARY:")
+                        result_title = each_event[result_title:]
+                        result_title = result_title[:result_title.find("\n")]
+                        #print("title:", result_title)
+                    elif each.find("URL;VALUE=URI:") != -1:
+                        # EXAMPLE: URL;VALUE=URI:http://google.com
+                        result_href = each_event.find("URL;VALUE=URI:")+len("URL;VALUE=URI:")
+                        result_href = each_event[result_href:]
+                        result_href = result_href[:result_href.find("\n")]
+                        #print("href:", result_href)
+                    elif each.find("DESCRIPTION:") != -1:
+                        # EXAMPLE: DESCRIPTION:DESCRIPTION
+                        result_description = each_event.find("DESCRIPTION:")+len("DESCRIPTION:")
+                        result_description = each_event[result_description:]
+                        result_description = result_description[:result_description.find("\n")]
+                        #print("description:", result_description)
+
                 #print("\n\n----new----\n\n")
-
-                result_title = li.find('img')['alt']
-                result_city = li.find('span', attrs={'class': 'city'}).getText()
-                result_place = li.find('span', attrs={'class': 'place'}).getText()
-                result_title = result_title +', '+ result_city +', '+ result_place
-                # print(result_title)
-
-                result_href = li.find('a')['href']
-                # print(result_href)
-
-                result_start = li.find('meta', attrs={'itemprop': 'startDate'})['content']
-                result_start = datetimeparser.parse(result_start)
-                # print(result_start)
-
-                result_end = result_start + timedelta(0, 2*60*60)
 
                 result.append(event(
                     title=result_title[:42],
-                    description=result_title,
+                    description=result_description[:420],
                     href=result_href,
                     start=result_start,
                     end=result_end,
                     calendar=self.title
                 ))
-
 
         return result
