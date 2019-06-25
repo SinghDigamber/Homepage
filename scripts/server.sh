@@ -17,6 +17,7 @@ sudo apt-get install libxml2-dev libxslt1-dev # requied for lxml
 sudo python3 -m pip install lxml # html parser
 sudo python3 -m pip install feedparser # rss parser
 sudo python3 -m pip install python-dateutil  # universally parsing dates
+sudo python3 -m pip install tqdm  # progressbar for caching scripts
 
 sudo rm -rf /home/pi/Projects/Homepage
 cd ~
