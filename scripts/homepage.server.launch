@@ -32,7 +32,7 @@ sudo systemctl enable homepage.server.reload.timer
 sudo systemctl daemon-reload
 
 # caching before launch
-python3 manage.py cacheFeedUpdate --parseFeeds;
+# python3 manage.py cacheFeedUpdate --parseFeeds;
 python3 manage.py cacheCalendars --parseCalendars;
 
 # launch web server
