@@ -27,33 +27,30 @@ class Command(BaseCommand):
 
         # parsing feedUpdate/feeds from feeds.py
         if options['parseFeeds']:
-            if True == True:
-                print("it is not allowed: https://trello.com/c/ImgO2SiX")
-            else:
-                # cycle preparation
+            # cycle preparation
+            if options['logEach']:
+                cycle_start = time.time()
+                cycle_items = 0
+
+            # removing all old feeds to avoid conflicts
+            feed.objects.all().delete()
+
+            # parsing from file to database
+            parse_feeds = feed.feeds_from_file()
+            if options['logBar']:
+                parse_feeds = tqdm(parse_feeds)
+            for each in parse_feeds:
+                each.save()
+                if options['log']:
+                    total_items += 1
                 if options['logEach']:
-                    cycle_start = time.time()
-                    cycle_items = 0
+                    cycle_items += 1
 
-                # removing all old feeds to avoid conflicts
-                feed.objects.all().delete()
-
-                # parsing from file to database
-                parse_feeds = feed.feeds_from_file()
-                if options['logBar']:
-                    parse_feeds = tqdm(parse_feeds)
-                for each in parse_feeds:
-                    each.save()
-                    if options['log']:
-                        total_items += 1
-                    if options['logEach']:
-                        cycle_items += 1
-
-                # cycle result printing
-                if options['logEach']:
-                    cycle_end = time.time()
-                    cycle_time = round(cycle_end - cycle_start, 2)
-                    print("┣ added " + str(cycle_items) + " feeds in " + str(cycle_time) + "s")
+            # cycle result printing
+            if options['logEach']:
+                cycle_end = time.time()
+                cycle_time = round(cycle_end - cycle_start, 2)
+                print("┣ added " + str(cycle_items) + " feeds in " + str(cycle_time) + "s")
 
         # caching feedUpdates for feeds stored in DB
         if options['parseAll'] or options['parseIndex']:
