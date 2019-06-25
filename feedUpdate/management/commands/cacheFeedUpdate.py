@@ -36,7 +36,10 @@ class Command(BaseCommand):
             feed.objects.all().delete()
 
             # parsing from file to database
-            for each in feed.feeds_from_file():
+            parse_feeds = feed.feeds_from_file()
+            if options['logBar']:
+                parse_feeds = tqdm(parse_feeds)
+            for each in parse_feeds:
                 each.save()
                 if options['log']:
                     total_items += 1
