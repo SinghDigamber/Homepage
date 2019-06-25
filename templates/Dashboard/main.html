@@ -5,7 +5,7 @@
 {% block main %}
     <h1>
         {{ fromView.title_daypart }}, сейчас
-        <span style="color: lightskyblue"><a href="{% url "weatherCast:index" %}">{{ fromView.title_weather.summary }}
+        <span style="color: lightskyblue"><a href="{% url "weatherCast:index" %}">{{ fromView.title_weather.summary }},
             <sup>{{ fromView.title_weather.temp }}°</sup>
         </a></span>
     </h1>
