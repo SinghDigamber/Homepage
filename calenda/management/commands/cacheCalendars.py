@@ -1,7 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from calenda.models import calendar, event
 import time
-from datetime import datetime
 
 class Command(BaseCommand):
     help = 'updates caches in DB'
