@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from calenda.models import calendar, event
 import time
+from tqdm import tqdm
 
 class Command(BaseCommand):
     help = 'updates caches in DB'
@@ -8,6 +9,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('--log', action='store_true')
         parser.add_argument('--logEach', action='store_true')
+        parser.add_argument('--logBar', action='store_true')
 
         parser.add_argument('--parseCalendars', action='store_true')
         parser.add_argument('--parseEvents', action='store_true')
@@ -29,8 +31,11 @@ class Command(BaseCommand):
             # removing all old feeds to avoid conflicts
             calendar.objects.all().delete()
 
+            parse_calendars = list(calendar.calendars_from_file())
+            if options['logBar']:
+                parse_calendars = tqdm(parse_calendars)
             # parsing from file to database
-            for each in calendar.calendars_from_file():
+            for each in parse_calendars:
                 each.save()
                 if options['log']:
                     total_items += 1
@@ -44,12 +49,14 @@ class Command(BaseCommand):
                 print("┣ added " + str(cycle_items) + " feeds in " + str(cycle_time) + "s")
 
         # caching feedUpdates for feeds stored in DB
-        # TODO: add progressbar option
         if options['parseEvents']:
             event.objects.all().delete()
-            parse_calendars = list(calendar.objects.all())
 
-            # parsing
+            parse_calendars = list(calendar.objects.all())
+            if options['logBar']:
+                parse_calendars = tqdm(parse_calendars)
+
+            # parsing from file to database
             for current_calendar in parse_calendars:
                 # cycle preparation
                 if options['logEach']:
