@@ -116,6 +116,39 @@ class calendar(models.Model):
                         calendar=self.title
                     ))
 
+        if self.href.find('https://kharkov.internet-bilet.ua') != -1:
+            soup = requests.get(self.href)
+            soupStrainer = SoupStrainer('ul', attrs={'class': 'events-list-style'})
+            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+
+            for li in soup.find_all('li'):
+                #print(li)
+                #print("\n\n----new----\n\n")
+
+                result_title = li.find('img')['alt']
+                result_city = li.find('span', attrs={'class': 'city'}).getText()
+                result_place = li.find('span', attrs={'class': 'place'}).getText()
+                result_title = result_title +', '+ result_city +', '+ result_place
+                # print(result_title)
+
+                result_href = li.find('a')['href']
+                # print(result_href)
+
+                result_start = li.find('meta', attrs={'itemprop': 'startDate'})['content']
+                result_start = datetimeparser.parse(result_start)
+                # print(result_start)
+
+                result_end = result_start + timedelta(0, 2*60*60)
+
+                result.append(event(
+                    title=result_title[:42],
+                    description=result_title,
+                    href=result_href,
+                    start=result_start,
+                    end=result_end,
+                    calendar=self.title
+                ))
+
         if self.href.find('http://xtt.herokuapp.com/plan.ics') != -1:
             soup = requests.get(self.href)
             soup = BeautifulSoup(soup.text, "html.parser")

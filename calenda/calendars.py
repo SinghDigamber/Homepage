@@ -33,4 +33,22 @@ calendars = (
         href='https://kharkov.internet-bilet.ua',
         emojis='💎'
     ),
+    calendar(
+        title='МойКалендарь',
+        title_full='Мой/Календарь',
+        href='webcal://p23-calendars.icloud.com/published/2/AAAAAAAAAAAAAAAAAAAAADGKiNVIE_4PnUn5RgDzwhKEVCgLOwAw3XN5k3Fo7LNnLjiiSMubYE0h-TVQjc2xQsnURnMtPi-RoebOv3_f-Zk',
+        emojis='💎'
+    ),
+    calendar(
+        title='МойРазвитие',
+        title_full='Мой/Развитие',
+        href='webcal://p23-calendars.icloud.com/published/2/AAAAAAAAAAAAAAAAAAAAADpDGy5wQRYJFPkAJFU_2jEZY8S66GOWvenhQ5U-9doIwmzgZOs5-v5UMrF1heVvNh_nPdSAWOKMflkgGbkD5q8',
+        emojis='💎'
+    ),
+    calendar(
+        title='МойОтдых',
+        title_full='Мой/Отдых',
+        href='webcal://p23-calendars.icloud.com/published/2/AAAAAAAAAAAAAAAAAAAAAPQHJdmSH17t_eWUafno4QYmcmt3G29iA5HdqyeW-HUdQFnJuZyfZDNf3DUnI7_HuzN6dFJoakoQAs47wiuxl7k',
+        emojis='💎'
+    ),
 )
