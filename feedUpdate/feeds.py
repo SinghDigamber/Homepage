@@ -677,6 +677,12 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='Бар',
+        title_full='Бар в большом городе',
+        href='https://www.youtube.com/channel/UCUbJYQmp_gAQWtaZn0ddO1w/videos',
+        emojis='💎'
+    ),
+    feed(
         title='ВладимирЧайкин',
         href='https://www.youtube.com/channel/UC_mPBfl442yiubiPyswqulA/videos',
     ),
