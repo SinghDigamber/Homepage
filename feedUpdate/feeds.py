@@ -2531,7 +2531,7 @@ feeds = (
     feed(
         title='axsens',
         href='https://www.deviantart.com/axsens/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='lindaroze',
@@ -2736,7 +2736,7 @@ feeds = (
     feed(
         title='Kyoffie12',
         href='https://www.deviantart.com/kyoffie12/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='logancure',
