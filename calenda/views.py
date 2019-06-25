@@ -8,7 +8,7 @@ class eventListView(ListView):
     context_object_name = "fromView"
 
     def get_queryset(self):
-        items_limit = 42
+        # items_limit = 4200
 
         event_list = event.objects.all()
         # today
@@ -17,5 +17,6 @@ class eventListView(ListView):
 
         return {
             'page_title': "cписок",
-            'event_list': event_list[:items_limit],
+            # 'event_list': event_list[:items_limit],
+            'event_list': event_list,
         }
