@@ -78,7 +78,7 @@ class feed(models.Model):
 
             for each in request['result']['parts']:
                 result.append(feedUpdate(
-                    name=each["title"],
+                    name=each["title"][:140],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
                     datetime=datetime.fromtimestamp(each["publishedAt"]),
                     title=self.title))
@@ -113,11 +113,10 @@ class feed(models.Model):
                         result_datetime = datetime.fromtimestamp(result_datetime)
 
                         result.append(feedUpdate(
-                            name=result_name,
+                            name=result_name[:140],
                             href=result_href,
                             datetime=result_datetime,
-                            title=self.title
-                        ))
+                            title=self.title))
 
         # custom RSS YouTube converter (link to feed has to be converted manually)
         elif self.href.find('https://www.youtube.com/channel/') != -1:
@@ -160,7 +159,7 @@ class feed(models.Model):
                     result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
 
                     result.append(feedUpdate(
-                        name=result_name,
+                        name=result_name[:140],
                         href=result_href,
                         datetime=result_datetime,
                         title=self.title))
@@ -189,7 +188,7 @@ class feed(models.Model):
                 result_datetime = datetime.now()
 
                 result.append(feedUpdate(
-                    name=result_name,
+                    name=result_name[:140],
                     href=result_href,
                     datetime=result_datetime,
                     title=self.title))
@@ -242,7 +241,7 @@ class feed(models.Model):
 
                 # APPEND RESULT
                 result.append(feedUpdate(
-                    name=result_name,
+                    name=result_name[:140],
                     href=result_href,
                     datetime=result_datetime,
                     title=self.title))
@@ -260,6 +259,7 @@ class feed(models.Model):
                 each.datetime += timedelta(hours=self.delay)
 
             # NAME fixes
+            each.name = ' '.join(each.name.split())
             # SQLite does not support max-length
             each.name = each.name[:140]
             # extra symbols
