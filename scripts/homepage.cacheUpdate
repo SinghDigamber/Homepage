@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-python3 manage.py cacheFeedUpdate --parseAll --parseNow;
+python3 manage.py cacheFeedUpdate --parseIndex --parseNow;
 python3 manage.py cachePlanetaKino;
 python3 manage.py cacheCalendars --parseEvents;
