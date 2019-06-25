@@ -62,6 +62,8 @@ class Command(BaseCommand):
                 parse_feeds = list(feed.feeds_by_emoji())
 
             # parsing
+            if options['parseNow']:
+                parse_feeds = reversed(parse_feeds)
             if options['logBar']:
                 parse_feeds = tqdm(parse_feeds)
             for current_feed in parse_feeds:
