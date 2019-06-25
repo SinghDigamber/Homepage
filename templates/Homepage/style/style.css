@@ -20,7 +20,7 @@ h1 span.lowercase {
 h1 sup {
     font-size: 75%;
 }
-h1 span a:any-link {
+h1 span a:any-link, h2 a:any-link {
     text-decoration: none;
     color: inherit;
 }
