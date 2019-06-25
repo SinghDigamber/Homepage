@@ -5,7 +5,7 @@
 {% block meta %}<meta http-equiv="refresh" content="600" >{% endblock %}
 
 {% block main %}
-    <ul id="feedUpdate">
+    <ul class="red feedUpdate-feeds">
 
     <h1>{{ fromView.page_title }}</h1>
 
@@ -27,7 +27,7 @@
                 {% if fromView.multibook %}<span><strong>{{ chapter.title }}</strong></span>: {% endif %}
                 {{ chapter.name }}
             </a>
-            <span class="datetime">on {{chapter.datetime|date:'Y-m-d H:i' }}</span>
+            <span><a class="grey">on {{chapter.datetime|date:'Y-m-d H:i' }}</a></span>
         </span></li>
     {% empty %}
         <li>Oops, something went wrong. Empty!</li>
