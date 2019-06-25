@@ -940,12 +940,6 @@ feeds = (
         emojis='💎'
     ),
     feed(
-        title='WylsaWeb',
-        href='feed:https://wylsa.com/feed/',
-        href_title='https://wylsa.com/',
-        emojis='💎'
-    ),
-    feed(
         title='ДвухколёсныеХроникиWeb',
         href='http://twowheeledchronicles.com/feed/',
         href_title='http://twowheeledchronicles.com/',
@@ -2419,11 +2413,6 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='neetbi',
-        href='https://www.deviantart.com/neetbi/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
         title='inkytentaclemonster',
         href='https://www.deviantart.com/inkytentaclemonster/gallery/',
         emojis='💎🏮',
@@ -2451,11 +2440,6 @@ feeds = (
     feed(
         title='sade75311',
         href='https://www.deviantart.com/sade75311/gallery/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='argrim',
-        href='https://www.deviantart.com/argrim/gallery/',
         emojis='💎🏮',
     ),
     feed(
