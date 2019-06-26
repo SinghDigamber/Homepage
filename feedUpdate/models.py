@@ -73,14 +73,14 @@ class feed(models.Model):
         # custom ранобэ.рф API import
         # Warning! API can be closed
         if self.href.find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            request = "https://xn--80ac9aeh6f.xn--p1ai/v1/book/get/?bookAlias="+self.href[31:-1]
+            request = "https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/"+self.href[31:-1]
             request = requests.get(request).json()
 
-            for each in request['result']['parts']:
+            for each in request['chapters']:
                 result.append(feedUpdate(
                     name=each["title"][:140],
                     href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
-                    datetime=datetime.fromtimestamp(each["publishedAt"]),
+                    datetime=datetime.strptime(each["publishTime"], '%Y-%m-%d %H:%M:%S'),
                     title=self.title))
 
         # custom instagram import
