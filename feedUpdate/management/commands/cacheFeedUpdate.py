@@ -62,8 +62,6 @@ class Command(BaseCommand):
                 parse_feeds = list(feed.feeds_by_emoji())
 
             # parsing
-            if options['parseNow']:
-                parse_feeds = reversed(parse_feeds)
             if options['logBar']:
                 parse_feeds = tqdm(parse_feeds)
             for current_feed in parse_feeds:
@@ -72,7 +70,10 @@ class Command(BaseCommand):
                     cycle_start = time.time()
                     cycle_items = 0
 
-                for each in current_feed.parse():
+                feedUpdate_list = current_feed.parse()
+                if options['parseNow']:
+                    feedUpdate_list = reversed(feedUpdate_list)
+                for each in feedUpdate_list:
                     # checking if href is cached
                     cached = feedUpdate.objects.filter(href=each.href).exists()
 
