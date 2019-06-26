@@ -77,11 +77,12 @@ class feed(models.Model):
             request = requests.get(request).json()
 
             for each in request['chapters']:
-                result.append(feedUpdate(
-                    name=each["title"][:140],
-                    href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
-                    datetime=datetime.strptime(each["publishTime"], '%Y-%m-%d %H:%M:%S'),
-                    title=self.title))
+                if each['availabilityStatus'] == 'free':
+                    result.append(feedUpdate(
+                        name=each["title"][:140],
+                        href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
+                        datetime=datetime.strptime(each["publishTime"], '%Y-%m-%d %H:%M:%S'),
+                        title=self.title))
 
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
