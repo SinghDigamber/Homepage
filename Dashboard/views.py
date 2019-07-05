@@ -31,11 +31,18 @@ class DashboardView(ListView):
 
         movies = PlanetaKino.objects.filter(inTheater=True)
 
-        feedUpdate_size_limit = 42
-        feed_title_list = []
+        items_limit = 42
+        items_limit_select = items_limit*8
+
+        feed_titles = []
         for each in feed.feeds_by_emoji():
-            feed_title_list.append(each.title)
-        feedUpdate_list = list(feedUpdate.objects.filter(title__in=feed_title_list)[:feedUpdate_size_limit])
+            feed_titles.append(each.title)
+
+        feedUpdate_list = []
+        for each in feedUpdate.objects.all()[:items_limit_select]:
+            if each.title in feed_titles:
+                feedUpdate_list.append(each)
+        feedUpdate_list = feedUpdate_list[:items_limit]
 
         return {
             'title_daypart': title_daypart,

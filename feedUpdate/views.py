@@ -179,7 +179,13 @@ class feedUpdateIndexView(ListView):
                 feed_titles = []
                 for each in feed.feeds_by_emoji():
                     feed_titles.append(each.title)
-                feedUpdate_list = list(feedUpdate.objects.filter(title__in=feed_titles)[:items_limit])
+
+                feedUpdate_list = []
+                for each in feedUpdate.objects.all()[:items_limit_select]:
+                    if each.title in feed_titles:
+                        feedUpdate_list.append(each)
+
+                feedUpdate_list = feedUpdate_list[:items_limit]
             else:
                 feedUpdate_list = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
         elif self.kwargs['mode'] == "force":
