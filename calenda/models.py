@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup, SoupStrainer
 import requests
 from datetime import datetime
 import dateutil.parser as datetimeparser
-from datetime import timedelta
+from datetime import timedelta, date
+from icalendar import Calendar, Event
 
 
 class event(models.Model):
@@ -197,59 +198,24 @@ class calendar(models.Model):
             soup = BeautifulSoup(soup.text, "html.parser")
             soup = str(soup)
 
-            # cutting calendars' metadata leaving events only
-            soup = soup[soup.find('BEGIN:VEVENT'):]
-            soup = soup.split('END:VEVENT')
-            soup = soup[:-1]
+            gcal = Calendar.from_ical(soup)
+            for component in gcal.walk():
+                if component.name == "VEVENT" and not component.get('RRULE', False):
+                    result_title = component.get('summary')
+                    result_description = component.get('description')
+                    if result_description is not None:
+                        result_description = result_description[:420]
+                    result_href = component.get('href')
+                    result_start = component.get('dtstart').dt
+                    result_end = component.get('dtend').dt
 
-            result_title = ""
-            result_description = ""
-            result_href = ""
-            result_start = ""
-            result_end = ""
-
-            for each_event in soup:
-                for each in each_event.splitlines():
-                    if each.find("DTSTART;TZID=") != -1:
-                        # EXAMPLE: DTSTART;TZID=Europe/Kiev:20190626T120000
-                        result_start = each.find(":")+len(":")
-                        result_start = each[result_start:]
-                        result_start = datetimeparser.parse(result_start)
-                        #print("start:", result_start)
-                    elif each.find("DTEND;TZID=") != -1:
-                        # EXAMPLE: DTEND;TZID=Europe/Kiev:20190626T130000
-                        result_end = each.find(":")+len(":")
-                        result_end = each[result_end:]
-                        result_end = datetimeparser.parse(result_end)
-                        #print("end:", result_end)
-                    elif each.find("SUMMARY:") != -1:
-                        # EXAMPLE: SUMMARY:Новое событие
-                        result_title = each_event.find("SUMMARY:")+len("SUMMARY:")
-                        result_title = each_event[result_title:]
-                        result_title = result_title[:result_title.find("\n")]
-                        #print("title:", result_title)
-                    elif each.find("URL;VALUE=URI:") != -1:
-                        # EXAMPLE: URL;VALUE=URI:http://google.com
-                        result_href = each_event.find("URL;VALUE=URI:")+len("URL;VALUE=URI:")
-                        result_href = each_event[result_href:]
-                        result_href = result_href[:result_href.find("\n")]
-                        #print("href:", result_href)
-                    elif each.find("DESCRIPTION:") != -1:
-                        # EXAMPLE: DESCRIPTION:DESCRIPTION
-                        result_description = each_event.find("DESCRIPTION:")+len("DESCRIPTION:")
-                        result_description = each_event[result_description:]
-                        result_description = result_description[:result_description.find("\n")]
-                        #print("description:", result_description)
-
-                #print("\n\n----new----\n\n")
-
-                result.append(event(
-                    title=result_title[:42],
-                    description=result_description[:420],
-                    href=result_href,
-                    start=result_start,
-                    end=result_end,
-                    calendar=self.title
-                ))
+                    result.append(event(
+                        title=result_title[:42],
+                        description=result_description,
+                        href=result_href,
+                        start=result_start,
+                        end=result_end,
+                        calendar=self.title
+                    ))
 
         return result
