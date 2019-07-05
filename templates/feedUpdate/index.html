@@ -11,10 +11,9 @@
 
     <h2><span class="emojis"><nobr>
         {% if fromView.feedName == "Обновления" %}
-            <a href="{% url "feedUpdate:index" mode="index" %}">🗒️️️</a>
-            <a href="{% url "feedUpdate:index" mode="force" %}">☠️️</a>
+            <a href="{% url "feedUpdate:index" mode="index" %}">📰️️️</a>
         {% else %}
-            <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="index" %}">🗒️️️</a>
+            <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="index" %}">📰️️️</a>
             <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="force" %}">☠️️</a>
         {% endif %}
         <a href="{% url "feedUpdate:tests" %}">⚙️</a>
@@ -24,8 +23,7 @@
     {% for chapter in fromView.feedUpdate_list %}
         <li><span>
             <a class="name" target="_blank" href="{{ chapter.href }}">
-                {% if fromView.multibook %}<span><strong>{{ chapter.title }}</strong></span>: {% endif %}
-                {{ chapter.name }}
+                {% if fromView.multibook %}<span><strong>{{ chapter.title }}</strong></span>: {% endif %}{{ chapter.name }}
             </a>
             <span><a class="grey">on {{chapter.datetime|date:'Y-m-d H:i' }}</a></span>
         </span></li>
