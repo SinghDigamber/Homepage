@@ -12,6 +12,7 @@
     <h2><span class="emojis"><nobr>
         {% if fromView.feedName == "Обновления" %}
             <a href="{% url "feedUpdate:index" mode="index" %}">📰️️️</a>
+            <a href="{% url "feedUpdate:rss" %}">🗞️</a>
         {% else %}
             <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="index" %}">📰️️️</a>
             <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="force" %}">☠️️</a>

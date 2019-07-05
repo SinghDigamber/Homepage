@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^myActivity/(?P<mode>(|index|force))', views.myActivityView.as_view(), name="myActivity"),  # list feeds
 
     url(r'^(?P<mode>(|index|force))$', views.feedUpdateIndexView.as_view(), name="index"),  # main fU feed with modes
+    url(r'^rss$', views.feedUpdateFeed(), name="rss"),
     url(r'^(?P<feeds>([0-9|а-я|ё|А-Я|Ё|a-z|A-Z|_|+|—])*)/(?P<mode>(|index|force))?$',
         views.feedUpdateIndexView.as_view(), name="feed"),  # view separate feeds with filters
 ]

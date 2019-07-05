@@ -1,6 +1,7 @@
 # from django.shortcuts import render
 from .models import feedUpdate, feed
 from django.views.generic import ListView
+from django.contrib.syndication.views import Feed
 # import socket
 # from django.shortcuts import redirect
 # from django.urls import reverse
@@ -194,3 +195,30 @@ class feedUpdateIndexView(ListView):
             'feedUpdate_list': feedUpdate_list,
             'multibook': multibook,
         }
+
+
+class feedUpdateFeed(Feed):
+    title = "Обновления RSS"
+    link = "/feedUpdate/rss"
+    description = "RSS feed of items shown at feedUpdate main page"
+
+    def items(self):
+        items_limit = 42
+
+        feed_titles = []
+
+        for each in feed.feeds_by_emoji():
+            feed_titles.append(each.title)
+        feedUpdate_list = list(feedUpdate.objects.filter(title__in=feed_titles)[:items_limit])
+
+        return feedUpdate_list
+
+    def item_title(self, item):
+        return item.name
+
+    def item_description(self, item):
+        result = item.title + ": " + item.name
+        return result
+
+    def item_link(self, item):
+        return item.href
