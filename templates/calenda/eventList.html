@@ -7,11 +7,30 @@
 {% block main %}
     <div class="calenda_listView">
         <h1>Calenda: {{ fromView.page_title }}</h1>
-
+        <a>Сегодня</a>
         <ul>
         {% for event in fromView.event_list %}
-            <li start="{{event.start|date:'Y/m/d-H:i' }}" end="{{event.end|date:'Y/m/d-H:i' }}" description="{{event.description}}">
-                <a href="{{ event.href }}"> [{{event.start|date:'Y/m/d-H:i' }}-{{event.end|date:'Y/m/d-H:i' }}] {{ event.title }}</a>
+            <li>
+                <a class="datetime">
+                    {% if event.start|date:'Y/m/d' == event.end|date:'Y/m/d' %}
+                        {% if event.start|date:'H:i' == '00:00' and event.end|date:'H:i' == '23:59' %}
+                            {{ event.start|date:'Y/m/d' }}
+                        {% else %}
+                            {{ event.start|date:'Y/m/d H:i' }}-{{ event.end|date:'H:i' }}
+                        {% endif %}
+                    {% else %}
+                        {{ event.start|date:'Y/m/d-H:i' }}-{{ event.end|date:'Y/m/d-H:i' }}
+                    {%  endif %}
+                </a><br>
+                <a
+                    {% if event.href|length > 0 %}
+                        href="{{ event.href }}"
+                    {% endif %}>
+                    {{ event.title }}
+                </a>
+                {% if event.description|length > 0 and event.description != event.title %}
+                    <br><a>{{ event.description }}</a>
+                {% endif %}
             </li>
         {% empty %}
             <li>Oops, something went wrong. Empty!</li>
