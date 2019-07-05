@@ -6,13 +6,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="{% static 'style/style.css' %}">
+        <link rel="stylesheet" href="{% static 'style/nav.css' %}">
+        <link rel="stylesheet" href="{% static 'style/Dashboard.css' %}">
+        <link rel="stylesheet" href="{% static 'style/weatherCast.css' %}">
+        <link rel="stylesheet" href="{% static 'style/ul-red.css' %}">
+        <link rel="stylesheet" href="{% static 'style/calenda.css' %}">
+
         {% block meta %}{%  endblock %}
 
-        <style>{% include "Homepage/style/style.css" %}</style>
-        <style>{% include "Homepage/style/ul-red.css" %}</style>
-        <style>{% include "Homepage/style/nav.css" %}</style>
-        <style>{% include "Homepage/style/Dashboard.css" %}</style>
-        <style>{% include "weatherCast/style/weatherCast.css" %}</style>
         <script>{% include "Homepage/js/img-lazy-load.js" %}</script>
 
         <!-- favicon block -->
