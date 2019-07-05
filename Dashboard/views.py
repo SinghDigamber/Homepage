@@ -1,7 +1,7 @@
 from django.views.generic import ListView
-from .models import PlanetaKino
+from .models import PlanetaKino, keyValue
 from datetime import datetime, time
-from weatherCast.models import weatherCast
+# from weatherCast.models import weatherCast
 from feedUpdate.models import feedUpdate, feed
 
 
@@ -25,8 +25,9 @@ class DashboardView(ListView):
         else:
             title_daypart = header_evening
 
-        title_weather = weatherCast.parse_json_weather_now_summary_compiled(
-            weatherCast.download_weather_forecast())
+        title_weather = {}
+        title_weather['temp'] = keyValue.objects.filter(key='weatherNowTemp')[0].value
+        title_weather['summary'] = keyValue.objects.filter(key='weatherNowSum')[0].value
 
         movies = PlanetaKino.objects.filter(inTheater=True)
 

@@ -4,6 +4,13 @@ import requests
 from datetime import datetime
 
 
+class keyValue(models.Model):
+    class Meta:
+        ordering = ['key']
+    key = models.CharField(max_length=14)
+    value = models.CharField(max_length=1400)
+
+
 class PlanetaKino(models.Model):
     class Meta:
         ordering = ['date']
