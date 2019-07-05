@@ -835,6 +835,13 @@ feeds = (
         href_title='feed:https://anidub.tv/rss.xml',
     ),
     feed(
+        title='KotB',
+        title_full='The King of the Battlefield',
+        href='https://myoniyonitranslations.com/feed/',
+        href_title='https://myoniyonitranslations.com/the-king-of-the-battlefield/',
+        filter='kotb'
+    ),
+    feed(
         title='AnimeVost',
         href='http://animevost.org/rss.xml',
         href_title='http://animevost.org',
@@ -2168,13 +2175,13 @@ feeds = (
         title='NinjaKitty',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/NinjaKitty',
         href_title='http://www.hentai-foundry.com/pictures/user/NinjaKitty',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Luccass',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Luccass',
         href_title='http://www.hentai-foundry.com/pictures/user/Luccass',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='PWCSponson',
@@ -2376,7 +2383,7 @@ feeds = (
     feed(
         title='blunt_katana',
         href='https://www.deviantart.com/blunt-katana/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='yichimo',
@@ -2441,7 +2448,7 @@ feeds = (
     feed(
         title='danteshadow1',
         href='https://www.deviantart.com/danteshadow1/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='sade75311',
@@ -2451,7 +2458,7 @@ feeds = (
     feed(
         title='commanderrab',
         href='https://www.deviantart.com/commanderrab/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='srasomeone',
@@ -2496,7 +2503,7 @@ feeds = (
     feed(
         title='lolliedrop',
         href='https://www.deviantart.com/lolliedrop/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='LiangXing',
@@ -2506,7 +2513,7 @@ feeds = (
     feed(
         title='elisanth',
         href='https://www.deviantart.com/elisanth/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='VioletSpider',
@@ -3054,6 +3061,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='daberrybestcosplays',
+        href='https://www.instagram.com/daberrybestcosplays/',
+        emojis='🏮',
+    ),
+    feed(
         title='ReflectiveDesireInst',
         href='https://www.instagram.com/reflectivedesire/',
         emojis='🏮',
@@ -3336,7 +3348,7 @@ feeds = (
     feed(
         title='purplemuffinz',
         href='https://www.instagram.com/purplemuffinz/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='armoredheartcosplay',
@@ -3604,9 +3616,24 @@ feeds = (
         emojis='🏮',
     ),
     feed(
+        title='poonimmka',
+        href='https://www.instagram.com/poonimmka/',
+        emojis='🏮',
+    ),
+    feed(
         title='mmm_still_limited_edition',
         href='https://www.instagram.com/mmm_still_limited_edition/',
         emojis='🏮',
+    ),
+    feed(
+        title='thesambuca',
+        href='https://www.instagram.com/thesambuca/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='thekatyasambuca',
+        href='https://www.instagram.com/thekatyasambuca/',
+        emojis='💎🏮',
     ),
     feed(
         title='mylittlevronie',
@@ -3781,7 +3808,7 @@ feeds = (
     feed(
         title='necrinity',
         href='https://www.instagram.com/necrinity/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='ausriefel',
@@ -3946,7 +3973,7 @@ feeds = (
     feed(
         title='celene_nox',
         href='https://www.instagram.com/celene.nox/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='haleybroox',
@@ -4353,7 +4380,7 @@ feeds = (
     feed(
         title='karina_nocturna',
         href='https://www.instagram.com/karina_nocturna/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='hellcats_playground',
@@ -4428,7 +4455,6 @@ feeds = (
     feed(
         title='game_zone_kharkov',
         href='https://www.instagram.com/game_zone_kharkov/',
-        emojis='💎',
     ),
     feed(
         title='khn_666',
@@ -4443,6 +4469,11 @@ feeds = (
     feed(
         title='lyapotasasha',
         href='https://www.instagram.com/lyapotasasha/',
+        emojis='💎',
+    ),
+    feed(
+        title='teen_sl1m3',
+        href='https://www.instagram.com/teen_sl1m3/',
         emojis='💎',
     ),
 )
