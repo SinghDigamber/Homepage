@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'homepage_django',
         'USER': 'pi',
         'PASSWORD': 'bali4dead',
-        'HOST': 'krupko.space',
+        'HOST': '192.168.1.201',
         'PORT': '5432',
     }
 }
