@@ -15,7 +15,19 @@
     <h1>
         {{ fromView.title_daypart }}, сейчас
         <span style="color: lightskyblue"><a href="{% url "weatherCast:index" %}">
-            {{ fromView.title_weather.summary }}<sup>{{ fromView.title_weather.temp }}°</sup>
+            {{ fromView.title_weather.summary }}<sup>{% if fromView.title_weather.icon == 'clear-day' %} ☀️
+            {% elif fromView.title_weather.icon == 'clear-night' %}🌟
+            {% elif fromView.title_weather.icon == 'rain' %}🌧️
+            {% elif fromView.title_weather.icon == 'snow' %}🌨️
+            {% elif fromView.title_weather.icon == 'sleet' %}🌧️🌨️
+            {% elif fromView.title_weather.icon == 'wind' %}🌬️
+            {% elif fromView.title_weather.icon == 'fog' %}🌫
+            {% elif fromView.title_weather.icon == 'cloudy' %}🌟
+            {% elif fromView.title_weather.icon == 'partly-cloudy-day' %}🌤️
+            {% elif fromView.title_weather.icon == 'partly-cloudy-night' %}🌟☁️
+            {% else %}{{ fromView.title_weather.icon }}
+            {% endif %}{{ fromView.title_weather.temp }}°/{{ fromView.title_weather.precipProbability }}%
+            </sup>
         </a></span>
     </h1>
 

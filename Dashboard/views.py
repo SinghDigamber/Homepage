@@ -28,6 +28,8 @@ class DashboardView(ListView):
         title_weather = {}
         title_weather['temp'] = keyValue.objects.filter(key='weatherNowTemp')[0].value
         title_weather['summary'] = keyValue.objects.filter(key='weatherNowSum')[0].value
+        title_weather['precipProbability'] = keyValue.objects.filter(key='weatherNowProb')[0].value
+        title_weather['icon'] = keyValue.objects.filter(key='weatherNowIcon')[0].value
 
         movies = PlanetaKino.objects.filter(inTheater=True)
 

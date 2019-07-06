@@ -164,9 +164,16 @@ class weatherCast(models.Model):
         result_temp = int(result_temp)
         result_temp = str(result_temp)
 
+        result_precipProbability = json['currently']['precipProbability']
+        result_precipProbability = int(result_precipProbability*100)
+
+        result_icon = json['currently']['icon']
+
         return {
             'summary': result_summary,
             'temp': result_temp,
+            'precipProbability': result_precipProbability,
+            'icon': result_icon,
         }
 
 
