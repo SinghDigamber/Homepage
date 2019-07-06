@@ -1,11 +1,19 @@
 {% extends 'Homepage/base.html' %}
 
+{% load static %}
+
 {% block title %} » feedUpdate » feeds{% endblock %}
 
-{% block main %}
-    <ul class="red feedUpdate">
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'style-js/liSearch.css' %}">
+    <script src="{% static 'style-js/liSearch.js' %}"></script>
+{% endblock %}
 
+{% block main %}
+    <ul class="red feedUpdate" id="liSearchUL">
     <h1>{{ fromView.page.title }}</h1>
+
+    <input id='liSearchInput' onkeyup='liSearch()' autocomplete='off'>
 
     {% for feed in fromView.feed_list %}
         {% if not '🏮' in feed.emojis or fromView.page.showAll == False %}

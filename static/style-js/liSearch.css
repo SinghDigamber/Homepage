@@ -1,0 +1,8 @@
+#liSearchInput {
+    width: 100%; /* Full-width */
+    font-size: inherit; /* Increase font-size */
+    padding: 5px 12px 5px 12px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    border-radius: 3px;
+    margin-bottom: 12px; /* Add some space below the input */
+}
