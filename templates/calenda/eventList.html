@@ -11,33 +11,45 @@
 {% block main %}
     <div class="calenda_listView">
         <h1>Calenda: {{ fromView.page_title }}</h1>
-        <a>Сегодня</a>
         <ul>
-        {% for event in fromView.event_list %}
-            <li>
-                <a class="datetime">
-                    {% if event.start|date:'Y/m/d' == event.end|date:'Y/m/d' %}
-                        {% if event.start|date:'H:i' == '00:00' and event.end|date:'H:i' == '23:59' %}
-                            {{ event.start|date:'Y/m/d' }}
+        {% for value in fromView.event_list.values %}
+            {% if forloop.counter0 == 0 %}
+                <a>Сегодня</a>
+            {% elif forloop.counter0 == 1 %}
+                <a>Завтра</a>
+            {% elif forloop.counter0 == 2 %}
+                <a>На этой неделе</a>
+            {% endif %}
+            {% for event in value %}
+                <li>
+                    <a class="datetime">
+                        {% if event.start|date:'Y/m/d' == event.end|date:'Y/m/d' %}
+                            {% if event.start|date:'H:i' == '00:00' and event.end|date:'H:i' == '23:59' %}
+                                {{ event.start|date:'Y/m/d' }}
+                            {% else %}
+                                {{ event.start|date:'Y/m/d H:i' }}-{{ event.end|date:'H:i' }}
+                            {% endif %}
                         {% else %}
-                            {{ event.start|date:'Y/m/d H:i' }}-{{ event.end|date:'H:i' }}
+                            {{ event.start|date:'Y/m/d-H:i' }}-{{ event.end|date:'Y/m/d-H:i' }}
+                        {%  endif %}
+                    </a><br>
+                    <a
+                        {% if event.href|length > 0 %}
+                            href="{{ event.href }}"
+                        {% endif %}>
+                        {% if event.title in event.description %}
+                            {{ event.description }}
+                        {% else %}
+                            {{ event.title }}
                         {% endif %}
-                    {% else %}
-                        {{ event.start|date:'Y/m/d-H:i' }}-{{ event.end|date:'Y/m/d-H:i' }}
-                    {%  endif %}
-                </a><br>
-                <a
-                    {% if event.href|length > 0 %}
-                        href="{{ event.href }}"
-                    {% endif %}>
-                    {{ event.title }}
-                </a>
-                {% if event.description|length > 0 and event.description != event.title %}
-                    <br><a>{{ event.description }}</a>
-                {% endif %}
-            </li>
-        {% empty %}
-            <li>Oops, something went wrong. Empty!</li>
+                    </a>
+                    {% if event.description|length > 0 and event.description != event.title and not event.title in event.description %}
+                        <br><a>{{ event.description }}</a>
+                    {% endif %}
+                </li>
+            {% empty %}
+                <li>Oops, something went wrong. Empty!</li>
+            {% endfor %}
         {% endfor %}
         </ul>
     </div>
