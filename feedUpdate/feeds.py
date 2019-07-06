@@ -4491,4 +4491,9 @@ feeds = (
         href='https://www.instagram.com/teen_sl1m3/',
         emojis='💎',
     ),
+    feed(
+        title='milliebobbybrown',
+        href='https://www.instagram.com/milliebobbybrown/',
+        emojis='💎',
+    ),
 )
