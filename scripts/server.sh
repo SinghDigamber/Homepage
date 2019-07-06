@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ssh pi@192.168.1.201
+ssh pi@krupko.space -p 8022
 sudo raspi-config
 
 python3 -m pip install -U --force-reinstall pip
@@ -18,6 +18,7 @@ sudo python3 -m pip install lxml # html parser
 sudo python3 -m pip install feedparser # rss parser
 sudo python3 -m pip install python-dateutil  # universally parsing dates
 sudo python3 -m pip install tqdm  # progressbar for caching scripts
+sudo python3 -m pip install icalendar
 
 sudo rm -rf /home/pi/Projects/Homepage
 cd ~
