@@ -1,0 +1,28 @@
+{% extends 'Homepage/base.html' %}
+
+{% load static %}
+
+{% block title %} » feedUpdate » feeds{% endblock %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'style-js/ul-red.css' %}">
+    <link rel="stylesheet" href="{% static 'style-js/liSearch.css' %}">
+    <script src="{% static 'style-js/liSearch.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <ul class="red feedUpdate" id="liSearchUL">
+    <h1>{{ fromView.page.title }}</h1>
+
+    <input id='liSearchInput' onkeyup='liSearch()' autocomplete='off'>
+
+    {% for page in fromView.page_list %}
+        <li><a class="name" target="_blank" href="{% url "pages:page" file_name=page.file_name %}">
+            {{ page.title }}
+        </a></li>
+    </div>
+    {% empty %}
+        <li>Oops, something went wrong. Empty!</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

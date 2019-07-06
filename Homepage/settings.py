@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'weatherCast',
     'Dashboard',
     'calenda',
+    'pages',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,10 @@ ROOT_URLCONF = 'Homepage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'static', 'pages'),
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {

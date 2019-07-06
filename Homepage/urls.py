@@ -33,4 +33,6 @@ urlpatterns = [
     url(r'^weatherCast/', include('weatherCast.urls', namespace="weatherCast")),
 
     url(r'^calenda/', include('calenda.urls', namespace="calenda")),
+
+    url(r'^pages/', include('pages.urls', namespace="pages")),
 ]

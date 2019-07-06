@@ -1,0 +1,15 @@
+{% extends 'Homepage/base.html' %}
+
+{% load static %}
+
+{% block title %} » pages » {{ fromView.page.title }}{% endblock %}
+
+{% block meta %}{% endblock %}
+
+{% block main %}
+    <div>
+        <h1>{{ fromView.page.title }}</h1>
+
+        {% include fromView.file_name %}
+    </div>
+{% endblock %}
