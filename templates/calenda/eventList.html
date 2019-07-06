@@ -1,8 +1,12 @@
 {% extends 'Homepage/base.html' %}
 
+{% load static %}
+
 {% block title %} » calenda » {{ fromView.page_title }}{% endblock %}
 
-{% block meta %}{% endblock %}
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'style-js/calenda.css' %}">
+{% endblock %}
 
 {% block main %}
     <div class="calenda_listView">

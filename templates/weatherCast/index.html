@@ -1,6 +1,12 @@
 {% extends 'Homepage/base.html' %}
 
+{% load static %}
+
 {% block title %} » feedUpdate » {{ fromView.page.title }}{% endblock %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'style-js/weatherCast.css' %}">
+{% endblock %}
 
 {% block main %}
     <div id="weatherCast">

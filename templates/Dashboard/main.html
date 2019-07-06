@@ -1,6 +1,15 @@
 {% extends 'Homepage/base.html' %}
 
+{% load static %}
+
 {% block title %} » Dashboard {% endblock %}
+
+{% block meta %}
+    <meta http-equiv="refresh" content="600" >
+    <link rel="stylesheet" href="{% static 'style-js/Dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'style-js/ul-red.css' %}">
+    <script>{% include "Homepage/js/img-lazy-load.js" %}</script>
+{% endblock %}
 
 {% block main %}
     <h1>
