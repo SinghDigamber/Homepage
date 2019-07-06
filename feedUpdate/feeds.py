@@ -191,6 +191,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='AlexandriaOcasioCortez',
+        href='https://www.youtube.com/channel/UCElqfal0wzzpLsHlRuqZjaA/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Банкир',
         title_full='Бегущий Банкир',
         href='https://www.youtube.com/channel/UCqVKtuYmKkVPaBeNFWRxlMw/videos',
@@ -776,6 +781,11 @@ feeds = (
     feed(
         title='BikeInCity',
         href='https://www.youtube.com/channel/UCPats7cCr4KFgmwCB2ZGzFg/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='Veritasium',
+        href='https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA/videos',
         emojis='💎'
     ),
     feed(
@@ -2043,7 +2053,7 @@ feeds = (
         title='Kibazoku',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Kibazoku',
         href_title='http://www.hentai-foundry.com/pictures/user/Kibazoku',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Lazam',
@@ -3239,6 +3249,11 @@ feeds = (
         title='ridd1e',
         href='https://www.instagram.com/ridd1e/',
         emojis='🏮',
+    ),
+    feed(
+        title='chloe_anna_marie',
+        href='https://www.instagram.com/chloe.anna.marie/',
+        emojis='💎🏮',
     ),
     feed(
         title='jessicanigri',
