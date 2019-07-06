@@ -9,6 +9,7 @@ from django.utils.timezone import localtime
 # from datetime import timezone
 import json
 import dateutil.parser as datetimeparser
+from dateutil.tz import gettz
 # Create your models here.
 
 
@@ -238,7 +239,9 @@ class feed(models.Model):
                     # there was nothing to get as result_datetime
                     result_datetime = "Sun, 22 Oct 1995 00:00:00 +0200"
 
-                result_datetime = datetimeparser.parse(result_datetime)
+                tzinfos = {'PDT': gettz("America/Los_Angeles"), 'PST': gettz("America/Juneau")}
+                # usage examples: {'EST': -1800, 'CET': +3600, "CST": gettz("America/Chicago")}
+                result_datetime = datetimeparser.parse(result_datetime, tzinfos=tzinfos)
 
                 # APPEND RESULT
                 result.append(feedUpdate(
