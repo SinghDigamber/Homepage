@@ -57,6 +57,7 @@ class feedIndexView(ListView):
         return {
             'page': {
                 'title': header,
+                'showAll': True,
             },
             'feed_list': feed_list,
         }
@@ -64,7 +65,7 @@ class feedIndexView(ListView):
 
 class feedIndexFullView(ListView):
     model = feedUpdate
-    template_name = "feedUpdate/feedsAll.html"
+    template_name = "feedUpdate/feeds.html"
     context_object_name = "fromView"
 
     def get_queryset(self):
@@ -78,6 +79,7 @@ class feedIndexFullView(ListView):
         return {
             'page': {
                 'title': header,
+                'showAll': False,
             },
             'feed_list': feed_list,
         }
