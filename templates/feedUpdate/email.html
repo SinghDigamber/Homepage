@@ -1,0 +1,15 @@
+<ul class="red feedUpdate-feeds">
+
+<h1><a href="{% url "feedUpdate:index" mode="index" %}">Обновления за сегодня</a></h1>
+
+{% for chapter in fromView.feedUpdate_list %}
+    <li><span>
+        <a class="name" target="_blank" href="{{ chapter.href }}">
+            <span><strong>{{ chapter.title }}</strong></span>: {{ chapter.name }}
+        </a>
+        <span><a class="grey">on {{chapter.datetime|date:'H:i' }}</a></span>
+    </span></li>
+{% empty %}
+    <li>Oops, something went wrong. Empty!</li>
+{% endfor %}
+</ul>
