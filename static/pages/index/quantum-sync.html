@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# macOS only
+# cd ~/Projects/Quantum-Sync/shell-scripts
+# "Folder Actions Setup" ("Настройка действий папки") application
+# Automator shell script (just runs this one):
+# /Users/olehkrupko/Projects/Quantum-Sync/shell-scripts/PB301.sh
+VOLUME="PB301"
+username="olehkrupko"
+
+name_new="new"
+pattern_local_archive="\<*\>"
+path_local="/Users/$username/Books/"
+path_local_new="/Users/$username/Books/<$name_new>/"
+path_local_backup="/Users/$username/Books/<$VOLUME>/"
+exclude="--exclude=.*"
+
+if [[ -d "/Volumes/$VOLUME" ]] && [[ $(whoami)==username ]]
+then
+	# Now-reading Sync.
+	# Gathers not <Archieve> from ~/Books/ to one folder
+	rsync -a \
+		--remove-source-files \
+		$exclude \
+		--exclude=$pattern_local_archive \
+		$path_local \
+		$path_local_new
+	# remove empty folders left by --remove-source-files
+	find $path_local -d \
+		-depth 1 \
+		! -path $path_local \
+		! -name $pattern_local_archive \
+		! -name ".*" \
+		-exec rm -r {} +
+	# Moves new books to eBook Reader
+	rsync -a ${path_local_new} /Volumes/$VOLUME/
+	# rsync -a ${path_local_new} ${path_local_backup}
+	find ${path_local_new} -exec mv {} ${path_local_backup}
+	find -d ${path_local_new} ! -path ${path_local_new} ! -name ".*" -exec rm -r {} +
+	# Backups books from eBook Reader. Not <Archive>
+	rsync -a --delete $exclude --exclude="<Books>" /Volumes/$VOLUME/ ${path_local_backup}
+
+	# Archive Sync.
+	# To delete from Archeve delete from both computer and eBook Reader
+	rsync -a $exclude "/Volumes/$VOLUME/+Books/" $path_local
+	find $path_local -d \
+		! -path $path_local \
+		-depth 1 \
+		-name $pattern_local_archive \
+		! -name "<$name_new>" \
+		! -name "<$VOLUME>" \
+		-exec rsync -a $exclude {} "/Volumes/$VOLUME/+Books/" \;
+
+		diskutil eject /Volumes/$VOLUME
+
+		#Sends notification that sync finished
+		osascript -e 'display notification "Sync completed! You can safely remove PB301" with title "Quantum Sync"'
+	fi

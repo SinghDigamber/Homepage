@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        var symbols = {
+            'hidden': "⬛",
+            'bomb': "💣",
+            'bombClicked': "💥",
+            'numbers': ["⬜", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣"]
+        }
+
+        function gameStart(height, width, bombs) {
+            var test = new Minesweeper(height, width, bombs);
+        }
+
+        //function getMapValue(map, height, width) {}
+
+        function createArray(height, width) {
+            var arr = new Array(height)
+            for(var i = 0; i < height; i++) {
+                arr[i] = new Array(width);
+                for(var j = 0; j < width; j++) {
+                    arr[i][j] = symbols['numbers'][0];
+                }
+            }
+            return arr;
+        }
+
+        function randomXY(heigh, width, bombs) {
+            //generate random heights
+            var randomHeight = []
+            while(randomHeight.length < bombs){
+                var random = Math.ceil(Math.random()*heigh-1);
+                //if(randomHeight.indexOf(random) > -1) continue;
+                randomHeight[randomHeight.length] = random;
+            }
+            //console.log(randomHeight);
+
+            //generate random widths
+            var randomWidth = []
+            while(randomWidth.length < bombs){
+                var random = Math.ceil(Math.random()*width-1);
+                //if(randomWidth.indexOf(random) > -1) continue;
+                randomWidth[randomWidth.length] = random;
+            }
+            //console.log(randomWidth);
+
+            var arr = new Array();
+            arr[0] = randomHeight;
+            arr[1] = randomWidth;
+            return arr;
+        }
+
+        function step(map, height, width) {
+            //console.log(map);
+            
+            if (map[height][width] == symbols["bomb"]) {
+                for (var j = 0; j < map.length; j++) {
+                    for (var k = 0; k < map[0].length; k++) {
+                        if (map[j][k] == symbols["bomb"]) {
+                            document.getElementById("game").firstChild.childNodes[j].childNodes[k].innerHTML = symbols["bomb"];
+                        }
+                    }
+                }
+                document.getElementById("game").firstChild.childNodes[height].childNodes[width].innerHTML = symbols["bombClicked"];
+                alert("You lost!");
+            } else {
+                document.getElementById("game").firstChild.childNodes[height].childNodes[width].innerHTML = map[height][width];
+                
+                if (map[height][width] == symbols["numbers"][0]){
+                    for (var j = -1; j < 2; j++) {
+                        for (var k = -1; k < 2; k++) {
+                            if ( typeof map[height+j] != "undefined" && 
+                                typeof map[height+j][width+k] != "undefined" &&
+                                document.getElementById("game").firstChild.childNodes[height+j].childNodes[width+k].firstChild.innerHTML == symbols["hidden"]) {
+                                step(map, height+j, width+k);
+                            }
+                        }
+                    }
+                }
+                
+                bombs = 0;
+                leftClosed = 0;
+                for (var m = 0; m < map.length; m++) {
+                    for (var n = 0; n < map[0].length; n++) {
+                        if (document.getElementById("game").firstChild.childNodes[m].childNodes[n].innerHTML.indexOf(symbols["hidden"]) != -1) {
+                            leftClosed++;
+                            
+                        }
+                        if (map[m][n]== symbols["bomb"]){
+                            bombs++;
+                        }
+                    }
+                }
+                //console.log(bombs, leftClosed);
+                if (bombs == leftClosed){
+                    alert("You won!");
+                    //console.log(1);
+                }
+                
+            }
+        }
+
+        class Minesweeper {
+            //Create map
+
+            constructor() {
+                var heigh = document.getElementById("height").value;
+                var width = document.getElementById("width").value;
+                var bombs = document.getElementById("bombs").value;
+                
+                if (height*width > bombs){
+                    alert("too much bombs");
+                    return;
+                }
+                
+                this.map = createArray(heigh, width);
+                //console.log(this.map);
+
+                //place bombs
+                while(bombs>0){
+                    //generate bomb locations
+                    var random = randomXY(heigh, width, bombs);
+                    var errors = 0;
+
+                    //places bombs without collision
+                    for(var i = 0;i < bombs;i++){
+                        if(this.map[random[0][i]][random[1][i]] != symbols['bomb']) {
+                            this.map[random[0][i]][random[1][i]] = symbols['bomb'];
+                            
+                            for (var j = -1; j < 2; j++) {
+                                for (var k = -1; k < 2; k++) {
+                                    if ( typeof this.map[random[0][i]+j] != "undefined" && typeof this.map[random[0][i]+j][random[1][i]+k] != "undefined" && this.map[random[0][i]+j][random[1][i]+k] != symbols["bomb"]) {
+                                        this.map[random[0][i]+j][random[1][i]+k] = symbols["numbers"][symbols["numbers"].indexOf(this.map[random[0][i]+j][random[1][i]+k])+1];
+                                    }
+                                }
+                            }
+                        } else {
+                            errors++;
+                        }
+                    }
+
+                    console.log("errors: ", errors);
+                    //console.log(bombs);
+                    bombs = errors;
+                }
+                //console.log(this.map);
+
+                //output
+                var table = document.createElement('table'), tr, td, row, cell;
+                for (row = 0; row < heigh; row++) {
+                    tr = document.createElement('tr');
+                    for (cell = 0; cell < width; cell++) {
+                        td = document.createElement('td');
+                        tr.appendChild(td);
+                        td.innerHTML = "<div onclick='step("
+                            + JSON.stringify(this.map) + ", "
+                            + row + ", "
+                            + cell + ")'>"
+                            + symbols['hidden'] + "</div>";
+                    }
+                    table.appendChild(tr);
+                }
+
+                document.getElementById("game").innerHTML = "";
+                document.getElementById("game").appendChild(table);
+                //console.log(this.map, table);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <div style="display: table; margin:0 auto;">
+        <h1 style="display: table; margin:0 auto; font-family: Futura">Minesweeper</h1>
+        <div>
+            <input style="font-size: 20px; display: table; margin:0 auto;" type="button" onclick="gameStart()" value="Generate"/>
+            <div style="display: table; margin:0 auto;">
+                height: <input type="text" id="height" value="20"><br>
+                width:  <input type="text" id="width"  value="20"><br>
+                bombs:  <input type="text" id="bombs"  value="2"><br>
+            </div>
+        </div>
+        <div style="display: table; margin:0 auto;" id="game"></div>
+    </div>
+</body>
+</html>
