@@ -19,7 +19,7 @@
     {% for feed in fromView.feed_list %}
         {% if not '🏮' in feed.emojis or fromView.page.showAll == False %}
         <li class="index-{% if '💎' in feed.emojis %}true{% else %}false{% endif %}">
-            <a class="name" target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='index' %}">
+            <a class="name track-click" target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='index' %}">
                 <span class="title">{{ feed.title }}</span>{% if feed.title_full %}: {{ feed.title_full }}{% endif %}
             </a>
             <span><nobr>

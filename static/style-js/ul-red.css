@@ -35,8 +35,8 @@ ul.red a {
 ul.red a:link:hover {
     color: greenyellow;
 }
-ul.red a:visited,
 ul.red a.grey {
+ul.red a.track-click:visited,
     color: #333;
 }
 ul.red .grey {

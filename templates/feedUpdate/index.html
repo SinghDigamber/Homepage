@@ -28,7 +28,7 @@
 
     {% for chapter in fromView.feedUpdate_list %}
         <li><span>
-            <a class="name" target="_blank" href="{{ chapter.href }}">
+            <a class="name track-click" target="_blank" href="{{ chapter.href }}">
                 {% if fromView.multibook %}<span><strong>{{ chapter.title }}</strong></span>: {% endif %}{{ chapter.name }}
             </a>
             <span><a class="grey">on {{chapter.datetime|date:'Y-m-d H:i' }}</a></span>
