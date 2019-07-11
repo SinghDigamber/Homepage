@@ -23,8 +23,8 @@
                 <span class="title">{{ feed.title }}</span>{% if feed.title_full %}: {{ feed.title_full }}{% endif %}
             </a>
             <span><nobr>
-                <a target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='force' %}">☠️️</a>
-                <a target="_blank" href="{% if feed.href_title %}{{ feed.href_title }}{% else %}{{ feed.href }}{% endif %}">⚓️️</a>
+                <a class="track-click" target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='force' %}">☠️️</a>
+                <a class="track-click" target="_blank" href="{% if feed.href_title %}{{ feed.href_title }}{% else %}{{ feed.href }}{% endif %}">⚓️️</a>
             </nobr></span>
         </li>
         {% endif %}
