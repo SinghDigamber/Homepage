@@ -20,7 +20,7 @@ class pageIndexView(ListView):
 
     def get_queryset(self):
         # constants
-        header = "Сохранённые страницы"
+        header = "Заметки"
 
         # calculations
         page_list = page.objects.all()
