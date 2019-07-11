@@ -223,7 +223,7 @@ class feedUpdateFeed(Feed):
         return feedUpdate_list
 
     def item_title(self, item):
-        return item.name
+        return item.title + ": " + item.name
 
     def item_description(self, item):
         result = item.title + ": " + item.name
