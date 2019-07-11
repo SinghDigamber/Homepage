@@ -761,7 +761,6 @@ feeds = (
     feed(
         title='ДвухколёсныеХроники',
         href='https://www.youtube.com/channel/UCIHkmNkkqHkqbKwcZbjIF0Q/videos',
-        emojis='💎'
     ),
     feed(
         title='Druzhko',
@@ -2227,7 +2226,7 @@ feeds = (
         title='wander',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/wander',
         href_title='http://www.hentai-foundry.com/pictures/user/wander',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='pumpkinsinclair',
@@ -2317,7 +2316,7 @@ feeds = (
         title='aka6',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/aka6',
         href_title='http://www.hentai-foundry.com/pictures/user/aka6',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='tortuga',
@@ -2403,7 +2402,7 @@ feeds = (
     feed(
         title='shinryushou',
         href='https://www.deviantart.com/shinryushou/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='7thHeaven',
@@ -3943,7 +3942,7 @@ feeds = (
     feed(
         title='nastyakyzmina63',
         href='https://www.instagram.com/nastyakyzmina63/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='missbeylahughes',
@@ -3953,7 +3952,7 @@ feeds = (
     feed(
         title='kto_tebya_polybit_',
         href='https://www.instagram.com/kto_tebya_polybit_/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='nikiskinoir',
@@ -4073,7 +4072,6 @@ feeds = (
     feed(
         title='zeteam2019',
         href='https://www.instagram.com/zeteam2019/',
-        emojis='💎🏮',
     ),
     feed(
         title='anastasia_komori',
@@ -4083,7 +4081,7 @@ feeds = (
     feed(
         title='sammyscosplay',
         href='https://www.instagram.com/sammyscosplay/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='gina_9011',
@@ -4410,6 +4408,26 @@ feeds = (
     feed(
         title='elisanthInsta',
         href='https://www.instagram.com/elisanth/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='giarohighheels',
+        href='https://www.instagram.com/giarohighheels/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='shitakecouture',
+        href='https://www.instagram.com/shitakecouture/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='victoriassecret',
+        href='https://www.instagram.com/victoriassecret/',
+        emojis='🏮',
+    ),
+    feed(
+        title='xkaymorgan',
+        href='https://www.instagram.com/xkaymorgan/',
         emojis='💎🏮',
     ),
     feed(
