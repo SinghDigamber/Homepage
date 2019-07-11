@@ -1,121 +1,175 @@
-Bash cheet sheet
-https://ryanstutorials.net/linuxtutorial/cheatsheet.php
+<h1>Bash cheet sheet</h1>
 
-pwd — print working directory
-ls -l
-ls -a
-cd 'Holiday photos'
-cd Holiday\ photos
+<a href="explainshell.com">explainshell</a>
 
-man -k <search term> — Do a keyword search for all manual pages containing the given search term.
-/<term> — Within a manual page, perform a search for 'term'
-n — After performing a search within a manual page, select the next found item.
-
-mkdir
-mkdir -p — creade multiple directories if needed
-mkdir -v — tell us what it does
-
-rmdir
-touch
-cp [options] <source> <destination>
-cp -r
-mv
-rm
-rm -r — remove not empty folder
-
-vi
-ZZ (Note: capitals) - Save and exit
-:q! - discard all changes, since the last save, and exit
-:w - save file but don't exit
-:wq - again, save and exit
-
-Ctrl+C
-
-cat file
-tac file — print per line from end
-less file
-nano file
-
-* - represents zero or more characters
-? - represents a single character
-[] - represents a range of characters
-
-Premissions:
-d — directory
-r — read
-w — write
-x — execute
-Example: [-][rwx][r--][--x]
--/d — file type
----/rwx — owner rights
----/rwx — group rights
----/rwx — everyone rights
-
-head [-number of lines to print] [path-to-file] — top lines
-tail [-number of lines to print] [path-to-file] — bottom lines
-sort [-options] [path]
-nl [-options] [path] — count lines in file
-wc [-options] [path] — word count (lines, words and characters)
-wc -lw
-
-cut [-options] [path]
-cut -f 1 -d ' ' mysampledata.txt
--f 1 — field
--d ' ' — delimter (разделитель)
-
-sed 's/[from]/[from]/g' file — search and exchange
-
-uniq mysampledata.txt — remove duplicate lines
-
-egrep [options] 'mellon' mysampledata.txt — search regexp
-options:
--n — add line numbers
--с — line numbers only
-REGEXP:
-. (dot) - a single character.
-? - the preceding character matches 0 or 1 times only.
-* - the preceding character matches 0 or more times.
-+ - the preceding character matches 1 or more times.
-{n} - the preceding character matches exactly n times.
-{n,m} - the preceding character matches at least n times and not more than m times.
-[agd] - the character is one of those included within the square brackets.
-[^agd] - the character is not one of those included within the square brackets.
-[c-f] - the dash within the square brackets operates as a range. In this case it means either the letters c, d, e or f.
-() - allows us to group several characters to behave as one.
-| (pipe symbol) - the logical OR operation.
-^ - matches the beginning of the line.
-$ - matches the end of the line.
-
-ls > myoutput — save to file
-ls >> myoutput — append to file
-ls 2> errors.txt — save errors to file
-ls | head -3
-
-top
-ps aux
-ps auxw | grep 'firefox'
-kill 6978 — kill process
-kill -9 6978 — kill process for sure
-sleep 5
-sleep 5s/m/h/d
-
-Ctrl+Z — put current process to background
-
-which <program> — program location
-
-#!/bin/bash
-# comment
-name='Ryan'
-echo Hello $name
-
-$0 - The name of the script.
-$1 - $9 - Any command line arguments given to the script. $1 is the first argument, $2 the second and so on.
-$# - How many command line arguments were given to the script.
-$* - All of the command line arguments.
-
-date=`date +%F`
-
-if [ $answer != 'y' ]
-then
-    exit
-fi
+<table>
+    <caption>Navigation</caption>
+    <tr><td>pwd</td> <td>print absolute path to working (current) directory</td></tr>
+    <tr><td>ls</td><td>list directory contents in columns</td></tr>
+    <tr><td>ls -l</td><td>as table, with more details</td></tr>
+    <tr><td>ls -a</td><td>list all files, including hidden ones (ones starting with . (dot))</td></tr>
+    <tr><td>cd</td><td>change working directory</td></tr>
+    <tr><td>cd [path]</td><td>change working directory to [path]. It can be both absolute and relative, ~ is used if not specified</td></tr>
+    <tr><td>cd a b</td><td>trying changing to folder 'a b' which exists, does not work</td></tr>
+    <tr><td>cd 'a b'</td><td>works because of '' usage</td></tr>
+    <tr><td>cd a\ b</td><td>works because  ' ' (space) symbols are used</td></tr>
+</table>
+<table>
+    <caption>man</caption>
+    <tr><td>man</td><td>format and display the on-line manual pages (does not work with this command)</td>
+    <tr><td>man [command]</td><td>display man help page for [command]</td>
+    <tr><td>man -k [term]</td><td>Do a keyword search for all manual pages containing the given search term.</td></tr>
+    <tr><td>/[term]</td><td>Within a manual page, perform a search for [term]</td></tr>
+    <tr><td>n</td><td>After performing a search within a manual page, select the next found item.</td></tr>
+</table>
+<table>
+    <caption>Working with files and folders</caption>
+    <tr><td>mkdir</td><td>make directories</td></tr>
+    <tr><td>mkdir [path]</td><td>create directory [path]. Multiple folders can be created using ' ' (space) as separator, only creates folder if parent folders are created</td></tr>
+    <tr><td>mkdir -p [path]</td><td>creates required parent directories if required as well, recursively</td></tr>
+    <tr><td>mkdir -v</td><td>(--verbose) tell us what it does, prints a message for each created directory</td></tr>
+    <tr><td>rmdir [path]</td><td>remove empty directory</td></tr>
+    <tr><td>rmdir -r [path]</td><td>remove non-empty directory</td></tr>
+    <tr><td>touch</td><td>create empty file</td></tr>
+    <tr><td>cp [source] [destination]</td><td>copy [source] to [destination], does not create destination folder</td></tr>
+    <tr><td>cp -r</td><td>creates one folder in depth</td></tr>
+    <tr><td>mv</td><td>moves </td></tr>
+    <tr><td>mv</td><td>moves and/or renames [source] to [destination]</td></tr>
+    <tr><td>rm</td><td>remove a file</td></tr>
+    <tr><td>rm -r</td><td>remove not empty folder</td></tr>
+</table>
+<table>
+    <caption>vi editor usage</caption>
+    <tr><td>vi [path]</td><td>edit file located at [path] in vi editor</td></tr>
+    <tr><td>ZZ</td><td>Capitals! Save and exit</td></tr>
+    <tr><td>:q!</td><td>discard all changes since the last save, and exit</td></tr>
+    <tr><td>:w</td><td>save file but don't exit</td></tr>
+    <tr><td>:wq</td><td>again, save and exit</td></tr>
+</table>
+    <tr><td>Ctrl+C</td><td>XXXX</td></tr>
+    <tr><td>----</td><td>----</td></tr>
+    <tr><td>tac file</td><td>print per line from end</td></tr>
+    <tr><td>less file</td><td>XXXX</td></tr>
+    <tr><td>nano file</td><td>XXXX</td></tr>
+    <tr><td>----</td><td>--Permissions--</td></tr>
+    <tr><td>d</td><td>directory</td></tr>
+    <tr><td>r</td><td>read</td></tr>
+    <tr><td>w</td><td>write</td></tr>
+    <tr><td>x</td><td>execute</td></tr>
+    <tr><td>Example</td><td>[-][rwx][r--][--x]</td></tr>
+    <tr><td>-/d</td><td>file type</td></tr>
+    <tr><td>---/rwx</td><td>owner rights</td></tr>
+    <tr><td>---/rwx</td><td>group rights</td></tr>
+    <tr><td>---/rwx</td><td>everyone rights</td></tr>
+    <tr><td>----</td><td>----</td></tr>
+    <tr><td>head [-number of lines to print] [path-to-file]</td><td>top lines</td></tr>
+    <tr><td>tail [-number of lines to print] [path-to-file]</td><td>bottom lines</td></tr>
+    <tr><td>sort [-options] [path]</td><td>XXXX</td></tr>
+    <tr><td>nl [-options] [path]</td><td>count lines in file</td></tr>
+    <tr><td>wc [-options] [path]</td><td>word count (lines, words and characters)</td></tr>
+    <tr><td>wc -lw</td><td>XXXX</td></tr>
+    <tr><td>cut [-options] [path]</td><td>XXXX</td></tr>
+    <tr><td>cut -f 1 -d ' ' mysampledata.txt</td><td>XXXX</td></tr>
+    <tr><td>-f 1 — field</td><td>XXXX</td></tr>
+    <tr><td>-d ' '</td><td>delimter (разделитель)</td></tr>
+    <tr><td>sed 's/[from]/[from]/g' file</td><td>search and exchange</td></tr>
+    <tr><td>uniq mysampledata.txt</td><td>remove duplicate lines</td></tr>
+    <tr><td>egrep [options] 'mellon' mysampledata.txt</td><td>search regexp</td></tr>
+    <tr><td>-n</td><td>add line numbers</td></tr>
+    <tr><td>-с</td><td>line numbers only</td></tr>
+    <tr><td>----</td><td>--RegEx--</td></tr>
+    <tr><td>*</td><td>represents zero or more characters</td></tr>
+    <tr><td>?</td><td>represents a single character</td></tr>
+    <tr><td>[]</td><td>represents a range of characters</td></tr>
+    <tr><td>. (dot)</td><td>a single character.</td></tr>
+    <tr><td>?</td><td>the preceding character matches 0 or 1 times only.</td></tr>
+    <tr><td>*</td><td>the preceding character matches 0 or more times.</td></tr>
+    <tr><td>+</td><td>the preceding character matches 1 or more times.</td></tr>
+    <tr><td>{n}</td><td>the preceding character matches exactly n times.</td></tr>
+    <tr><td>{n,m}</td><td>the preceding character matches at least n times and not more than m times.</td></tr>
+    <tr><td>[agd]</td><td>the character is one of those included within the square brackets.</td></tr>
+    <tr><td>[^agd]</td><td>the character is not one of those included within the square brackets.</td></tr>
+    <tr><td>[c-f]</td><td>the dash within the square brackets operates as a range. In this case it means either the letters c, d, e or f.</td></tr>
+    <tr><td>()</td><td>allows us to group several characters to behave as one.</td></tr>
+    <tr><td>| (pipe symbol)</td><td>the logical OR operation.</td></tr>
+    <tr><td>^</td><td>matches the beginning of the line.</td></tr>
+    <tr><td>$</td><td>matches the end of the line.</td></tr>
+    <tr><td>----</td><td>----</td></tr>
+    <tr><td>ls > myoutput</td><td>save to file</td></tr>
+    <tr><td>ls >> myoutput</td><td>append to file</td></tr>
+    <tr><td>ls 2> errors.txt</td><td>save errors to file</td></tr>
+    <tr><td>ls | head -3</td><td>XXXX</td></tr>
+    <tr><td>top</td><td>XXXX</td></tr>
+    <tr><td>ps aux</td><td>XXXX</td></tr>
+    <tr><td>ps auxw | grep 'firefox'</td><td>XXXX</td></tr>
+    <tr><td>kill 6978</td><td>kill process</td></tr>
+    <tr><td>kill -9 6978</td><td>kill process for sure</td></tr>
+    <tr><td>sleep 5</td><td>XXXX</td></tr>
+    <tr><td>sleep 5s/m/h/d</td><td>XXXX</td></tr>
+    <tr><td>Ctrl+Z</td><td>put current process to background</td></tr>
+    <tr><td>which [program]</td><td>program location</td></tr>
+    <tr><td>----</td><td>----.sh files----</td></tr>
+    <tr><td>#!/bin/bash</td><td>XXXX</td></tr>
+    <tr><td>#</td><td>comment</td></tr>
+    <tr><td>name='Ryan'</td><td>XXXX</td></tr>
+    <tr><td>echo Hello $name</td><td>XXXX</td></tr>
+    <tr><td>$0</td><td>The name of the script.</td></tr>
+    <tr><td>$1-$9</td><td>Any command line arguments given to the script. $1 is the first argument, $2 the second and so on.</td></tr>
+    <tr><td>$#</td><td>How many command line arguments were given to the script.</td></tr>
+    <tr><td>$*</td><td>All of the command line arguments.</td></tr>
+    <tr><td>date=`date +%F`</td><td>XXXX</td></tr>
+    <tr><td>if [ $answer != 'y' ]</td><td>XXXX</td></tr>
+    <tr><td>then</td><td>XXXX</td></tr>
+    <tr><td>[tab]exit</td><td>XXXX</td></tr>
+    <tr><td>fi</td><td>XXXX</td></tr>
+    <tr><td>----</td><td>----next guide----</td></tr>
+    <tr><td>pwd</td><td>Where am I in the system.</td></tr>
+    <tr><td>ls [path]</td><td>Perform a listing of the given path or your current directory. Common options: -l, -h, -a</td></tr>
+    <tr><td>cd [path]</td><td>Change into the given path or into your home directory.</td></tr>
+    <tr><td>Path</td><td>A description of where a file or directory is on the filesystem.</td></tr>
+    <tr><td>Absolute Path</td><td>One beginning from the root of the file system (eg. /etc/sysconfig ).</td></tr>
+    <tr><td>Relative Path</td><td>One relative to where you currently are in the system (eg. Documents/music ).</td></tr>
+    <tr><td>~ (tilde)</td><td>Used in paths as a reference to your home directory (eg. ~/Documents ).</td></tr>
+    <tr><td>. (dot)</td><td>Used in paths as a reference to your current directory (eg. ./bin ).</td></tr>
+    <tr><td>.. (dot dot)</td><td>Used in paths as a reference to your current directories parent directory (eg. ../bin ).</td></tr>
+    <tr><td>TAB completion</td><td>Start typing and press TAB. The system will auto complete the path. Press TAB twice and it will show you your alternatives.</td></tr>
+    <tr><td>----</td><td>--Piping and Redirection--</td></tr>
+    <tr><td>></td><td>Redirect STDOUT to a file.</td></tr>
+    <tr><td>>></td><td>Append STDOUT to the end of a file.</td></tr>
+    <tr><td>2></td><td>Redirect the STDERR to a file.</td></tr>
+    <tr><td><</td><td>Pass the contents of a file to a program as STDIN.</td></tr>
+    <tr><td>|</td><td>Feed the STDOUT of the program on the left as STDIN to the program on the right.</td></tr>
+    <tr><td>----</td><td>--More About Files--</td></tr>
+    <tr><td>file [path]</td><td>Find out what type of item a file or directory is.</td></tr>
+    <tr><td>Spaces in names</td><td>Put whole path in quotes ( " ) or a backslash ( \ ) in front of spaces.</td></tr>
+    <tr><td>Hidden files and directories</td><td>A name beginning with a . (dot) is considered hidden.</td></tr>
+    <tr><td>----</td><td>--Permissions--</td></tr>
+    <tr><td>r (read) w (write) x (execute)</td><td>Owner or User, Group and Others</td></tr>
+    <tr><td>ls -l [path]</td><td>View the permissions of a file or all items in a directory.</td></tr>
+    <tr><td>chmod <permissions> <path></td><td>Change permissions. Permissions can be either shorthand (eg. 754) or longhand (eg. g+x).</td></tr>
+    <tr><td>----</td><td>--Filters--</td></tr>
+    <tr><td>head</td><td>Show the first n lines.</td></tr>
+    <tr><td>tail</td><td>Show the last n lines.</td></tr>
+    <tr><td>sort</td><td>Sort lines in a given way.</td></tr>
+    <tr><td>wc</td><td>How many words, characters and lines.</td></tr>
+    <tr><td>grep</td><td>Search for a given pattern.</td></tr>
+    <tr><td>----</td><td>--Useful Commands--</td></tr>
+    <tr><td>du -sh ./*</td><td>Find the size of every directory in your current directory.</td></tr>
+    <tr><td>df -h</td><td>Display how much disk space is used and also free.</td></tr>
+    <tr><td>basename -s .jpg -a *.jpg | xargs -n1 -i cp {}.jpg {}_original.jpg</td><td>Make a copy of every jpg image file in the current directory and rename adding _original.</td></tr>
+    <tr><td>find /home -mtime -1</td><td>Find all files in the given directory (and subdirectories) which have been modified in the last 24 hours.</td></tr>
+    <tr><td>shutdown -h now</td><td>Shutdown the system. (Replace -h with -r for reboot.)</td></tr>
+    <tr><td>----</td><td>--Manual Pages--</td></tr>
+    <tr><td>man <command></td><td>View the man page for a command.</td></tr>
+    <tr><td>man -k <search term></td><td>Search for man pages containing the search term.</td></tr>
+    <tr><td>XXXX</td><td>Press q to exit man pages</td></tr>
+    <tr><td>----</td><td>--File Manipulation--</td></tr>
+    <tr><td>mkdir <directory name></td><td>Create a directory</td></tr>
+    <tr><td>rmdir <directory name></td><td>Remove a directory (only if empty).</td></tr>
+    <tr><td>touch <file name></td><td>Create a blank file.</td></tr>
+    <tr><td>cp <source> <destination></td><td>Copy the source file to the destination.</td></tr>
+    <tr><td>mv <source> <destination></td><td>Move the source file to the destination. May also be used to rename files or directories.</td></tr>
+    <tr><td>rm <path></td><td>Remove a file or directory. Common options: -r -f</td></tr>
+    <tr><td>jobs</td><td>See a list of current processes in the background.</td></tr>
+    <tr><td>fg <job number></td><td>Move the given process from the background to the foreground.</td></tr>
+</table>

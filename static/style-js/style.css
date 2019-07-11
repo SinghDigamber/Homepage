@@ -4,7 +4,8 @@ body {
     font-family: Arial;
     margin: 0;
 }
-main {
+main,
+img {
     padding-left: 0;
     max-width: 800px;
     margin: 0 auto;
