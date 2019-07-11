@@ -1,6 +1,7 @@
 from .models import event, calendar
 from django.views.generic import ListView
 from datetime import datetime, date, timedelta
+from icalendar import Calendar, Event
 
 
 class eventListView(ListView):
@@ -32,3 +33,25 @@ class eventListView(ListView):
             # 'event_list': event_list[:items_limit],
             'event_list': event_list,
         }
+
+
+class icsView(ListView):
+    model = event
+    template_name = "calenda/calendar.ics"
+    context_object_name = "fromView"
+
+    def get_queryset(self):
+        cal = Calendar()
+
+        for each in event.objects.all():
+            to_add = Event()
+            to_add.add('summary', each.calendar+": "+each.title)
+            to_add.add('dtstart', each.start)
+            to_add.add('dtend', each.end)
+            to_add.add('href', each.href)
+
+            cal.add_component(to_add)
+
+        result = cal.to_ical()
+
+        return result
