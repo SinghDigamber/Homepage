@@ -856,6 +856,21 @@ feeds = (
         href_title='http://animevost.org',
     ),
     feed(
+        title='ГосподствоКланов',
+        href='https://fantasy-worlds.org/series/id5683/',
+        emojis='💎'
+    ),
+    feed(
+        title='СточныеВодыАльгоры',
+        href='https://fantasy-worlds.org/series/id5684/',
+        emojis='💎'
+    ),
+    feed(
+        title='Кроу',
+        href='https://fantasy-worlds.org/series/id4976/',
+        emojis='💎'
+    ),
+    feed(
         title='Gam3',
         title_full='The Gam3',
         href='feed:https://thegam3.com/feed/',
@@ -980,6 +995,57 @@ feeds = (
         href_title='http://www.shadbase.com/',
         emojis='🏮💎',
         delay=42
+    ),
+    feed(
+        title='hellyvalentineP',
+        href='https://www.patreon.com/hellyvalentine/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='katopunkP',
+        href='https://www.patreon.com/katopunk/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='theartofmathewP',
+        href='https://www.patreon.com/theartofmathew/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='ichiosP',
+        href='https://www.patreon.com/ichios/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='JannetP',
+        href='https://www.patreon.com/Jannet/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='JessicaNigriP',
+        href='https://www.patreon.com/JessicaNigri/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='kalinkafoxP',
+        href='https://www.patreon.com/kalinkafox/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='imfurfurP',
+        href='https://www.patreon.com/imfurfur/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='starfuckedmodelP',
+        href='https://www.patreon.com/starfuckedmodel/posts?is_public=true',
+        emojis='💎'
+    ),
+    feed(
+        title='RoadCC',
+        href='feed:https://road.cc/rss',
+        href_title='https://road.cc',
+        emojis='💎'
     ),
     feed(
         title='Readmanga',

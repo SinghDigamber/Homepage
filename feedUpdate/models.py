@@ -145,6 +145,39 @@ class feed(models.Model):
             self.href = "http://backend.deviantart.com/rss.xml?q=gallery%3A"+self.href
             result = feed.parse(self)
 
+        # custom fantasy-worlds.org loader
+        elif self.href.find('https://fantasy-worlds.org/series/') != -1:
+            soup = requests.get(self.href)
+            soupStrainer = SoupStrainer('div', attrs={'class': 'rightBlock'})
+            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+
+            for book in soup.find('ul').find('li').find('ul').find('li').find('ul').find_all('li'):
+                print(book)
+
+                result_name = book.text.find(' // ')
+                result_name = self.title +" "+ book.text[:result_name]
+
+                result_href = book.find('a')['href']
+
+                result_datetime = datetime.now()
+
+                result.append(feedUpdate(
+                    name=result_name[:140],
+                    href=result_href,
+                    datetime=result_datetime,
+                    title=self.title))
+
+        # custom patreon.com loader
+        elif self.href.find('https://www.patreon.com/') != -1:
+            #soup = requests.get(self.href)
+            #soup = BeautifulSoup(soup.text, "html.parser")
+
+            #print(soup.find('Object.assign(window.patreon.bootstrap, {')
+
+            # cloudflare block,
+
+            pass
+
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
             soup = requests.get(self.href)
