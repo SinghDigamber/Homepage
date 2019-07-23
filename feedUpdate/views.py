@@ -23,21 +23,25 @@ class feedTestsView(ListView):
         feed_list = feed.objects.all()
 
         # feed testing
-        errors_regexp = ''
+        errors_regexp = []
         pattern = re.compile("^([0-9|а-я|ё|А-Я|Ё|a-z|A-Z|_|+|—])+$")
         for each in feed_list:
             if not pattern.match(each.title):
-                errors_regexp += each.title + "; "
+                errors_regexp.append(each.title)
 
-        errors_duplicates = feed.objects.values('title').annotate(name_count=Count('title')).filter(name_count__gt=1)
+        errors_duplicates = []
+        for each in feed.objects.values('title').annotate(name_count=Count('title')).filter(name_count__gt=1):
+            errors_duplicates.append(each['title'] + " x" + str(each['name_count']) + "; ")
 
         # results
         return {
             'page': {
                 'title': header,
-                'errors_regexp': errors_regexp,
-                'errors_duplicates': str(list(errors_duplicates)),
             },
+            'errors': {
+                'regexp': errors_regexp,
+                'duplicates': errors_duplicates,
+            }
         }
 
 

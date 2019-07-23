@@ -1,15 +1,32 @@
 {% extends 'Homepage/base.html' %}
 
+{% load static %}
+
 {% block title %} » feedUpdate » feeds{% endblock %}
+
+{% block meta %}
+    <link rel="stylesheet" href="{% static 'style-js/ul-red.css' %}">
+{% endblock %}
 
 {% block main %}
     <ul id="feedUpdate">
-        <h1>{{ fromView.page.title }}</h1>
+        <ul class="red">
+            <h1>Корректность:</h1>
+            <p>Checking feed.title for regexp errors</p>
+            {% for each in fromView.errors.regexp %}
+                <li>{{ each }}</li>
+            {% empty %}
+                ✔️
+            {% endfor %}
 
-        <h3>errors_regexp</h3>
-        <p>{{ fromView.page.errors_regexp }}</p>
-
-        <h3>errors_duplicates</h3>
-        <p>{{ fromView.page.errors_duplicates }}</p>
+        <ul class="red">
+            <h1>Дубликаты:</h1>
+            <p>Checking for feed.title duplicates</p>
+            {% for each in fromView.errors.duplicates %}
+                <li>{{ each }}</li>
+            {% empty %}
+                ✔️
+            {% endfor %}
+        </ul>
     </ul>
 {% endblock %}
