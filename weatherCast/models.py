@@ -20,6 +20,40 @@ class weatherCast(models.Model):
 
         return request
 
+    # generating weather icon emojis
+    def generate_weather_summary(weatherNowIcon, weatherNowTemp, weatherNowProb):
+        result = ''
+
+        if weatherNowIcon == 'clear-day':
+            result = '☀️'
+        elif weatherNowIcon == 'clear-night':
+            result = '🌙'
+        elif weatherNowIcon == 'rain':
+            result = '🌧️'
+        elif weatherNowIcon == 'snow':
+            result = '❄️'
+        elif weatherNowIcon == 'sleet':
+            result = '🌧❄️'
+        elif weatherNowIcon == 'wind':
+            result = '💨'
+        elif weatherNowIcon == 'fog':
+            result = '🌫'
+        elif weatherNowIcon == 'cloudy':
+            result = '☁️'
+        elif weatherNowIcon == 'partly-cloudy-day':
+            result = '🌤️'
+        elif weatherNowIcon == 'partly-cloudy-night':
+            result = '🌙☁️'
+        else:
+            result = weatherNowIcon
+
+        result += weatherNowTemp+'°'
+        result += ' '
+
+        result += '🌧️'+weatherNowProb+'%'
+
+        return result
+
     # parse example json
     @staticmethod
     def open_weather_forecast_example():

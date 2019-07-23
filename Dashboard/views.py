@@ -1,7 +1,7 @@
 from django.views.generic import ListView
 from .models import PlanetaKino, keyValue
 from datetime import datetime, time
-# from weatherCast.models import weatherCast
+from weatherCast.models import weatherCast
 from feedUpdate.models import feedUpdate, feed
 
 
@@ -13,7 +13,7 @@ class DashboardView(ListView):
         header_night = "Доброй ночи"
         header_morning = "Доброе утро"
         header_day = "Привет"
-        header_evening = "Доброго вечера"
+        header_evening = "Добрый вечер"
 
         now = datetime.now().time()
         if now < time(6):
@@ -25,11 +25,13 @@ class DashboardView(ListView):
         else:
             title_daypart = header_evening
 
-        title_weather = {}
-        title_weather['temp'] = keyValue.objects.filter(key='weatherNowTemp')[0].value
-        title_weather['summary'] = keyValue.objects.filter(key='weatherNowSum')[0].value
-        title_weather['precipProbability'] = keyValue.objects.filter(key='weatherNowProb')[0].value
-        title_weather['icon'] = keyValue.objects.filter(key='weatherNowIcon')[0].value
+        title_weather_sum = keyValue.objects.filter(key='weatherNowSum')[0].value
+
+        title_weather_sup = weatherCast.generate_weather_summary(
+            keyValue.objects.filter(key='weatherNowIcon')[0].value,
+            keyValue.objects.filter(key='weatherNowTemp')[0].value,
+            keyValue.objects.filter(key='weatherNowProb')[0].value
+        )
 
         movies = PlanetaKino.objects.filter(inTheater=True)
 
@@ -47,8 +49,15 @@ class DashboardView(ListView):
         feedUpdate_list = feedUpdate_list[:items_limit]
 
         return {
-            'title_daypart': title_daypart,
-            'title_weather': title_weather,
+            'title': {
+                'daypart': title_daypart,
+                'weather': {
+                    'sum': title_weather_sum,
+                    'sup': title_weather_sup,
+                }
+            },
             'movies': movies,
-            'feedUpdate_list': feedUpdate_list,
+            'feedUpdate': {
+                'list': feedUpdate_list,
+            }
         }

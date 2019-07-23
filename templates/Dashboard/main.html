@@ -13,22 +13,9 @@
 
 {% block main %}
     <h1>
-        {{ fromView.title_daypart }}, сейчас
+        {{ fromView.title.daypart }}, сейчас
         <span style="color: lightskyblue"><a href="{% url "weatherCast:index" %}">
-            {{ fromView.title_weather.summary }}<sup>
-            {%       if fromView.title_weather.icon == 'clear-day' %}☀️
-                {% elif fromView.title_weather.icon == 'clear-night' %}🌙
-                {% elif fromView.title_weather.icon == 'rain' %}🌧️
-                {% elif fromView.title_weather.icon == 'snow' %}❄️
-                {% elif fromView.title_weather.icon == 'sleet' %}🌧❄️
-                {% elif fromView.title_weather.icon == 'wind' %}💨
-                {% elif fromView.title_weather.icon == 'fog' %}🌫
-                {% elif fromView.title_weather.icon == 'cloudy' %}☁️
-                {% elif fromView.title_weather.icon == 'partly-cloudy-day' %}🌤️
-                {% elif fromView.title_weather.icon == 'partly-cloudy-night' %}🌙☁️
-                {% else %}{{ fromView.title_weather.icon }}
-                {% endif %}{{ fromView.title_weather.temp }}° 🌧️{{ fromView.title_weather.precipProbability }}%
-            </sup>
+            {{ fromView.title.weather.sum }}<sup>{{ fromView.title.weather.sup }}</sup>
         </a></span>
     </h1>
 
@@ -58,7 +45,7 @@
     </nobr></span>
     </h1>
 
-    {% for chapter in fromView.feedUpdate_list %}
+    {% for chapter in fromView.feedUpdate.list %}
         <li><span>
             <a class="name track-click" target="_blank" href="{{ chapter.href }}">
                 <span><strong>{{ chapter.title }}</strong></span>:
