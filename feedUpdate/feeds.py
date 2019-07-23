@@ -77,6 +77,7 @@ feeds = (
         title='VeddroYT',
         title_full='Veddro.com (YouTube)',
         href='https://www.youtube.com/channel/UCItSim1k6hOHyogg1LJ0JCQ/videos',
+        emojis='💎'
     ),
     feed(
         title='ZaddrotYT',
@@ -462,6 +463,23 @@ feeds = (
         title='JYoung',
         title_full='Jonathan Young',
         href='https://www.youtube.com/channel/UC40gs0opj389ohjLnJIAJzA/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='Geek_n_Sundry',
+        title_full='Geek & Sundry',
+        href='https://www.youtube.com/channel/UCaBf1a-dpIsw8OxqH4ki2Kg/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='BecauseScience',
+        title_full='Geek & Sundry',
+        href='https://www.youtube.com/channel/UCvG04Y09q0HExnIjdgaqcDQ/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='FeliciaDay',
+        href='https://www.youtube.com/channel/UCIg7U4yoXlm2_nnkl9wsIcw/videos',
         emojis='💎'
     ),
     feed(
@@ -1753,6 +1771,30 @@ feeds = (
         emojis='💎',
     ),
     feed(
+        title='DOU',
+        href='feed:https://dou.ua/feed/',
+        href_title='https://dou.ua/lenta/',
+        emojis='💎',
+    ),
+    feed(
+        title='DOUcal',
+        href='feed:https://dou.ua/calendar/feed/',
+        href_title='https://dou.ua/calendar/',
+        emojis='💎',
+    ),
+    feed(
+        title='DOUevents',
+        href='feed:https://dou.ua/calendar/feed/все%20темы/Харьков',
+        href_title='https://dou.ua/calendar/city/Харьков/',
+        emojis='💎',
+    ),
+    feed(
+        title='DOUcareer',
+        href='feed:https://dou.ua/lenta/tags/Карьера%20в%20IT/feed/',
+        href_title='https://dou.ua/lenta/tags/Карьера%20в%20IT/?from=doufp',
+        emojis='💎',
+    ),
+    feed(
         title='MyStrava',
         href='http://feedmyride.net/activities/21952815',
         href_title='https://www.strava.com/athlete/training',
@@ -1777,13 +1819,19 @@ feeds = (
         emojis='🏮'
     ),
     feed(
+        title='marisha_rayTwi',
+        href='https://twitrss.me/twitter_user_to_rss/?user=marisha_ray',
+        href_title='https://twitter.com/marisha_ray',
+        emojis='💎'
+    ),
+    feed(
         title='carme55i',
         href='https://twitrss.me/twitter_user_to_rss/?user=carme55i',
         href_title='https://twitter.com/carme55i',
         emojis='💎🏮'
     ),
     feed(
-        title='blackshirtboy',
+        title='blackshirtboyTwi',
         href='https://twitrss.me/twitter_user_to_rss/?user=blackshirtboy',
         href_title='https://twitter.com/blackshirtboy',
         emojis='🏮'
@@ -2004,25 +2052,16 @@ feeds = (
         title='VoxWeb',
         href='https://www.vox.com/rss/index.xml',
         href_title='https://www.vox.com',
-        emojis='💎'
     ),
     feed(
-        title='SBNation',
-        href='https://www.sbnation.com/rss/index.xml',
-        href_title='https://www.sbnation.com',
-        emojis='💎'
-    ),
-    feed(
-        title='SBNation',
+        title='Polygon',
         href='https://www.polygon.com/rss/index.xml',
         href_title='https://www.polygon.com',
-        emojis='💎'
     ),
     feed(
         title='Eater',
         href='https://www.eater.com/rss/index.xml',
         href_title='https://www.eater.com',
-        emojis='💎'
     ),
     feed(
         title='Recode',
@@ -2034,13 +2073,11 @@ feeds = (
         title='Curbed',
         href='https://www.curbed.com/rss/index.xml',
         href_title='https://www.curbed.com',
-        emojis='💎'
     ),
     feed(
         title='SBNation',
         href='https://www.sbnation.com/rss/index.xml',
         href_title='https://www.sbnation.com',
-        emojis='💎'
     ),
     feed(
         title='Superfamous',
@@ -2460,12 +2497,6 @@ feeds = (
         title='MrHidePatten',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/MrHide-Patten',
         href_title='http://www.hentai-foundry.com/pictures/user/MrHide-Patten',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='carmessi',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/carmessi',
-        href_title='http://www.hentai-foundry.com/pictures/user/carmessi',
         emojis='💎🏮'
     ),
     feed(
@@ -3444,7 +3475,7 @@ feeds = (
     feed(
         title='latexdiva_backup',
         href='https://www.instagram.com/latexdiva_backup/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='jennalynnmeowri',
@@ -3529,7 +3560,7 @@ feeds = (
     feed(
         title='navinigri',
         href='https://www.instagram.com/navinigri/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='fakenerd',
@@ -3884,7 +3915,7 @@ feeds = (
     feed(
         title='emanuelasolomie',
         href='https://www.instagram.com/emanuelasolomie/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='killers_story',
@@ -4713,8 +4744,18 @@ feeds = (
         emojis='🏮',
     ),
     feed(
+        title='kotya_kobum',
+        href='https://www.instagram.com/kotya_kobum/',
+        emojis='🏮',
+    ),
+    feed(
         title='xkaymorgan',
         href='https://www.instagram.com/xkaymorgan/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='marisha_ray',
+        href='https://www.instagram.com/marisha_ray/',
         emojis='💎🏮',
     ),
     feed(
