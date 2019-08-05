@@ -152,7 +152,7 @@ class feed(models.Model):
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
             for book in soup.find('ul').find('li').find('ul').find('li').find('ul').find_all('li'):
-                print(book)
+                #print(book)
 
                 result_name = book.text.find(' // ')
                 result_name = self.title +" "+ book.text[:result_name]
@@ -168,7 +168,7 @@ class feed(models.Model):
                     title=self.title))
 
         # custom patreon.com loader
-        elif self.href.find('https://www.patreon.com/') != -1:
+        #elif self.href.find('https://www.patreon.com/') != -1:
             #soup = requests.get(self.href)
             #soup = BeautifulSoup(soup.text, "html.parser")
 
@@ -176,7 +176,7 @@ class feed(models.Model):
 
             # cloudflare block,
 
-            pass
+            #pass
 
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
