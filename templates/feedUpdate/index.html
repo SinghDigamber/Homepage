@@ -10,31 +10,28 @@
 {% endblock %}
 
 {% block main %}
-    <ul class="red feedUpdate-feeds">
+    <ul class="red">
+        <h1>{{ fromView.page_title }}</h1>
 
-    <h1>{{ fromView.page_title }}</h1>
+        <h2><span class="emojis"><nobr>
+            {% if fromView.feedName == "Обновления" %}
+                <a href="{% url "feedUpdate:index" mode="index" %}">📰️️️</a>
+                <a href="{% url "feedUpdate:rss" %}">🗞️</a>
+            {% else %}
+                <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="index" %}">📰️️️</a>
+                <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="force" %}">☠️️</a>
+            {% endif %}
+            <a href="{% url "feedUpdate:tests" %}">⚙️</a>
+            <a href="{% url "feedUpdate:feeds" %}">📂</a>
+        </nobr></span></h2>
 
-    <h2><span class="emojis"><nobr>
-        {% if fromView.feedName == "Обновления" %}
-            <a href="{% url "feedUpdate:index" mode="index" %}">📰️️️</a>
-            <a href="{% url "feedUpdate:rss" %}">🗞️</a>
-        {% else %}
-            <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="index" %}">📰️️️</a>
-            <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="force" %}">☠️️</a>
-        {% endif %}
-        <a href="{% url "feedUpdate:tests" %}">⚙️</a>
-        <a href="{% url "feedUpdate:feeds" %}">📂</a>
-    </nobr></span></h2>
-
-    {% for chapter in fromView.feedUpdate_list %}
-        <li><span>
-            <a class="name track-click" target="_blank" href="{{ chapter.href }}">
-                {% if fromView.multibook %}<span><strong>{{ chapter.title }}</strong></span>: {% endif %}{{ chapter.name }}
-            </a>
-            <span><a class="grey">on {{chapter.datetime|date:'Y-m-d H:i' }}</a></span>
-        </span></li>
-    {% empty %}
-        <li>Oops, something went wrong. Empty!</li>
-    {% endfor %}
+        {% for chapter in fromView.feedUpdate_list %}
+            <li><a class="name track-click" target="_blank" href="{{ chapter.href }}"
+                    >{% if fromView.multibook %}<strong>{{ chapter.title }}</strong>: {% endif %}{{ chapter.name }}</a>
+                <a class="grey">on {{chapter.datetime|date:'Y-m-d H:i' }}</a>
+            </li>
+        {% empty %}
+            <li>Oops, something went wrong. Empty!</li>
+        {% endfor %}
     </ul>
 {% endblock %}

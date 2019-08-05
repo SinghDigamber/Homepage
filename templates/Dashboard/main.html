@@ -38,7 +38,7 @@
 
     <ul class="red feedUpdate-feeds">
 
-    <h1>Обновления
+        <h1><a href="{% url "feedUpdate:index" mode="" %}">Обновления</a>
     <span class="lowercase"><nobr>
         <a href="{% url "feedUpdate:tests" %}">⚙️</a>
         <a href="{% url "feedUpdate:feeds" %}">📂</a>
@@ -46,12 +46,10 @@
     </h1>
 
     {% for chapter in fromView.feedUpdate.list %}
-        <li><span>
-            <a class="name track-click" target="_blank" href="{{ chapter.href }}">
-                <span><strong>{{ chapter.title }}</strong></span>:
+        <li><a class="name track-click" target="_blank" href="{{ chapter.href }}"
+            ><strong>{{ chapter.title }}</strong>:
                 {{ chapter.name }}
-            </a>
-        </span></li>
+        </a></li>
     {% empty %}
         <li>Oops, something went wrong. Empty!</li>
     {% endfor %}

@@ -17,10 +17,8 @@
     <input id='liSearchInput' onkeyup='liSearch()' autocomplete='off'>
 
     {% for page in fromView.page_list %}
-        <li><a class="name" target="_blank" href="{% url "pages:page" file_name=page.file_name %}">
-            {{ page.title }}
-        </a></li>
-    </div>
+        <li><a class="name" target="_blank" href="{% url "pages:page" file_name=page.file_name %}"
+            >{{ page.title }}</a></li>
     {% empty %}
         <li>Oops, something went wrong. Empty!</li>
     {% endfor %}
