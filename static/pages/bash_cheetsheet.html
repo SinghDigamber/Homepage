@@ -1,113 +1,364 @@
 <h1>Bash cheet sheet</h1>
 
-<a href="explainshell.com">explainshell</a>
+<p>You can check shell command explanations at <a href="https://explainshell.com">explainshell.com</a></p>
 
 <table>
     <caption>Navigation</caption>
-    <tr><td>pwd</td> <td>print absolute path to working (current) directory</td></tr>
-    <tr><td>ls</td><td>list directory contents in columns</td></tr>
-    <tr><td>ls -l</td><td>as table, with more details</td></tr>
-    <tr><td>ls -a</td><td>list all files, including hidden ones (ones starting with . (dot))</td></tr>
-    <tr><td>cd</td><td>change working directory</td></tr>
-    <tr><td>cd [path]</td><td>change working directory to [path]. It can be both absolute and relative, ~ is used if not specified</td></tr>
-    <tr><td>cd a b</td><td>trying changing to folder 'a b' which exists, does not work</td></tr>
-    <tr><td>cd 'a b'</td><td>works because of '' usage</td></tr>
-    <tr><td>cd a\ b</td><td>works because  ' ' (space) symbols are used</td></tr>
+    <tr>
+        <td>pwd</td>
+        <td>Print absolute path to working (current) directory.</td></tr>
+    <tr>
+        <td>ls</td>
+        <td>List directory contents in columns.</td></tr>
+    <tr>
+        <td>ls -l</td>
+        <td>As table, with more details.</td></tr>
+    <tr>
+        <td>ls -a</td>
+        <td>List all files, including hidden ones (ones starting with . (dot)).</td></tr>
+    <tr>
+        <td>cd</td>
+        <td>Change working directory.</td></tr>
+    <tr>
+        <td>cd [path]</td>
+        <td>Change working directory to [path]. It can be both absolute and relative, ~ is used if not specified. [path] usage:<ol>
+                <li> a b  >> folder 'a b' exists, does not work</li>
+                <li> 'a b' >> works because of '' usage</li>
+                <li> a\ b  >> works because  ' ' (space) symbols are used</li>
+            </ol><tr>
+    <tr>
+        <td>Ctrl+C</td>
+        <td>Stop process: sends signal SIGINT to stop terminal process.</td></tr>
+    <tr>
+        <td>Ctrl+Z</td>
+        <td>Put current process to background.</td></tr>
 </table>
 <table>
-    <caption>man</caption>
-    <tr><td>man</td><td>format and display the on-line manual pages (does not work with this command)</td>
-    <tr><td>man [command]</td><td>display man help page for [command]</td>
-    <tr><td>man -k [term]</td><td>Do a keyword search for all manual pages containing the given search term.</td></tr>
-    <tr><td>/[term]</td><td>Within a manual page, perform a search for [term]</td></tr>
-    <tr><td>n</td><td>After performing a search within a manual page, select the next found item.</td></tr>
+    <caption>man (help)</caption>
+    <tr>
+        <td>man</td>
+        <td>Format and display the on-line manual pages (does not work this way).</td>
+    <tr>
+        <td>man [command]</td>
+        <td>Display man help page for [command]</td></tr>
+    <tr>
+        <td>man -k [term]</td>
+        <td>Do a keyword search for all manual pages containing the given search term.</td></tr>
+    <tr>
+        <td>/[term]</td>
+        <td>Within a manual page, perform a search for [term]</td></tr>
+    <tr>
+        <td>n</td>
+        <td>After performing a search within a manual page, select the next found item.</td></tr>
 </table>
 <table>
     <caption>Working with files and folders</caption>
-    <tr><td>mkdir</td><td>make directories</td></tr>
-    <tr><td>mkdir [path]</td><td>create directory [path]. Multiple folders can be created using ' ' (space) as separator, only creates folder if parent folders are created</td></tr>
-    <tr><td>mkdir -p [path]</td><td>creates required parent directories if required as well, recursively</td></tr>
-    <tr><td>mkdir -v</td><td>(--verbose) tell us what it does, prints a message for each created directory</td></tr>
-    <tr><td>rmdir [path]</td><td>remove empty directory</td></tr>
-    <tr><td>rmdir -r [path]</td><td>remove non-empty directory</td></tr>
-    <tr><td>touch</td><td>create empty file</td></tr>
-    <tr><td>cp [source] [destination]</td><td>copy [source] to [destination], does not create destination folder</td></tr>
-    <tr><td>cp -r</td><td>creates one folder in depth</td></tr>
-    <tr><td>mv</td><td>moves </td></tr>
-    <tr><td>mv</td><td>moves and/or renames [source] to [destination]</td></tr>
-    <tr><td>rm</td><td>remove a file</td></tr>
-    <tr><td>rm -r</td><td>remove not empty folder</td></tr>
+    <tr>
+        <td>touch [path]</td>
+        <td>Create empty file at [path]</td></tr>
+    <tr>
+        <td>mkdir</td>
+        <td>Makes (creates) directories.</td></tr>
+    <tr>
+        <td>mkdir [path]</td>
+        <td>Create directory at [path], both absolute and relative.
+            Multiple folders can be created using <code>' '</code> (space) as separator.
+            Only creates folder if parent folders are created.</td></tr>
+    <tr>
+        <td>mkdir -p [path]</td>
+        <td>Creates required parent directories if they are required during path creation, recursively.</td></tr>
+    <tr>
+        <td>mkdir -v [path]</td>
+        <td>Tell us what it does, prints a message for each created directory. Works by typing --verbose as well.</td></tr>
+    <tr>
+        <td>cp [source] [destination]</td>
+        <td>Copy [source] to [destination], does not create destination folder.</td></tr>
+    <tr>
+        <td>cp -r [source] [destination]</td>
+        <td>Copy [source] to [destination], can create one folder in depth</td></tr>
+    <tr>
+        <td>mv [path1] [path2]</td>
+        <td>Moves and/or renames [path1] to [path2]</td></tr>
+    <tr>
+        <td>rm [path]</td>
+        <td>Remove a file located at [path]</td></tr>
+    <tr>
+        <td>rm -r [path]</td>
+        <td>Remove not empty folder located at [path]</td></tr>
+    <tr>
+        <td>rmdir [path]</td>
+        <td>Remove empty directory at [path]</td></tr>
+    <tr>
+        <td>rmdir -r [path]</td>
+        <td>Remove non-empty directory at [path]</td></tr>
 </table>
 <table>
     <caption>vi editor usage</caption>
-    <tr><td>vi [path]</td><td>edit file located at [path] in vi editor</td></tr>
-    <tr><td>ZZ</td><td>Capitals! Save and exit</td></tr>
-    <tr><td>:q!</td><td>discard all changes since the last save, and exit</td></tr>
-    <tr><td>:w</td><td>save file but don't exit</td></tr>
-    <tr><td>:wq</td><td>again, save and exit</td></tr>
+    <tr>
+        <td>vi [path]</td>
+        <td>Edit file located at [path] in vi editor</td></tr>
+    <tr>
+        <td>:ZZ</td>
+        <td>Capitals! Save and exit</td></tr>
+    <tr>
+        <td>:q!</td>
+        <td>discard all changes since the last save, and exit</td></tr>
+    <tr>
+        <td>:w</td>
+        <td>save file but don't exit</td></tr>
+    <tr>
+        <td>:wq</td>
+        <td>save and exit</td></tr>
 </table>
-    <tr><td>Ctrl+C</td><td>XXXX</td></tr>
-    <tr><td>----</td><td>----</td></tr>
-    <tr><td>tac file</td><td>print per line from end</td></tr>
-    <tr><td>less file</td><td>XXXX</td></tr>
-    <tr><td>nano file</td><td>XXXX</td></tr>
-    <tr><td>----</td><td>--Permissions--</td></tr>
-    <tr><td>d</td><td>directory</td></tr>
-    <tr><td>r</td><td>read</td></tr>
-    <tr><td>w</td><td>write</td></tr>
-    <tr><td>x</td><td>execute</td></tr>
-    <tr><td>Example</td><td>[-][rwx][r--][--x]</td></tr>
-    <tr><td>-/d</td><td>file type</td></tr>
-    <tr><td>---/rwx</td><td>owner rights</td></tr>
-    <tr><td>---/rwx</td><td>group rights</td></tr>
-    <tr><td>---/rwx</td><td>everyone rights</td></tr>
-    <tr><td>----</td><td>----</td></tr>
-    <tr><td>head [-number of lines to print] [path-to-file]</td><td>top lines</td></tr>
-    <tr><td>tail [-number of lines to print] [path-to-file]</td><td>bottom lines</td></tr>
-    <tr><td>sort [-options] [path]</td><td>XXXX</td></tr>
-    <tr><td>nl [-options] [path]</td><td>count lines in file</td></tr>
-    <tr><td>wc [-options] [path]</td><td>word count (lines, words and characters)</td></tr>
-    <tr><td>wc -lw</td><td>XXXX</td></tr>
-    <tr><td>cut [-options] [path]</td><td>XXXX</td></tr>
-    <tr><td>cut -f 1 -d ' ' mysampledata.txt</td><td>XXXX</td></tr>
-    <tr><td>-f 1 — field</td><td>XXXX</td></tr>
-    <tr><td>-d ' '</td><td>delimter (разделитель)</td></tr>
-    <tr><td>sed 's/[from]/[from]/g' file</td><td>search and exchange</td></tr>
-    <tr><td>uniq mysampledata.txt</td><td>remove duplicate lines</td></tr>
-    <tr><td>egrep [options] 'mellon' mysampledata.txt</td><td>search regexp</td></tr>
-    <tr><td>-n</td><td>add line numbers</td></tr>
-    <tr><td>-с</td><td>line numbers only</td></tr>
-    <tr><td>----</td><td>--RegEx--</td></tr>
-    <tr><td>*</td><td>represents zero or more characters</td></tr>
-    <tr><td>?</td><td>represents a single character</td></tr>
-    <tr><td>[]</td><td>represents a range of characters</td></tr>
-    <tr><td>. (dot)</td><td>a single character.</td></tr>
-    <tr><td>?</td><td>the preceding character matches 0 or 1 times only.</td></tr>
-    <tr><td>*</td><td>the preceding character matches 0 or more times.</td></tr>
-    <tr><td>+</td><td>the preceding character matches 1 or more times.</td></tr>
-    <tr><td>{n}</td><td>the preceding character matches exactly n times.</td></tr>
-    <tr><td>{n,m}</td><td>the preceding character matches at least n times and not more than m times.</td></tr>
-    <tr><td>[agd]</td><td>the character is one of those included within the square brackets.</td></tr>
-    <tr><td>[^agd]</td><td>the character is not one of those included within the square brackets.</td></tr>
-    <tr><td>[c-f]</td><td>the dash within the square brackets operates as a range. In this case it means either the letters c, d, e or f.</td></tr>
-    <tr><td>()</td><td>allows us to group several characters to behave as one.</td></tr>
-    <tr><td>| (pipe symbol)</td><td>the logical OR operation.</td></tr>
-    <tr><td>^</td><td>matches the beginning of the line.</td></tr>
-    <tr><td>$</td><td>matches the end of the line.</td></tr>
-    <tr><td>----</td><td>----</td></tr>
-    <tr><td>ls > myoutput</td><td>save to file</td></tr>
-    <tr><td>ls >> myoutput</td><td>append to file</td></tr>
-    <tr><td>ls 2> errors.txt</td><td>save errors to file</td></tr>
-    <tr><td>ls | head -3</td><td>XXXX</td></tr>
-    <tr><td>top</td><td>XXXX</td></tr>
-    <tr><td>ps aux</td><td>XXXX</td></tr>
-    <tr><td>ps auxw | grep 'firefox'</td><td>XXXX</td></tr>
-    <tr><td>kill 6978</td><td>kill process</td></tr>
-    <tr><td>kill -9 6978</td><td>kill process for sure</td></tr>
-    <tr><td>sleep 5</td><td>XXXX</td></tr>
-    <tr><td>sleep 5s/m/h/d</td><td>XXXX</td></tr>
-    <tr><td>Ctrl+Z</td><td>put current process to background</td></tr>
-    <tr><td>which [program]</td><td>program location</td></tr>
+<table>
+    <caption>Opening files</caption>
+    <tr>
+        <td>more [path]</td>
+        <td>Print file at [path] line per line.</td></tr>
+    <tr>
+        <td>tac [path]</td>
+        <td>Print file at [path] line per line reversed.</td></tr>
+    <tr>
+        <td>less [path]</td>
+        <td>Open file at [path] in less, cannot be edited.</td></tr>
+    <tr>
+        <td>nano [path]</td>
+        <td>Open file at [path] in nano editor.</td></tr>
+    <tr>
+        <td>head -[lines] [path]</td>
+        <td>print [lines] (number) top lines from file at [path]</td></tr>
+    <tr>
+        <td>tail -[lines] [path]</td>
+        <td>print [lines] (number) bottom lines from file at [path]</td></tr>
+</table>
+<table>
+    <caption>Permissions</caption>
+    <tr>
+        <td>chown</td>
+        <td>change file owner and group</td></tr>
+    <tr>
+        <td>[drwx]</td>
+        <td>Letters used in permissions:<ul>
+            <li>d — directory</li>
+            <li>r — read</li>
+            <li>w — write</li>
+            <li>x — execute</li>
+        </ul>
+        Example: [-/d][---/rwx][---/rwx][---/rwx]<br><br>
+        File type (file/directory) /// Owner rights /// Group rights /// Everyone rights</td></tr>
+    <tr>
+        <td>[777]</td>
+        <td>[rwx][rwx][rwx] — binary representation, - is 0 while r/w/x is 1: rwx is 7, r--r--rwx is 447</td></tr>
+</table>
+<table>
+    <caption>Working with files</caption>
+    <tr>
+        <td>sort [options] [path]</td>
+        <td>Sort lines of file located at [path] and print them, [options] can customize it.</td></tr>
+    <tr>
+        <td>nl [path]</td>
+        <td>Print file at [path] with line numbers.</td></tr>
+    <tr>
+        <td>wc [path]</td>
+        <td>Word count: lines, words and characters.</td></tr>
+    <tr>
+        <td>wc -lwc [path]</td>
+        <td>Word count: (L)ines, (W)ords and (C)haracters. Remove letters from lwc if one of them are not required.</td></tr>
+    <tr>
+        <td>sed 's/[from]/[to]/g' file</td>
+        <td>Search [from] term and exchange to [to], does not write to file.</td></tr>
+    <tr>
+        <td>uniq [path]</td>
+        <td>Remove duplicate lines from file at [path]</td></tr>
+</table>
+<table>
+    <caption>Regular expressions (RegExp)</caption>
+    <tr>
+        <td>egrep [regexp] [path]</td>
+        <td>Search [path] for [regexp] and print matching lines.</td></tr>
+    <tr>
+        <td>egrep -n [regexp] [path]</td>
+        <td>Search [path] for [regexp] and print matching lines with their line numbers.</td></tr>
+    <tr>
+        <td>egrep -c [regexp] [path]</td>
+        <td>Search [path] for [regexp] and print how many matching lines were found.</td></tr>
+</table>
+<table>
+    <caption>Regular expressions (writing of)</caption>
+    <tr>
+        <td>\d (digit)</td>
+        <td>Most engines: one digit, 0-9</td>
+            <td><nobr>file_\d\d</nobr></td>
+            <td><nobr>file_25</nobr></td></tr>
+        <tr>
+            <td></td>
+            <td>.NET, Python3: one Unicode digit in any script, 0-9</td>
+                <td><nobr>file_\d\d</nobr></td>
+                <td><nobr>file_9੩</nobr></td></tr>
+    <tr>
+        <td>\w (word character)</td>
+        <td>Most engines: ASCII letter, digit or underscore</td>
+            <td><nobr>\w-\w\w\w</nobr></td>
+            <td><nobr>A-b_1</nobr></td></tr>
+        <tr>
+            <td></td>
+            <td>Python3: Unicode letter, ideogram, digit, or underscore</td>
+                <td><nobr>\w-\w\w\w</nobr></td>
+                <td><nobr>字-ま_۳</nobr></td></tr>
+        <tr>
+            <td></td>
+            <td>Unicode letter, ideogram, digit, or connector</td>
+                <td><nobr>\w-\w\w\w</nobr></td>
+                <td><nobr>字-ま‿۳</nobr></td></tr>
+    <tr>
+        <td>\s (whitespace character)</td>
+        <td>Most engines: space, tab, newline, carriage return, vertical tab</td>
+            <td><nobr>a\sb\sc</nobr></td>
+            <td><nobr>a b c</nobr></td>
+        <tr>
+            <td></td>
+            <td>.NET, Python 3, JavaScript: any Unicode separator</td>
+                <td><nobr>a\sb\sc</nobr></td>
+                <td><nobr>a b c</nobr></td></tr>
+    <tr>
+        <td>\D (not digit)</td>
+        <td>One character that is not a digit as defined by your engine's \d</td>
+            <td><nobr>\D\D\D</nobr></td>
+            <td><nobr>ABC</nobr></td>
+    <tr>
+        <td>\W (not word)</td>
+        <td>One character that is not a word character as defined by your engine's \w</td>
+            <td><nobr>\W\W\W</nobr></td>
+            <td><nobr>*=)</nobr></td>
+    <tr>
+        <td>\S (not whitespace)</td>
+        <td>One character that is not a whitespace character as defined by your engine's \s</td>
+            <td><nobr>\S\S\S\S</nobr></td>
+            <td><nobr>Yoyo</nobr></td>
+    <tr>
+        <td>+</td>
+        <td>One or more</td>
+            <td><nobr>Version \w-\w+</nobr></td>
+            <td><nobr>Version A-b1_1</nobr></td>
+    <tr>
+        <td>{3}</td>
+        <td>Exactly three times</td>
+            <td><nobr>\D{3}</nobr></td>
+            <td><nobr>ABC</nobr></td>
+    <tr>
+        <td>{2,4}</td>
+        <td>Two to four times</td>
+            <td><nobr>\d{2,4}</nobr></td>
+            <td><nobr>156</nobr></td>
+    <tr>
+        <td>{3,}</td>
+        <td>Three or more times</td>
+            <td><nobr>\w{3,}</nobr></td>
+            <td><nobr>regex_tutorial</nobr></td>
+    <tr>
+        <td>*</td>
+        <td>Zero or more times</td>
+            <td><nobr>A*B*C*</nobr></td>
+            <td><nobr>AAACC</nobr></td>
+    <tr>
+        <td>?</td>
+        <td>Once or none</td>
+            <td><nobr>plurals?</nobr></td>
+            <td><nobr>plural</nobr></td>
+    <tr>
+        <td>.</td>
+        <td>Any character except line break</td>
+            <td><nobr>a.c</nobr></td>
+            <td><nobr>abc</nobr></td>
+    <tr>
+        <td></td>
+        <td></td>
+            <td><nobr>.*</nobr></td>
+            <td><nobr>whatever, man.</nobr></td>
+    <tr>
+        <td>\.</td>
+        <td>A period (special character: needs to be escaped by a \)</td>
+            <td><nobr>a\.c</nobr></td>
+            <td><nobr>a.c</nobr></td>
+    <tr>
+        <td>\</td>
+        <td>Escapes a special character</td>
+            <td><nobr>\.\*\+\?    \$\^\/\\</nobr></td>
+            <td><nobr>.*+?    $^/\</nobr></td>
+    <tr>
+        <td></td>
+        <td></td>
+            <td><nobr>\[\{\(\)\}\]</nobr></td>
+            <td><nobr>[{()}]</nobr></td>
+    <tr>
+        <td>|</td>
+        <td>Alternation, OR operand, logical OR</td>
+            <td><nobr>22|33</nobr></td>
+            <td><nobr>33</nobr></td>
+    <tr>
+        <td>()</td>
+        <td>Capturing group</td>
+            <td><nobr>A(nt|pple)</nobr></td>
+            <td><nobr>Apple (captures "pple")</nobr></td>
+    <tr>
+        <td>^</td>
+        <td colspan="3">Beginning of the line</td>
+    <tr>
+        <td>$</td>
+        <td colspan="3">End of line</td>
+</table>
+<p>You can check more details about regular expressions at
+    <a href="https://www.rexegg.com/regex-quickstart.html">rexegg.com</a></p>
+
+<table>
+    <caption>Pyping commands</caption>
+    <tr>
+        <td>ls > [path]</td>
+        <td>Save output as file at [path]</td></tr>
+    <tr>
+        <td>ls >> [path]</td>
+        <td>Add output to end of file at [path]</td></tr>
+    <tr>
+        <td>ls 2> [path]</td>
+        <td>Save errors to file at [path]</td></tr>
+    <tr>
+        <td>ls | head -3</td>
+        <td>Send output of the left command to right one as input.</td></tr>
+    <tr>
+        <td>top</td>
+        <td>Shell analogue of Task Manager which displays processes.</td></tr>
+    <tr>
+        <td>ps aux</td>
+        <td>Report snapshot of all the current processes:<ol>
+            <li>a — Select all processes except both session leaders(?) and processes not associated
+                with a terminal.</li>
+            <li>u - Select by effective user ID (EUID) or name. This selects the processes whose effective user
+                name or ID is in userlist. The effective user ID describes the user whose file access permissions are
+                used by the process. Identical to U and --user.</li>
+            <li>x - Lift the BSD-style "must have a tty" restriction, which is imposed upon the set of all processes
+                when some BSD-style (without "-") options are used or when the ps personality setting is BSD-like.
+                The set of processes selected in this manner is in addition to the set of processes
+                selected by other means. An alternate description is that this option causes ps to list all processes
+                owned by you (same EUID as ps), or to list all processes when used together with the a option.</li>
+            <li>w - Wide output. Use this option twice for unlimited width.</li>
+        </ol></td></tr>
+    <tr>
+        <td>ps auxw | grep [term]</td>
+        <td>Output all processes matching [term]</td></tr>
+    <tr>
+        <td>kill [PID]</td>
+        <td>Kill process by [PID] (process id).</td></tr>
+    <tr>
+        <td>kill -9 6978</td>
+        <td>Kill process for sure.</td></tr>
+    <tr>
+        <td>sleep [time]</td>
+        <td>Wait [time] seconds. Can be indicated as 5s/m/h/d to refer to seconds/minutes/hours/days</td></tr>
+    <tr>
+        <td>which [command]</td>
+        <td>Returns [command] location.</td></tr>
+</table>
+
     <tr><td>----</td><td>----.sh files----</td></tr>
     <tr><td>#!/bin/bash</td><td>XXXX</td></tr>
     <tr><td>#</td><td>comment</td></tr>
