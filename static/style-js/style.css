@@ -21,7 +21,28 @@ h1 span.lowercase {
 h1 sup {
     font-size: 75%;
 }
-h1 span a:any-link, h2 a:any-link {
+h1 span a:any-link,
+h2 a:any-link,
+main div.page a:any-link {
     text-decoration: none;
     color: inherit;
+}
+main div.page a:any-link {
+    border-bottom: solid 1px red;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table caption {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+table td {
+    border: dashed 1px #500;
+    padding: 3px;
+}
+table td:first-child {
+    width: 20%;
 }

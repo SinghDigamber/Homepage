@@ -15,7 +15,7 @@ ul.red li:before {
     content: "»";
     color: red;
     font-weight: bold;
-    /* padding-right: 5px; */
+    padding-right: 5px;
 }
 /* TODO: better feedUpdate-feeds styling */
 ul.red.feedUpdate-feeds li.index-true:before {
