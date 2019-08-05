@@ -570,7 +570,6 @@ feeds = (
     feed(
         title='НеСпатьПриехал',
         href='https://www.youtube.com/channel/UCbz4lhLbbT0GfRxCA4mBH2w/videos',
-        emojis='💎'
     ),
     feed(
         title='ДмитрийЛасенко',
@@ -619,6 +618,11 @@ feeds = (
         title_full='Стас Давыдов',
         href='https://www.youtube.com/channel/UCPEOh8hH_dNSIhUr4N3y6ng/videos',
         emojis='💎'
+    ),
+    feed(
+        title='IreneMeier',
+        href='https://www.youtube.com/channel/UC84Q7fDP_ICrpojUSs4_nDA/videos',
+        emojis='🏮💎'
     ),
     feed(
         title='ShoShoser',
@@ -2247,7 +2251,7 @@ feeds = (
         title='tesomu',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/tesomu',
         href_title='http://www.hentai-foundry.com/pictures/user/tesomu',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='markydaysaid',
@@ -2821,7 +2825,7 @@ feeds = (
     feed(
         title='ariverkao',
         href='https://www.deviantart.com/ariverkao/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='reivash',
@@ -3506,6 +3510,11 @@ feeds = (
     feed(
         title='notcamdamage',
         href='https://www.instagram.com/notcamdamage/',
+        emojis='🏮',
+    ),
+    feed(
+        title='ruby_alexia',
+        href='https://www.instagram.com/ruby.alexia/',
         emojis='🏮',
     ),
     feed(
@@ -4682,7 +4691,6 @@ feeds = (
     feed(
         title='lisa_shtepa',
         href='https://www.instagram.com/lisa_shtepa/',
-        emojis='💎',
     ),
     feed(
         title='alexparadise13',
