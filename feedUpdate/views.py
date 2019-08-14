@@ -136,7 +136,7 @@ class feedUpdateIndexView(ListView):
 
     def get_queryset(self):
         # constants
-        items_limit = 140
+        items_limit = 1400
         items_limit_select = items_limit*8
 
         # calculations
