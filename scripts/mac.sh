@@ -1,9 +1,4 @@
-#!/bin/sh
-
 cd ~/Projects/Homepage/
-
-ssh-keygen
-ssh-copy-id pi@192.168.1.201
 
 # install Xcode with command line tools OR only tools with command:
 xcode-select --install
@@ -25,5 +20,3 @@ python3 ~/Projects/Homepage/manage.py migrate
 python3 ~/Projects/Homepage/manage.py createsuperuser
 
 sudo systemctl stop homepage.server.service; cd /home/pi/Projects/Homepage; git pull; sudo systemctl start homepage.server.service
-
-ssh -p 8022 pi@krupko.space
