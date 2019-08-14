@@ -857,7 +857,6 @@ feeds = (
     feed(
         title='BikeInCity',
         href='https://www.youtube.com/channel/UCPats7cCr4KFgmwCB2ZGzFg/videos',
-        emojis='💎'
     ),
     feed(
         title='Veritasium',
@@ -1001,6 +1000,12 @@ feeds = (
         title='HighScalability',
         href='http://feeds.feedburner.com/HighScalability',
         href_title='http://highscalability.com',
+    ),
+    feed(
+        title='KaterinaPigletWeb',
+        href='feed://katerinapiglet.com/feed/',
+        href_title='http://katerinapiglet.com/gallery/',
+        emojis='🏮'
     ),
     feed(
         title='RaspberryPiWeb',
@@ -1477,9 +1482,9 @@ feeds = (
     ),
     feed(
         title='MechanicalGodEmperor',
+        title_full='Mechanical God Emperor (остановился на 307)',
         href='feed:https://xaiomoge.com/feed/',
         href_title='https://xaiomoge.com/mge/',
-        emojis='💎',
     ),
     feed(
         title='octokuro',
@@ -1779,12 +1784,6 @@ feeds = (
         emojis='💎',
     ),
     feed(
-        title='DOUcal',
-        href='feed:https://dou.ua/calendar/feed/',
-        href_title='https://dou.ua/calendar/',
-        emojis='💎',
-    ),
-    feed(
         title='DOUevents',
         href='feed:https://dou.ua/calendar/feed/все%20темы/Харьков',
         href_title='https://dou.ua/calendar/city/Харьков/',
@@ -2067,7 +2066,6 @@ feeds = (
         title='Recode',
         href='https://www.vox.com/rss/recode/index.xml',
         href_title='https://www.vox.com/recode',
-        emojis='💎'
     ),
     feed(
         title='Curbed',
@@ -2089,6 +2087,12 @@ feeds = (
         title='carmessi',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/carmessi',
         href_title='http://www.hentai-foundry.com/pictures/user/carmessi',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='SatyrSatyr',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/SatyrSatyr',
+        href_title='http://www.hentai-foundry.com/pictures/user/SatyrSatyr',
         emojis='💎🏮'
     ),
     feed(
@@ -2542,6 +2546,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='ParkdaleArt',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/ParkdaleArt',
+        href_title='http://www.hentai-foundry.com/pictures/user/ParkdaleArt',
+        emojis='💎🏮'
+    ),
+    feed(
         title='Lurkergg',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Lurkergg',
         href_title='http://www.hentai-foundry.com/pictures/user/Lurkergg',
@@ -2581,6 +2591,12 @@ feeds = (
         title='lerra22',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/lerra22',
         href_title='http://www.hentai-foundry.com/pictures/user/lerra22',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='OrionM',
+        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/OrionM',
+        href_title='http://www.hentai-foundry.com/pictures/user/OrionM',
         emojis='💎🏮'
     ),
     feed(
@@ -3458,6 +3474,11 @@ feeds = (
         emojis='🏮',
     ),
     feed(
+        title='magiclatex',
+        href='https://www.instagram.com/magiclatex/',
+        emojis='🏮',
+    ),
+    feed(
         title='patriciablackpeony',
         href='https://www.instagram.com/patriciablackpeony/',
         emojis='🏮',
@@ -3634,7 +3655,7 @@ feeds = (
     feed(
         title='allisonstokke',
         href='https://www.instagram.com/allisonstokke/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='michie_peachie',
@@ -4606,7 +4627,6 @@ feeds = (
     feed(
         title='anniepolarbear',
         href='https://www.instagram.com/anniepolarbear/',
-        emojis='💎',
     ),
     feed(
         title='jhekahablak',
@@ -4849,7 +4869,7 @@ feeds = (
     feed(
         title='malenanowotarska',
         href='https://www.instagram.com/malenanowotarska/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='allstarsdc',
@@ -4858,6 +4878,11 @@ feeds = (
     feed(
         title='inessaraum',
         href='https://www.instagram.com/inessaraum/',
+        emojis='🏮',
+    ),
+    feed(
+        title='katerina_piglet_20',
+        href='https://www.instagram.com/katerina_piglet_2.0/',
         emojis='💎🏮',
     ),
     feed(
