@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # remove saved keys
 sudo mv /Users/olehkrupko/.ssh/known_hosts ~/Desktop/known_hosts
 
