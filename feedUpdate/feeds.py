@@ -784,7 +784,6 @@ feeds = (
     feed(
         title='Ералаш',
         href='https://www.youtube.com/channel/UC0u6gAESA0XmSJQaAyDTTVg/videos',
-        emojis='💎'
     ),
     feed(
         title='Bloomberg',
@@ -843,7 +842,6 @@ feeds = (
     feed(
         title='1Password',
         href='https://www.youtube.com/channel/UC-AAawnm0mmkcawB-2VmgyA/videos',
-        emojis='💎'
     ),
     feed(
         title='vas3kYT',
@@ -2402,12 +2400,6 @@ feeds = (
         emojis='🏮'
     ),
     feed(
-        title='DandyRabbit',
-        href='feed:https://www.hentai-foundry.com/feed/userPictures/username/DandyRabbit',
-        href_title='http://www.hentai-foundry.com/pictures/user/DandyRabbit',
-        emojis='💎🏮'
-    ),
-    feed(
         title='skottichan',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/skottichan',
         href_title='http://www.hentai-foundry.com/pictures/user/skottichan',
@@ -2417,7 +2409,7 @@ feeds = (
         title='SprinklePoo',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/SprinklePoo',
         href_title='http://www.hentai-foundry.com/pictures/user/SprinklePoo',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='BBCChan',
@@ -2501,7 +2493,7 @@ feeds = (
         title='MrHidePatten',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/MrHide-Patten',
         href_title='http://www.hentai-foundry.com/pictures/user/MrHide-Patten',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='customwaifus',
@@ -2591,7 +2583,7 @@ feeds = (
         title='lerra22',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/lerra22',
         href_title='http://www.hentai-foundry.com/pictures/user/lerra22',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='OrionM',
@@ -2621,7 +2613,7 @@ feeds = (
         title='tortuga',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/tortuga',
         href_title='http://www.hentai-foundry.com/pictures/user/tortuga',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='NamiWaifu',
@@ -2766,7 +2758,7 @@ feeds = (
     feed(
         title='sade75311',
         href='https://www.deviantart.com/sade75311/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='commanderrab',
@@ -3101,7 +3093,7 @@ feeds = (
     feed(
         title='mleth',
         href='https://www.deviantart.com/mleth/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='MonoriRogue',
@@ -3486,7 +3478,7 @@ feeds = (
     feed(
         title='_fuxteufelswild_',
         href='https://www.instagram.com/_fuxteufelswild_/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='swimsuit_touchsecret',
@@ -3531,11 +3523,6 @@ feeds = (
     feed(
         title='notcamdamage',
         href='https://www.instagram.com/notcamdamage/',
-        emojis='🏮',
-    ),
-    feed(
-        title='ruby_alexia',
-        href='https://www.instagram.com/ruby.alexia/',
         emojis='🏮',
     ),
     feed(
@@ -3600,7 +3587,7 @@ feeds = (
     feed(
         title='enjinight',
         href='https://www.instagram.com/enjinight/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='harleylavey',
@@ -4030,7 +4017,7 @@ feeds = (
     feed(
         title='frejadottir',
         href='https://www.instagram.com/frejadottir/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='frejadottir_backup',
@@ -4050,7 +4037,7 @@ feeds = (
     feed(
         title='svetabily',
         href='https://www.instagram.com/svetabily/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='stellachuuirl',
@@ -4328,6 +4315,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='titsoutkickedout',
+        href='https://www.instagram.com/titsoutkickedout/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='celene_nox',
         href='https://www.instagram.com/celene.nox/',
         emojis='🏮',
@@ -4449,7 +4441,6 @@ feeds = (
     feed(
         title='igradua',
         href='https://www.instagram.com/igradua/',
-        emojis='💎',
     ),
     feed(
         title='mimichan259',
@@ -4779,7 +4770,7 @@ feeds = (
     feed(
         title='marisha_ray',
         href='https://www.instagram.com/marisha_ray/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='bura_alex',
@@ -4883,7 +4874,7 @@ feeds = (
     feed(
         title='katerina_piglet_20',
         href='https://www.instagram.com/katerina_piglet_2.0/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='cataleya_latexqueen',
