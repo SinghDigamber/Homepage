@@ -837,7 +837,6 @@ feeds = (
     feed(
         title='EVEOnline',
         href='https://www.youtube.com/channel/UCwF3VyalTHzL0L-GDlwtbRw/videos',
-        emojis='💎'
     ),
     feed(
         title='1Password',
@@ -2708,7 +2707,7 @@ feeds = (
     feed(
         title='dishwasher1910',
         href='https://www.deviantart.com/dishwasher1910/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='rjay07',
@@ -2873,7 +2872,7 @@ feeds = (
     feed(
         title='megatama30',
         href='https://www.deviantart.com/megatama30/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='notzackforwork',
