@@ -740,7 +740,6 @@ feeds = (
     feed(
         title='95квартал',
         href='https://www.youtube.com/channel/UCfCVlxInB4VuaDFLGqEQqaA/videos',
-        emojis='💎'
     ),
     feed(
         title='ШамовДмитрий',
@@ -1741,7 +1740,7 @@ feeds = (
         title='EliasChatzoudisTumblr',
         href='https://eliaschatzoudis.tumblr.com/rss',
         href_title='https://eliaschatzoudis.tumblr.com',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='ReiqTumblr',
@@ -1826,7 +1825,7 @@ feeds = (
         title='carme55i',
         href='https://twitrss.me/twitter_user_to_rss/?user=carme55i',
         href_title='https://twitter.com/carme55i',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='blackshirtboyTwi',
@@ -2570,7 +2569,7 @@ feeds = (
         title='Unfairr',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Unfairr',
         href_title='http://www.hentai-foundry.com/pictures/user/Unfairr',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='TheRealShadman',
@@ -2692,7 +2691,7 @@ feeds = (
     feed(
         title='yichimo',
         href='https://www.deviantart.com/yichimo/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='shinryushou',
@@ -2763,11 +2762,6 @@ feeds = (
         title='commanderrab',
         href='https://www.deviantart.com/commanderrab/gallery/',
         emojis='🏮',
-    ),
-    feed(
-        title='srasomeone',
-        href='https://www.deviantart.com/srasomeone/gallery/',
-        emojis='💎🏮',
     ),
     feed(
         title='fynjy1988',
@@ -2907,7 +2901,7 @@ feeds = (
     feed(
         title='ToolKitten',
         href='https://www.deviantart.com/toolkitten/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='ulamosart',
@@ -3022,7 +3016,7 @@ feeds = (
     feed(
         title='justb1aze',
         href='https://www.deviantart.com/justb1aze/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='morpheus306',
