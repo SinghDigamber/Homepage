@@ -10,34 +10,36 @@ from .models import feed
 # 💎 - inIndex=True
 # 🗃️ - inIndex=False (used at front-end only)
 # 👤 — my activities
+# 📧 — send as email
+
 
 feeds = (
     feed(
         title='Скульптор',
         title_full='Легендарный Лунный Скульптор',
         href='http://xn--80ac9aeh6f.xn--p1ai/legendary-moonlight-sculptor/',
-        emojis='💎'
+        emojis='💎📧'
     ),
     feed(
         title='RenegadeImmortal',
         title_full='Renegade Immortal',
         href='https://www.wuxiaworld.com/feed/chapters/renegade-immortal',
         href_title='https://www.wuxiaworld.com/novel/renegade-immortal',
-        emojis='💎'
+        emojis='💎📧'
     ),
     feed(
         title='EvilGod',
         title_full='Heaven Defying Evil God',
         href='https://www.wuxiaworld.com/feed/chapters/against-the-gods',
         href_title='https://www.wuxiaworld.com/novel/against-the-gods',
-        emojis='💎'
+        emojis='💎📧'
     ),
     feed(
         title='Gamer',
         title_full='The Gamer',
         href='feed://www.webtoons.com/en/fantasy/the-gamer/rss?title_no=88',
         href_title='https://www.webtoons.com/en/fantasy/the-gamer/list?title_no=88&page=1',
-        emojis='💎'
+        emojis='💎📧'
     ),
     feed(
         title='Ляпота',
@@ -3905,12 +3907,12 @@ feeds = (
     feed(
         title='bast_model',
         href='https://www.instagram.com/bast_model_life/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='bast_model_life',
         href='https://www.instagram.com/bast_model_life/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='yoyossavadee',
@@ -4040,7 +4042,7 @@ feeds = (
     feed(
         title='latexfashiontv',
         href='https://www.instagram.com/latexfashiontv/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='adelalinka_life',
@@ -4827,7 +4829,6 @@ feeds = (
     feed(
         title='khn_666',
         href='https://www.instagram.com/khn_666/',
-        emojis='💎',
     ),
     feed(
         title='kubfood',
