@@ -4,16 +4,15 @@ Description=Homepage.cacheUpdate.server.reload.service
 After=network.target
 Wants=network-online.target
 After=network-online.target
-After=homepage.server.launch.service
 
 [Service]
-Type=oneshot
 
 OOMScoreAdjust=-100
+Restart=always
 
 WorkingDirectory=/home/pi/Projects/Homepage
 
-ExecStart=/bin/bash /home/pi/Projects/Homepage/scripts/homepage.server.reload
+ExecStart=/home/pi/Projects/Homepage/scripts/homepage.server.reload
 
 [Install]
 WantedBy=multi-user.target
