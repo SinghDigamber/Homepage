@@ -12,7 +12,6 @@ from .models import feed
 # 👤 — my activities
 # 📧 — send as email
 
-
 feeds = (
     feed(
         title='Скульптор',
@@ -1951,6 +1950,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='kianahamm',
+        href='feed:https://kianahamm.artstation.com/rss',
+        href_title='https://kianahamm.artstation.com/projects',
+        emojis='💎'
+    ),
+    feed(
         title='yuedong',
         href='feed:https://yuedong.artstation.com/rss',
         href_title='https://yuedong.artstation.com/projects',
@@ -2439,7 +2444,7 @@ feeds = (
         title='exxidor459',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/exxidor459',
         href_title='http://www.hentai-foundry.com/pictures/user/exxidor459',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='JZerosk',
@@ -3343,7 +3348,7 @@ feeds = (
     feed(
         title='xetalatex',
         href='https://www.instagram.com/xetalatex/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='1nikoshka1',
@@ -3498,6 +3503,11 @@ feeds = (
     feed(
         title='latex_lucy_official',
         href='https://www.instagram.com/latex_lucy_official/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='dk_88_la',
+        href='https://www.instagram.com/dk_88_la/',
         emojis='💎🏮',
     ),
     feed(
