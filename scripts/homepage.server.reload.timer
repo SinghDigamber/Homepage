@@ -1,5 +1,5 @@
 [Unit]
-Description=homepage.server.reload.timer: run homepage.server.reload each 12 hours
+Description=homepage.server.reload.timer: run homepage.server.reload each 24 hours
 
 After=network.target
 Wants=network-online.target
@@ -7,7 +7,7 @@ After=network-online.target
 After=homepage.server.launch.service
 
 [Timer]
-OnUnitActiveSec=12h
+OnUnitActiveSec=24h
 
 [Install]
 WantedBy=timers.target
