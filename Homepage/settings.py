@@ -67,6 +67,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'static', 'pages'),
+            os.path.join(BASE_DIR, 'static', 'style-js'),
         ]
         ,
         'APP_DIRS': True,
@@ -141,3 +142,10 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = ( os.path.join('static'), )
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False 
