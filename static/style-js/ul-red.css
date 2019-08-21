@@ -27,12 +27,11 @@ ul.red.feedUpdate-feeds li.index-false:before {
 
 /* a */
 ul.red a {
-    color: white;
     cursor: pointer;
     text-decoration: none;
     -webkit-user-select: none;
 }
-ul.red a:link:hover {
+ul.red a.track-click:link:hover {
     color: greenyellow;
 }
 ul.red a.grey,
@@ -41,4 +40,7 @@ ul.red a.track-click:visited {
 }
 ul.red .grey {
     cursor: default;
+}
+ul.red.hide a:any-link {
+    color: black;
 }
