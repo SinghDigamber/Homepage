@@ -1,14 +1,17 @@
-<ul class="red feedUpdate-feeds">
+{% load static %}
 
-<h1><a href="{% url "feedUpdate:index" mode="index" %}">Обновления за сегодня</a></h1>
+<style>
+    {% include "ul-red.css" %}
+    a, li, main, a:any-link {color: black}
+</style>
+
+<ul class="red">
+    <h1>{{ fromView.page_title }}</h1>
 
 {% for chapter in fromView.feedUpdate_list %}
-    <li><span>
-        <a class="name" target="_blank" href="{{ chapter.href }}">
-            <span><strong>{{ chapter.title }}</strong></span>: {{ chapter.name }}
-        </a>
-        <span><a class="grey">on {{chapter.datetime|date:'H:i' }}</a></span>
-    </span></li>
+    <li><a class="name" target="_blank" href="{{ chapter.href }}"
+            >{% if fromView.multibook %}<strong>{{ chapter.title }}</strong>: {% endif %}{{ chapter.name }}</a> on {{chapter.datetime|date:'Y-m-d H:i' }}
+    </li>
 {% empty %}
     <li>Oops, something went wrong. Empty!</li>
 {% endfor %}
