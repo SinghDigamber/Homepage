@@ -9,7 +9,8 @@ sudo python3 -m pip install feedparser  # rss parser
 sudo python3 -m pip install python-dateutil  # universally parsing dates
 sudo python3 -m pip install tqdm  # progressbar for caching scripts
 sudo python3 -m pip install icalendar  # calendars
-sudo python3 -m pip install psycopg2  # PostgreSQL
+sudo python3 -m pip install psycopg2  # PostgreSQL 
+sudo python3 -m pip install django_ical
 
 # system set up
 sudo rm -rf /home/pi/Projects/Homepage
