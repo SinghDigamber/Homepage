@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-python3 manage.py cacheFeedUpdate --parseAll --parseNow --log >> Homepage.log;
+python3 manage.py cacheFeedUpdate --parseIndex --parseNow --log >> Homepage.log;
 python3 manage.py cachePlanetaKino --log >> Homepage.log;
 python3 manage.py cacheCalendars --parseEvents --log >> Homepage.log;
 python3 manage.py cacheWeather --log >> Homepage.log;
