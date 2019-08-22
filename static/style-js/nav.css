@@ -14,7 +14,7 @@ nav {
     font-size: 17px;
     padding: 13px 0px;
 }
-nav a {
+nav a, nav a:any-link {
     padding: 13px;
     text-decoration: none;
     color: white;
