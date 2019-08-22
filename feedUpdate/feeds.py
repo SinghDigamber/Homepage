@@ -1179,10 +1179,9 @@ feeds = (
     ),
     feed(
         title='Пик',
-        title_full='Пик боевых искусств',
+        title_full='Пик боевых искусств (остановился на 1-272)',
         href='feed://readmanga.me/rss/manga?name=martial_peak',
         href_title='http://readmanga.me/martial_peak',
-        emojis='💎'
     ),
     feed(
         title='ТронБога',
@@ -3068,7 +3067,7 @@ feeds = (
     feed(
         title='davidpan',
         href='https://www.deviantart.com/davidpan/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='ganassa',
