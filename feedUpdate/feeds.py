@@ -1220,10 +1220,9 @@ feeds = (
     ),
     feed(
         title='БольшеНеГерой',
-        title_full='Герой? Я давно перестал им быть',
+        title_full='Герой? Я давно перестал им быть (остановился на 1-35)',
         href='feed://readmanga.me/rss/manga?name=hero__i_quit_a_long_time_ago',
         href_title='http://readmanga.me/hero__i_quit_a_long_time_ago',
-        emojis='💎'
     ),
     feed(
         title='Эликсир',
@@ -1675,7 +1674,6 @@ feeds = (
         title_full='SkazOff Blog',
         href='feed:https://skazoff.ru/feed/',
         href_title='https://skazoff.ru',
-        emojis='💎',
     ),
     feed(
         title='WaitButWhy',
@@ -2221,7 +2219,7 @@ feeds = (
         title='kajinman',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/kajinman',
         href_title='http://www.hentai-foundry.com/pictures/user/kajinman',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='kokobuttz',
@@ -2837,7 +2835,7 @@ feeds = (
     feed(
         title='reivash',
         href='https://www.deviantart.com/reivash/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='axsens',
