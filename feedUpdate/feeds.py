@@ -2591,7 +2591,7 @@ feeds = (
         title='OrionM',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/OrionM',
         href_title='http://www.hentai-foundry.com/pictures/user/OrionM',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='HotVR',
@@ -2770,7 +2770,7 @@ feeds = (
     feed(
         title='fynjy1988',
         href='https://www.deviantart.com/fynjy1988/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='dereklaufman',
@@ -2785,7 +2785,7 @@ feeds = (
     feed(
         title='plusout',
         href='https://www.deviantart.com/plusout/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='RalDu',
