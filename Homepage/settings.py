@@ -135,9 +135,6 @@ USE_L10N = True
 USE_TZ = False
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
@@ -146,6 +143,5 @@ STATICFILES_DIRS = ( os.path.join('static'), )
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False 
+EMAIL_USE_SSL = False
