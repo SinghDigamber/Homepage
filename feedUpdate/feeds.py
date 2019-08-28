@@ -524,6 +524,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ЧоткийПаца',
+        href='https://www.youtube.com/channel/UCpgNxHZ3TCbB3_Xczm9TIDg/videos',
+        emojis='💎'
+    ),
+    feed(
         title='PuffinForrest',
         title_full='Puffin Forrest',
         href='https://www.youtube.com/channel/UCUpkp-6fXuG9dqfoJ99XTmw/videos',
