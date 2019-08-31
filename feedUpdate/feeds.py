@@ -52,6 +52,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='RollAllDay',
+        href='https://www.youtube.com/channel/UCGvWAkwL_8W74i8RPjUZw7A/videos',
+        emojis='💎'
+    ),
+    feed(
         title='GCN',
         title_full="Global Cycling Network",
         href='https://www.youtube.com/channel/UCuTaETsuCOkJ0H_GAztWt0Q/videos',
@@ -175,7 +180,6 @@ feeds = (
     feed(
         title='WiredYT',
         href='https://www.youtube.com/channel/UCftwRNsjfRo08xYE31tkiyw/videos',
-        emojis='💎',
     ),
     feed(
         title='sexplanations',
@@ -770,7 +774,6 @@ feeds = (
     feed(
         title='MyLatexBaby',
         href='https://www.youtube.com/channel/UCvxaNRCpQPI-3OVLDt7ywOQ/videos',
-        emojis='💎'
     ),
     feed(
         title='Зеленский',
@@ -2302,7 +2305,7 @@ feeds = (
         title='Zillionaire',
         href='feed:https://www.hentai-foundry.com/feed/userPictures/username/Zillionaire',
         href_title='http://www.hentai-foundry.com/pictures/user/Zillionaire',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='ThirtyHelens',
