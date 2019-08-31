@@ -10,7 +10,6 @@ class Command(BaseCommand):
         parser.add_argument('--log', action='store_true')
 
     def handle(self, *args, **options):
-
         title_weather = weatherCast.parse_json_weather_now_summary_compiled(
             weatherCast.download_weather_forecast())
 
