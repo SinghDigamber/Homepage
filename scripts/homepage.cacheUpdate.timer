@@ -1,5 +1,5 @@
 [Unit]
-Description=run homepage.cacheUpdate each 15 minutes
+Description=run homepage.cacheUpdate each 45 minutes
 
 After=network.target
 Wants=network-online.target
@@ -8,7 +8,7 @@ After=homepage.server.launch.service
 Requires=homepage.cacheUpdate.service
 
 [Timer]
-OnUnitActiveSec=30min
+OnUnitActiveSec=45min
 
 [Install]
 WantedBy=timers.target
