@@ -10,20 +10,15 @@ class Command(BaseCommand):
         parser.add_argument('--log', action='store_true')
 
     def handle(self, *args, **options):
-        keyValue.objects.filter(key='weatherNowSum').delete()
-        keyValue.objects.filter(key='weatherNowTemp').delete()
-        keyValue.objects.filter(key='weatherNowProb').delete()
-        keyValue.objects.filter(key='weatherNowIcon').delete()
 
         title_weather = weatherCast.parse_json_weather_now_summary_compiled(
             weatherCast.download_weather_forecast())
 
-        summary = keyValue(key='weatherNowSum', value=title_weather['summary'])
-        temp = keyValue(key='weatherNowTemp', value=title_weather['temp'])
-        precipProbability = keyValue(key='weatherNowProb', value=title_weather['precipProbability'])
-        icon = keyValue(key='weatherNowIcon', value=title_weather['icon'])
-
-        summary.save()
-        temp.save()
-        precipProbability.save()
-        icon.save()
+        for each in title_weather.keys():
+            if len(keyValue.objects.filter(key=each)) > 0:
+                summary = keyValue.objects.filter(key=each)[0]
+                summary.value = title_weather[each]
+                summary.save()
+            else:
+                summary = keyValue(key=each, value=title_weather[each])
+                summary.save()

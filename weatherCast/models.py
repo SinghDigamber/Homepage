@@ -204,10 +204,10 @@ class weatherCast(models.Model):
         result_icon = json['currently']['icon']
 
         return {
-            'summary': result_summary,
-            'temp': result_temp,
-            'precipProbability': result_precipProbability,
-            'icon': result_icon,
+            'weatherNowSumm': result_summary,
+            'weatherNowTemp': result_temp,
+            'weatherNowProb': result_precipProbability,
+            'weatherNowIcon': result_icon,
         }
 
 
