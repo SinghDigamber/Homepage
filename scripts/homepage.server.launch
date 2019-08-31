@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sleep 30s
+
 # updating repository with overwrite of local changes
 git fetch --all
 git reset --hard origin/master
