@@ -1,35 +1,35 @@
 #!/usr/bin/env bash
 
 # updating repository with overwrite of local changes
-sudo git fetch --all
-sudo git reset --hard origin/master
+git fetch --all
+git reset --hard origin/master
 
 # clear old services
-sudo rm /lib/systemd/system/homepage.*
-sudo rm /run/systemd/generator.late/homepage.*
-sudo rm /etc/init.d/homepage.*
+rm /lib/systemd/system/homepage.*
+rm /run/systemd/generator.late/homepage.*
+rm /etc/init.d/homepage.*
 
-sudo chmod 777 /home/pi/Projects/Homepage/scripts/homepage.*
-sudo chmod +x /home/pi/Projects/Homepage/scripts/homepage.*
+chmod 777 /home/pi/Projects/Homepage/scripts/homepage.*
+chmod +x /home/pi/Projects/Homepage/scripts/homepage.*
 
 # feedUpdate/cacheUpdate scripts
-sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.service /lib/systemd/system/homepage.cacheUpdate.service
-sudo cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.timer /lib/systemd/system/homepage.cacheUpdate.timer
-sudo systemctl disable homepage.cacheUpdate.service
-sudo systemctl enable homepage.cacheUpdate.timer
+cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.service /lib/systemd/system/homepage.cacheUpdate.service
+cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.timer /lib/systemd/system/homepage.cacheUpdate.timer
+systemctl disable homepage.cacheUpdate.service
+systemctl enable homepage.cacheUpdate.timer
 
 # project installation + web server launcher
-sudo cp /home/pi/Projects/Homepage/scripts/homepage.server.launch.service /lib/systemd/system/homepage.server.launch.service
-sudo systemctl enable homepage.server.launch.service
+cp /home/pi/Projects/Homepage/scripts/homepage.server.launch.service /lib/systemd/system/homepage.server.launch.service
+systemctl enable homepage.server.launch.service
 
 # project update installer scripts
-sudo cp /home/pi/Projects/Homepage/scripts/homepage.server.reload.service /lib/systemd/system/homepage.server.reload.service
-sudo cp /home/pi/Projects/Homepage/scripts/homepage.server.reload.timer /lib/systemd/system/homepage.server.reload.timer
-sudo systemctl disable homepage.server.reload.service
-sudo systemctl enable homepage.server.reload.timer
+cp /home/pi/Projects/Homepage/scripts/homepage.server.reload.service /lib/systemd/system/homepage.server.reload.service
+cp /home/pi/Projects/Homepage/scripts/homepage.server.reload.timer /lib/systemd/system/homepage.server.reload.timer
+systemctl disable homepage.server.reload.service
+systemctl enable homepage.server.reload.timer
 
 # pre-launch preparations
-sudo systemctl daemon-reload
+systemctl daemon-reload
 
 # caching before launch
 python3 manage.py cacheFeedUpdate --parseFeeds;
