@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
+sleep 5s
+
 # updating repository with overwrite of local changes
 git fetch --all
 git reset --hard origin/master
 
 # clear old services
-rm /lib/systemd/system/homepage.*
-rm /run/systemd/generator.late/homepage.*
-rm /etc/init.d/homepage.*
+rm -f /lib/systemd/system/homepage.*
+rm -f /run/systemd/generator.late/homepage.*
+rm -f /etc/init.d/homepage.*
+# rm -f /lib/systemd/system/homepage.*
 
 chmod 777 /home/pi/Projects/Homepage/scripts/homepage.*
 chmod +x /home/pi/Projects/Homepage/scripts/homepage.*
@@ -15,7 +18,6 @@ chmod +x /home/pi/Projects/Homepage/scripts/homepage.*
 # feedUpdate/cacheUpdate scripts
 cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.service /lib/systemd/system/homepage.cacheUpdate.service
 cp /home/pi/Projects/Homepage/scripts/homepage.cacheUpdate.timer /lib/systemd/system/homepage.cacheUpdate.timer
-systemctl disable homepage.cacheUpdate.service
 systemctl enable homepage.cacheUpdate.timer
 
 # project installation + web server launcher
