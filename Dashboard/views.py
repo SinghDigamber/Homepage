@@ -25,7 +25,7 @@ class DashboardView(ListView):
         else:
             title_daypart = header_evening
 
-        title_weather_sum = keyValue.objects.filter(key='weatherNowSum')[0].value
+        title_weather_sum = keyValue.objects.filter(key='weatherNowSumm')[0].value
 
         title_weather_sup = weatherCast.generate_weather_summary(
             keyValue.objects.filter(key='weatherNowIcon')[0].value,
