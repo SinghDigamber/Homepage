@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand, CommandError
 from bs4 import BeautifulSoup
 import requests
 import os
-from .models import keyValue
+from Dashboard.models import keyValue
 
 class Command(BaseCommand):
     help = 'downloads a BIG list of user agents'
@@ -32,7 +32,14 @@ class Command(BaseCommand):
         with open(UserAgent_path, 'a') as UserAgent_file:
             for each in UserAgent_list:
                 UserAgent_file.write(each+'\n')
-                lines += 1
+                if options['logLength']:
+                    lines += 1
 
         if options['logLength']:
-            keyValue.objects.filter(key='weatherNowSum')[0].value
+            if len(keyValue.objects.filter(key='UserAgentLen')) > 0:
+                UserAgentLen = keyValue.objects.filter(key='UserAgentLen')[0]
+                UserAgentLen.value = lines
+                UserAgentLen.save()
+            else:
+                UserAgentLen = keyValue(key='UserAgentLen', value=lines)
+                UserAgentLen.save()

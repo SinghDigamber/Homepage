@@ -37,6 +37,7 @@ systemctl daemon-reload
 python3 manage.py cacheFeedUpdate --parseFeeds;
 python3 manage.py cacheCalendars --parseCalendars;
 python3 manage.py cachePages --parsePages;
+python3 manage.py cacheUserAgents --logLength;
 
 # launch web server # local launch # python3 manage.py runserver 192.168.1.200:8000
 python3 /home/pi/Projects/Homepage/manage.py runserver 192.168.1.201:8000
