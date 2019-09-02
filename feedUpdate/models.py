@@ -201,7 +201,6 @@ class feed(models.Model):
 
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
-            headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0' }
             soup = requests.get(self.href, headers=headers)
             soupStrainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
