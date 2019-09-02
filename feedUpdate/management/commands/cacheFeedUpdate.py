@@ -4,6 +4,7 @@ from Dashboard.models import PlanetaKino
 import time
 from datetime import datetime
 from tqdm import tqdm
+from random import shuffle
 
 class Command(BaseCommand):
     help = 'updates caches in DB'
@@ -12,6 +13,8 @@ class Command(BaseCommand):
         parser.add_argument('--log', action='store_true')
         parser.add_argument('--logEach', action='store_true')
         parser.add_argument('--logBar', action='store_true')
+
+        parser.add_argument('--shuffle', action='store_true')
 
         parser.add_argument('--parseFeeds', action='store_true')
         parser.add_argument('--parseAll', action='store_true')
@@ -60,6 +63,9 @@ class Command(BaseCommand):
                 parse_feeds = list(feed.objects.all())
             elif options['parseIndex']:
                 parse_feeds = list(feed.feeds_by_emoji())
+
+            if options['logBar']:
+                shuffle(parse_feeds)
 
             # parsing
             if options['logBar']:
