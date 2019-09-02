@@ -15,6 +15,9 @@ class Command(BaseCommand):
         parser.add_argument('--logBar', action='store_true')
 
         parser.add_argument('--shuffle', action='store_true')
+        parser.add_argument('--useProxy', action='store_true')
+        parser.add_argument('--printEmpty', action='store_true')
+
 
         parser.add_argument('--parseFeeds', action='store_true')
         parser.add_argument('--parseAll', action='store_true')
@@ -57,6 +60,10 @@ class Command(BaseCommand):
 
         # caching feedUpdates for feeds stored in DB
         if options['parseAll'] or options['parseIndex']:
+            proxy = False
+            if options["useProxy"]:
+                proxy = requests.get('http://pubproxy.com/api/proxy?https=true').json()['data'][0]["ipPort"]
+                
             # prepare list of feeds to parse
             parse_feeds = []
             if options['parseAll']:
@@ -75,10 +82,16 @@ class Command(BaseCommand):
                 if options['logEach']:
                     cycle_start = time.time()
                     cycle_items = 0
+                
+                feedUpdate_list = current_feed.parse(proxy)
 
-                feedUpdate_list = current_feed.parse()
+                if options["printEmpty"]:
+                    if len(feedUpdate_list) == 0 and current_feed.filter == None:
+                        print(current_feed.href)
+                
                 if options['parseNow']:
                     feedUpdate_list = reversed(feedUpdate_list)
+
                 for each in feedUpdate_list:
                     # checking if href is cached
                     cached = feedUpdate.objects.filter(href=each.href).exists()
