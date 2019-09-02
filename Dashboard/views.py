@@ -36,15 +36,19 @@ class DashboardView(ListView):
         movies = PlanetaKino.objects.filter(inTheater=True)
 
         items_limit = 42
-        items_limit_select = items_limit*8
+        items_limit_select = items_limit*10
 
         feed_titles = []
         for each in feed.feeds_by_emoji():
             feed_titles.append(each.title)
 
+        feed_titles_not = []
+        for each in feed.feeds_by_emoji('🏮'):
+            feed_titles_not.append(each.title)
+
         feedUpdate_list = []
         for each in feedUpdate.objects.all()[:items_limit_select]:
-            if each.title in feed_titles:
+            if each.title in feed_titles and each.title not in feed_titles_not:
                 feedUpdate_list.append(each)
         feedUpdate_list = feedUpdate_list[:items_limit]
 
