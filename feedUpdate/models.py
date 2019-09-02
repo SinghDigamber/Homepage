@@ -10,6 +10,9 @@ from django.utils.timezone import localtime
 import json
 import dateutil.parser as datetimeparser
 from dateutil.tz import gettz
+import random
+from Dashboard.models import keyValue
+import os
 # Create your models here.
 
 
@@ -66,6 +69,16 @@ class feed(models.Model):
     def feeds_from_file():
         from .feeds import feeds
         return feeds
+
+    def UserAgent_random():
+        f=open(os.path.join("static", "feedUpdate", 'user-agents.txt'))
+
+        line_number = keyValue.objects.filter(key='UserAgentLen')[0]
+        line_number = int(line_number.value)
+        line_number = random.randint(1, line_number)
+        useragent = f.read().split('\n')[line_number-1]
+        f.close()
+        return useragent
 
     # return List<feedUpdate> parsed from source by <feed> (self)
     def parse(self):
