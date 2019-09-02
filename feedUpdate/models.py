@@ -84,11 +84,16 @@ class feed(models.Model):
     def parse(self):
         result = []
 
+        headers = {
+            'user-agent': feed.UserAgent_random().lstrip(),
+            'referer': 'https://www.google.com/search?newwindow=1&q='+self.href
+        }
+
         # custom ранобэ.рф API import
         # Warning! API can be closed
         if self.href.find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
             request = "https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/"+self.href[31:-1]
-            request = requests.get(request).json()
+            request = requests.get(request, headers=headers).json()
 
             for each in request['chapters']:
                 if each['availabilityStatus'] == 'free':
@@ -101,7 +106,7 @@ class feed(models.Model):
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
             try:
-                soup = requests.get(self.href)
+                soup = requests.get(self.href, headers=headers)
                 soup = BeautifulSoup(soup.text, "html.parser")
 
                 for each in soup.find_all('script'):
@@ -165,7 +170,7 @@ class feed(models.Model):
 
         # custom fantasy-worlds.org loader
         elif self.href.find('https://fantasy-worlds.org/series/') != -1:
-            soup = requests.get(self.href)
+            soup = requests.get(self.href, headers=headers)
             soupStrainer = SoupStrainer('div', attrs={'class': 'rightBlock'})
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
@@ -187,7 +192,7 @@ class feed(models.Model):
 
         # custom patreon.com loader
         #elif self.href.find('https://www.patreon.com/') != -1:
-            #soup = requests.get(self.href)
+            #soup = requests.get(self.href, headers=headers)
             #soup = BeautifulSoup(soup.text, "html.parser")
 
             #print(soup.find('Object.assign(window.patreon.bootstrap, {')
@@ -227,7 +232,7 @@ class feed(models.Model):
 
         # custom vas3k pain parser
         elif self.href.find('https://pain.vas3k.ru') != -1:
-            soup = requests.get(self.href)
+            soup = requests.get(self.href, headers=headers)
             soupStrainer = SoupStrainer('div', attrs={'id': 'pain-list'})
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
@@ -249,7 +254,7 @@ class feed(models.Model):
 
         # default RSS import
         else:
-            rss = feedparser.parse(self.href)
+            rss = feedparser.parse(self.href, request_headers=headers)
 
             for item in rss["items"]:
                 # NAME RESULT
