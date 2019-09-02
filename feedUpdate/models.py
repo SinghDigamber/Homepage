@@ -2,7 +2,7 @@ from django.db import models
 from bs4 import BeautifulSoup, SoupStrainer
 import requests
 # from collections import OrderedDict
-import feedparser
+import urllib.request, feedparser
 from datetime import datetime, timedelta
 # from pytz import timezone
 from django.utils.timezone import localtime
@@ -81,7 +81,7 @@ class feed(models.Model):
         return useragent
 
     # return List<feedUpdate> parsed from source by <feed> (self)
-    def parse(self):
+    def parse(self, proxy=False):
         result = []
 
         headers = {
@@ -89,11 +89,19 @@ class feed(models.Model):
             'referer': 'https://www.google.com/search?newwindow=1&q='+self.href
         }
 
+        if proxy != False:
+            proxyDict = {
+                "http": "http://"+proxy, 
+                "https": "https://"+proxy,
+            }
+        else:
+            proxyDict = {}
+
         # custom ранобэ.рф API import
         # Warning! API can be closed
         if self.href.find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
             request = "https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/"+self.href[31:-1]
-            request = requests.get(request, headers=headers).json()
+            request = requests.get(request, headers=headers, proxies=proxyDict).json()
 
             for each in request['chapters']:
                 if each['availabilityStatus'] == 'free':
@@ -106,7 +114,7 @@ class feed(models.Model):
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
             try:
-                soup = requests.get(self.href, headers=headers)
+                soup = requests.get(self.href, headers=headers, proxies=proxyDict)
                 soup = BeautifulSoup(soup.text, "html.parser")
 
                 for each in soup.find_all('script'):
@@ -168,7 +176,7 @@ class feed(models.Model):
 
         # custom fantasy-worlds.org loader
         elif self.href.find('https://fantasy-worlds.org/series/') != -1:
-            soup = requests.get(self.href, headers=headers)
+            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
             soupStrainer = SoupStrainer('div', attrs={'class': 'rightBlock'})
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
@@ -190,7 +198,7 @@ class feed(models.Model):
 
         # custom patreon.com loader
         #elif self.href.find('https://www.patreon.com/') != -1:
-            #soup = requests.get(self.href, headers=headers)
+            #soup = requests.get(self.href, headers=headers, proxies=proxyDict)
             #soup = BeautifulSoup(soup.text, "html.parser")
 
             #print(soup.find('Object.assign(window.patreon.bootstrap, {')
@@ -201,7 +209,7 @@ class feed(models.Model):
 
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
-            soup = requests.get(self.href, headers=headers)
+            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
             soupStrainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
@@ -229,7 +237,7 @@ class feed(models.Model):
 
         # custom vas3k pain parser
         elif self.href.find('https://pain.vas3k.ru') != -1:
-            soup = requests.get(self.href, headers=headers)
+            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
             soupStrainer = SoupStrainer('div', attrs={'id': 'pain-list'})
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
@@ -251,7 +259,8 @@ class feed(models.Model):
 
         # default RSS import
         else:
-            rss = feedparser.parse(self.href, request_headers=headers)
+            proxyDict = urllib.request.ProxyHandler(proxyDict)
+            rss = feedparser.parse(self.href, request_headers=headers, handlers=[proxyDict])
 
             for item in rss["items"]:
                 # NAME RESULT

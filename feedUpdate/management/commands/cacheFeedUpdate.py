@@ -5,6 +5,7 @@ import time
 from datetime import datetime
 from tqdm import tqdm
 from random import shuffle
+import requests
 
 class Command(BaseCommand):
     help = 'updates caches in DB'
