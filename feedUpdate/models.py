@@ -113,6 +113,7 @@ class feed(models.Model):
 
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
+            return []
             try:
                 soup = requests.get(self.href, headers=headers, proxies=proxyDict)
                 soup = BeautifulSoup(soup.text, "html.parser")
@@ -148,8 +149,11 @@ class feed(models.Model):
                                 datetime=result_datetime,
                                 title=self.title))
             except KeyError:
-                #print("KeyError")
-                pass
+                return []
+            except requests.exceptions.ProxyError:
+                return []
+            except requests.exceptions.SSLError:
+                return []
 
         # custom RSS YouTube converter (link to feed has to be converted manually)
         elif self.href.find('https://www.youtube.com/channel/') != -1:
@@ -209,31 +213,38 @@ class feed(models.Model):
 
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
-            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-            soupStrainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
-            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+            try:
+                soup = requests.get(self.href, headers=headers, proxies=proxyDict)
+                soupStrainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
+                soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
-            for article in soup.find_all('article'):
-                try:
-                    result_name = article.find('h2', {'class': "story__title"}).find('a').getText()
+                for article in soup.find_all('article'):
+                    try:
+                        result_name = article.find('h2', {'class': "story__title"}).find('a').getText()
 
-                    result_href = article.find('h2', {'class': "story__title"}).find('a')['href']
+                        result_href = article.find('h2', {'class': "story__title"}).find('a')['href']
 
-                    result_datetime = article.find('time')['datetime'][:-3]+"00"
-                    result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
+                        result_datetime = article.find('time')['datetime'][:-3]+"00"
+                        result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
 
-                    result.append(feedUpdate(
-                        name=result_name[:140],
-                        href=result_href,
-                        datetime=result_datetime,
-                        title=self.title))
+                        result.append(feedUpdate(
+                            name=result_name[:140],
+                            href=result_href,
+                            datetime=result_datetime,
+                            title=self.title))
 
-                except TypeError:
-                    # advertisement, passing as no need to save it
-                    pass
-                except AttributeError:
-                    # advertisement, passing as no need to save it
-                    pass
+                    except TypeError:
+                        # advertisement, passing as no need to save it
+                        pass
+                    except AttributeError:
+                        # advertisement, passing as no need to save it
+                        pass
+            except requests.exceptions.SSLError:
+                # failed connection, hope it works from time to time
+                return []
+            except requests.exceptions.ConnectionError:
+                return []
+                
 
         # custom vas3k pain parser
         elif self.href.find('https://pain.vas3k.ru') != -1:
