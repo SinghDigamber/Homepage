@@ -986,7 +986,7 @@ feeds = (
         title_full='Jagodibuja',
         href='feed://www.jagodibuja.com/feed/',
         href_title='http://www.jagodibuja.com',
-        emojis='💎'
+        emojis='🏮💎'
     ),
     feed(
         title='vas3k',
@@ -1761,7 +1761,6 @@ feeds = (
         title='marisha_rayTwi',
         href='https://twitrss.me/twitter_user_to_rss/?user=marisha_ray',
         href_title='https://twitter.com/marisha_ray',
-        emojis='💎'
     ),
     feed(
         title='carme55i',
