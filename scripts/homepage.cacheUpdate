@@ -2,5 +2,5 @@
 
 python3 manage.py cacheFeedUpdate --parseAll --shuffle --parseNow;
 python3 manage.py cachePlanetaKino;
-python3 manage.py cacheCalendars --parseEvents;
+# python3 manage.py cacheCalendars --parseEvents;
 python3 manage.py cacheWeather;
