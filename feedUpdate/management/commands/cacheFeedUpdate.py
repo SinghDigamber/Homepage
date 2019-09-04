@@ -19,7 +19,6 @@ class Command(BaseCommand):
         parser.add_argument('--useProxy', action='store_true')
         parser.add_argument('--printEmpty', action='store_true')
 
-
         parser.add_argument('--parseFeeds', action='store_true')
         parser.add_argument('--parseAll', action='store_true')
         parser.add_argument('--parseIndex', action='store_true')
@@ -63,7 +62,7 @@ class Command(BaseCommand):
         if options['parseAll'] or options['parseIndex']:
             proxy = False
             if options["useProxy"]:
-                proxy = requests.get('http://pubproxy.com/api/proxy?https=true').json()['data'][0]["ipPort"]
+                proxy = requests.get('http://pubproxy.com/api/proxy?https=true&user_agent=true&referer=true').json()['data'][0]["ipPort"]
                 
             # prepare list of feeds to parse
             parse_feeds = []
@@ -72,7 +71,7 @@ class Command(BaseCommand):
             elif options['parseIndex']:
                 parse_feeds = list(feed.feeds_by_emoji())
 
-            if options['logBar']:
+            if options['shuffle']:
                 shuffle(parse_feeds)
 
             # parsing
