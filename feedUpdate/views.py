@@ -125,7 +125,7 @@ class otherView(ListView):
         return {
             'page': {
                 'title': header,
-            }
+            },
             'feedUpdate_list': feedUpdate_list,
             'multibook': multibook,
         }
@@ -167,7 +167,7 @@ class myActivityView(ListView):
         return {
             'page': {
                 'title': header,
-            }
+            },
             'feedUpdate_list': feedUpdate_list,
             'multibook': multibook,
         }
