@@ -2616,6 +2616,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='chasingartwork',
+        href='https://www.deviantart.com/chasingartwork/gallery/',
+        emojis='💎',
+    ),
+    feed(
         title='Hibren',
         href='https://www.deviantart.com/hibren/gallery/',
         emojis='💎🏮',
@@ -2628,6 +2633,11 @@ feeds = (
     feed(
         title='blasian89',
         href='https://www.deviantart.com/blasian89/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='nebezial',
+        href='https://www.deviantart.com/nebezial/gallery/',
         emojis='💎🏮',
     ),
     feed(
@@ -2734,6 +2744,16 @@ feeds = (
         title='dereklaufman',
         href='https://www.deviantart.com/dereklaufman/gallery/',
         emojis='💎🏮',
+    ),
+    feed(
+        title='danluvisiart',
+        href='https://www.deviantart.com/danluvisiart/gallery/',
+        emojis='💎',
+    ),
+    feed(
+        title='wojtekfus',
+        href='https://www.deviantart.com/wojtekfus/gallery/',
+        emojis='💎',
     ),
     feed(
         title='studentofrubber',
@@ -3118,6 +3138,11 @@ feeds = (
     feed(
         title='dandonfuga',
         href='https://www.deviantart.com/dandonfuga/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='kuvshinov_ilya',
+        href='https://www.deviantart.com/kuvshinov-ilya/gallery/',
         emojis='💎🏮',
     ),
     feed(
