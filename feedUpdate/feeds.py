@@ -92,6 +92,12 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ZaddrotLive',
+        title_full='Zaddrot.com/Live (YouTube)',
+        href='https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Kurzgesagt',
         title_full='Kurzgesagt – In a Nutshell',
         href='https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q/videos',
@@ -710,6 +716,16 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='LindseyStirling',
+        href='https://www.youtube.com/channel/UCyC_4jvPzLiSkJkLIkA7B8g/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='PTXofficial',
+        href='https://www.youtube.com/channel/UCmv1CLT6ZcFdTJMHxaR9XeA/videos',
+        emojis='💎'
+    ),
+    feed(
         title='DUST',
         href='https://www.youtube.com/channel/UC7sDT8jZ76VLV1u__krUutA/videos',
     ),
@@ -817,6 +833,11 @@ feeds = (
         href='https://www.youtube.com/channel/UCEedXkffiRQy9BlS_OqewwQ/videos',
     ),
     feed(
+        title='Blackpink',
+        href='https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A/videos',
+        filter='M/V'
+    ),
+    feed(
         title='JannetYT',
         title_full='Jannet Incosplay YouTube',
         href='https://www.youtube.com/channel/UCr2dfQlDaZlqpAPv_TKYSdQ/videos',
@@ -830,7 +851,6 @@ feeds = (
     feed(
         title='Oculus',
         href='https://www.youtube.com/channel/UC766vkQw0Mz3VtXX5XvXxGQ/videos',
-        emojis='💎'
     ),
     feed(
         title='PoleArtUkraine',
@@ -965,6 +985,12 @@ feeds = (
         title='KharkovGo',
         href='https://kharkovgo.com/feed/',
         href_title='https://kharkovgo.com',
+        emojis='💎'
+    ),
+    feed(
+        title='SlashDot',
+        href='http://rss.slashdot.org/Slashdot/slashdotMain',
+        href_title='https://slashdot.org',
         emojis='💎'
     ),
     feed(
@@ -1449,13 +1475,11 @@ feeds = (
         title='DjangoBlog',
         href='https://www.djangoproject.com/rss/weblog/',
         href_title='https://www.djangoproject.com/weblog/',
-        emojis='💎',
     ),
     feed(
         title='DjangoCommunityBlog',
         href='https://www.djangoproject.com/rss/community/blogs/',
         href_title='https://www.djangoproject.com/community/blogs/',
-        emojis='💎',
     ),
     feed(
         title='DjangoQA',
@@ -1466,7 +1490,6 @@ feeds = (
         title='DjangoLinks',
         href='https://www.djangoproject.com/rss/community/links/',
         href_title='https://www.djangoproject.com/community/links/',
-        emojis='💎',
     ),
     feed(
         title='oglaf',
@@ -2047,7 +2070,7 @@ feeds = (
         title='FeatherCoat',
         href='https://www.hentai-foundry.com/feed/userPictures/username/Feather-Coat',
         href_title='http://www.hentai-foundry.com/pictures/user/Feather-Coat',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='OtakuApologist',
@@ -2851,7 +2874,7 @@ feeds = (
     feed(
         title='AngeliccMadness',
         href='https://www.deviantart.com/angeliccmadness/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='Cobatsart',
@@ -2881,7 +2904,7 @@ feeds = (
     feed(
         title='LordDominik',
         href='https://www.deviantart.com/lord-dominik/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='TRYLSC',
@@ -2901,7 +2924,7 @@ feeds = (
     feed(
         title='SatsuiNoHado',
         href='https://www.deviantart.com/satsuinohado/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='Teban1983',
@@ -3011,7 +3034,7 @@ feeds = (
     feed(
         title='gtunver',
         href='https://www.deviantart.com/gtunver/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='DarkerEve',
@@ -3036,7 +3059,7 @@ feeds = (
     feed(
         title='velladonna',
         href='https://www.deviantart.com/velladonna/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='Valkymie',
