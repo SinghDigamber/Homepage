@@ -1292,7 +1292,6 @@ feeds = (
     feed(
         title='Ветролом',
         href='http://readmanga.me/wind_breaker',
-        emojis='💎'
     ),
     feed(
         title='БурныйВек',
