@@ -512,6 +512,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='MARUV',
+        href='https://www.youtube.com/channel/UCG2hAzA2G40on_viIrPVz9g/videos',
+        emojis='💎'
+    ),
+    feed(
         title='GreatBigStory',
         title_full='Great Big Story',
         href='https://www.youtube.com/channel/UCajXeitgFL-rb5-gXI-aG8Q/videos',
@@ -991,7 +996,6 @@ feeds = (
         title='SlashDot',
         href='http://rss.slashdot.org/Slashdot/slashdotMain',
         href_title='https://slashdot.org',
-        emojis='💎'
     ),
     feed(
         title='Gam3',
@@ -1902,6 +1906,12 @@ feeds = (
         title='bangbez',
         href='https://bangbez.artstation.com/rss',
         href_title='https://bangbez.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='forgingmeanings',
+        href='https://forgingmeanings.artstation.com/rss',
+        href_title='https://forgingmeanings.artstation.com/projects',
         emojis='💎🏮'
     ),
     feed(
