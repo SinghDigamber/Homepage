@@ -1242,7 +1242,7 @@ feeds = (
     ),
     feed(
         title='Эликсир',
-        title_full='Исцеляющий эликсир',
+        title_full='Исцеляющий эликсир (остановился на ~1-85, 17 сентября)',
         href='http://readmanga.me/healing_elixir',
         emojis='💎'
     ),
@@ -1909,6 +1909,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='chalkynan',
+        href='https://chalkynan.artstation.com/rss',
+        href_title='https://chalkynan.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
         title='forgingmeanings',
         href='https://forgingmeanings.artstation.com/rss',
         href_title='https://forgingmeanings.artstation.com/projects',
@@ -2055,6 +2061,12 @@ feeds = (
         title='carmessi',
         href='https://www.hentai-foundry.com/feed/userPictures/username/carmessi',
         href_title='http://www.hentai-foundry.com/pictures/user/carmessi',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Gmeen',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/Gmeen',
+        href_title='http://www.hentai-foundry.com/pictures/user/Gmeen',
         emojis='💎🏮'
     ),
     feed(
@@ -3398,7 +3410,6 @@ feeds = (
     feed(
         title='letitiawright',
         href='https://www.instagram.com/letitiawright/',
-        emojis='💎🏮',
     ),
     feed(
         title='AppleInst',
@@ -3498,7 +3509,7 @@ feeds = (
     feed(
         title='dk_88_la',
         href='https://www.instagram.com/dk_88_la/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='maryd_model',
@@ -3957,12 +3968,12 @@ feeds = (
     feed(
         title='thesambuca',
         href='https://www.instagram.com/thesambuca/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='thekatyasambuca',
         href='https://www.instagram.com/thekatyasambuca/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='templeton_illustrations',
@@ -4182,7 +4193,7 @@ feeds = (
     feed(
         title='lillybetrose',
         href='https://www.instagram.com/lillybetrose/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='notaprodigy',
@@ -4237,6 +4248,11 @@ feeds = (
     feed(
         title='danielkopp_photo',
         href='https://www.instagram.com/danielkopp_photo/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='nivalislava',
+        href='https://www.instagram.com/nivalislava/',
         emojis='💎🏮',
     ),
     feed(
@@ -4312,7 +4328,7 @@ feeds = (
     feed(
         title='titsoutkickedout',
         href='https://www.instagram.com/titsoutkickedout/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='celene_nox',
@@ -4573,7 +4589,6 @@ feeds = (
     feed(
         title='kelend13',
         href='https://www.instagram.com/kelend13/',
-        emojis='💎',
     ),
     feed(
         title='ivanov_koljamba',
@@ -4593,7 +4608,6 @@ feeds = (
     feed(
         title='illya_yurievich',
         href='https://www.instagram.com/illya.yurievich/',
-        emojis='💎',
     ),
     feed(
         title='dimkred',
@@ -4740,7 +4754,7 @@ feeds = (
     feed(
         title='giarohighheels',
         href='https://www.instagram.com/giarohighheels/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='shitakecouture',
