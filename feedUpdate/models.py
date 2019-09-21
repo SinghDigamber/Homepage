@@ -286,7 +286,7 @@ class feed(models.Model):
                 else:
                     result_href = item["links"][0]["href"]
 
-
+                '''
                 media_thumbnail = ""
                 try:
                     media_thumbnail = item['media_thumbnail'][0]['url']
@@ -296,6 +296,7 @@ class feed(models.Model):
                 except KeyError:
                     media_thumbnail = self.title
                     # print("empty: " + media_thumbnail)
+                '''
 
                 # FILTERING: passing item cycle if filter does not match
                 if self.filter is not None:
