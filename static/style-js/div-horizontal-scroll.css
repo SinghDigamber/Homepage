@@ -1,0 +1,27 @@
+div.horizontal-scroll {
+    max-width: 100%;
+    white-space: nowrap; /* [1] */
+    overflow-x: auto; /* [2] */
+    -webkit-overflow-scrolling: touch; /* [3] */
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
+}
+div.horizontal-scroll .element {
+    display: inline;
+}
+div.horizontal-scroll img { 
+    /* setting image size */
+    height: 200px;
+    /* styling white shadow-border decoration */
+    border-radius: 15px;
+    border: 1px solid white;
+    box-shadow: 0 0 5px white;
+    margin: 15px 6px;
+}
+div.horizontal-scroll img:hover {
+    /* hovering on hover */
+    transform: scale(1.1, 1.1);
+}
+div.horizontal-scroll a {
+    /* invisible <a> tag */
+    text-decoration: none;
+}

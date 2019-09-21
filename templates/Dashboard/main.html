@@ -8,6 +8,7 @@
     <meta http-equiv="refresh" content="600" >
     <link rel="stylesheet" href="{% static 'style-js/Dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'style-js/ul-red.css' %}">
+    <link rel="stylesheet" href="{% static 'style-js/div-horizontal-scroll.css' %}">
     <script>{% include "Homepage/js/img-lazy-load.js" %}</script>
 {% endblock %}
 
@@ -20,10 +21,10 @@
     </h1>
 
     <h2><a href="https://planetakino.ua/kharkov/movies/">Фильмы в прокате</a></h2>
-    <div id="PlanetaKino">
+    <div class="horizontal-scroll">
     {% for movie in fromView.movies %}
         {% if movie.inTheater %}
-            <div class="poster">
+            <div class="element">
                 <a href="{{ movie.href }}" target="_blank">
                     <img class="lazy" src="https://placeholder.pics/svg/135x200"
                          data-src="{{ movie.posterIMG }}" alt="{{ movie.title }}">
