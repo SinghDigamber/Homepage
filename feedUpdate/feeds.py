@@ -439,7 +439,6 @@ feeds = (
         title='Dobryak',
         title_full='Dobryak animations',
         href='https://www.youtube.com/channel/UCIQ1PyEVzV2sc4CXHKH2cSg/videos',
-        emojis='💎'
     ),
     feed(
         title='CP',
@@ -795,6 +794,7 @@ feeds = (
     feed(
         title='MyLatexBaby',
         href='https://www.youtube.com/channel/UCvxaNRCpQPI-3OVLDt7ywOQ/videos',
+        emojis='🏮',
     ),
     feed(
         title='Зеленский',
@@ -1242,9 +1242,8 @@ feeds = (
     ),
     feed(
         title='Эликсир',
-        title_full='Исцеляющий эликсир (остановился на ~1-85, 17 сентября)',
+        title_full='Исцеляющий эликсир (остановился на 1-85)',
         href='http://readmanga.me/healing_elixir',
-        emojis='💎'
     ),
     feed(
         title='Начало',
@@ -1626,6 +1625,41 @@ feeds = (
         emojis='💎',
     ),
     feed(
+        title='Клеймо',
+        title_full='Королева клинка и дитя клейма (остановился на т1г3)',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/tjrk',
+        filter='ruranobe.ru/r/tjrk/',
+    ),
+    feed(
+        title='Цветы',
+        title_full='Цветы (закончено)',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/HS',
+        filter='ruranobe.ru/r/HS/',
+    ),
+    feed(
+        title='ОсобнякНежити',
+        title_full='Изысканная жизнь в Особняке нежити (остановился примерно на т7)',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/yayn',
+        filter='ruranobe.ru/r/yayn/',
+    ),
+    feed(
+        title='Изолятор',
+        title_full='Изолятор: воплощение абсолютного одиночества (остановился на т1)',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/znk',
+        filter='ruranobe.ru/r/znk/',
+    ),
+    feed(
+        title='Гримгар',
+        title_full='Гримгар пепла и иллюзий (остановился на т6г7)',
+        href='https://ruranobe.ru/updates.rss',
+        href_title='https://ruranobe.ru/r/hthnh',
+        filter='ruranobe.ru/r/hthnh/',
+    ),
+    feed(
         title='RuRaWorks',
         href='https://novel.tl/updates.rss',
         href_title='https://novel.tl/',
@@ -1906,6 +1940,12 @@ feeds = (
         title='bangbez',
         href='https://bangbez.artstation.com/rss',
         href_title='https://bangbez.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='ayyasap',
+        href='https://ayyasap.artstation.com/rss',
+        href_title='https://ayyasap.artstation.com/projects',
         emojis='💎🏮'
     ),
     feed(
@@ -2385,7 +2425,7 @@ feeds = (
         title='skottichan',
         href='https://www.hentai-foundry.com/feed/userPictures/username/skottichan',
         href_title='http://www.hentai-foundry.com/pictures/user/skottichan',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='SprinklePoo',
@@ -2499,7 +2539,7 @@ feeds = (
         title='BleedingPervert',
         href='https://www.hentai-foundry.com/feed/userPictures/username/BleedingPervert',
         href_title='http://www.hentai-foundry.com/pictures/user/BleedingPervert',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='kinkymation',
@@ -2523,7 +2563,7 @@ feeds = (
         title='ParkdaleArt',
         href='https://www.hentai-foundry.com/feed/userPictures/username/ParkdaleArt',
         href_title='http://www.hentai-foundry.com/pictures/user/ParkdaleArt',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Lurkergg',
@@ -2725,7 +2765,7 @@ feeds = (
     feed(
         title='inkytentaclemonster',
         href='https://www.deviantart.com/inkytentaclemonster/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='castcuraga',
@@ -3978,12 +4018,12 @@ feeds = (
     feed(
         title='templeton_illustrations',
         href='https://www.instagram.com/templeton_illustrations/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='mylittlevronie',
         href='https://www.instagram.com/mylittlevronie/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='mylittlevronie20',
@@ -4123,7 +4163,7 @@ feeds = (
     feed(
         title='mylatexbabyInst',
         href='https://www.instagram.com/mylatexbaby/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='reiqinstagram',
@@ -4318,12 +4358,12 @@ feeds = (
     feed(
         title='notbaconbooty',
         href='https://www.instagram.com/notbaconbooty/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='baconbootyy',
         href='https://www.instagram.com/baconbootyy/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='titsoutkickedout',
@@ -4749,7 +4789,7 @@ feeds = (
     feed(
         title='elisanthInsta',
         href='https://www.instagram.com/elisanth/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='giarohighheels',
@@ -4774,7 +4814,7 @@ feeds = (
     feed(
         title='xkaymorgan',
         href='https://www.instagram.com/xkaymorgan/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='marisha_ray',
@@ -4882,6 +4922,11 @@ feeds = (
     feed(
         title='katerina_piglet_20',
         href='https://www.instagram.com/katerina_piglet_2.0/',
+        emojis='🏮',
+    ),
+    feed(
+        title='momoreku',
+        href='https://www.instagram.com/momoreku/',
         emojis='🏮',
     ),
     feed(
