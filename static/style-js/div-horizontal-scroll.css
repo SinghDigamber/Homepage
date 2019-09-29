@@ -8,6 +8,12 @@ div.horizontal-scroll {
 div.horizontal-scroll .element {
     display: inline;
 }
+div.horizontal-scroll .element:first-child { 
+    margin-left: 15px;
+}
+div.horizontal-scroll .element:last-child { 
+    margin-right: 15px;
+}
 div.horizontal-scroll img { 
     /* setting image size */
     height: 200px;
@@ -15,7 +21,7 @@ div.horizontal-scroll img {
     border-radius: 15px;
     border: 1px solid white;
     box-shadow: 0 0 5px white;
-    margin: 15px 6px;
+    margin: 15px 5px 15px 5px;
 }
 div.horizontal-scroll img:hover {
     /* hovering on hover */
