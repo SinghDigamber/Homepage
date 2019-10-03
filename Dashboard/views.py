@@ -49,6 +49,7 @@ class DashboardView(ListView):
         feedUpdate_list = feedUpdate.objects.filter(title__in=feed_titles)
         feedUpdate_list = feedUpdate_list.exclude(title__in=feed_titles_not)
         feedUpdate_list = feedUpdate_list[:items_limit]
+        feedUpdate_list = list(feedUpdate_list)
 
         return {
             'title': {
