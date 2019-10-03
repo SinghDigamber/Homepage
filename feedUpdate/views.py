@@ -98,7 +98,7 @@ class otherView(ListView):
         # constants
         header = "Other"
         multibook = True
-        result_size_limit = 1400
+        result_size_limit = 140
         feed_emoji_filter = '🏮'
 
         # calculations
@@ -180,8 +180,7 @@ class feedUpdateIndexView(ListView):
 
     def get_queryset(self):
         # constants
-        items_limit = 1400
-        items_limit_select = items_limit*8
+        items_limit = 140
 
         # calculations
         # multibook checker
@@ -235,12 +234,10 @@ class feedUpdateIndexView(ListView):
                 for each in feed.feeds_by_emoji('🏮'):
                     feed_titles_not.append(each.title)
 
-                feedUpdate_list = []
-                for each in feedUpdate.objects.all()[:items_limit_select]:
-                    if each.title in feed_titles and each.title not in feed_titles_not:
-                        feedUpdate_list.append(each)
-
+                feedUpdate_list = feedUpdate.objects.filter(title__in=feed_titles)
+                feedUpdate_list = feedUpdate_list.exclude(title__in=feed_titles_not)
                 feedUpdate_list = feedUpdate_list[:items_limit]
+                feedUpdate_list = list(feedUpdate_list)
             else:
                 feedUpdate_list = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
         elif self.kwargs['mode'] == "force":

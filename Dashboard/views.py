@@ -46,10 +46,8 @@ class DashboardView(ListView):
         for each in feed.feeds_by_emoji('🏮'):
             feed_titles_not.append(each.title)
 
-        feedUpdate_list = []
-        for each in feedUpdate.objects.all()[:items_limit_select]:
-            if each.title in feed_titles and each.title not in feed_titles_not:
-                feedUpdate_list.append(each)
+        feedUpdate_list = feedUpdate.objects.filter(title__in=feed_titles)
+        feedUpdate_list = feedUpdate_list.exclude(title__in=feed_titles_not)
         feedUpdate_list = feedUpdate_list[:items_limit]
 
         return {
