@@ -287,7 +287,7 @@ feeds = (
         title="MLewin",
         title_full="Michelle Lewin",
         href="https://www.youtube.com/channel/UCXOF8RQ_v52K1uq6m_rMy1w/videos",
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title="AdventureTeam",
@@ -830,6 +830,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ВечерниеКости',
+        href='https://www.youtube.com/channel/UCETKVT-Uj-gAqdSTd2YNaMg/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Avantazh',
         href='https://www.youtube.com/channel/UCvBZg6UrQQL8Pu8r35nu1BQ/videos',
         emojis='💎'
@@ -921,6 +926,11 @@ feeds = (
     feed(
         title='CasuallyExplained',
         href='https://www.youtube.com/channel/UCr3cBLTYmIK9kY0F_OdFWFQ/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='UstimCyclist',
+        href='https://www.youtube.com/channel/UCPAbNGaSssGt3dvIizQxekw/videos',
         emojis='💎'
     ),
     feed(
@@ -1537,6 +1547,12 @@ feeds = (
         emojis='💎',
     ),
     feed(
+        title='TheVillageKiev',
+        href='https://www.the-village.com.ua/feeds/posts.atom',
+        href_title='https://www.the-village.com.ua',
+        emojis='💎',
+    ),
+    feed(
         title='bespoyasov',
         title_full='bespoyasov',
         href='https://bespoyasov.ru/rss.xml',
@@ -1819,6 +1835,12 @@ feeds = (
         title='LeniviyART',
         href='https://twitrss.me/twitter_user_to_rss/?user=leniviy_art',
         href_title='https://leniviyart.com/illustration',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='michelle_lewin_twi',
+        href='https://twitrss.me/twitter_user_to_rss/?user=Michelle_Lewin',
+        href_title='https://twitter.com/Michelle_Lewin',
         emojis='💎🏮'
     ),
     feed(
@@ -2122,7 +2144,7 @@ feeds = (
         title='SatyrSatyr',
         href='https://www.hentai-foundry.com/feed/userPictures/username/SatyrSatyr',
         href_title='http://www.hentai-foundry.com/pictures/user/SatyrSatyr',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='cherrygig',
@@ -3680,9 +3702,84 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='krissycela',
+        href='https://www.instagram.com/krissycela/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='fitgurlmel',
+        href='https://www.instagram.com/fitgurlmel/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='katiesonier',
+        href='https://www.instagram.com/katiesonier/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='natacha_oceane',
+        href='https://www.instagram.com/natacha.oceane/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='brittnebabe',
+        href='https://www.instagram.com/brittnebabe/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='amandabisk',
+        href='https://www.instagram.com/amandabisk/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='toneitup',
+        href='https://www.instagram.com/toneitup/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='kayla_itsines',
+        href='https://www.instagram.com/kayla_itsines/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='kaisafit',
+        href='https://www.instagram.com/kaisafit/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='emilyskyefit',
+        href='https://www.instagram.com/emilyskyefit/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='basebodybabes',
+        href='https://www.instagram.com/basebodybabes/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='massy_arias',
+        href='https://www.instagram.com/massy.arias/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='annavictoria',
+        href='https://www.instagram.com/annavictoria/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='tracyandersonmethod',
+        href='https://www.instagram.com/tracyandersonmethod/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='balletbeautiful',
+        href='https://www.instagram.com/balletbeautiful/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='enjinight',
         href='https://www.instagram.com/enjinight/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='harleylavey',
@@ -3942,7 +4039,7 @@ feeds = (
     feed(
         title='michelle_lewin',
         href='https://www.instagram.com/michelle_lewin/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='minafatale',
@@ -4167,12 +4264,12 @@ feeds = (
     feed(
         title='adelalinka_life',
         href='https://www.instagram.com/adelalinka_life/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='galina_dub',
         href='https://www.instagram.com/galina.dub/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='smirko_o',
@@ -4197,7 +4294,7 @@ feeds = (
     feed(
         title='jenselter',
         href='https://www.instagram.com/jenselter/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='dollskill',
@@ -4517,7 +4614,27 @@ feeds = (
     feed(
         title='laurendrainfit',
         href='https://www.instagram.com/laurendrainfit/',
-        emojis='🏮',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='rachellevank',
+        href='https://www.instagram.com/rachellevank/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='natalee_007',
+        href='https://www.instagram.com/natalee.007/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='mavrin',
+        href='https://www.instagram.com/mavrin/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='MAVRINstudios',
+        href='https://www.instagram.com/MAVRINstudios/',
+        emojis='💎🏮',
     ),
     feed(
         title='plant_lily',
