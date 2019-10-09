@@ -4353,11 +4353,6 @@ feeds = (
         emojis='🏮',
     ),
     feed(
-        title='alienorihara',
-        href='https://www.instagram.com/alienorihara/',
-        emojis='🏮',
-    ),
-    feed(
         title='toxicvision',
         href='https://www.instagram.com/toxicvision/',
         emojis='🏮',
