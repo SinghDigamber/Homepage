@@ -112,46 +112,49 @@ class feed(models.Model):
                         title=self.title))
 
         # custom instagram import
-        if self.href.find('https://www.instagram.com/') != -1 and random.randint(0,100) == 100:
-            try:
-                soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-                soup = BeautifulSoup(soup.text, "html.parser")
+        if self.href.find('https://www.instagram.com/') != -1:
+            if random.randint(0,100) == 100:
+                try:
+                    soup = requests.get(self.href, headers=headers, proxies=proxyDict)
+                    soup = BeautifulSoup(soup.text, "html.parser")
 
-                for each in soup.find_all('script'):
-                    data_start = 'window._sharedData = '
-                    if each.text.find(data_start) != -1:
-                        # preparing JSON
-                        data_start = each.text.find(data_start)+len(data_start)
-                        data = str(each.text)[data_start:-1]  # -1 is for removing ; in the end
-                        #print(data)
-                        data = json.loads(data)
-                        data = data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']
+                    for each in soup.find_all('script'):
+                        data_start = 'window._sharedData = '
+                        if each.text.find(data_start) != -1:
+                            # preparing JSON
+                            data_start = each.text.find(data_start)+len(data_start)
+                            data = str(each.text)[data_start:-1]  # -1 is for removing ; in the end
+                            #print(data)
+                            data = json.loads(data)
+                            data = data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']
 
-                        # parsing data from JSON
-                        for post in data:
-                            post = post['node']
+                            # parsing data from JSON
+                            for post in data:
+                                post = post['node']
 
-                            # avoiding errors caused by empty titles
-                            try:
-                                result_name = post['edge_media_to_caption']['edges'][0]['node']['text']
-                            except IndexError:
-                                result_name = 'no title'
+                                # avoiding errors caused by empty titles
+                                try:
+                                    result_name = post['edge_media_to_caption']['edges'][0]['node']['text']
+                                except IndexError:
+                                    result_name = 'no title'
 
-                            result_href = "http://instragram.com/p/"+post['shortcode']
+                                result_href = "http://instragram.com/p/"+post['shortcode']
 
-                            result_datetime = post['taken_at_timestamp']
-                            result_datetime = datetime.fromtimestamp(result_datetime)
+                                result_datetime = post['taken_at_timestamp']
+                                result_datetime = datetime.fromtimestamp(result_datetime)
 
-                            result.append(feedUpdate(
-                                name=result_name[:140],
-                                href=result_href,
-                                datetime=result_datetime,
-                                title=self.title))
-            except KeyError:
-                return []
-            except requests.exceptions.ProxyError:
-                return []
-            except requests.exceptions.SSLError:
+                                result.append(feedUpdate(
+                                    name=result_name[:140],
+                                    href=result_href,
+                                    datetime=result_datetime,
+                                    title=self.title))
+                except KeyError:
+                    return []
+                except requests.exceptions.ProxyError:
+                    return []
+                except requests.exceptions.SSLError:
+                    return []
+            else:
                 return []
 
         # custom RSS YouTube converter (link to feed has to be converted manually)
