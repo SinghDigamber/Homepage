@@ -118,7 +118,7 @@ class otherView(ListView):
                     feed_title_list.append(each.title)
 
             feedUpdate_list = list(feedUpdate.objects.filter(title__in=feed_title_list)[:result_size_limit])
-        elif self.kwargs['mode'] == "force":
+        elif self.kwargs.get('mode', False) == "force":
             header += ": Forced"
             for each in feed_list:
                 for feedUpdate_item in feed.parse(each):
@@ -248,7 +248,7 @@ class feedUpdateIndexView(ListView):
                 feedUpdate_list = list(feedUpdate_list)
             else:
                 feedUpdate_list = list(feedUpdate.objects.filter(title__in=self.kwargs['feeds'].split("+"))[:items_limit])
-        elif self.kwargs['mode'] == "force":
+        elif self.kwargs.get('mode', False) == "force":
             page_title += ": Forced"
             for each in feed_list:
                 for feedUpdate_item in feed.parse(each):
