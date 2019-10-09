@@ -1,4 +1,5 @@
 #!/bin/sh
+# Postgre logs are at tail /var/log/postgresql/postgresql-x.x-main.log
 
 sudo apt-get update
 sudo apt install postgresql
