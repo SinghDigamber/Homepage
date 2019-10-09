@@ -83,6 +83,10 @@ class Command(BaseCommand):
                     if options['logEach']:
                         cycle_start = time.time()
                         cycle_items = 0
+
+                    feed_present = True
+                    if len(feedUpdate.objects.filter(title=current_feed.title)) == 0:
+                        feed_present = False
                     
                     feedUpdate_list = current_feed.parse(proxy)
 
@@ -98,7 +102,7 @@ class Command(BaseCommand):
                         cached = feedUpdate.objects.filter(href=each.href).exists()
                             
                         if not cached:
-                            if options['parseNow'] and len(feedUpdate.objects.filter(title=current_feed.title)) > 0:
+                            if options['parseNow'] and feed_present:
                                 each.datetime = datetime.now()
                             each.save()
 
