@@ -16,25 +16,13 @@ class weatherCastView(ListView):
         result_forecast = weatherCast.parse_json_weather(json)
         result_summary = weatherCast.parse_json_weather_summary(json)
 
-        temp_min = min(forecast.temp for forecast in result_forecast)
-        temp_max = max(forecast.temp for forecast in result_forecast)
-
         json_hourly_feels = []
-        #json_hourly_real = []
-        #json_dayly_real = []
-        #json_dayly_feels = []
 
         json_cloudCover_hourly = []
 
         for each in result_forecast:
             if each.point_type == 'H' and each.temp_type == 'F':
                 json_hourly_feels.append(round(each.temp, 2))
-            #elif each.point_type == 'H' and each.temp_type == 'R':
-            #    json_hourly_real.append(round(each.temp, 2))
-            #elif each.point_type == 'D' and each.temp_type == 'R':
-            #    json_dayly_real.append(round(each.temp, 2))
-            #elif each.point_type == 'D' and each.temp_type == 'F':
-            #    json_dayly_feels.append(round(each.temp, 2))
             elif each.point_type == 'H':
                 json_cloudCover_hourly.append(int(each.cloudCover*100))
 
@@ -42,14 +30,9 @@ class weatherCastView(ListView):
         return {
             'page': {
                 'title': page_title,
-                'temp_min': temp_min,
-                'temp_max': temp_max,
             },
             'summary': result_summary,
             'forecast': result_forecast,
             'json_hourly_feels': str(json_hourly_feels[:25]),
-            #'json_hourly_real': str(json_hourly_real[:25]),
-            #'json_dayly_real': str(json_dayly_real[:25]),
-            #'json_dayly_feels': str(json_dayly_feels[:25]),
             'json_cloudCover_hourly': str(json_cloudCover_hourly[:25]),
         }
