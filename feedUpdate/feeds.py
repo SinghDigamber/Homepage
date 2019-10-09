@@ -159,6 +159,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ВечернийУргант',
+        href='https://www.youtube.com/channel/UCzlzGhKI5Y1LIeDJI53cWjQ/videos',
+        emojis='💎'
+    ),
+    feed(
         title='Т—Ж',
         title_full='Тинькофф-Журнал (YouTube)',
         href='https://www.youtube.com/channel/UCyYdliihJFWMXHikPK3NCQA/videos',
@@ -1594,7 +1599,6 @@ feeds = (
         title='TheVillageKiev',
         href='https://www.the-village.com.ua/feeds/posts.atom',
         href_title='https://www.the-village.com.ua',
-        emojis='💎',
     ),
     feed(
         title='bespoyasov',
@@ -1891,6 +1895,24 @@ feeds = (
         title='michelle_lewin_twi',
         href='https://twitrss.me/twitter_user_to_rss/?user=Michelle_Lewin',
         href_title='https://twitter.com/Michelle_Lewin',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='alcoholfrei',
+        href='https://twitrss.me/twitter_user_to_rss/?user=alcoholfrei',
+        href_title='https://twitter.com/alcoholfrei',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Mozno_Rossie',
+        href='https://twitrss.me/twitter_user_to_rss/?Mozno_Rossie=Michelle_Lewin',
+        href_title='https://twitter.com/Mozno_Rossie',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='CheshirFox',
+        href='https://twitrss.me/twitter_user_to_rss/?user=CheshirFox',
+        href_title='https://twitter.com/CheshirFox',
         emojis='💎🏮'
     ),
     feed(
@@ -4360,6 +4382,11 @@ feeds = (
     feed(
         title='jenselter',
         href='https://www.instagram.com/jenselter/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='l__natasha',
+        href='https://www.instagram.com/l._natasha/',
         emojis='💎🏮',
     ),
     feed(
