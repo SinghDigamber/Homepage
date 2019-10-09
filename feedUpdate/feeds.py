@@ -473,9 +473,19 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='StandUpClub',
+        href='https://www.youtube.com/channel/UC3cJiUuZlpF-pkzqvSskTpg/videos',
+        emojis='💎'
+    ),
+    feed(
         title='HelloFutureMe',
         title_full='Hello Future Me (Storytelling)',
         href='https://www.youtube.com/channel/UCFQMO-YL87u-6Rt8hIVsRjA/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='IKEA',
+        href='https://www.youtube.com/channel/UCea45juw3lHS65aRSC4bdCw/videos',
         emojis='💎'
     ),
     feed(
@@ -1594,6 +1604,11 @@ feeds = (
         href='http://tonsky.me/blog/atom.xml',
         href_title='http://tonsky.me',
         emojis='💎',
+    ),
+    feed(
+        title='УкраинскаяПравда',
+        href='https://www.pravda.com.ua/rss/',
+        href_title='https://www.pravda.com.ua/rus/',
     ),
     feed(
         title='TheVillageKiev',
