@@ -121,4 +121,4 @@ class Command(BaseCommand):
                 total_time = round(total_end - total_start, 2)
                 print("└──── added " + str(total_items) + " in " + str(total_time) + "s")
         except KeyboardInterrupt:
-            print('\n\nKeyboardInterrupt\n')
+            print('\nKeyboardInterrupt: execution aborted')
