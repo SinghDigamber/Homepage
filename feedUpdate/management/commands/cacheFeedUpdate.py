@@ -95,9 +95,9 @@ class Command(BaseCommand):
                 for each in feedUpdate_list:
                     # checking if href is cached
                     cached = feedUpdate.objects.filter(href=each.href).exists()
-
+                        
                     if not cached:
-                        if options['parseNow']:
+                        if options['parseNow'] and len(feedUpdate.objects.filter(title=current_feed.title)) > 0:
                             each.datetime = datetime.now()
                         each.save()
 
