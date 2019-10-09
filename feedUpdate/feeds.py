@@ -320,6 +320,16 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ОляПоляковаYT',
+        href='https://www.youtube.com/channel/UCBCPzW3C8Oqhlgdyaejnk1w/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='VSCosplay',
+        href='https://www.youtube.com/channel/UCaAo1lFz1siNUKIWOEx9weQ/videos',
+        emojis='💎'
+    ),
+    feed(
         title='ЧумацкийВелопробег',
         title_full='Чумацкий путь в Америку - велопробег',
         href='https://www.youtube.com/channel/UC4d-CwWxC8i96D9mKAAtnbA/videos',
@@ -613,6 +623,40 @@ feeds = (
         emojis='🏮💎'
     ),
     feed(
+        title='loonatheworld_kpop',
+        href='https://www.youtube.com/channel/UCOJplhB0wGQWv9OuRmMT-4g/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='SMTOWN_kpop',
+        href='https://www.youtube.com/channel/UCEf_Bc-KVd7onSeifS3py9g/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='BlackPink_kpop',
+        href='https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='jypentertainment_kpop',
+        href='https://www.youtube.com/channel/UCEf_Bc-KVd7onSeifS3py9g/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='CLC_kpop',
+        href='https://www.youtube.com/channel/UCnOTemIK0FqCe2FHbr9mWFw/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='ibighit_kpop',
+        href='https://www.youtube.com/channel/UC3IZKseVpdzPSBaWxBxundA/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='Mnet_kpop',
+        href='https://www.youtube.com/channel/UCbD8EppRX3ZwJSou-TVo90A/videos',
+    ),
+    feed(
         title='JMorrison',
         title_full='Jonathan Morrison',
         href='https://www.youtube.com/channel/UCDlQwv99CovKafGvxyaiNDA/videos',
@@ -715,7 +759,7 @@ feeds = (
         emojis='💎'
     ),
     feed(
-        title='auauau',
+        title='auauauYT',
         href='https://www.youtube.com/channel/UC8_oYt1vNAF1jvm5zSKfnoQ/videos',
         emojis='💎'
     ),
@@ -1838,6 +1882,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='alienoriharaTwi',
+        href='https://twitrss.me/twitter_user_to_rss/?user=alienorihara',
+        href_title='https://twitter.com/alienorihara',
+        emojis='💎🏮'
+    ),
+    feed(
         title='michelle_lewin_twi',
         href='https://twitrss.me/twitter_user_to_rss/?user=Michelle_Lewin',
         href_title='https://twitter.com/Michelle_Lewin',
@@ -1972,6 +2022,12 @@ feeds = (
         title='bangbez',
         href='https://bangbez.artstation.com/rss',
         href_title='https://bangbez.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='operion',
+        href='https://operion.artstation.com/rss',
+        href_title='https://operion.artstation.com/projects',
         emojis='💎🏮'
     ),
     feed(
@@ -2709,6 +2765,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='alienoriharaDA',
+        href='https://www.deviantart.com/alienorihara/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='chasingartwork',
         href='https://www.deviantart.com/chasingartwork/gallery/',
         emojis='💎',
@@ -3439,6 +3500,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='alienorihara',
+        href='https://www.instagram.com/alienorihara/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='wrapashouse',
         href='https://www.instagram.com/wrapashouse/',
         emojis='💎🏮',
@@ -3653,11 +3719,6 @@ feeds = (
         emojis='🏮',
     ),
     feed(
-        title='katelyn_runck',
-        href='https://www.instagram.com/katelyn_runck/',
-        emojis='🏮',
-    ),
-    feed(
         title='christian_gschweng',
         href='https://www.instagram.com/christian.gschweng/',
         emojis='🏮',
@@ -3779,6 +3840,16 @@ feeds = (
     feed(
         title='enjinight',
         href='https://www.instagram.com/enjinight/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='mightyraccoon',
+        href='https://www.instagram.com/mightyraccoon/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='polyakovamusic',
+        href='https://www.instagram.com/polyakovamusic/',
         emojis='💎🏮',
     ),
     feed(
@@ -4454,11 +4525,6 @@ feeds = (
     feed(
         title='danielkopp_photo',
         href='https://www.instagram.com/danielkopp_photo/',
-        emojis='💎🏮',
-    ),
-    feed(
-        title='nivalislava',
-        href='https://www.instagram.com/nivalislava/',
         emojis='💎🏮',
     ),
     feed(
