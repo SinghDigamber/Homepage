@@ -107,7 +107,9 @@ class otherView(ListView):
         feedUpdate_list = []
         feed_list = feed.feeds_by_emoji(feed_emoji_filter)
 
-        if self.kwargs.get('mode', False) == "index" or self.kwargs.get('mode', False) == "":
+        if self.kwargs.get('mode', False) == "index" or self.kwargs.get('mode', False) == "more" or self.kwargs.get('mode', False) == "":
+            if self.kwargs.get('mode', False) == "more":
+                result_size_limit = result_size_limit * 100
             feed_title_list = []
             for each in feed_list:
                 if each.emojis.find('💎') != -1:
@@ -149,7 +151,9 @@ class myActivityView(ListView):
         feedUpdate_list = []
         feed_list = feed.feeds_by_emoji(feed_emoji_filter)
 
-        if self.kwargs.get('mode', False) == "index" or self.kwargs.get('mode', False) == "":
+        if self.kwargs.get('mode', False) == "index" or self.kwargs.get('mode', False) == "more" or self.kwargs.get('mode', False) == "":
+            if self.kwargs.get('mode', False) == "more":
+                result_size_limit = result_size_limit * 100
             feed_title_list = []
             for each in feed_list:
                 feed_title_list.append(each.title)
@@ -224,7 +228,9 @@ class feedUpdateIndexView(ListView):
 
         # get feedUpdate_list
         feedUpdate_list = []
-        if self.kwargs.get('mode', False) == "index" or self.kwargs.get('mode', False) == "":
+        if self.kwargs.get('mode', False) == "index" or self.kwargs.get('mode', False) == "more" or self.kwargs.get('mode', False) == "":
+            if self.kwargs.get('mode', False) == "more":
+                result_size_limit = result_size_limit * 100
             if page_title == "Обновления":
                 feed_titles = []
                 for each in feed.feeds_by_emoji():
