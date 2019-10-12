@@ -640,36 +640,44 @@ feeds = (
     feed(
         title='loonatheworld_kpop',
         href='https://www.youtube.com/channel/UCOJplhB0wGQWv9OuRmMT-4g/videos',
-        emojis='💎'
+        emojis='💎',
+        filter='M/V'
     ),
     feed(
         title='SMTOWN_kpop',
         href='https://www.youtube.com/channel/UCEf_Bc-KVd7onSeifS3py9g/videos',
-        emojis='💎'
+        emojis='💎',
+        filter='M/V'
     ),
     feed(
         title='BlackPink_kpop',
         href='https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A/videos',
-        emojis='💎'
+        emojis='💎',
+        filter='M/V'
     ),
     feed(
         title='jypentertainment_kpop',
-        href='https://www.youtube.com/channel/UCEf_Bc-KVd7onSeifS3py9g/videos',
-        emojis='💎'
+        href='https://www.youtube.com/channel/UCaO6TYtlC8U5ttz62hTrZgg/videos',
+        emojis='💎',
+        filter='M/V'
     ),
     feed(
         title='CLC_kpop',
         href='https://www.youtube.com/channel/UCnOTemIK0FqCe2FHbr9mWFw/videos',
-        emojis='💎'
+        emojis='💎',
+        filter='M/V'
     ),
     feed(
         title='ibighit_kpop',
         href='https://www.youtube.com/channel/UC3IZKseVpdzPSBaWxBxundA/videos',
-        emojis='💎'
+        emojis='💎',
+        filter='M/V'
     ),
     feed(
         title='Mnet_kpop',
         href='https://www.youtube.com/channel/UCbD8EppRX3ZwJSou-TVo90A/videos',
+        emojis='💎',
+        filter='M/V'
     ),
     feed(
         title='JMorrison',
@@ -1904,7 +1912,19 @@ feeds = (
         title='alienoriharaTwi',
         href='https://twitrss.me/twitter_user_to_rss/?user=alienorihara',
         href_title='https://twitter.com/alienorihara',
+        emojis='🏮'
+    ),
+    feed(
+        title='alcoholfrei',
+        href='https://twitrss.me/twitter_user_to_rss/?user=alcoholfrei',
+        href_title='https://twitter.com/alcoholfrei',
         emojis='💎🏮'
+    ),
+    feed(
+        title='PugoffkaSama',
+        href='https://twitrss.me/twitter_user_to_rss/?user=PugoffkaSama',
+        href_title='https://twitter.com/PugoffkaSama',
+        emojis='🏮'
     ),
     feed(
         title='michelle_lewin_twi',
@@ -3542,6 +3562,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='pugoffka_sama',
+        href='https://www.instagram.com/pugoffka_sama/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='wrapashouse',
         href='https://www.instagram.com/wrapashouse/',
         emojis='💎🏮',
@@ -3832,7 +3857,7 @@ feeds = (
     feed(
         title='toneitup',
         href='https://www.instagram.com/toneitup/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='kayla_itsines',
