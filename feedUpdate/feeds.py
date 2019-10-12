@@ -41,6 +41,12 @@ feeds = (
         emojis='💎📧'
     ),
     feed(
+        title='ДокторСтоун',
+        href='http://fanserials.tv/dr-stone/',
+        emojis='💎',
+        filter='#anidub'
+    ),
+    feed(
         title='Ляпота',
         title_full="It's a good trip",
         href='https://www.youtube.com/channel/UCeHB0mXXj_kyPCB-yRr8b9w/videos',

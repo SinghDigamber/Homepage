@@ -246,7 +246,6 @@ class feed(models.Model):
                 return []
             except requests.exceptions.ConnectionError:
                 return []
-                
 
         # custom vas3k pain parser
         elif self.href.find('https://pain.vas3k.ru') != -1:
@@ -260,6 +259,32 @@ class feed(models.Model):
                 result_name = pain.find_all('div')[2].find('p').text
 
                 result_href = "https://pain.vas3k.ru" + pain.find_all('div')[1].find('a').get('href')
+
+                # TODO: parse real datetime
+                result_datetime = datetime.now()
+
+                result.append(feedUpdate(
+                    name=result_name[:140],
+                    href=result_href,
+                    datetime=result_datetime,
+                    title=self.title))
+
+        # custom fanserials parser
+        elif self.href.find('http://fanserials.tv/') != -1 and self.filter is not None:
+            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
+            soupStrainer = SoupStrainer('ul', attrs={'id': 'episode_list'})
+            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+
+            for item in soup.find_all('li'):
+                result_name = item.find('div', attrs={'class': 'field-description'}).find('a').text
+                #print(result_name)
+
+                result_href = ''
+                for span in item.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
+                    print(span)
+                    if str(span.find('a')).find(self.filter) != -1:
+                        result_href = 'http://fanserials.tv' + span.find('a').get('href')
+                #print(result_href)
 
                 # TODO: parse real datetime
                 result_datetime = datetime.now()
