@@ -3458,7 +3458,7 @@ feeds = (
         title='irine_meier',
         href='https://www.instagram.com/irine_meier/',
         emojis='💎🏮',
-    ), 
+    ),
     feed(
         title='oabramovich',
         href='https://www.instagram.com/oabramovich/',
