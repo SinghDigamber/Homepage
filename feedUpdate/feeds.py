@@ -338,7 +338,6 @@ feeds = (
     feed(
         title='VSCosplay',
         href='https://www.youtube.com/channel/UCaAo1lFz1siNUKIWOEx9weQ/videos',
-        emojis='💎'
     ),
     feed(
         title='ЧумацкийВелопробег',
