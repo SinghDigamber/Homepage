@@ -1040,7 +1040,21 @@ feeds = (
         title='Anidub',
         title_full='Anidub Online',
         href='https://anidub.me/rss.xml',
-        href_title='https://anidub.me/rss.xml',
+        href_title='https://anidub.me',
+    ),
+    feed(
+        title='ГенииПопаданцы',
+        title_full='Для гениев не проблема выжить даже в ином мире',
+        href='https://anidub.me/rss.xml',
+        href_title='https://anidub.me',
+        filter='dlya-geniev-ne-problema-vyzhit-dazhe-v-inom-mire'
+    ),
+    feed(
+        title='ЕдинственнаяКтоЛюбит',
+        title_full='Ты единственная, кто любит Великого Меня?!',
+        href='https://anidub.me/rss.xml',
+        href_title='https://anidub.me',
+        filter='ty-edinstvennaya-kto-lyubit-velikogo-menya'
     ),
     feed(
         title='KotB',
@@ -1653,7 +1667,7 @@ feeds = (
         title='erotibotica',
         href='https://erotibotica.com/feed/',
         href_title='https://erotibotica.com',
-        emojis='💎',
+        emojis='💎🏮',
     ),
     feed(
         title='Шелдон',
@@ -1927,6 +1941,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='scarletstar__',
+        href='https://twitrss.me/twitter_user_to_rss/?user=scarletstar__',
+        href_title='https://twitter.com/scarletstar__',
+        emojis='💎🏮'
+    ),
+    feed(
         title='PugoffkaSama',
         href='https://twitrss.me/twitter_user_to_rss/?user=PugoffkaSama',
         href_title='https://twitter.com/PugoffkaSama',
@@ -1954,7 +1974,7 @@ feeds = (
         title='CheshirFox',
         href='https://twitrss.me/twitter_user_to_rss/?user=CheshirFox',
         href_title='https://twitter.com/CheshirFox',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='ousawa_QuQ',
@@ -2085,6 +2105,18 @@ feeds = (
         title='bangbez',
         href='https://bangbez.artstation.com/rss',
         href_title='https://bangbez.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='yunting',
+        href='https://yunting.artstation.com/rss',
+        href_title='https://yunting.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='junsartwork',
+        href='https://junsartwork.artstation.com/rss',
+        href_title='https://junsartwork.artstation.com/projects',
         emojis='💎🏮'
     ),
     feed(
@@ -2828,6 +2860,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='sciamano240DA',
+        href='https://www.deviantart.com/sciamano240/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='alienoriharaDA',
         href='https://www.deviantart.com/alienorihara/gallery/',
         emojis='💎🏮',
@@ -3428,6 +3465,21 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='rachellevank',
+        href='https://www.instagram.com/rachellevank/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='agent_yummy',
+        href='https://www.instagram.com/agent_yummy/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='scarletstar_official',
+        href='https://www.instagram.com/scarletstar.official/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='shinynesaea',
         href='https://www.instagram.com/shinynesaea/',
         emojis='🏮',
@@ -3820,6 +3872,11 @@ feeds = (
         title='navinigri',
         href='https://www.instagram.com/navinigri/',
         emojis='🏮',
+    ),
+    feed(
+        title='cheshire_fox',
+        href='https://www.instagram.com/cheshire_fox/',
+        emojis='💎🏮',
     ),
     feed(
         title='fakenerd',
