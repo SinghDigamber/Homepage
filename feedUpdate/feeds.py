@@ -1376,9 +1376,8 @@ feeds = (
     ),
     feed(
         title='КоролеваОперы',
-        title_full='Королева оперы',
+        title_full='Королева оперы (остановился на 1-6)',
         href='http://readmanga.me/the_queen_of_the_opera',
-        emojis='💎'
     ),
     feed(
         title='ЗимаЛето',
@@ -1496,7 +1495,7 @@ feeds = (
     ),
     feed(
         title='ДраконийОхотник',
-        title_full='Охотник на драконов',
+        title_full='Охотник на драконов (остановился на 1-67)',
         href='http://readmanga.me/dragon_hunter',
         emojis='💎'
     ),
@@ -1937,7 +1936,7 @@ feeds = (
         title='alcoholfrei',
         href='https://twitrss.me/twitter_user_to_rss/?user=alcoholfrei',
         href_title='https://twitter.com/alcoholfrei',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='scarletstar__',
@@ -3464,8 +3463,18 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='773_029',
+        href='https://www.instagram.com/773_029/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='rachellevank',
         href='https://www.instagram.com/rachellevank/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='maruvofficial',
+        href='https://www.instagram.com/maruvofficial/',
         emojis='💎🏮',
     ),
     feed(
@@ -4319,7 +4328,7 @@ feeds = (
     feed(
         title='alekay_salakruthai',
         href='https://www.instagram.com/alekay_salakruthai/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='yoyossavadee',
@@ -4340,6 +4349,11 @@ feeds = (
         title='missmary_d',
         href='https://www.instagram.com/missmary.d/',
         emojis='🏮',
+    ),
+    feed(
+        title='demirosemawby',
+        href='https://www.instagram.com/demirosemawby/',
+        emojis='💎🏮',
     ),
     feed(
         title='milica_polskaya_fpage',
@@ -5008,8 +5022,8 @@ feeds = (
         emojis='💎',
     ),
     feed(
-        title='bro_soul',
-        href='https://www.instagram.com/bro_soul/',
+        title='IraKrupko',
+        href='https://www.instagram.com/irina.krupko07.07/',
         emojis='💎',
     ),
     feed(
@@ -5087,6 +5101,11 @@ feeds = (
     feed(
         title='nikyska_10',
         href='https://www.instagram.com/nikyska_10/',
+        emojis='💎',
+    ),
+    feed(
+        title='ve_ro_nika_12',
+        href='https://www.instagram.com/ve_ro_nika_12/',
         emojis='💎',
     ),
     feed(
