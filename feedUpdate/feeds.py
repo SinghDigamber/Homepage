@@ -277,6 +277,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='1millionDanceStudio',
+        href='https://www.youtube.com/channel/UCw8ZhLPdQ0u_Y-TLKd61hGA/videos',
+        emojis='💎'
+    ),
+    feed(
         title='mono',
         title_full='monobank',
         href='https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg/videos',
@@ -802,6 +807,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='1bike1worldYT',
+        href='https://www.youtube.com/channel/UC1oHb5i_2GsyefbSPjW-SMQ/videos',
+        emojis='💎'
+    ),
+    feed(
         title='LindseyStirling',
         href='https://www.youtube.com/channel/UCyC_4jvPzLiSkJkLIkA7B8g/videos',
         emojis='💎'
@@ -909,6 +919,11 @@ feeds = (
     feed(
         title='Avantazh',
         href='https://www.youtube.com/channel/UCvBZg6UrQQL8Pu8r35nu1BQ/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='MrTarrasque',
+        href='https://www.youtube.com/channel/UCmmev40rhLzJGhnwR50BZTw/videos',
         emojis='💎'
     ),
     feed(
@@ -1046,21 +1061,32 @@ feeds = (
         title_full='Для гениев не проблема выжить даже в ином мире',
         href='https://anidub.me/rss.xml',
         href_title='https://anidub.me',
-        filter='dlya-geniev-ne-problema-vyzhit-dazhe-v-inom-mire'
+        filter='dlya-geniev-ne-problema-vyzhit-dazhe-v-inom-mire',
+        emojis='💎'
     ),
     feed(
         title='ЕдинственнаяКтоЛюбит',
         title_full='Ты единственная, кто любит Великого Меня?!',
         href='https://anidub.me/rss.xml',
         href_title='https://anidub.me',
-        filter='ty-edinstvennaya-kto-lyubit-velikogo-menya'
+        filter='ty-edinstvennaya-kto-lyubit-velikogo-menya',
+        emojis='💎'
+    ),
+    feed(
+        title='ПламеннаяБригада',
+        title_full='Пламенная бригада пожарных',
+        href='https://anidub.me/rss.xml',
+        href_title='https://anidub.me',
+        filter='plamennaya-brigada-pozharnyh',
+        emojis='💎'
     ),
     feed(
         title='KotB',
         title_full='The King of the Battlefield',
         href='https://myoniyonitranslations.com/feed/',
         href_title='https://myoniyonitranslations.com/the-king-of-the-battlefield/',
-        filter='kotb'
+        filter='kotb',
+        emojis='💎'
     ),
     feed(
         title='AnimeVost',
@@ -1068,14 +1094,10 @@ feeds = (
         href_title='http://animevost.org',
     ),
     feed(
-        title='HappleTea',
-        href='feed://www.happletea.com/feed/',
-        href_title='http://www.happletea.com',
-    ),
-    feed(
         title='lunarbaboon',
         href='feed://www.lunarbaboon.com/comics/rss.xml',
         href_title='http://www.lunarbaboon.com',
+        emojis='💎'
     ),
     feed(
         title='ГосподствоКланов',
@@ -1123,6 +1145,13 @@ feeds = (
         href='feed://www.jagodibuja.com/feed/',
         href_title='http://www.jagodibuja.com',
         emojis='🏮💎'
+    ),
+    feed(
+        title='DnD',
+        title_full='WotC: Dungeon and Dragons',
+        href='feed:https://dnd.wizards.com/rss.xml',
+        href_title='https://dnd.wizards.com/articles',
+        emojis='💎'
     ),
     feed(
         title='vas3k',
@@ -1518,9 +1547,8 @@ feeds = (
     ),
     feed(
         title='Gate',
-        title_full='Врата: там бьются наши воины',
-        href='http://mintmanga.com/gate___thus_the_jsdf_fought_there',
-        emojis='💎'
+        title_full='Врата: там бьются наши воины (остановился на 15-86)',
+        href='http://mintmanga.com/gate___thus_the_jsdf_fought_there'
     ),
     feed(
         title='GateПинаКоЛада',
@@ -1787,6 +1815,13 @@ feeds = (
         filter='novel.tl/r/herd',
     ),
     feed(
+        title='ПастухБогов',
+        title_full='Сказания о Пастухе Богов (остановился на т1г66)',
+        href='https://novel.tl/updates.rss',
+        href_title='https://novel.tl/r/ldm',
+        filter='novel.tl/r/ldm',
+    ),
+    feed(
         title='Нежить',
         title_full='Нежеланный бессмертный авантюрист',
         href='https://novel.tl/updates.rss',
@@ -1939,12 +1974,6 @@ feeds = (
         emojis='🏮'
     ),
     feed(
-        title='scarletstar__',
-        href='https://twitrss.me/twitter_user_to_rss/?user=scarletstar__',
-        href_title='https://twitter.com/scarletstar__',
-        emojis='💎🏮'
-    ),
-    feed(
         title='PugoffkaSama',
         href='https://twitrss.me/twitter_user_to_rss/?user=PugoffkaSama',
         href_title='https://twitter.com/PugoffkaSama',
@@ -1954,12 +1983,6 @@ feeds = (
         title='michelle_lewin_twi',
         href='https://twitrss.me/twitter_user_to_rss/?user=Michelle_Lewin',
         href_title='https://twitter.com/Michelle_Lewin',
-        emojis='💎🏮'
-    ),
-    feed(
-        title='alcoholfrei',
-        href='https://twitrss.me/twitter_user_to_rss/?user=alcoholfrei',
-        href_title='https://twitter.com/alcoholfrei',
         emojis='💎🏮'
     ),
     feed(
@@ -2479,7 +2502,7 @@ feeds = (
         title='Skndo',
         href='https://www.hentai-foundry.com/feed/userPictures/username/Skndo',
         href_title='http://www.hentai-foundry.com/pictures/user/Skndo',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='HighBear',
@@ -3703,6 +3726,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='1bike1world',
+        href='https://www.instagram.com/1bike1world/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='alex_cosplays',
         href='https://www.instagram.com/alex_cosplays/',
         emojis='🏮',
@@ -3918,12 +3946,12 @@ feeds = (
     feed(
         title='brittnebabe',
         href='https://www.instagram.com/brittnebabe/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='amandabisk',
         href='https://www.instagram.com/amandabisk/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='toneitup',
@@ -4941,7 +4969,12 @@ feeds = (
     feed(
         title='k_kiuchi_q',
         href='https://www.instagram.com/k.kiuchi_q/',
-        emojis='🏮',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='xenakai',
+        href='https://www.instagram.com/xenakai/',
+        emojis='💎🏮',
     ),
     feed(
         title='moist_funhole',
