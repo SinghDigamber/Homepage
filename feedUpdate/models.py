@@ -113,7 +113,7 @@ class feed(models.Model):
 
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
-            if random.randint(0, 1000) == 100:
+            if random.randint(0, 1000) in [100, 200, 300, 400, 500, 600, 700, 800, 900]:
                 try:
                     soup = requests.get(self.href, headers=headers, proxies=proxyDict)
                     soup = BeautifulSoup(soup.text, "html.parser")
