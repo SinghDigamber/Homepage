@@ -281,7 +281,7 @@ class feed(models.Model):
 
                 result_href = ''
                 for span in item.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
-                    print(span)
+                    # print(span)
                     if str(span.find('a')).find(self.filter) != -1:
                         result_href = 'http://fanserials.tv' + span.find('a').get('href')
                 #print(result_href)
