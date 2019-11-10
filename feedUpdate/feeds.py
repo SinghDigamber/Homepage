@@ -1073,11 +1073,35 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='РассекающийДемонов',
+        title_full='Рассекающий демонов',
+        href='https://anidub.me/rss.xml',
+        href_title='https://anidub.me',
+        filter='rassekayuschiy-demonov',
+        emojis='💎'
+    ),
+    feed(
         title='ПламеннаяБригада',
         title_full='Пламенная бригада пожарных',
         href='https://anidub.me/rss.xml',
         href_title='https://anidub.me',
         filter='plamennaya-brigada-pozharnyh',
+        emojis='💎'
+    ),
+    feed(
+        title='ГенииПопаданцы',
+        title_full='Для гениев не проблема выжить даже в ином мире',
+        href='https://anidub.me/rss.xml',
+        href_title='https://anidub.me',
+        filter='dlya-geniev-ne-problema-vyzhit-dazhe-v-inom-mire',
+        emojis='💎'
+    ),
+    feed(
+        title='ОсторожныйГерой',
+        title_full='Этот герой неуязвим, но очень осторожен',
+        href='https://anidub.me/rss.xml',
+        href_title='https://anidub.me',
+        filter='etot-geroy-neuyazvim-no-ochen-ostorozhen',
         emojis='💎'
     ),
     feed(
@@ -3528,7 +3552,7 @@ feeds = (
     feed(
         title='nebbia_fitness',
         href='https://www.instagram.com/nebbia_fitness/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='lara_schumacher_',
@@ -3926,7 +3950,7 @@ feeds = (
     feed(
         title='krissycela',
         href='https://www.instagram.com/krissycela/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='fitgurlmel',
@@ -3971,7 +3995,7 @@ feeds = (
     feed(
         title='emilyskyefit',
         href='https://www.instagram.com/emilyskyefit/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='basebodybabes',
@@ -3996,7 +4020,7 @@ feeds = (
     feed(
         title='balletbeautiful',
         href='https://www.instagram.com/balletbeautiful/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='enjinight',
@@ -4859,6 +4883,16 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='daphnelux',
+        href='https://www.instagram.com/daphnelux/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='reneefuzz',
+        href='https://www.instagram.com/reneefuzz/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='mavrin',
         href='https://www.instagram.com/mavrin/',
         emojis='💎🏮',
@@ -5338,7 +5372,7 @@ feeds = (
     feed(
         title='teen_sl1m3',
         href='https://www.instagram.com/teen_sl1m3/',
-        emojis='💎',
+        emojis='💎🏮',
     ),
     feed(
         title='milliebobbybrown',
