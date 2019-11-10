@@ -167,6 +167,7 @@ feeds = (
     feed(
         title='ВечернийУргант',
         href='https://www.youtube.com/channel/UCzlzGhKI5Y1LIeDJI53cWjQ/videos',
+        filter='выпуск',
         emojis='💎'
     ),
     feed(
