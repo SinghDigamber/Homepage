@@ -69,6 +69,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='TaranVanHemert',
+        href='https://www.youtube.com/channel/UCd0ZD4iCXRXf18p3cA7EQfg/videos',
+        emojis='💎'
+    ),
+    feed(
         title='GCNTech',
         title_full="GCN Tech",
         href='https://www.youtube.com/channel/UC710HJmp-YgNbE5BnFBRoeg/videos',
@@ -377,7 +382,6 @@ feeds = (
     feed(
         title='CriticalRole',
         href='https://www.youtube.com/channel/UCpXBGqwsBkpvcYjsJBQ7LEQ/videos',
-        emojis='💎'
     ),
     feed(
         title='Сыендук',
@@ -3513,6 +3517,44 @@ feeds = (
     feed(
         title='773_029',
         href='https://www.instagram.com/773_029/',
+        emojis='💎🏮',
+    ),
+        href='https://www.instagram.com/vlad_lev69/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='ve_ro_nika_12',
+        href='https://www.instagram.com/ve_ro_nika_12/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='sklyar_dim',
+        href='https://www.instagram.com/sklyar_dim/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='alex_cake_1',
+        href='https://www.instagram.com/alex_cake_1/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='iuriidmidenko',
+        href='https://www.instagram.com/iuriidmidenko/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='tanyshkaloskan',
+        href='https://www.instagram.com/tanyshkaloskan/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='vikun4ik_viktorovna',
+        href='https://www.instagram.com/vikun4ik_viktorovna/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='iamyulka_zav',
+        href='https://www.instagram.com/iamyulka.zav/',
         emojis='💎🏮',
     ),
     feed(
