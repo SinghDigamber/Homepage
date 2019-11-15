@@ -814,7 +814,6 @@ feeds = (
     feed(
         title='1bike1worldYT',
         href='https://www.youtube.com/channel/UC1oHb5i_2GsyefbSPjW-SMQ/videos',
-        emojis='💎'
     ),
     feed(
         title='LindseyStirling',
@@ -3519,6 +3518,8 @@ feeds = (
         href='https://www.instagram.com/773_029/',
         emojis='💎🏮',
     ),
+    feed(
+        title='vlad_lev69',
         href='https://www.instagram.com/vlad_lev69/',
         emojis='💎🏮',
     ),
@@ -3560,7 +3561,7 @@ feeds = (
     feed(
         title='rachellevank',
         href='https://www.instagram.com/rachellevank/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='maruvofficial',
@@ -3795,7 +3796,6 @@ feeds = (
     feed(
         title='1bike1world',
         href='https://www.instagram.com/1bike1world/',
-        emojis='💎🏮',
     ),
     feed(
         title='alex_cosplays',
@@ -4058,7 +4058,7 @@ feeds = (
     feed(
         title='tracyandersonmethod',
         href='https://www.instagram.com/tracyandersonmethod/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='balletbeautiful',
