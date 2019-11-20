@@ -285,7 +285,6 @@ feeds = (
     feed(
         title='1millionDanceStudio',
         href='https://www.youtube.com/channel/UCw8ZhLPdQ0u_Y-TLKd61hGA/videos',
-        emojis='💎'
     ),
     feed(
         title='mono',
@@ -344,7 +343,6 @@ feeds = (
     feed(
         title='ОляПоляковаYT',
         href='https://www.youtube.com/channel/UCBCPzW3C8Oqhlgdyaejnk1w/videos',
-        emojis='💎'
     ),
     feed(
         title='VSCosplay',
@@ -2157,6 +2155,12 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='artazi',
+        href='https://artazi.artstation.com/rss',
+        href_title='https://artazi.artstation.com/projects',
+        emojis='💎'
+    ),
+    feed(
         title='yunting',
         href='https://yunting.artstation.com/rss',
         href_title='https://yunting.artstation.com/projects',
@@ -3611,7 +3615,7 @@ feeds = (
     feed(
         title='katelyn_runck',
         href='https://www.instagram.com/katelyn_runck/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='ashleigh_jordan',
@@ -3656,6 +3660,11 @@ feeds = (
     feed(
         title='ropecandy',
         href='https://www.instagram.com/ropecandy/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='thekiranoirgram',
+        href='https://www.instagram.com/thekiranoirgram/',
         emojis='💎🏮',
     ),
     feed(
@@ -4028,7 +4037,7 @@ feeds = (
     feed(
         title='kayla_itsines',
         href='https://www.instagram.com/kayla_itsines/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='kaisafit',
@@ -4043,7 +4052,7 @@ feeds = (
     feed(
         title='basebodybabes',
         href='https://www.instagram.com/basebodybabes/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='massy_arias',
@@ -4913,11 +4922,16 @@ feeds = (
     feed(
         title='laurendrainfit',
         href='https://www.instagram.com/laurendrainfit/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='rachellevank',
         href='https://www.instagram.com/rachellevank/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='ice_queen_co',
+        href='https://www.instagram.com/ice_queen_co/',
         emojis='💎🏮',
     ),
     feed(
@@ -5049,6 +5063,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='tag_corset',
+        href='https://www.instagram.com/explore/tags/corset/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='xenakai',
         href='https://www.instagram.com/xenakai/',
         emojis='💎🏮',
@@ -5124,7 +5143,6 @@ feeds = (
     feed(
         title='0lolegovna',
         href='https://www.instagram.com/0lolegovna/',
-        emojis='💎',
     ),
     feed(
         title='asya_ameli',
