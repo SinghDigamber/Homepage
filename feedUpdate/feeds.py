@@ -1077,7 +1077,6 @@ feeds = (
         href='https://anidub.me/rss.xml',
         href_title='https://anidub.me',
         filter='ty-edinstvennaya-kto-lyubit-velikogo-menya',
-        emojis='💎'
     ),
     feed(
         title='РассекающийДемонов',
@@ -1109,7 +1108,6 @@ feeds = (
         href='https://anidub.me/rss.xml',
         href_title='https://anidub.me',
         filter='etot-geroy-neuyazvim-no-ochen-ostorozhen',
-        emojis='💎'
     ),
     feed(
         title='KotB',
@@ -4332,6 +4330,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='non_nonsummerjack',
+        href='https://www.instagram.com/non_nonsummerjack/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='_missbo',
         href='https://www.instagram.com/_missbo/',
         emojis='🏮',
@@ -4969,6 +4972,11 @@ feeds = (
     feed(
         title='mavrin',
         href='https://www.instagram.com/mavrin/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='a_mavrin',
+        href='https://www.instagram.com/a_mavrin/',
         emojis='💎🏮',
     ),
     feed(
