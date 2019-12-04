@@ -972,6 +972,11 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='Socratica',
+        href='https://www.youtube.com/channel/UCW6TXMZ5Pq6yL6_k5NZ2e0Q/videos',
+        emojis='💎'
+    ),
+    feed(
         title='AllStars',
         title_full='All Stars Dance Centre',
         href='https://www.youtube.com/channel/UCFpq9N89QqM99MIMZvhU4Fw/videos',
@@ -1045,6 +1050,11 @@ feeds = (
     feed(
         title='СлугаНарода',
         href='https://www.youtube.com/channel/UCWxnrOznpSgCIK6SyzDgirQ/videos',
+        emojis='💎'
+    ),
+    feed(
+        title='XPlv3',
+        href='https://www.youtube.com/channel/UC1YDVwTL5M_TVivEdTbfKrA/videos',
         emojis='💎'
     ),
     feed(
@@ -2155,6 +2165,12 @@ feeds = (
         title='bangbez',
         href='https://bangbez.artstation.com/rss',
         href_title='https://bangbez.artstation.com/projects',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='edwardckk',
+        href='https://edwardckk.artstation.com/rss',
+        href_title='https://edwardckk.artstation.com/projects',
         emojis='💎🏮'
     ),
     feed(
@@ -3523,6 +3539,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='ladygaga',
+        href='https://www.instagram.com/ladygaga/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='zachscud',
         href='https://www.instagram.com/zachscud/',
         emojis='💎🏮',
@@ -3545,7 +3566,7 @@ feeds = (
     feed(
         title='ve_ro_nika_12',
         href='https://www.instagram.com/ve_ro_nika_12/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='sklyar_dim',
@@ -3736,6 +3757,11 @@ feeds = (
         title='itsopalsnow',
         href='https://www.instagram.com/itsopalsnow/',
         emojis='💎🏮',
+    ),
+    feed(
+        title='darkincloset',
+        href='https://www.instagram.com/darkincloset/',
+        emojis='💎',
     ),
     feed(
         title='alienorihara',
@@ -4075,9 +4101,14 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='reallysexycyborg',
+        href='https://www.instagram.com/mreallysexycyborg/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='annavictoria',
         href='https://www.instagram.com/annavictoria/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='tracyandersonmethod',
@@ -4097,7 +4128,7 @@ feeds = (
     feed(
         title='mightyraccoon',
         href='https://www.instagram.com/mightyraccoon/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='polyakovamusic',
