@@ -41,6 +41,13 @@ feeds = (
         emojis='💎📧'
     ),
     feed(
+        title='DollarWolfe',
+        title_full='Dollar and Wolfe Trading Co',
+        href='feed:https://www.webtoons.com/en/challenge/dollar-and-wolfe-trading-co/rss?title_no=102392',
+        href_title='https://www.webtoons.com/en/challenge/dollar-and-wolfe-trading-co/list?title_no=102392',
+        emojis='💎📧'
+    ),
+    feed(
         title='ДокторСтоун',
         href='http://fanserials.tv/dr-stone/',
         emojis='💎',
@@ -850,6 +857,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='JoCat',
+        href='https://www.youtube.com/channel/UCRDVE5L1LTWhmPAKKbUBGtg/videos',
+        emojis='💎'
+    ),
+    feed(
         title='ВладимирЧайкин',
         href='https://www.youtube.com/channel/UC_mPBfl442yiubiPyswqulA/videos',
     ),
@@ -898,7 +910,6 @@ feeds = (
     feed(
         title='Зеленский',
         href='https://www.youtube.com/channel/UCp2zBKrqP0ZQF6RN4RJtF2Q/videos',
-        emojis='💎'
     ),
     feed(
         title='AsianBoss',
@@ -1947,6 +1958,12 @@ feeds = (
         emojis='🏮'
     ),
     feed(
+        title='helixel',
+        href='https://helixel.tumblr.com/rss',
+        href_title='https://helixel.tumblr.com',
+        emojis='💎🏮'
+    ),
+    feed(
         title='cherrymousestreet',
         href='https://cherrymousestreet.tumblr.com/rss',
         href_title='https://cherrymousestreet.tumblr.com',
@@ -1998,6 +2015,18 @@ feeds = (
         title='LeniviyART',
         href='https://twitrss.me/twitter_user_to_rss/?user=leniviy_art',
         href_title='https://leniviyart.com/illustration',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='yohan1754',
+        href='https://twitrss.me/twitter_user_to_rss/?user=yohan1754',
+        href_title='https://twitter.com/yohan1754',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Soldatmyran',
+        href='https://twitrss.me/twitter_user_to_rss/?user=Soldatmyran',
+        href_title='https://twitter.com/Soldatmyran',
         emojis='💎🏮'
     ),
     feed(
@@ -3547,6 +3576,11 @@ feeds = (
         title='zachscud',
         href='https://www.instagram.com/zachscud/',
         emojis='💎🏮',
+    ), 
+    feed(
+        title='ivanahyde_',
+        href='https://www.instagram.com/ivanahyde_/',
+        emojis='💎🏮',
     ),
     feed(
         title='oabramovich',
@@ -3561,7 +3595,7 @@ feeds = (
     feed(
         title='vlad_lev69',
         href='https://www.instagram.com/vlad_lev69/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='ve_ro_nika_12',
@@ -3571,32 +3605,32 @@ feeds = (
     feed(
         title='sklyar_dim',
         href='https://www.instagram.com/sklyar_dim/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='alex_cake_1',
         href='https://www.instagram.com/alex_cake_1/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='iuriidmidenko',
         href='https://www.instagram.com/iuriidmidenko/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='tanyshkaloskan',
         href='https://www.instagram.com/tanyshkaloskan/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='vikun4ik_viktorovna',
         href='https://www.instagram.com/vikun4ik_viktorovna/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='iamyulka_zav',
         href='https://www.instagram.com/iamyulka.zav/',
-        emojis='💎🏮',
+        emojis='💎',
     ),
     feed(
         title='rachellevank',
@@ -4053,7 +4087,7 @@ feeds = (
     feed(
         title='katiesonier',
         href='https://www.instagram.com/katiesonier/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='natacha_oceane',
@@ -4508,7 +4542,7 @@ feeds = (
     feed(
         title='demirosemawby',
         href='https://www.instagram.com/demirosemawby/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='milica_polskaya_fpage',
@@ -5171,7 +5205,6 @@ feeds = (
     feed(
         title='stebel_flowers',
         href='https://www.instagram.com/stebel.flowers/',
-        emojis='💎',
     ),
     feed(
         title='_kv12_',
@@ -5280,7 +5313,6 @@ feeds = (
     feed(
         title='m_scherbatko',
         href='https://www.instagram.com/m_scherbatko/',
-        emojis='💎',
     ),
     feed(
         title='nikyska_10',
@@ -5393,6 +5425,11 @@ feeds = (
     feed(
         title='shitakecouture',
         href='https://www.instagram.com/shitakecouture/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='angiedusak',
+        href='https://www.instagram.com/angiedusak/',
         emojis='💎🏮',
     ),
     feed(
