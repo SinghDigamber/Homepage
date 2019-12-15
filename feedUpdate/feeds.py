@@ -1021,7 +1021,6 @@ feeds = (
     feed(
         title='VadimVega',
         href='https://www.youtube.com/channel/UCYvRNVHyIrmUw4n7qVS9XyA/videos',
-        emojis='💎'
     ),
     feed(
         title='RaspberryPi',
@@ -2675,7 +2674,7 @@ feeds = (
         emojis='🏮'
     ),
     feed(
-        title='Ganassa',
+        title='GanassaHF',
         href='https://www.hentai-foundry.com/feed/userPictures/username/Ganassa',
         href_title='http://www.hentai-foundry.com/pictures/user/Ganassa',
         emojis='🏮'
@@ -2847,6 +2846,78 @@ feeds = (
         href='https://www.hentai-foundry.com/feed/userPictures/username/kruth666',
         href_title='http://www.hentai-foundry.com/pictures/user/kruth666',
         emojis='🏮'
+    ),
+    feed(
+        title='ShinyTB',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/Shiny-TB',
+        href_title='http://www.hentai-foundry.com/pictures/user/Shiny-TB',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='X3',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/X3',
+        href_title='http://www.hentai-foundry.com/pictures/user/X3',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Ryletik',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/Ryletik',
+        href_title='http://www.hentai-foundry.com/pictures/user/Ryletik',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Bilkaya',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/Bilkaya',
+        href_title='http://www.hentai-foundry.com/pictures/user/Bilkaya',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Rampage0118',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/Rampage0118',
+        href_title='http://www.hentai-foundry.com/pictures/user/Rampage0118',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='cutepet',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/cutepet',
+        href_title='http://www.hentai-foundry.com/pictures/user/cutepet',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='PalomaP',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/PalomaP',
+        href_title='http://www.hentai-foundry.com/pictures/user/PalomaP',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Dimedrolly',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/Dimedrolly',
+        href_title='http://www.hentai-foundry.com/pictures/user/Dimedrolly',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='yupachu',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/yupachu',
+        href_title='http://www.hentai-foundry.com/pictures/user/yupachu',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='Mare',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/Mare',
+        href_title='http://www.hentai-foundry.com/pictures/user/Mare',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='ghosthart',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/ghosthart',
+        href_title='http://www.hentai-foundry.com/pictures/user/ghosthart',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='hessraart',
+        href='https://www.hentai-foundry.com/feed/userPictures/username/hessraart',
+        href_title='http://www.hentai-foundry.com/pictures/user/hessraart',
+        emojis='💎🏮'
     ),
     feed(
         title='Pupuliini',
@@ -3846,6 +3917,11 @@ feeds = (
         title='refusetobeusual_shoes',
         href='https://www.instagram.com/refusetobeusual_shoes/',
         emojis='🏮',
+    ),
+    feed(
+        title='rubyrose',
+        href='https://www.instagram.com/rubyrose/',
+        emojis='💎🏮',
     ),
     feed(
         title='jannetincosplay',
