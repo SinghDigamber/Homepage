@@ -2863,7 +2863,7 @@ feeds = (
         title='Ryletik',
         href='https://www.hentai-foundry.com/feed/userPictures/username/Ryletik',
         href_title='http://www.hentai-foundry.com/pictures/user/Ryletik',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Bilkaya',
@@ -3566,7 +3566,7 @@ feeds = (
     feed(
         title='BADCOMPZERO',
         href='https://www.deviantart.com/badcompzero/gallery/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='FlowerXL',
@@ -3701,7 +3701,6 @@ feeds = (
     feed(
         title='iamyulka_zav',
         href='https://www.instagram.com/iamyulka.zav/',
-        emojis='💎',
     ),
     feed(
         title='rachellevank',
@@ -3871,7 +3870,7 @@ feeds = (
     feed(
         title='alienorihara',
         href='https://www.instagram.com/alienorihara/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='pugoffka_sama',
