@@ -10,6 +10,7 @@ ul.red li {
     font-size: 22px;
     word-break: normal;
     overflow-wrap: break-word;
+    line-height: 1;
 }
 ul.red li:before {
     content: "»";
