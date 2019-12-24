@@ -1,0 +1,18 @@
+GitHub SSH key. 
+1) Generating a new SSH key (source) 
+Open terminal. 
+Paste the text below, substituting in your GitHub email address. 
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 
+This creates a new ssh key, using the provided email as a label. 
+ 
+2) Linking the key to your GitHub account 
+Open terminal and copy the generated public key 
+cat ~/.ssh/id_rsa.pub 
+Should output somthing as  
+ssh-rsa AAAAB3NzaC1y ... mKAKw== your_email@example.com 
+Navigate to https://github.com/settings/keys and click New SSH Key, give it a Title and copy-paste the public key. 
+ 
+ 
+3) Change git origin from https:// to ssh 
+Open terminal, cd to your repository location and type 
+git remote set-url origin git@github.com:<github username>/<repository name>
