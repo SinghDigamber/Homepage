@@ -2029,6 +2029,18 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
+        title='enjinightTwi',
+        href='https://twitrss.me/twitter_user_to_rss/?user=enjinight',
+        href_title='https://twitter.com/enjinight',
+        emojis='💎🏮'
+    ),
+    feed(
+        title='nigellizhe',
+        href='https://twitrss.me/twitter_user_to_rss/?user=nigellizhe',
+        href_title='https://twitter.com/nigellizhe',
+        emojis='💎🏮'
+    ),
+    feed(
         title='alienoriharaTwi',
         href='https://twitrss.me/twitter_user_to_rss/?user=alienorihara',
         href_title='https://twitter.com/alienorihara',
@@ -3641,7 +3653,7 @@ feeds = (
     feed(
         title='ladygaga',
         href='https://www.instagram.com/ladygaga/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='zachscud',
@@ -4192,7 +4204,7 @@ feeds = (
     feed(
         title='kaisafit',
         href='https://www.instagram.com/kaisafit/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='emilyskyefit',
@@ -4327,7 +4339,7 @@ feeds = (
     feed(
         title='purplemuffinz',
         href='https://www.instagram.com/purplemuffinz/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='armoredheartcosplay',
@@ -4362,6 +4374,11 @@ feeds = (
     feed(
         title='nana_the_shrimp',
         href='https://www.instagram.com/nana.the.shrimp/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='martabarczok_official',
+        href='https://www.instagram.com/martabarczok.official/',
         emojis='💎🏮',
     ),
     feed(
@@ -4917,7 +4934,7 @@ feeds = (
     feed(
         title='i_chios',
         href='https://www.instagram.com/i_chios/',
-        emojis='🏮',
+        emojis='💎🏮',
     ),
     feed(
         title='fetties_r',
