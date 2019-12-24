@@ -2506,12 +2506,6 @@ feeds = (
         emojis='💎🏮'
     ),
     feed(
-        title='NobuOne',
-        href='https://www.hentai-foundry.com/feed/userPictures/username/NobuONE',
-        href_title='http://www.hentai-foundry.com/pictures/user/NobuONE',
-        emojis='💎🏮'
-    ),
-    feed(
         title='Cicada',
         href='https://www.hentai-foundry.com/feed/userPictures/username/Cicada',
         href_title='http://www.hentai-foundry.com/pictures/user/Cicada',
