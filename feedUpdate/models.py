@@ -247,27 +247,27 @@ class feed(models.Model):
             except requests.exceptions.ConnectionError:
                 return []
 
-        # custom vas3k pain parser
-        elif self.href.find('https://pain.vas3k.ru') != -1:
-            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-            soupStrainer = SoupStrainer('div', attrs={'id': 'pain-list'})
-            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+        # # custom vas3k pain parser
+        # elif self.href.find('https://pain.vas3k.ru') != -1:
+        #     soup = requests.get(self.href, headers=headers, proxies=proxyDict)
+        #     soupStrainer = SoupStrainer('div', attrs={'id': 'pain-list'})
+        #     soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
-            for pain in soup.find('div').find_all('div', attrs={'class': 'pain-item'}):
-                #result_name = pain.find_all('div')[1].find('a').text
-                #result_name += " > "
-                result_name = pain.find_all('div')[2].find('p').text
+        #     for pain in soup.find('div').find_all('div', attrs={'class': 'pain-item'}):
+        #         #result_name = pain.find_all('div')[1].find('a').text
+        #         #result_name += " > "
+        #         result_name = pain.find_all('div')[2].find('p').text
 
-                result_href = "https://pain.vas3k.ru" + pain.find_all('div')[1].find('a').get('href')
+        #         result_href = "https://pain.vas3k.ru" + pain.find_all('div')[1].find('a').get('href')
 
-                # TODO: parse real datetime
-                result_datetime = datetime.now()
+        #         # TODO: parse real datetime
+        #         result_datetime = datetime.now()
 
-                result.append(feedUpdate(
-                    name=result_name[:140],
-                    href=result_href,
-                    datetime=result_datetime,
-                    title=self.title))
+        #         result.append(feedUpdate(
+        #             name=result_name[:140],
+        #             href=result_href,
+        #             datetime=result_datetime,
+        #             title=self.title))
 
         # custom fanserials parser
         elif self.href.find('http://fanserials.tv/') != -1 and self.filter is not None:
