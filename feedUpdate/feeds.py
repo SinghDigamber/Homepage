@@ -237,6 +237,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='ОркПодкастер2',
+        href='https://www.youtube.com/channel/UCPZZring891k7JVnr70dlIw/videos',
+        emojis='💎'
+    ),
+    feed(
         title='AlexandriaOcasioCortez',
         href='https://www.youtube.com/channel/UCElqfal0wzzpLsHlRuqZjaA/videos',
         emojis='💎'
@@ -1207,12 +1212,6 @@ feeds = (
         title_full='vas3k.ru',
         href='https://vas3k.ru/rss/',
         href_title='https://vas3k.ru/',
-        emojis='💎'
-    ),
-    feed(
-        title='vas3kБоль',
-        title_full='pain.vas3k.ru',
-        href='https://pain.vas3k.ru',
         emojis='💎'
     ),
     feed(
