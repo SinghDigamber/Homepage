@@ -100,10 +100,10 @@ class feed(models.Model):
         # custom ранобэ.рф API import
         # Warning! API can be closed
         if self.href.find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            request = "https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/"+self.href[31:-1]
+            request = "https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/"+self.href[31:-1]+"/chapters"
             request = requests.get(request, headers=headers, proxies=proxyDict).json()
 
-            for each in request['chapters']:
+            for each in request['items']:
                 if each['availabilityStatus'] == 'free':
                     result.append(feedUpdate(
                         name=each["title"][:140],
