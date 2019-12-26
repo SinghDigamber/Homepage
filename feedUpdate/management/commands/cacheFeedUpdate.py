@@ -1,21 +1,20 @@
-# python
+#### python
 import requests
 from random import shuffle
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 
-# Django
+#### Django
 from django.core.management.base import BaseCommand
-# Django local
 from feedUpdate.models import feedUpdate, feed
 from Dashboard.models import PlanetaKino
 
-# third-party
+#### third-party
 from tqdm import tqdm
 
 
 class Command(BaseCommand):
-    help = 'updates caches in DB'
+    help = "cacheFeedUpdate — It is used to update database caches"
 
     def add_arguments(self, parser):
         # parsing mode
