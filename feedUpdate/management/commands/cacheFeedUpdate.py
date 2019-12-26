@@ -139,6 +139,7 @@ class Command(BaseCommand):
                         
                         if options['log']:
                             total_items += result['amount']
+                        break
 
             if options['log']:
                 total_time = time.time()
