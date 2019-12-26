@@ -1263,7 +1263,7 @@ feeds = (
         href='https://xkcd.com/rss.xml',
         href_title='https://xkcd.com',
         emojis='💎',
-        delay=18
+        # delay=18
     ),
     feed(
         title='Феликс',
@@ -1303,7 +1303,7 @@ feeds = (
         href='feed://www.shadbase.com/feed/',
         href_title='http://www.shadbase.com/',
         emojis='🏮💎',
-        delay=42
+        # delay=42
     ),
     feed(
         title='hellyvalentineP',
@@ -1680,7 +1680,7 @@ feeds = (
         href='https://www.oglaf.com/feeds/rss/',
         href_title='https://www.oglaf.com',
         emojis='🏮💎',
-        delay=24
+        # delay=24
     ),
     feed(
         title='doxy',
