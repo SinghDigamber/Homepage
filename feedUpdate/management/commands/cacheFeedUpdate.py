@@ -1,7 +1,7 @@
 #### python
+import time
 import requests
 from random import shuffle
-from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 
 #### Django
@@ -39,7 +39,7 @@ class Command(BaseCommand):
 
     def process_feed(current_feed):
         # cycle preparation
-        cycle_time = datetime.now()
+        cycle_time = time.time()
         cycle_items = 0
         cycle_items_total = 0
 
@@ -58,12 +58,12 @@ class Command(BaseCommand):
             cycle_items_total += 1
             if not cached:
                 if new_feed:
-                    each.datetime = datetime.now()
+                    each.datetime = time.time()
                 
                 each.save()
                 cycle_items += 1
 
-        cycle_time = datetime.now() - cycle_time
+        cycle_time = time.time() - cycle_time
         cycle_time = round(cycle_time, 2)
 
         cycle_result = {
@@ -78,7 +78,7 @@ class Command(BaseCommand):
         try:  # KeyboardInterrupt for Ctrl+C stops
             # execution preparation
             if options['log']:
-                total_start = datetime.now()()
+                total_start = time.time()
                 total_items = 0
                 print("┣ starting")
 
@@ -86,7 +86,7 @@ class Command(BaseCommand):
             if options['parseFeeds']:
                 # cycle preparation
                 if options['logEach']:
-                    cycle_start = datetime.now()
+                    cycle_start = time.time()
                     cycle_items = 0
 
                 # removing all old feeds to avoid conflicts
@@ -94,10 +94,13 @@ class Command(BaseCommand):
 
                 # parsing from file to database
                 parse_feeds = feed.feeds_from_file()
+                
                 if options['logBar']:
                     parse_feeds = tqdm(parse_feeds)
+
                 for each in parse_feeds:
                     each.save()
+
                     if options['log']:
                         total_items += 1
                     if options['logEach']:
@@ -105,8 +108,9 @@ class Command(BaseCommand):
 
                 # cycle result printing
                 if options['logEach']:
-                    cycle_time = datetime.now()
+                    cycle_time = time.time()
                     cycle_time = round(cycle_time - cycle_start, 2)
+
                     Command.print_feed(
                         title="feeds",
                         amount=total_items, 
@@ -120,7 +124,6 @@ class Command(BaseCommand):
                     proxy = requests.get('http://pubproxy.com/api/proxy?https=true&user_agent=true&referer=true').json()['data'][0]["ipPort"]
                     
                 # prepare list of feeds to parse
-                parse_feeds = []
                 parse_feeds = list(feed.objects.all())
 
                 if options['shuffle']:
@@ -143,8 +146,9 @@ class Command(BaseCommand):
                             total_items += result['amount']
 
             if options['log']:
-                total_time = datetime.now()
+                total_time = time.time()
                 total_time = round(total_time - total_start, 2)
+
                 Command.print_total(
                     amount=total_items, 
                     time=total_time
