@@ -115,10 +115,7 @@ class Command(BaseCommand):
                     
                 # prepare list of feeds to parse
                 parse_feeds = []
-                if options['parseAll']:
-                    parse_feeds = list(feed.objects.all())
-                elif options['parseIndex']:
-                    parse_feeds = list(feed.feeds_by_emoji())
+                parse_feeds = list(feed.objects.all())
 
                 if options['shuffle']:
                     shuffle(parse_feeds)
