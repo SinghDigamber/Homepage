@@ -20,8 +20,8 @@ class Command(BaseCommand):
             UserAgent_path = os.path.join(UserAgent_path, "user-agents.txt")
         else:
             UserAgent_path = os.path.join(UserAgent_path, "user-agents-backup.txt")
-        os.remove(UserAgent_path)
-        open(UserAgent_path, 'a').close()
+        os.remove(UserAgent_path)  # delete old file version
+        open(UserAgent_path, 'a').close()  # create empty file
 
         UserAgent_list = []
         for each in soup.find_all('li'):
@@ -32,12 +32,18 @@ class Command(BaseCommand):
         with open(UserAgent_path, 'a') as UserAgent_file:
             for each in UserAgent_list:
                 UserAgent_file.write(each+'\n')
+
                 if options['logLength']:
                     lines += 1
 
         if options['logLength']:
-            if len(keyValue.objects.filter(key='UserAgentLen')) > 0:
-                UserAgentLen = keyValue.objects.filter(key='UserAgentLen')[0]
+            object_list = keyValue.objects.filter(key='UserAgentLen')
+
+            if len(object_list) > 0:
+                if len(object_list) > 1:
+                    object_list[1:].delete()
+
+                UserAgentLen = object_list[0]
                 UserAgentLen.value = lines
                 UserAgentLen.save()
             else:
