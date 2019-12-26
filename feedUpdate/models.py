@@ -13,7 +13,6 @@ from dateutil.tz import gettz
 import random
 from Dashboard.models import keyValue
 import os
-import random
 
 
 class feed(models.Model):
@@ -113,7 +112,7 @@ class feed(models.Model):
 
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
-            if random.randint(0, 1000) in [100, 200, 300, 400, 500, 600, 700, 800, 900]:
+            if random.randint(100) == 0:
                 try:
                     soup = requests.get(self.href, headers=headers, proxies=proxyDict)
                     soup = BeautifulSoup(soup.text, "html.parser")
