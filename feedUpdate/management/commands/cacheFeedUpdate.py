@@ -1,11 +1,18 @@
-from django.core.management.base import BaseCommand, CommandError
+# python
+import requests
+from random import shuffle
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor
+
+# Django
+from django.core.management.base import BaseCommand
+# Django local
 from feedUpdate.models import feedUpdate, feed
 from Dashboard.models import PlanetaKino
+
+# third-party
 from tqdm import tqdm
-from random import shuffle
-import requests
-from concurrent.futures import ThreadPoolExecutor
+
 
 class Command(BaseCommand):
     help = 'updates caches in DB'
