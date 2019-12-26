@@ -40,10 +40,13 @@ class Command(BaseCommand):
 
         # PARSING HERE
         feedUpdate_list = current_feed.parse()
+        print("1 parsed: ", 1000*(time.time() - cycle_time, 2))
         feedUpdate_list = reversed(feedUpdate_list)
+        print("2 reversed: ", 1000*(time.time() - cycle_time, 2))
 
         # checking if feed is new: new feeds use real datetime
         new_feed = True if len(feedUpdate.objects.filter(title=current_feed.title)) == 0 else False
+        print("3 checked: ", 1000*(time.time() - cycle_time, 2))
 
         for each in feedUpdate_list:
             # checking if href is cached
@@ -56,6 +59,7 @@ class Command(BaseCommand):
                 
                 each.save()
                 cycle_items += 1
+        print("4 saved: ", 1000*(time.time() - cycle_time, 2))
 
         cycle_time = time.time() - cycle_time
         cycle_time = round(cycle_time, 2)
