@@ -43,12 +43,13 @@ class Command(BaseCommand):
         cycle_items = 0
         cycle_items_total = 0
 
-        # PARSING HERE
+        # checking if feed is new: new feeds use real datetime
+        new_feed = feedUpdate.objects.filter(title=current_feed.title)
+        new_feed = True if len(new_feed) == 0 else False
+
+        # parsing
         feedUpdate_list = current_feed.parse()
         feedUpdate_list = reversed(feedUpdate_list)
-
-        # checking if feed is new: new feeds use real datetime
-        new_feed = True if len(feedUpdate.objects.filter(title=current_feed.title)) == 0 else False
 
         for each in feedUpdate_list:
             # checking if href is cached
