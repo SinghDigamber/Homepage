@@ -1,8 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
+from datetime import datetime
 from feedUpdate.models import feedUpdate, feed
 from Dashboard.models import PlanetaKino
-import time
-from datetime import datetime
 from tqdm import tqdm
 from random import shuffle
 import requests
@@ -34,7 +33,7 @@ class Command(BaseCommand):
 
     def process_feed(current_feed):
         # cycle preparation
-        cycle_time = time.time()
+        cycle_time = datetime.now()
         cycle_items = 0
         cycle_items_total = 0
 
@@ -57,7 +56,7 @@ class Command(BaseCommand):
                 each.save()
                 cycle_items += 1
 
-        cycle_time = time.time() - cycle_time
+        cycle_time = datetime.now() - cycle_time
         cycle_time = round(cycle_time, 2)
 
         cycle_result = {
@@ -72,7 +71,7 @@ class Command(BaseCommand):
         try:  # KeyboardInterrupt for Ctrl+C stops
             # execution preparation
             if options['log']:
-                total_start = time.time()
+                total_start = datetime.now()()
                 total_items = 0
                 print("┣ starting")
 
@@ -80,7 +79,7 @@ class Command(BaseCommand):
             if options['parseFeeds']:
                 # cycle preparation
                 if options['logEach']:
-                    cycle_start = time.time()
+                    cycle_start = datetime.now()
                     cycle_items = 0
 
                 # removing all old feeds to avoid conflicts
@@ -99,7 +98,7 @@ class Command(BaseCommand):
 
                 # cycle result printing
                 if options['logEach']:
-                    cycle_time = time.time()
+                    cycle_time = datetime.now()
                     cycle_time = round(cycle_time - cycle_start, 2)
                     Command.print_feed(
                         title="feeds",
@@ -137,7 +136,7 @@ class Command(BaseCommand):
                             total_items += result['amount']
 
             if options['log']:
-                total_time = time.time()
+                total_time = datetime.now()
                 total_time = round(total_time - total_start, 2)
                 Command.print_total(
                     amount=total_items, 
