@@ -10,7 +10,7 @@ from django.utils.timezone import localtime
 import json
 import dateutil.parser as datetimeparser
 from dateutil.tz import gettz
-import random
+from random import randint
 from Dashboard.models import keyValue
 import os
 
@@ -74,7 +74,7 @@ class feed(models.Model):
 
         line_number = keyValue.objects.filter(key='UserAgentLen')[0]
         line_number = int(line_number.value)
-        line_number = random.randint(1, line_number)
+        line_number = randint(1, line_number)
         useragent = f.read().split('\n')[line_number-1]
         f.close()
         return useragent
@@ -112,7 +112,7 @@ class feed(models.Model):
 
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
-            if random.randint(100) == 0:
+            if randint(0, 100) == 0:
                 try:
                     soup = requests.get(self.href, headers=headers, proxies=proxyDict)
                     soup = BeautifulSoup(soup.text, "html.parser")
