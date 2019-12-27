@@ -83,22 +83,21 @@ class feed(models.Model):
     def parse(self, proxy=False):
         result = []
 
-        # headers = {
-        #     'user-agent': feed.UserAgent_random().lstrip(),
-        #     'referer': 'https://www.google.com/search?newwindow=1&q='+self.href
-        # }
-        # if proxy != False:
-        #     proxyDict = {
-        #         "http": "http://"+proxy, 
-        #         "https": "https://"+proxy,
-        #     }
-        # else:
-        #     proxyDict = {}
+        headers = {
+            'user-agent': feed.UserAgent_random().lstrip(),
+            'referer': 'https://www.google.com/search?newwindow=1&q='+self.href
+        }
+        if proxy != False:
+            proxyDict = {
+                "http": "http://"+proxy, 
+                "https": "https://"+proxy,
+            }
+        else:
+            proxyDict = {}
 
         # custom ранобэ.рф API import
-        # Warning! API can be closed
         if self.href.find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            request = "https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/"+self.href[31:-1]+"/chapters"
+            request = f"https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/{self.href[31:-1]}/chapters"
             request = requests.get(request).json()  # (request, headers=headers, proxies=proxyDict)
 
             for each in request['items']:
@@ -111,48 +110,42 @@ class feed(models.Model):
 
         # custom instagram import
         if self.href.find('https://www.instagram.com/') != -1:
-            if randint(0, 100) == 0:
-                try:
-                    soup = requests.get(self.href)  # (self.href, headers=headers, proxies=proxyDict)
-                    soup = BeautifulSoup(soup.text, "html.parser")
+            if not randint(0, 100) == 0:
+                return []
+            try:
+                soup = requests.get(self.href, headers=headers, proxies=proxyDict)
+                soup = BeautifulSoup(soup.text, "html.parser")
 
-                    for each in soup.find_all('script'):
-                        data_start = 'window._sharedData = '
-                        if each.text.find(data_start) != -1:
-                            # preparing JSON
-                            data_start = each.text.find(data_start)+len(data_start)
-                            data = str(each.text)[data_start:-1]  # -1 is for removing ; in the end
-                            #print(data)
-                            data = json.loads(data)
-                            data = data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']
+                for each in soup.find_all('script'):
+                    data_start = 'window._sharedData = '
+                    if each.text.find(data_start) != -1:
+                        # preparing JSON
+                        data_start = each.text.find(data_start)+len(data_start)
+                        data = str(each.text)[data_start:-1]  # -1 is for removing ; in the end
+                        data = json.loads(data)
+                        data = data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']
 
-                            # parsing data from JSON
-                            for post in data:
-                                post = post['node']
+                        # parsing data from JSON
+                        for each in data:
+                            each = each['node']
 
-                                # avoiding errors caused by empty titles
-                                try:
-                                    result_name = post['edge_media_to_caption']['edges'][0]['node']['text']
-                                except IndexError:
-                                    result_name = 'no title'
+                            # avoiding errors caused by empty titles
+                            try:
+                                result_name = each['edge_media_to_caption']['edges'][0]['node']['text']
+                            except IndexError:
+                                result_name = 'no title'
 
-                                result_href = "http://instragram.com/p/"+post['shortcode']
+                            result_href = "http://instragram.com/p/"+each['shortcode']
 
-                                result_datetime = post['taken_at_timestamp']
-                                result_datetime = datetime.fromtimestamp(result_datetime)
+                            result_datetime = each['taken_at_timestamp']
+                            result_datetime = datetime.fromtimestamp(result_datetime)
 
-                                result.append(feedUpdate(
-                                    name=result_name[:140],
-                                    href=result_href,
-                                    datetime=result_datetime,
-                                    title=self.title))
-                except KeyError:
-                    return []
-                except requests.exceptions.ProxyError:
-                    return []
-                except requests.exceptions.SSLError:
-                    return []
-            else:
+                            result.append(feedUpdate(
+                                name=result_name[:140],
+                                href=result_href,
+                                datetime=result_datetime,
+                                title=self.title))
+            except (KeyError, requests.exceptions.ProxyError, requests.exceptions.SSLError) as err:
                 return []
 
         # custom RSS YouTube converter (link to feed has to be converted manually)
@@ -180,7 +173,7 @@ class feed(models.Model):
 
         # custom fantasy-worlds.org loader
         elif self.href.find('https://fantasy-worlds.org/series/') != -1:
-            soup = requests.get(self.href)  # (self.href, headers=headers, proxies=proxyDict)
+            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
             soupStrainer = SoupStrainer('div', attrs={'class': 'rightBlock'})
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
@@ -214,7 +207,7 @@ class feed(models.Model):
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
             try:
-                soup = requests.get(self.href)  # (self.href, headers=headers, proxies=proxyDict)
+                soup = requests.get(self.href, headers=headers, proxies=proxyDict)
                 soupStrainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
                 soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
@@ -269,7 +262,7 @@ class feed(models.Model):
 
         # custom fanserials parser
         elif self.href.find('http://fanserials.tv/') != -1 and self.filter is not None:
-            soup = requests.get(self.href)  # (self.href, headers=headers, proxies=proxyDict)
+            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
             soupStrainer = SoupStrainer('ul', attrs={'id': 'episode_list'})
             soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
 
@@ -296,7 +289,7 @@ class feed(models.Model):
         # default RSS import
         else:
             # proxyDict = urllib.request.ProxyHandler(proxyDict)
-            rss = feedparser.parse(self.href)  # (self.href, request_headers=headers, handlers=[proxyDict])
+            rss = feedparser.parse(self.href, request_headers=headers, handlers=[proxyDict])
 
             for item in rss["items"]:
                 # NAME RESULT
