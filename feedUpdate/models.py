@@ -288,7 +288,7 @@ class feed(models.Model):
 
         # default RSS import
         else:
-            # proxyDict = urllib.request.ProxyHandler(proxyDict)
+            proxyDict = urllib.request.ProxyHandler(proxyDict)
             rss = feedparser.parse(self.href, request_headers=headers, handlers=[proxyDict])
 
             for item in rss["items"]:
