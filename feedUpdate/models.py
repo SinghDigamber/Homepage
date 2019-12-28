@@ -189,17 +189,6 @@ class feed(models.Model):
                     datetime=datetime.now(),  # <=== fake date
                     title=self.title))
 
-        # custom patreon.com loader
-        #elif self.href.find('https://www.patreon.com/') != -1:
-            #request = requests.get(self.href, headers=headers, proxies=proxyDict)
-            #request = BeautifulSoup(request.text, "html.parser")
-
-            #print(request.find('Object.assign(window.patreon.bootstrap, {')
-
-            # cloudflare block,
-
-            #pass
-
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
             try:
