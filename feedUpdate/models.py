@@ -105,7 +105,7 @@ class feed(models.Model):
                 # ignoring payed chapters
                 if each['availabilityStatus'] == 'free':
                     result.append(feedUpdate(
-                        name=each["title"][:140],
+                        name=each["title"],
                         href="http://xn--80ac9aeh6f.xn--p1ai"+each["url"],
                         datetime=datetime.strptime(each["publishTime"], '%Y-%m-%d %H:%M:%S'),
                         title=self.title))
@@ -143,9 +143,9 @@ class feed(models.Model):
                             result_datetime = datetime.fromtimestamp(result_datetime)
 
                             result.append(feedUpdate(
-                                name=result_name[:140],
                                 href=result_href,
                                 datetime=result_datetime,
+                                name=result_name,
                                 title=self.title))
             except (KeyError, requests.exceptions.ProxyError, requests.exceptions.SSLError) as err:
                 return []
@@ -359,8 +359,7 @@ class feed(models.Model):
 
             # NAME fixes
             each.name = ' '.join(each.name.split())
-            # SQLite does not support max-length
-            each.name = each.name[:140]
+            each.name = each.name[:140]  # SQLite does not support max-length
             # extra symbols
             if each.title == 'Shadman':
                 each.name = each.name[:each.name.find('(')-1]
