@@ -177,24 +177,16 @@ class feed(models.Model):
 
         # custom fantasy-worlds.org loader
         elif self.href.find('https://fantasy-worlds.org/series/') != -1:
-            request = requests.get(self.href, headers=headers, proxies=proxyDict)
             strainer = SoupStrainer('div', attrs={'class': 'rightBlock'})
+
+            request = requests.get(self.href, headers=headers, proxies=proxyDict)
             request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
 
-            for book in request.find('ul').find('li').find('ul').find('li').find('ul').find_all('li'):
-                #print(book)
-
-                result_name = book.text.find(' // ')
-                result_name = self.title +" "+ book.text[:result_name]
-
-                result_href = book.find('a')['href']
-
-                result_datetime = datetime.now()
-
+            for each in request.find('ul').find('li').find('ul').find('li').find('ul').find_all('li'):
                 result.append(feedUpdate(
-                    name=result_name[:140],
-                    href=result_href,
-                    datetime=result_datetime,
+                    name=f"{self.title} {each.text[:each.text.find(' // ')]}",
+                    href=each.find('a')['href'],
+                    datetime=datetime.now(),  # <=== fake date
                     title=self.title))
 
         # custom patreon.com loader
