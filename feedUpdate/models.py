@@ -169,10 +169,10 @@ class feed(models.Model):
         # custom RSS deviantart converter (link to feed has to be converted manually to simplify feed object creation)
         elif self.href.find('https://www.deviantart.com/') != -1:
             self.href_title = self.href[:]
-            self.href = "http://backend.deviantart.com/rss.xml?q=gallery%3A"+self.href
             # 27 = len('https://www.deviantart.com/')
             # 9 = len('/gallery/')
             self.href = self.href[27:-9]
+            self.href = "http://backend.deviantart.com/rss.xml?q=gallery%3A" + self.href
             result = feed.parse(self)
 
         # custom fantasy-worlds.org loader
