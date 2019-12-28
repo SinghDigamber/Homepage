@@ -217,28 +217,20 @@ class feed(models.Model):
 
         # custom fanserials parser
         elif self.href.find('http://fanserials.tv/') != -1 and self.filter is not None:
-            request = requests.get(self.href, headers=headers, proxies=proxyDict)
             strainer = SoupStrainer('ul', attrs={'id': 'episode_list'})
+
+            request = requests.get(self.href, headers=headers, proxies=proxyDict)
             request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
 
-            for item in request.find_all('li'):
-                result_name = item.find('div', attrs={'class': 'field-description'}).find('a').text
-                #print(result_name)
-
+            for each in request.find_all('li'):
                 result_href = ''
-                for span in item.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
-                    # print(span)
-                    if str(span.find('a')).find(self.filter) != -1:
-                        result_href = 'http://fanserials.tv' + span.find('a').get('href')
-                #print(result_href)
-
-                # TODO: parse real datetime
-                result_datetime = datetime.now()
-
+                for each in each.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
+                    result_href = 'http://fanserials.tv' + each.find('a').get('href')
+                
                 result.append(feedUpdate(
-                    name=result_name[:140],
+                    name=each.find('div', attrs={'class': 'field-description'}).find('a').text,
                     href=result_href,
-                    datetime=result_datetime,
+                    datetime=datetime.now(),  # <=== fake date
                     title=self.title))
 
         # default RSS import
