@@ -149,24 +149,30 @@ class feed(models.Model):
         # custom RSS YouTube converter (link to feed has to be converted manually)
         elif self.href.find('https://www.youtube.com/channel/') != -1:
             self.href_title = self.href[:]
-            self.href = "https://www.youtube.com/feeds/videos.xml?channel_id="+self.href[32:-len('/videos')]
+            # 32 = len('https://www.youtube.com/channel/')
+            # 7 = len('/videos')
+            self.href = "https://www.youtube.com/feeds/videos.xml?channel_id=" + self.href[32:-7]
             result = feed.parse(self)
 
         # custom RSS readmanga converter (link to feed has to be converted manually to simplify feed object creation)
         elif self.href.find('http://readmanga.me/') != -1 and self.href.find('readmanga.me/rss/manga') == -1 and self.href_title == None:
-            self.href = "feed://readmanga.me/rss/manga?name="+self.href[len('http://readmanga.me/'):]
+            # 20 = len('http://readmanga.me/')
+            self.href = "feed://readmanga.me/rss/manga?name=" + self.href[20:]
             result = feed.parse(self)
 
         # custom RSS mintmanga converter (link to feed has to be converted manually to simplify feed object creation)
         elif self.href.find('http://mintmanga.com/') != -1 and self.href.find('mintmanga.com/rss/manga') == -1 and self.href_title == None:
-            self.href = "feed://mintmanga.com/rss/manga?name="+self.href[len('http://mintmanga.com/'):]
+            # 21 = len('http://mintmanga.com/')
+            self.href = "feed://mintmanga.com/rss/manga?name=" + self.href[21:]
             result = feed.parse(self)
 
         # custom RSS deviantart converter (link to feed has to be converted manually to simplify feed object creation)
         elif self.href.find('https://www.deviantart.com/') != -1:
             self.href_title = self.href[:]
-            self.href = self.href[len('https://www.deviantart.com/'):-len('/gallery/')]
             self.href = "http://backend.deviantart.com/rss.xml?q=gallery%3A"+self.href
+            # 27 = len('https://www.deviantart.com/')
+            # 9 = len('/gallery/')
+            self.href = self.href[27:-9]
             result = feed.parse(self)
 
         # custom fantasy-worlds.org loader
