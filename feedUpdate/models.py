@@ -192,35 +192,27 @@ class feed(models.Model):
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
             try:
-                request = requests.get(self.href, headers=headers, proxies=proxyDict)
                 strainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
+
+                request = requests.get(self.href, headers=headers, proxies=proxyDict)
                 request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
 
-                for article in request.find_all('article'):
+                for each in request.find_all('article'):
                     try:
-                        result_name = article.find('h2', {'class': "story__title"}).find('a').getText()
-
-                        result_href = article.find('h2', {'class': "story__title"}).find('a')['href']
-
-                        result_datetime = article.find('time')['datetime'][:-3]+"00"
+                        result_datetime = each.find('time')['datetime'][:-3]+"00"
                         result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
 
                         result.append(feedUpdate(
-                            name=result_name[:140],
-                            href=result_href,
+                            name=each.find('h2', {'class': "story__title"}).find('a').getText(),
+                            href=each.find('h2', {'class': "story__title"}).find('a')['href'],
                             datetime=result_datetime,
                             title=self.title))
 
-                    except TypeError:
+                    except (TypeError, AttributeError) as err:
                         # advertisement, passing as no need to save it
                         pass
-                    except AttributeError:
-                        # advertisement, passing as no need to save it
-                        pass
-            except requests.exceptions.SSLError:
+            except (requests.exceptions.ConnectionError, requests.exceptions.SSLError) as err:
                 # failed connection, hope it works from time to time
-                return []
-            except requests.exceptions.ConnectionError:
                 return []
 
         # # custom vas3k pain parser
