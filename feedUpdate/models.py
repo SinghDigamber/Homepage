@@ -119,33 +119,29 @@ class feed(models.Model):
                 request = BeautifulSoup(request.text, "html.parser")
 
                 for each in request.find_all('script'):
-                    data_start = 'window._sharedData = '
-                    if each.text.find(data_start) != -1:
+                    data = 'window._sharedData = '
+                    if each.text.find(data) != -1:
                         # preparing JSON
-                        data_start = each.text.find(data_start)+len(data_start)
-                        data = str(each.text)[data_start:-1]  # -1 is for removing ; in the end
+                        data = each.text.find(data) + len(data)  # data start position
+                        data = each.text[data:-1]  # -1 is for removing ; in the end
                         data = json.loads(data)
-                        data = data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']
+
+                        # selecting data from JSON
+                        data = data['entry_data']['ProfilePage'][0]['graphql']
+                        data = data['user']['edge_owner_to_timeline_media']['edges']
 
                         # parsing data from JSON
                         for each in data:
-                            each = each['node']
-
                             # avoiding errors caused by empty titles
                             try:
-                                result_name = each['edge_media_to_caption']['edges'][0]['node']['text']
+                                result_name = each['node']['edge_media_to_caption']['edges'][0]['node']['text']
                             except IndexError:
                                 result_name = 'no title'
 
-                            result_href = "http://instragram.com/p/"+each['shortcode']
-
-                            result_datetime = each['taken_at_timestamp']
-                            result_datetime = datetime.fromtimestamp(result_datetime)
-
                             result.append(feedUpdate(
-                                href=result_href,
-                                datetime=result_datetime,
                                 name=result_name,
+                                href="http://instragram.com/p/"+each['node']['shortcode'],
+                                datetime=datetime.fromtimestamp(each['node']['taken_at_timestamp']),
                                 title=self.title))
             except (KeyError, requests.exceptions.ProxyError, requests.exceptions.SSLError) as err:
                 return []
