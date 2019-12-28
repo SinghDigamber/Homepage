@@ -24,10 +24,10 @@ class Command(BaseCommand):
         # parsing modifiers
         parser.add_argument('--shuffle', action='store_true')
         parser.add_argument('--useProxy', action='store_true')
-        parser.add_argument('--printEmpty', action='store_true')
 
         # logging options
         parser.add_argument('--log', action='store_true')
+        parser.add_argument('--logEmpty', action='store_true')
         parser.add_argument('--logEach', action='store_true')
         parser.add_argument('--logBar', action='store_true')
 
@@ -135,7 +135,7 @@ class Command(BaseCommand):
                         executor = tqdm(executor, total=len(parse_feeds))
 
                     for result in executor:
-                        if options['logEach'] or (options["printEmpty"] and result['amount_total'] == 0):
+                        if options['logEach'] or (options["logEmpty"] and result['amount_total'] == 0):
                             Command.print_feed(
                                 title=result['title'], 
                                 amount=result['amount'], 
