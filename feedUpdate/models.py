@@ -83,24 +83,26 @@ class feed(models.Model):
     def parse(self, proxy=False):
         result = []
 
+        # avoiding blocks
         headers = {
             'user-agent': feed.UserAgent_random().lstrip(),
             'referer': 'https://www.google.com/search?newwindow=1&q='+self.href
         }
         if proxy != False:
             proxyDict = {
-                "http": "http://"+proxy, 
-                "https": "https://"+proxy,
+                "http": "http://" + proxy, 
+                "https": "https://" + proxy,
             }
         else:
             proxyDict = {}
 
         # custom ранобэ.рф API import
         if self.href.find('http://xn--80ac9aeh6f.xn--p1ai/') != -1:
-            request = f"https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/{self.href[31:-1]}/chapters"
+            request = f"https://xn--80ac9aeh6f.xn--p1ai/api/v2/books/{ self.href[31:-1] }/chapters"
             request = requests.get(request).json()  # (request, headers=headers, proxies=proxyDict)
 
             for each in request['items']:
+                # ignoring payed chapters
                 if each['availabilityStatus'] == 'free':
                     result.append(feedUpdate(
                         name=each["title"][:140],
@@ -113,10 +115,10 @@ class feed(models.Model):
             if not randint(0, 100) == 0:
                 return []
             try:
-                soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-                soup = BeautifulSoup(soup.text, "html.parser")
+                request = requests.get(self.href, headers=headers, proxies=proxyDict)
+                request = BeautifulSoup(request.text, "html.parser")
 
-                for each in soup.find_all('script'):
+                for each in request.find_all('script'):
                     data_start = 'window._sharedData = '
                     if each.text.find(data_start) != -1:
                         # preparing JSON
@@ -173,11 +175,11 @@ class feed(models.Model):
 
         # custom fantasy-worlds.org loader
         elif self.href.find('https://fantasy-worlds.org/series/') != -1:
-            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-            soupStrainer = SoupStrainer('div', attrs={'class': 'rightBlock'})
-            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+            request = requests.get(self.href, headers=headers, proxies=proxyDict)
+            strainer = SoupStrainer('div', attrs={'class': 'rightBlock'})
+            request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
 
-            for book in soup.find('ul').find('li').find('ul').find('li').find('ul').find_all('li'):
+            for book in request.find('ul').find('li').find('ul').find('li').find('ul').find_all('li'):
                 #print(book)
 
                 result_name = book.text.find(' // ')
@@ -195,10 +197,10 @@ class feed(models.Model):
 
         # custom patreon.com loader
         #elif self.href.find('https://www.patreon.com/') != -1:
-            #soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-            #soup = BeautifulSoup(soup.text, "html.parser")
+            #request = requests.get(self.href, headers=headers, proxies=proxyDict)
+            #request = BeautifulSoup(request.text, "html.parser")
 
-            #print(soup.find('Object.assign(window.patreon.bootstrap, {')
+            #print(request.find('Object.assign(window.patreon.bootstrap, {')
 
             # cloudflare block,
 
@@ -207,11 +209,11 @@ class feed(models.Model):
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
             try:
-                soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-                soupStrainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
-                soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+                request = requests.get(self.href, headers=headers, proxies=proxyDict)
+                strainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
+                request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
 
-                for article in soup.find_all('article'):
+                for article in request.find_all('article'):
                     try:
                         result_name = article.find('h2', {'class': "story__title"}).find('a').getText()
 
@@ -240,11 +242,11 @@ class feed(models.Model):
 
         # # custom vas3k pain parser
         # elif self.href.find('https://pain.vas3k.ru') != -1:
-        #     soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-        #     soupStrainer = SoupStrainer('div', attrs={'id': 'pain-list'})
-        #     soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+        #     request = requests.get(self.href, headers=headers, proxies=proxyDict)
+        #     strainer = SoupStrainer('div', attrs={'id': 'pain-list'})
+        #     request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
 
-        #     for pain in soup.find('div').find_all('div', attrs={'class': 'pain-item'}):
+        #     for pain in request.find('div').find_all('div', attrs={'class': 'pain-item'}):
         #         #result_name = pain.find_all('div')[1].find('a').text
         #         #result_name += " > "
         #         result_name = pain.find_all('div')[2].find('p').text
@@ -262,11 +264,11 @@ class feed(models.Model):
 
         # custom fanserials parser
         elif self.href.find('http://fanserials.tv/') != -1 and self.filter is not None:
-            soup = requests.get(self.href, headers=headers, proxies=proxyDict)
-            soupStrainer = SoupStrainer('ul', attrs={'id': 'episode_list'})
-            soup = BeautifulSoup(soup.text, "html.parser", parse_only=soupStrainer)
+            request = requests.get(self.href, headers=headers, proxies=proxyDict)
+            strainer = SoupStrainer('ul', attrs={'id': 'episode_list'})
+            request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
 
-            for item in soup.find_all('li'):
+            for item in request.find_all('li'):
                 result_name = item.find('div', attrs={'class': 'field-description'}).find('a').text
                 #print(result_name)
 
@@ -289,9 +291,9 @@ class feed(models.Model):
         # default RSS import
         else:
             proxyDict = urllib.request.ProxyHandler(proxyDict)
-            rss = feedparser.parse(self.href, request_headers=headers, handlers=[proxyDict])
+            request = feedparser.parse(self.href, request_headers=headers, handlers=[proxyDict])
 
-            for item in rss["items"]:
+            for item in request["items"]:
                 # NAME RESULT
                 result_name = item["title_detail"]["value"]
 
