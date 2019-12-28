@@ -37,7 +37,7 @@ class Command(BaseCommand):
     def print_total(amount, time):
         print(f"└──── added {str(amount)} in {str(time)}s")
 
-    def process_feed(current_feed):
+    def process_feed(current_feed, proxy):
         # cycle preparation
         cycle_time = time.time()
         cycle_items = 0
@@ -48,7 +48,7 @@ class Command(BaseCommand):
         new_feed = True if len(new_feed) == 0 else False
 
         # parsing
-        feedUpdate_list = current_feed.parse()
+        feedUpdate_list = current_feed.parse(proxy)
         feedUpdate_list = reversed(feedUpdate_list)
 
         for each in feedUpdate_list:
@@ -130,7 +130,7 @@ class Command(BaseCommand):
                     shuffle(parse_feeds)
 
                 with ThreadPoolExecutor() as executor:
-                    executor = executor.map(Command.process_feed, parse_feeds)
+                    executor = executor.map(Command.process_feed, parse_feeds, [proxy]*len(parse_feeds))
                     if options['logBar']:
                         executor = tqdm(executor, total=len(parse_feeds))
 
