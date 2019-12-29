@@ -1864,7 +1864,6 @@ feeds = (
         title_full='CSS-Tricks',
         href='https://css-tricks.com/feed/',
         href_title='https://css-tricks.com',
-        emojis='💎',
     ),
     feed(
         title='ХТ',
@@ -2999,6 +2998,11 @@ feeds = (
         emojis='💎',
     ),
     feed(
+        title='RevizorMinsk',
+        href='https://pikabu.ru/@RevizorMinsk',
+        emojis='💎',
+    ),
+    feed(
         title='carmessiDA',
         href='https://www.deviantart.com/carmessi/gallery/',
         emojis='💎🏮',
@@ -3825,7 +3829,7 @@ feeds = (
     feed(
         title='darkincloset',
         href='https://www.instagram.com/darkincloset/',
-        emojis='💎',
+        emojis='🏮',
     ),
     feed(
         title='alienorihara',
@@ -4515,6 +4519,11 @@ feeds = (
         emojis='🏮',
     ),
     feed(
+        title='kuczynska_maja',
+        href='https://www.instagram.com/kuczynska.maja/',
+        emojis='🏮',
+    ),
+    feed(
         title='hasunoai',
         href='https://www.instagram.com/hasunoai/',
         emojis='🏮',
@@ -4727,7 +4736,7 @@ feeds = (
     feed(
         title='jenselter',
         href='https://www.instagram.com/jenselter/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='l__natasha',
@@ -4955,6 +4964,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='imfurfur_personal',
+        title_full='sneks: imfurfur personal account',
+        href='https://www.instagram.com/sneks/',
+    ),
+    feed(
         title='notbaconbooty',
         href='https://www.instagram.com/notbaconbooty/',
         emojis='🏮',
@@ -5057,7 +5071,7 @@ feeds = (
     feed(
         title='ice_queen_co',
         href='https://www.instagram.com/ice_queen_co/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='natalee_007',
@@ -5240,7 +5254,6 @@ feeds = (
     feed(
         title='ruslanverin',
         href='https://www.instagram.com/ruslanverin/',
-        emojis='💎',
     ),
     feed(
         title='stebel_flowers',
