@@ -1095,14 +1095,6 @@ feeds = (
         href_title='https://anidub.me',
     ),
     feed(
-        title='ГенииПопаданцы',
-        title_full='Для гениев не проблема выжить даже в ином мире',
-        href='https://anidub.me/rss.xml',
-        href_title='https://anidub.me',
-        filter='dlya-geniev-ne-problema-vyzhit-dazhe-v-inom-mire',
-        emojis='💎'
-    ),
-    feed(
         title='ЕдинственнаяКтоЛюбит',
         title_full='Ты единственная, кто любит Великого Меня?!',
         href='https://anidub.me/rss.xml',
@@ -1824,8 +1816,8 @@ feeds = (
         filter='novel.tl/r/herd',
     ),
     feed(
-        title='ПастухБогов',
-        title_full='Сказания о Пастухе Богов (остановился на т1г66)',
+        title='ЛенивыйХранитель',
+        title_full='Лени изволит предаваться Хранитель Подземелья — он совсем не хочет работать!',
         href='https://novel.tl/updates.rss',
         href_title='https://novel.tl/r/ldm',
         filter='novel.tl/r/ldm',
@@ -3634,18 +3626,8 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
-        title='vlad_lev69',
-        href='https://www.instagram.com/vlad_lev69/',
-        emojis='💎',
-    ),
-    feed(
         title='ve_ro_nika_12',
         href='https://www.instagram.com/ve_ro_nika_12/',
-        emojis='💎',
-    ),
-    feed(
-        title='sklyar_dim',
-        href='https://www.instagram.com/sklyar_dim/',
         emojis='💎',
     ),
     feed(
@@ -3661,11 +3643,6 @@ feeds = (
     feed(
         title='tanyshkaloskan',
         href='https://www.instagram.com/tanyshkaloskan/',
-        emojis='💎',
-    ),
-    feed(
-        title='vikun4ik_viktorovna',
-        href='https://www.instagram.com/vikun4ik_viktorovna/',
         emojis='💎',
     ),
     feed(
@@ -5070,11 +5047,6 @@ feeds = (
         emojis='🏮',
     ),
     feed(
-        title='rachellevank',
-        href='https://www.instagram.com/rachellevank/',
-        emojis='🏮',
-    ),
-    feed(
         title='ice_queen_co',
         href='https://www.instagram.com/ice_queen_co/',
         emojis='🏮',
@@ -5379,11 +5351,6 @@ feeds = (
         emojis='💎',
     ),
     feed(
-        title='ve_ro_nika_12',
-        href='https://www.instagram.com/ve_ro_nika_12/',
-        emojis='💎',
-    ),
-    feed(
         title='vitaliiloskan',
         href='https://www.instagram.com/vitaliiloskan/',
         emojis='💎',
@@ -5539,11 +5506,6 @@ feeds = (
     feed(
         title='razin_anna',
         href='https://www.instagram.com/razin_anna/',
-        emojis='💎',
-    ),
-    feed(
-        title='tanyshkaloskan',
-        href='https://www.instagram.com/tanyshkaloskan/',
         emojis='💎',
     ),
     feed(
