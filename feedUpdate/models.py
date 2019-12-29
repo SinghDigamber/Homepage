@@ -302,7 +302,6 @@ class feedUpdate(models.Model):
         ordering = ['-datetime']
     name = models.CharField(max_length=140)
     href = models.CharField(max_length=420)
-    # href_thumbnail = models.CharField(max_length=140, null=True) # some links are waaay too long :(
     datetime = models.DateTimeField()
     title = models.CharField(max_length=42)
 
