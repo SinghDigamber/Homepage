@@ -270,7 +270,7 @@ class feed(models.Model):
         for each in result:
             # FILTERING: passing item cycle if filter does not match
             if self.filter is not None:
-                if each.name.find(self.filter) != -1 or each.href.find(self.filter) != -1:
+                if each.name.find(self.filter) == -1 or each.href.find(self.filter) == -1:
                     continue
 
             # DATETIME fixes
