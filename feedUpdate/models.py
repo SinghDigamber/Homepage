@@ -270,16 +270,25 @@ class feed(models.Model):
                     title=self.title))
 
         # universal postfixes
+        result_filtered = []
         for each in result:
+            # FILTERING: passing item cycle if filter does not match
+            if self.filter is not None:
+                if each.name.find(self.filter) != -1 or each.href.find(self.filter) != -1:
+                    continue
+
             # DATETIME fixes
             # fix timezone unaware
-            if each.datetime.tzinfo is not None and each.datetime.tzinfo.utcoffset(each.datetime) is not None:
-                dateresult2 = localtime(each.datetime)
-                each.datetime = datetime(dateresult2.year, dateresult2.month, dateresult2.day,
-                     dateresult2.hour, dateresult2.minute, dateresult2.second)
-            # add DELAY
-            if type(self.delay) is not type(None):
-                each.datetime += timedelta(hours=self.delay)
+            # if each.datetime.tzinfo is not None and each.datetime.tzinfo.utcoffset(each.datetime) is not None:
+            #     each_dt = localtime(each.datetime)
+            #     each.datetime = datetime(each_dt.year, each_dt.month, each_dt.day,
+            #          each_dt.hour, each_dt.minute, each_dt.second)
+                     
+            # if each.datetime.tzinfo is not None and each.datetime.tzinfo.utcoffset(each.datetime) is not None:
+            #     print("!!!! WARNING !!!!")
+            # # add DELAY
+            # if type(self.delay) is not type(None):
+            #     each.datetime += timedelta(hours=self.delay)
 
             # NAME fixes
             each.name = ' '.join(each.name.split())
@@ -289,13 +298,16 @@ class feed(models.Model):
                 each.name = each.name[:each.name.find('(')-1]
             elif each.title == 'Apple' and each.name[-len('Apple'):] == 'Apple':
                 # - symbol can be a variety of different symbols
-                each.name = each.name[:-len(' - Apple')]
-            elif each.title == 'LastWeekTonight' and each.name.find(': Last Week Tonight with John Oliver (HBO)') != -1:
-                each.name = each.name[:each.name.find(': Last Week Tonight with John Oliver (HBO)')]
-            elif each.title == 'Expresso':
-                each.name = each.name[len("YYYY-MM-DD "):]
+                # 8 = len(' - Apple')
+                each.name = each.name[:-8]
+            elif each.title == 'LastWeekTonight':
+                end = each.name.find(': Last Week Tonight with John Oliver (HBO)')
+                if end != -1:
+                    each.name = each.name[:end]
 
-        return result
+            result_filtered.append(each)
+
+        return result_filtered
 
 
 class feedUpdate(models.Model):
