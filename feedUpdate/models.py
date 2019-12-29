@@ -1,18 +1,17 @@
-from django.db import models
-from bs4 import BeautifulSoup, SoupStrainer
-import requests
-# from collections import OrderedDict
-import urllib.request, feedparser
-from datetime import datetime, timedelta
-# from pytz import timezone
-from django.utils.timezone import localtime
-# from datetime import timezone
 import json
-import dateutil.parser as datetimeparser
-from dateutil.tz import gettz
+import requests
+import urllib.request, feedparser  # for rss only
+from datetime import datetime, timedelta
+from dateutil.tz import gettz  # adding custom timezones
+from dateutil import parser
 from random import randint
+from os.path import join
+
+from django.db import models
 from Dashboard.models import keyValue
-import os
+
+from bs4 import BeautifulSoup, SoupStrainer
+# from django.utils.timezone import localtime
 
 
 class feed(models.Model):
@@ -70,13 +69,10 @@ class feed(models.Model):
         return feeds
 
     def UserAgent_random():
-        f=open(os.path.join("static", "feedUpdate", 'user-agents.txt'))
-
-        line_number = keyValue.objects.filter(key='UserAgentLen')[0]
-        line_number = int(line_number.value)
-        line_number = randint(1, line_number)
-        useragent = f.read().split('\n')[line_number-1]
-        f.close()
+        with open(join("static", "feedUpdate", 'user-agents.txt')) as useragent_file:
+            useragent = keyValue.objects.filter(key='UserAgentLen')[0]  # get UserAgent length
+            useragent = randint(1, int(useragent.value))  # generate random value within length
+            useragent = useragent_file.read().split('\n')[useragent-1]  # get UserAgent string
         return useragent
 
     # return List<feedUpdate> parsed from source by <feed> (self)
@@ -260,7 +256,7 @@ class feed(models.Model):
                     print(f"result_datetime broke for { self.title }")
                 
                 tzinfos = {'PDT': gettz("America/Los_Angeles"), 'PST': gettz("America/Juneau")}
-                result_datetime = datetimeparser.parse(result_datetime, tzinfos=tzinfos)
+                result_datetime = parser.parse(result_datetime, tzinfos=tzinfos)
 
                 # APPEND RESULT
                 result.append(feedUpdate(
