@@ -13,11 +13,11 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('--backup', action='store_true')
-        parser.add_argument('--logLength', action='store_true')
+        parser.add_argument('--writeLength', action='store_true')
 
     def handle(self, *args, **options):
-        soup = requests.get('http://useragentstring.com/pages/useragentstring.php?name=All')
-        soup = BeautifulSoup(soup.text, "html.parser")
+        request = requests.get('http://useragentstring.com/pages/useragentstring.php?name=All')
+        request = BeautifulSoup(request.text, "html.parser")
         
         UserAgent_path = join("static", "feedUpdate")
         if options['backup']:
@@ -29,19 +29,19 @@ class Command(BaseCommand):
         open(UserAgent_path, 'a').close()  # create empty file
 
         UserAgent_list = []
-        for each in soup.find_all('li'):
+        for each in request.find_all('li'):
             UserAgent_list.append(each.find('a').getText())
 
-        if options['logLength']:
+        if options['writeLength']:
             lines = 0
         with open(UserAgent_path, 'a') as UserAgent_file:
             for each in UserAgent_list:
                 UserAgent_file.write(each+'\n')
 
-                if options['logLength']:
+                if options['writeLength']:
                     lines += 1
 
-        if options['logLength']:
+        if options['writeLength']:
             object_list = keyValue.objects.filter(key='UserAgentLen')
 
             if len(object_list) > 0:
