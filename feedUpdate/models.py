@@ -45,23 +45,12 @@ class feed(models.Model):
     # return <feed> by feed.title
     @staticmethod
     def find(searched_title):
-        for each in feed.objects.all():
-            if each.title == searched_title:
-                return each
+        return list(feed.objects.filter(title=searched_title))[0]
 
     # return List<feed> by emoji
     @staticmethod
     def feeds_by_emoji(emoji_filter='💎'):
-        if len(emoji_filter) == 1:
-            result = []
-            for each in feed.objects.all():
-                if each.emojis != None and each.emojis.find(emoji_filter) != -1:
-                    result.append(each)
-            return result
-        else:
-            error = "len(emoji_filter) is not 1"
-            print(error)
-            return [error]
+        return list(feed.objects.filter(emojis__icontains=emoji_filter))
 
     # return List<feed> from feedUpdate/feeds.py
     def feeds_from_file():
@@ -69,11 +58,11 @@ class feed(models.Model):
         return feeds
 
     def UserAgent_random():
+        useragent = keyValue.objects.filter(key='UserAgentLen')[0]  # get UserAgent length
+        useragent = randint(1, int(useragent.value))  # generate random value within length
+
         with open(join("static", "feedUpdate", 'user-agents.txt')) as useragent_file:
-            useragent = keyValue.objects.filter(key='UserAgentLen')[0]  # get UserAgent length
-            useragent = randint(1, int(useragent.value))  # generate random value within length
-            useragent = useragent_file.read().split('\n')[useragent-1]  # get UserAgent string
-        return useragent
+            return useragent_file.read().split('\n')[useragent-1]  # get UserAgent string
 
     # return List<feedUpdate> parsed from source by <feed> (self)
     def parse(self, proxy=False):
