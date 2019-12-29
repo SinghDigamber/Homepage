@@ -1,8 +1,12 @@
-from django.core.management.base import BaseCommand, CommandError
-from bs4 import BeautifulSoup
+from os.path import join
+from os import remove
 import requests
-import os
+
+from django.core.management.base import BaseCommand, CommandError
 from Dashboard.models import keyValue
+
+from bs4 import BeautifulSoup
+
 
 class Command(BaseCommand):
     help = 'downloads a BIG list of user agents'
@@ -15,12 +19,13 @@ class Command(BaseCommand):
         soup = requests.get('http://useragentstring.com/pages/useragentstring.php?name=All')
         soup = BeautifulSoup(soup.text, "html.parser")
         
-        UserAgent_path = os.path.join("static", "feedUpdate")
+        UserAgent_path = join("static", "feedUpdate")
         if options['backup']:
-            UserAgent_path = os.path.join(UserAgent_path, "user-agents.txt")
+            UserAgent_path = join(UserAgent_path, "user-agents.txt")
         else:
-            UserAgent_path = os.path.join(UserAgent_path, "user-agents-backup.txt")
-        os.remove(UserAgent_path)  # delete old file version
+            UserAgent_path = join(UserAgent_path, "user-agents-backup.txt")
+        
+        remove(UserAgent_path)  # delete old file version
         open(UserAgent_path, 'a').close()  # create empty file
 
         UserAgent_list = []
