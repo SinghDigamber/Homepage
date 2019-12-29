@@ -17,7 +17,6 @@
     <input id='liSearchInput' onkeyup='liSearch()' autocomplete='off'>
 
     {% for feed in fromView.feed_list %}
-        {% if not '🏮' in feed.emojis or fromView.page.showAll == False %}
         <li class="index-{% if '💎' in feed.emojis %}true{% else %}false{% endif %}"><a
             class="track-click" target="_blank" href="{% url "feedUpdate:feed" feeds=feed.title mode='index' %}"><span class="title"
                 >{{ feed.title }}</span>{% if feed.title_full %}: {{ feed.title_full }}{% endif %}
@@ -27,7 +26,6 @@
                 <a class="track-click" target="_blank" href="{% if feed.href_title %}{{ feed.href_title }}{% else %}{{ feed.href }}{% endif %}">⚓️️</a>
             </nobr></span>
         </li>
-        {% endif %}
     </div>
     {% empty %}
         <li>Oops, something went wrong. Empty!</li>

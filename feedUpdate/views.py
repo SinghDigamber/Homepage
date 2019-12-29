@@ -55,37 +55,18 @@ class feedIndexView(ListView):
         header = "Ленты обновлений"
 
         # calculations
-        feed_list = feed.objects.all()
+        if self.kwargs.get('mode', False) == "index":
+            feed_list = feed.objects.filter(emojis__icontains='💎')
+            feed_list = feed_list.exclude(emojis__icontains='🏮')
+        elif self.kwargs.get('mode', False) == "all":
+            feed_list = feed.objects.all()
 
         # results
         return {
             'page': {
                 'title': header,
-                'showAll': True,
             },
-            'feed_list': feed_list,
-        }
-
-
-class feedIndexFullView(ListView):
-    model = feedUpdate
-    template_name = "feedUpdate/feeds.html"
-    context_object_name = "fromView"
-
-    def get_queryset(self):
-        # constants
-        header = "Ленты обновлений"
-
-        # calculations
-        feed_list = feed.objects.all()
-
-        # results
-        return {
-            'page': {
-                'title': header,
-                'showAll': False,
-            },
-            'feed_list': feed_list,
+            'feed_list': list(feed_list),
         }
 
 

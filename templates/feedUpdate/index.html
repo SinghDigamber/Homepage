@@ -22,7 +22,7 @@
                 <a href="{% url "feedUpdate:feed" feeds=fromView.feedName mode="force" %}">☠️️</a>
             {% endif %}
             <a href="{% url "feedUpdate:tests" %}">⚙️</a>
-            <a href="{% url "feedUpdate:feeds" %}">📂</a>
+            <a href="{% url "feedUpdate:feeds" mode="index" %}">📂</a>
         </nobr></span></h2>
 
         {% for chapter in fromView.feedUpdate_list %}
