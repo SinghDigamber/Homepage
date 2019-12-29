@@ -224,8 +224,8 @@ class feed(models.Model):
 
             for each in request.find_all('li'):
                 result_href = ''
-                for each in each.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
-                    result_href = 'http://fanserials.tv' + each.find('a').get('href')
+                for each_span in each.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
+                    result_href = 'http://fanserials.tv' + each_span.find('a').get('href')
                 
                 result.append(feedUpdate(
                     name=each.find('div', attrs={'class': 'field-description'}).find('a').text,
