@@ -236,56 +236,35 @@ class feed(models.Model):
         # default RSS import
         else:
             proxyDict = urllib.request.ProxyHandler(proxyDict)
+
             request = feedparser.parse(self.href, request_headers=headers, handlers=[proxyDict])
 
-            for item in request["items"]:
-                # NAME RESULT
-                result_name = item["title_detail"]["value"]
-
-
+            for each in request["items"]:
                 # HREF RESULT
                 if self.title == "Expresso":
-                    result_href = item["summary"]
-                    result_href = result_href[result_href.find("https://expres.co/"):]
-                    result_href = result_href[:result_href.find('"')]
+                    result_href = each["summary"]
+
+                    start = result_href.find('https://expres.co/')
+                    end = result_href.find('"')
+
+                    result_href = result_href[start:end]
                 else:
-                    result_href = item["links"][0]["href"]
-
-                '''
-                media_thumbnail = ""
-                try:
-                    media_thumbnail = item['media_thumbnail'][0]['url']
-                    media_thumbnail = len(media_thumbnail)
-                    if media_thumbnail >= 270:
-                        print("too long: " + self.title)
-                except KeyError:
-                    media_thumbnail = self.title
-                    # print("empty: " + media_thumbnail)
-                '''
-
-                # FILTERING: passing item cycle if filter does not match
-                if self.filter is not None:
-                    if result_name.find(self.filter) == -1 and result_href.find(self.filter) == -1:
-                        continue
-
+                    result_href = each["links"][0]["href"]
 
                 # DATE RESULT: parsing dates
-                # preparsing: choosing date string source
-                if "published" in item:
-                    result_datetime = item["published"]
-                elif "updated" in item:
-                    result_datetime = item["updated"]
+                if "published" in each:
+                    result_datetime = each["published"]
+                elif "updated" in each:
+                    result_datetime = each["updated"]
                 else:
-                    # there was nothing to get as result_datetime
-                    result_datetime = "Sun, 22 Oct 1995 00:00:00 +0200"
-
+                    print(f"result_datetime broke for { self.title }")
+                
                 tzinfos = {'PDT': gettz("America/Los_Angeles"), 'PST': gettz("America/Juneau")}
-                # usage examples: {'EST': -1800, 'CET': +3600, "CST": gettz("America/Chicago")}
                 result_datetime = datetimeparser.parse(result_datetime, tzinfos=tzinfos)
 
                 # APPEND RESULT
                 result.append(feedUpdate(
-                    name=result_name[:140],
+                    name=each["title_detail"]["value"],
                     href=result_href,
                     datetime=result_datetime,
                     title=self.title))
