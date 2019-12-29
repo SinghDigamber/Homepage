@@ -187,47 +187,49 @@ class feed(models.Model):
 
         # custom pikabu import
         elif self.href.find('pikabu.ru/@') != -1:
-            try:
-                strainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
-
-                request = requests.get(self.href, headers=headers, proxies=proxyDict)
-                request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
-
-                for each in request.find_all('article'):
-                    try:
-                        result_datetime = each.find('time')['datetime'][:-3]+"00"
-                        result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
-
-                        result.append(feedUpdate(
-                            name=each.find('h2', {'class': "story__title"}).find('a').getText(),
-                            href=each.find('h2', {'class': "story__title"}).find('a')['href'],
-                            datetime=result_datetime,
-                            title=self.title))
-
-                    except (TypeError, AttributeError) as err:
-                        # advertisement, passing as no need to save it
-                        pass
-            except (requests.exceptions.ConnectionError, requests.exceptions.SSLError) as err:
-                # failed connection, hope it works from time to time
-                return []
-
-        # custom fanserials parser
-        elif self.href.find('http://fanserials.tv/') != -1 and self.filter is not None:
-            strainer = SoupStrainer('ul', attrs={'id': 'episode_list'})
+            # try:
+            strainer = SoupStrainer('div', attrs={'class': 'stories-feed__container'})
 
             request = requests.get(self.href, headers=headers, proxies=proxyDict)
             request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
 
-            for each in request.find_all('li'):
-                result_href = ''
-                for each_span in each.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
-                    result_href = 'http://fanserials.tv' + each_span.find('a').get('href')
+            for each in request.find_all('article'):
+                try:
+                    result_datetime = each.find('time')['datetime'][:-3]+"00"
+                    result_datetime = datetime.strptime(result_datetime, '%Y-%m-%dT%H:%M:%S%z')
+
+                    result.append(feedUpdate(
+                        name=each.find('h2', {'class': "story__title"}).find('a').getText(),
+                        href=each.find('h2', {'class': "story__title"}).find('a')['href'],
+                        datetime=result_datetime,
+                        title=self.title))
+
+                except (TypeError, AttributeError) as err:
+                    # advertisement, passing as no need to save it
+                    pass
+            # except (requests.exceptions.ConnectionError, requests.exceptions.SSLError) as err:
+            #     # failed connection, hope it works from time to time
+            #     return []
+
+        # # custom fanserials parser
+        # elif self.href.find('http://fanserial.net/') != -1 and self.filter is not None:
+        #     strainer = SoupStrainer('ul', attrs={'id': 'episode_list'})
+
+        #     request = requests.get(self.href, headers=headers, proxies=proxyDict)
+        #     request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
+        #     print(request)
+
+        #     for each in request.find_all('li'):
+        #         print(each)
+        #         result_href = ''
+        #         for each_span in each.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
+        #             result_href = 'http://fanserial.tv' + each_span.find('a').get('href')
                 
-                result.append(feedUpdate(
-                    name=each.find('div', attrs={'class': 'field-description'}).find('a').text,
-                    href=result_href,
-                    datetime=datetime.now(),  # <=== fake date
-                    title=self.title))
+        #         result.append(feedUpdate(
+        #             name=each.find('div', attrs={'class': 'field-description'}).find('a').text,
+        #             href=result_href,
+        #             datetime=datetime.now(),  # <=== fake date
+        #             title=self.title))
 
         # default RSS import
         else:
