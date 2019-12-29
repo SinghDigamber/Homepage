@@ -203,17 +203,17 @@ class feed(models.Model):
         # # custom fanserials parser
         # elif self.href.find('http://fanserial.net/') != -1 and self.filter is not None:
         #     strainer = SoupStrainer('ul', attrs={'id': 'episode_list'})
-
+        #
         #     request = requests.get(self.href, headers=headers, proxies=proxyDict)
         #     request = BeautifulSoup(request.text, "html.parser", parse_only=strainer)
         #     print(request)
-
+        #
         #     for each in request.find_all('li'):
         #         print(each)
         #         result_href = ''
         #         for each_span in each.find('div').find('div', attrs={'class': 'serial-translate'}).find_all('span'):
         #             result_href = 'http://fanserial.tv' + each_span.find('a').get('href')
-                
+        #
         #         result.append(feedUpdate(
         #             name=each.find('div', attrs={'class': 'field-description'}).find('a').text,
         #             href=result_href,
