@@ -1306,51 +1306,6 @@ feeds = (
         # delay=42
     ),
     feed(
-        title='hellyvalentineP',
-        href='https://www.patreon.com/hellyvalentine/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
-        title='katopunkP',
-        href='https://www.patreon.com/katopunk/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
-        title='theartofmathewP',
-        href='https://www.patreon.com/theartofmathew/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
-        title='ichiosP',
-        href='https://www.patreon.com/ichios/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
-        title='JannetP',
-        href='https://www.patreon.com/Jannet/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
-        title='JessicaNigriP',
-        href='https://www.patreon.com/JessicaNigri/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
-        title='kalinkafoxP',
-        href='https://www.patreon.com/kalinkafox/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
-        title='imfurfurP',
-        href='https://www.patreon.com/imfurfur/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
-        title='starfuckedmodelP',
-        href='https://www.patreon.com/starfuckedmodel/posts?is_public=true',
-        emojis='💎'
-    ),
-    feed(
         title='RoadCC',
         href='https://road.cc/rss',
         href_title='https://road.cc',
