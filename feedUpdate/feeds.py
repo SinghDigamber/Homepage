@@ -47,12 +47,18 @@ feeds = (
         href_title='https://www.webtoons.com/en/challenge/dollar-and-wolfe-trading-co/list?title_no=102392',
         emojis='💎📧'
     ),
-    feed(
-        title='ДокторСтоун',
-        href='http://fanserials.tv/dr-stone/',
-        emojis='💎',
-        filter='#anidub'
-    ),
+    # feed(
+    #     title='Симпсоны',
+    #     href='http://fanserial.net/simpsons/',
+    #     emojis='💎',
+    #     filter='#original'
+    # ),
+    # feed(
+    #     title='ДокторСтоун',
+    #     href='http://fanserial.net/dr-stone/',
+    #     emojis='💎',
+    #     filter='#anidub'
+    # ),
     feed(
         title='Ляпота',
         title_full="It's a good trip",
