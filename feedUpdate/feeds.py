@@ -1950,6 +1950,18 @@ feeds = (
         emojis='💎',
     ),
     feed(
+        title='AnnoyingTechnology',
+        href='feed:https://instadeq.com/blog/rss.xml',
+        href_title='https://instadeq.com/blog/',
+        emojis='💎',
+    ),
+    feed(
+        title='AnnoyingTechnology',
+        href='https://annoying.technology/index.xml',
+        href_title='https://annoying.technology',
+        emojis='💎',
+    ),
+    feed(
         title='MyStrava',
         href='http://feedmyride.net/activities/21952815',
         href_title='https://www.strava.com/athlete/training',
@@ -1989,7 +2001,7 @@ feeds = (
         title='nigellizhe',
         href='https://twitrss.me/twitter_user_to_rss/?user=nigellizhe',
         href_title='https://twitter.com/nigellizhe',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='alienoriharaTwi',
