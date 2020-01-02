@@ -1,5 +1,6 @@
 #### python
 import time
+from datetime import datetime  # for datetime.now() only
 import requests
 from random import shuffle
 from concurrent.futures import ThreadPoolExecutor
@@ -57,8 +58,8 @@ class Command(BaseCommand):
             
             cycle_items_total += 1
             if not cached:
-                if new_feed:
-                    each.datetime = time.time()
+                if not new_feed:
+                    each.datetime = datetime.now()
                 
                 each.save()
                 cycle_items += 1
