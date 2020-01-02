@@ -271,6 +271,7 @@ feeds = (
         title='MarkFood',
         title_full='Mark Wiens - Hungry tourist',
         href='https://www.youtube.com/channel/UCyEd6QBSgat5kkC6svyjudA/videos',
+        emojis='💎'
     ),
     feed(
         title='Kaufman',
@@ -1367,9 +1368,8 @@ feeds = (
     ),
     feed(
         title='ЧеловеческиеКарты',
-        title_full='Человеческие карты',
+        title_full='Человеческие карты (остановился на 2-13)',
         href='http://readmanga.me/human_card',
-        emojis='💎'
     ),
     feed(
         title='БольшеНеГерой',
@@ -1923,13 +1923,25 @@ feeds = (
         title='alfie',
         href='https://buttsmithy.com/feed',
         href_title='https://buttsmithy.com',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='incase',
         href='https://incase.buttsmithy.com/feed/',
         href_title='https://incase.buttsmithy.com/',
         emojis='💎🏮'
+    ),
+    feed(
+        title='r_UpliftingNews',
+        href='http://www.reddit.com/r/UpliftingNews/.rss',
+        href_title='https://www.reddit.com/r/UpliftingNews',
+        emojis='💎'
+    ),
+    feed(
+        title='r_programming',
+        href='http://www.reddit.com/r/programming/.rss',
+        href_title='https://www.reddit.com/r/programming',
+        emojis='💎'
     ),
     feed(
         title='DOU',
@@ -1950,7 +1962,7 @@ feeds = (
         emojis='💎',
     ),
     feed(
-        title='AnnoyingTechnology',
+        title='InstadeqBlog',
         href='feed:https://instadeq.com/blog/rss.xml',
         href_title='https://instadeq.com/blog/',
         emojis='💎',
