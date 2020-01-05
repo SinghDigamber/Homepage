@@ -1060,6 +1060,11 @@ feeds = (
         emojis='💎'
     ),
     feed(
+        title='СтендапАндеграунд',
+        href='https://www.youtube.com/channel/UCxmQo8PaWJH-V7Tu-qCk73g/videos',
+        emojis='💎'
+    ),
+    feed(
         title='AliceCosGroup',
         href='https://www.youtube.com/channel/UC-e5dFHUtoZZnphHnXyPbHQ/videos',
         emojis='💎🏮'
@@ -1593,6 +1598,7 @@ feeds = (
         title_full='Тинькофф-Журнал',
         href='https://journal.tinkoff.ru/feed/',
         href_title='https://journal.tinkoff.ru',
+        emojis='💎',
     ),
     feed(
         title='MechanicalGodEmperor',
@@ -1605,7 +1611,7 @@ feeds = (
         title_full='OCTOKURO',
         href='https://www.octokuro.com/gallery?format=feed&type=rss',
         href_title='https://www.octokuro.com/gallery',
-        emojis='🏮💎',
+        emojis='💎🏮',
     ),
     feed(
         title='DjangoBlog',
@@ -4037,6 +4043,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='papavape_ua',
+        href='https://www.instagram.com/papavape_ua/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='dk_88_la',
         href='https://www.instagram.com/dk_88_la/',
         emojis='🏮',
@@ -4178,7 +4189,7 @@ feeds = (
     feed(
         title='massy_arias',
         href='https://www.instagram.com/massy.arias/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='reallysexycyborg',
@@ -5132,11 +5143,16 @@ feeds = (
     feed(
         title='sammyscosplay',
         href='https://www.instagram.com/sammyscosplay/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='pasteljellies',
         href='https://www.instagram.com/pasteljellies/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='iamshalyapin',
+        href='https://www.instagram.com/iamshalyapin/',
         emojis='💎🏮',
     ),
     feed(
@@ -5480,7 +5496,7 @@ feeds = (
     feed(
         title='angiedusak',
         href='https://www.instagram.com/angiedusak/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='victoriassecret',
