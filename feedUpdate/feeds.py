@@ -3718,7 +3718,7 @@ feeds = (
     feed(
         title='curly___girls',
         href='https://www.instagram.com/curly___girls/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='nebbia_fitness',
@@ -3743,7 +3743,7 @@ feeds = (
     feed(
         title='ashleigh_jordan',
         href='https://www.instagram.com/ashleigh_jordan/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='pavlinadrozd',
@@ -3904,6 +3904,11 @@ feeds = (
         title='rubyrose',
         href='https://www.instagram.com/rubyrose/',
         emojis='💎🏮',
+    ),
+    feed(
+        title='pet_foolery',
+        href='https://www.instagram.com/pet_foolery/',
+        emojis='💎',
     ),
     feed(
         title='jannetincosplay',
