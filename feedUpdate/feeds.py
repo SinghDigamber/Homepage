@@ -47,6 +47,12 @@ feeds = (
         href_title='https://www.webtoons.com/en/challenge/dollar-and-wolfe-trading-co/list?title_no=102392',
         emojis='💎📧'
     ),
+    feed(
+        title='InYourFaceCake',
+        href='feed:https://www.webtoons.com/en/challenge/in-your-face-cake/rss?title_no=107036',
+        href_title='https://www.webtoons.com/en/challenge/in-your-face-cake/list?title_no=107036',
+        emojis='💎📧'
+    ),
     # feed(
     #     title='Симпсоны',
     #     href='http://fanserial.net/simpsons/',
@@ -123,7 +129,7 @@ feeds = (
     feed(
         title='ZaddrotLive',
         title_full='Zaddrot.com/Live (YouTube)',
-        href='https://www.youtube.com/channel/UCjQb9npdMq_u1rRBgoQ24fg/videos',
+        href='https://www.youtube.com/channel/UC7ey83Cn0HoSJxDqSH5Q6jQ/videos',
         emojis='💎'
     ),
     feed(
@@ -2043,7 +2049,7 @@ feeds = (
         title='michelle_lewin_twi',
         href='https://twitrss.me/twitter_user_to_rss/?user=Michelle_Lewin',
         href_title='https://twitter.com/Michelle_Lewin',
-        emojis='💎🏮'
+        emojis='🏮'
     ),
     feed(
         title='Mozno_Rossie',
@@ -3852,7 +3858,7 @@ feeds = (
     feed(
         title='pugoffka_sama',
         href='https://www.instagram.com/pugoffka_sama/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='wrapashouse',
@@ -4349,7 +4355,7 @@ feeds = (
     feed(
         title='martabarczok_official',
         href='https://www.instagram.com/martabarczok.official/',
-        emojis='💎🏮',
+        emojis='🏮',
     ),
     feed(
         title='maxgrecke',
@@ -4759,6 +4765,11 @@ feeds = (
     feed(
         title='l__natasha',
         href='https://www.instagram.com/l._natasha/',
+        emojis='💎🏮',
+    ),
+    feed(
+        title='natashawsh',
+        href='https://www.instagram.com/natashawsh/',
         emojis='💎🏮',
     ),
     feed(
@@ -5428,7 +5439,6 @@ feeds = (
     feed(
         title='art_avg',
         href='https://www.instagram.com/art_avg/',
-        emojis='💎',
     ),
     feed(
         title='ernie_logvi',
