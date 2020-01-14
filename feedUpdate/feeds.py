@@ -1953,7 +1953,6 @@ feeds = (
         title='r_programming',
         href='http://www.reddit.com/r/programming/.rss',
         href_title='https://www.reddit.com/r/programming',
-        emojis='💎'
     ),
     feed(
         title='DOU',
