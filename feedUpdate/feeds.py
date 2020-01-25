@@ -20,6 +20,11 @@ feeds = (
         emojis='💎📧'
     ),
     feed(
+        title='Реинкарнатор',
+        href='http://xn--80ac9aeh6f.xn--p1ai/reincarnator/',
+        emojis='💎📧'
+    ),
+    feed(
         title='RenegadeImmortal',
         title_full='Renegade Immortal',
         href='https://www.wuxiaworld.com/feed/chapters/renegade-immortal',
@@ -960,7 +965,6 @@ feeds = (
     feed(
         title='MrTarrasque',
         href='https://www.youtube.com/channel/UCmmev40rhLzJGhnwR50BZTw/videos',
-        emojis='💎'
     ),
     feed(
         title='ДвухколёсныеХроники',
@@ -1228,6 +1232,12 @@ feeds = (
         title='HighScalability',
         href='http://feeds.feedburner.com/HighScalability',
         href_title='http://highscalability.com',
+    ),
+    feed(
+        title='Explosm',
+        href='http://feeds.feedburner.com/Explosm',
+        href_title='http://explosm.net',
+        emojis='💎'
     ),
     feed(
         title='KaterinaPigletWeb',
@@ -3041,6 +3051,11 @@ feeds = (
         emojis='💎🏮',
     ),
     feed(
+        title='ekalos',
+        href='https://www.deviantart.com/ekalos/gallery/',
+        emojis='💎🏮',
+    ),
+    feed(
         title='sciamano240DA',
         href='https://www.deviantart.com/sciamano240/gallery/',
         emojis='💎🏮',
@@ -3629,6 +3644,16 @@ feeds = (
         title='SGTMADNESS',
         href='https://www.deviantart.com/sgtmadness/gallery/',
         emojis='💎🏮',
+    ),
+    feed(
+        title='diia_gov_ua',
+        href='https://www.instagram.com/diia.gov.ua/',
+        emojis='💎',
+    ),
+    feed(
+        title='shencomix',
+        href='https://www.instagram.com/shencomix/',
+        emojis='💎',
     ),
     feed(
         title='irine_meier',
